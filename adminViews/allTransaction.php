@@ -1,4 +1,3 @@
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" ></script>
 <div class="all-transaction">
     <div class="transaction-menu">
         <div class="transaction-title">
@@ -197,40 +196,38 @@
                         </table>
                     </div>
 
-<script>
-      $("#addRow").click(function() {
-        // Get the table object
-        var table = $("#input_table");
+                    <script>
+                        $("#addRow").click(function() {
+                            // Get the table object
+                            var table = $("#input_table");
 
-        // Create a new row
-        var row = $("<tr>");
+                            // Create a new row
+                            var row = $("<tr>");
 
-        // Add 4 cells to the new row
-        row.append($("<td>").html('<input type="text" name="field1[]">'));
-        row.append($("<td>").html('<input type="text" name="field2[]">'));
-        row.append($("<td>").html('<input type="text" name="field3[]">'));
-        row.append($("<td>").html('<input type="text" name="field4[]">'));
+                            // Add 4 cells to the new row
+                            row.append($("<td>").html('<input type="text" name="field1[]">'));
+                            row.append($("<td>").html('<input type="text" name="field2[]">'));
+                            row.append($("<td>").html('<input type="text" name="field3[]">'));
+                            row.append($("<td>").html('<input type="text" name="field4[]">'));
 
-        // Add a delete button to the new row
-        row.append(
-          $("<td>").html(
-            '<button class="deleteButton">Delete</button>'
-          )
-        );
+                            // Add a delete button to the new row
+                            row.append(
+                            $("<td>").html(
+                                '<button class="deleteButton">Delete</button>'
+                            )
+                            );
 
-        // Add the new row to the table
-        table.append(row);
-      });
+                            // Add the new row to the table
+                            table.append(row);
+                        });
 
-      // Delete a row when the delete button is clicked
-      $(document).on("click", ".deleteButton", function() {
-        $(this)
-          .closest("tr")
-          .remove();
-      });
-</script>
-
-     
+                        // Delete a row when the delete button is clicked
+                        $(document).on("click", ".deleteButton", function() {
+                            $(this)
+                            .closest("tr")
+                            .remove();
+                        });
+                    </script>
                 </div>
             </div>
 
