@@ -210,11 +210,11 @@
         row.append($("<td>").html('<input type="text" name="field2[]">'));
         row.append($("<td>").html('<input type="text" name="field3[]">'));
         row.append($("<td>").html('<input type="text" name="field4[]">'));
-
+        
         // Add a delete button to the new row
         row.append(
           $("<td>").html(
-            '<button class="deleteButton">Delete</button>'
+            '<button class="deleteButton" id="deleteButton">Delete</button>'
           )
         );
 
