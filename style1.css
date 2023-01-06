@@ -1,0 +1,499 @@
+/*Fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Vollkorn+SC&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Vollkorn&display=swap');
+
+:root {
+	--light: #ffffff;
+	--blue: #3C91E6;
+	--light-blue: #CFE8FF;
+	--grey: #eee;
+	--dark-grey: #AAAAAA;
+	--dark: #342E37;
+	--red: #DB504A;
+	--yellow: #FFCE26;
+	--light-yellow: #FFF2C6;
+	--light-orange: #FFE0D3;
+	--green: #27ae60;
+	--black: #192a56;
+	--new-green: #B9E567;
+	--light-green: #D1FFD5;
+	--light-color: #E4E9F7;
+	--darkgreen: #085D40;
+	--orange: #f44718;
+	--greeen: #aff0ca;
+}
+
+.Top {
+	width: 100%;
+	height: 65vh;
+}
+
+.TopAmenity {
+	background: url(Images/upperame.png);
+	background: no-repeat scroll center scroll;
+	-webkit-background-size: cover;
+	background-size: cover;
+	width: 100%;
+	height: 65vh;
+}
+
+.TopContact {
+	background: url(Images/upperame.png);
+	background: no-repeat scroll center scroll;
+	-webkit-background-size: cover;
+	background-size: cover;
+	width: 100%;
+	height: 65vh;
+}
+
+.Topbanner {
+	padding-top: 25vh;
+}
+
+.Topbanner h5 {
+	color: white;
+	font-family: 'Vollkorn SC';
+	font-size: 30px;
+	z-index: 1;
+	text-shadow: 6px 6px 8px var(--dark);
+	transition: 1.5s;
+	vertical-align: middle;
+
+}
+
+.Topbanner h1 {
+	color: white;
+	font-family: 'Great Vibes';
+	font-size: 80px;
+	z-index: 1;
+	text-shadow: 10px 6px 10px var(--dark);
+	transition: 1.5s;
+	vertical-align: middle;
+}
+/*AMENITIES*/
+.ame_information{
+	padding: 30px;
+	flex-shrink: 1;
+	flex-wrap: wrap;
+}
+.amenitiesarea {
+	display: flex;
+	flex-direction: row;
+}
+/*AMENITIES*//*AMENITIES*/
+
+.textss{
+	display: flex;
+	flex-shrink: 1;
+}
+.pan1{
+	width: 100%;
+	display: flex;	
+	flex-direction: row;
+
+}
+.panelss{
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	flex-grow: 1;
+	min-width: 45vw;
+	min-height: 65vh;
+	justify-content: space-between;
+	align-content: center;
+}
+.Ame1_2, .Ame1_2:hover, .Ame2_2, .Ame2_2:hover, .Ame3_2, .Ame3_2:hover, .Ame4_2, .Ame4_2:hover{
+	height: 18vw;
+	width: 17.5vw;
+	margin: 0.3vw;
+}
+
+.Ame a, .Ame1_2:hover a, .Ame2_2:hover a, .Ame3_2:hover a, .Ame4_2:hover a{
+	font-size: 35px;
+}
+.ame_panel2 {
+	width: 100%;
+	margin-left: 0px;
+}
+.Ame a, .Ame1_2:hover a, .Ame2_2:hover a, .Ame3_2:hover a, .Ame4_2:hover a{
+	font-size: 38px;
+}
+/*AMENITIES*//*AMENITIES*/
+.ame_panel2 {
+	max-width: 410px;
+	height: auto;
+	margin-left: 20px;
+	top: 0;
+	bottom: 0;
+	z-index: 1;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-content: space-between;
+}
+
+.amenities_section{
+	margin: 40px 0;
+	background-color: #085D40;
+}
+
+.amenityparts{
+	margin: 45px 0;
+	padding-bottom: 25px;
+	background-color:white;
+	color: white;
+	border-radius: 5px;
+}
+.amenity_image{
+	overflow: hidden;
+	min-width: 42vw;
+}
+.amenity_image img:hover{
+	transform: scale(1.1);	
+}
+.amenity_image img{
+	transition: 0.5s ease;
+	max-width: 100%;
+}
+.amenity_description{
+	padding: 3.5vw;
+	font-family: 'Vollkorn';
+	color: #085D40;
+
+}
+.amenity_description h5{
+	font-size: 25px;
+}
+.amenity_description h2{
+	font-size: 30px;
+	font-family: 'Great Vibes';
+}
+.amenity_description ul{
+	list-style-type: none;
+	margin: 15px 0;
+}
+.amenity_description ul .in{
+	padding-left: 20px;
+}
+.amenity_description ul li i{
+	color: #27ae60;
+	margin-right: 10px;
+}
+.amenity_description p{
+	color: white;
+	text-align: center;
+}
+ .amenity_description .carousels {
+	height: 200px;
+	background-color: white;
+}
+.amenity_description .carousels .carousel-cell{
+	width: 66%;
+	height: 200px;
+	margin-right: 10px;
+	border-radius: 5px;
+	overflow: hidden;
+}
+.amenity_description .carousels img {
+	max-width: 100%;
+	min-height: 100%;
+}
+.amenity_description .carousels.carousel-cell:before {
+	display: block;
+	text-align: center;
+	line-height: 200px;
+	font-size: 80px;
+	color: #085D40;
+}
+@media (max-width:949px) {
+	.amenitiesarea{
+		flex-direction: column;
+	}
+	.ame_panel2{
+		flex-direction: row;
+		width: 100% !important;;
+		display: flex;
+		max-width: none!important;
+		margin-left: 0!important;
+	
+	}
+	.panelss{
+		height: auto!important;
+		flex-direction: row;
+		align-content: flex-end;
+		margin-top: -400px;
+	}
+	.pan1{
+		width: 50%;
+	}
+}
+@media (min-width:900px) {
+	.detailed_amenities{
+		display: flex;
+		flex-wrap: wrap;
+	}	
+	.amenityparts{
+		flex: 0 0 calc(50%-20px);
+		margin: 10px;
+	}
+}
+
+@media (min-width: 950px) {
+	.detailed_amenities{
+		flex-direction: column;
+	}
+	.amenityparts{
+		display: flex;
+		padding-bottom: 0;
+		margin: 5px 0;
+	}
+	.amenity_image{
+		flex: 1;
+	}
+	.amenity_image img{
+		height: 100%;
+	}
+	.amenity_description{
+		flex: 1;
+	}
+	.amenityparts:nth-child(even){
+		flex-direction: row-reverse ;
+	}
+	.amenity_description h5{
+		font-size: 1.5vw;
+	}
+	.amenity_description h2{
+		font-size: 3.5vw;
+	}
+	
+}
+
+/*END--AMENITIES*/
+
+/*CONTACT PAGE*/
+.section7 {
+	padding: 80px calc(7vw);
+}
+
+.section7 h2,
+p {
+	font-family: 'Vollkorn';
+
+}
+
+.section7 h1 {
+	font-family: 'Great Vibes';
+	font-size: 80px;
+}
+
+.contactb {
+	font-family: 'Vollkorn';
+	text-decoration: none;
+	color: white;
+}
+
+.contactb:hover {
+	color: white;
+}
+
+.contactform1 {
+	background-color: white;
+	padding-top: 70px;
+	padding-right: calc(7vw);
+	padding-bottom: 50px;
+	padding-left: calc(5vw);
+}
+
+.formss {
+	width: 100%;
+}
+
+.forms {
+	width: 50vw;
+	display: flex;
+	flex-direction: row;
+}
+
+.form-floating label {
+	font-family: 'Vollkorn';
+	color: #085D40;
+}
+
+.contactarea {
+	display: flex;
+	flex-direction: row;
+}
+
+/*BUTTON FOR CONTACT SUBMIT*/
+/*-----------------------*/
+.btn-submit4 {
+	display: inline-flex;
+	height: 50px;
+	width: 300px;
+	border: 2px solid #27ae60;
+	background-color: #085D40;
+	margin: 20px 20px 20px 20px;
+	color: #27ae60;
+	text-decoration: none;
+	font-size: .8em;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+
+}
+
+.btn-submit4 a {
+	color: #BFC0C0;
+	text-decoration: none;
+	letter-spacing: 1px;
+}
+
+.btn-submit4 a:hover {
+	color: white;
+	text-decoration: none;
+	letter-spacing: 1px;
+
+}
+
+.btn-submit-5 {
+	position: relative;
+	overflow: hidden;
+	cursor: pointer;
+	height: 45px;
+}
+
+.btn-submit-5 a {
+	position: relative;
+	top: 0;
+	transition: all .15s ease-Out;
+	font-family: 'Vollkorn';
+	color: white;
+	font-size: medium;
+	text-decoration: none;
+}
+
+.btn-submit-6 {
+	width: 60px;
+	height: 100%;
+	font-size: medium;
+	background: white;
+	right: -60px;
+	position: absolute;
+	padding: 10px;
+	display: flex;
+	text-align: center !important;
+	justify-content: center;
+	transition: all .15s ease-Out;
+	bottom: 0;
+}
+
+.btn-submit-6 p {
+	font-family: 'Vollkorn';
+	vertical-align: middle;
+	color: #27ae60;
+	padding: 5px;
+}
+
+.btn-submit-5:hover .btn-submit-6 {
+	top: 0;
+	right: 0;
+}
+
+.btn-submit-5:hover a {
+	right: 10%;
+}
+
+/*end*/
+/*END--CONTACT FORM*/
+
+/*END CONTACT PAGE*/
+@media (max-width:390px) {
+	.section7 h1{
+		font-size: 20vw;
+	}
+	.Topbanner  h1{
+		font-size: 20vw!important;
+	}
+}
+@media screen and (max-width:720px) {
+	.Topbanner {
+		padding-top: 25vh;
+	}
+
+	.Topbanner h5 {
+		font-size: 20px;
+	}
+
+	.Topbanner h1 {
+		font-size: 70px;
+	}
+
+	.forms {
+		width: 100%;
+	}
+
+	.contactarea {
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: column;
+	}
+	.amenitiesarea {
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: column;
+	}
+	.Ame1_2, .Ame1_2:hover, .Ame2_2, .Ame2_2:hover, .Ame3_2, .Ame3_2:hover, .Ame4_2, .Ame4_2:hover{
+		height: 30vw;
+		width: 43vw;
+		margin: 5px;
+	}
+	.Ame a, .Ame1_2:hover a, .Ame2_2:hover a, .Ame3_2:hover a, .Ame4_2:hover a{
+		font-size: 35px;
+	}
+	.ame_panel2 {
+		width: 100%;
+		margin-left: 0px;
+}
+	.Ame a, .Ame1_2:hover a, .Ame2_2:hover a, .Ame3_2:hover a, .Ame4_2:hover a{
+		font-size: 38px;
+	}
+}
+
+@media screen and (min-width:721px) and (max-width:821px) {
+	.Ame1_2, .Ame1_2:hover, .Ame2_2, .Ame2_2:hover, .Ame3_2, .Ame3_2:hover, .Ame4_2, .Ame4_2:hover{
+		height: 20vw;
+		width: 20vw;
+	}
+	.Ame a, .Ame1_2:hover a, .Ame2_2:hover a, .Ame3_2:hover a, .Ame4_2:hover a{
+		font-size: 35px;
+	}
+	.ame_panel2 {
+		width: 43vw;
+}}
+@media screen and (min-width:721px)and (max-width:889px) {
+	.section7 h1 {
+		font-size: 60px;
+	}
+
+	.section7 ul li a {
+		font-size: 13.5px;
+	}
+
+	.forms {
+		width: auto;
+	}
+}
+
+@media screen and (max-width:991px) {
+	.login-content {
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: column;
+	}
+
+	.login_banner_2 img {
+		width: 30%;
+		padding-top: 10px;
+	}
+}

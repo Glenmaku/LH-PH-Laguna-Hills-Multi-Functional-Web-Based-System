@@ -1,0 +1,677 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=DM+Serif+Display&family=Great+Vibes&family=Nanum+Myeongjo&family=Vollkorn:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=DM+Serif+Display&family=Great+Vibes&family=Nanum+Myeongjo&family=Vollkorn:ital@0;1&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+:root{
+    --darkgreen: #085D40;
+    --light-blue: #CFE8FF;
+    --light-green: #0f8e5f;
+}
+/*********** Admin Header **************/
+.admin-header{
+    top: 0;
+    font-family: 'Raleway', sans-serif;
+    font-size: 13px;
+    color: #fff;
+    background: var(--darkgreen);
+    width: 100%;
+    height: 65px;
+    position: relative;
+}
+
+.admin-head{
+    padding: 5px;
+    margin-left: 70%;
+    display: flex;
+    text-align: justify;
+}
+.admin-head .date-timezone{
+    margin-top: 20px;
+    margin-right: 5px;
+}
+
+.admin-profile{
+    display: flex;
+    margin-left: 10px;
+}
+.admin-profile .admin-pic img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; 
+}
+
+.admin-profile .admin-desc{
+    margin-top: 10px;
+    margin-left: 10px;
+}
+/*********** Admin Sidebar **************/
+.admin-sidebar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 260px;
+    background: var(--darkgreen);
+
+}
+.logo-details{
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+}
+
+.logo-details img{
+    width: 180px;
+    margin-bottom: 10px;
+}
+.logo-details .logo-name{
+    font-family: 'Great Vibes', cursive;
+    font-weight: 400;
+    font-size: 30px;
+    color: #fff;
+    margin-top: 20px;
+}
+
+.admin-sidebar .nav-links{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+    height: 100%;
+;
+}
+.admin-sidebar .nav-links li .transaction-area{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.admin-sidebar .nav-links li{
+    position: relative;
+    list-style: none;
+    transition: all 0.4s ease;
+}
+
+.admin-sidebar .nav-links li :hover{
+    background: var(--light-green);
+}
+
+.admin-sidebar .nav-links li i{
+    height: 50px;
+    min-width: 78px;
+    text-align: center;
+    line-height: 50px;
+    color: #fff;
+    font-size: 20px;
+    transition: all 0.3s ease;
+}
+
+.admin-sidebar .nav-links li a{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.admin-sidebar .nav-links li .link-name{
+    font-size: 18px;
+    color: #fff;
+}
+
+/*********** Admin Dashboard **************/
+.allContent{
+    position: block;
+    margin-left: 300px;  
+}
+
+.dashboard{
+    font-family: 'Raleway', sans-serif;
+    color: #fff;
+    display: flex;
+}
+
+.dashboard .dashboard-row{
+    margin-top: 30px;
+    margin-right: 50px;
+}
+
+.dashboard .admin-overview{
+    display: flex;
+    width: 450px;
+    background-color: var(--darkgreen);
+    padding:20px;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 8px 5px 5px var(--darkgreen);
+}
+
+.dashboard .admin-overview .overview-desc{
+    margin-left: 20px;
+}
+
+.dashboard .admin-overview .fa-solid{
+    font-size: 50px;
+}
+
+/*********** Transaction Content **************/
+.transaction-title{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    color: var(--darkgreen);
+    position: relative;
+    max-width: 100%;
+    margin-top: 10px;
+    margin-right: 40px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.transaction-title h1{
+    text-align: center;
+    padding: 5px;
+}
+.transaction-content{
+    width: 100%;
+    position: relative;
+    display: flex;
+    
+}
+.transaction-content .transaction-sheet{
+    width: 80%;
+    margin-top: 5px;
+    margin-right: 10px;
+}
+.transaction-content .transaction-sheet span{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--darkgreen);
+}
+.transaction-sheet .transaction-details{
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.transaction-sheet .transaction-details input{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+    font-size: 17px;
+    color: var(--darkgreen);
+    padding: 5px;
+    border-radius: 5px;
+    border: 0;
+}
+.transaction-details #trans-no{
+    margin-right: 15%;
+}
+
+.transaction-sheet .client-name input{
+    width: 100%;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+    font-size: 17px;
+    color: var(--darkgreen);
+    padding: 5px;
+    margin-top: 3px;
+    border-radius: 5px;
+    border: 0;
+    background-color: var(--light-blue)  ;
+}
+
+.transaction-sheet .association-dues,
+.transaction-sheet .reservation
+{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.association-dues .association-title,
+.reservation .reservation-title,
+.other-transaction .other-transaction-title{
+    display: flex;
+}
+.association-title .div-title,
+.reservation-title .div-title,
+.other-transaction-title .div-title{
+    width: 95%;
+}
+.association-title .div-title h2,
+.reservation-title .div-title h2,
+.other-transaction-title .div-title h2{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--darkgreen);
+    text-align: center;
+}
+
+.association-title .hide-option span,
+.reservation-title .hide-option span,
+.other-transaction-title .hide-option span{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    color: var(--darkgreen);
+}
+
+.association-dues .lot-number{
+    width: 65%;
+    display: flex;
+    margin-top: 15px;
+    justify-content: space-between;
+}
+
+.association-dues .lot-number input,
+.association-dues .address-status input{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: var(--darkgreen);
+    padding: 5px;
+    border: 0;
+    border-radius: 5px;
+    background: var(--light-blue);
+}
+
+.association-dues .address-status{
+    width: 100%;
+    display: flex;
+    margin-top: 15px;
+    justify-content: space-between;
+}
+.reservation-sheet .reservation-label{
+    width: 93%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.reservation-label .r-time{
+    margin-left: 57%;
+}
+.transaction-sheet .reservation-date{
+    width: 100%;
+    margin-top: 15px;
+    text-align: center;
+}
+
+.transaction-sheet .reservation-date input{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: var(--darkgreen);
+    padding: 5px;
+    border: 0;
+    border-radius: 5px;
+    background: var(--light-blue);
+}
+
+.amenities-reservation .selected-reservation{
+    display: flex;
+    width: 100%;
+    margin-top: 15px;
+    justify-content: space-between;
+}
+.amenities-reservation .selected-reservation span{
+    width: 100%;
+    font-size: 18px;
+}
+.selected-reservation .reservation-place{
+    width: 50%;
+    margin-left: 5%;
+}
+.selected-reservation .reservation-place #function-hall{
+    margin-right: 3%;
+    width: 15px;
+    height: 15px;
+}
+.selected-reservation .reservation-time input{
+    width: 40%;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: var(--darkgreen);
+    padding: 5px;
+    border: 0;
+    border-radius: 5px;
+    background: var(--light-blue);
+}
+ 
+.selected-reservation .reservation-price input{
+    width: 100%;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: var(--darkgreen);
+    padding: 5px;
+    border: 0;
+    border-radius: 5px;
+    background: var(--light-blue);
+}
+.reservation .reservation-subtotal{
+    margin-top: 20px;
+}
+
+.reservation-subtotal .r-subtotal-label{
+    display: flex;
+    justify-content: space-between;
+}
+
+.reservation-subtotal .r-subtotal-label input{
+    width: 100%;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: var(--darkgreen);
+    padding: 5px;
+    border: 0;
+    border-radius: 5px;
+    background: var(--light-blue);
+}
+.transaction-sheet .other-transaction{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.other-transaction .o-transaction-sheet{
+    width: 100%;
+    margin-top: 15px;
+}
+
+.o-transaction-sheet .o-transaction-label input{
+    width:80%;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: var(--darkgreen);
+    padding: 5px;
+    margin-top: 10px;
+    border: 0;
+    border-radius: 5px;
+    background: var(--light-blue); 
+}
+.other-transaction-table{
+    width: 100%;
+    margin-top: 10px;
+}
+
+.other-services{
+
+    border-collapse: collapse;
+  }
+.other-services input{
+    width: 90%;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: var(--darkgreen);
+    padding: 5px;
+    border: 0;
+    border-radius: 5px;
+    background: var(--light-blue);
+}
+
+td {
+    border: 1px solid #ccc;
+    padding: 5px;
+}
+.add_button {
+    text-decoration: none;
+    width: 100%;
+    margin-top: 10px;
+    padding: 5px;
+    border: 0;
+    border-radius: 5px;
+    color: #fff;
+    background: var(--darkgreen);
+    cursor: pointer;
+}
+
+#deleteButton {
+    width: 100%;
+    margin-top: 10px;
+    padding: 5px;
+    border: 0;
+    border-radius: 5px;
+    color: #fff;
+    background: red;
+    cursor: pointer;
+}
+
+ .other-transaction .o-discount{
+    margin-top: 10%;
+ }
+
+ .other-transaction .o-discount input{
+    width: 20%;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: var(--darkgreen);
+    padding: 5px;
+    margin-top: 10px;
+    border: 0;
+    border-radius: 5px;
+    background: var(--light-blue);
+ }
+
+/*********** Transaction Submit **************/
+.transaction-content .submit-area{
+    width: 30%;
+    position: relative;
+    margin-right: 40px;
+    border-radius: 5px;
+} 
+.submit-area .transaction-history{
+    width: 100%;
+    margin-top: 5px;
+}
+
+.submit-area .transaction-history button{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+    font-size: 17px;
+    color: #fff;
+    width: 100%;
+    padding: 25px;
+    border-radius: 5px;
+    border: 0;
+    background: var(--darkgreen);
+    cursor: pointer;
+}
+.submit-area .payment{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--darkgreen);
+    margin-top: 10px;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.submit-area .payment input{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: var(--darkgreen);
+    width: 100%;
+    margin-top: 5px;
+    padding: 8px;
+    border-radius: 5px;
+    border: 0;
+    background: var(--light-blue);
+}
+
+.submit-area .payment textarea{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: var(--darkgreen);
+    width: 100%;
+    height: 100px;
+    padding: 3px;
+    resize: none;
+    border-radius: 5px;
+    border: 0;
+    background: var(--light-blue);
+}
+.submit-area .payment button{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: #fff;
+    width: 100%;
+    padding: 15px;
+    margin-top: 15px;
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.payment #submit{
+    background: var(--darkgreen);
+}
+.payment #reset{
+    background: red;
+}
+
+/*********** Announcement Tab **************/
+.announcement-title{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    color: var(--darkgreen);
+    position: relative;
+    max-width: 100%;
+    margin-top: 10px;
+    margin-right: 40px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.announcement-title h1{
+    text-align: center;
+    padding: 5px;
+}
+
+.all-announcement .announcement-area{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    color: var(--darkgreen);
+    position: relative;
+    max-width: 100%;
+    margin-top: 10px;
+    margin-right: 40px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.announcement-area .add-announcement-btn{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    font-size: 17px;
+    color: #fff;
+    background: var(--darkgreen);
+    border: 0;
+    border-radius: 5px;
+    margin-top: 20px;
+    margin-left: 75%;
+    padding: 20px;
+    cursor: pointer;
+}
+
+.announcement-area .current-announcement{
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    margin-top: 30px;
+    width: 90%;
+}
+.current-announcement .announcement-history{
+    width: 22%;
+    height: 250px;
+    background: var(--light-blue);
+    border-radius: 5px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.announcement-history img{
+    padding: 10px;
+    width: 100%;
+    height: 130px;
+}
+
+.announcement-history .announcement-description h1{
+    font-size: 20px;
+    font-weight: 700;
+    color: #000;
+}
+.announcement-history .announcement-description p{
+    font-size: 12px;
+    font-weight: 500;
+    margin: 10px;
+}
+.announcement-history .announcement-action{
+    font: 20px;
+    margin-top: 10px;
+    margin-left: 50%;
+}
+.announcement-history .announcement-action button{
+    font-size: 20px;
+    border: 0;
+    background: none;
+    color: var(--darkgreen);
+    padding: 10px;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*********** Scrollbar  **************/
+::-webkit-scrollbar {
+    width: 8px;  /* width of the scrollbar */
+    background-color: var(--darkgreen);  /* background color of the scrollbar */
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--darkgreen);  /* color of the scrollbar thumb (the part that you drag) */
+    border-radius: 10px;  /* rounded corners of the scrollbar thumb */
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: #ffffff;  /* color of the track (the part that the thumb scrolls over) */
+    border-radius: 5px;  /* rounded corners of the track */
+  }

@@ -1,0 +1,31 @@
+body {
+	background-color: #005EB8;
+}
+
+svg{
+	fill: #eeeeee;
+}
+
+
+/* width */
+::-webkit-scrollbar {
+  width: 1vh;
+  height: 1vh;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+	background-color: #005EB8;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: transparent;
+  border: 2px solid white;
+  border-radius: 2vh;
+}
+
+
+::-webkit-scrollbar-corner{
+  background: #005EB8;
+}
