@@ -204,18 +204,18 @@
                             // Create a new row
                             var row = $("<tr>");
 
-                            // Add 4 cells to the new row
-                            row.append($("<td>").html('<input type="text" name="field1[]">'));
-                            row.append($("<td>").html('<input type="text" name="field2[]">'));
-                            row.append($("<td>").html('<input type="text" name="field3[]">'));
-                            row.append($("<td>").html('<input type="text" name="field4[]">'));
+        // Add 4 cells to the new row
+        row.append($("<td>").html('<input type="text" name="field1[]">'));
+        row.append($("<td>").html('<input type="text" name="field2[]">'));
+        row.append($("<td>").html('<input type="text" name="field3[]">'));
+        row.append($("<td>").html('<input type="text" name="field4[]">'));
 
-                            // Add a delete button to the new row
-                            row.append(
-                            $("<td>").html(
-                                '<button class="deleteButton">Delete</button>'
-                            )
-                            );
+        // Add a delete button to the new row
+        row.append(
+          $("<td>").html(
+            '<button class="deleteButton">Delete</button>'
+          )
+        );
 
                             // Add the new row to the table
                             table.append(row);
