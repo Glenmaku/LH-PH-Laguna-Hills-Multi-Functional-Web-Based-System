@@ -58,7 +58,7 @@
       Laguna,
       Philippines</p>
     <br>
-    <button class="custom-btn btn-4 revealing">Read More</button>
+    <a href="AboutUs.php"><button class="custom-btn btn-4 revealing">Read More</button></a>
     <br><br>
   </section>
   <!--END- WHITE WELCOME TO LAGUNA HILLS-->
@@ -74,34 +74,34 @@
       <div class="ame_panel reveal">
         <div class="Ame">
           <button onmouseover='imgChange("images/upperame.png")' class="Ame1 d-inline">
-            <a href="#">Clubhouse</a>
+            <a href="Amenities.php#clubhouse">Clubhouse</a>
           </button>
         </div>
         <div class="Ame">
           <button onmouseover='imgChange("images/bg2.jpg")' class=" Ame2 d-inline">
-            <a href="#">Swimming Pool</a>
+            <a href="Amenities.php#swimmingpool">Swimming Pool</a>
           </button>
         </div>
         <div class="Ame">
           <button onmouseover='imgChange("images/bg1.jpg")' class="Ame3 d-inline">
-            <a href="#">Covered Court</a>
+            <a href="Amenities.php#basketballcourt">Covered Court</a>
           </button>
         </div>
         <div class="Ame">
           <button onmouseover='imgChange("images/bgame.png")' class="Ame4 d-inline">
-            <a href="#">Tennis Court</a>
+            <a href="Amenities.php#tenniscourt">Tennis Court</a>
           </button>
         </div>
       </div>
     </div>
-    <button class="custom-btn btn-5 revealing">Visit Amenities</button>
+   <a href="Amenities.php"><button class="custom-btn btn-5 revealing" >Visit Amenities</button> </a>
   </section>
   <!--END- ENJOY GREAT AMENITIES-->
   <!--HIGHLIGHTS-->
   <section class="Highlights section1 bg-light">
     <div class="d-flex justify-content-center flex-wrap reveal">
       <h1 class="align-self-center">Highlights&nbsp;</h1>
-      <h2 class="align-self-center">&nbsp;</h2>
+      <h2 class="align-self-center">&&nbsp;</h2>
       <h1 class="align-self-center">&nbsp;Features</h1>
     </div>
 
@@ -133,19 +133,19 @@
         </div>
       </div>
       <div class="d-block divhighlights reveal">
-        <div class="iconbig"><i class=' bx bxl-facebook-square'></i></div>
+        <div class="iconbig forfa"><i class="fa-solid fa-road"></i></div>
         <div class="texticon flex-grow-1 align-self-center">
           <h6>Wide Subdivision Roads</h6>
         </div>
       </div>
       <div class="d-block divhighlights reveal">
-        <div class="iconbig"><i class=' bx bxl-facebook-square'></i></div>
+        <div class="iconbig"><i class="bx bx-water"></i></div>
         <div class="texticon flex-grow-1 align-self-center">
           <h6>Underground drainage system</h5>
         </div>
       </div>
       <div class="d-block divhighlights reveal">
-        <div class="iconbig"><i class=' bx bxl-facebook-square'></i></div>
+        <div class="iconbig"><i class="bx bxs-bulb"></i></div>
         <div class="texticon flex-grow-1 align-self-center">
           <h6>MERALCO Facilities</h6>
         </div>
@@ -218,7 +218,7 @@
   <br>
   <br>
 
-  <button class="custom-btn btn-4 revealing">View Properties</button>
+  <a href="PropertyFinder.php"><button class="custom-btn btn-4 revealing">View Properties</button></a>
 </section>
 <!--END--PROPERTY FINDER-->
 <!--FEEDBACKS-->
@@ -231,12 +231,12 @@
     <div class="feedback_carousels reveal  align-content-center justify-content-center" data-flickity='{ "autoPlay": true}'>
       <div class="feedback_container active feedback_carousel-cell d-flex justify-content-center">
         <div class="feedback_slide">
-          <img src="Images/amenities-bg.jpg" alt="">
+          <i class="bx bxs-user-circle"></i>
           <i class='bx bxs-quote-alt-right icon'></i>
 
           <div class="person d-block align-content-center justify-content-center">
             <div class="person_info">
-              <h3>Vennice Cosino</h3>
+              <h3>Irene Mariano</h3>
               <div class="stars">
                 <i class='bx bxs-star'></i>
                 <i class='bx bxs-star'></i>
@@ -246,17 +246,17 @@
               </div>
             </div>
           </div>
-          <p class="reviews">Review mo akla, dito natin ilalagay kase cute tayong lahat</p>
+          <p class="reviews">Quiet, safe, relaxing, and cool weather. A private residential space and if you are looking for a retirement option, highly recommended.</p>
         </div>
       </div>
       <div class="feedback_container active feedback_carousel-cell d-flex justify-content-center">
         <div class="feedback_slide">
-          <img src="Images/amenities-bg.jpg" alt="">
+        <i class="bx bxs-user-circle"></i>
           <i class='bx bxs-quote-alt-right icon'></i>
 
           <div class="person d-block align-content-center justify-content-center">
             <div class="person_info">
-              <h3>Vennice Cosino</h3>
+              <h3>Cristy Barrion Razon</h3>
               <div class="stars">
                 <i class='bx bxs-star'></i>
                 <i class='bx bxs-star'></i>
@@ -266,17 +266,17 @@
               </div>
             </div>
           </div>
-          <p class="reviews">Review mo akla, dito natin ilalagay kase cute tayong lahat</p>
+          <p class="reviews">This is a super gorgeous place..quite and serene..</p>
         </div>
       </div>
       <div class="feedback_container active feedback_carousel-cell d-flex justify-content-center">
         <div class="feedback_slide">
-          <img src="Images/amenities-bg.jpg" alt="">
+        <i class="bx bxs-user-circle"></i>
           <i class='bx bxs-quote-alt-right icon'></i>
 
           <div class="person d-block align-content-center justify-content-center">
             <div class="person_info">
-              <h3>Vennice Cosino</h3>
+              <h3>Miriam Cayetano</h3>
               <div class="stars">
                 <i class='bx bxs-star'></i>
                 <i class='bx bxs-star'></i>
@@ -286,17 +286,17 @@
               </div>
             </div>
           </div>
-          <p class="reviews">Review mo akla, dito natin ilalagay kase cute tayong lahat</p>
+          <p class="reviews">Nice place, clean, secured, nature ambience, spacious, warm&hot water, shower areas, 3 separate pools, good for relaxation and unwind moods.. natures na natures,  there's spaces for any functions occasions,</p>
         </div>
       </div>
       <div class="feedback_container active feedback_carousel-cell d-flex justify-content-center">
         <div class="feedback_slide">
-          <img src="Images/amenities-bg.jpg" alt="">
+        <i class="bx bxs-user-circle"></i>
           <i class='bx bxs-quote-alt-right icon'></i>
 
           <div class="person d-block align-content-center justify-content-center">
             <div class="person_info">
-              <h3>Vennice Cosino</h3>
+              <h3>Gene Salo Fontanilla</h3>
               <div class="stars">
                 <i class='bx bxs-star'></i>
                 <i class='bx bxs-star'></i>
@@ -306,17 +306,17 @@
               </div>
             </div>
           </div>
-          <p class="reviews">Review mo akla, dito natin ilalagay kase cute tayong lahat</p>
+          <p class="reviews">Secured and private. Nice nature ambience, 3 hot spring pools Multiple rooms, showers, toilets, karaoke, full size indoor basketball court.</p>
         </div>
       </div>
       <div class="feedback_container active feedback_carousel-cell d-flex justify-content-center">
         <div class="feedback_slide">
-          <img src="Images/amenities-bg.jpg" alt="">
+        <i class="bx bxs-user-circle"></i>
           <i class='bx bxs-quote-alt-right icon'></i>
 
           <div class="person d-block align-content-center justify-content-center">
             <div class="person_info">
-              <h3>Vennice Cosino</h3>
+              <h3>Jun  Pal-ing Tumulak</h3>
               <div class="stars">
                 <i class='bx bxs-star'></i>
                 <i class='bx bxs-star'></i>
@@ -326,7 +326,7 @@
               </div>
             </div>
           </div>
-          <p class="reviews">Review mo akla, dito natin ilalagay kase cute tayong lahat</p>
+          <p class="reviews">Perfect place for our Church Community Family Day acticity.. Terrific view and mountainous surroundings..</p>
         </div>
       </div>
     </div>

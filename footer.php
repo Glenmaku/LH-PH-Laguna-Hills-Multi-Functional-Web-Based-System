@@ -15,19 +15,19 @@
             <li class="fw-bold my-2">
               <h6>Links</h6>
             </li>
-            <li class="">
+            <li class="fortext">
               <a href="index.php">Home</a>
             </li>
-            <li class="">
+            <li class="fortext">
               <a href="AboutUs.php">About Us</a>
             </li>
-            <li class="">
+            <li class="fortext">
               <a href="Amenities.php">Amenities</a>
             </li>
-            <li class="">
+            <li class="fortext">
               <a href="PropertyFinder.php">Property Finder</a>
             </li>
-            <li class="">
+            <li class="fortext">
               <a href="ContactUs.php">Contact Us</a>
             </li>
           </ul>
@@ -39,19 +39,19 @@
             <li class="fw-bold my-2">
               <h6>Contact Us</h6>
             </li>
-            <li class="">
+            <li class="fortext">
               <i class='bx-fw bx bxl-facebook-square'></i>
               <a>facebook.com/LagunaHillsSubdivision</a>
             </li>
-            <li class="">
+            <li class="fortext">
               <i class='bx-fw bx bxl-gmail'></i>
               <a>lagunahillshoa@gmail.com</a>
             </li>
-            <li class="">
+            <li class="fortext">
               <i class=' bx-fw bx bxs-phone'></i>
               <a>(049)539-2062</a>
             </li>
-            <li class="">
+            <li class="fortext">
               <i class=' bx-fw bx bxs-map'></i>
               <a>159 Mutya St. Barangay Pansol 4027 Calamba, Laguna, Philippines</a>
             </li>
@@ -194,3 +194,4 @@
           }, false)
         })
       })()</script>
+      
