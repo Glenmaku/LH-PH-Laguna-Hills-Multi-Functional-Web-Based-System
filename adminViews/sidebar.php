@@ -14,7 +14,7 @@
                     </li>
 
                     <li>
-                    <a href="#transaction-menu" onclick="">
+                    <a href="#map" onclick="showMap()">
                             <i class="fa-solid fa-map"></i>
                             <span class="link-name">Map</span>
                         </a> 

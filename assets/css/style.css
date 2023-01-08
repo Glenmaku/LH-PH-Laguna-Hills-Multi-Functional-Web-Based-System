@@ -634,6 +634,172 @@ td {
     cursor: pointer;
 }
 
+/*map*/
+
+svg{
+	fill: grey;
+}
+
+.lhph-map{
+    display: flex;
+    width: 100%;
+}
+
+.map{
+    width: 70%;
+    margin-right: 5px;
+    border-radius: 5px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.lot-info{
+    width: 30%;
+    height: 100vh;
+    border-radius: 5px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.map-title{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--darkgreen);
+    text-align: center;
+    padding: 5px;
+    margin-bottom: 5px;
+    margin-top: 10px;
+    border-radius: 5px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.map-search-bar{
+    margin-bottom: 5px;
+    border-radius: 5px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.map-search-bar input{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    padding: 10px;
+    width: 45%;
+}
+
+.map-search-bar button{
+    font-size: 18px;
+    width: 9%;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: var(--darkgreen);
+    color: #fff;
+}
+
+
+
+.holder{
+    background-color: #005EB8;
+    overflow: hidden;
+    padding: 0px;
+    margin: 0px;
+    width: 100vw;
+    height: 100vh;
+}
+.subMenu{
+    display: block;
+}
+.mapFrame{
+    color: red;
+    border: 0px;
+    padding: 0px;
+    margin: 0px;
+    width: 100vw;
+    height: 100vh;
+    text-align: center
+}
+.nameOverlay{
+    position:fixed;
+    top: 70%;
+    right: 1%;
+    background: #003B85;
+    margin: 1vh;
+    padding-left: 1vh;
+    padding-right: 1vh;
+    font-size: 5vh;
+    height: auto;
+    border-radius: 5vh;
+    opacity: 1;
+    display: block;
+}
+.overlay{
+    position:fixed;
+    float: top;
+    background: #003B85;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin: 1vh;
+    border-radius: 1vh;
+    /*opacity: 0.5;*/
+    height: 96vh;
+    overflow-y: auto;
+}
+.menu{
+    font-size: 3vh;
+}
+.menuText{
+    font-size: 3vh;
+}
+.menuTitle{
+    font-size: 3vh;
+}
+.menuTitle:hover{
+    cursor: pointer;
+}
+.menuTitleText:hover{
+    cursor: pointer;
+    font-weight: bold;
+    color: red;
+}
+.menuImage{
+    padding-left: 3vh;
+    width: 5vh;
+    height: 5vh;
+}
+.menuCheck{
+    width: 3vh;
+    height: 3vh;
+}
+.menuFont{
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+}
+.menuFont2{
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+}
+.menuFont3{
+    color: black;
+    font-family: 'Open Sans', sans-serif;
+}
+.menuFont:hover{
+    cursor: default;
+}
+.search{
+    width: 100%;
+    font-size: 3vh;
+}
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+
 
 
 
@@ -675,3 +841,4 @@ td {
     background-color: #ffffff;  /* color of the track (the part that the thumb scrolls over) */
     border-radius: 5px;  /* rounded corners of the track */
   }
+

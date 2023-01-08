@@ -20,5 +20,16 @@ function showAllAnnouncement(){  //sidebar
     });
 }
 
+function showMap(){  //sidebar
+    $.ajax({
+        url:"./adminViews/map.php",
+        method:"post",
+        data:{record:1},
+        success:function(data){
+            $('.allContent').html(data);
+        }
+    });
+}
+
 
   

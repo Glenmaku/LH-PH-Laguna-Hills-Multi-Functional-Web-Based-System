@@ -1,14 +1,18 @@
-<html
-	<head>
-		<meta charset="UTF-8">
-		</head>
-<body>
-<?xml version="1.0" encoding="utf-8"?>
+<div class="map-title">
+    <h1>LAGUNA HILLS MAP</h1>
+    </div>
+<div class="lhph-map">
+    <div class="map">
+        <div class="map-search-bar">
+            <input type="text" name="search" id="map-search" placeholder="Search Here">
+            <input type="text" name="search" id="map-search" placeholder="Search Here">
+            <button><i class="fas fa-search"></i></button>
+        </div>
 <svg version="1.1" id="svg5" inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)" sodipodi:docname="Laguna_Hills_Sub.svg"
 	xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
 	xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:svg="http://www.w3.org/2000/svg"
 	xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	viewBox="0 0 1400 6500" style="enable-background:new 0 0 1190.2 1683.8;" xml:space="preserve">
+	viewBox="0 0 4000 7000" style="enable-background:new 0 0 1190.2 1683.8;" xml:space="preserve">
 	<g id="sudvision">
 		<path id="blk4lot4" class="st0" d="M1793.3,2824c1.9-1.9,5.4-3.4,8.3-0.6
         c0.4,0.4,50.7,57.1,51.6,58.3c1.9,1.9,3.9,4.8,2.7,6.5c-1.5,2.2-27.8,34.4-28.7,35.6c-2.2,2.1-4.6,1.8-7.4,1.2l-71-15.8
@@ -3013,5 +3017,9 @@
         c-40.9-150.3-70.7-302.9-94-456.7l-1.6-59C2326.1,3015.7,2327.4,3014.5,2316.1,3014.1z" fill-rule="evenodd"/>
 
 	</g>
-</svg></body>
-</html>
+</svg>
+        </div>
+        <div class="lot-info">
+
+        </div>
+</div>
