@@ -1,33 +1,39 @@
-<html>
-	<head>
-		<title>Map Track</title>
-		<link rel="icon" href="./src/favicon.png">
-		<link rel="manifest" href="manifest.json" />
-		<meta charset="UTF-8">
-		<meta name="apple-mobile-web-app-capable" content="yes" />
-		<meta name="mobile-web-app-capable" content="yes" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600;800&display=swap" rel="stylesheet">
-	</head>
-	<body>
-		<div id="nameOverlay" class="menuFont nameOverlay">
-			<p id="nameInner">LOADING MAP...</p>
-		</div>
-		<div id="menuOverlay" class="overlay">
-			<p id="menuTab" class="menuTitle menuFont2 noselect">☰☰☰</p>
-			<div id="subMenu" class="menuFont">
-				<input id="search" name="search" type="search" class="search menuFont3" placeholder="search" 
-					autocomplete="off"></input>
-				<dl id="menu" class="menu">
-			</div>
-		</div>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+    <title>Bootstrap Example</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  </head>
+  <body class="p-3 m-0 border-0 bd-example">
 
-		<div class="holder">
+    <!-- Example Code -->
+    
+    <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Toggle right offcanvas</button>
+    
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasRightLabel">Offcanvas right</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        ...
+      </div>
+    </div>
+    <div class="holder">
 			<iframe  class="mapFrame" id="svgMap" src="process.html" type="image/svg+xml"
 				seamless="seamless" scrolling="yes" frameborder="0"></iframe>
 		</div>
+    <!-- End Example Code -->
+  </body>
+</html>
+	<body>
+		
+
+		
 		
 	</body>
 	
