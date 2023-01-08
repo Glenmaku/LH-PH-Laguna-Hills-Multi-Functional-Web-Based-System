@@ -34,24 +34,24 @@
         <div class="ame_panel2">
           <div class="pan1">
           <div class="Ame">
-            <button class="Ame1_2 d-inline">
-              <a href="#">Clubhouse</a>
+            <button class="Ame1_2 ">
+              <a href="#clubhouse">Clubhouse</a>
             </button>
           </div>
           <div class="Ame">
-            <button class=" Ame2_2 d-inline">
-              <a href="#">Swimming Pool</a>
+            <button class=" Ame2_2 ">
+              <a href="#swimmingpool">Swimming Pool</a>
             </button>
           </div></div>
           <div class="pan1">
           <div class="Ame">
-            <button class="Ame3_2 d-inline">
-              <a href="#">Covered Court</a>
+            <button class="Ame3_2 ">
+              <a href="#basketballcourt">Covered Court</a>
             </button>
           </div>
           <div class="Ame">
-            <button href="#TennisCourt" class="Ame4_2 d-inline">
-              <a href="#TennisCourt">Tennis Court</a>
+            <button href="#TennisCourt" class="Ame4_2 ">
+              <a href="#tenniscourt">Tennis Court</a>
             </button>
           </div></div>
         </div>
@@ -64,7 +64,8 @@
 
     <div class="detailed_amenities">
       <!--Clubhouse-->
-      <div class="amenityparts">
+      <div class="pt-5" id="clubhouse">
+      <div class="amenityparts" >
         <div class="amenity_image">
           <img src="images/bg1.jpg" alt="Laguna Hills Clubhouse">
         </div>
@@ -102,8 +103,9 @@
           </div>
 
         </div>
-      </div>
+      </div></div>
       <!--END--Clubhouse-->
+      <div class="pt-5" id="swimmingpool">
       <!--Swimming Pool-->
       <div class="amenityparts">
         <div class="amenity_image">
@@ -141,11 +143,11 @@
             <div class="carousel-cell"><img src="Images/Pool2.jpg"></div>
           </div>
         </div>
-      </div>
+      </div></div>
       <!--END--Swimming Pool-->
-
+      <div class="pt-5" id="tenniscourt">
       <!--Tennis Courts-->
-      <div class="amenityparts" id="TennisCourt">
+      <div class="amenityparts">
         <div class="amenity_image">
           <img src="images/bg1.jpg" alt="Laguna Hills Clubhouse">
         </div>
@@ -173,10 +175,11 @@
             <div class="carousel-cell"><img src="Images/amenities-bg.jpg"></div>
           </div>
         </div>
-      </div>
+      </div></div>
       <!--END--Tennis Courts-->
+      <div class="pt-10" id="basketballcourt">
       <!--Basketball Courts-->
-      <div class="amenityparts">
+      <div class="amenityparts" id="basketballcourt">
         <div class="amenity_image">
           <img src="images/bg1.jpg" alt="Laguna Hills Clubhouse">
         </div>
@@ -205,7 +208,7 @@
 
           </div>
         </div>
-      </div>
+      </div></div>
       <!--END--Basketball Courts-->
     </div>
   </section>
