@@ -3,7 +3,7 @@
 
  <!-- LOGIN -->
 
- <section class="login_container " id="Logging in">
+ <section class="login_container " id="Logging_in">
 
             <div class="modals-content">
                 <div class="login-content ">
@@ -57,11 +57,9 @@
                             <form class="login_form" id="form" action="includes/login-act.php" method="POST" novalidate>
                                 <div class="form_input ">
                                     <div class="login_input_field mb-4">
-                                        <label for="Email" class="mb-2"></i>Email</label>
+                                        <label for="text" class="mb-2"></i>Email/Username</label>
                                         <div class="">
-                                            <input class="form-control" type="email" id="email" placeholder="example@gmail.com" name="email" />
-                                            <div class="invalid-tooltip text-white">Please add a subject.</div>
-                                        </div>
+                                            <input class="form-control" type="text" id="emailorusername" placeholder="enter you username or email" name="emailorusername" />
                                     </div>
                                 </div>
                                 <div class=" login_input_field ">
@@ -87,6 +85,5 @@
   </section>
     <!-- END--LOGIN MODAL -->
     
-
 
 <?php require_once('footer.php'); ?>
