@@ -1,25 +1,29 @@
 <?php
-    session_start();
+    session_start(); 
 require_once('connection.php');
 
 if(isset($_POST['login_button']))
 {
-    if(empty($_POST['email'])||empty($_POST['password']) )
+    if(empty($_POST['emailorusername'])||empty($_POST['password']) )
     {
         header("location: ../Login.php?Empty");
         exit();
     }
     else
     {
-        $Email = mysqli_real_escape_string($con,$_POST['email']);
+        $EU = mysqli_real_escape_string($con,$_POST['emailorusername']);
         $Password = mysqli_real_escape_string($con,$_POST['password']);
 
-        $Query = " select * from employee_accounts where Employee_Email ='".$Email."'";
-        $result = mysqli_query($con,$Query);
+        $query_owner= " select * from owner_accounts where owner_email = '".$EU."' or owner_username = '".$EU."'";
+        $query_admin=" select * from admin_accounts where admin_email = '".$EU."' or admin_username = '".$EU."'";
+
+        $result_owner = mysqli_query($con,$query_owner);
+        $result_admin = mysqli_query($con,$query_admin);
+
         
-        if($row=mysqli_fetch_assoc($result))
+        if($row=mysqli_fetch_assoc($result_owner))
         {
-            $HashPass = password_verify($Password,$row['Employee_Password']);
+            $HashPass = password_verify($Password,$row['owner_password']);
 
             if($HashPass==false)
             {
@@ -28,15 +32,35 @@ if(isset($_POST['login_button']))
             }
             elseif($HashPass==true)
             {
-                $_SESSION['Employee_U_D']=$row['Employee_Account_ID'];
-                $_SESSION['Employee_FName']=$row['Employee_FName'];
-                $_SESSION['Employee_LName']=$row['Employee_LName'];
-                $_SESSION['Employee_Position']=$row['Employee_Position'];
-                $_SESSION['Employee_Email']=$row['Employee_Email'];
-                $_SESSION['Employee_Password']=$row['Employee_Password'];
+                $_SESSION['owner_I_D']=$row['owner_id'];
+                $_SESSION['owner_fName']=$row['owner_fname'];
+                $_SESSION['owner_lName']=$row['owner_lname'];
+                $_SESSION['owner_lName']=$row['owner_username'];
+                $_SESSION['owner_email']=$row['owner_email'];
+                $_SESSION['owner_password']=$row['owner_password'];
+                header("location: ../homeowneraccountconnect.php?Welcome");
+                exit();
+            }
+        }
 
+        else  if($row=mysqli_fetch_assoc($result_admin))
+        {
+            $HashPass = password_verify($Password,$row['admin_password']);
 
-                header("location: ../account.php?Well");
+            if($HashPass==false)
+            {
+                header("location: ../Login.php?P_Invalid");
+                exit();
+            }
+            elseif($HashPass==true)
+            {
+                $_SESSION['admin_I_D']=$row['admin_id'];
+                $_SESSION['admin_fName']=$row['admin_fname'];
+                $_SESSION['admin_lName']=$row['admin_lname'];
+                $_SESSION['admin_lName']=$row['admin_username'];
+                $_SESSION['admin_email']=$row['admin_email'];
+                $_SESSION['admin_password']=$row['admin_password'];
+                header("location: ../adminaccountconnect.php?Welcome");//change this to the homepage of the admin panel
                 exit();
             }
         }
@@ -45,8 +69,8 @@ if(isset($_POST['login_button']))
             header("location: ../Login.php?U_Invalid");
             exit();
         }
-    }
 
+    }
 
 }
 else
@@ -54,4 +78,3 @@ else
     header("location: ../Login.php");
     exit();
 }
-?> 

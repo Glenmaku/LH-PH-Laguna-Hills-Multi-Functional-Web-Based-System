@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <h1>Admin Account</h1>
+    <h1>Homeowner Account</h1>
     <section><!--SECTION NG BUONG CONTENT-->
 
         <div><!--PINAKA TOP- hingin saken layout Searchbar, Add new account button - -->
@@ -19,11 +19,15 @@
                 <input type="text" name="search" value = "<?php if(isset($_GET['search'])){ echo $_GET['search'];
                     }?>" class="form-control" placeholder="Search Data">
 
-                <button type="Submit" id="search_admin_data">Search</button>
+                <button type="Submit" id="search_owner_data">Search</button>
             </div>
         </form>
 
-            <a name="AddAdminAccount" href="AddAdminAccount.php">Add New Account +</a><!--ETO UNG BUTTON PATUNGO SA ADD ACCOUNT PAGAWA NALANG NA BUTTON IF DI KERI -->
+           <a name="AssignOwnerLot" href="AssignLot.php">Assign Owner Lot</a><!--ETO UNG BUTTON PATUNGO SA ASSIGN LOTS PAGAWA NALANG NA BUTTON IF DI KERI -->
+        <a name="AddOwnerAccount" href="AddOwnerAccount.php">Add New Account +</a><!--ETO UNG BUTTON PATUNGO SA ADD ACCOUNT PAGAWA NALANG NA BUTTON IF DI KERI -->
+
+         
+
         </div>
         <div><!--DISPLAY NG MGA ALERTS HERE-->
             <!--success update-->
@@ -51,17 +55,18 @@
         <div><!--for the table-->
             <?php
             require_once('includes/connection.php');
-            $query = "SELECT * FROM admin_accounts";
+            $query = "SELECT * FROM owner_accounts";
             $result = mysqli_query($con, $query);
             ?>
-            <table id="Admin_Account_Table" class="Admin_Account_Table">
+            <table id="Owner_Account_Table" class="Owner_Account_Table">
                 <thread>
                     <tr>
-                        <th>Admin ID</th>
+                        <th>Owner ID</th>
                         <th>First Name</th>
                         <th>Last Name</th>
                         <th>Username</th>
                         <th>Email</th>
+                        <th>Date Added</th>
                         <th>View</th>
                         <th>Edit</th>
                         <th>Delete</th>
@@ -69,7 +74,7 @@
                 </thread>
                 <?php if(isset($_GET['search'])){
                     $filtervalues = $_GET['search'];
-                    $queryfilter = "SELECT * FROM admin_accounts WHERE CONCAT(admin_id, admin_fname, admin_lname, admin_username,admin_email) LIKE '%$filtervalues%'";
+                    $queryfilter = "SELECT * FROM owner_accounts WHERE CONCAT(owner_id, owner_fname, owner_lname, owner_username,owner_email,owner_date_added) LIKE '%$filtervalues%'";
                     
                     $resultfilter =mysqli_query($con,$queryfilter);
                     if(mysqli_num_rows($resultfilter)>0){
@@ -78,14 +83,16 @@
                         ?>
                         <tbody>
                         <tr>
-                            <td><?= $items['admin_id'];?></td>
-                            <td><?= $items['admin_fname'];?></td>
-                            <td><?= $items['admin_lname'];?></td>
-                            <td><?= $items['admin_username'];?></td>
-                            <td><?= $items['admin_email'];?></td>
-                            <td> <button data-bs-toggle="modal" data-bs-target="#adminviewmodal" id="btn_view_admin_acc" class="btn_view_admin_acc" name="edit_button">VIEW</button> </td><!--VIEW-EYE ICON-->
-                                <td> <button data-bs-toggle="modal" data-bs-target="#adminupdatemodal" id="btn_edit_admin_acc" class="btn_edit_admin_acc" name="edit_button">EDIT</button> </td><!--EDIT ICON-->
-                                <td> <button data-bs-toggle="modal" data-bs-target="#admindeletemodal" id="btn_delete_admin_acc" class="btn_delete_admin_acc" name="delete_button">DELETE</button> </td><!--TRASHICON-->
+                            <td><?= $items['owner_id'];?></td>
+                            <td><?= $items['owner_fname'];?></td>
+                            <td><?= $items['owner_lname'];?></td>
+                            <td><?= $items['owner_username'];?></td>
+                            <td><?= $items['owner_email'];?></td>
+                            <td><?= $items['owner_date_added'];?></td>
+
+                            <td> <button data-bs-toggle="modal" data-bs-target="#ownerviewmodal" id="btn_view_owner_acc" class="btn_view_owner_acc" name="view_button">VIEW</button> </td><!--VIEW-EYE ICON-->
+                                <td> <button data-bs-toggle="modal" data-bs-target="#ownerupdatemodal" id="btn_edit_owner_acc" class="btn_edit_owner_acc" name="edit_button">EDIT</button> </td><!--EDIT ICON-->
+                                <td> <button data-bs-toggle="modal" data-bs-target="#ownerdeletemodal" id="btn_delete_owner_acc" class="btn_delete_owner_acc" name="delete_button">DELETE</button> </td><!--TRASHICON-->
                         </tr></tbody>
 <?php
                     }}
@@ -98,14 +105,15 @@
                         <tbody>
                          
                             <tr>
-                                <td> <?php echo $row['admin_id']; ?> </td>
-                                <td> <?php echo $row['admin_fname']; ?> </td>
-                                <td> <?php echo $row['admin_lname']; ?> </td>
-                                <td> <?php echo $row['admin_username']; ?> </td>
-                                <td> <?php echo $row['admin_email']; ?> </td>
-                                <td> <button data-bs-toggle="modal" data-bs-target="#adminviewmodal" id="btn_view_admin_acc" class="btn_view_admin_acc" name="edit_button">VIEW</button> </td><!--VIEW-EYE ICON-->
-                                <td> <button data-bs-toggle="modal" data-bs-target="#adminupdatemodal" id="btn_edit_admin_acc" class="btn_edit_admin_acc" name="edit_button">EDIT</button> </td><!--EDIT ICON-->
-                                <td> <button data-bs-toggle="modal" data-bs-target="#admindeletemodal" id="btn_delete_admin_acc" class="btn_delete_admin_acc" name="delete_button">DELETE</button> </td><!--TRASHICON-->
+                                <td> <?php echo $row['owner_id']; ?> </td>
+                                <td> <?php echo $row['owner_fname']; ?> </td>
+                                <td> <?php echo $row['owner_lname']; ?> </td>
+                                <td> <?php echo $row['owner_username']; ?> </td>
+                                <td> <?php echo $row['owner_email']; ?> </td>
+                                <td> <?php echo $row['owner_date_added']; ?> </td>
+                                <td> <button data-bs-toggle="modal" data-bs-target="#ownerviewmodal" id="btn_view_owner_acc" class="btn_view_owner_acc" name="view_button">VIEW</button> </td><!--VIEW-EYE ICON-->
+                                <td> <button data-bs-toggle="modal" data-bs-target="#ownerupdatemodal" id="btn_edit_owner_acc" class="btn_edit_owner_acc" name="edit_button">EDIT</button> </td><!--EDIT ICON-->
+                                <td> <button data-bs-toggle="modal" data-bs-target="#ownerdeletemodal" id="btn_delete_owner_acc" class="btn_delete_owner_acc" name="delete_button">DELETE</button> </td><!--TRASHICON-->
                             </tr>
                         </tbody>
 
@@ -114,7 +122,7 @@
                 } else {
                     ?><tbody>
                     <tr>
-                        <td colspan="8">No record found</td>
+                        <td colspan="9">No record found</td>
                     <tr></tbody>
                     <?php
                 }  ?>
@@ -124,9 +132,11 @@
     </section>
     <!--////////////////////////////////////////////////////////////////////////////-->
     <!-- POP UP MODALSSS-->
+
+
     <!-- UpdateModal -->
 
-    <div class="modal fade" id="adminupdatemodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="ownerupdatemodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -136,30 +146,30 @@
                     </button>
                 </div>
 
-                <form action="includes/Act-UpdateAdmin.php" method="POST">
+                <form action="includes/Act-UpdateOwner.php" method="POST">
                     <div class="modal-body">
-                        <input type="hidden" name="adminupdate_id" id="adminupdate_id">
+                        <input type="hidden" name="ownerupdate_id" id="ownerupdate_id">
+                        <div class="form-group">
+                            <label>Username</label>
+                            <input type="text" name="owner_username" id="owner_username" class="form-control" disabled>
                         <div class="form-group">
                             <label>First Name</label>
-                            <input type="text" name="admin_fname" id="admin_fname" class="form-control" placeholder="">
+                            <input type="text" name="owner_fname" id="owner_fname" class="form-control" placeholder="">
                         </div>
                         <div class="form-group">
                             <label>Last Name</label>
-                            <input type="text" name="admin_lname" id="admin_lname" class="form-control" placeholder="">
+                            <input type="text" name="owner_lname" id="owner_lname" class="form-control" placeholder="">
                         </div>
-                        <div class="form-group">
-                            <label>Username</label>
-                            <input type="text" name="admin_username" id="admin_username" class="form-control" placeholder="">
                         </div>
                         <div class="form-group">
                             <label>Email</label>
-                            <input type="text" name="admin_email" id=admin_email class="form-control" placeholder="">
+                            <input type="text" name="owner_email" id=owner_email class="form-control" placeholder="">
                         </div>
 
                     </div>
-                    <div class="mo dal-footer">
+                    <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary" name="btn_updateadminacc">Save Data</button>
+                        <button type="submit" class="btn btn-primary" name="btn_updateowneracc">Save Data</button>
                     </div>
                 </form>
             </div>
@@ -170,7 +180,7 @@
 
     <!-- DeleteModal -->
 
-    <div class="modal fade" id="admindeletemodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="ownerdeletemodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -180,14 +190,14 @@
                     </button>
                 </div>
 
-                <form action="includes/Act-DeleteAdmin.php" method="POST">
+                <form action="includes/Act-DeleteOwner.php" method="POST">
                     <div class="modal-body">
-                        <input type="hidden" name="admindelete_id" id="admindelete_id">
+                        <input type="hidden" name="ownerdelete_id" id="ownerdelete_id">
                         <h4>Are you sure you want to delete this account?</h4>
                     </div>
                     <div class="mo dal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
-                        <button type="submit" class="btn btn-primary" name="btn_deleteadminacc">Proceed</button>
+                        <button type="submit" class="btn btn-primary" name="btn_deleteowneracc">Proceed</button>
                     </div>
                 </form>
             </div>
@@ -195,19 +205,19 @@
     </div>
     <!-- ViewModal -->
 
-    <div class="modal fade" id="adminviewmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="ownerviewmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">View Personal Information</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Personal Information</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
 
-                <form action="includes/Act-ViewAdmin.php" method="POST">
+                <form action="includes/Act-ViewOwner.php" method="POST">
                     <div class="modal-body">
-                        <input type="hidden" name="adminview_id" id="adminview_id">
+                        <input type="hidden" name="ownerview_id" id="ownerview_id">
                         <h4>View Information</h4>
                     </div>
                     <div class="mo dal-footer">
@@ -237,8 +247,8 @@
     <!--SCRIPT FOR UPDATE ACCOUNT-->
     <script>
         $(document).ready(function() {
-            $('.btn_edit_admin_acc').on('click', function() {
-                $('#adminupdatemodal').modal('show');
+            $('.btn_edit_owner_acc').on('click', function() {
+                $('#ownerupdatemodal').modal('show');
 
                 $tr = $(this).closest('tr');
 
@@ -248,11 +258,10 @@
 
                 console.log(data);
 
-                $('#adminupdate_id').val(data[0]);
-                $('#admin_fname').val(data[1]);
-                $('#admin_lname').val(data[2]);
-                $('#admin_username').val(data[3]);
-                $('#admin_email').val(data[4]);
+                $('#owner_username').val(data[3]);
+                $('#owner_fname').val(data[1]);
+                $('#owner_lname').val(data[2]);
+                $('#owner_email').val(data[4]);
                 
 
                 
@@ -264,8 +273,8 @@
     <!--SCRIPT FOR DELETE ACCOUNT-->
     <script>
         $(document).ready(function() {
-            $('.btn_delete_admin_acc').on('click', function() {
-                $('#admindeletemodal').modal('show');
+            $('.btn_delete_owner_acc').on('click', function() {
+                $('#ownerdeletemodal').modal('show');
 
                 $tr = $(this).closest('tr');
 
@@ -275,7 +284,7 @@
 
                 console.log(data);
 
-                $('#admindelete_id').val(data[0]);
+                $('#ownerdelete_id').val(data[0]);
 
             });
         });
@@ -284,8 +293,8 @@
     <!--SCRIPT FOR VIEW ACCOUNT-->
     <script>
         $(document).ready(function() {
-            $('.btn_view_admin_acc').on('click', function() {
-                $('#adminviewmodal').modal('show');
+            $('.btn_view_owner_acc').on('click', function() {
+                $('#ownerviewmodal').modal('show');
 
                 $tr = $(this).closest('tr');
 
@@ -295,7 +304,7 @@
 
                 console.log(data);
 
-                $('#adminview_id').val(data[0]);
+                $('#ownerview_id').val(data[0]);
 
             });
         });
