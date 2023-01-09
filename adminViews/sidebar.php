@@ -42,9 +42,9 @@
                     </li>
 
                     <li>
-                        <a href="">
-                            <i class="fa-solid fa-user-plus"></i>
-                            <span class="link-name">Create Account</span>
+                        <a href="#account-records" onclick="showAllAccountRecord()">
+                            <i class="fa-regular fa-clipboard"></i>
+                            <span class="link-name">Account Records</span>
                         </a>
                     </li>
 
