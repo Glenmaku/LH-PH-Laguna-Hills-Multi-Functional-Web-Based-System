@@ -71,22 +71,26 @@
 	transition: 1.5s;
 	vertical-align: middle;
 }
+
 /*AMENITIES*/
 .ame_information{
 	padding: 30px;
-	flex-shrink: 1;
 	flex-wrap: wrap;
+
+	display: flex!important;
 }
 .amenitiesarea {
 	display: flex;
 	flex-direction: row;
 }
+
 /*AMENITIES*//*AMENITIES*/
 
 .textss{
 	display: flex;
 	flex-shrink: 1;
 }
+
 .pan1{
 	width: 100%;
 	display: flex;	
@@ -109,14 +113,14 @@
 	margin: 0.3vw;
 }
 
-.Ame a, .Ame1_2:hover a, .Ame2_2:hover a, .Ame3_2:hover a, .Ame4_2:hover a{
+ .Ame1_2:hover a, .Ame2_2:hover a, .Ame3_2:hover a, .Ame4_2:hover a{
 	font-size: 35px;
 }
 .ame_panel2 {
 	width: 100%;
 	margin-left: 0px;
 }
-.Ame a, .Ame1_2:hover a, .Ame2_2:hover a, .Ame3_2:hover a, .Ame4_2:hover a{
+ .Ame1_2:hover a, .Ame2_2:hover a, .Ame3_2:hover a, .Ame4_2:hover a{
 	font-size: 38px;
 }
 /*AMENITIES*//*AMENITIES*/
@@ -144,6 +148,7 @@
 	background-color:white;
 	color: white;
 	border-radius: 5px;
+
 }
 .amenity_image{
 	overflow: hidden;
@@ -166,7 +171,7 @@
 	font-size: 25px;
 }
 .amenity_description h2{
-	font-size: 30px;
+	font-size: 50px;
 	font-family: 'Great Vibes';
 }
 .amenity_description ul{
@@ -220,12 +225,14 @@
 	}
 	.panelss{
 		height: auto!important;
-		flex-direction: row;
+		flex-direction: column!important;
 		align-content: flex-end;
-		margin-top: -400px;
+		margin-top: 0;
 	}
 	.pan1{
 		width: 50%;
+		flex-direction: column!important;
+
 	}
 }
 @media (min-width:900px) {
@@ -408,6 +415,37 @@ p {
 /*END--CONTACT FORM*/
 
 /*END CONTACT PAGE*/
+@media (max-width:600px){
+	.panelss{
+		flex-direction: column!important;
+		display: flex;
+	}
+	.pan1{
+		flex-direction: column!important;
+		display: flex;
+		width: 75vw!important;
+		margin-right: 30px;
+	}
+	.Ame1_2, .Ame1_2, .Ame2_2, .Ame2_2:hover, .Ame3_2, .Ame3_2:hover, .Ame4_2, .Ame4_2:hover{
+		width: 100%!important;
+	}
+	.ame_information{
+		width: 80vw!important;
+	}
+	.EEM_Icons{
+		width: 100%;
+	}
+	.EEM_Icons .bx{
+		font-size: 9vw!important;
+	}
+	.amenity_description h5{
+		font-size: 20px;
+	}
+	.amenity_description h2{
+		font-size: 10vw!important;
+		font-family: 'Great Vibes';
+	}
+}
 @media (max-width:390px) {
 	.section7 h1{
 		font-size: 20vw;
@@ -448,14 +486,14 @@ p {
 		width: 43vw;
 		margin: 5px;
 	}
-	.Ame a, .Ame1_2:hover a, .Ame2_2:hover a, .Ame3_2:hover a, .Ame4_2:hover a{
+	 .Ame1_2:hover a, .Ame2_2:hover a, .Ame3_2:hover a, .Ame4_2:hover a{
 		font-size: 35px;
 	}
 	.ame_panel2 {
 		width: 100%;
 		margin-left: 0px;
 }
-	.Ame a, .Ame1_2:hover a, .Ame2_2:hover a, .Ame3_2:hover a, .Ame4_2:hover a{
+	 .Ame1_2:hover a, .Ame2_2:hover a, .Ame3_2:hover a, .Ame4_2:hover a{
 		font-size: 38px;
 	}
 }
@@ -465,7 +503,7 @@ p {
 		height: 20vw;
 		width: 20vw;
 	}
-	.Ame a, .Ame1_2:hover a, .Ame2_2:hover a, .Ame3_2:hover a, .Ame4_2:hover a{
+	 .Ame1_2:hover a, .Ame2_2:hover a, .Ame3_2:hover a, .Ame4_2:hover a{
 		font-size: 35px;
 	}
 	.ame_panel2 {
