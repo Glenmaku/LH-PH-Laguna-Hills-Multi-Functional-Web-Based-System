@@ -3025,6 +3025,11 @@
                     <tr>
                         <th>Block</th>
                         <th>Lot</th>
+                        <th>Street</th>
+                        <th>Status</th>
+                        <th>Area in Sqm</th>
+                        <th>Price</th>
+                        <th>Remarks</th>
                     </tr>
                 </table>
             </form>
