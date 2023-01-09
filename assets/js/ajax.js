@@ -52,4 +52,16 @@ function showAllAccountRecord(){  //sidebar
         }
     });
 }
-  
+
+
+
+function showAllAddAccount(){  //add account in Account records
+    $.ajax({
+        url:"/adminViews/AddAdminAccount.php",
+        method:"post",
+        data:{record:1},
+        success:function(data){
+            $('.accountContent').html(data);
+        }
+    });
+}

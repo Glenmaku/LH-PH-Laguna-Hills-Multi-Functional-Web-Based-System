@@ -2,7 +2,7 @@
     <div class="record-title">
         <h1>ACCOUNT RECORDS</h1>
     </div>
-    <section class="record-content"><!--SECTION NG BUONG CONTENT-->
+    <section class="record-content accountContent"><!--SECTION NG BUONG CONTENT-->
 
         <div><!--PINAKA TOP- hingin saken layout Searchbar, Add new account button - -->
         <form action="" method="GET">
@@ -11,7 +11,7 @@
                     }?>" class="form-control" placeholder="Search Data">
 
                 <button type="Submit" id="search_admin_data"><i class="fa-solid fa-magnifying-glass"></i></button>
-                <button id="add-account"><a name="AddAdminAccount" href="/adminViews/AddAdminAccount.php"><i class="fa-solid fa-user-plus"></i> Add New Account</a><!--ETO UNG BUTTON PATUNGO SA ADD ACCOUNT PAGAWA NALANG NA BUTTON IF DI KERI --></button>
+                <button id="add-account"><a name="AddAdminAccount" href="#add-account" onclick="showAllAddAccount()"><i class="fa-solid fa-user-plus"></i> Add New Account</a><!--ETO UNG BUTTON PATUNGO SA ADD ACCOUNT PAGAWA NALANG NA BUTTON IF DI KERI --></button>
             </div>
         </form>
         </div>
@@ -116,7 +116,7 @@
     <!-- POP UP MODALSSS-->
     <!-- UpdateModal -->
 
-    <div class="modal fade" id="adminupdatemodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="adminupdatemodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"  hidden>
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -160,7 +160,7 @@
 
     <!-- DeleteModal -->
 
-    <div class="modal fade" id="admindeletemodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="admindeletemodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" hidden>
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -185,7 +185,7 @@
     </div>
     <!-- ViewModal -->
 
-    <div class="modal fade" id="adminviewmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="adminviewmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" hidden>
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">

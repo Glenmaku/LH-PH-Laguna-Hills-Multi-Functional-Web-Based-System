@@ -809,7 +809,8 @@ svg{
     border-radius: 5px;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
-.record-account .record-title h1{
+.record-account .record-title h1,
+.add-account-title h1{
     font-family: 'Raleway', sans-serif;
     font-weight: 700;
     text-align: center;
@@ -868,6 +869,7 @@ svg{
 .Admin_Account_Table{
     margin-top: 20px;
     width: 100%;
+    border-collapse: collapse;
     
 }
 .Admin_Account_Table th{
@@ -880,8 +882,12 @@ svg{
 .Admin_Account_Table td{
     font-family: 'Raleway', sans-serif;
     font-weight: 700;
-    font-size: 16px; 
+    font-size: 16px;
+    text-align: center;
+    border-bottom: 1px solid;
+
 }
+
 
 .btn_view_admin_acc,
 .btn_edit_admin_acc,
@@ -908,10 +914,26 @@ svg{
     cursor: pointer;
 }
 
+.add-form {
+    margin-top: 10px;
+}
+.add-form label{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
 
-
-
-
+}
+.add-form input{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    width: 30%;
+    padding: 10px;
+    border: 0;
+    border-radius: 5px;
+    background-color: var(--light-blue);
+    text-align: justify;
+}
 
 
 
