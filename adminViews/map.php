@@ -3021,7 +3021,12 @@
         </div>
         <div class="lot-info">
             <form method="$_POST">
-
+                <table>
+                    <tr>
+                        <th>Block</th>
+                        <th>Lot</th>
+                    </tr>
+                </table>
             </form>
 
         </div>
