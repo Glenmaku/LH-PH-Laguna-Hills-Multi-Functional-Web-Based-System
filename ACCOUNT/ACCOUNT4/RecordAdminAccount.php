@@ -1,4 +1,15 @@
-<div class="record-account">
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+
+<body>
     <h1>Admin Account</h1>
     <section><!--SECTION NG BUONG CONTENT-->
 
@@ -221,7 +232,7 @@
     <!--ETO JQUERY BAKA MERON NA U NETO-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-     
+    
 
     <!--SCRIPT FOR UPDATE ACCOUNT-->
     <script>
@@ -289,4 +300,11 @@
             });
         });
     </script>
-</div>
+
+
+
+
+
+</body>
+
+</html>
