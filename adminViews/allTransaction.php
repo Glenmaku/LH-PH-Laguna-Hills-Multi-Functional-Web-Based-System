@@ -23,7 +23,7 @@
                             <h2>ASSOCIATION DUES</h2>
                         </div>
                         <div class="hide-option">
-                            <i class="fa-regular fa-eye-slash remove-option "></i></box-icon>
+                            <i class="fa-regular fa-eye-slash remove-option "></i>
                         </div>
                     </div>
                     <div class="lot-number">
@@ -84,7 +84,7 @@
                             <h2>RESERVATION</h2>
                         </div>
                         <div class="hide-option">
-                            <i class="fa-regular fa-eye-slash remove-option "></i></box-icon>
+                            <i class="fa-regular fa-eye-slash remove-option "></i>
                         </div>
                     </div>
 
@@ -173,7 +173,7 @@
                             <h2>OTHER SERVICES</h2>
                         </div>
                         <div class="hide-option">
-                            <i class="fa-regular fa-eye-slash"></i></box-icon>
+                            <i class="fa-regular fa-eye-slash"></i>
                         </div>
                     </div>
                     <div class="other-transaction-table">

@@ -801,22 +801,112 @@ svg{
 }
 
 
-
-.record-account{
-    position: block;
-    margin-left: 300px;  
+.record-account .record-title{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 40px;
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.record-account .record-title h1{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    text-align: center;
+    color: var(--darkgreen);
 }
 
+.record-content{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 40px;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
 
+.input-group input{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: var(--darkgreen);
+    width: 40%;
+    margin-top: 5px;
+    padding: 8px;
+    border-radius: 5px;
+    border: 0;
+    background: var(--light-blue);
+}
 
+.input-group #search_admin_data{
+    width: 10%;
+    background-color: var(--darkgreen);
+    border: 0;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 19px;
+    padding: 5px ;
+    cursor: pointer;
+}
 
+.input-group a{
+    text-decoration: none;
+    color: #fff;  
+}
+.input-group #add-account{
+    width: 22%;
+    background-color: var(--darkgreen);
+    border: 0;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 19px;
+    padding: 8px ;
+    margin-left: 27%;
+    text-decoration: none;
+}
 
+.Admin_Account_Table{
+    margin-top: 20px;
+    width: 100%;
+    
+}
+.Admin_Account_Table th{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--darkgreen);
+}
 
+.Admin_Account_Table td{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    font-size: 16px; 
+}
 
+.btn_view_admin_acc,
+.btn_edit_admin_acc,
+.btn_delete_admin_acc{
+    width: 100%;
+    background-color: var(--darkgreen);
+    border: 0;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 15px;
+    padding: 5px ;
+    cursor: pointer;
+}
 
-
-
-
+.account-record-download{
+    width: 15%;
+    background-color: var(--darkgreen);
+    border: 0;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 16px;
+    padding: 10px ;
+    margin-top: 15px;
+    cursor: pointer;
+}
 
 
 

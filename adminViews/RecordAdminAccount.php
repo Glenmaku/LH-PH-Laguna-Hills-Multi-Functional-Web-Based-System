@@ -1,8 +1,17 @@
-<div class="record-account">
-    <div class="record-title">
-        <h1>ACCOUNT RECORDS</h1>
-    </div>
-    <section class="record-content"><!--SECTION NG BUONG CONTENT-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Admin Account</h1>
+    <section><!--SECTION NG BUONG CONTENT-->
 
         <div><!--PINAKA TOP- hingin saken layout Searchbar, Add new account button - -->
         <form action="" method="GET">
@@ -10,10 +19,11 @@
                 <input type="text" name="search" value = "<?php if(isset($_GET['search'])){ echo $_GET['search'];
                     }?>" class="form-control" placeholder="Search Data">
 
-                <button type="Submit" id="search_admin_data"><i class="fa-solid fa-magnifying-glass"></i></button>
-                <button id="add-account"><a name="AddAdminAccount" href="/adminViews/AddAdminAccount.php"><i class="fa-solid fa-user-plus"></i> Add New Account</a><!--ETO UNG BUTTON PATUNGO SA ADD ACCOUNT PAGAWA NALANG NA BUTTON IF DI KERI --></button>
+                <button type="Submit" id="search_admin_data">Search</button>
             </div>
         </form>
+
+            <a name="AddAdminAccount" href="AddAdminAccount.php">Add New Account +</a><!--ETO UNG BUTTON PATUNGO SA ADD ACCOUNT PAGAWA NALANG NA BUTTON IF DI KERI -->
         </div>
         <div><!--DISPLAY NG MGA ALERTS HERE-->
             <!--success update-->
@@ -45,7 +55,7 @@
             $result = mysqli_query($con, $query);
             ?>
             <table id="Admin_Account_Table" class="Admin_Account_Table">
-                <thread id="admin-table-label">
+                <thread>
                     <tr>
                         <th>Admin ID</th>
                         <th>First Name</th>
@@ -73,9 +83,9 @@
                             <td><?= $items['admin_lname'];?></td>
                             <td><?= $items['admin_username'];?></td>
                             <td><?= $items['admin_email'];?></td>
-                            <td> <button data-bs-toggle="modal" data-bs-target="#adminviewmodal" id="btn_view_admin_acc" class="btn_view_admin_acc" name="edit_button"><i class="fa-solid fa-eye"></i></button></td><!--VIEW-EYE ICON-->
-                                <td> <button data-bs-toggle="modal" data-bs-target="#adminupdatemodal" id="btn_edit_admin_acc" class="btn_edit_admin_acc" name="edit_button"><i class="fa-solid fa-user-pen"></i></button></td><!--EDIT ICON-->
-                                <td> <button data-bs-toggle="modal" data-bs-target="#admindeletemodal" id="btn_delete_admin_acc" class="btn_delete_admin_acc" name="delete_button"><i class="fa-solid fa-trash"></i></button></td><!--TRASHICON-->
+                            <td> <button data-bs-toggle="modal" data-bs-target="#adminviewmodal" id="btn_view_admin_acc" class="btn_view_admin_acc" name="edit_button">VIEW</button> </td><!--VIEW-EYE ICON-->
+                                <td> <button data-bs-toggle="modal" data-bs-target="#adminupdatemodal" id="btn_edit_admin_acc" class="btn_edit_admin_acc" name="edit_button">EDIT</button> </td><!--EDIT ICON-->
+                                <td> <button data-bs-toggle="modal" data-bs-target="#admindeletemodal" id="btn_delete_admin_acc" class="btn_delete_admin_acc" name="delete_button">DELETE</button> </td><!--TRASHICON-->
                         </tr></tbody>
 <?php
                     }}
@@ -93,9 +103,9 @@
                                 <td> <?php echo $row['admin_lname']; ?> </td>
                                 <td> <?php echo $row['admin_username']; ?> </td>
                                 <td> <?php echo $row['admin_email']; ?> </td>
-                                <td> <button data-bs-toggle="modal" data-bs-target="#adminviewmodal" id="btn_view_admin_acc" class="btn_view_admin_acc" name="edit_button"><i class="fa-solid fa-eye"></i></button></td><!--VIEW-EYE ICON-->
-                                <td> <button data-bs-toggle="modal" data-bs-target="#adminupdatemodal" id="btn_edit_admin_acc" class="btn_edit_admin_acc" name="edit_button"><i class="fa-solid fa-user-pen"></i></button> </td><!--EDIT ICON-->
-                                <td> <button data-bs-toggle="modal" data-bs-target="#admindeletemodal" id="btn_delete_admin_acc" class="btn_delete_admin_acc" name="delete_button"><i class="fa-solid fa-trash"></i></button> </td><!--TRASHICON-->
+                                <td> <button data-bs-toggle="modal" data-bs-target="#adminviewmodal" id="btn_view_admin_acc" class="btn_view_admin_acc" name="edit_button">VIEW</button> </td><!--VIEW-EYE ICON-->
+                                <td> <button data-bs-toggle="modal" data-bs-target="#adminupdatemodal" id="btn_edit_admin_acc" class="btn_edit_admin_acc" name="edit_button">EDIT</button> </td><!--EDIT ICON-->
+                                <td> <button data-bs-toggle="modal" data-bs-target="#admindeletemodal" id="btn_delete_admin_acc" class="btn_delete_admin_acc" name="delete_button">DELETE</button> </td><!--TRASHICON-->
                             </tr>
                         </tbody>
 
@@ -110,7 +120,7 @@
                 }  ?>
             </table>
         </div>
-        <button class="account-record-download"><i class="fa-solid fa-download"></i> Download</button><!--button to open a pdf to be downloaded-->
+        <button><i class=""></i>Download</button><!--button to open a pdf to be downloaded-->
     </section>
     <!--////////////////////////////////////////////////////////////////////////////-->
     <!-- POP UP MODALSSS-->
@@ -222,7 +232,7 @@
     <!--ETO JQUERY BAKA MERON NA U NETO-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-     
+    
 
     <!--SCRIPT FOR UPDATE ACCOUNT-->
     <script>
@@ -290,4 +300,11 @@
             });
         });
     </script>
-</div>
+
+
+
+
+
+</body>
+
+</html>
