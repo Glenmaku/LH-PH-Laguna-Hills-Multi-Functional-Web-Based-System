@@ -3020,6 +3020,9 @@
 </svg>
         </div>
         <div class="lot-info">
+            <form method="$_POST">
+
+            </form>
 
         </div>
 </div>
