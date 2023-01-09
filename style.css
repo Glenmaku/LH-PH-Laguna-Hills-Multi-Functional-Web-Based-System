@@ -825,15 +825,17 @@ section .loc {
 	border-radius: 50px;
 	background: #085D40;
 }
+.forfa{
+	font-size: 45px!important;
+}
 .iconbigs {
 	margin: auto;
-	font-size: 5vw;
+	font-size: 50px;
 	height: 80px;
 	align-items: center;
 	text-align: center;
 	color: #27ae60;
 	text-shadow: 6px 6px 0px rgba(0, 0, 0, 0.2);
-	
 	width: 80px;
 	border-radius: 50px;
 }
@@ -1014,7 +1016,9 @@ section .loc {
 	font-size: 100px;
 	color: #27ae60;
 }
-
+.feedback_container .feedback_slide .bxs-user-circle{
+	font-size: 80px;
+}
 .feedback_container .feedback_slide .person {
 	display: flex;
 	align-items: center;
@@ -1044,8 +1048,8 @@ section .loc {
 
 .feedback_container .feedback_slide img {
 	margin: 10px;
-	height: 100px;
-	width: 100px;
+	height: 90px;
+	width: 90px;
 	border-radius: 50%;
 	object-fit: cover;
 	align-items: center;
@@ -1348,6 +1352,7 @@ footer div ul li a {
 	text-decoration: none;
 	color: white;
 	font-family: 'Vollkorn';
+	font-size:13px;
 }
 
 footer div ul li a:hover {
@@ -1483,7 +1488,10 @@ footer iframe {
 
 	}
 
-	.Ame a {
+	.Ame .Ame1 a,
+	.Ame .Ame2 a,
+	.Ame .Ame3 a,
+	.Ame .Ame4 a{
 		font-size: 22px;
 	}
 
@@ -1580,15 +1588,18 @@ footer iframe {
 
 	}
 
-	.Ame a {
-		font-size: 22px;
+	.Ame .Ame1 a,
+	.Ame .Ame2 a,
+	.Ame .Ame3 a,
+	.Ame .Ame4 a{
+		font-size: 22px!important;
 	}
 
 	.Ame .Ame1:hover a,
 	.Ame .Ame2:hover a,
 	.Ame .Ame3:hover a,
 	.Ame .Ame4:hover a{
-		font-size: 22px;
+		font-size: 22px!important;
 	}
 
 
@@ -1673,7 +1684,10 @@ footer iframe {
 
 	}
 
-	.Ame a {
+	.Ame .Ame1 a,
+	.Ame .Ame2 a,
+	.Ame .Ame3 a,
+	.Ame .Ame4 a{
 		font-size: 25px;
 	}
 
@@ -1743,7 +1757,10 @@ footer iframe {
 
 	}
 
-	.Ame a {
+	.Ame .Ame1 a,
+	.Ame .Ame2 a,
+	.Ame .Ame3 a,
+	.Ame .Ame4 a{
 		font-size: 30px;
 	}
 
