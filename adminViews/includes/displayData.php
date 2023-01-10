@@ -22,7 +22,7 @@
             $lame = $row['admin_lname'];
             $user = $row['admin_username'];
             $email = $row['admin_email'];
-            $accountTable.= 'tr>
+            $accountTable.= '<tr>
             <td scope="row">'.$adminId.'</td>
             <td>'.$fname.'</td>
             <td>'.$lame.'</td>
