@@ -3,12 +3,10 @@
         <h1>ACCOUNT RECORDS</h1>
     </div>
     <section class="record-content accountContent"><!--SECTION NG BUONG CONTENT-->
-        <button id="add-account"><a name="AddAdminAccount" data-bs-toggle="modal" data-bs-target="#addAdminAccount"><i class="fa-solid fa-user-plus"></i> Add New Account</a><!--ETO UNG BUTTON PATUNGO SA ADD ACCOUNT PAGAWA NALANG NA BUTTON IF DI KERI --></button>
+        <button id="add-account"><a name="AddAdminAccount" data-bs-toggle="modal" data-bs-target="#addAdminAccount"><i class="fa-solid fa-user-plus"></i> Add New Account</a></button> <br><br>
+        <div id="display-admin"></div>
     </section>
 </div>
-</form>
-</div>
-
 
 
 <!-- Add Admin Modal -->
@@ -52,9 +50,21 @@
 
 <!--SCRIPT FOR add Admin-->
 <script>
-    function  displayData();{
+    $(document).ready(function(){
+        displayData();
+    });
+    function  displayData(){
         var displayData = "true";
-        $.ajax
+        $.ajax({
+            url: '/adminViews/includes/displayData.php',
+            type: 'post',
+            data:{
+                displaySend: displayData
+            },
+            success:function(data, status){
+                $('#display-admin').html(data);
+            }
+        });
     }
 
     function addAdmin() {
@@ -74,13 +84,27 @@
                 userSend: user,
                 passSend: pass
             },
-            success: function(data, status){
+            success:function(data, status){
                 //console.log(status);
                 displayData();
             }
             
         });
     }
+
+    function DeleteUser(deleteid) {
+        $.ajax({
+            url: '/adminViews/includes/deleteAdminAccount.php',
+            type: 'post',
+            data:{
+                deleteSend: deleteid
+            },
+            success:function(data, status){
+                displayData();
+            }
+        })
+    }
+
 </script>
 
 

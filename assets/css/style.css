@@ -1034,8 +1034,12 @@ svg{
     color: var(--darkgreen);
 }
 
+.table .view{
+    padding: 5px 
 
-
+}
+.display-admin{
+}
 
 /*********** Scrollbar  **************/
 ::-webkit-scrollbar {
