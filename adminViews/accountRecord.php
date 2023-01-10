@@ -47,6 +47,27 @@
     </div>
 </div>
 
+<!-- Delete Modal-->
+<div class="modal fade" id="delete-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Update Information</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-success">Save Changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
 
 <!--SCRIPT FOR add Admin-->
 <script>
@@ -92,7 +113,7 @@
         });
     }
 
-    function DeleteUser(deleteid) {
+    function deleteUser(deleteid) {
         $.ajax({
             url: '/adminViews/includes/deleteAdminAccount.php',
             type: 'post',
@@ -105,6 +126,9 @@
         })
     }
 
+    function deleteUser(deleteid){
+        ('#delete-modal').modal("show")
+    }
 </script>
 
 
