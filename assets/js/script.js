@@ -8,6 +8,6 @@ function addmessage() {
     var remarksAdd = $('#completeRemarks').val();
 }
 
-function displayData(){
-    var displayData = "true";
+function panelData(){
+    var panelData = "true";
 }

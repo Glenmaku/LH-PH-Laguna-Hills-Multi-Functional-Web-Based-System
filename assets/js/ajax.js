@@ -72,18 +72,18 @@ function addmessage(){
         method:"post",
         data:{record:1},
         success:function(data){
-            $('.allContent').html(data);
+            $('#panel-content').html(data);
         }
     });
 }
 
-function displayData(){
+function panelData(){
     $.ajax({
         url:"adminViews/mapdata.php",
         method:"post",
         data:{record:1},
         success:function(data){
-            $('.allContent').html(data);
+            $('#panel-content').html(data);
         }
     })
 }
