@@ -25,6 +25,9 @@
 }
 
 .admin-head{
+    font-family: 'Raleway', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
     padding: 5px;
     margin-left: 70%;
     display: flex;
@@ -37,6 +40,9 @@
 
 .admin-profile{
     display: flex;
+    font-family: 'Raleway', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
     margin-left: 10px;
 }
 .admin-profile .admin-pic img{
@@ -50,10 +56,9 @@
     margin-left: 10px;
 }
 /*********** Admin Sidebar **************/
-.admin-sidebar{
+.adminSidebar{
     position: fixed;
     top: 0;
-    left: 0 !important;
     height: 100%;
     width: 260px;
     background: var(--darkgreen);
@@ -77,53 +82,46 @@
     margin-top: 20px;
 }
 
-.admin-sidebar .nav-links{
+.adminSidebar .nav-links{
     font-family: 'Raleway', sans-serif;
     font-weight: 600;
     height: 100%;
-    left: 0 ;
 }
-.admin-sidebar .nav-links li .transaction-area{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-.admin-sidebar .nav-links li{
+.adminSidebar .nav-links li{
     position: relative;
     list-style: none;
     transition: all 0.4s ease;
 }
 
-.admin-sidebar ul li a:hover {
+.adminSidebar ul li a:hover {
     background-color: var(--light-green);
   }
 
-.admin-sidebar .nav-links li i{
+.adminSidebar .nav-links li i{
     height: 50px;
-    min-width: 78px;
-    text-align: center;
+    width: 78px;
     line-height: 50px;
     color: #fff;
     font-size: 20px;
     transition: all 0.3s ease;
 }
 
-.admin-sidebar .nav-links li a{
+.adminSidebar .nav-links li a{
     display: flex;
     align-items: center;
     text-decoration: none;
 }
 
-.admin-sidebar ul li a{
+.adminSidebar ul li a{
     color: #fff;
     text-decoration: none;
     font-size: 17px;
 }
-.admin-sidebar ul li ul {
+.adminSidebar ul li ul {
     display: none;
   }
 
-.admin-sidebar ul li:hover ul {
+.adminSidebar ul li:hover ul {
     display: block;
     transition: all 0.4s ease;
 }
@@ -888,6 +886,7 @@ svg{
     margin-top: 20px;
     width: 100%;
     border-collapse: collapse;
+    text-align: center;
     
 }
 .Admin_Account_Table th{
@@ -932,29 +931,37 @@ svg{
     cursor: pointer;
 }
 
-.add-form {
-    margin-top: 10px;
-}
-.add-form label{
-    font-family: 'Raleway', sans-serif;
-    font-weight: 700;
-    font-size: 16px;
-
-}
-.add-form input{
+#add-account,
+.modal-footer #submit-btn{
     font-family: 'Raleway', sans-serif;
     font-weight: 500;
     font-size: 14px;
-    width: 30%;
-    padding: 10px;
+    background-color: var(--darkgreen);
     border: 0;
     border-radius: 5px;
-    background-color: var(--light-blue);
-    text-align: justify;
+    color: #fff;
+    padding: 10px  ;
+    cursor: pointer;
 }
 
+.modal-footer #cancel-btn{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    background-color: red;
+    border: 0;
+    border-radius: 5px;
+    color: #fff;
+    padding: 10px ;
+    cursor: pointer;
+}
 
-
+#addUserModalLabel{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--darkgreen);
+}
 
 
 

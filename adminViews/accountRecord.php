@@ -3,291 +3,95 @@
         <h1>ACCOUNT RECORDS</h1>
     </div>
     <section class="record-content accountContent"><!--SECTION NG BUONG CONTENT-->
-
-        <div><!--PINAKA TOP- hingin saken layout Searchbar, Add new account button - -->
-        <form action="" method="GET">
-            <div class="input-group mb-3">
-                <input type="text" name="search" value = "<?php if(isset($_GET['search'])){ echo $_GET['search'];
-                    }?>" class="form-control" placeholder="Search Data">
-
-                <button type="Submit" id="search_admin_data"><i class="fa-solid fa-magnifying-glass"></i></button>
-                <button id="add-account"><a name="AddAdminAccount" href="#add-account" onclick="showAllAddAccount()"><i class="fa-solid fa-user-plus"></i> Add New Account</a><!--ETO UNG BUTTON PATUNGO SA ADD ACCOUNT PAGAWA NALANG NA BUTTON IF DI KERI --></button>
-            </div>
-        </form>
-        </div>
-        <div><!--DISPLAY NG MGA ALERTS HERE-->
-            <!--success update-->
-            <?php
-            if (isset($_GET['successupdate'])) {
-                $Message = $_GET['successupdate'];
-                $Message = "Information Successfully Updated.";
-            ?>
-                <div><?php echo $Message ?></div>
-            <?php
-            }
-            ?>
-
-            <!--success delete-->
-            <?php
-            if (isset($_GET['successdelete'])) {
-                $Message = $_GET['successdelete'];
-                $Message = "Successfully deleted information.";
-            ?>
-                <div><?php echo $Message ?></div>
-            <?php
-            }
-            ?>
-        </div>
-        <div><!--for the table-->
-            <?php
-            require_once('includes/connection.php');
-            $query = "SELECT * FROM admin_accounts";
-            $result = mysqli_query($con, $query);
-            ?>
-            <table id="Admin_Account_Table" class="Admin_Account_Table">
-                <thread id="admin-table-label">
-                    <tr>
-                        <th>Admin ID</th>
-                        <th>First Name</th>
-                        <th>Last Name</th>
-                        <th>Username</th>
-                        <th>Email</th>
-                        <th>View</th>
-                        <th>Edit</th>
-                        <th>Delete</th>
-                    </tr>
-                </thread>
-                <?php if(isset($_GET['search'])){
-                    $filtervalues = $_GET['search'];
-                    $queryfilter = "SELECT * FROM admin_accounts WHERE CONCAT(admin_id, admin_fname, admin_lname, admin_username,admin_email) LIKE '%$filtervalues%'";
-                    
-                    $resultfilter =mysqli_query($con,$queryfilter);
-                    if(mysqli_num_rows($resultfilter)>0){
-                        foreach($resultfilter as $items){
-
-                        ?>
-                        <tbody>
-                        <tr>
-                            <td><?= $items['admin_id'];?></td>
-                            <td><?= $items['admin_fname'];?></td>
-                            <td><?= $items['admin_lname'];?></td>
-                            <td><?= $items['admin_username'];?></td>
-                            <td><?= $items['admin_email'];?></td>
-                            <td> <button data-bs-toggle="modal" data-bs-target="#adminviewmodal" id="btn_view_admin_acc" class="btn_view_admin_acc" name="edit_button"><i class="fa-solid fa-eye"></i></button></td><!--VIEW-EYE ICON-->
-                                <td> <button data-bs-toggle="modal" data-bs-target="#adminupdatemodal" id="btn_edit_admin_acc" class="btn_edit_admin_acc" name="edit_button"><i class="fa-solid fa-user-pen"></i></button></td><!--EDIT ICON-->
-                                <td> <button data-bs-toggle="modal" data-bs-target="#admindeletemodal" id="btn_delete_admin_acc" class="btn_delete_admin_acc" name="delete_button"><i class="fa-solid fa-trash"></i></button></td><!--TRASHICON-->
-                        </tr></tbody>
-<?php
-                    }}
-
-                }
-               
-                else if ($result) {
-                    foreach ($result as $row) {
-                ?>
-                        <tbody>
-                         
-                            <tr>
-                                <td> <?php echo $row['admin_id']; ?> </td>
-                                <td> <?php echo $row['admin_fname']; ?> </td>
-                                <td> <?php echo $row['admin_lname']; ?> </td>
-                                <td> <?php echo $row['admin_username']; ?> </td>
-                                <td> <?php echo $row['admin_email']; ?> </td>
-                                <td> <button data-bs-toggle="modal" data-bs-target="#adminviewmodal" id="btn_view_admin_acc" class="btn_view_admin_acc" name="edit_button"><i class="fa-solid fa-eye"></i></button></td><!--VIEW-EYE ICON-->
-                                <td> <button data-bs-toggle="modal" data-bs-target="#adminupdatemodal" id="btn_edit_admin_acc" class="btn_edit_admin_acc" name="edit_button"><i class="fa-solid fa-user-pen"></i></button> </td><!--EDIT ICON-->
-                                <td> <button data-bs-toggle="modal" data-bs-target="#admindeletemodal" id="btn_delete_admin_acc" class="btn_delete_admin_acc" name="delete_button"><i class="fa-solid fa-trash"></i></button> </td><!--TRASHICON-->
-                            </tr>
-                        </tbody>
-
-                <?php
-                    }
-                } else {
-                    ?><tbody>
-                    <tr>
-                        <td colspan="8">No record found</td>
-                    <tr></tbody>
-                    <?php
-                }  ?>
-            </table>
-        </div>
-        <button class="account-record-download"><i class="fa-solid fa-download"></i> Download</button><!--button to open a pdf to be downloaded-->
+        <button id="add-account"><a name="AddAdminAccount" data-bs-toggle="modal" data-bs-target="#addAdminAccount"><i class="fa-solid fa-user-plus"></i> Add New Account</a><!--ETO UNG BUTTON PATUNGO SA ADD ACCOUNT PAGAWA NALANG NA BUTTON IF DI KERI --></button>
     </section>
-    <!--////////////////////////////////////////////////////////////////////////////-->
-    <!-- POP UP MODALSSS-->
-    <!-- UpdateModal -->
+</div>
+</form>
+</div>
 
-    <div class="modal fade" id="adminupdatemodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"  hidden>
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Update Account Details</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
+
+
+<!-- Add Admin Modal -->
+<div class="modal fade" id="addAdminAccount" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title" id="addUserModalLabel">Add Admin User</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3">
+                    <label for="firstname" class="form-label">First Name</label>
+                    <input type="email" class="form-control" id="firstname" placeholder="Enter first name" required>
                 </div>
-
-                <form action="includes/Act-UpdateAdmin.php" method="POST">
-                    <div class="modal-body">
-                        <input type="hidden" name="adminupdate_id" id="adminupdate_id">
-                        <div class="form-group">
-                            <label>First Name</label>
-                            <input type="text" name="admin_fname" id="admin_fname" class="form-control" placeholder="">
-                        </div>
-                        <div class="form-group">
-                            <label>Last Name</label>
-                            <input type="text" name="admin_lname" id="admin_lname" class="form-control" placeholder="">
-                        </div>
-                        <div class="form-group">
-                            <label>Username</label>
-                            <input type="text" name="admin_username" id="admin_username" class="form-control" placeholder="">
-                        </div>
-                        <div class="form-group">
-                            <label>Email</label>
-                            <input type="text" name="admin_email" id=admin_email class="form-control" placeholder="">
-                        </div>
-
-                    </div>
-                    <div class="mo dal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary" name="btn_updateadminacc">Save Data</button>
-                    </div>
-                </form>
+                <div class="mb-3">
+                    <label for="lastname" class="form-label">Last Name</label>
+                    <input type="email" class="form-control" id="lastname" placeholder="Enter last name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email Address</label>
+                    <input type="email" class="form-control" id="email" placeholder="Enter email address">
+                </div>
+                <div class="mb-3">
+                    <label for="username" class="form-label">Username</label>
+                    <input type="email" class="form-control" id="username">
+                </div>
+                <div class="mb-3">
+                    <label for="pass" class="form-label">Password</label>
+                    <input type="email" class="form-control" id="pass" placeholder="Enter password" required>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="cancel-btn" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" id="submit-btn" onclick="addAdmin()">Submit</button>
             </div>
         </div>
     </div>
+</div>
+
+<!--SCRIPT FOR add Admin-->
+<script>
+    function addAdmin() {
+        var fname = $('#firstname').val();
+        var lname = $('#lastname').val();
+        var email = $('#email').val();
+        var user = $('#username').val();
+        var pass = $('#pass').val();
+
+        $.ajax({
+            url: "includes/Act-Admin.php",
+            type: 'post',
+            data: {
+                fnameSend: fname,
+                lnameSend: lname,
+                emailSend: email,
+                userSend: user,
+                passSend: pass
+            },
+            success: function(data, status)
+            
+        })
+    }
+</script>
 
 
+<!--SCRIPT FOR VIEW ACCOUNT-->
+<script>
+    $(document).ready(function() {
+        $('.btn_view_admin_acc').on('click', function() {
+            $('#adminviewmodal').modal('show');
 
-    <!-- DeleteModal -->
+            $tr = $(this).closest('tr');
 
-    <div class="modal fade" id="admindeletemodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" hidden>
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Warning!</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
+            var data = $tr.children("td").map(function() {
+                return $(this).text();
+            }).get();
 
-                <form action="includes/Act-DeleteAdmin.php" method="POST">
-                    <div class="modal-body">
-                        <input type="hidden" name="admindelete_id" id="admindelete_id">
-                        <h4>Are you sure you want to delete this account?</h4>
-                    </div>
-                    <div class="mo dal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
-                        <button type="submit" class="btn btn-primary" name="btn_deleteadminacc">Proceed</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-    <!-- ViewModal -->
+            console.log(data);
 
-    <div class="modal fade" id="adminviewmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" hidden>
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">View Personal Information</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
+            $('#adminview_id').val(data[0]);
 
-                <form action="includes/Act-ViewAdmin.php" method="POST">
-                    <div class="modal-body">
-                        <input type="hidden" name="adminview_id" id="adminview_id">
-                        <h4>View Information</h4>
-                    </div>
-                    <div class="mo dal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-
-
-
-
-
-    <!--////////////////////////////////////////////////////////////////////////////-->
-    <!--BOOTSTRAP SCRIPTS FOR MODALS-->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
-
-
-    <!--ETO JQUERY BAKA MERON NA U NETO-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-     
-
-    <!--SCRIPT FOR UPDATE ACCOUNT-->
-    <script>
-        $(document).ready(function() {
-            $('.btn_edit_admin_acc').on('click', function() {
-                $('#adminupdatemodal').modal('show');
-
-                $tr = $(this).closest('tr');
-
-                var data = $tr.children("td").map(function() {
-                    return $(this).text();
-                }).get();
-
-                console.log(data);
-
-                $('#adminupdate_id').val(data[0]);
-                $('#admin_fname').val(data[1]);
-                $('#admin_lname').val(data[2]);
-                $('#admin_username').val(data[3]);
-                $('#admin_email').val(data[4]);
-                
-
-                
-
-            });
         });
-    </script>
-
-    <!--SCRIPT FOR DELETE ACCOUNT-->
-    <script>
-        $(document).ready(function() {
-            $('.btn_delete_admin_acc').on('click', function() {
-                $('#admindeletemodal').modal('show');
-
-                $tr = $(this).closest('tr');
-
-                var data = $tr.children("td").map(function() {
-                    return $(this).text();
-                }).get();
-
-                console.log(data);
-
-                $('#admindelete_id').val(data[0]);
-
-            });
-        });
-    </script>
-
-    <!--SCRIPT FOR VIEW ACCOUNT-->
-    <script>
-        $(document).ready(function() {
-            $('.btn_view_admin_acc').on('click', function() {
-                $('#adminviewmodal').modal('show');
-
-                $tr = $(this).closest('tr');
-
-                var data = $tr.children("td").map(function() {
-                    return $(this).text();
-                }).get();
-
-                console.log(data);
-
-                $('#adminview_id').val(data[0]);
-
-            });
-        });
-    </script>
+    });
+</script>
 </div>

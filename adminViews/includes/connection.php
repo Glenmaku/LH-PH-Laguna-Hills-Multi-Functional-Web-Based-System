@@ -1,7 +1,7 @@
 <?php 
-$con=mysqli_connect('localhost','root','','lhph');
-if (mysqli_connect_errno()) {
-    echo "Failed to connect to MySQL: " .mysqli_connect_error();
-    exit();
+$con = new mysqli('localhost','root','','lhph');
+
+if (!$con){
+    die(mysqli_error($con));
   }
-  ?>
+?>
