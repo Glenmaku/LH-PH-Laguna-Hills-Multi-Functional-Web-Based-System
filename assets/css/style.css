@@ -713,6 +713,18 @@ svg{
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
+.lot-info{
+    padding: 20px;
+}
+
+.lot-info input{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    padding: 5px;
+    width: 30%;
+}
+
 
 
 .holder{

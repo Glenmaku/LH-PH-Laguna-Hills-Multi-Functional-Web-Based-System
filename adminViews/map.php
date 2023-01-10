@@ -9,7 +9,9 @@
                 <option value="blk1">Lot Information</option>
                 <option value="blk2">Dues Information</option>
             </select>
-            <input type="text" name="search" id="map-search" placeholder="Search Here">
+            <input type="text" name="search" id="map-search" placeholder="Search Here"></input>
+            
+            
             <button><i class="fas fa-search"></i></button>
         </div>
         <svg version="1.1" id="svg5" inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)" sodipodi:docname="Laguna_Hills_Sub.svg" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 4000 7000" style="enable-background:new 0 0 1190.2 1683.8;" xml:space="preserve">
@@ -2973,10 +2975,20 @@
         </svg>
     </div>
     <div class="lot-info">
-    <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">Block</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-  </div>
-        
+        <label for="block">Block</label>
+        <input type="text" name="Block" id="block-status" disabled>
+        <label for="lot">Lot</label>
+        <input type="text" name="lot" id="lot-status" disabled>
+        <label for="street">Street</label>
+        <input type="text" name="street" id="street-status" disabled>
+        <label for="status">Status</label>
+        <input type="text" name="status" id="status-status" disabled>
+        <label for="area">Area in Sqm</label>
+        <input type="text" name="area" id="area-status" disabled>
+        <label for="price">Price</label>
+        <input type="text" name="price" id="price-status" disabled>
+        <label for="remarks">Remarks</label>
+        <input type="text" name="remarks" id="remarks-status" disabled>
     </div>
+
 </div>
