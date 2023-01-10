@@ -65,3 +65,25 @@ function showAllAddAccount(){  //add account in Account records
         }
     });
 }
+
+function addmessage(){
+    $.ajax({
+        url:"adminViews/mapdata.php",
+        method:"post",
+        data:{record:1},
+        success:function(data){
+            $('.allContent').html(data);
+        }
+    });
+}
+
+function displayData(){
+    $.ajax({
+        url:"adminViews/mapdata.php",
+        method:"post",
+        data:{record:1},
+        success:function(data){
+            $('.allContent').html(data);
+        }
+    })
+}

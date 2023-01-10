@@ -2981,7 +2981,7 @@
                         <button><i class="fa-solid fa-scroll"></i></button>
                         <button><i class="fa-solid fa-user"></i></button>
                 </div>
-                 <div class="panel-info">
+                <div class="panel-info">
                         <div class="panel-content">
                                 <h3>LOT INFORMATION</h3>
                                 <div class="block-lot">
@@ -2991,7 +2991,7 @@
                                         <label for="lot">Lot</label>
                                         <input type="text" name="lot" id="lot-status" disabled>
                                 </div>
-                                
+
                                 <div class="other-lot-info">
                                         <label for="street">Street</label>
                                         <input type="text" name="street" id="street-status" disabled>
@@ -3002,14 +3002,60 @@
                                         <label for="price">Price</label>
                                         <input type="text" name="price" id="price-status" disabled>
                                         <label for="remarks">Remarks</label>
-                                        <input type="text" name="remarks" id="remarks-status" disabled> 
-                                        <button><i class="fa-solid fa-pen"></i> Edit Information</button>  
+                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap">Edit Information</button>
+                                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" style="display: none;" aria-hidden="true">
+                                                <div class="modal-dialog">
+                                                        <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Information</h1>
+                                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                </div>
+                                                                <div class="modal-body">
+                                                                        <div class="mb-3">
+                                                                                <label for="exampleInputEmail1" class="form-label">Block:</label>
+                                                                                <input type="email" class="form-control" id="completeBlock" aria-describedby="emailHelp">
+                                                                        </div>
+                                                                        <div class="mb-3">
+                                                                                <label for="exampleInputEmail1" class="form-label">Lot:</label>
+                                                                                <input type="email" class="form-control" id="completeLot" aria-describedby="emailHelp">
+                                                                        </div>
+                                                                        <div class="mb-3">
+                                                                                <label for="exampleInputEmail1" class="form-label">Street:</label>
+                                                                                <input type="email" class="form-control" id="completeStreet" aria-describedby="emailHelp">
+                                                                        </div>
+                                                                        <div class="mb-3">
+                                                                                <label for="exampleInputEmail1" class="form-label">Status:</label>
+                                                                                <input type="email" class="form-control" id="completeStatus" aria-describedby="emailHelp">
+                                                                        </div>
+                                                                        <div class="mb-3">
+                                                                                <label for="exampleInputEmail1" class="form-label">Area in Sqm:</label>
+                                                                                <input type="email" class="form-control" id="completeArea" aria-describedby="emailHelp">
+                                                                        </div>
+                                                                        <div class="mb-3">
+                                                                                <label for="exampleInputEmail1" class="form-label">Price:</label>
+                                                                                <input type="email" class="form-control" id="completePrice" aria-describedby="emailHelp">
+                                                                        </div>
+                                                                        <div class="mb-3">
+                                                                                <label for="exampleInputEmail1" class="form-label">Remarks:</label>
+                                                                                <input type="email" class="form-control" id="completeRemarks" aria-describedby="emailHelp">
+                                                                        </div>
+                                                                </div>
+                                                                <div class="modal-footer">
+                                                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                                        <button type="button" class="btn btn-primary" onclick="addmessage()">Send message</button>
+                                                                </div>
+                                                        </div>
+                                                </div>
+                                        </div>
                                 </div>
-                         
+
                         </div>
-                 </div>       
-                
+                </div>
+
 
         </div>
 
 </div>
+
+
+<div class="container"></div>
