@@ -2973,18 +2973,10 @@
         </svg>
     </div>
     <div class="lot-info">
-        <table>
-            <tr>
-                <td>Block</td>
-                <td>Lot</td>
-            </tr>
-            <tr>
-                <th>Street</th>
-                <th>Status</th>
-                <th>Area in Sqm</th>
-                <th>Price</th>
-                <th>Remarks</th>
-            </tr>
-        </table>
+    <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Block</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+  </div>
+        
     </div>
 </div>
