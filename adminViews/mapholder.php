@@ -1,3 +1,5 @@
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
 <div class="holder">
 			<iframe  class="mapFrame" id="svgMap" src="map.php" type="image/svg+xml"
 				seamless="seamless" scrolling="yes" frameborder="0"></iframe>
@@ -5,7 +7,7 @@
     <!-- End Example Code -->
 
 	<script src="data.js"></script>
-	<script src="index.js"></script>
+	<script src="script.js"></script>
 
 	<style>
 		body{
