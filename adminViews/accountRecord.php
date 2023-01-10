@@ -22,11 +22,11 @@
             <div class="modal-body">
                 <div class="mb-3">
                     <label for="firstname" class="form-label">First Name</label>
-                    <input type="email" class="form-control" id="firstname" placeholder="Enter first name" required>
+                    <input type="text" class="form-control" id="firstname" placeholder="Enter first name" required>
                 </div>
                 <div class="mb-3">
                     <label for="lastname" class="form-label">Last Name</label>
-                    <input type="email" class="form-control" id="lastname" placeholder="Enter last name" required>
+                    <input type="text" class="form-control" id="lastname" placeholder="Enter last name" required>
                 </div>
                 <div class="mb-3">
                     <label for="email" class="form-label">Email Address</label>
@@ -34,11 +34,11 @@
                 </div>
                 <div class="mb-3">
                     <label for="username" class="form-label">Username</label>
-                    <input type="email" class="form-control" id="username">
+                    <input type="text" class="form-control" id="username">
                 </div>
                 <div class="mb-3">
                     <label for="pass" class="form-label">Password</label>
-                    <input type="email" class="form-control" id="pass" placeholder="Enter password" required>
+                    <input type="password" class="form-control" id="pass" placeholder="Enter password" required>
                 </div>
             </div>
             <div class="modal-footer">
@@ -49,8 +49,14 @@
     </div>
 </div>
 
+
 <!--SCRIPT FOR add Admin-->
 <script>
+    function  displayData();{
+        var displayData = "true";
+        $.ajax
+    }
+
     function addAdmin() {
         var fname = $('#firstname').val();
         var lname = $('#lastname').val();
@@ -59,7 +65,7 @@
         var pass = $('#pass').val();
 
         $.ajax({
-            url: "includes/Act-Admin.php",
+            url: "/adminViews/includes/Act-AddAdmin.php",
             type: 'post',
             data: {
                 fnameSend: fname,
@@ -68,9 +74,12 @@
                 userSend: user,
                 passSend: pass
             },
-            success: function(data, status)
+            success: function(data, status){
+                //console.log(status);
+                displayData();
+            }
             
-        })
+        });
     }
 </script>
 
