@@ -10,7 +10,7 @@
             <th scope="col">Last Name</th>
             <th scope="col">Username</th>
             <th scope="col">Email</th>
-            <th scope="col">actions</th>
+            <th scope="col">Actions</th>
           </tr>
         </thead>';
 
@@ -28,6 +28,9 @@
             <td>'.$lame.'</td>
             <td>'.$user.'</td>
             <td>'.$email.'</td>
+            <td><button class="btn btn-success"><i class="fa-solid fa-eye"></i></button>
+            <button class="btn btn-success"><i class="fa-solid fa-pen"></i></button>
+            <button class="btn btn-danger" onclick ="DeleteUser('. $adminId.')"><i class="fa-solid fa-trash"></i></button></td>
           </tr>';
         }
         $accountTable.='</table>';
