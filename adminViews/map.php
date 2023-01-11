@@ -5,7 +5,7 @@
         <div class="map">
                 <div class="input-group ">
                         <select class="form-select" aria-label="Default select example">
-                                <option selected>Monitory:</option>
+                                <option selected>Monitor by:</option>
                                 <option value="1">One</option>
                                 <option value="2">Two</option>
                                 <option value="3">Three</option>
@@ -17,8 +17,8 @@
                                 <option value="2">Two</option>
                                 <option value="3">Three</option>
                         </select>
-                        <input type="text" class="form-control" aria-label="Text input with dropdown button">
-                        <button class="btn btn-success md-3" type="button"><i class="fa-solid fa-magnifying-glass"></i></button>
+                        <input type="text" class="form-control" aria-label="Text input with dropdown button" id="search">
+                        <button class="btn btn-success md-3" type="button" name="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
                 </div>
                 <svg version="1.1" id="svg5" inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)" sodipodi:docname="Laguna_Hills_Sub.svg" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 4000 7000" style="enable-background:new 0 0 1190.2 1683.8;" xml:space="preserve">
                         <g id="sudvision">
@@ -3023,10 +3023,28 @@
 
 
         </div>
-
+        
 </div>
 
+<script type="text/javascript">
 
-<div class="container">
+$(document).ready(function(){
+        $('.form-control').keyup(funtion(){
+                var input = $(this).val();
+                //alert(input);
+               if(input != ""){
+                $.ajax({
+                        url:"./adminViews/includes/mapdata.php",
+                        method:"POST",
+                        data:{input:input},
 
-</div>
+                        success:function(data){
+                                $('.panel-content').html(data);
+                        }
+                });
+               }else{
+                $("#panel-content").css("display","none");
+               } 
+        });
+});
+</script>
