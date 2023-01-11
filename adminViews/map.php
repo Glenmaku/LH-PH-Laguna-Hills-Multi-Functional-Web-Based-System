@@ -3011,13 +3011,10 @@
                                                                         <button type="button" class=" btn btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                                 </div>
                                                                 <div class="modal-body">
-                                                                        <div class="mb-3">
-                                                                                <label for="exampleInputEmail1" class="form-label">Block:</label>
-                                                                                <input type="text" class="form-control" id="completeBlock">
-                                                                        </div>
-                                                                        <div class="mb-3">
-                                                                                <label for="exampleInputEmail1" class="form-label">Lot:</label>
-                                                                                <input type="text" class="form-control" id="completeLot">
+                                                                        <div class="input-group">
+                                                                                <span class="input-group-text">Block and Lot</span>
+                                                                                <input type="text" aria-label="First name" class="form-control">
+                                                                                <input type="text" aria-label="Last name" class="form-control">
                                                                         </div>
                                                                         <div class="mb-3">
                                                                                 <label for="exampleInputEmail1" class="form-label">Street:</label>
@@ -3029,7 +3026,7 @@
                                                                         </div>
                                                                         <div class="mb-3">
                                                                                 <label for="exampleInputEmail1" class="form-label">Area in Sqm:</label>
-                                                                                <input type="text" class="form-control" id="completeArea">      
+                                                                                <input type="text" class="form-control" id="completeArea">
                                                                         </div>
                                                                         <div class="mb-3">
                                                                                 <label for="exampleInputEmail1" class="form-label">Price:</label>
@@ -3058,4 +3055,6 @@
 </div>
 
 
-<div class="container"></div>
+<div class="container">
+
+</div>
