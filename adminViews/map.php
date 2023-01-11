@@ -3008,36 +3008,36 @@
                                                         <div class="modal-content">
                                                                 <div class="modal-header">
                                                                         <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Information</h1>
-                                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                        <button type="button" class=" btn btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                                 </div>
                                                                 <div class="modal-body">
                                                                         <div class="mb-3">
                                                                                 <label for="exampleInputEmail1" class="form-label">Block:</label>
-                                                                                <input type="email" class="form-control" id="completeBlock" aria-describedby="emailHelp">
+                                                                                <input type="text" class="form-control" id="completeBlock">
                                                                         </div>
                                                                         <div class="mb-3">
                                                                                 <label for="exampleInputEmail1" class="form-label">Lot:</label>
-                                                                                <input type="email" class="form-control" id="completeLot" aria-describedby="emailHelp">
+                                                                                <input type="text" class="form-control" id="completeLot">
                                                                         </div>
                                                                         <div class="mb-3">
                                                                                 <label for="exampleInputEmail1" class="form-label">Street:</label>
-                                                                                <input type="email" class="form-control" id="completeStreet" aria-describedby="emailHelp">
+                                                                                <input type="text" class="form-control" id="completeStreet">
                                                                         </div>
                                                                         <div class="mb-3">
                                                                                 <label for="exampleInputEmail1" class="form-label">Status:</label>
-                                                                                <input type="email" class="form-control" id="completeStatus" aria-describedby="emailHelp">
+                                                                                <input type="text" class="form-control" id="completeStatus">
                                                                         </div>
                                                                         <div class="mb-3">
                                                                                 <label for="exampleInputEmail1" class="form-label">Area in Sqm:</label>
-                                                                                <input type="email" class="form-control" id="completeArea" aria-describedby="emailHelp">
+                                                                                <input type="text" class="form-control" id="completeArea">      
                                                                         </div>
                                                                         <div class="mb-3">
                                                                                 <label for="exampleInputEmail1" class="form-label">Price:</label>
-                                                                                <input type="email" class="form-control" id="completePrice" aria-describedby="emailHelp">
+                                                                                <input type="text" class="form-control" id="completePrice">
                                                                         </div>
                                                                         <div class="mb-3">
                                                                                 <label for="exampleInputEmail1" class="form-label">Remarks:</label>
-                                                                                <input type="email" class="form-control" id="completeRemarks" aria-describedby="emailHelp">
+                                                                                <input type="text" class="form-control" id="completeRemarks">
                                                                         </div>
                                                                 </div>
                                                                 <div class="modal-footer">

@@ -47,8 +47,8 @@
     </div>
 </div>
 
-<!-- Delete Modal-->
-<div class="modal fade" id="delete-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<!-- update Modal-->
+<div class="modal fade" id="updateAdminModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -56,11 +56,32 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
-        <button type="button" class="btn btn-success">Save Changes</button>
+      <div class="mb-3">
+                    <label for="updatefirstname" class="form-label">First Name</label>
+                    <input type="text" class="form-control" id="updatefirstname">
+                </div>
+                <div class="mb-3">
+                    <label for="updatelastname" class="form-label">Last Name</label>
+                    <input type="text" class="form-control" id="updatelastname">
+                </div>
+                <div class="mb-3">
+                    <label for="updateemail" class="form-label">Email Address</label>
+                    <input type="email" class="form-control" id="updateemail">
+                </div>
+                <div class="mb-3">
+                    <label for="username" class="form-label">Username</label>
+                    <input type="text" class="form-control" id="updateusername" disabled>
+                </div>
+                <div class="mb-3">
+                    <label for="updatepass" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="updatepass">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="cancel-btn" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" id="submit-btn">Submit</button>
+                <input type="hidden" id="hiddendata">
+            </div>
       </div>
     </div>
   </div>
@@ -115,7 +136,7 @@
 
     function deleteUser(deleteid) {
         $.ajax({
-            url: '/adminViews/includes/deleteAdminAccount.php',
+            url: '/adminViews/includes/Act-DeleteAdmin.php',
             type: 'post',
             data:{
                 deleteSend: deleteid
@@ -126,8 +147,20 @@
         })
     }
 
-    function deleteUser(deleteid){
-        ('#delete-modal').modal("show")
+    function getDetails(updateid){
+        $('#hiddendata').val(updateid);
+
+        $.post("/adminViews/includes/Act-UpdateAmin.php",{updateid:updateid},function(data, status){
+                var admin = JSON.parse(data);
+                $('#updatefirstname').val(admin.admin_fname);
+                $('#updatelastname').val(admin.admin_lname);
+                $('#updateemail').val(admin.admin_email);
+                $('#updateusername').val(admin.admin_username);
+                $('#updatepass').val(admin.admin_password);
+            });
+
+        $('#updateAdminModal').modal("show");
+
     }
 </script>
 

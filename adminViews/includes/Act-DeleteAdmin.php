@@ -1,20 +1,10 @@
 <?php
-require_once('connection.php');
+    include 'connection.php';
 
+    if(isset($_POST['deleteSend'])){
+        $unique = $_POST['deleteSend'];
 
-if(isset($_POST['btn_deleteadminacc']))
-{
-    $AdminID = $_POST['admindelete_id'];
-
-    $query = "DELETE FROM admin_accounts WHERE admin_id='".$AdminID."'";
-    $result= mysqli_query($con,$query);
-
-    if($result)
-    {
-        header("location:../RecordAdminAccount.php?successdelete");
+        $sql = "DELETE FROM `admin_accounts` WHERE admin_id = $unique";
+        $result = mysqli_query($con, $sql);
     }
-    else{
-        header("location:../RecordAdminAccount.php");
-    }
-}
 ?>

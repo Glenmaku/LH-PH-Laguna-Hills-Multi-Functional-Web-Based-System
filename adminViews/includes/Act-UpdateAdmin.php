@@ -1,27 +1,19 @@
 <?php
-require_once('connection.php');
+    include 'connection.php';
 
+    if(isset($_POST['updateid'])){
+        $account_id=$_POST['updateid'];
+        
+        $sql= "SELECT * from `admin_accounts` WHERE admin_id=$account_id";
+        $result = mysqli_query($con, $sql);
+        $response = array();
 
-
-
-if(isset($_POST['btn_updateadminacc']))
-{
-    $AdminID = $_POST['adminupdate_id'];
-    $AdminFname = $_POST['admin_fname'];
-    $AdminLname = $_POST['admin_lname'];
-    $AdminUsername = $_POST['admin_username'];
-    $AdminEmail = $_POST['admin_email'];
-
-
-
-    $query = "UPDATE admin_accounts SET admin_fname='".$AdminFname."', admin_lname='".$AdminLname."',admin_username='".$AdminUsername."',admin_email='".$AdminEmail."' WHERE admin_id='".$AdminID."' ";
-    $result = mysqli_query($con, $query);
-
-    if($result){
-        header("location:../RecordAdminAccount.php?successupdate");
+        while($row = mysqli_fetch_assoc($result)){
+            $response = $row;
+        }
+        echo json_encode($response);
+    }else{
+        $response['status']=200;
+        $response['message']="Invalid or data not found";
     }
-    else{
-        header("location:../RecordAdminAccount.php");
-    }
-}
 ?>
