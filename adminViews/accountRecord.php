@@ -57,6 +57,10 @@
             </div>
             <div class="modal-body">
                 <div class="mb-3">
+                    <label for="updateusername" class="form-label">Username</label>
+                    <input type="text" class="form-control" id="updateusername" disabled>
+                </div>
+                <div class="mb-3">
                     <label for="updatefirstname" class="form-label">First Name</label>
                     <input type="text" class="form-control" id="updatefirstname">
                 </div>
@@ -67,14 +71,6 @@
                 <div class="mb-3">
                     <label for="updateemail" class="form-label">Email Address</label>
                     <input type="email" class="form-control" id="updateemail">
-                </div>
-                <div class="mb-3">
-                    <label for="updateusername" class="form-label">Username</label>
-                    <input type="text" class="form-control" id="updateusername" disabled>
-                </div>
-                <div class="mb-3">
-                    <label for="updatepass" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="updatepass">
                 </div>
             </div>
             <div class="modal-footer">
@@ -159,18 +155,16 @@
             $('#updatelastname').val(admin.admin_lname);
             $('#updateemail').val(admin.admin_email);
             $('#updateusername').val(admin.admin_username);
-            $('#updatepass').val(admin.admin_password);
         });
 
         $('#updateAdminModal').modal("show");
     }
 
     function updateInfo() { // updating the data
+        var updateusername = $('#updateusername').val();
         var updatefirstname = $('#updatefirstname').val();
         var updatelastname = $('#updatelastname').val();
         var updateemail = $('#updateemail').val();
-        var updateusername = $('#updateusername').val();
-        var updatepass = $('#updatepass').val();
         var hiddendata = $('#hiddendata').val();
 
         $.post('adminViews/includes/Act-UpdateAdmin.php', {
@@ -178,7 +172,6 @@
                 updatelastname: updatelastname,
                 updateemail: updateemail,
                 updateusername: updateusername,
-                updatepass: updatepass,
                 hiddendata: hiddendata
             },
             function(data, status) {
