@@ -661,7 +661,7 @@ svg{
 
 .lot-info{
     width: 30%;
-    height: 75vh;
+    height: 78vh;
     border-radius: 5px;
     margin-right: 30px;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
@@ -830,50 +830,37 @@ svg{
     text-align: center;
     color: var(--darkgreen); 
 }
-.panel-content label{
-    font-family: 'Raleway', sans-serif;
-    font-weight: 700;
-    font-size: 18px;
-    padding: 5px;
-    color: var(--darkgreen); 
-}
-
-.panel-content .block-lot{
-    display: flex;
-   
-}
-
-.block-lot input{
-    width: 30%;
-    padding: 5px;
-    border: none;
-    border-radius: 5px ;
-    background-color: var(--light-blue);
-}
-
-.other-lot-info input{
-    margin-top: 10px;
-    width: 64%;
-    padding: 5px;
-    border: none;
-    border-radius: 5px ;
-    background-color: var(--light-blue);
-}
-
-.other-lot-info button{
-    width: 100%;
-    padding: 10px;
-    margin-top: 40px;
-    margin-bottom: 10px;
+.panel-content span{
     font-family: 'Raleway', sans-serif;
     font-weight: 700;
     font-size: 16px;
-    color: #fff;
-    background-color: var(--darkgreen);
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+    padding: 5px;
+    color: var(--darkgreen); 
 }
+.panel-content .input-group{
+    margin-top: 10px;
+}
+
+.panel-content .input-group input{
+    background-color: var(--light-blue);
+}
+
+.panel-content button{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    background-color: var(--darkgreen);
+    color: #fff;
+    cursor: pointer;
+    border: 0;
+    border-radius: 5px;
+    margin-top: 40px;
+    padding: 8px;
+    width: 100%;
+    
+}
+
+
+
 
 
 
@@ -890,14 +877,11 @@ svg{
 
 .record-account .record-title{
     margin-top: 10px;
-    margin-bottom: 10px;
     margin-right: 40px;
-    padding: 5px;
     border-radius: 5px;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
-.record-account .record-title h1,
-.add-account-title h1{
+.record-account .record-title h1{
     font-family: 'Raleway', sans-serif;
     font-weight: 700;
     text-align: center;
@@ -913,18 +897,7 @@ svg{
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
-.input-group input{
-    font-family: 'Raleway', sans-serif;
-    font-weight: 500;
-    font-size: 16px;
-    color: var(--darkgreen);
-    width: 40%;
-    margin-top: 5px;
-    padding: 8px;
-    border-radius: 5px;
-    border: 0;
-    background: var(--light-blue);
-}
+
 
 .input-group #search_admin_data{
     width: 10%;

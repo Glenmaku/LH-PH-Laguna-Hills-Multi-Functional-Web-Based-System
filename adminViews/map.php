@@ -3,16 +3,22 @@
 </div>
 <div class="lhph-map">
         <div class="map">
-                <div class="map-search-bar">
-                        <label for="lot">Monitor by:</label>
-                        <select name="lot" id="lot-id" class="lot-dropdown">
-                                <option value="blk1">Lot Information</option>
-                                <option value="blk2">Dues Information</option>
+                <div class="input-group ">
+                        <select class="form-select" aria-label="Default select example">
+                                <option selected>Monitory:</option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
                         </select>
-                        <input type="text" name="search" id="map-search" placeholder="Search Here"></input>
-
-
-                        <button><i class="fas fa-search"></i></button>
+                        <h4>|</h4>
+                        <select class="form-select" aria-label="Default select example">
+                                <option selected>Search by:</option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                        </select>
+                        <input type="text" class="form-control" aria-label="Text input with dropdown button">
+                        <button class="btn btn-success md-3" type="button"><i class="fa-solid fa-magnifying-glass"></i></button>
                 </div>
                 <svg version="1.1" id="svg5" inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)" sodipodi:docname="Laguna_Hills_Sub.svg" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 4000 7000" style="enable-background:new 0 0 1190.2 1683.8;" xml:space="preserve">
                         <g id="sudvision">
@@ -2984,68 +2990,34 @@
                 <div class="panel-info">
                         <div class="panel-content">
                                 <h3>LOT INFORMATION</h3>
-                                <div class="block-lot">
-                                        <label for="block">Block</label>
-                                        <input type="text" name="Block" id="block-status" disabled>
-
-                                        <label for="lot">Lot</label>
-                                        <input type="text" name="lot" id="lot-status" disabled>
+                                <div class="input-group">
+                                        <span class="input-group-text">Block</span>
+                                        <input type="text" aria-label="Block" class="form-control" disabled>
+                                        <span class="input-group-text">Lot</span>
+                                        <input type="text" aria-label="Lot" class="form-control" disabled>
+                                </div>
+                                <div class="input-group">
+                                        <span class="input-group-text">Street</span>
+                                        <input type="text" aria-label="Street" class="form-control" disabled>
+                                </div>
+                                <div class="input-group">
+                                        <span class="input-group-text">Status</span>
+                                        <input type="text" aria-label="Status" class="form-control" disabled>
+                                </div>
+                                <div class="input-group">
+                                        <span class="input-group-text">Area per Sqm</span>
+                                        <input type="text" aria-label="Area per Sqm" class="form-control" disabled>
+                                </div>
+                                <div class="input-group">
+                                        <span class="input-group-text">Price</span>
+                                        <input type="text" aria-label="Price" class="form-control" disabled>
                                 </div>
 
-                                <div class="other-lot-info">
-                                        <label for="street">Street</label>
-                                        <input type="text" name="street" id="street-status" disabled>
-                                        <label for="status">Status</label>
-                                        <input type="text" name="status" id="status-status" disabled>
-                                        <label for="area">Area Sqm</label>
-                                        <input type="text" name="area" id="area-status" disabled>
-                                        <label for="price">Price</label>
-                                        <input type="text" name="price" id="price-status" disabled>
-                                        <label for="remarks">Remarks</label>
-                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap">Edit Information</button>
-                                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" style="display: none;" aria-hidden="true">
-                                                <div class="modal-dialog">
-                                                        <div class="modal-content">
-                                                                <div class="modal-header">
-                                                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Information</h1>
-                                                                        <button type="button" class=" btn btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                                </div>
-                                                                <div class="modal-body">
-                                                                        <div class="input-group">
-                                                                                <span class="input-group-text">Block and Lot</span>
-                                                                                <input type="text" aria-label="First name" class="form-control">
-                                                                                <input type="text" aria-label="Last name" class="form-control">
-                                                                        </div>
-                                                                        <div class="mb-3">
-                                                                                <label for="exampleInputEmail1" class="form-label">Street:</label>
-                                                                                <input type="text" class="form-control" id="completeStreet">
-                                                                        </div>
-                                                                        <div class="mb-3">
-                                                                                <label for="exampleInputEmail1" class="form-label">Status:</label>
-                                                                                <input type="text" class="form-control" id="completeStatus">
-                                                                        </div>
-                                                                        <div class="mb-3">
-                                                                                <label for="exampleInputEmail1" class="form-label">Area in Sqm:</label>
-                                                                                <input type="text" class="form-control" id="completeArea">
-                                                                        </div>
-                                                                        <div class="mb-3">
-                                                                                <label for="exampleInputEmail1" class="form-label">Price:</label>
-                                                                                <input type="text" class="form-control" id="completePrice">
-                                                                        </div>
-                                                                        <div class="mb-3">
-                                                                                <label for="exampleInputEmail1" class="form-label">Remarks:</label>
-                                                                                <input type="text" class="form-control" id="completeRemarks">
-                                                                        </div>
-                                                                </div>
-                                                                <div class="modal-footer">
-                                                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                                                        <button type="button" class="btn btn-primary" onclick="addmessage()">Send message</button>
-                                                                </div>
-                                                        </div>
-                                                </div>
-                                        </div>
+                                <div class="input-group">
+                                        <span class="input-group-text">Remarks</span>
+                                        <textarea class="form-control" aria-label="With textarea"></textarea>
                                 </div>
-
+                                <button class="edit-info" type="button"><i class="fa-solid fa-pen"></i> Edit Information</button>
                         </div>
                 </div>
 
