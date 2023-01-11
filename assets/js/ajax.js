@@ -68,22 +68,11 @@ function showAllAddAccount(){  //add account in Account records
 
 function addmessage(){
     $.ajax({
-        url:"adminViews/mapdata.php",
+        url:"/adminViews/includes/mapdata.php",
         method:"post",
         data:{record:1},
         success:function(data){
-            $('#panel-content').html(data);
+            $('.allContent').html(data);
         }
     });
-}
-
-function panelData(){
-    $.ajax({
-        url:"adminViews/mapdata.php",
-        method:"post",
-        data:{record:1},
-        success:function(data){
-            $('#panel-content').html(data);
-        }
-    })
 }
