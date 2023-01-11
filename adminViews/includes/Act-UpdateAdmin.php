@@ -24,7 +24,7 @@
         $admin_lname = $_POST['updatelastname'];
         $admin_email = $_POST['updateemail'];
 
-        $sql ="UPDATE `admin_accounts` SET admin_fname = '$admin_fname', admin_lname = '$admin_lname', admin_email = '$admin_email', WHERE admin_id = '$admin_id'";
+        $sql ="UPDATE `admin_accounts` SET admin_fname = '$admin_fname', admin_lname = '$admin_lname', admin_email = '$admin_email' WHERE admin_id = '$admin_id'";
         $result = mysqli_query($con, $sql);
 
     }
