@@ -49,14 +49,14 @@
 
 <!-- update Modal-->
 <div class="modal fade" id="updateAdminModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Update Information</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-      <div class="mb-3">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Update Information</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3">
                     <label for="updatefirstname" class="form-label">First Name</label>
                     <input type="text" class="form-control" id="updatefirstname">
                 </div>
@@ -69,7 +69,7 @@
                     <input type="email" class="form-control" id="updateemail">
                 </div>
                 <div class="mb-3">
-                    <label for="username" class="form-label">Username</label>
+                    <label for="updateusername" class="form-label">Username</label>
                     <input type="text" class="form-control" id="updateusername" disabled>
                 </div>
                 <div class="mb-3">
@@ -79,12 +79,12 @@
             </div>
             <div class="modal-footer">
                 <button type="button" id="cancel-btn" data-bs-dismiss="modal">Cancel</button>
-                <button type="button" id="submit-btn">Submit</button>
+                <button type="button" id="submit-btn" onclick="updateInfo()">Update</button>
                 <input type="hidden" id="hiddendata">
             </div>
-      </div>
+        </div>
     </div>
-  </div>
+</div>
 </div>
 
 
@@ -92,18 +92,19 @@
 
 <!--SCRIPT FOR add Admin-->
 <script>
-    $(document).ready(function(){
+    $(document).ready(function() {
         displayData();
     });
-    function  displayData(){
+
+    function displayData() {
         var displayData = "true";
         $.ajax({
-            url: '/adminViews/includes/displayData.php',
+            url: 'adminViews/includes/displayData.php',
             type: 'post',
-            data:{
+            data: {
                 displaySend: displayData
             },
-            success:function(data, status){
+            success: function(data, status) {
                 $('#display-admin').html(data);
             }
         });
@@ -117,7 +118,7 @@
         var pass = $('#pass').val();
 
         $.ajax({
-            url: "/adminViews/includes/Act-AddAdmin.php",
+            url: "adminViews/includes/Act-AddAdmin.php",
             type: 'post',
             data: {
                 fnameSend: fname,
@@ -126,62 +127,64 @@
                 userSend: user,
                 passSend: pass
             },
-            success:function(data, status){
-                //console.log(status);
+            success: function(data, status) {
+                $('#addAdminAccount').modal("hide");
                 displayData();
             }
-            
+
         });
     }
 
     function deleteUser(deleteid) {
         $.ajax({
-            url: '/adminViews/includes/Act-DeleteAdmin.php',
+            url: 'adminViews/includes/Act-DeleteAdmin.php',
             type: 'post',
-            data:{
+            data: {
                 deleteSend: deleteid
             },
-            success:function(data, status){
+            success: function(data, status) {
                 displayData();
             }
         })
     }
 
-    function getDetails(updateid){
+    function getDetails(updateid) {  // to show the current data
         $('#hiddendata').val(updateid);
 
-        $.post("/adminViews/includes/Act-UpdateAmin.php",{updateid:updateid},function(data, status){
-                var admin = JSON.parse(data);
-                $('#updatefirstname').val(admin.admin_fname);
-                $('#updatelastname').val(admin.admin_lname);
-                $('#updateemail').val(admin.admin_email);
-                $('#updateusername').val(admin.admin_username);
-                $('#updatepass').val(admin.admin_password);
-            });
+        $.post('adminViews/includes/Act-UpdateAdmin.php', {
+            updateid: updateid
+        }, function(data, status) {
+            var admin = JSON.parse(data);
+            $('#updatefirstname').val(admin.admin_fname);
+            $('#updatelastname').val(admin.admin_lname);
+            $('#updateemail').val(admin.admin_email);
+            $('#updateusername').val(admin.admin_username);
+            $('#updatepass').val(admin.admin_password);
+        });
 
         $('#updateAdminModal').modal("show");
+    }
 
+    function updateInfo() { // updating the data
+        var updatefirstname = $('#updatefirstname').val();
+        var updatelastname = $('#updatelastname').val();
+        var updateemail = $('#updateemail').val();
+        var updateusername = $('#updateusername').val();
+        var updatepass = $('#updatepass').val();
+        var hiddendata = $('#hiddendata').val();
+
+        $.post('adminViews/includes/Act-UpdateAdmin.php', {
+                updatefirstname: updatefirstname,
+                updatelastname: updatelastname,
+                updateemail: updateemail,
+                updateusername: updateusername,
+                updatepass: updatepass,
+                hiddendata: hiddendata
+            },
+            function(data, status) {
+
+                $('#updateAdminModal').modal('hide');
+                displayData();
+            });
     }
 </script>
-
-
-<!--SCRIPT FOR VIEW ACCOUNT-->
-<script>
-    $(document).ready(function() {
-        $('.btn_view_admin_acc').on('click', function() {
-            $('#adminviewmodal').modal('show');
-
-            $tr = $(this).closest('tr');
-
-            var data = $tr.children("td").map(function() {
-                return $(this).text();
-            }).get();
-
-            console.log(data);
-
-            $('#adminview_id').val(data[0]);
-
-        });
-    });
-</script>
-</div>
