@@ -3043,7 +3043,7 @@ $(document).ready(function(){
                         }
                 });
                }else{
-                $("#panel-content").css("display","none");
+                $(".panel-content").css("display","none");
                } 
         });
 });
