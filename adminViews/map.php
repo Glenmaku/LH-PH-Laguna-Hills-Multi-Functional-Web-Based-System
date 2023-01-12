@@ -3029,7 +3029,7 @@
 <script type="text/javascript">
 
 $(document).ready(function(){
-        $('.form-control').keyup(funtion(){
+        $('.form-control').keyup(function(){
                 var input = $(this).val();
                 //alert(input);
                if(input != ""){
