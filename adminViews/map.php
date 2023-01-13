@@ -3027,24 +3027,21 @@
 </div>
 
 <script type="text/javascript">
+$(document).ready(function() {
+        panelData();
+    });
 
-$(document).ready(function(){
-        $('.form-control').keyup(function(){
-                var input = $(this).val();
-                //alert(input);
-               if(input != ""){
-                $.ajax({
-                        url:"./adminViews/includes/mapdata.php",
-                        method:"POST",
-                        data:{input:input},
-
-                        success:function(data){
-                                $('.panel-content').html(data);
-                        }
-                });
-               }else{
-                $(".panel-content").css("display","none");
-               } 
+    function panelData() {
+        var panelData = "true";
+        $.ajax({
+            url: 'adminViews/includes/mapdata.php',
+            type: 'post',
+            data: {
+                panelSend: panelData
+            },
+            success: function(data, status) {
+                $('#panel-content').html(data);
+            }
         });
-});
+    }
 </script>
