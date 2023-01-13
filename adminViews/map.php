@@ -2988,7 +2988,7 @@
                         <button><i class="fa-solid fa-user"></i></button>
                 </div>
                 <div class="panel-info">
-                        <div class="panel-content">
+                        <div class="panel-content" id="panel">
                                 <h3>LOT INFORMATION</h3>
                                 <div class="input-group">
                                         <span class="input-group-text">Block</span>
@@ -3044,4 +3044,25 @@ $(document).ready(function() {
             }
         });
     }
+
+
+$(document).ready(function(){
+        $("#search").keyup(function(){
+                var input = $(this).val();
+                //alert(input);
+                if(input !=""){
+                        $.ajax({
+                                url:"adminViews/includes/mapdata.php",
+                                method:"post",
+                                data:{input:input},
+
+                                success:function(data){
+                                        $("#panel").html(data);
+                                }
+                        });
+                }else{
+                        $("#panel").css("display","none");
+                }
+        });
+});
 </script>
