@@ -589,57 +589,12 @@ td {
     border-radius: 5px;
     margin-top: 20px;
     margin-left: 75%;
-    padding: 20px;
-    cursor: pointer;
-}
-
-.announcement-area .current-announcement{
-    border-radius: 5px;
-    display: flex;
-    justify-content: space-between;
-    margin: auto;
-    margin-top: 30px;
-    width: 90%;
-}
-.current-announcement .announcement-history{
-    width: 22%;
-    height: 250px;
-    background: var(--light-blue);
-    border-radius: 5px;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-    text-align: center;
-    margin-bottom: 10px;
-}
-
-.announcement-history img{
-    padding: 10px;
-    width: 100%;
-    height: 130px;
-}
-
-.announcement-history .announcement-description h1{
-    font-size: 20px;
-    font-weight: 700;
-    color: #000;
-}
-.announcement-history .announcement-description p{
-    font-size: 12px;
-    font-weight: 500;
-    margin: 10px;
-}
-.announcement-history .announcement-action{
-    font: 20px;
-    margin-top: 10px;
-    margin-left: 50%;
-}
-.announcement-history .announcement-action button{
-    font-size: 20px;
-    border: 0;
-    background: none;
-    color: var(--darkgreen);
     padding: 10px;
     cursor: pointer;
 }
+
+
+
 
 /*map*/
 
