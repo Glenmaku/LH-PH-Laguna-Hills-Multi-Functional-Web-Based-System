@@ -981,7 +981,8 @@ svg{
 }
 
 #add-account,
-.modal-footer #submit-btn{
+.modal-footer #submit-btn,
+.modal-footer #announcement-submit-btn{
     font-family: 'Raleway', sans-serif;
     font-weight: 500;
     font-size: 14px;
