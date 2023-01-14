@@ -5,14 +5,14 @@
         <div class="map">
                 <div class="input-group ">
                         <select class="form-select" aria-label="Default select example">
-                                <option selected>Monitor by:</option>
+                                <option selected disabled>Monitor by:</option>
                                 <option value="1">One</option>
                                 <option value="2">Two</option>
                                 <option value="3">Three</option>
                         </select>
                         <h4>|</h4>
                         <select class="form-select" aria-label="Default select example">
-                                <option selected>Search by:</option>
+                                <option selected disabled>Search by:</option>
                                 <option value="1">One</option>
                                 <option value="2">Two</option>
                                 <option value="3">Three</option>
@@ -3027,25 +3027,6 @@
 </div>
 
 <script type="text/javascript">
-$(document).ready(function() {
-        panelData();
-    });
-
-    function panelData() {
-        var panelData = "true";
-        $.ajax({
-            url: 'adminViews/includes/mapdata.php',
-            type: 'post',
-            data: {
-                panelSend: panelData
-            },
-            success: function(data, status) {
-                $('#panel-content').html(data);
-            }
-        });
-    }
-
-
 $(document).ready(function(){
         $("#search").keyup(function(){
                 var input = $(this).val();
