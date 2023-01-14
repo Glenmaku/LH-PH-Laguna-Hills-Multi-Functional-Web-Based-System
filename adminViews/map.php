@@ -2987,6 +2987,7 @@
                         <button><i class="fa-solid fa-scroll"></i></button>
                         <button><i class="fa-solid fa-user"></i></button>
                 </div>
+                <div id="display-panel">
                 <div class="panel-info">
                         <div class="panel-content" id="panel">
                                 <h3>LOT INFORMATION</h3>
@@ -3021,12 +3022,30 @@
                         </div>
                 </div>
 
-
+                        </div>
         </div>
         
 </div>
 
 <script type="text/javascript">
+$(document).ready(function() {
+        displayData();
+    });
+
+    function displayData() {
+        var displayData = "true";
+        $.ajax({
+            url: "adminViews/map.php",
+            type: "POST",
+            data: {
+                displaySend: displayData
+            },
+            success: function(data, status) {
+                $(".panel").html(data);
+            }
+        });
+    }
+
 $(document).ready(function(){
         $("#search").keyup(function(){
                 var input = $(this).val();
