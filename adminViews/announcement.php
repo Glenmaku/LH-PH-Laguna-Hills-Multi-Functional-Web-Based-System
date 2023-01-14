@@ -22,33 +22,46 @@
                     <h1 class="modal-title" id="addUserModalLabel">Add New Announcement</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body">
-                    <form id="announcement-form" enctype='multipart/form-data'>
+                <form action="adminViews/includes/announcementSubmit.php" id="add-announcement" method="post" enctype="multipart/form-data">
+                    <div class="modal-body">
                         <div class="mb-3">
                             <label for="announcementTitle" class="form-label">Title</label>
-                            <input type="text" class="form-control" id="announcementTitle" placeholder=" Enter your Title" required>
+                            <input type="text" class="form-control" id="announcementTitle" name="announcementTitle" placeholder=" Enter your Title" required>
                         </div>
                         <div class="form-floating">
-                            <textarea class="form-control" id="announcementDescription" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+                            <textarea class="form-control" id="announcementDescription" name="announcementDescription" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
                             <label for="floatingTextarea2">Description</label><br>
                         </div>
                         <div class="input-group mb-3">
-
-                            <input type="file" class="form-control" id="attachmentFile">
-                            <input type="hidden" name="hidden_upload_folder" id="hidden_upload_folder">
-
+                            <label class="input-group-text" for="imgAnnouncement">Upload</label>
+                            <input type="file" class="form-control" id="imgAnnouncement" name="imgAnnouncement">
                         </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" id="cancel-btn" data-bs-dismiss="modal">Cancel</button>
-                    <button type="button" class="announcement-submit-btn" id="announcement-submit-btn" onclick="">Submit</button>
-                </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" id="cancel-btn" data-bs-dismiss="modal">Cancel</button>
+                        <button type="submit" class="announcement-submit-btn" id="announcement-submit-btn">Submit</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
 
-    <script>
-       
-
+    <script type="text/javascript">
+        $(document).ready(function(e) {
+            $("#add-announcement").on('submit', (function(e) {
+                e.preventDefault();
+                $.ajax({
+                    url: "adminViews/includes/announcementSubmit.php",
+                    type: "POST",
+                    data: new FormData(this),
+                    contentType: false,
+                    cache: false,
+                    processData: false,
+                    success: function(data) {
+                        alert("Data inserted successfully");
+                    },
+                    error: function() {}
+                });
+            }));
+        });
     </script>
