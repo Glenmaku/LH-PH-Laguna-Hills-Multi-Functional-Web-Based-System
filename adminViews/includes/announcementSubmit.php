@@ -8,7 +8,7 @@ $description = $_POST['announcementDescription'];
 //image uploading
 if ($_FILES['imgAnnouncement']['name']) {
 
-    move_uploaded_file($_FILES['imgAnnouncement']['tmp_name'], "assets/announcementUploads/" . $_FILES['imgAnnouncement']['name']);
+    move_uploaded_file($_FILES['imgAnnouncement']['tmp_name'], "announcementUploads/" . $_FILES['imgAnnouncement']['name']);
 
     $img = "image/" . $_FILES['imgAnnouncement']['name'];
 }

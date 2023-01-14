@@ -57,11 +57,13 @@
                     contentType: false,
                     cache: false,
                     processData: false,
-                    success: function(data) {
-                        alert("Data inserted successfully");
+                    success: function(data, status) {
+                        $('#addAnnouncement').modal("hide");
                     },
                     error: function() {}
                 });
             }));
         });
+
+        
     </script>
