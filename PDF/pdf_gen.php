@@ -22,7 +22,7 @@ if(isset($_POST['btn_pdf']))
 
     // SetFont(). We choose Arial bold 16:
     $pdf->SetFont('Arial','B',10);
-
+    $pdf->SetLeftMargin(40);
     // Cell (width, height, txt, border, ln line break, align(Center))
     $pdf->Cell(20,10,'ID', '1', '0' , 'C');
     $pdf->Cell(40,10,'First Name', '1', '0' , 'C');
