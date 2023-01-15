@@ -1,20 +1,19 @@
 <?php 
-
 require_once './FPDF/fpdf.php'; //connect sa .php file for cre8ing pdf file
-require_once 'code.php'; //connection
-$sql = "select * from homeownerdb3";
+require_once './includes/connection.php'; //connection
+$sql = "select * from admin_accounts";
 $data = mysqli_query($con, $sql);
 
 if(isset($_POST['btn_pdf']))
 {   
     //check nyo nalang dito specifications http://www.fpdf.org
-    //$pdf = new FPDF('P','mm','A4');
+    //$pdf = new FPDF('Portrait','mm','A4');
     $pdf = new FPDF('p', 'mm','legal');
     $pdf->AddPage();
 
     // Page header
         // Logo left then up then image size in px ata to
-        $pdf->Image('Laguna Hills Logo.jpg',85,6,50);
+        $pdf->Image('../images/LagunaHillsLogo.jpg',85,6,50);
         // Line break
         $pdf->Ln(40);
     // END of page header
@@ -23,22 +22,25 @@ if(isset($_POST['btn_pdf']))
     $pdf->SetFont('Arial','B',10);
 
     // Cell (width, height, txt, border, ln line break, align(Center))
-    $pdf->Cell(20,10,'id', '1', '0' , 'C');
+    $pdf->Cell(20,10,'ID', '1', '0' , 'C');
     $pdf->Cell(40,10,'First Name', '1', '0' , 'C');
     $pdf->Cell(40,10,'Last Name', '1', '0' , 'C');
-    $pdf->Cell(20,10,'Age', '1', '0' , 'C');
-    $pdf->Cell(20,10,'gender', '1', '0' , 'C');
-    $pdf->Cell(60,10,'Address', '1', '1' , 'C');
+    $pdf->Cell(40,10,'Full Name', '1', '0' , 'C');
+    $pdf->Cell(20,10,'Username', '1', '0' , 'C');
+    $pdf->Cell(40,10,'Email', '1', '0' , 'C');
+    $pdf->Cell(20,10,'Password', '1', '1' , 'C');
+
     $pdf->SetFont('Arial','B',9);
 
         while($row = mysqli_fetch_assoc($data))
     {
-        $pdf->Cell(20,10,$row['id'], '1', '0' , 'C');
-        $pdf->Cell(40,10,$row['firstname'], '1', '0' , 'C');
-        $pdf->Cell(40,10,$row['lastname'], '1', '0' , 'C');
-        $pdf->Cell(20,10,$row['age'], '1', '0' , 'C');
-        $pdf->Cell(20,10,$row['gender'], '1', '0' , 'C');
-        $pdf->Cell(60,10,$row['address'], '1', '1' , 'C');
+        $pdf->Cell(20,10,$row['admin_id'], '1', '0' , 'C');
+        $pdf->Cell(40,10,$row['admin_fname'], '1', '0' , 'C');
+        $pdf->Cell(40,10,$row['admin_lname'], '1', '0' , 'C');
+        $pdf->Cell(20,10,$row['admin_fullname'], '1', '0' , 'C');
+        $pdf->Cell(20,10,$row['admin_username'], '1', '0' , 'C');
+        $pdf->Cell(60,10,$row['admin_email'], '1', '0' , 'C');
+        $pdf->Cell(60,10,$row['admin_password'], '1', '1' , 'C');
 
     }
 

@@ -1,3 +1,8 @@
+<?php require_once('includes/connection.php'); 
+$sql = "select * from admin_accounts";
+$data = mysqli_query($con, $sql);
+?>
+
 <div class="record-account">
     <div class="record-title">
         <h1>ACCOUNT RECORDS</h1>
@@ -105,7 +110,13 @@
     </div>
 </div>
 
-
+<!--glen Download Button for PDF start-->
+<div class="container">
+        <form action="../PDF/pdf_gen.php" method="POST" target="_blank">
+            <button type="submit" name="btn_pdf" class="btn btn-success" target="_blank">Download PDF</button>
+        </form>
+    </div>
+<!-- Download Button for PDF end -->
 
 <!--SCRIPT FOR add Admin-->
 <script>
