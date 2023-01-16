@@ -1,4 +1,4 @@
-<?php require_once('includes/connection.php'); 
+<?php require_once('includes/connection.php');
 $sql = "select * from admin_accounts";
 $data = mysqli_query($con, $sql);
 ?>
@@ -14,11 +14,11 @@ $data = mysqli_query($con, $sql);
         </div>
 
         <div id="display-admin"></div>
-        <div class="container">
-        <form action="../PDF/pdf_gen.php" method="POST" target="_blank">
-            <button type="submit" name="btn_pdf" class="btn btn-success" target="_blank">Download PDF</button>
-        </form>
-    </div>
+        <div class="container" style="margin-top: 10px;">
+            <form action="../PDF/pdf_gen.php" method="POST" target="_blank">
+                <button type="submit" name="btn_pdf" class="btn btn-success" target="_blank">Download PDF</button>
+            </form>
+        </div>
     </section>
 </div>
 
@@ -161,10 +161,11 @@ $data = mysqli_query($con, $sql);
         });
     }
 
-    function deleteModal(){
-        
+    function deleteModal() {
+
         $('#deleteAdminModal').modal("show");
     }
+
     function deleteUser(deleteid) {
         $.ajax({
             url: 'adminViews/includes/Act-DeleteAdmin.php',
@@ -215,4 +216,29 @@ $data = mysqli_query($con, $sql);
             });
     }
 
+    $(document).ready(function() {
+
+        load_data();
+
+        function load_data(query) {
+            $.ajax({
+                url: "adminViews/includes/searchAdmin.php",
+                method: "POST",
+                data: {
+                    query: query
+                },
+                success: function(data) {
+                    $('#display-admin').html(data);
+                }
+            });
+        }
+        $('#search-account-admin').keyup(function() {
+            var search = $(this).val();
+            if (search != '') {
+                load_data(search);
+            } else {
+                load_data();
+            }
+        });
+    });
 </script>
