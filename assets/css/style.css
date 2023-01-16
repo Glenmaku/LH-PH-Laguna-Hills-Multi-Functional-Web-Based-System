@@ -578,21 +578,27 @@ td {
     border-radius: 5px;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
-
-.announcement-area .add-announcement-btn{
-    font-family: 'Raleway', sans-serif;
-    font-weight: 700;
-    font-size: 17px;
-    color: #fff;
-    background: var(--darkgreen);
+.announcement-area .input-group{
+    padding: 15px;
+}
+.input-group #add-announcement-btn{
+    width: 22%;
+    background-color: var(--darkgreen);
     border: 0;
     border-radius: 5px;
-    margin-top: 20px;
-    margin-left: 75%;
-    padding: 10px;
-    cursor: pointer;
+    color: #fff;
+    padding: 10px ;
+    margin-left: 10%;
+    text-decoration: none;
 }
 
+.input-group #add-announcement-btn:hover{
+    background-color: var(--light-green);
+}
+
+.announcement-area .current-announcement{
+    padding: 10px;
+}
 
 
 

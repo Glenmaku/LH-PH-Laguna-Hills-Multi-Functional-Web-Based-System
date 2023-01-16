@@ -6,8 +6,9 @@
     </div>
 
     <div class="announcement-area">
-        <div class="add-announcement">
-            <button class="add-announcement-btn" data-bs-toggle="modal" data-bs-target="#addAnnouncement"><i class="fa-solid fa-plus"></i> New Announcement</button>
+        <div class="input-group input-group-sm mb-3 add-announcement">
+            <input type="text" class="form-control" id="search-announcement" placeholder="Search Here....">
+            <button id="add-announcement-btn" data-bs-toggle="modal" data-bs-target="#addAnnouncement"><i class="fa-solid fa-plus"></i> New Announcement</button>
         </div>
 
         <div class="current-announcement" id="current-announcement">
@@ -85,6 +86,30 @@
             }));
         });
 
-        
-        
+
+        $(document).ready(function() {
+
+            load_data();
+
+            function load_data(query) {
+                $.ajax({
+                    url: "adminViews/includes/searchAnnouncement.php",
+                    method: "POST",
+                    data: {
+                        query: query
+                    },
+                    success: function(data) {
+                        $('#current-announcement').html(data);
+                    }
+                });
+            }
+            $('#search-announcement').keyup(function() {
+                var search = $(this).val();
+                if (search != '') {
+                    load_data(search);
+                } else {
+                    load_data();
+                }
+            });
+        });
     </script>
