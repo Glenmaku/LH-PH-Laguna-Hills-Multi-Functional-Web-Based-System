@@ -14,6 +14,11 @@ $data = mysqli_query($con, $sql);
         </div>
 
         <div id="display-admin"></div>
+        <div class="container">
+        <form action="../PDF/pdf_gen.php" method="POST" target="_blank">
+            <button type="submit" name="btn_pdf" class="btn btn-success" target="_blank">Download PDF</button>
+        </form>
+    </div>
     </section>
 </div>
 
@@ -110,13 +115,6 @@ $data = mysqli_query($con, $sql);
     </div>
 </div>
 
-<!--glen Download Button for PDF start-->
-<div class="container">
-        <form action="../PDF/pdf_gen.php" method="POST" target="_blank">
-            <button type="submit" name="btn_pdf" class="btn btn-success" target="_blank">Download PDF</button>
-        </form>
-    </div>
-<!-- Download Button for PDF end -->
 
 <!--SCRIPT FOR add Admin-->
 <script>

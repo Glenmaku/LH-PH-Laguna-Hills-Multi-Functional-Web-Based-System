@@ -27,7 +27,7 @@ if(isset($_POST['btn_pdf']))
     $pdf->Cell(20,10,'ID', '1', '0' , 'C');
     $pdf->Cell(40,10,'First Name', '1', '0' , 'C');
     $pdf->Cell(40,10,'Last Name', '1', '0' , 'C');
-    $pdf->Cell(60,10,'Full Name', '1', '0' , 'C');
+    //$pdf->Cell(60,10,'Full Name', '1', '0' , 'C');
     $pdf->Cell(40,10,'Username', '1', '0' , 'C');
     $pdf->Cell(80,10,'Email', '1', '1' , 'C');
     // $pdf->Cell(30,10,'Password', '1', '1' , 'C');
@@ -39,7 +39,7 @@ if(isset($_POST['btn_pdf']))
         $pdf->Cell(20,10,$row['admin_id'], '1', '0' , 'C');
         $pdf->Cell(40,10,$row['admin_fname'], '1', '0' , 'C');
         $pdf->Cell(40,10,$row['admin_lname'], '1', '0' , 'C');
-        $pdf->Cell(60,10,$row['admin_fullname'], '1', '0' , 'C');
+        //$pdf->Cell(60,10,$row['admin_fullname'], '1', '0' , 'C');
         $pdf->Cell(40,10,$row['admin_username'], '1', '0' , 'C');
         $pdf->Cell(80,10,$row['admin_email'], '1', '1' , 'C');
         // $pdf->Cell(30,10,$row['admin_password'], '1', '1' , 'C');

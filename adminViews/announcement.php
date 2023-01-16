@@ -10,7 +10,7 @@
             <button class="add-announcement-btn" data-bs-toggle="modal" data-bs-target="#addAnnouncement"><i class="fa-solid fa-plus"></i> New Announcement</button>
         </div>
 
-        <div class="current-announcement">
+        <div class="current-announcement" id="current-announcement">
 
         </div>
     </div>
@@ -47,6 +47,24 @@
     </div>
 
     <script type="text/javascript">
+        $(document).ready(function() {
+            displayAnnouncement();
+        });
+
+        function displayAnnouncement() {
+            var announcementData = "true";
+            $.ajax({
+                url: 'adminViews/includes/displayNewAnnouncement.php',
+                type: 'post',
+                data: {
+                    announcementSend: announcementData
+                },
+                success: function(data, status) {
+                    $('#current-announcement').html(data);
+                }
+            });
+        }
+
         $(document).ready(function(e) {
             $("#add-announcement").on('submit', (function(e) {
                 e.preventDefault();
@@ -59,11 +77,12 @@
                     processData: false,
                     success: function(data, status) {
                         $('#addAnnouncement').modal("hide");
+                        $('form').trigger("reset");
+                        displayAnnouncement();
                     },
                     error: function() {}
                 });
             }));
         });
 
-        
     </script>
