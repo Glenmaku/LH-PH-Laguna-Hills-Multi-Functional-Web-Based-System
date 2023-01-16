@@ -60,4 +60,6 @@ if (mysqli_num_rows($result) > 0) {
 </div>';
     }
     echo $table;
-} 
+} else{
+    echo 'Data not Found!';
+}
