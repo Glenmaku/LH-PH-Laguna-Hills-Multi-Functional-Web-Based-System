@@ -3,7 +3,6 @@
 include 'connection.php';
 
 
-$output = '';
 if (isset($_POST["query"])) {
     $search = mysqli_real_escape_string($con, $_POST["query"]);
     $query = "SELECT * FROM `admin_accounts` 
@@ -34,6 +33,7 @@ if (mysqli_num_rows($result) > 0) {
         $lame = $row['admin_lname'];
         $user = $row['admin_username'];
         $email = $row['admin_email'];
+        
         $accountTable  .= '
         <tr>
         <td scope="row">' . $adminId . '</td>

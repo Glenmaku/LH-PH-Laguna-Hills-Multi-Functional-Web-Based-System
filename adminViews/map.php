@@ -17,8 +17,8 @@
                                 <option value="2">Two</option>
                                 <option value="3">Three</option>
                         </select>
-                        <input type="text" class="form-control" aria-label="Text input with dropdown button" id="search">
-                        <button class="btn btn-success md-3" type="button" name="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                        <input type="text" class="form-control" aria-label="Text input with dropdown button" id="searchMap">
+
                 </div>
                 <svg version="1.1" id="svg5" inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)" sodipodi:docname="Laguna_Hills_Sub.svg" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 4000 7000" style="enable-background:new 0 0 1190.2 1683.8;" xml:space="preserve">
                         <g id="sudvision">
@@ -2988,81 +2988,55 @@
                         <button><i class="fa-solid fa-user"></i></button>
                 </div>
                 <div id="display-panel">
-                <div class="panel-info">
-                        <div class="panel-content" id="panel">
-                                <h3>LOT INFORMATION</h3>
-                                <div class="input-group">
-                                        <span class="input-group-text">Block</span>
-                                        <input type="text" aria-label="Block" class="form-control" disabled>
-                                        <span class="input-group-text">Lot</span>
-                                        <input type="text" aria-label="Lot" class="form-control" disabled>
-                                </div>
-                                <div class="input-group">
-                                        <span class="input-group-text">Street</span>
-                                        <input type="text" aria-label="Street" class="form-control" disabled>
-                                </div>
-                                <div class="input-group">
-                                        <span class="input-group-text">Status</span>
-                                        <input type="text" aria-label="Status" class="form-control" disabled>
-                                </div>
-                                <div class="input-group">
-                                        <span class="input-group-text">Area per Sqm</span>
-                                        <input type="text" aria-label="Area per Sqm" class="form-control" disabled>
-                                </div>
-                                <div class="input-group">
-                                        <span class="input-group-text">Price</span>
-                                        <input type="text" aria-label="Price" class="form-control" disabled>
-                                </div>
 
-                                <div class="input-group">
-                                        <span class="input-group-text">Remarks</span>
-                                        <textarea class="form-control" aria-label="With textarea"></textarea>
-                                </div>
-                                <button class="edit-info" type="button"><i class="fa-solid fa-pen"></i> Edit Information</button>
-                        </div>
+
                 </div>
-
-                        </div>
         </div>
-        
+
 </div>
 
 <script type="text/javascript">
-$(document).ready(function() {
-        displayData();
-    });
-
-    function displayData() {
-        var displayData = "true";
-        $.ajax({
-            url: "adminViews/map.php",
-            type: "POST",
-            data: {
-                displaySend: displayData
-            },
-            success: function(data, status) {
-                $(".panel").html(data);
-            }
+        $(document).ready(function() {
+                displayMapData();
         });
-    }
 
-$(document).ready(function(){
-        $("#search").keyup(function(){
-                var input = $(this).val();
-                //alert(input);
-                if(input !=""){
-                        $.ajax({
-                                url:"adminViews/includes/mapdata.php",
-                                method:"post",
-                                data:{input:input},
+        function displayMapData() {
+                var mapData = "true";
+                $.ajax({
+                        url: 'adminViews/includes/mapData.php',
+                        type: 'post',
+                        data: {
+                                mapDataSend: mapData
+                        },
+                        success: function(data, status) {
+                                $('#display-panel').html(data);
+                        }
+                });
 
-                                success:function(data){
-                                        $("#panel").html(data);
+                $(document).ready(function() {
+
+                        load_data();
+
+                        function load_data(query) {
+                                $.ajax({
+                                        url: "adminViews/includes/searchMap.php",
+                                        method: "POST",
+                                        data: {
+                                                query: query
+                                        },
+                                        success: function(data) {
+                                                $('#display-panel').html(data);
+                                        }
+                                });
+                        }
+                        $('#searchMap').keyup(function() {
+                                var search = $(this).val();
+                                if (search != '') {
+                                        load_data(search);
+                                } else {
+                                        load_data();
                                 }
                         });
-                }else{
-                        $("#panel").css("display","none");
-                }
-        });
-});
+                });
+        }
 </script>

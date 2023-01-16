@@ -1,12 +1,22 @@
 <?php
+//connection to database
+include 'connection.php';
 
-include ('connection.php');
 
 
-    if(isset($_POST['mapDataSend'])){
-    $sql= "SELECT * FROM `lot_information`";
-    $result=mysqli_query($con,$sql);
-    while($row=mysqli_fetch_assoc($result)){
+if (isset($_POST["query"])) {
+    $search = mysqli_real_escape_string($con, $_POST["query"]);
+    $query = "SELECT * FROM `lot_information` 
+  WHERE Lot_ID LIKE '%" . $search . "%'
+  OR Area LIKE '%" . $search . "%'";
+}else {
+    $query = "SELECT * FROM `lot_information` ORDER BY Lot_ID";
+}
+
+
+$result = mysqli_query($con, $query);
+if (mysqli_num_rows($result) > 0) {
+    while ($row = mysqli_fetch_array($result)) {
         $Lot_ID=$row['Lot_ID'];
         $Block=$row['Block'];
         $Lot=$row['Lot'];
@@ -15,6 +25,7 @@ include ('connection.php');
         $Area=$row['Area'];
         $Price=$row['Price'];
         $Remarks=$row['Remarks'];
+
         $table='
         <div class="panel-content" id="panel">
         <h3>LOT INFORMATION</h3>
@@ -49,5 +60,4 @@ include ('connection.php');
 </div>';
     }
     echo $table;
-}
-?>    
+} 
