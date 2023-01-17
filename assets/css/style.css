@@ -601,6 +601,16 @@ td {
 }
 
 
+.pagination .page-link{
+    text-decoration: none;
+    background-color: var(--darkgreen);
+    color: #fff;
+    cursor: pointer;
+}
+.pagination .page-link:hover{
+    background-color: var(--light-green);
+    color: #fff;
+}
 
 /*map*/
 
