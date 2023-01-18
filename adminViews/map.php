@@ -3040,29 +3040,22 @@
                 });
         }
 
-        function addInfo() {
-                var xhr = new XMLHttpRequest();
-                xhr.open("POST", "/add-info", true);
-                xhr.setRequestHeader("Content-Type", "application/json");
-                xhr.onreadystatechange = function() {
-                        if (xhr.readyState === 4 && xhr.status === 200) {
-                                var response = JSON.parse(xhr.responseText);
-                                if (response.success) {
-                                        alert("Data added to the database successfully!");
-                                } else {
-                                        alert("There was an error adding the data to the database. Please try again.");
-                                }
-                        }
-                };
-                var data = {
-                        Full_Name: '[$Full_Name]',
-                        Ownership: '[$Ownership]'
-                };
-                fetch('adminViews/includes/map.json')
-                        .then(response => response.json())
-                        .then(jsonData => {
-                                console.log(data);
-                        });
-                xhr.send(JSON.stringify(data));
-        }
+        document.getElementById("myButton").onclick = function() {
+  var xhr = new XMLHttpRequest();
+  xhr.open("GET", "adminViews/includes/map.json", true);
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState === 4 && xhr.status === 200) {
+      var data = JSON.parse(xhr.responseText);
+      // do something with the data
+    }
+  };
+  xhr.send();
+};
+document.getElementById("myButton").onclick = function() {
+  fetch("adminViews/includes/map.json")
+    .then(response => response.json())
+    .then(data => {
+      // do something with the data
+    });
+}
 </script>
