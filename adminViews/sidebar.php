@@ -40,20 +40,20 @@
         </li>
 
         <li>
-            <a href="">
+            <a href="#">
                 <i class="fa-regular fa-clipboard"></i>
                 <span class="link-name">Account Records</span>
             </a>
             <ul>
                 <li>
-                    <a href="#account-records" onclick="showAllAdminRecord()">
+                    <a href="#account-records" onclick="showAllAccountRecord()">
                         <i class="fa-solid fa-user-tie"></i>
                         <span class="sub-name">Admin Accounts</span>
                     </a>
                 </li>
 
                 <li>
-                    <a href="#account-records" onclick="showAllOwnerRecord()">
+                    <a href="#account-records" onclick="showAllAccountRecord()">
                         <i class="fa-solid fa-users"></i>
                         <span class="sub-name">Homeowners Accounts</span>
                     </a>
