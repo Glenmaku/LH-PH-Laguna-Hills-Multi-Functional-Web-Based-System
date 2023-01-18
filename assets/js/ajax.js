@@ -31,9 +31,10 @@ function showMap(){  //sidebar
     });
 }
 
-function showMap(){  //sidebar
+
+function showAllAdminRecord(){  //sidebar
     $.ajax({
-        url:"./adminViews/map.php",
+        url:"./adminViews/AdminAccountRecord.php",
         method:"post",
         data:{record:1},
         success:function(data){
@@ -42,9 +43,9 @@ function showMap(){  //sidebar
     });
 }
 
-function showAllAccountRecord(){  //sidebar
+function showAllOwnerRecord(){  //sidebar
     $.ajax({
-        url:"./adminViews/accountRecord.php",
+        url:"./adminViews/OwnerAccountRecord.php",
         method:"post",
         data:{record:1},
         success:function(data){
@@ -52,7 +53,6 @@ function showAllAccountRecord(){  //sidebar
         }
     });
 }
-
 
 
 function showAllAddAccount(){  //add account in Account records
