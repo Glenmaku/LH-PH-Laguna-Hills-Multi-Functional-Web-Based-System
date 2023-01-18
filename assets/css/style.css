@@ -846,13 +846,15 @@ svg{
 }
 
 
-.record-account .record-title{
+.record-account .record-title,
+.owner-record .record-title{
     margin-top: 10px;
     margin-right: 40px;
     border-radius: 5px;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
-.record-account .record-title h1{
+.record-account .record-title h1,
+.owner-account .record-title h1{
     font-family: 'Raleway', sans-serif;
     font-weight: 700;
     text-align: center;
