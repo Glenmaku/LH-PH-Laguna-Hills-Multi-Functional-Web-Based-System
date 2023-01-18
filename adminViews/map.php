@@ -2993,7 +2993,6 @@
                 </div>
         </div>
 
-</div>
 
 <script type="text/javascript">
         $(document).ready(function() {
@@ -3039,30 +3038,29 @@
                         });
                 });
         }
-
-        function addInfo() {
-                var xhr = new XMLHttpRequest();
-                xhr.open("POST", "/add-info", true);
-                xhr.setRequestHeader("Content-Type", "application/json");
-                xhr.onreadystatechange = function() {
-                        if (xhr.readyState === 4 && xhr.status === 200) {
-                                var response = JSON.parse(xhr.responseText);
-                                if (response.success) {
-                                        alert("Data added to the database successfully!");
-                                } else {
-                                        alert("There was an error adding the data to the database. Please try again.");
-                                }
-                        }
-                };
-                var data = {
-                        Full_Name: '[$Full_Name]',
-                        Ownership: '[$Ownership]'
-                };
-                fetch('adminViews/includes/map.json')
-                        .then(response => response.json())
-                        .then(jsonData => {
-                                console.log(data);
-                        });
-                xhr.send(JSON.stringify(data));
+        $(document).ready(function(){
+    $(".edit-info").on("click", function(){
+      $("#editModal").modal("show");
+      $.ajax({
+        type: "GET",
+        url: "adminViews/includes/mapdata.php",
+        success: function(data){
+          // Populate the form fields with the returned data
+          $("#editForm").html(data);
         }
+      });
+    });
+  
+    $("#saveChanges").on("click", function(){
+      $.ajax({
+        type: "POST",
+        url: "update_information.php",
+        data: $("#editForm").serialize(),
+        success: function(data){
+          // Handle the response from the server
+          $("#editModal").modal("hide");
+        }
+      });
+    });
+  });
 </script>
