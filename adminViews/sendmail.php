@@ -14,8 +14,8 @@
 </head>
 
 <body>
-   <div class="container">
-      <div class="container-form">
+   <div class="containersend">
+      <div class="container-formsend">
          <div class="row">
             <div class="col-lg mail-form">
                <h1 class="text-center">
