@@ -52,10 +52,6 @@
                         <li class="nav-item">
                             <a href="ContactUs.php" class="nav-link nas">Contact Us</a>
                         </li>
-                        <li class="nav-item" hidden>
-                            <!--MODAL LOGIN-->
-                            <a href="Login.php" class="nav-link loginbutton nas">Login</a>
-                        </li>
                         <li class="nav-item">
                             <a class="btn loginbutton nas" onclick="login_function()">Login</a>
                         </li>
@@ -205,24 +201,6 @@
             $('#FORGOTMODAL').modal("show");
             $('#Login').modal("hide");
         }
-
-        //.function sending_function(){
-
-        //$.ajax({
-        //   url: 'includes/Act-show.php',
-        //   type:'post',
-        //  data: {displayVerify:displayVerify},
-        // success:function(data,status){
-        //   $('#verify').html(data);
-        //   $("#sending_button").replaceWith(' <button class="btn-submit4 btn-submit-5" /name="submit_button" id="submit_button" type="button" onclick="verify_function();">' +
-        // '<span class="btn-submit-6">' +
-        //    '<p class="bx-fw bx bxs-send"></p>' +
-        //      '</span>' +
-        //      '<a class="text-white">Verify</a>' +
-        //     '</button>');
-        //       }
-        //   });
-        //}
 
 
         function sending_function() {
