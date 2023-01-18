@@ -26,7 +26,7 @@
         </li>
 
         <li>
-            <a href="">
+            <a href="#message" onclick="showmessage()">
                 <i class="fa-solid fa-envelope"></i>
                 <span class="link-name">Message</span>
             </a>
