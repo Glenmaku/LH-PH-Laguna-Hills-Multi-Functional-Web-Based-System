@@ -47,25 +47,8 @@
         </div>
     </div>
 
+
     <script type="text/javascript">
-        $(document).ready(function() {
-            displayAnnouncement();
-        });
-
-        function displayAnnouncement() {
-            var announcementData = "true";
-            $.ajax({
-                url: 'adminViews/includes/displayNewAnnouncement.php',
-                type: 'post',
-                data: {
-                    announcementSend: announcementData
-                },
-                success: function(data, status) {
-                    $('#current-announcement').html(data);
-                }
-            });
-        }
-
         $(document).ready(function(e) {
             $("#add-announcement").on('submit', (function(e) {
                 e.preventDefault();
@@ -79,14 +62,46 @@
                     success: function(data, status) {
                         $('#addAnnouncement').modal("hide");
                         $('form').trigger("reset");
-                        displayAnnouncement();
+                        displayAnnouncement(page);
                     },
                     error: function() {}
                 });
             }));
         });
+        // For pagination
+        $(document).ready(function() {
+            var currentPage = localStorage.getItem("currentPage");
+            if (!currentPage) {
+                currentPage = 1;
+            }
+            displayAnnouncement(currentPage);
+        });
+
+        function displayAnnouncement(page) {
+            localStorage.setItem("currentPage", page);
+            var announcementData = "true";
+            $.ajax({
+                url: 'adminViews/includes/displayNewAnnouncement.php',
+                type: 'post',
+                data: {
+                    announcementSend: announcementData,
+                    page: page
+                },
+                success: function(data, status) {
+                    $('#current-announcement').html(data);
+                }
+            });
+        }
+
+        function getPage(page) {
+            displayAnnouncement(page);
+        }
 
 
+        function getPage(page) {
+            displayAnnouncement(page);
+        }
+        // For Search int the table
         $(document).ready(function() {
 
             load_data();
