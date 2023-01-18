@@ -18,9 +18,9 @@
       <div class="container-form">
          <div class="row">
             <div class="col-lg mail-form">
-               <h2 class="text-center">
+               <h1 class="text-center">
                   Send Message
-               </h2>
+               </h1>
 
                <p class="text-center">
                   Send mail to anyone
