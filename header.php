@@ -65,7 +65,6 @@
         </div>
 
     </nav><!--END--Navigation Bar-->
-
     <!-- LOGIN MODAL --><!--SHOW ON CLICK-->
     <div class="modal fade" id="Login" tabindex="-1" aria-labelledby="LoginLabel" aria-hidden="true">
         <div class="login modal-dialog modal-lg modal-dialog-centered">
@@ -75,6 +74,7 @@
                         <div class="justify-content-center align-self-center login_banner_2  d-flex flex-column ">
                             <img src="Images/LHPHlogo.png " class="d-flex align-self-center">
                             <h1 class="text-center">Welcome!</h1>
+
                         </div>
                     </div>
                     <div class="right_side forms  justify-content-center d-flex flex-column">
@@ -115,6 +115,7 @@
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
     <!-- END--LOGIN MODAL -->
@@ -204,6 +205,25 @@
             $('#FORGOTMODAL').modal("show");
             $('#Login').modal("hide");
         }
+
+        //.function sending_function(){
+
+        //$.ajax({
+        //   url: 'includes/Act-show.php',
+        //   type:'post',
+        //  data: {displayVerify:displayVerify},
+        // success:function(data,status){
+        //   $('#verify').html(data);
+        //   $("#sending_button").replaceWith(' <button class="btn-submit4 btn-submit-5" /name="submit_button" id="submit_button" type="button" onclick="verify_function();">' +
+        // '<span class="btn-submit-6">' +
+        //    '<p class="bx-fw bx bxs-send"></p>' +
+        //      '</span>' +
+        //      '<a class="text-white">Verify</a>' +
+        //     '</button>');
+        //       }
+        //   });
+        //}
+
 
         function sending_function() {
             var email = $("#forgot_emailusername").val();
