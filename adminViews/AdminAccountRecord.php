@@ -5,7 +5,7 @@ $data = mysqli_query($con, $sql);
 
 <div class="record-account">
     <div class="record-title">
-        <h1>ACCOUNT RECORDS</h1>
+        <h1>ADMIN RECORDS</h1>
     </div>
     <section class="record-content accountContent"><!--SECTION NG BUONG CONTENT-->
         <div class=" input-group input-group-sm mb-3 search-add-area">
