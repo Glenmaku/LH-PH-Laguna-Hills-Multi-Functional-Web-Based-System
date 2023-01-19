@@ -1011,13 +1011,12 @@ svg{
 /* sendmail css start*/
 /* custom css styling */
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
-html,body{
-    background: #211a22;
-}
+
 ::selection{
     color: #fff;
     background: #095E41;
 }
+
 .container{
     position: relative;
     /* top: 50%;

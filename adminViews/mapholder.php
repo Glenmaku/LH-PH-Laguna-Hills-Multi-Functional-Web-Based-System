@@ -8,6 +8,7 @@
 
 	<script src="data.js"></script>
 	<script src="script.js"></script>
+	<script src="adminViews/includes/edit-info.js"></script>
 
 	<style>
 		body{

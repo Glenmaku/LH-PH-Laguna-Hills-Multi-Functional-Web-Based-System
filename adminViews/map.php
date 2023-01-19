@@ -2993,7 +2993,6 @@
                 </div>
         </div>
 
-</div>
 
 <script type="text/javascript">
         $(document).ready(function() {
@@ -3039,23 +3038,29 @@
                         });
                 });
         }
-
-        document.getElementById("myButton").onclick = function() {
-  var xhr = new XMLHttpRequest();
-  xhr.open("GET", "adminViews/includes/map.json", true);
-  xhr.onreadystatechange = function() {
-    if (xhr.readyState === 4 && xhr.status === 200) {
-      var data = JSON.parse(xhr.responseText);
-      // do something with the data
-    }
-  };
-  xhr.send();
-};
-document.getElementById("myButton").onclick = function() {
-  fetch("adminViews/includes/map.json")
-    .then(response => response.json())
-    .then(data => {
-      // do something with the data
+        $(document).ready(function(){
+    $(".edit-info").on("click", function(){
+      $("#editModal").modal("show");
+      $.ajax({
+        type: "GET",
+        url: "adminViews/includes/mapdata.php",
+        success: function(data){
+          // Populate the form fields with the returned data
+          $("#editForm").html(data);
+        }
+      });
     });
-}
+  
+    $("#saveChanges").on("click", function(){
+      $.ajax({
+        type: "POST",
+        url: "update_information.php",
+        data: $("#editForm").serialize(),
+        success: function(data){
+          // Handle the response from the server
+          $("#editModal").modal("hide");
+        }
+      });
+    });
+  });
 </script>
