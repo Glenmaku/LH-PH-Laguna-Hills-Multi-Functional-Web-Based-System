@@ -274,12 +274,17 @@
 }
 
 .association-dues .lot-number{
-    width: 65%;
     display: flex;
     margin-top: 15px;
     justify-content: space-between;
 }
+.blocklots-num{
+    width: 100%;
+}
+#blocklot{
+    width: 80%;
 
+}
 .association-dues .lot-number input,
 .association-dues .address-status input{
     font-family: 'Raleway', sans-serif;
