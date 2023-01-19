@@ -2986,81 +2986,152 @@
                         <button><i class="fa-solid fa-house"></i></button>
                         <button><i class="fa-solid fa-scroll"></i></button>
                         <button><i class="fa-solid fa-user"></i></button>
+
                 </div>
+
                 <div id="display-panel">
 
 
                 </div>
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                                <div class="modal-content">
+                                        <div class="modal-header">
+                                                <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Information</h1>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div id="map-submit-error"></div>    
+                                        <form>
+                                                        <div class="mb-3">
+                                                                <label for="recipient-name" class="col-form-label">Block</label>
+                                                                <input type="number" class="form-control" id="Block">
+                                                        </div>
+                                                        <div class="mb-3">
+                                                                <label for="recipient-name" class="col-form-label">Lot</label>
+                                                                <input type="number" class="form-control" id="Lot">
+                                                        </div>
+                                                        <div class="mb-3">
+                                                                <label for="recipient-name" class="col-form-label">Street</label>
+                                                                <input type="text" class="form-control" id="Street">
+                                                        </div>
+                                                        <div class="mb-3">
+                                                                <label for="recipient-name" class="col-form-label">Status</label>
+                                                                <input type="text" class="form-control" id="Status">
+                                                        </div>
+                                                        <div class="mb-3">
+                                                                <label for="recipient-name" class="col-form-label">Area</label>
+                                                                <input type="number" class="form-control" id="Area">
+                                                        </div>
+                                                        <div class="mb-3">
+                                                                <label for="recipient-name" class="col-form-label">Price</label>
+                                                                <input type="number" class="form-control" id="Price">
+                                                        </div>
+                                                        <div class="mb-3">
+                                                                <label for="message-text" class="col-form-label">Remarks</label>
+                                                                <textarea class="form-control" id="Remarks"></textarea>
+                                                        </div>
+                                                </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                <button type="button" class="btn btn-primary" id="submit-btn">Submit</button>
+
+                                        </div>
+                                </div>
+                        </div>
+                </div>
         </div>
 
 
-<script type="text/javascript">
-        $(document).ready(function() {
-                displayMapData();
-        });
 
-        function displayMapData() {
-                var mapData = "true";
-                $.ajax({
-                        url: 'adminViews/includes/mapData.php',
-                        type: 'post',
-                        data: {
-                                mapDataSend: mapData
-                        },
-                        success: function(data, status) {
-                                $('#display-panel').html(data);
-                        }
+        <script type="text/javascript">
+                $(document).ready(function() {
+                        displayMapData();
                 });
 
-                $(document).ready(function() {
-
-                        load_data();
-
-                        function load_data(query) {
-                                $.ajax({
-                                        url: "adminViews/includes/searchMap.php",
-                                        method: "POST",
-                                        data: {
-                                                query: query
-                                        },
-                                        success: function(data) {
-                                                $('#display-panel').html(data);
-                                        }
-                                });
-                        }
-                        $('#searchMap').keyup(function() {
-                                var search = $(this).val();
-                                if (search != '') {
-                                        load_data(search);
-                                } else {
-                                        load_data();
+                function displayMapData() {
+                        var mapData = "true";
+                        $.ajax({
+                                url: 'adminViews/includes/mapData.php',
+                                type: 'post',
+                                data: {
+                                        mapDataSend: mapData
+                                },
+                                success: function(data, status) {
+                                        $('#display-panel').html(data);
                                 }
                         });
-                });
-        }
-        $(document).ready(function(){
-    $(".edit-info").on("click", function(){
-      $("#editModal").modal("show");
-      $.ajax({
-        type: "GET",
-        url: "adminViews/includes/mapdata.php",
-        success: function(data){
-          // Populate the form fields with the returned data
-          $("#editForm").html(data);
-        }
-      });
-    });
-  
-    $("#saveChanges").on("click", function(){
-      $.ajax({
-        type: "POST",
-        url: "update_information.php",
-        data: $("#editForm").serialize(),
-        success: function(data){
-          // Handle the response from the server
-          $("#editModal").modal("hide");
-        }
-      });
+
+                        $(document).ready(function() {
+
+                                load_data();
+
+                                function load_data(query) {
+                                        $.ajax({
+                                                url: "adminViews/includes/searchMap.php",
+                                                method: "POST",
+                                                data: {
+                                                        query: query
+                                                },
+                                                success: function(data) {
+                                                        $('#display-panel').html(data);
+                                                }
+                                        });
+                                }
+                                $('#searchMap').keyup(function() {
+                                        var search = $(this).val();
+                                        if (search != '') {
+                                                load_data(search);
+                                        } else {
+                                                load_data();
+                                        }
+                                });
+                        });
+                }
+                /*$(document).ready(function(){
+  $("#submit-btn").click(function(){
+    // Collect the form data
+    var formData = {
+      'Block': $('input[name=Block]').val(),
+      'Lot': $('input[name=Lot]').val(),
+      'Street': $('input[name=Street]').val(),
+      'Status': $('input[name=Status]').val(),
+      'Area': $('input[name=Area]').val(),
+      'Price': $('input[name=Price]').val(),
+      'Remarks': $('input[name=Remarks]').val(),
+    };
+
+    // Send the data to the server
+    $.ajax({
+      type: "POST",
+      url: "adminViews/includes/mapsubmit.php",
+      data: formData,
+      success: function(data) {
+        console.log(data);
+      }
     });
   });
-</script>
+});*/
+
+                $(document).ready(function() {
+                        $("#submit-btn").click(function() {
+                                        var Blockvar = $('#Block').val();
+                                        var Lotvar = $('#Lot').val();
+                                        var Streetvar = $('#Street').val();
+                                        var Statusvar = $('#Status').val();
+                                        var Areavar = $('#Area').val();
+                                        var Pricevar = $('#Price').val();
+                                        var Remarksvar = $('#Remarks').val();
+                                        $.ajax({
+                                        type: "POST",
+                                        url: "adminViews/includes/mapsubmit.php",
+                                        data: {Blockvar:Blockvar,Lotvar:Lotvar,Streetvar:Streetvar,Statusvar:Statusvar,Areavar:Areavar,
+                                        Pricevar:Pricevar,Remarksvar:Remarksvar},
+                                        success: function(data) {
+                                                $('#map-submit-error').html(data);
+                                        }
+                                }); 
+                        });
+                });
+        </script>

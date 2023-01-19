@@ -56,7 +56,7 @@ if (mysqli_num_rows($result) > 0) {
                 <span class="input-group-text">Remarks</span>
                 <textarea class="form-control" id="remarks" disabled>'.$Remarks.'</textarea>
         </div>
-        <button class="edit-info" type="button"><i class="fa-solid fa-pen"></i> Edit Information</button>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo"><i class="fas fa-edit"></i>Edit Information</button>
 </div>';
     }
     echo $table;
