@@ -834,7 +834,6 @@ svg{
 
 
 
-
 .noselect {
   -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */
@@ -854,7 +853,7 @@ svg{
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 .record-account .record-title h1,
-.owner-account .record-title h1{
+.owner-record .record-title h1{
     font-family: 'Raleway', sans-serif;
     font-weight: 700;
     text-align: center;
@@ -870,7 +869,8 @@ svg{
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
-.record-content .search-add-area input{
+.record-content .search-add-area input,
+.owner-search-add-area input{
     font-family: 'Raleway', sans-serif;
     font-weight: 700;
     font-size: 15px;
@@ -883,7 +883,6 @@ svg{
     border: 0;
     border-radius: 5px;
     color: #fff;
-    font-size: 19px;
     padding: 5px ;
     cursor: pointer;
 }
@@ -892,15 +891,28 @@ svg{
     text-decoration: none;
     color: #fff;  
 }
-.input-group #add-account{
+.input-group #add-account
+{
     width: 22%;
     background-color: var(--darkgreen);
     border: 0;
     border-radius: 5px;
     color: #fff;
-    font-size: 19px;
+    font-size: 16px;
     padding: 8px ;
     margin-left: 27%;
+    text-decoration: none;
+}
+.input-group #btn_add_owner_acc,
+.input-group #btn_assign_owner_lot{
+    width: 22%;
+    background-color: var(--darkgreen);
+    border: 0;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 16px;
+    padding: 8px ;
+    margin-left: 2%;
     text-decoration: none;
 }
 
@@ -924,8 +936,8 @@ svg{
     font-size: 16px;
     text-align: center;
     border-bottom: 1px solid;
-
 }
+
 
 
 .btn_view_admin_acc,
@@ -991,7 +1003,36 @@ svg{
 
 }
 
+.assignlotmodal h5,
+.owneraddaccountmodal h5,
+.updateOwnerModal h5,
+.viewOwnerModal h5{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--darkgreen);
+}
+.assignlotmodal span,
+.owneraddaccountmodal span,
+.updateOwnerModal label,
+.viewOwnerModal label{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    color: #fff;  
+    background-color: var(--darkgreen);
+}
+.assignlotmodal input,
+.owneraddaccountmodal input,
+.updateOwnerModal input,
+.viewOwnerModal label{
+    font-size: 16px;
+    font-weight: 500;
+}
 
+.owneraddaccountmodal #passgenerate{
+    color: #fff; 
+}
 /*********** Scrollbar  **************/
 ::-webkit-scrollbar {
     width: 8px;  /* width of the scrollbar */

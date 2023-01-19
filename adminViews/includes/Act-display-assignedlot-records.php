@@ -9,6 +9,7 @@ if(isset($_POST['displayLotSend'])){
       <tr>
         <th scope="col">Property</th>
         <th scope="col">Type of Ownership</th>
+        <th scope="col"></th>
       </tr>
     </thead>';
 
@@ -19,12 +20,12 @@ if(isset($_POST['displayLotSend'])){
         $Ownerusername = $row['owner_username'];
         $Lotid = $row['lot_id'];
         $Ownership= $row['ownership'];
-        $hihi= $row['owner_username'];
+        $username= $row['owner_username'];
 
     $ownerLotTable.= '<tr>
         <td scope="row">'.$Lotid.'</td>
         <td>'. $Ownership.'</td>
-        <td>'. $hihi.'</td>
+        <td>'. $username.'</td>
   
 
       </tr>';
