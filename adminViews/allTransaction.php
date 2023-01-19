@@ -6,16 +6,27 @@
 
         <div class="transaction-content">
             <div class="transaction-sheet">
-                <div class="transaction-details">
-                    <span>Transaction No.</span>
-                    <input type="text" name="transaction-number" id="trans-no" value="0000" disabled>
-                    <span>Date:</span>
-                    <input type="date" name="date" id="date" disabled>
-                    <div class="client-name">
-                        <span>Name:</span>
+                <div class="transaction-container">
+                  <div class="container-horizontal">
+
+                    <div class="transaction-details">
+                        <div class="transaction-line">
+                            <span>Transaction No.</span>
+                            <input type="text" name="transaction-number" id="trans-no" value="0000" disabled>
+                        </div>
+                        <div class="date-container">
+                            <span>Date:</span>
+                            <input type="date" name="date" id="date" disabled>
+                        </div>
+                    </div>
+                    <div class="client-name"><span>Name:</span>
                         <input type="text" name="name" id="client-name" placeholder="Enter name...">
                     </div>
+
+                </div>  
                 </div>
+                
+
 
 
                 <!-- ASSOCIATION DUES -->

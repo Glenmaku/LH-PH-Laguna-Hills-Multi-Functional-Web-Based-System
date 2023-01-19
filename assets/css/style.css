@@ -190,13 +190,24 @@
     margin-top: 5px;
     margin-right: 10px;
 }
+.container-horizontal{
+    width: 100%;
+    justify-content: space-between;
+}
+.transaction-line{
+    display: inline;
+}
+.date-container{
+    display: inline;
+}
+
 .transaction-content .transaction-sheet span{
     font-family: 'Raleway', sans-serif;
     font-weight: 700;
     font-size: 18px;
     color: var(--darkgreen);
 }
-.transaction-sheet .transaction-details{
+.transaction-container{
     padding: 15px;
     border-radius: 5px;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
@@ -210,12 +221,9 @@
     border-radius: 5px;
     border: 0;
 }
-.transaction-details #trans-no{
-    margin-right: 15%;
-}
 
 .transaction-sheet .client-name input{
-    width: 100%;
+    width: 85%;
     font-family: 'Raleway', sans-serif;
     font-weight: 500;
     font-size: 17px;
@@ -224,7 +232,7 @@
     margin-top: 3px;
     border-radius: 5px;
     border: 0;
-    background-color: var(--light-blue)  ;
+    background-color: var(--light-blue);
 }
 
 .transaction-sheet .association-dues,
