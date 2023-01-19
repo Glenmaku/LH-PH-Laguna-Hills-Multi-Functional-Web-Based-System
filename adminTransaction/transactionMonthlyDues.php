@@ -51,7 +51,7 @@
     <div class="address-status">
         <div class="dues-remaining-balance">
             <span>Remaining Dues:</span><br>
-            <input type="text" name="dues-remaining-balance" id="dues-remaining-balance" disabled >
+            <input type="text" name="dues-remaining-balance" id="dues-remaining-balance" disabled>
         </div>
         <div class="Subtotal">
             <span>Subtotal:</span><br>

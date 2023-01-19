@@ -211,9 +211,12 @@
                             row.append($("<td>").html('<input type="text" name="field4[]">'));
 
                             // Add a delete button to the new row
+                            
+
                             row.append(
                             $("<td>").html(
-                                '<button class="deleteButton">Delete</button>'
+                                '<a href="javascript:void(0);" id="deleteButton" title="Delete field"><i class="fa-solid fa-minus "></i>Delete</a>'
+                                // '<button class="fa-solid fa-minus"id="deleteButton" title="Delete field">Delete</button>'
                             )
                             );
 
@@ -222,7 +225,7 @@
                         });
 
                         // Delete a row when the delete button is clicked
-                        $(document).on("click", ".deleteButton", function() {
+                        $(document).on("click", "#deleteButton", function() {
                             $(this)
                             .closest("tr")
                             .remove();
