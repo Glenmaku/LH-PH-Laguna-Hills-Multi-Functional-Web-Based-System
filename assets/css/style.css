@@ -190,13 +190,24 @@
     margin-top: 5px;
     margin-right: 10px;
 }
+.container-horizontal{
+    width: 100%;
+    justify-content: space-between;
+}
+.transaction-line{
+    display: inline;
+}
+.date-container{
+    display: inline;
+}
+
 .transaction-content .transaction-sheet span{
     font-family: 'Raleway', sans-serif;
     font-weight: 700;
     font-size: 18px;
     color: var(--darkgreen);
 }
-.transaction-sheet .transaction-details{
+.transaction-container{
     padding: 15px;
     border-radius: 5px;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
@@ -210,12 +221,9 @@
     border-radius: 5px;
     border: 0;
 }
-.transaction-details #trans-no{
-    margin-right: 15%;
-}
 
 .transaction-sheet .client-name input{
-    width: 100%;
+    width: 85%;
     font-family: 'Raleway', sans-serif;
     font-weight: 500;
     font-size: 17px;
@@ -224,7 +232,7 @@
     margin-top: 3px;
     border-radius: 5px;
     border: 0;
-    background-color: var(--light-blue)  ;
+    background-color: var(--light-blue);
 }
 
 .transaction-sheet .association-dues,
@@ -266,12 +274,17 @@
 }
 
 .association-dues .lot-number{
-    width: 65%;
     display: flex;
     margin-top: 15px;
     justify-content: space-between;
 }
+.blocklots-num{
+    width: 100%;
+}
+#blocklot{
+    width: 80%;
 
+}
 .association-dues .lot-number input,
 .association-dues .address-status input{
     font-family: 'Raleway', sans-serif;
@@ -441,6 +454,7 @@ td {
 }
 
 #deleteButton {
+    text-decoration: none;
     width: 100%;
     margin-top: 10px;
     padding: 5px;
@@ -834,7 +848,6 @@ svg{
 
 
 
-
 .noselect {
   -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */
@@ -854,7 +867,7 @@ svg{
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 .record-account .record-title h1,
-.owner-account .record-title h1{
+.owner-record .record-title h1{
     font-family: 'Raleway', sans-serif;
     font-weight: 700;
     text-align: center;
@@ -870,7 +883,8 @@ svg{
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
-.record-content .search-add-area input{
+.record-content .search-add-area input,
+.owner-search-add-area input{
     font-family: 'Raleway', sans-serif;
     font-weight: 700;
     font-size: 15px;
@@ -883,7 +897,6 @@ svg{
     border: 0;
     border-radius: 5px;
     color: #fff;
-    font-size: 19px;
     padding: 5px ;
     cursor: pointer;
 }
@@ -892,15 +905,28 @@ svg{
     text-decoration: none;
     color: #fff;  
 }
-.input-group #add-account{
+.input-group #add-account
+{
     width: 22%;
     background-color: var(--darkgreen);
     border: 0;
     border-radius: 5px;
     color: #fff;
-    font-size: 19px;
+    font-size: 16px;
     padding: 8px ;
     margin-left: 27%;
+    text-decoration: none;
+}
+.input-group #btn_add_owner_acc,
+.input-group #btn_assign_owner_lot{
+    width: 22%;
+    background-color: var(--darkgreen);
+    border: 0;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 16px;
+    padding: 8px ;
+    margin-left: 2%;
     text-decoration: none;
 }
 
@@ -924,8 +950,8 @@ svg{
     font-size: 16px;
     text-align: center;
     border-bottom: 1px solid;
-
 }
+
 
 
 .btn_view_admin_acc,
@@ -991,7 +1017,36 @@ svg{
 
 }
 
+.assignlotmodal h5,
+.owneraddaccountmodal h5,
+.updateOwnerModal h5,
+.viewOwnerModal h5{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--darkgreen);
+}
+.assignlotmodal span,
+.owneraddaccountmodal span,
+.updateOwnerModal label,
+.viewOwnerModal label{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    color: #fff;  
+    background-color: var(--darkgreen);
+}
+.assignlotmodal input,
+.owneraddaccountmodal input,
+.updateOwnerModal input,
+.viewOwnerModal label{
+    font-size: 16px;
+    font-weight: 500;
+}
 
+.owneraddaccountmodal #passgenerate{
+    color: #fff; 
+}
 /*********** Scrollbar  **************/
 ::-webkit-scrollbar {
     width: 8px;  /* width of the scrollbar */
@@ -1011,11 +1066,6 @@ svg{
 /* sendmail css start*/
 /* custom css styling */
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
-
-::selection{
-    color: #fff;
-    background: #095E41;
-}
 
 .container{
     position: relative;
@@ -1070,3 +1120,14 @@ svg{
 }
 
 /* sendmail css end */
+
+
+/* transaction part glen accordion*/
+.hide-option:hover{
+    cursor: pointer;
+
+}
+
+
+
+

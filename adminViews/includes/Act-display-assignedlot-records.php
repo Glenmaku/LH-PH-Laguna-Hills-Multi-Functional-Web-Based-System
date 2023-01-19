@@ -9,6 +9,7 @@ if(isset($_POST['displayLotSend'])){
       <tr>
         <th scope="col">Property</th>
         <th scope="col">Type of Ownership</th>
+        <th scope="col"></th>
       </tr>
     </thead>';
 

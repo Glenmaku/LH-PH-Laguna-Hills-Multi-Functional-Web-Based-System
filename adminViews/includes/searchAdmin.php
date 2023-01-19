@@ -41,8 +41,7 @@ if (mysqli_num_rows($result) > 0) {
         <td>' . $lame . '</td>
         <td>' . $user . '</td>
         <td>' . $email . '</td>
-        <td><button class="btn btn-success"><i class="fa-solid fa-eye"></i></button>
-        <button class="btn btn-success" onclick="getDetails(' . $adminId . ')"> <i class="fa-solid fa-pen"></i></button>
+        <td><button class="btn btn-success" onclick="getDetails(' . $adminId . ')"> <i class="fa-solid fa-pen"></i></button>
         <button class="btn btn-danger" onclick="deleteUser(' . $adminId . ')"> <i class="fa-solid fa-trash"></i></button></td>
       </tr>';
     }
