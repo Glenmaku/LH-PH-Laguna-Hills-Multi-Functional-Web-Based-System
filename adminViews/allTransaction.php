@@ -13,16 +13,19 @@
                     <input type="date" name="date" id="date" disabled>
                     <div class="client-name">
                         <span>Name:</span>
-                        <input type="text" name="name" id="client-name" placeholder= "Enter name...">
+                        <input type="text" name="name" id="client-name" placeholder="Enter name...">
                     </div>
                 </div>
 
+
+                <!-- ASSOCIATION DUES -->
                 <div class="association-dues" id="association-dues">
                     <div class="association-title">
                         <div class="div-title">
                             <h2>ASSOCIATION DUES</h2>
                         </div>
                         <div class="hide-option">
+
                             <i class="fa-regular fa-eye-slash remove-option "></i>
                         </div>
                     </div>
@@ -55,7 +58,7 @@
                     <div class="address-status">
                         <div class="period-of-payment">
                             <span>Period of Payment:</span><br>
-                            <input type="text" name="period-of-payment" id="period-of-payment" placeholder="Enter period of payment.." >
+                            <input type="text" name="period-of-payment" id="period-of-payment" placeholder="Enter period of payment..">
                         </div>
                         <div class="total">
                             <span>Total:</span> <br>
@@ -70,7 +73,7 @@
                     <div class="address-status">
                         <div class="dues-remaining-balance">
                             <span>Remaining Dues:</span><br>
-                            <input type="text" name="dues-remaining-balance" id="dues-remaining-balance" disabled >
+                            <input type="text" name="dues-remaining-balance" id="dues-remaining-balance" disabled>
                         </div>
                         <div class="Subtotal">
                             <span>Subtotal:</span><br>
@@ -78,6 +81,9 @@
                         </div>
                     </div>
                 </div>
+
+
+                <!-- reservation section-->
                 <div class="reservation">
                     <div class="reservation-title">
                         <div class="div-title">
@@ -167,71 +173,44 @@
                     </div>
                 </div>
 
+                <!-- OTHER SERVICES Section-->
                 <div class="other-transaction">
                     <div class="other-transaction-title">
                         <div class="div-title">
-                            <h2>OTHER SERVICES</h2>
+                            <h2 id="panelsStayOpen-headingOne">OTHER SERVICES
+                            </h2>
                         </div>
                         <div class="hide-option">
-                            <i class="fa-regular fa-eye-slash"></i>
+                            <i class="fa-regular fa-eye-slash accordion-button-icon" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                            </i>
                         </div>
                     </div>
-                    <div class="other-transaction-table">
-                        <table class="other-services" id="input_table">
-                        <tr>
-                            <td>Category</td>
-                            <td>Quantity</td>
-                            <td>Price</td>
-                            <td>Subtotal</td>
-                            <td>Add/Remove</td>
-                        </tr>
 
-                        <tr>
-                            <td><input type="text" name="field1" /></td>
-                            <td><input type="text" name="field2" /></td>
-                            <td><input type="text" name="field3" /></td>
-                            <td><input type="text" name="field4" /></td>
-                            <td><a href="javascript:void(0);" id="addRow" class="add_button" title="Add field"><i class="fa-solid fa-plus "></i>Add</a></td>
-                        </tr>
-                        </table>
+                    <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
+                        <div class="accordion-body">
+                            <table class="other-services" id="input_table">
+                                <tr>
+                                    <td>Category</td>
+                                    <td>Quantity</td>
+                                    <td>Price</td>
+                                    <td>Subtotal</td>
+                                    <td>Add/Remove</td>
+                                </tr>
+
+                                <tr>
+                                    <td><input type="text" name="field1" /></td>
+                                    <td><input type="text" name="field2" /></td>
+                                    <td><input type="text" name="field3" /></td>
+                                    <td><input type="text" name="field4" /></td>
+                                    <td><a href="javascript:void(0);" id="addRow" class="add_button" title="Add field"><i class="fa-solid fa-plus "></i>Add</a></td>
+                                </tr>
+                            </table>
+                        </div>
                     </div>
-
-                    <script>
-                        $("#addRow").click(function() {
-                            // Get the table object
-                            var table = $("#input_table");
-
-                            // Create a new row
-                            var row = $("<tr>");
-
-                            // Add 4 cells to the new row
-                            row.append($("<td>").html('<input type="text" name="field1[]">'));
-                            row.append($("<td>").html('<input type="text" name="field2[]">'));
-                            row.append($("<td>").html('<input type="text" name="field3[]">'));
-                            row.append($("<td>").html('<input type="text" name="field4[]">'));
-
-                            // Add a delete button to the new row
-                            row.append(
-                            $("<td>").html(
-                                '<button class="deleteButton">Delete</button>'
-                            )
-                            );
-
-                            // Add the new row to the table
-                            table.append(row);
-                        });
-
-                        // Delete a row when the delete button is clicked
-                        $(document).on("click", ".deleteButton", function() {
-                            $(this)
-                            .closest("tr")
-                            .remove();
-                        });
-                    </script>
                 </div>
             </div>
 
-    
+            <!-- submit-area Section -->
             <div class="submit-area">
                 <div class="transaction-history">
                     <button><i class="fa-solid fa-clock-rotate-left"></i> Transaction History</button>
@@ -251,7 +230,43 @@
                     <button type="reset" id="reset">Reset Form</button>
                 </div>
             </div>
-        </div>  
+
+        </div>
     </div>
 </div>
 
+<!-- SCRIPT NI ADD TRANSACTION-->
+<script>
+                    $("#addRow").click(function() {
+                        // Get the table object
+                        var table = $("#input_table");
+
+                        // Create a new row
+                        var row = $("<tr>");
+
+                        // Add 4 cells to the new row
+                        row.append($("<td>").html('<input type="text" name="field1[]">'));
+                        row.append($("<td>").html('<input type="text" name="field2[]">'));
+                        row.append($("<td>").html('<input type="text" name="field3[]">'));
+                        row.append($("<td>").html('<input type="text" name="field4[]">'));
+
+                        // Add a delete button to the new row
+
+
+                        row.append(
+                            $("<td>").html(
+                                '<a href="javascript:void(0);" id="deleteButton" title="Delete field"><i class="fa-solid fa-minus "></i>Delete</a>'
+                            )
+                        );
+
+                        // Add the new row to the table
+                        table.append(row);
+                    });
+
+                    // Delete a row when the delete button is clicked
+                    $(document).on("click", "#deleteButton", function() {
+                        $(this)
+                            .closest("tr")
+                            .remove();
+                    });
+                </script>

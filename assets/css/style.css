@@ -441,6 +441,7 @@ td {
 }
 
 #deleteButton {
+    text-decoration: none;
     width: 100%;
     margin-top: 10px;
     padding: 5px;
@@ -1053,11 +1054,6 @@ svg{
 /* custom css styling */
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
 
-::selection{
-    color: #fff;
-    background: #095E41;
-}
-
 .container{
     position: relative;
     /* top: 50%;
@@ -1111,3 +1107,14 @@ svg{
 }
 
 /* sendmail css end */
+
+
+/* transaction part glen accordion*/
+.hide-option:hover{
+    cursor: pointer;
+
+}
+
+
+
+
