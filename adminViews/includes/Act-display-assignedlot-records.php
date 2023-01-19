@@ -20,12 +20,12 @@ if(isset($_POST['displayLotSend'])){
         $Ownerusername = $row['owner_username'];
         $Lotid = $row['lot_id'];
         $Ownership= $row['ownership'];
-        $username= $row['owner_username'];
+        $hihi= $row['owner_username'];
 
     $ownerLotTable.= '<tr>
         <td scope="row">'.$Lotid.'</td>
         <td>'. $Ownership.'</td>
-        <td>'. $username.'</td>
+        <td>'. $hihi.'</td>
   
 
       </tr>';
