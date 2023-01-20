@@ -35,7 +35,7 @@ if (isset($_POST['displaySend'])) {
             <td>' . $user . '</td>
             <td>' . $email . '</td>
             <td>' . $date . '</td>
-            <td><button class="btn btn-success" onclick="getDetails(' . $adminId . ')"> <i class="fa-solid fa-pen"></i></button>
+            <td><button class="btn btn-success" onclick="get_admin_record(' . $adminId . ')"> <i class="fa-solid fa-pen"></i></button>
             <button class="btn btn-danger" onclick="deleteUser(' . $adminId . ')"> <i class="fa-solid fa-trash"></i></button></td>
           </tr>';
   }

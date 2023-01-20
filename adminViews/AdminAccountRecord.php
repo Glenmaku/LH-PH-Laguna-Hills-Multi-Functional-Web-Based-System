@@ -72,41 +72,47 @@ $data = mysqli_query($con, $sql);
 </div>
 
 <!-- update Modal-->
-<div class="modal fade" id="updateAdminModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
+<div class="modal fade updateAdminModal" id="updateAdminModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Update Information</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <h5 class="modal-title">Update Account Details</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                </button>
             </div>
-            <div class="modal-body">
-                <div class="mb-3">
-                    <label for="updateusername" class="form-label">Username</label>
-                    <input type="text" class="form-control" id="updateusername" disabled>
+
+            <form>
+                <div class="modal-body">
+                    <p id="message-updateAdmin" class="text-dark"></p>
+                    <div class="input-group  mb-3 ">
+                        <label class="input-group-text" for="up_admin_username">Username</label>
+                        <input type="text" name="up_admin_username" id="up_admin_username" class="form-control" disabled>
+                    </div>
+                    <div class="input-group  mb-3">
+                        <label class="input-group-text" for="up_admin_fname">First Name</label>
+                        <input type="text" name="up_admin_fname" id="up_admin_fname" class="form-control" placeholder="">
+                    </div>
+                    <div class="input-group  mb-3">
+                        <label class="input-group-text" for="up_admin_lname">Last Name</label>
+                        <input type="text" name="up_admin_lname" id="up_admin_lname" class="form-control" placeholder="">
+                    </div>
+
+                    <div class="input-group  mb-3">
+                        <label class="input-group-text" for="up_admin_email">Email</label>
+                        <input type="text" name="up_admin_email" id=up_admin_email class="form-control" placeholder="">
+                    </div>
                 </div>
-                <div class="mb-3">
-                    <label for="updatefirstname" class="form-label">First Name</label>
-                    <input type="text" class="form-control" id="updatefirstname">
+                <input name="adminUpdate_id" id="adminUpdate_id" type="hidden">
+                <div class="modal-footer" style="justify-content: space-between;">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal" id="btn_close">Cancel</button>
+                    <button type="button" class="btn btn-success" id="btn_updateAdminAcc" name="btn_updateAdminAcc" onclick="updateAdminInfo()">Save Data</button>
                 </div>
-                <div class="mb-3">
-                    <label for="updatelastname" class="form-label">Last Name</label>
-                    <input type="text" class="form-control" id="updatelastname">
-                </div>
-                <div class="mb-3">
-                    <label for="updateemail" class="form-label">Email Address</label>
-                    <input type="email" class="form-control" id="updateemail">
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" id="cancel-btn" data-bs-dismiss="modal">Cancel</button>
-                <button type="button" id="submit-btn" onclick="updateInfo()">Update</button>
-                <input type="hidden" id="hiddendata">
-            </div>
+            </form>
         </div>
     </div>
 </div>
-</div>
-<!-- update Modal-->
+
+<!-- Delete Modal-->
 <div class="modal" id="deleteAdminModal" tabindex="-1">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -132,11 +138,7 @@ $data = mysqli_query($con, $sql);
         displayAdminData();
         Insert_admin_record();
         get_Username();
-        delete_owner_record();
-
-
     });
-    $(document).on('click', '#addAdmin_button', function() {});
 
     $(document).ready(function() {
         var currentPage = localStorage.getItem("currentPage");
@@ -227,45 +229,45 @@ $data = mysqli_query($con, $sql);
             $('#usernamegenerate').trigger('click');
         })
     }
-
-
-    function getDetails(updateid) { // to show the current data
-        $('#hiddendata').val(updateid);
-
-        $.post('adminViews/includes/Act-UpdateAdmin.php', {
-            updateid: updateid
+    // UPDATE
+    function get_admin_record(updateAdminId) { // to show the current data
+        $('#adminUpdate_id').val(updateAdminId);
+        $.post("adminViews/includes/Act-UpdateAdmin.php", {
+            updateAdminId: updateAdminId
         }, function(data, status) {
             var admin = JSON.parse(data);
-            $('#updatefirstname').val(admin.admin_fname);
-            $('#updatelastname').val(admin.admin_lname);
-            $('#updateemail').val(admin.admin_email);
-            $('#updateusername').val(admin.admin_username);
+            $('#up_admin_fname').val(admin.admin_fname);
+            $('#up_admin_lname').val(admin.admin_lname);
+            $('#up_admin_username').val(admin.admin_username);
+            $('#up_admin_email').val(admin.admin_email);
         });
-
         $('#updateAdminModal').modal("show");
     }
 
-    function updateInfo() { // updating the data
-        var updateusername = $('#updateusername').val();
-        var updatefirstname = $('#updatefirstname').val();
-        var updatelastname = $('#updatelastname').val();
-        var updateemail = $('#updateemail').val();
-        var hiddendata = $('#hiddendata').val();
+    function updateAdminInfo() { // updating the data
+        var up_admin_fname = $('#up_admin_fname').val();
+        var up_admin_lname = $('#up_admin_lname').val();
+        var up_admin_username = $('#up_admin_username').val();
+        var up_admin_email = $('#up_admin_email').val();
+        var adminUpdate_id = $('#adminUpdate_id').val();
 
         $.post('adminViews/includes/Act-UpdateAdmin.php', {
-                updatefirstname: updatefirstname,
-                updatelastname: updatelastname,
-                updateemail: updateemail,
-                updateusername: updateusername,
-                hiddendata: hiddendata
+            up_admin_fname: up_admin_fname,
+            up_admin_lname: up_admin_lname,
+            up_admin_username: up_admin_username,
+            up_admin_email: up_admin_email,
+            adminUpdate_id: adminUpdate_id
             },
             function(data, status) {
-
-                $('#updateAdminModal').modal('hide');
-                displayData();
+                $('#updateAdminModal').modal('show');
+                $('#message-updateAdmin').html(data);
+                displayAdminData();
             });
     }
 
+
+
+    // SEARCH BAR
     $(document).ready(function() {
 
         load_data();
