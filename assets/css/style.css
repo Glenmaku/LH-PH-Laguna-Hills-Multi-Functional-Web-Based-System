@@ -212,6 +212,10 @@
     border-radius: 5px;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
+.transaction-details{
+    display: flex;
+    justify-content: space-between;
+}
 .transaction-sheet .transaction-details input{
     font-family: 'Raleway', sans-serif;
     font-weight: 500;
@@ -223,7 +227,9 @@
 }
 
 .transaction-sheet .client-name input{
-    width: 85%;
+    display: inline;
+    max-width: 89%;
+    min-width: 89%;
     font-family: 'Raleway', sans-serif;
     font-weight: 500;
     font-size: 17px;
@@ -311,7 +317,7 @@
 }
 
 .reservation-label .r-time{
-    margin-left: 57%;
+    margin-left: 53%;
 }
 .transaction-sheet .reservation-date{
     width: 100%;
@@ -341,7 +347,7 @@
     font-size: 18px;
 }
 .selected-reservation .reservation-place{
-    width: 50%;
+    width: 30%;
     margin-left: 5%;
 }
 .selected-reservation .reservation-place #function-hall{

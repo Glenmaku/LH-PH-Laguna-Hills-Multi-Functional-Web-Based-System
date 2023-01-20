@@ -1,3 +1,5 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
 <div class="all-transaction">
     <div class="transaction-menu">
         <div class="transaction-title">
@@ -183,9 +185,6 @@
                                 </div>
                             </div>
 
-
-
-
                             <div class="address-status">
                                 <div class="unpaid">
                                     <span>Unpaid Month/s:</span><br>
@@ -231,7 +230,7 @@
                     </div>
                 </div>
 
-
+            
                 <!-- reservation section-->
                 <div class="reservation">
                     <div class="reservation-title">
@@ -245,6 +244,7 @@
                     <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingTwo">
                         <div class="accordion-body">
 
+                        <!-- label -->
                             <div class="reservation-date">
                                 <span>Reservation Date:</span>
                                 <input type="date" name="from-reservation-date" id="from-reservation-date">
@@ -263,48 +263,53 @@
                                         </div>
                                     </div>
 
+                                    <!-- function hall -->
                                     <div class="selected-reservation">
                                         <div class="reservation-place">
-                                            <input type="radio" name="reservation-location" value="Function Hall">
+                                            <input type="radio" name="reservation-location" id="radio-hall" value="Function Hall">
                                             <span>Function Hall</span>
                                         </div>
+
                                         <div class="reservation-time">
-                                            <input type="text" name="f-time-from" id="f-time-from">
+                                            <input type="text" name="f-time-from" id="in-radio-hall1" disabled="disabled">
                                             <span>-</span>
-                                            <input type="text" name="f-time-to" id="f-time-to">
+                                            <input type="text" name="f-time-to" id="in-radio-hall2" disabled="disabled">
                                         </div>
                                         <div class="reservation-price">
-                                            <input type="text" name="reservation-price" id="reservation-price">
+                                            <input type="text" name="reservation-price" id="in-radio-hall3" disabled="disabled">
                                         </div>
                                     </div>
 
+
+                                    <!-- court -->
                                     <div class="selected-reservation">
                                         <div class="reservation-place">
-                                            <input type="radio" name="reservation-location" value="Court">
+                                            <input type="radio" id="radio-court" name="reservation-location" value="Court">
                                             <span>Court</span>
                                         </div>
                                         <div class="reservation-time">
-                                            <input type="text" name="f-time-from" id="f-time-from">
+                                            <input type="text" name="f-time-from" id="in-radio-court1" disabled="disabled">
                                             <span>-</span>
-                                            <input type="text" name="f-time-to" id="f-time-to">
+                                            <input type="text" name="f-time-to" id="in-radio-court2" disabled="disabled">
                                         </div>
                                         <div class="reservation-price">
-                                            <input type="text" name="reservation-price" id="reservation-price">
+                                            <input type="text" name="reservation-price" id="in-radio-court3" disabled="disabled">
                                         </div>
                                     </div>
 
+                                    <!-- miming pool -->
                                     <div class="selected-reservation">
                                         <div class="reservation-place">
-                                            <input type="radio" name="reservation-location" value="Swimming Pool">
+                                            <input type="radio" id="radio-miming" name="reservation-location" value="Swimming Pool">
                                             <span>Swimming Pool</span>
                                         </div>
                                         <div class="reservation-time">
-                                            <input type="text" name="f-time-from" id="f-time-from">
+                                            <input type="text" name="f-time-from" id="in-radio-miming1" disabled="disabled">
                                             <span>-</span>
-                                            <input type="text" name="f-time-to" id="f-time-to">
+                                            <input type="text" name="f-time-to" id="in-radio-miming2" disabled="disabled">
                                         </div>
                                         <div class="reservation-price">
-                                            <input type="text" name="reservation-price" id="reservation-price">
+                                            <input type="text" name="reservation-price" id="in-radio-miming3" disabled="disabled">
                                         </div>
                                     </div>
                                 </form>
@@ -390,6 +395,86 @@
 
 <!-- SCRIPT NI ADD TRANSACTION-->
 <script>
+
+$(function() {
+    $("input[name='reservation-location']").click(function() {
+        var radioButtons = ["#radio-hall", "#radio-court", "#radio-miming"];
+        var inputGroups = ["#in-radio-hall", "#in-radio-court", "#in-radio-miming"];
+
+        for (var i = 0; i < radioButtons.length; i++) {
+            var radioButton = radioButtons[i];
+            var inputGroup = inputGroups[i];
+
+            if ($(radioButton).is(":checked")) {
+                $(inputGroup + "1").removeAttr("disabled").focus();
+                $(inputGroup + "2").removeAttr("disabled");
+                $(inputGroup + "3").removeAttr("disabled");
+            } else {
+                $(inputGroup + "1").attr("disabled", "disabled");
+                $(inputGroup + "2").attr("disabled", "disabled");
+                $(inputGroup + "3").attr("disabled", "disabled");
+            }
+        }
+    });
+});
+
+// Simplified to nung nasa taas. wag nyo to delete -glen
+// $(function() {
+//     $(function() {
+//         $("input[name='reservation-location']").click(function() {
+//             if ($("#radio-hall").is(":checked")) {
+//                 $("#in-radio-hall1").removeAttr("disabled");
+//                 $("#in-radio-hall2").removeAttr("disabled");
+//                 $("#in-radio-hall3").removeAttr("disabled");
+//                 $("#in-radio-hall1").focus();
+//             } else {
+//                 $("#in-radio-hall1").attr("disabled", "disabled");
+//                 $("#in-radio-hall2").attr("disabled", "disabled");
+//                 $("#in-radio-hall3").attr("disabled", "disabled");
+//             }
+//             if ($("#radio-court").is(":checked")) {
+//                 $("#in-radio-court1").removeAttr("disabled");
+//                 $("#in-radio-court2").removeAttr("disabled");
+//                 $("#in-radio-court3").removeAttr("disabled");
+//                 $("#in-radio-court1").focus();
+//             } else {
+//                 $("#in-radio-court1").attr("disabled", "disabled");
+//                 $("#in-radio-court2").attr("disabled", "disabled");
+//                 $("#in-radio-court3").attr("disabled", "disabled");
+//             }
+//             if ($("#radio-miming").is(":checked")) {
+//                 $("#in-radio-miming1").removeAttr("disabled");
+//                 $("#in-radio-miming2").removeAttr("disabled");
+//                 $("#in-radio-miming3").removeAttr("disabled");
+//                 $("#in-radio-miming1").focus();
+//             } else {
+//                 $("#in-radio-miming1").attr("disabled", "disabled");
+//                 $("#in-radio-miming2").attr("disabled", "disabled");
+//                 $("#in-radio-miming3").attr("disabled", "disabled");
+//             }
+//         });
+//     });
+// });
+
+    // $(document).ready(function(){
+    //     $('.whole-number').on('input', function(){
+    //         var value = $(this).val();
+    //         $.ajax({
+    //             url: 'calculate.php',
+    //             type: 'post',
+    //             data: {'value': value},
+    //             success: function(response){
+    //                 var values = JSON.parse(response);
+    //                 $('.half-number').val(values.half);
+    //                 $('.triple-number').val(values.triple);
+    //             }
+    //         });
+    //     });
+    // });
+
+    //end function hall radio button
+
+
     $("#addRow").click(function() {
         // Get the table object
         var table = $("#input_table");
