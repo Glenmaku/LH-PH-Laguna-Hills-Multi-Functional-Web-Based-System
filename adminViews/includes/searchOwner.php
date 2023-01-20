@@ -26,7 +26,6 @@ if (isset($_POST["query"])) {
 }
 
 $result = mysqli_query($con, $query);
-
 if (mysqli_num_rows($result) > 0) {
   $owneraccountTable = '
     <table class="table">
@@ -59,7 +58,6 @@ if (mysqli_num_rows($result) > 0) {
             <td><button id="btn_view_owner_acc" class="btn_view_owner_acc btn btn-primary" name="view_button" onclick="get_owner_info(' . $owner_id . ')"><i class="fa-solid fa-eye"></i></button>
             <button  id="btn_edit_owner_acc" class="btn_edit_owner_acc btn btn-success" name="edit_button" onclick="get_owner_record(' . $owner_id . ')" ><i class="fa-solid fa-pen"></i></button>
             <button  data-bs-toggle="modal" data-bs-target="#deleteOwnerModal" id="btn_delete_owner_acc" class="btn_delete_owner_acc btn btn-danger" name="delete_button" data-id2=' . $row['owner_id'] . '><i class="fa-solid fa-trash"></i></button></td>
-
           </tr>';
   }
   $owneraccountTable .= '</table>';
