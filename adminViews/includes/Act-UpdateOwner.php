@@ -4,7 +4,7 @@
         
         $account_owner_id = $_POST['updateownerid'];
         
-        $ownersql= "select * from owner_accounts where owner_id ='".$account_owner_id."'";
+        $ownersql= "SELECT * FROM owner_accounts where owner_id ='".$account_owner_id."'";
         $ownerresult = mysqli_query($con, $ownersql);
         $ownerresponse = array();
 
