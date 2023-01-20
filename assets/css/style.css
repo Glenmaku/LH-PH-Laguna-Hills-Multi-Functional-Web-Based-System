@@ -212,6 +212,10 @@
     border-radius: 5px;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
+.transaction-details{
+    display: flex;
+    justify-content: space-between;
+}
 .transaction-sheet .transaction-details input{
     font-family: 'Raleway', sans-serif;
     font-weight: 500;
@@ -223,7 +227,9 @@
 }
 
 .transaction-sheet .client-name input{
-    width: 85%;
+    display: inline;
+    max-width: 89%;
+    min-width: 89%;
     font-family: 'Raleway', sans-serif;
     font-weight: 500;
     font-size: 17px;
@@ -311,7 +317,7 @@
 }
 
 .reservation-label .r-time{
-    margin-left: 57%;
+    margin-left: 53%;
 }
 .transaction-sheet .reservation-date{
     width: 100%;
@@ -341,7 +347,7 @@
     font-size: 18px;
 }
 .selected-reservation .reservation-place{
-    width: 50%;
+    width: 30%;
     margin-left: 5%;
 }
 .selected-reservation .reservation-place #function-hall{
@@ -1020,7 +1026,9 @@ svg{
 .assignlotmodal h5,
 .owneraddaccountmodal h5,
 .updateOwnerModal h5,
-.viewOwnerModal h5{
+.viewOwnerModal h5,
+.adminAddAccountModal h5,
+.updateAdminModal h5{
     font-family: 'Raleway', sans-serif;
     font-weight: 700;
     font-size: 16px;
@@ -1029,7 +1037,9 @@ svg{
 .assignlotmodal span,
 .owneraddaccountmodal span,
 .updateOwnerModal label,
-.viewOwnerModal label{
+.viewOwnerModal label,
+.adminAddAccountModal span,
+.updateAdminModal label{
     font-family: 'Raleway', sans-serif;
     font-weight: 700;
     font-size: 14px;
@@ -1039,12 +1049,14 @@ svg{
 .assignlotmodal input,
 .owneraddaccountmodal input,
 .updateOwnerModal input,
-.viewOwnerModal label{
+.adminAddAccountModal input,
+.updateAdminModal input{
     font-size: 16px;
     font-weight: 500;
 }
 
-.owneraddaccountmodal #passgenerate{
+.owneraddaccountmodal #passgenerate,
+.adminAddAccountModal  #passgenerate{
     color: #fff; 
 }
 /*********** Scrollbar  **************/
