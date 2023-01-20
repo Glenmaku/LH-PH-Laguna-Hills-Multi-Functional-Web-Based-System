@@ -3114,24 +3114,42 @@
   });
 });*/
 
-                $(document).ready(function() {
-                        $("#submit-btn").click(function() {
-                                        var Blockvar = $('#Block').val();
-                                        var Lotvar = $('#Lot').val();
-                                        var Streetvar = $('#Street').val();
-                                        var Statusvar = $('#Status').val();
-                                        var Areavar = $('#Area').val();
-                                        var Pricevar = $('#Price').val();
-                                        var Remarksvar = $('#Remarks').val();
-                                        $.ajax({
-                                        type: "POST",
-                                        url: "adminViews/includes/mapsubmit.php",
-                                        data: {Blockvar:Blockvar,Lotvar:Lotvar,Streetvar:Streetvar,Statusvar:Statusvar,Areavar:Areavar,
-                                        Pricevar:Pricevar,Remarksvar:Remarksvar},
-                                        success: function(data) {
-                                                $('#map-submit-error').html(data);
-                                        }
-                                }); 
-                        });
-                });
+/*$("#submit-btn").click(function(){
+    $.ajax({
+        type: "POST",
+        url: "adminViews/includes/mapsubmit.php",
+        data: {
+            Blockvar: $("#Block").val(),
+            Lotvar: $("#Lot").val(),
+            Streetvar: $("#Street").val(),
+            Statusvar: $("#Status").val(),
+            Areavar: $("#Area").val(),
+            Pricevar: $("#Price").val(),
+            Remarksvar: $("#Remarks").val(),
+
+        },
+        success: function(data) {
+            $('#display-panel').html(data);
+        }
+    });
+});*/
+
+function addInfo(id) {
+  // Use fetch API for HTTP requests
+  fetch(`mapsubmit.php?id=${id}`)
+    .then(response => response.json())
+    .then(data => {
+      // Update the values of the elements with the corresponding ids
+      document.getElementById("Block").value = data.Block;
+      document.getElementById("Lot").value = data.Lot;
+      document.getElementById("Street").value = data.Street;
+      document.getElementById("Status").value = data.Status;
+      document.getElementById("Area").value = data.Area;
+      document.getElementById("Price").value = data.Price;
+      document.getElementById("Remarks").value = data.Remarks;
+    })
+    .catch(error => {
+      console.log(`Error: ${error}`);
+    });
+}
         </script>
