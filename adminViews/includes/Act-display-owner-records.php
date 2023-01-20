@@ -1,9 +1,12 @@
 <?php
-//require_once('functions.php'); 
-//DisplayOwnerTableRecord();
 include 'connection.php';
 
 if (isset($_POST['displayOwnerSend'])) {
+
+  $records_per_page = 5; // number of records per page
+  $page = isset($_POST["page"]) ? (int)$_POST["page"] : 1; // current page number
+  $start_from = ($page - 1) * $records_per_page; // start from record
+
   $owneraccountTable = '<table class="table">
         <thead>
           <tr>
@@ -17,7 +20,7 @@ if (isset($_POST['displayOwnerSend'])) {
           </tr>
         </thead>';
 
-  $ownersql = "SELECT * FROM `owner_accounts`";
+  $ownersql = "SELECT * FROM `owner_accounts` ORDER BY owner_id LIMIT $start_from, $records_per_page";
   $ownerresult = mysqli_query($con, $ownersql);
   while ($row = mysqli_fetch_assoc($ownerresult)) {
 
@@ -41,6 +44,31 @@ if (isset($_POST['displayOwnerSend'])) {
           </tr>';
   }
   $owneraccountTable .= '</table>';
-  echo  $owneraccountTable;
+
+  // Add the pagination links
+  $query = "SELECT COUNT(*) as total_records FROM owner_accounts";
+  $total_pages_result = mysqli_query($con, $query);
+  $total_rows = mysqli_fetch_array($total_pages_result);
+  $total_pages = ceil($total_rows["total_records"] / $records_per_page);
+  $pagination = '<nav aria-label="Page navigation">
+           <ul class="pagination">';
+  if ($page > 1) {
+    $previous = $page - 1;
+    $pagination .= '<li class="page-item"><a class="page-link" onclick="getOwnerPage(' . $previous . ')">Previous</a></li>';
+  }
+  for ($i = 1; $i <= $total_pages; $i++) {
+    $pagination .= '<li class="page-item"><a class="page-link" onclick="getOwnerPage(' . $i . ')">' . $i . '</a></li>';
+  }
+  if ($page < $total_pages) {
+    $next = $page + 1;
+    $pagination .= '<li class="page-item"><a class="page-link" onclick="getOwnerPage(' . $next . ')">Next</a></li>';
+  }
+  $pagination .= '</ul></nav>';
+
+  // Concatenate the pagination links and the table
+  $owneraccountTable =  $owneraccountTable . $pagination;
+
+  echo $owneraccountTable;
+} else {
+  echo 'Data Not Found ';
 }
-?>

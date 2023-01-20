@@ -97,10 +97,6 @@
             displayAnnouncement(page);
         }
 
-
-        function getPage(page) {
-            displayAnnouncement(page);
-        }
         // For Search int the table
         $(document).ready(function() {
 

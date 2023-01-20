@@ -424,18 +424,31 @@
         });
         $(document).on('click', '#addowner_button', function() {});
         //DISPLAY TABLE
-        function display_owner_table_record() {
+        $(document).ready(function() {
+            var currentPage = localStorage.getItem("currentPage");
+            if (!currentPage) {
+                currentPage = 1;
+            }
+            display_owner_table_record(currentPage);
+        });
+
+        function display_owner_table_record(page) {
+            localStorage.setItem("currentPage", page);
             var displayOwnerData = "true";
             $.ajax({
                 url: 'adminViews/includes/Act-display-owner-records.php',
                 type: 'post',
                 data: {
-                    displayOwnerSend: displayOwnerData
+                    displayOwnerSend: displayOwnerData,
+                    page: page
                 },
                 success: function(data, status) {
                     $('#owneraccounttable').html(data);
                 }
             });
+        }
+        function getOwnerPage(page) {
+            display_owner_table_record(page);
         }
 
         //GET USERNAME FOR INSERTING OWNER ACCOUNT
@@ -484,7 +497,7 @@
                         $('#owneraddaccountmodal').modal('show');
                         $('reset').trigger('click');
                         $('#usernamegenerate').trigger('click');
-                        display_owner_table_record();
+                        display_owner_table_record(page);
                     }
                 })
             })

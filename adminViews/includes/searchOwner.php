@@ -2,20 +2,33 @@
 //connection to database
 include 'connection.php';
 
+$records_per_page = 5; // number of records per page
 
 if (isset($_POST["query"])) {
-    $search = mysqli_real_escape_string($con, $_POST["query"]);
-    $query = "SELECT * FROM `owner_accounts` 
-  WHERE owner_fname LIKE '%" . $search . "%'
-  OR owner_lname LIKE '%" . $search . "%' 
-  OR owner_username LIKE '%" . $search . "%' 
-  OR  owner_email LIKE '%" . $search . "%' ";
+  $search = mysqli_real_escape_string($con, $_POST["query"]);
+  $query = "SELECT * FROM `owner_accounts` 
+              WHERE owner_fname LIKE '%" . $search . "%'
+              OR owner_lname LIKE '%" . $search . "%' 
+              OR owner_username LIKE '%" . $search . "%' 
+              OR  owner_email LIKE '%" . $search . "%' ";
 } else {
-    $query = "SELECT * FROM `owner_accounts` ORDER BY owner_id";
+  $query = "SELECT COUNT(*) as total_records FROM `owner_accounts` ORDER BY owner_id";
+  $result = mysqli_query($con, $query);
+  $total_rows = mysqli_fetch_array($result);
+  $total_pages = ceil($total_rows["total_records"] / $records_per_page);
+  if (isset($_POST["page"])) {
+    $page = $_POST["page"];
+  } else {
+    $page = 1;
+  }
+  $start_from = ($page - 1) * $records_per_page;
+  $query = "SELECT * FROM `owner_accounts` ORDER BY owner_id LIMIT $start_from, $records_per_page";
 }
+
 $result = mysqli_query($con, $query);
+
 if (mysqli_num_rows($result) > 0) {
-    $owneraccountTable= '
+  $owneraccountTable = '
     <table class="table">
     <thead>
     <tr>
@@ -28,15 +41,15 @@ if (mysqli_num_rows($result) > 0) {
       <th scope="col">Actions</th>
     </tr>
   </thead>';
-    while ($row = mysqli_fetch_array($result)) {
-        $owner_id = $row['owner_id'];
-        $owner_fname = $row['owner_fname'];
-        $owner_lname = $row['owner_lname'];
-        $owner_username = $row['owner_username'];
-        $owner_email = $row['owner_email'];
-        $Owner_date = $row['owner_date_added'];
+  while ($row = mysqli_fetch_array($result)) {
+    $owner_id = $row['owner_id'];
+    $owner_fname = $row['owner_fname'];
+    $owner_lname = $row['owner_lname'];
+    $owner_username = $row['owner_username'];
+    $owner_email = $row['owner_email'];
+    $Owner_date = $row['owner_date_added'];
 
-        $owneraccountTable .= '<tr>
+    $owneraccountTable .= '<tr>
             <td scope="row">' . $owner_id . '</td>
             <td>' . $owner_fname . '</td>
             <td>' . $owner_lname . '</td>
@@ -50,8 +63,35 @@ if (mysqli_num_rows($result) > 0) {
           </tr>';
   }
   $owneraccountTable .= '</table>';
-  echo  $owneraccountTable;
-}else {
-    echo 'Data Not Found ';
-}
 
+  // Add the pagination links
+  $query = "SELECT COUNT(*) as total_records FROM `owner_accounts`";
+  $total_pages_result = mysqli_query($con, $query);
+  $total_rows = mysqli_fetch_array($total_pages_result);
+  $total_pages = ceil($total_rows["total_records"] / $records_per_page);
+  $page = 1;
+  $pagination = '<nav aria-label="Page navigation">
+<ul class="pagination">';
+if($page > 1){
+  $pagination .= '<li class="page-item"><a class="page-link" onclick="getOwnerPage('.($page - 1).')">Previous</a></li>';
+  }
+  
+  // Page numbers
+  for ($i = 1; $i <= $total_pages; $i++) {
+  $pagination .= '<li class="page-item"><a class="page-link" onclick="getOwnerPage('.$i.')">'.$i.'</a></li>';
+  }
+  
+  // Next button
+  if($page < $total_pages) {
+  $pagination .= '<li class="page-item"><a class="page-link" onclick="getOwnerPage('.($page + 1).')">Next</a></li>';
+  }
+  
+  $pagination .= '</ul></nav>';
+  // Concatenate the pagination links and the table
+  $owneraccountTable =  $owneraccountTable . $pagination;
+
+  echo $owneraccountTable;
+} else {
+  echo 'Data Not Found ';
+}
+?>
