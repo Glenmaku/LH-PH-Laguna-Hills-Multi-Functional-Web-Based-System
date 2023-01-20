@@ -56,7 +56,7 @@ if (mysqli_num_rows($result) > 0) {
         <td>' . $email . '</td>
         <td>' . $date . '</td>
         <td><button class="btn btn-success" onclick="get_admin_record(' . $adminId . ')"> <i class="fa-solid fa-pen"></i></button>
-        <button class="btn btn-danger" onclick="deleteUser(' . $adminId . ')"> <i class="fa-solid fa-trash"></i></button></td>
+        <button class="btn btn-danger" id="btn_deleteAdminAcc" data-bs-toggle="modal" data-bs-target="#deleteAdminModal" data-id2=' . $row['admin_id'] . '> <i class="fa-solid fa-trash"></i></button></td>
       </tr>';
     }
     $adminAccountTable.='</table>';

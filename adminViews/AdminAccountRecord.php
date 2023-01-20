@@ -113,23 +113,30 @@ $data = mysqli_query($con, $sql);
 </div>
 
 <!-- Delete Modal-->
-<div class="modal" id="deleteAdminModal" tabindex="-1">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title"><i class="fa-solid fa-triangle-exclamation"></i> Warning!</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <p>Are you user you want to delete this account?</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                <button type="button" class="btn btn-danger" onclick="deleteUser()">Delete</button>
+<!-- DeleteModal -->
+
+<div class="modal fade" id="deleteAdminModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Warning!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                    </button>
+                </div>
+
+                <form>
+                    <div class="modal-body">
+                        <input type="hidden" name="ownerdelete_id" id="ownerdelete_id">
+                        <p>Are you sure you want to delete this account?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-success" data-bs-dismiss="modal" id="btn_close">Cancel</button>
+                        <button type="button" class="btn btn-danger" name="btn_deleteAdminAcc" id="btn_deleteAdminAcc">Delete</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
-</div>
 
 
 <!--SCRIPT FOR add Admin-->
@@ -138,6 +145,7 @@ $data = mysqli_query($con, $sql);
         displayAdminData();
         Insert_admin_record();
         get_Username();
+        delete_owner_record()
     });
 
     $(document).ready(function() {
@@ -264,8 +272,26 @@ $data = mysqli_query($con, $sql);
                 displayAdminData();
             });
     }
-
-
+//Delete
+    function delete_owner_record() {
+            $(document).on('click', '#btn_deleteAdminAcc', function() {
+                var Delete_Admin_ID = $(this).attr('data-id2');
+                $(document).on('click', '#btn_deleteAdminAcc', function() {
+                    $.ajax({
+                        url: 'adminViews/includes/Act-DeleteAdmin.php',
+                        method: 'post',
+                        data: {
+                            DeleteAdmin: Delete_Admin_ID
+                        },
+                        success: function(data) {
+                            $('#deleteAdminModal').modal('hide');
+                            $('#delete-message').html(data); //.hide(5000);
+                            displayAdminData();
+                        }
+                    })
+                })
+            })
+        }
 
     // SEARCH BAR
     $(document).ready(function() {
