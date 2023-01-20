@@ -70,5 +70,6 @@ if (isset($_POST['displayOwnerSend'])) {
 
   echo $owneraccountTable;
 } else {
-  echo 'Data Not Found ';
+ echo 'Data Not Found ';
 }
+?>
