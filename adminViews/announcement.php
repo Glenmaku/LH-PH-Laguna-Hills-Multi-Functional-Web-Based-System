@@ -48,6 +48,15 @@
 </div>
 
 
+
+
+
+
+
+
+
+
+
     <script type="text/javascript">
  $(document).ready(function() {
     $("#add-announcement").submit(function(event) {
