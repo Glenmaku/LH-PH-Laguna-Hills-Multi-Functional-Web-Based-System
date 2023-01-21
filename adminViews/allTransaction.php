@@ -186,7 +186,7 @@
                                 <div class="address-status">
                                     <div class="unpaid">
                                         <span>Unpaid Month/s:</span><br>
-                                        <input type="text" name="unpaid" id="unpaid" disabled>
+                                        <input type="text" name="unpaid" id="unpaid">
                                     </div>
                                     <div class="total-balance">
                                         <span>Total Balance:</span> <br>
@@ -264,7 +264,7 @@
                                         <!-- function hall -->
                                         <div class="selected-reservation">
                                             <div class="reservation-place">
-                                                <input type="radio" name="reservation-location" id="radio-hall" value="Function Hall">
+                                                <input type="checkbox" class="form-check-input border" name="reservation-location" id="radio-hall" value="Function Hall">
                                                 <span>Function Hall</span>
                                             </div>
 
@@ -282,7 +282,7 @@
                                         <!-- court -->
                                         <div class="selected-reservation">
                                             <div class="reservation-place">
-                                                <input type="radio" id="radio-court" name="reservation-location" value="Court">
+                                                <input type="checkbox"  class="form-check-input" id="radio-court" name="reservation-location" value="Court">
                                                 <span>Court</span>
                                             </div>
                                             <div class="reservation-time">
@@ -298,7 +298,7 @@
                                         <!-- miming pool -->
                                         <div class="selected-reservation">
                                             <div class="reservation-place">
-                                                <input type="radio" id="radio-miming" name="reservation-location" value="Swimming Pool">
+                                                <input type="checkbox" class="form-check-input" id="radio-miming" name="reservation-location" value="Swimming Pool">
                                                 <span>Swimming Pool</span>
                                             </div>
                                             <div class="reservation-time">
@@ -400,42 +400,7 @@
 
 <!-- SCRIPT NI ADD TRANSACTION-->
 <script>
-    // START 
-    // function calculate() {
-    //     var price1 = document.getElementById("in-radio-hall3").value;
-    //     var price2 = document.getElementById("in-radio-court3").value;
-    //     var price3 = document.getElementById("in-radio-miming3").value;
-    //     var discount = document.getElementById("r-discount").value;
-    //     var subtotal = 0;
-    //     if (isNaN(price1) || isNaN(price2) || isNaN(price3) || isNaN(discount)) {
-    //         alert("Please enter valid numbers for all input fields");
-    //     } else {
-    //         subtotal += parseFloat(price1) || 0;
-    //         subtotal += parseFloat(price2) || 0;
-    //         subtotal += parseFloat(price3) || 0;
-    //         subtotal -= (subtotal * (parseFloat(discount) / 100));
-    //         document.getElementById("r-subtotal").value = subtotal.toFixed(2);
-    //     }
-    //     var change = 0;
-    //     var total = document.getElementById("r-subtotal").value;
-
-    //     document.getElementById("total").value = total.toFixed(2);
-    //     var payment = document.getElementById("payment").value;
-    //     if (isNaN(payment)) {
-    //         alert("Please enter valid numbers for all input fields");
-    //     } else {
-    //         change = parseFloat(total) - (parseFloat(payment));
-    //     }
-    //     document.getElementById("change").value = change.toFixed(2);
-    //     var change = document.getElementById("change").value;
-    //     var rembal = total - payment;
-    //     if (rembal > 0) {
-    //         document.getElementById("remaining-balance").value = rembal;
-    //     } else {
-    //         rembal = 0;
-    //         document.getElementById("remaining-balance").value = rembal;
-    //     }
-    // }
+    
         // transaction part
         function calculate() {
             // Declare variables for the input values
