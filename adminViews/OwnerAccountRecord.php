@@ -311,7 +311,7 @@
                     </div>
                     <input name="ownerupdate_id" id="ownerupdate_id" type="hidden">
                     <div class="modal-footer" style="justify-content: space-between;">
-                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal" id="btn_close">Cancel</button>
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="btn_close">Cancel</button>
                         <button type="button" class="btn btn-success" id="btn_updateowneracc" name="btn_updateowneracc" onclick="updateownerInfo()">Save Data</button>
                     </div>
                 </form>
@@ -336,7 +336,7 @@
                         <p>Are you sure you want to delete this account?</p>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-success" data-bs-dismiss="modal" id="btn_close">Cancel</button>
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="btn_close">Cancel</button>
                         <button type="button" class="btn btn-danger" name="btn_deleteowneracc" id="btn_deleteowneracc">Delete</button>
                     </div>
                 </form>

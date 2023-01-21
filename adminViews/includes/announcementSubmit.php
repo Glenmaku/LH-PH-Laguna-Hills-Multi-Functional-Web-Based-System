@@ -31,7 +31,7 @@ if (isset($_POST['announcementTitle'])) {
                 // Connect to the database
                 include 'connection.php';
                 // Insert the data into the database
-                $query = "INSERT INTO announcement_tb (announcement_title, announcement_description, announcement_attachment) VALUES ('$title', '$description', '$fileDestination')";
+                $query = "INSERT INTO announcement_tb (announcement_title, announcement_description, announcement_attachment) VALUES ('$title', '$description', '$fileNameNew')";
                 mysqli_query($con, $query);
 
                 mysqli_close($con);

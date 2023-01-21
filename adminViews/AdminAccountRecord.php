@@ -104,7 +104,7 @@ $data = mysqli_query($con, $sql);
                 </div>
                 <input name="adminUpdate_id" id="adminUpdate_id" type="hidden">
                 <div class="modal-footer" style="justify-content: space-between;">
-                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal" id="btn_close">Cancel</button>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="btn_close">Cancel</button>
                     <button type="button" class="btn btn-success" id="btn_updateAdminAcc" name="btn_updateAdminAcc" onclick="updateAdminInfo()">Save Data</button>
                 </div>
             </form>
@@ -130,7 +130,7 @@ $data = mysqli_query($con, $sql);
                         <p>Are you sure you want to delete this account?</p>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-success" data-bs-dismiss="modal" id="btn_close">Cancel</button>
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="btn_close">Cancel</button>
                         <button type="button" class="btn btn-danger" name="btn_deleteAdminAcc" id="btn_deleteAdminAcc">Delete</button>
                     </div>
                 </form>

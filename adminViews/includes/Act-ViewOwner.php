@@ -20,6 +20,4 @@ else{
     $viewresponse['message']="Invalid or data not found";
 
 }
-
-
 ?>
