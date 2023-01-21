@@ -2,6 +2,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
    <meta charset="UTF-8">
    <title>Send Mail From Localhost</title>
@@ -15,7 +16,7 @@
 
 <body>
 
-  
+
 
    <div class="container">
       <div class="container-form">

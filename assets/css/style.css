@@ -315,7 +315,15 @@
     justify-content: space-between;
     margin-top: 15px;
 }
-
+.r-price{
+    display: flex;
+    justify-content: end;
+    margin-right: 8%;
+}
+.r-time{
+    margin-top: 2%;
+    position: relative;
+}
 .reservation-label .r-time{
     margin-left: 53%;
 }
