@@ -43,7 +43,7 @@ if (mysqli_num_rows($result) > 0) {
   <td>' . $title . '</td>
   <td style="width: 40%;" >' . $description . '</td>
   <td>' . $announcement_date . '</td>
-  <td><button class="btn btn-success"><i class="fa-solid fa-eye"></i></button>
+  <td><button class="btn btn-primary" onclick="get_announcement_info('.$announcementId.')"><i class="fa-solid fa-eye"></i></button>
   <button class="btn btn-success" onclick="getDetails(' . $announcementId . ')"><i class="fa-solid fa-pen"></i></button> 
   <button class="btn btn-danger" onclick="deleteUser(' . $announcementId . ')"><i class="fa-solid fa-trash"></i></button></td>
   </tr>';

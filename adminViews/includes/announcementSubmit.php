@@ -25,7 +25,7 @@ if (isset($_POST['announcementTitle'])) {
                 // Give the file a unique name
                 $fileNameNew = uniqid('', true) . "." . $fileActualExt;
                 // Set the file destination
-                $fileDestination = 'adminViews/includes/uploadImg' . $fileNameNew;
+                $fileDestination = "uploads/".$fileNameNew;
                 // Move the file to the destination
                 move_uploaded_file($fileTmpName, $fileDestination);
                 // Connect to the database

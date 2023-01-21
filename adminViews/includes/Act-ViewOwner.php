@@ -17,7 +17,7 @@ echo json_encode($viewresponse);
 }
 else{
     $viewresponse['status']=200;
-    $viewresponse['message']="Invalid or data not forund";
+    $viewresponse['message']="Invalid or data not found";
 
 }
 
