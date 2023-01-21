@@ -374,14 +374,19 @@
                     <div class="payment">
                         <span>Total:</span>
                         <input type="text" name="total" id="total" value="0" disabled>
+
                         <span>Payment:</span>
-                        <input type="text" name="payment" id="payment" value="0" placeholder="Enter amount...">
+                        <input type="text" name="payment" id="payment" value="0" placeholder="Enter amount..." onchange="calculate();">
+
                         <span>Change:</span>
                         <input type="text" name="change" id="change" value="0" disabled>
+
                         <span>Remaining Balance:</span>
                         <input type="text" name="remaining-balance" id="remaining-balance" value="0" disabled>
+
                         <span>Remarks:</span>
                         <textarea placeholder="Type here.."></textarea>
+
                         <button type="submit" id="submit">Submit</button>
                         <button type="reset" id="reset">Reset Form</button>
                     </div>
@@ -396,48 +401,118 @@
 <!-- SCRIPT NI ADD TRANSACTION-->
 <script>
     // START 
-function calculate() {
-    var price1 = document.getElementById("in-radio-hall3").value;
-    var price2 = document.getElementById("in-radio-court3").value;
-    var price3 = document.getElementById("in-radio-miming3").value;
-    var discount = document.getElementById("r-discount").value;
-    var subtotal = 0;
-    console.log(subtotal);
-    if (isNaN(price1) || isNaN(price2) || isNaN(price3) || isNaN(discount)) {
-        alert("Please enter valid numbers for all input fields");
-    } else {
-        subtotal += parseFloat(price1) || 0;
-        subtotal += parseFloat(price2) || 0;
-        subtotal += parseFloat(price3) || 0;
-        subtotal -= (subtotal * (parseFloat(discount) / 100));
-        document.getElementById("r-subtotal").value = subtotal.toFixed(2);
-    }
-}
+    // function calculate() {
+    //     var price1 = document.getElementById("in-radio-hall3").value;
+    //     var price2 = document.getElementById("in-radio-court3").value;
+    //     var price3 = document.getElementById("in-radio-miming3").value;
+    //     var discount = document.getElementById("r-discount").value;
+    //     var subtotal = 0;
+    //     if (isNaN(price1) || isNaN(price2) || isNaN(price3) || isNaN(discount)) {
+    //         alert("Please enter valid numbers for all input fields");
+    //     } else {
+    //         subtotal += parseFloat(price1) || 0;
+    //         subtotal += parseFloat(price2) || 0;
+    //         subtotal += parseFloat(price3) || 0;
+    //         subtotal -= (subtotal * (parseFloat(discount) / 100));
+    //         document.getElementById("r-subtotal").value = subtotal.toFixed(2);
+    //     }
+    //     var change = 0;
+    //     var total = document.getElementById("r-subtotal").value;
+
+    //     document.getElementById("total").value = total.toFixed(2);
+    //     var payment = document.getElementById("payment").value;
+    //     if (isNaN(payment)) {
+    //         alert("Please enter valid numbers for all input fields");
+    //     } else {
+    //         change = parseFloat(total) - (parseFloat(payment));
+    //     }
+    //     document.getElementById("change").value = change.toFixed(2);
+    //     var change = document.getElementById("change").value;
+    //     var rembal = total - payment;
+    //     if (rembal > 0) {
+    //         document.getElementById("remaining-balance").value = rembal;
+    //     } else {
+    //         rembal = 0;
+    //         document.getElementById("remaining-balance").value = rembal;
+    //     }
+    // }
+        // transaction part
+        function calculate() {
+            // Declare variables for the input values
+            var price1 = document.getElementById("in-radio-hall3").value;
+            var price2 = document.getElementById("in-radio-court3").value;
+            var price3 = document.getElementById("in-radio-miming3").value;
+            var discount = document.getElementById("r-discount").value;
+            var subtotal = 0;
+
+            // check if any input values are not a number
+            if (isNaN(price1) || isNaN(price2) || isNaN(price3) || isNaN(discount)) {
+                alert("Please enter valid numbers for all input fields");
+                return;
+            }
+            // calculate subtotal
+            subtotal += parseFloat(price1) || 0;
+            subtotal += parseFloat(price2) || 0;
+            subtotal += parseFloat(price3) || 0;
+            subtotal -= (subtotal * (parseFloat(discount) / 100));
+
+            // set the value of subtotal
+            document.getElementById("r-subtotal").value = subtotal.toFixed(2);
+
+            // set the value of total 
+            var total = document.getElementById("r-subtotal").value;
+            document.getElementById("total").value = subtotal.toFixed(2);
+
+            // Declare variable for payment value
+            var payment = document.getElementById("payment").value;
+
+            // check if the payment is not a number
+            if (isNaN(payment)) {
+                alert("Please enter a valid number for payment");
+                return;
+            }
+            // calculate change
+            var change = parseFloat(total) - (parseFloat(payment));
+            // set the value of change
+            document.getElementById("change").value = change.toFixed(2);
+
+            // calculate remaining balance
+            var remainingBalance = total - payment;
+
+            // set the value of remaining balance
+            if (remainingBalance > 0) {
+                document.getElementById("remaining-balance").value = remainingBalance.toFixed(2);
+            } else {
+                remainingBalance = 0;
+                document.getElementById("remaining-balance").value = remainingBalance.toFixed(2);
+            }
+        }
+
 
     // end
 
     // radio button function
-$(function() {
-    $("input[name='reservation-location']").click(function() {
-        var radioButtons = ["#radio-hall", "#radio-court", "#radio-miming"];
-        var inputGroups = ["#in-radio-hall", "#in-radio-court", "#in-radio-miming"];
+    $(function() {
+        $("input[name='reservation-location']").click(function() {
+            var radioButtons = ["#radio-hall", "#radio-court", "#radio-miming"];
+            var inputGroups = ["#in-radio-hall", "#in-radio-court", "#in-radio-miming"];
 
-        for (var i = 0; i < radioButtons.length; i++) {
-            var radioButton = radioButtons[i];
-            var inputGroup = inputGroups[i];
+            for (var i = 0; i < radioButtons.length; i++) {
+                var radioButton = radioButtons[i];
+                var inputGroup = inputGroups[i];
 
-            if ($(radioButton).is(":checked")) {
-                $(inputGroup + "1").removeAttr("disabled").focus();
-                $(inputGroup + "2").removeAttr("disabled");
-                $(inputGroup + "3").removeAttr("disabled");
-            } else {
-                $(inputGroup + "1").attr("disabled", "disabled");
-                $(inputGroup + "2").attr("disabled", "disabled");
-                $(inputGroup + "3").attr("disabled", "disabled");
+                if ($(radioButton).is(":checked")) {
+                    $(inputGroup + "1").removeAttr("disabled").focus();
+                    $(inputGroup + "2").removeAttr("disabled");
+                    $(inputGroup + "3").removeAttr("disabled");
+                } else {
+                    $(inputGroup + "1").attr("disabled", "disabled");
+                    $(inputGroup + "2").attr("disabled", "disabled");
+                    $(inputGroup + "3").attr("disabled", "disabled");
+                }
             }
-        }
+        });
     });
-});
 
 
     $("#addRow").click(function() {
