@@ -23,9 +23,9 @@ if (isset($_POST['announcementTitle'])) {
             // Check if the file size is within the limit
             if ($fileSize < 1000000) {
                 // Give the file a unique name
-                $fileNameNew = uniqid('', true) . "." . $fileActualExt;
+                $fileNameNew = $fileName;
                 // Set the file destination
-                $fileDestination = "uploads/".$fileNameNew;
+                $fileDestination = "uploads/" . $fileNameNew;
                 // Move the file to the destination
                 move_uploaded_file($fileTmpName, $fileDestination);
                 // Connect to the database
