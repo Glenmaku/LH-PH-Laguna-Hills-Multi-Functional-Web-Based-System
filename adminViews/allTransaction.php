@@ -496,26 +496,21 @@
         } else {console.log("function-miming is empty");}
 
         if ($("#radio-hall" || "#radio-court" || "#radio-miming").is(":checked")) {
-            var checkbox_hall = 
-            
+            var total_price = $("#in-radio-hall3").val(); + $("#in-radio-court3").val(); + $("#in-radio-miming3").val();
             // date conversion
             $.ajax({
                 url: 'adminViews/insert-data-transaction-miming.php',
                 type: 'post',
                 data: {
                     namesend: nameadd,
-                    from_reservation_date,
-                    to_reservation_datesend: to_reservation_date,
-                    time_startsend: miming_time_start,
-                    time_endsend: miming_time_end,
-                    pricesend: price_miming
+                    pricesend: total_price
                 },
                 success: function(data, status) {
                     // function to display data
                     console.log(status);
                 }
             });
-        } else {console.log("function-miming is empty");}
+        } else {console.log("all is empty");}
     }
 
 
