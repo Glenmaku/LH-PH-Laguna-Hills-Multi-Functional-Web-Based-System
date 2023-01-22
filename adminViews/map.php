@@ -227,7 +227,9 @@
         l-80.4-0.8c-5.5-0.2-5.7-3.2-6.3-5.7C1222,3674.8,1220.8,3658.3,1219.9,3641.9L1219.9,3641.9z" fill-rule="evenodd" />
                                 <path id="path28172" onclick="getData('path28172')" class="st0" d="M1270.7,3665.7" fill-rule="evenodd" />
                                 <path id="blk14lot66" onclick="getData('blk14lot66')" class="st0" d="
-        M1223.7,3708.1c0.2-4.1,3.1-7.1,9.6-6.9l77.4,1.3c4.8,0.1,6.1,3.5,6,5.8c-0.1,2.3,0.1,43.3-0.2,45.2c-0.3,4.6-3.5,5.6-7.8,5.3c 0.0803,-1.4483 1.10299,-2.5 3.40003,-2.424 l 27.31193,0.4559 c 1.68799,0.029 2.1591,1.2259 2.11829,2.0504 -0.0521,0.8081 0.0254,15.2804 -0.0859,15.9529 -0.0947,1.6387 -1.21989,1.9867 -2.75974,1.8645 l -28.33842,-0.729 c -1.92624,-0.087 -2.1388,-0.7727 -2.1054,-2.3203 0.25536,-4.9927 0.10318,-10.0647 0.45921,-14.8504 z" fill-rule="evenodd" />
+        M1223.7,3708.1c0.2-4.1,3.1-7.1,9.6-6.9l77.4,1.3c4.8,0.1,6.1,3.5,6,5.8c-0.1,2.3,0.1,43.3-0.2,45.2c-0.3,4.6-3.5,5.6-7.8,
+        5.3c 0.0803,-1.4483 1.10299,-2.5 3.40003,-2.424 l 27.31193,0.4559 c 1.68799,0.029 2.1591,1.2259 2.11829,2.0504 -0.0521,0.8081 0.0254,15.2804 -0.0859,15.9529 -0.0947,
+        1.6387 -1.21989,1.9867 -2.75974,1.8645 l -28.33842,-0.729 c -1.92624,-0.087 -2.1388,-0.7727 -2.1054,-2.3203 0.25536,-4.9927 0.10318,-10.0647 0.45921,-14.8504 z" fill-rule="evenodd" />
                                 <path id=" blk14lot65" onclick="getData('blk14lot65')" class="st0" d="
         M1221.4,3767.7c0.2-4.1,3.2-6.2,9.7-6l79.7,1.3c4.8,0.1,6.1,3.5,6,5.8c-0.1,2.3-1.3,43.9-1.6,45.8c-0.3,4.6-2.6,5.6-6.9,5.3
         l-82.9-2.7c-4.7-0.1-5.7-2.1-5.6-6.6C1220.2,3798.8,1220.5,3779.5,1221.4,3767.7L1221.4,3767.7z" fill-rule="evenodd" />
@@ -1696,7 +1698,7 @@
                                 <path id="blk2lot6" onclick="getData('blk2lot6')" class="st0" d="
         M3333.6,1522.7l131.6,116.4c8.8,9,8.8,7.4,16.6-1.3l45.3-50.7c7.8-7.3,5-7.6-2.3-13.9l-130.8-113.8c-8.4-7.4-8.8-11.4-16.3-3.1
         l-44.5,49.2C3323.8,1514.6,3324.3,1514.5,3333.6,1522.7L3333.6,1522.7z" fill-rule="evenodd" />
-                                <path id="blk2lot7" onclick="getData('blklot7')" class="st0" d="
+                                <path id="blk2lot7" onclick="getData('blk2lot7')" class="st0" d="
         M3272.7,1590.9l126.9,115.9c8.2,8.4,8.1,8.4,15.7,0.3l46.5-49.5c8.7-7.5,5-8.1-2.7-15l-130.5-116c-7.2-7.1-7.1-7.8-13.5-0.5
         l-43.1,49.1C3263.6,1583.4,3264.5,1583.4,3272.7,1590.9L3272.7,1590.9z" fill-rule="evenodd" />
                                 <path id="blk2lot8" onclick="getData('blk2lot8')" class="st0" d="
@@ -2372,7 +2374,6 @@
                                 <path id="blk23lot18" onclick="getData('blk23lot18')" class="st0" d="
         M1049,5274c-1.6-4.7-2.7-9.2,2.8-13.1c30.9-19.6,64.8-42.6,89-57.2c3.3-1.6,5.9-3.5,13,5.3l38,43.6c7.2,7.5,6.2,17.2-1,23.9
         c-24.9,21.5-56.7,41-101.4,60.1c-5.4,3.2-7,2-9.8-2.1L1049,5274z" fill-rule="evenodd" />
-
                                 <path id="blk23lot15" onclick="getData('blk23lot15')" class="st0" d="
         M948.5,5223.7c1.6-3.8,2.3-4.8,6.5-5.4l35.1-2.7c2.7-0.2,4.9,0.6,7.6,5.7l26.9,46c1.6,2.3-0.3,3.4-3.3,5.2l-38.6,17.8
         c-4.9,3.1-7.6,4.3-13.7,4.4l-53.7,2.1c-1.6,0.2-2.1-0.5-0.9-2.5L948.5,5223.7z" fill-rule="evenodd" />
@@ -2805,27 +2806,37 @@
                 <div class="status">
                         <div class="input-group mb-3">
                                 <div class="input-group-text">
-                                        <input class="form-check-input mt-0" type="checkbox" value="" >
-                                </div>     
+                                        <input class="form-check-input mt-0" type="checkbox" value="green" id="available" onclick="changeColor('green')">Available
+                                </div>
                         </div>
                         <div class="input-group mb-3">
                                 <div class="input-group-text">
-                                        <input class="form-check-input mt-0" type="checkbox" value="" >
-                                </div>   
+                                        <input class="form-check-input mt-0" type="checkbox" value="red" id="occupied" onclick="changeColor('red')">Occupied
+                                </div>
                         </div>
                         <div class="input-group mb-3">
                                 <div class="input-group-text">
-                                        <input class="form-check-input mt-0" type="checkbox" value="" >
-                                </div>    
+                                        <input class="form-check-input mt-0" type="checkbox" value="blue" id="house" onclick="changeColor('blue')">With House
+                                </div>
                         </div>
                         <div class="input-group mb-3">
                                 <div class="input-group-text">
-                                        <input class="form-check-input mt-0" type="checkbox" value="" >
-                                </div>     
+                                        <input class="form-check-input mt-0" type="checkbox" value="yellow" id="undisclosed" onclick="changeColor('yellow')">Occupant Undisclosed
+                                </div>
                         </div>
                         <div class="input-group mb-3">
                                 <div class="input-group-text">
-                                        <input class="form-check-input mt-0" type="checkbox" value="" >
+                                        <input class="form-check-input mt-0" type="checkbox" value="orange" id="foreclosed" onclick="changeColor('orange')">Foreclosed
+                                </div>
+                        </div>
+                        <div class="input-group mb-3">
+                                <div class="input-group-text">
+                                        <input class="form-check-input mt-0" type="checkbox" value="black" id="open" onclick="changeColor('black')">Open Space
+                                </div>
+                        </div>
+                        <div class="input-group mb-3">
+                                <div class="input-group-text">
+                                        <input class="form-check-input mt-0" type="checkbox" value="purple" id="amenities" onclick="changeColor('purple')">Amenities
                                 </div>
                         </div>
                 </div>
@@ -2839,6 +2850,8 @@
                                         </div>
                                         <div class="modal-body">
                                                 <div id="map-submit-error"></div>
+
+                                                //ETO PARA SA EDIT INFORMATION
                                                 <form>
                                                         <div class="mb-3">
                                                                 <label for="recipient-name" class="col-form-label">Block</label>
@@ -2933,18 +2946,107 @@
                                 .then(response => response.json())
                                 .then(data => {
                                         // Update the values of the elements with the corresponding ids
-                                        document.getElementById("Block").value = data.Block;
-                                        document.getElementById("Lot").value = data.Lot;
-                                        document.getElementById("Street").value = data.Street;
-                                        document.getElementById("Status").value = data.Status;
-                                        document.getElementById("Area").value = data.Area;
-                                        document.getElementById("Price").value = data.Price;
-                                        document.getElementById("Remarks").value = data.Remarks;
+                                        document.getElementById("block").value = data.Block;
+                                        document.getElementById("lot").value = data.Lot;
+                                        document.getElementById("street").value = data.Street;
+                                        document.getElementById("status").value = data.Status;
+                                        document.getElementById("area-per-sqm").value = data.Area;
+                                        document.getElementById("price").value = data.Price;
+                                        document.getElementById("remarks").value = data.Remarks;
                                 })
                                 .catch(error => {
                                         console.log(`Error: ${error}`);
                                 });
                 }
+
+                function changeColor(id) {
+                        // Use fetch API for HTTP requests
+                        fetch('adminViews/includes/mapsubmit.php?id=' + id)
+                                .then(response => response.json())
+                                .then(data => {
+                                        // Update the color of the button
+                                        if (data.Status === 'Available') {
+                                                document.getElementById("available").style.backgroundColor = 'green';
+                                        } else if (data.Status === 'Occupied') {
+                                                document.getElementById("occupied").style.backgroundColor = 'red';
+                                        } else if (data.Status === 'Property Undisclosed') {
+                                                document.getElementById("disclosed").style.backgroundColor = 'yellow';
+                                        } else if (data.Status === 'Open space') {
+                                                document.getElementById("open").style.backgroundColor = 'black';
+                                        } else if (data.Status === 'With house') {
+                                                document.getElementById("house").style.backgroundColor = 'blue';
+                                        } else if (data.Status === 'Amenities') {
+                                                document.getElementById("amenities").style.backgroundColor = 'purple';
+                                        } else if (data.Status === 'foreclosed') {
+                                                document.getElementById("foreclosed").style.backgroundColor = 'orange';
+                                        } 
+                                })
+                                .catch(error => {
+                                        console.log('Error:' + error);
+                                });
+                }
+
+                window.onload = function() {
+                        getData('Blk1Lot1'), getData('Blk1Lot2');
+                        getData('Blk1Lot3');
+                        getData('Blk1Lot4');
+                        getData('Blk1Lot5');
+                        getData('Blk2Lot1');
+                        getData('Blk2Lot2');
+                };
+
+                const buttons = document.querySelectorAll('button');
+                buttons.forEach(button => {
+                        button.addEventListener('click', () => {
+                                getData(button.id);
+                        });
+                });
+
+
+
+                /*$(document).ready(function() {
+                        // You need to be listening for the click on the class "detail"
+                        $(".st0").click(function() {
+                                // This captures the current selected DOM object
+                                var obj = $(this);
+                                // This will extract the value inside
+                                var objValue = obj.text();
+                                // This is where you send the data to a new page to get a response
+                                $.ajax({
+                                        url: 'adminViews/includes/mapdata.php',
+                                        type: 'post',
+                                        data: {
+                                                'id': objValue
+                                        },
+                                        success: function(response) {
+                                                // You can see the response in your console log
+                                                console.log(response);
+                                                // To update your html, you can just receive it from
+                                                // your ajax dispatch page and place it into the modal (or wherever)
+                                                $('#display-panel').html(response);
+                                        }
+                                });
+                        });
+                });*/
+
+
+
+
+
+
+                /*$(document).ready(function() {
+                        $("input[type='checkbox']").click(function() {
+                                if ($("#redCheckbox").prop("checked")) {
+                                        $("button").css("background-color", "red");
+                                } else if ($("#blueCheckbox").prop("checked")) {
+                                        $("button").css("background-color", "blue");
+                                } else {
+                                        $("button").css("background-color", "");
+                                }
+                        });
+                });*/
+
+
 
 
 

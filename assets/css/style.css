@@ -878,6 +878,28 @@ svg{
     
 }
 
+.status #available  {
+    background-color: green;
+}
+.status #occupied  {
+    background-color: red;
+}
+.status #house  {
+    background-color: blue;
+}
+.status #undisclosed  {
+    background-color: yellow;
+}
+.status #foreclosed  {
+    background-color: orange;
+}
+.status #open  {
+    background-color: black;
+}
+.status #amenities  {
+    background-color: purple;
+}
+
 
 
 
