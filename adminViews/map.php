@@ -2801,8 +2801,35 @@
 
                 <div id="display-panel">
 
-
                 </div>
+                <div class="status">
+                        <div class="input-group mb-3">
+                                <div class="input-group-text">
+                                        <input class="form-check-input mt-0" type="checkbox" value="" >
+                                </div>     
+                        </div>
+                        <div class="input-group mb-3">
+                                <div class="input-group-text">
+                                        <input class="form-check-input mt-0" type="checkbox" value="" >
+                                </div>   
+                        </div>
+                        <div class="input-group mb-3">
+                                <div class="input-group-text">
+                                        <input class="form-check-input mt-0" type="checkbox" value="" >
+                                </div>    
+                        </div>
+                        <div class="input-group mb-3">
+                                <div class="input-group-text">
+                                        <input class="form-check-input mt-0" type="checkbox" value="" >
+                                </div>     
+                        </div>
+                        <div class="input-group mb-3">
+                                <div class="input-group-text">
+                                        <input class="form-check-input mt-0" type="checkbox" value="" >
+                                </div>
+                        </div>
+                </div>
+
                 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog">
                                 <div class="modal-content">
@@ -2811,8 +2838,8 @@
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                         </div>
                                         <div class="modal-body">
-                                            <div id="map-submit-error"></div>    
-                                        <form>
+                                                <div id="map-submit-error"></div>
+                                                <form>
                                                         <div class="mb-3">
                                                                 <label for="recipient-name" class="col-form-label">Block</label>
                                                                 <input type="number" class="form-control" id="Block">
@@ -2899,29 +2926,29 @@
                                 });
                         });
                 }
-                
-function getData(id) {
-  // Use fetch API for HTTP requests
-  fetch(`adminViews/includes/mapsubmit.php?id=${id}`)
-    .then(response => response.json())
-    .then(data => {
-      // Update the values of the elements with the corresponding ids
-      document.getElementById("Block").value = data.Block;
-      document.getElementById("Lot").value = data.Lot;
-      document.getElementById("Street").value = data.Street;
-      document.getElementById("Status").value = data.Status;
-      document.getElementById("Area").value = data.Area;
-      document.getElementById("Price").value = data.Price;
-      document.getElementById("Remarks").value = data.Remarks;
-    })
-    .catch(error => {
-      console.log(`Error: ${error}`);
-    });
-}
-                
-                
-                
-                
+
+                function getData(id) {
+                        // Use fetch API for HTTP requests
+                        fetch(`adminViews/includes/mapsubmit.php?id=${id}`)
+                                .then(response => response.json())
+                                .then(data => {
+                                        // Update the values of the elements with the corresponding ids
+                                        document.getElementById("Block").value = data.Block;
+                                        document.getElementById("Lot").value = data.Lot;
+                                        document.getElementById("Street").value = data.Street;
+                                        document.getElementById("Status").value = data.Status;
+                                        document.getElementById("Area").value = data.Area;
+                                        document.getElementById("Price").value = data.Price;
+                                        document.getElementById("Remarks").value = data.Remarks;
+                                })
+                                .catch(error => {
+                                        console.log(`Error: ${error}`);
+                                });
+                }
+
+
+
+
                 /*$(document).ready(function(''){
   $("#submit-btn").click(function(''){
     // Collect the form data
@@ -2947,25 +2974,23 @@ function getData(id) {
   });
 });*/
 
-/*$("#submit-btn").click(function(''){
-    $.ajax({
-        type: "POST",
-        url: "adminViews/includes/mapsubmit.php",
-        data: {
-            Blockvar: $("#Block").val(''),
-            Lotvar: $("#Lot").val(''),
-            Streetvar: $("#Street").val(''),
-            Statusvar: $("#Status").val(''),
-            Areavar: $("#Area").val(''),
-            Pricevar: $("#Price").val(''),
-            Remarksvar: $("#Remarks").val(''),
+                /*$("#submit-btn").click(function(''){
+                    $.ajax({
+                        type: "POST",
+                        url: "adminViews/includes/mapsubmit.php",
+                        data: {
+                            Blockvar: $("#Block").val(''),
+                            Lotvar: $("#Lot").val(''),
+                            Streetvar: $("#Street").val(''),
+                            Statusvar: $("#Status").val(''),
+                            Areavar: $("#Area").val(''),
+                            Pricevar: $("#Price").val(''),
+                            Remarksvar: $("#Remarks").val(''),
 
-        },
-        success: function(data) {
-            $('#display-panel').html(data);
-        }
-    });
-});*/
+                        },
+                        success: function(data) {
+                            $('#display-panel').html(data);
+                        }
+                    });
+                });*/
         </script>
-
-
