@@ -19,15 +19,18 @@ if (!empty($_SESSION['owner_I_D'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymosus">
     <title>ACCESS OWNER ACCOUNT</title>
+    
+    <!--------- Stylesheet ------------>
+    <link rel="stylesheet" href="assets/css/style.css"></link>
+    <!--------- Icon ------------>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
 </head>
 
 <body>
     <!--///////////////////////////////////////FOR LOGIN PURPOSE////////////////////////////////////////////-->
     <?php
-    if (isset($_GET['Welcome'])) {
-        echo '<div>HOMEOWNER, You have successfully logged in!</div>';
-        echo $_SESSION['owner_username'];
-    }
+        include 'homeownerViews/homeownerHeader.php';
+        include 'homeownerViews/homeownerSidebar.php';
     ?>
     <!--///////////////////////////////////////FOR LOGIN PURPOSE////////////////////////////////////////////-->
     <h1>Owner Account</h1>
@@ -108,7 +111,7 @@ if (!empty($_SESSION['owner_I_D'])) {
             </div>
         </div>
     </div>
-<a href="includes/Act-logout.php">Logout</a>
+
 
 
     </div>
