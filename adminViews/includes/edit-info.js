@@ -11,10 +11,10 @@ $(document).ready(function(){
       });
     });
   
-    $("#saveChanges").on("click", function(){
+    $("#submit-btn").on("click", function(){
       $.ajax({
         type: "POST",
-        url: "update_information.php",
+        url: "adminViews/includes/mapsubmit.php",
         data: $("#editForm").serialize(),
         success: function(data){
           // Handle the response from the server
@@ -23,3 +23,4 @@ $(document).ready(function(){
       });
     });
   });
+
