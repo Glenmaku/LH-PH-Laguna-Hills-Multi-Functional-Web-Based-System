@@ -20,7 +20,7 @@
                         <!--<input type="text" class="form-control" aria-label="Text input with dropdown button" id="searchMap">-->
 
                 </div>
-                <svg version="1.1" id="svg5" inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)" sodipodi:docname="Laguna_Hills_Sub.svg" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 4000 7000" style="enable-background:new 0 0 1190.2 1683.8;" xml:space="preserve">
+                <svg version="1.1" id="svg5" inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)" sodipodi:docname="Laguna_Hills_Sub.svg" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 5000 8000" style="enable-background:new 0 0 1190.2 1683.8;" xml:space="preserve">
                         <g id="sudvision">
                                 <path id="blk4lot4" class="st0" onclick="getData('blk4lot4')" d="M1793.3,2824c1.9-1.9,5.4-3.4,8.3-0.6
         c0.4,0.4,50.7,57.1,51.6,58.3c1.9,1.9,3.9,4.8,2.7,6.5c-1.5,2.2-27.8,34.4-28.7,35.6c-2.2,2.1-4.6,1.8-7.4,1.2l-71-15.8
@@ -243,7 +243,7 @@
         l-80.4-0.8c-5.5-0.2-5.7-3.2-6.3-5.7C1222,3674.8,1220.8,3658.3,1219.9,3641.9L1219.9,3641.9z" fill-rule="evenodd" />
                                 <path id="path28172" onclick="getData('path28172')" class="st0" d="M1270.7,3665.7" fill-rule="evenodd" />
                                 <path id="blk14lot66" onclick="getData('blk14lot66')" class="st0" d="
-        M1223.7,3708.1c0.2-4.1,3.1-7.1,9.6-6.9l77.4,1.3c4.8,0.1,6.1,3.5,6,5.8c-0.1,2.3,0.1,43.3-0.2,45.2c-0.3,4.6-3.5,5.6-7.8,5.3" fill-rule="evenodd" />
+        M1223.7,3708.1c0.2-4.1,3.1-7.1,9.6-6.9l77.4,1.3c4.8,0.1,6.1,3.5,6,5.8c-0.1,2.3,0.1,43.3-0.2,45.2c-0.3,4.6-3.5,5.6-7.8,5.3c 0.0803,-1.4483 1.10299,-2.5 3.40003,-2.424 l 27.31193,0.4559 c 1.68799,0.029 2.1591,1.2259 2.11829,2.0504 -0.0521,0.8081 0.0254,15.2804 -0.0859,15.9529 -0.0947,1.6387 -1.21989,1.9867 -2.75974,1.8645 l -28.33842,-0.729 c -1.92624,-0.087 -2.1388,-0.7727 -2.1054,-2.3203 0.25536,-4.9927 0.10318,-10.0647 0.45921,-14.8504 z" fill-rule="evenodd" />
                                 <path id=" blk14lot65" onclick="getData('blk14lot65')" class="st0" d="
         M1221.4,3767.7c0.2-4.1,3.2-6.2,9.7-6l79.7,1.3c4.8,0.1,6.1,3.5,6,5.8c-0.1,2.3-1.3,43.9-1.6,45.8c-0.3,4.6-2.6,5.6-6.9,5.3
         l-82.9-2.7c-4.7-0.1-5.7-2.1-5.6-6.6C1220.2,3798.8,1220.5,3779.5,1221.4,3767.7L1221.4,3767.7z" fill-rule="evenodd" />
