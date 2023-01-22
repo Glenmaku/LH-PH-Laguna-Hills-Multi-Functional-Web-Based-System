@@ -35,7 +35,6 @@
             <td style="width: 40%;">'.$description.'</td>
             <td>'.$announcement_date.'</td>
             <td><button class="btn btn-primary" onclick="get_announce_info('.$announcementId.')"><i class="fa-solid fa-eye"></i></button>
-            <button class="btn btn-success" onclick="get_announce_record('.$announcementId.')"> <i class="fa-solid fa-pen"></i></button>
             <button class="btn btn-danger btn_delete_announce" data-bs-toggle="modal" data-bs-target="#deleteAnnounceModal" id="btn_delete_announce"  data-id2=' . $row['announcement_no'] . '><i class="fa-solid fa-trash"></i></button></td>
             </tr>';
             }

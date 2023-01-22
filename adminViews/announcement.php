@@ -48,7 +48,7 @@
         </div>
     </div>
 <!-- View Modal -->
-<div class="modal fade modal-lg" id="viewAnnouncement" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade modal-lg viewAnnouncement" id="viewAnnouncement" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -57,12 +57,14 @@
             </div>
             <form id="view-announcement" enctype="multipart/form-data">
                 <div class="modal-body">
+                    
                     <input name="announce_view_id" id="announce_view_id" readonly hidden>
                     <h6>Date Posted</h6>
                     <p class="date" id="date"></p>
-                    <h4 class="title" id="title" style="text-align: center;"></h4>
-                    <img id="img" src="adminViews/includes/announcementFileView.php?=<?php $announce['announcement_attachment']; ?>" alt="">
-                    <p id="description"></p>
+                    <h4 class="title" id="title"></h4>
+                    <img id="img" src="" >
+                    <h6>Description:</h6>
+                    <h6 id="description"></h6>
                 </div>
                 <div class="modal-footer">
                     <button type="button" id="close-btn" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
