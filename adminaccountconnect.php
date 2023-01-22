@@ -1,5 +1,14 @@
 <!--JUST COPY THE CODE BETWEEN THE COMMENT AND PASTE IT TO THE ADMIN BODY OR HEADER-->
-<?php session_start();?>
+<?php 
+session_start();
+if (!empty($_SESSION['admin_I_D'])) {
+    $username = $_SESSION['admin_username'];
+    $adminid = $_SESSION['admin_I_D'];
+} else {
+    header("location:index.php");
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,27 +19,26 @@
 </head>
 <body>   
 <!--///////////////////////////////////////FOR LOGIN PURPOSE////////////////////////////////////////////-->
-<?php
-if(isset($_GET['Welcome'])){
 
-if($_SESSION['admin_I_D']){
-     echo'<div>ADMIN, You have successfully logged in!</div>';
-}
-else
-{
-
-}
-}
-else
-{
-  header("location:Login.php");
-exit();  
-}
-?>
+ <?php
+    if (isset($_GET['Welcome'])) {
+        echo '<div>ADMIN, You have successfully logged in!</div>';
+        echo $_SESSION['admin_username'];
+    }
+    ?>
  <!--///////////////////////////////////////FOR LOGIN PURPOSE////////////////////////////////////////////-->
     <h1>Admin Account</h1>
-<div> 
-            
+<div>
+  
+<!--LOGOUTING EWAN KO LANG KUNG PATI UNG SESSION DESTROY KASAMA--->
+<a href="includes/Act-logout.php">Logout</a>
+
+           
 </body>
 </html>
 
+<?php
+    // logout code goes here
+    //session_destroy();
+   // unset($_SESSION);
+    ?>

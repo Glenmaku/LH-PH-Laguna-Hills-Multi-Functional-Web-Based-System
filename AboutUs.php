@@ -2,7 +2,7 @@
 <?php require_once('includes/connection.php');?>
 
 <!--UPPER BANNER-->
-<div class=" Top TopContact Topbanner container-fluid" >
+<div class=" Top TopAbout Topbanner container-fluid" >
 <div class="text-center container-fluid" >
 <h5>Laguna Hills</h5>
 <h1>About Us</h1>
@@ -53,7 +53,7 @@
 
     </div>
 </section>
-<section class="videocontainer section3 minheight">
+<section class="videocontainer section3 minheight"hidden>
   <div class="video justify-content-center align-items-center">
   <div><i class=' bx bx-play-circle text-center text-white'></i></div>
 </div>

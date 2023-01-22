@@ -24,7 +24,6 @@
 
 
 <!-- GREEN CONTACT FORM-->
-
 <div class=" text-white justify-content-between contactarea">
     <div class="d-inline section7 forms">
         <h2>Got a question?</h2>
@@ -51,7 +50,7 @@
             </li>
         </ul>
     </div>
-    <form class="contactform1 d-inline align-content-center fortops forms needs-validation" id="form" method="POST" novalidate >
+    <form class="contactform1 d-inline align-content-center fortops forms needs-validation" id="form" novalidate >
 
         <div class="form-floating mb-5 formss align-self-center">
             <input type="text" class="form-control" id="Fullnameinput" placeholder="Firstname Surname" name="Full_Name" required>
@@ -90,10 +89,10 @@
         </div>
         </div>
         <div class="d-flex justify-content-center">
-            <button class="btn-submit4 btn-submit-5" name="Submit" type="submit" >
-                <div class="btn-submit-6">
+            <button class="btn-submit4 btn-submit-5" id="sends" name="Submit" onclick="sends()" >
+                <spam class="btn-submit-6">
                     <p class='bx-fw bx bxs-send'></p>
-                </div>
+                </spam>
                 <a class="text-white">Submit</a>
             </button>
         </div>
@@ -101,33 +100,5 @@
 </div>
 
 
-<?php
-require_once('includes/connection.php');
-
-if (isset($_POST['Submit'])) {
-
-  $Full_Name = mysqli_real_escape_string($con, $_POST['Full_Name']);
-  $Email_Address = mysqli_real_escape_string($con, $_POST['Email_Address']);
-  $Cellphone_Number = mysqli_real_escape_string($con, $_POST['Cellphone_Number']);
-  $Subject = mysqli_real_escape_string($con, $_POST['Subject']);
-  $Message = mysqli_real_escape_string($con, $_POST['Message']);
-
-  $query = "insert into contact_us (Full_Name, Email_Address, Cellphone_Number, Subject, Message) values ('$Full_Name','$Email_Address','$Cellphone_Number', '$Subject', '$Message')";
-  $result = mysqli_query($con, $query);
-  if ($query) {
-?>
-
-    <script>
-      swal({
-        title: "Thank you for reaching out!",
-        text: "We will respond to you as soon as possible.",
-        icon: "success",
-      });
-    </script>
-  
-<?php
-  }
-}
-?>
 <!-- END GREEN CONTACT FORM-->
 <?php require_once('footer.php'); ?>

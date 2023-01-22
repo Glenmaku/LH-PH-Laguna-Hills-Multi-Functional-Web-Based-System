@@ -6,6 +6,7 @@
     <button type="button" data-bs-target="#carouselMain" data-bs-slide-to="0" class="" aria-label="Slide 1"></button>
     <button type="button" data-bs-target="#carouselMain" data-bs-slide-to="1" aria-label="Slide 2" class=""></button>
     <button type="button" data-bs-target="#carouselMain" data-bs-slide-to="2" aria-label="Slide 3" class="active" aria-current="true"></button>
+    <button type="button" data-bs-target="#carouselMain" data-bs-slide-to="2" aria-label="Slide 4" class="active" aria-current="true"></button>
   </div>
   <!--Carousel Content-->
   <div class="carousel-inner">
@@ -15,12 +16,13 @@
     </div>
     <!--Carousel Content 2-->
     <div class="carousel-item ">
-      <img src="Images/amenities-bg.jpg" class="ImageCarouselMain">
+      <img src="Images/RESIDENTIAL3b.jpeg" class="ImageCarouselMain">
     </div>
     <!--Carousel Content 3 -->
-    <div class="carousel-item">
-      <img src="Images/amenities-bg2.jpg" class="ImageCarouselMain">
+    <div class="carousel-item ">
+      <img src="Images/NATURE26.jpg" class="ImageCarouselMain">
     </div>
+
   </div>
   <div class="carousel-caption d-block">
     <h3>The</h3>
@@ -38,6 +40,8 @@
   <button class="carousel-control-next" type="button" data-bs-target="#carouselMain" data-bs-slide="next">
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Next</span>
+  </button>
+  
   </button>
 </div>
 <!--End of Carousel First-->
@@ -73,22 +77,22 @@
       <div class="Amenities_BG d-block reveal p-2 flex-grow-1"></div>
       <div class="ame_panel reveal">
         <div class="Ame">
-          <button onmouseover='imgChange("images/upperame.png")' class="Ame1 d-inline">
+          <button onmouseover='imgChange("Images/CLUBHOUSE4.jpeg")' class="Ame1 d-inline">
             <a href="Amenities.php#clubhouse">Clubhouse</a>
           </button>
         </div>
         <div class="Ame">
-          <button onmouseover='imgChange("images/bg2.jpg")' class=" Ame2 d-inline">
+          <button onmouseover='imgChange("Images/bgame.png")' class=" Ame2 d-inline">
             <a href="Amenities.php#swimmingpool">Swimming Pool</a>
           </button>
         </div>
         <div class="Ame">
-          <button onmouseover='imgChange("images/bg1.jpg")' class="Ame3 d-inline">
+          <button onmouseover='imgChange("images/COVEREDCOURT6b.jpg")' class="Ame3 d-inline">
             <a href="Amenities.php#basketballcourt">Covered Court</a>
           </button>
         </div>
         <div class="Ame">
-          <button onmouseover='imgChange("images/bgame.png")' class="Ame4 d-inline">
+          <button onmouseover='imgChange("Images/TENNISCOURT1.jpeg")' class="Ame4 d-inline">
             <a href="Amenities.php#tenniscourt">Tennis Court</a>
           </button>
         </div>
@@ -193,11 +197,13 @@
   </div>
   <div class="col-md-7 section4">
     <div class="carousels" data-flickity='{ "autoPlay": true }'>
-      <div class="carousel-cell"><img src="Images/amenities-bg.jpg"></div>
-      <div class="carousel-cell"><img src="Images/amenities-bg.jpg"></div>
-      <div class="carousel-cell"><img src="Images/amenities-bg.jpg"></div>
-      <div class="carousel-cell"><img src="Images/amenities-bg.jpg"></div>
-      <div class="carousel-cell"><img src="Images/amenities-bg.jpg"></div>
+      <div class="carousel-cell"><img src="Images/NATURE11.jpg"></div>
+      <div class="carousel-cell"><img src="Images/PIC/SCENERIES111.jpg"></div>
+      <div class="carousel-cell"><img src="Images/NATURE28.jpg"></div>
+      <div class="carousel-cell"><img src="Images/bg34.jpg"></div>
+      <div class="carousel-cell"><img src="Images/NATURE1.jpeg"></div>
+      <div class="carousel-cell"><img src="Images/SCENERIES(4a).jpg"></div>
+      
     </div>
   </div>
 </div>
@@ -369,84 +375,53 @@
   </section>
   <div class="col-md-6 section4 fortops">
 
-    <form class="contactform align-content-center fortops needs-validation" method="POST" id="form" novalidate>
-      <div class="form-floating mb-5">
-        <input type="text" class="form-control" id="Fullnameinput" placeholder="Firstname Surname" name="Full_Name" required>
-        <label for="Firstnameinput">Full Name</label>
-        <div class="invalid-tooltip text-white">
-          Please enter your name.
-        </div>
-      </div>
-      <div class="form-floating mb-5">
-        <input type="email" class="form-control" id="Emailinput" placeholder="name@example.com" name="Email_Address" required>
-        <label for="Emailinput">Email address</label>
-        <div class="invalid-tooltip text-white">
-          Please enter a valid email address.
-        </div>
-      </div>
-      <div class="form-floating mb-5">
-        <input type="number" class="form-control" id="Numberinput" placeholder="XXXXXXXXXXX" name="Cellphone_Number" required>
-        <label for="Numberinput">Cellphone Number</label>
-        <div class="invalid-tooltip text-white">
-        Please enter a valid number.
-        </div>
-      </div>
-
-      <div class="form-floating mb-5">
-        <input type="text" class="form-control" id="Subjectinput" placeholder="Laguna Hills Inquiries" name="Subject" required>
-        <label for="Subjectinput">Subject</label>
-        <div class="invalid-tooltip text-white">
-          Please add a subject.
-        </div>
-      </div>
-
-      <div class="form-floating mb-5">
-        <textarea class="form-control" id="floatingTextarea2" placeholder="Your Message" style="height: 100px" name="Message" required></textarea>
-        <label for="floatingTextarea2">Message</label>
-        <div class="invalid-tooltip text-white">
-          Please enter your message.
-        </div>
-      </div>
-
-      <div class="d-flex justify-content-center">
-        <button class="btn-submit btn-submit-2" name="Submit" type="submit">
-          <div class="btn-submit-3">
-            <p class='bx-fw bx bxs-send'></p>
-          </div>
-          <a class="text-white">Submit</a>
-        </button>
-      </div>
-    </form>
+  <form class="contactform align-content-center fortops needs-validation" novalidate>
+  <div class="form-floating mb-5">
+    <input type="text" class="form-control" id="Fullnameinput" placeholder="Firstname Surname" name="Full_Name" required>
+    <label for="Firstnameinput">Full Name</label>
+    <div class="invalid-tooltip text-white">
+      Please enter your name.
+    </div>
   </div>
-</div>
+  <div class="form-floating mb-5">
+    <input type="email" class="form-control" id="Emailinput" placeholder="name@example.com" name="Email_Address" required>
+    <label for="Emailinput">Email address</label>
+    <div class="invalid-tooltip text-white">
+      Please enter a valid email address.
+    </div>
+  </div>
+  <div class="form-floating mb-5">
+    <input type="number" class="form-control" id="Numberinput" placeholder="XXXXXXXXXXX" name="Cellphone_Number" required>
+    <label for="Numberinput">Cellphone Number</label>
+    <div class="invalid-tooltip text-white">
+      Please enter a valid number.
+    </div>
+  </div>
+  <div class="form-floating mb-5">
+    <input type="text" class="form-control" id="Subjectinput" placeholder="Laguna Hills Inquiries" name="Subject" required>
+    <label for="Subjectinput">Subject</label>
+    <div class="invalid-tooltip text-white">
+      Please add a subject.
+    </div>
+  </div>
+  <div class="form-floating mb-5">
+    <textarea class="form-control" id="floatingTextarea2" placeholder="Your Message" style="height: 100px" name="Message" required></textarea>
+    <label for="floatingTextarea2">Message</label>
+    <div class="invalid-tooltip text-white">
+      Please enter your message.
+    </div>
+  </div>
+  <div class="d-flex justify-content-center">
+    <button class="btn-submit btn-submit-2" id="sends" onclick="send_contacts()">
+      <span class="btn-submit-3" onclick="send_contacts()">
+        <p class='bx-fw bx bxs-send'></p>
+      </span>
+      <a class="text-white"onclick="send_contacts()">Submit</a>
+    </button>
+  </div>
+</form>
+  </div>
+</div> 
 
-<?php
-require_once('includes/connection.php');
-
-if (isset($_POST['Submit'])) {
-
-  $Full_Name = mysqli_real_escape_string($con, $_POST['Full_Name']);
-  $Email_Address = mysqli_real_escape_string($con, $_POST['Email_Address']);
-  $Cellphone_Number = mysqli_real_escape_string($con, $_POST['Cellphone_Number']);
-  $Subject = mysqli_real_escape_string($con, $_POST['Subject']);
-  $Message = mysqli_real_escape_string($con, $_POST['Message']);
-
-  $query = "insert into contact_us (Full_Name, Email_Address, Cellphone_Number, Subject, Message) values ('$Full_Name','$Email_Address','$Cellphone_Number', '$Subject', '$Message')";
-  $result = mysqli_query($con, $query);
-  if ($query) {
-?>
-
-    <script>
-      swal({
-        title: "Thank you for reaching out!",
-        text: "We will respond to you as soon as possible.",
-        icon: "success",
-      });
-    </script>
-  
-<?php
-  }
-}
-?>
 <!-- END GREEN CONTACT FORM-->
 <?php require_once('footer.php'); ?>

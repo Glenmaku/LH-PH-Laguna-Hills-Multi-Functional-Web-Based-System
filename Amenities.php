@@ -67,7 +67,7 @@
       <div class="pt-5" id="clubhouse">
       <div class="amenityparts" >
         <div class="amenity_image">
-          <img src="images/bg1.jpg" alt="Laguna Hills Clubhouse">
+          <img src="Images/CLUBHOUSE4.jpeg" alt="Laguna Hills Clubhouse">
         </div>
         <div class="amenity_description">
           <h5 class="text-center">The</h5>
@@ -95,10 +95,13 @@
             </li>
           </ul>
           <div class="carousels" data-flickity='{ "autoPlay": true }'>
-            <div class="carousel-cell"><img src="Images/Clubhouse_inside.jpg"></div>
+            <div class="carousel-cell"><img src="Images/Clubhouse.jpg"></div>
+            <div class="carousel-cell"><img src="Images/Clubhouse_FunctionHall3.jpg"></div>
+            <div class="carousel-cell"><img src="Images/BILLIARD2.jpg"></div>
+            <div class="carousel-cell"><img src="Images/Terracea.jpg"></div>
             <div class="carousel-cell"><img src="Images/Clubhousetop.jpg"></div>
-            <div class="carousel-cell"><img src="Images/Clubhouse_Bar.jpg"></div>
-            <div class="carousel-cell"><img src="Images/Clubhouse_FunctionHall2.jpg"></div>
+            <div class="carousel-cell"><img src="Images/Clubhouse_Bara.jpg"></div>
+            
 
           </div>
 
@@ -109,7 +112,7 @@
       <!--Swimming Pool-->
       <div class="amenityparts">
         <div class="amenity_image">
-          <img src="images/upperame.png" alt="Laguna Hills Clubhouse Swimming Pool">
+          <img src="Images/bgame.png" alt="Laguna Hills Clubhouse Swimming Pool">
         </div>
         <div class="amenity_description">
           <h5 class="text-center">The</h5>
@@ -137,10 +140,11 @@
 
           </ul>
           <div class="carousels" data-flickity='{ "autoPlay": true }'>
-            <div class="carousel-cell"><img src="Images/Pool.jpg"></div>
             <div class="carousel-cell"><img src="Images/lowerame.png"></div>
+            <div class="carousel-cell"><img src="Images/Pool.jpg"></div>
             <div class="carousel-cell"><img src="Images/Pool3.jpg"></div>
             <div class="carousel-cell"><img src="Images/Pool2.jpg"></div>
+            <div class="carousel-cell"><img src="Images/rooms4a.jpg"></div>
           </div>
         </div>
       </div></div>
@@ -149,7 +153,7 @@
       <!--Tennis Courts-->
       <div class="amenityparts">
         <div class="amenity_image">
-          <img src="images/bg1.jpg" alt="Laguna Hills Clubhouse">
+          <img src="Images/TENNIS COURT10a.jpg" alt="Laguna Hills Clubhouse">
         </div>
         <div class="amenity_description">
           <h5 class="text-center">The</h5>
@@ -168,20 +172,20 @@
           </ul>
 
           <div class="carousels" data-flickity='{ "autoPlay": true }'>
-            <div class="carousel-cell"><img src="Images/amenities-bg.jpg"></div>
-            <div class="carousel-cell"><img src="Images/amenities-bg.jpg"></div>
-            <div class="carousel-cell"><img src="Images/amenities-bg.jpg"></div>
-            <div class="carousel-cell"><img src="Images/amenities-bg.jpg"></div>
-            <div class="carousel-cell"><img src="Images/amenities-bg.jpg"></div>
+          <div class="carousel-cell"><img src="Images/TENNIS3a.jpg"></div>
+            <div class="carousel-cell"><img src="Images/TENNISCOURT1.jpeg"></div>
+            <div class="carousel-cell"><img src="Images/TENNISCOURT.jpeg"></div>
+            <div class="carousel-cell"><img src="Images/SHED.jpeg"></div>
+            <div class="carousel-cell"><img src="Images/TENNIS2a.jpg"></div>
           </div>
         </div>
       </div></div>
       <!--END--Tennis Courts-->
-      <div class="pt-10" id="basketballcourt">
+      <div class="pt-5" id="basketballcourt">
       <!--Basketball Courts-->
       <div class="amenityparts" id="basketballcourt">
         <div class="amenity_image">
-          <img src="images/bg1.jpg" alt="Laguna Hills Clubhouse">
+          <img src="images/COVEREDCOURT6b.jpg" alt="Laguna Hills Clubhouse">
         </div>
         <div class="amenity_description">
           <h5 class="text-center">The</h5>
@@ -193,9 +197,7 @@
             <li class="in">
               <i class='bx bx-exclude '></i>Covered Court
             </li>
-            <li class="in">
-              <i class='bx bx-exclude'></i>size
-            </li>
+           
             <li class="in">
               <i class='bx bx-exclude'></i>2 basketrings
             </li>
@@ -204,7 +206,8 @@
             </li>
           </ul>
           <div class="carousels" data-flickity='{ "autoPlay": true }'>
-            <div class="carousel-cell"><img src="Images/Basketball Court.jpg"></div>
+            <div class="carousel-cell"><img src="Images/Basketball Courta.jpg"></div>
+            <div class="carousel-cell"><img src="Images/COURT.jpg"></div>
 
           </div>
         </div>
