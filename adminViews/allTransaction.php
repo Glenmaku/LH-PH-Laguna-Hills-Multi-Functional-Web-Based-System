@@ -263,14 +263,14 @@
                                     <!-- function hall -->
                                     <div class="selected-reservation">
                                         <div class="reservation-place">
-                                            <input type="checkbox" class="form-check-input border" name="reservation-location" id="radio-hall" value="Function Hall">
+                                            <input type="checkbox" class="form-check-input" name="reservation-location" id="radio-hall" value="Function Hall">
                                             <span>Function Hall</span>
                                         </div>
 
                                         <div class="reservation-time">
-                                            <input type="text" name="f-time-from" id="in-radio-hall1" disabled="disabled">
+                                            <input type="text" name="f-time-from" id="in-radio-hall1" disabled="disabled" placeholder="6am">
                                             <span>-</span>
-                                            <input type="text" name="f-time-to" id="in-radio-hall2" disabled="disabled">
+                                            <input type="text" name="f-time-to" id="in-radio-hall2" placeholder="10am" disabled="disabled">
                                         </div>
                                         <div class="reservation-price">
                                             <input type="text" name="reservation-price" id="in-radio-hall3" value="0" disabled="disabled" onchange="calculate();">
@@ -285,9 +285,9 @@
                                             <span>Court</span>
                                         </div>
                                         <div class="reservation-time">
-                                            <input type="text" name="f-time-from" id="in-radio-court1" disabled="disabled">
+                                            <input type="text" name="f-time-from" id="in-radio-court1" placeholder="6am" disabled="disabled">
                                             <span>-</span>
-                                            <input type="text" name="f-time-to" id="in-radio-court2" disabled="disabled">
+                                            <input type="text" name="f-time-to" id="in-radio-court2" placeholder="10am" disabled="disabled">
                                         </div>
                                         <div class="reservation-price">
                                             <input type="text" name="reservation-price" id="in-radio-court3" value="0" disabled="disabled" onchange="calculate();">
@@ -301,9 +301,9 @@
                                             <span>Swimming Pool</span>
                                         </div>
                                         <div class="reservation-time">
-                                            <input type="text" name="f-time-from" id="in-radio-miming1" disabled="disabled">
+                                            <input type="text" name="f-time-from" id="in-radio-miming1" placeholder="6am" disabled="disabled">
                                             <span>-</span>
-                                            <input type="text" name="f-time-to" id="in-radio-miming2" disabled="disabled">
+                                            <input type="text" name="f-time-to" placeholder="10am" id="in-radio-miming2" disabled="disabled">
                                         </div>
                                         <div class="reservation-price">
                                             <input type="text" name="reservation-price" id="in-radio-miming3" value="0" disabled="disabled" onchange="calculate();">
@@ -380,61 +380,208 @@
                     <input type="text" name="remaining-balance" id="remaining-balance" value="0" disabled>
                     <span>Remarks:</span>
                     <textarea placeholder="Type here.."></textarea>
-                    <button type="submit" id="submit" onclick="add_data();">Submit</button>
+                    <button type="submit" id="submit">Submit</button>
                     <button type="reset" id="reset">Reset Form</button>
                 </div>
             </div>
         </div>
-        </form> 
+        </form>
     </div>
 </div>
 
 <!-- SCRIPT NI ADD TRANSACTION-->
 <script>
     //data insertion sa reservation palang
+
+
+
+
+    $(document).ready(function() {
+        $("#submit").on("click", add_data);
+    });
+
+
     function add_data() {
+        // code that might throw an error
+        var checkbox_hall = ["#radio-hall"];
+        var checkbox_court = ["#radio-court"];
+        var checkbox_miming = ["#radio-miming"];
 
         var nameadd = $("#client-name").val();
         var from_reservation_date_string = $("#from-reservation-date").val();
         var to_reservation_date_string = $("#to-reservation-date").val();
-        var time_start = $("#in-radio-hall1").val();
-        var time_end = $("#in-radio-hall2").val();
-        var price = $("#in-radio-hall3").val();
+        var price_hall = $("#in-radio-hall3").val();
+        var price_court = $("#in-radio-court3").val();
+        var price_miming = $("#in-radio-miming3").val();
 
-        // date conversion
+        var hall_time_start = $("#in-radio-hall1").val();
+        var hall_time_end = $("#in-radio-hall2").val();
+
+        var court_time_start = $("#in-radio-court1").val();
+        var court_time_end = $("#in-radio-court2").val();
+
+        var miming_time_start = $("#in-radio-miming1").val();
+        var miming_time_end = $("#in-radio-miming2").val();
+
         var from_reservation_date_string = new Date();
-        var month1 = from_reservation_date_string.getUTCMonth() + 1; 
+        var month1 = from_reservation_date_string.getUTCMonth() + 1;
         var day1 = from_reservation_date_string.getUTCDate();
         var year1 = from_reservation_date_string.getUTCFullYear();
         var from_reservation_date = year1 + "-" + month1 + "-" + day1;
 
         var to_reservation_date_string = new Date();
-        var month2 = to_reservation_date_string.getUTCMonth() + 1; 
+        var month2 = to_reservation_date_string.getUTCMonth() + 1;
         var day2 = to_reservation_date_string.getUTCDate();
         var year2 = to_reservation_date_string.getUTCFullYear();
         var to_reservation_date = year2 + "-" + month2 + "-" + day2;
-        $.ajax({
-            url: 'adminViews/insert-data-transaction.php',
-            type: 'post',
-            data: {
-                namesend: nameadd,
-                from_reservation_datesend: from_reservation_date,
-                to_reservation_datesend: to_reservation_date,
-                time_startsend: time_start,
-                time_endsend: time_end,
-                pricesend: price
-            },
-            success: function(data, status) {
-                // function to display data
-                console.log(status);
-            }
-        });
+
+        if ($("#radio-hall").is(":checked")) {
+            // date conversion
+            $.ajax({
+                url: 'adminViews/insert-data-transaction-hall.php',
+                type: 'post',
+                data: {
+                    namesend: nameadd,
+                    from_reservation_datesend: from_reservation_date,
+                    to_reservation_datesend: to_reservation_date,
+                    time_startsend: hall_time_start,
+                    time_endsend: hall_time_end,
+                    pricesend: price_hall
+                },
+                success: function(data, status) {
+                    // function to display data
+                    console.log(status);
+                }
+            });
+        } else {console.log("function-hall is empty");}
+        
+        if ($("#radio-court").is(":checked")) {
+            // date conversion
+            $.ajax({
+                url: 'adminViews/insert-data-transaction-court.php',
+                type: 'post',
+                data: {
+                    namesend: nameadd,
+                    from_reservation_datesend: from_reservation_date,
+                    to_reservation_datesend: to_reservation_date,
+                    time_startsend: court_time_start,
+                    time_endsend: court_time_end,
+                    pricesend: price_court
+                },
+                success: function(data, status) {
+                    // function to display data
+                    console.log(status);
+                }
+            });
+        } else {console.log("function-court is empty");}
+        
+        if ($("#radio-miming").is(":checked")) {
+            // date conversion
+            $.ajax({
+                url: 'adminViews/insert-data-transaction-miming.php',
+                type: 'post',
+                data: {
+                    namesend: nameadd,
+                    from_reservation_datesend: from_reservation_date,
+                    to_reservation_datesend: to_reservation_date,
+                    time_startsend: miming_time_start,
+                    time_endsend: miming_time_end,
+                    pricesend: price_miming
+                },
+                success: function(data, status) {
+                    // function to display data
+                    console.log(status);
+                }
+            });
+        } else {console.log("function-miming is empty");}
+
+        if ($("#radio-hall" || "#radio-court" || "#radio-miming").is(":checked")) {
+            var total_price = $("#in-radio-hall3").val(); + $("#in-radio-court3").val(); + $("#in-radio-miming3").val();
+            // date conversion
+            $.ajax({
+                url: 'adminViews/insert-data-transaction-miming.php',
+                type: 'post',
+                data: {
+                    namesend: nameadd,
+                    pricesend: total_price
+                },
+                success: function(data, status) {
+                    // function to display data
+                    console.log(status);
+                }
+            });
+        } else {console.log("all is empty");}
     }
 
 
 
-    //end
+    // checkbox reset
+    document.getElementById("radio-hall").addEventListener("change", function() {
+        // get references to the input fields
+        var input1 = document.getElementById("in-radio-hall1");
+        var input2 = document.getElementById("in-radio-hall2");
+        var input3 = document.getElementById("in-radio-hall3");
+        // check the status of the checkbox
+        if (this.checked) {
+            // if the checkbox is checked, enable the input fields
+            input1.disabled = false;
+            input2.disabled = false;
+            input3.disabled = false;
+        } else {
+            // if the checkbox is unchecked, disable the input fields and clear the values
+            input1.disabled = true;
+            input2.disabled = true;
+            input3.disabled = true;
+            input1.value = "";
+            input2.value = "";
+            input3.value = "";
+        }
+    });
 
+    document.getElementById("radio-court").addEventListener("change", function() {
+        // get references to the input fields
+        var input1 = document.getElementById("in-radio-court1");
+        var input2 = document.getElementById("in-radio-court2");
+        var input3 = document.getElementById("in-radio-court3");
+        // check the status of the checkbox
+        if (this.checked) {
+            // if the checkbox is checked, enable the input fields
+            input1.disabled = false;
+            input2.disabled = false;
+            input3.disabled = false;
+        } else {
+            // if the checkbox is unchecked, disable the input fields and clear the values
+            input1.disabled = true;
+            input2.disabled = true;
+            input3.disabled = true;
+            input1.value = "";
+            input2.value = "";
+            input3.value = "";
+        }
+    });
+
+    document.getElementById("radio-miming").addEventListener("change", function() {
+        // get references to the input fields
+        var input1 = document.getElementById("in-radio-miming1");
+        var input2 = document.getElementById("in-radio-miming2");
+        var input3 = document.getElementById("in-radio-miming3");
+        // check the status of the checkbox
+        if (this.checked) {
+            // if the checkbox is checked, enable the input fields
+            input1.disabled = false;
+            input2.disabled = false;
+            input3.disabled = false;
+        } else {
+            // if the checkbox is unchecked, disable the input fields and clear the values
+            input1.disabled = true;
+            input2.disabled = true;
+            input3.disabled = true;
+            input1.value = "";
+            input2.value = "";
+            input3.value = "";
+        }
+    });
+    //end checkbox reset 
 
     // transaction part
     function calculate() {
