@@ -26,12 +26,11 @@
 
 .admin-head{
     font-family: 'Raleway', sans-serif;
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 700;
-    padding: 5px;
+    padding: 2px;
     margin-left: 70%;
     display: flex;
-    text-align: justify;
 }
 .admin-head .date-timezone{
     margin-top: 20px;
@@ -41,19 +40,41 @@
 .admin-profile{
     display: flex;
     font-family: 'Raleway', sans-serif;
-    font-size: 15px;
+    font-size: 13px;
     font-weight: 700;
     margin-left: 10px;
 }
 .admin-profile .admin-pic img{
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%; 
 }
 
 .admin-profile .admin-desc{
-    margin-top: 10px;
     margin-left: 10px;
+}
+.admin-profile ul{
+    background-color: var(--darkgreen);
+}
+.admin-profile ul li a{
+    color: #fff;
+    cursor: pointer;
+}
+.admin-profile ul li a:hover{
+    background-color: var(--light-green);
+    color: #fff;
+}
+.admin-profile .admin-desc span{
+    font-weight: 700;
+}
+.profile {
+    display: flex;
+}
+.header-btn{
+    background-color: var(--darkgreen);
+    border: none;
+    cursor: pointer;
+    color:#fff;
 }
 /*********** Admin Sidebar **************/
 .adminSidebar{
@@ -84,7 +105,7 @@
 
 .adminSidebar .nav-links{
     font-family: 'Raleway', sans-serif;
-    font-weight: 600;
+    font-weight: 700;
     height: 100%;
 }
 .adminSidebar .nav-links li{
@@ -93,7 +114,7 @@
     transition: all 0.4s ease;
 }
 
-.adminSidebar ul li a:hover {
+.adminSidebar .nav-links li :hover {
     background-color: var(--light-green);
   }
 
@@ -878,6 +899,7 @@ svg{
     
 }
 
+
 .status #available  {
     background-color: green;
 }
@@ -899,6 +921,86 @@ svg{
 .status #amenities  {
     background-color: purple;
 }
+
+
+.homeowner-message{
+    display: flex;
+    width: 100%;
+}
+
+.homeowner-message .email-area{
+    width: 70%;
+}
+
+
+.homeowner-message .homeowner-title {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    color: var(--darkgreen);
+    position: relative;
+    width: 100%;
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.homeowner-message .homeowner-title h1{
+    text-align: center;
+    padding: 5px;
+}
+
+.message-area{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    color: var(--darkgreen);
+    position: relative;
+    width: 100%;
+    height: 75vh;
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    padding: 10px;
+}
+.announcement-panel{
+    width: 30%;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    color: var(--darkgreen);
+    position: relative;
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    border-radius: 5px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    padding: 10px; 
+}
+
+.announcement-header .announcementHeader-title{
+    text-align: center;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.announcement-btn {
+    width: 100%;
+    margin-bottom: 20px;
+    border: none;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+
+
+
+
+
+
 
 
 
