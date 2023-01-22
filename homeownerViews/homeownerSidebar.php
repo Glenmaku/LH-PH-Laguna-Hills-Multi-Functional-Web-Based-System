@@ -5,7 +5,7 @@
     </div>
     <ul class="nav-links">
         <li>
-            <a href="#message" onclick="">
+            <a href="#message" onclick="showMessage()">
                 <i class="fa-solid fa-envelope"></i>
                 <span class="link-name">Emails</span>
             </a>
@@ -24,13 +24,6 @@
             </a>
         </li>
 
-
-        <li>
-            <a href="#announcement" onclick="">
-                <i class="fa-solid fa-bullhorn"></i>
-                <span class="link-name">Announcement</span>
-            </a>
-        </li>
     </ul>
 </div>
 </div>

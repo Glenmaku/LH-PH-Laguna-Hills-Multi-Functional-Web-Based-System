@@ -76,3 +76,14 @@ function showmessage(){  //sidebar
         }
     });
 }
+
+function showMessage(){  //sidebar
+    $.ajax({
+        url:"homeownerViews/homeownerMessage.php",
+        method:"post",
+        data:{record:1},
+        success:function(data){
+            $('.allContent').html(data);
+        }
+    });
+}

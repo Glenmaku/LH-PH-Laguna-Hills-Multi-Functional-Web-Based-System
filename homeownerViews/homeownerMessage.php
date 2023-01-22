@@ -11,7 +11,7 @@
 
             <div class="current-message" id="current-message">
                 <table class="table table-hover">
-                    
+
                 </table>
             </div>
         </div>
@@ -20,9 +20,13 @@
     <div class="announcement-panel">
         <div class="latest-announcement">
             <div class="announcement-header">
-                <h5 class="announcementHeader-title">Latest Announcement</h5>
+                <h5 class="announcementHeader-title">Announcement</h5>
             </div>
-            
+
+            <div class="homeowner-announcement" id="homeowner-announcement">
+
+
+            </div>
         </div>
     </div>
 
@@ -39,7 +43,7 @@
                 <div class="modal-body">
 
                     <div class="mb-3">
-                        <input type="email" class="form-control" id="announcementTitle" name="announcementTitle" placeholder="To: sample@gmail.com" required >
+                        <input type="email" class="form-control" id="announcementTitle" name="announcementTitle" placeholder="To: sample@gmail.com" required>
                     </div>
                     <div class="mb-3">
                         <input type="text" class="form-control" id="emailTitle" name="emailTitle" placeholder="Enter a Title" required>
@@ -59,5 +63,30 @@
 </div>
 
 <script>
-
+    $(document).ready(function() {
+        var currentPage = localStorage.getItem("currentPage");
+        if (!currentPage) {
+            currentPage = 1;
+        }
+        displayAnnouncement(currentPage);
+    });
+    function displayAnnouncement(page) {
+        localStorage.setItem("currentPage", page);
+        var announcementData = "true";
+        $.ajax({
+            url: 'homeownerViews/includes/act-displayAnnouncement.php',
+            type: 'post',
+            data: {
+                announcementSend: announcementData,
+                page: page
+            },
+            success: function(data, status) {
+                $('#homeowner-announcement').html(data);
+            }
+        });
+    }
+    
+    function getPage(page) {
+        displayAnnouncement(page);
+    }
 </script>
