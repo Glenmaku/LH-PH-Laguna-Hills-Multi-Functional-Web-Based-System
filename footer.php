@@ -98,16 +98,6 @@
       }
     });
   </script>
-   <script>
-    var navb = document.querySelector('navbar-toggler-icon');
-    window.addEventListener('scroll', function () {
-      if (window.pageYOffset > 30) {
-        navb.classList.add('changetoggle')
-      } else {
-        navb.classList.remove('changetoggle');
-      }
-    });
-  </script>
   <!-- END-SCRIPTS NAVBAR -->
   <!--SCRIPT HIGHLIGHTS-->
   <script>

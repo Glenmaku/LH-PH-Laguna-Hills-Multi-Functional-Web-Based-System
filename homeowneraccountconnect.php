@@ -1,9 +1,15 @@
 <!--JUST COPY THE CODE BETWEEN THE COMMENT AND PASTE IT TO THE HOMEOWNER BODY OR HEADER-->
-<?php session_start();
+<?php
+session_start();
 if (!empty($_SESSION['owner_I_D'])) {
     $username = $_SESSION['owner_username'];
     $ownerid = $_SESSION['owner_I_D'];
-} ?>
+} else{
+    header("location:index.php");
+    exit();
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,15 +25,8 @@ if (!empty($_SESSION['owner_I_D'])) {
     <!--///////////////////////////////////////FOR LOGIN PURPOSE////////////////////////////////////////////-->
     <?php
     if (isset($_GET['Welcome'])) {
-
-        if ($_SESSION['owner_I_D']) {
-            echo '<div>HOMEOWNER, You have successfully logged in!</div>';
-            echo $_SESSION['owner_username'];
-        } else {
-        }
-    } else {
-        header("location:index.php");
-        exit();
+        echo '<div>HOMEOWNER, You have successfully logged in!</div>';
+        echo $_SESSION['owner_username'];
     }
     ?>
     <!--///////////////////////////////////////FOR LOGIN PURPOSE////////////////////////////////////////////-->
@@ -50,9 +49,9 @@ if (!empty($_SESSION['owner_I_D'])) {
                         <div id="message-updateownerinfo"></div>
                         <form>
                             <input  name="owner_username" id="owner_username" 
-                            value="<?php echo $username ?>" readonly hidden>
+                            value="<?php echo $username ?>" readonly >
 
-                            <input name="ownerview_id" id="ownerview_id" value="<?php echo $ownerid?>" readonly hidden>
+                            <input name="ownerview_id" id="ownerview_id" value="<?php echo $ownerid?>" readonly>
 
                             <div class="form-group">
                                 <label for="">First Name</label>
@@ -110,6 +109,7 @@ if (!empty($_SESSION['owner_I_D'])) {
         </div>
     </div>
 <a href="includes/Act-logout.php">Logout</a>
+
 
     </div>
     <!--BOOTSTRAP SCRIPTS FOR MODALS-->
@@ -184,4 +184,8 @@ function get_user_info() { // to show the current data
                 $('#message-updateownerinfo').html(data);
             });
         }
-</script>
+</script><?php
+    // logout code goes here
+ 
+    //unset($_SESSION);
+    ?>

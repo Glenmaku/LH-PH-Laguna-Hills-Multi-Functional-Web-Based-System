@@ -2,7 +2,7 @@
 <?php require_once('includes/connection.php');?>
 
 <!--UPPER BANNER-->
-<div class=" Top TopContact Topbanner container-fluid" >
+<div class=" Top TopFinder Topbanner container-fluid" >
 <div class="text-center container-fluid" >
 <h5>Laguna Hills</h5>
 <h1>Property Finder</h1>
