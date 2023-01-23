@@ -11,7 +11,7 @@
                         <div class="transaction-details">
                             <div class="transaction-line">
                                 <span>Transaction No.</span>
-                                <input type="text" name="transaction-number" id="trans-no" value="0000" disabled>
+                                <input type="text" name="transaction-number" id="trans-no" value="0000">
                             </div>
                             <div class="date-container">
                                 <span>Date:</span>
@@ -496,14 +496,16 @@
         } else {console.log("function-miming is empty");}
 
         if ($("#radio-hall" || "#radio-court" || "#radio-miming").is(":checked")) {
-            var total_price = $("#in-radio-hall3").val(); + $("#in-radio-court3").val(); + $("#in-radio-miming3").val();
+
+            var total_price = price_court + price_hall + price_miming;
+
             // date conversion
             $.ajax({
-                url: 'adminViews/insert-data-transaction-miming.php',
+                url: 'adminViews/insert-data-transaction-records.php',
                 type: 'post',
                 data: {
                     namesend: nameadd,
-                    pricesend: total_price
+                    totalprice_send: total_price
                 },
                 success: function(data, status) {
                     // function to display data

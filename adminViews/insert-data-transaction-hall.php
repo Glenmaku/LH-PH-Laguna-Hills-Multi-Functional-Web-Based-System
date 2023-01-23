@@ -17,5 +17,5 @@ if(isset($_POST['namesend']) && isset($_POST['from_reservation_datesend']) && is
     }
 }
 else{
-    echo "<script>alert('error');</script>";
+    echo "<script>alert('error halls');</script>";
 }
