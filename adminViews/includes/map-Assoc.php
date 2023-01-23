@@ -8,9 +8,10 @@ include ('connection.php');
     $result=mysqli_query($con,$sql);
     while($row=mysqli_fetch_assoc($result)){
         $Lot_ID=$row['Lot_ID'];
-        $Dues=$row['Monthly_Dues'];
-        $Yearly=$row['Yearly_Dues'];
-        $Status=$row['Status'];
+        $Monthly_Dues=$row['Monthly_Dues'];
+        $Yearly_Dues=$row['Yearly_Dues'];
+        $Dues_Status=$row['Dues_Status'];
+        $date_assigned=$row['date_assigned'];  
         $Remarks=$row['Remarks'];
         $table='
         <div class="panel-content" id="panel">
@@ -18,15 +19,19 @@ include ('connection.php');
 
         <div class="input-group">
                 <span class="input-group-text">Monthly Dues</span>
-                <input type="text" id="street" class="form-control" value ="'.$Dues.'" disabled>
+                <input type="number" id="Monthly_Dues" class="form-control" value ="'.$Monthly_Dues.'" disabled>
         </div>
         <div class="input-group">
                 <span class="input-group-text">Yearly Dues</span>
-                <input type="text" id="status" class="form-control" value ="'.$Yearly.'" disabled>
+                <input type="number" id="Yearly_Dues" class="form-control" value ="'.$Yearly_Dues.'" disabled>
         </div>
         <div class="input-group">
                 <span class="input-group-text">Status</span>
-                <input type="text" id="area-per-sqm" class="form-control" value ="'.$Status.'" disabled>
+                <input type="text" id="Dues_Status" class="form-control" value ="'.$Dues_Status.'" disabled>
+        </div>
+        <div class="input-group">
+                <span class="input-group-text">Date Assigned</span>
+                <input type="" id="date_assigned" class="form-control" value ="'.$date_assigned.'" disabled>
         </div>
 
         <div class="input-group">
