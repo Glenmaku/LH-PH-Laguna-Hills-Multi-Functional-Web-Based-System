@@ -375,7 +375,7 @@
   </section>
   <div class="col-md-6 section4 fortops">
 
-  <form class="contactform align-content-center fortops needs-validation" novalidate>
+  <form class="contactform align-content-center fortops needs-validation" id="cont">
   <div class="form-floating mb-5">
     <input type="text" class="form-control" id="Fullnameinput" placeholder="Firstname Surname" name="Full_Name" required>
     <label for="Firstnameinput">Full Name</label>
@@ -405,19 +405,20 @@
     </div>
   </div>
   <div class="form-floating mb-5">
-    <textarea class="form-control" id="floatingTextarea2" placeholder="Your Message" style="height: 100px" name="Message" required></textarea>
-    <label for="floatingTextarea2">Message</label>
+    <textarea class="form-control" id="Messages" placeholder="Your Message" style="height: 100px" name="Message" required></textarea>
+    <label for="Messages">Message</label>
     <div class="invalid-tooltip text-white">
       Please enter your message.
     </div>
   </div>
   <div class="d-flex justify-content-center">
-    <button class="btn-submit btn-submit-2" id="sends" onclick="send_contacts()">
-      <span class="btn-submit-3" onclick="send_contacts()">
-        <p class='bx-fw bx bxs-send'></p>
-      </span>
-      <a class="text-white"onclick="send_contacts()">Submit</a>
-    </button>
+  <button class="btn-submit btn-submit-2" id="sends" onclick="send_contacts(); return false;">
+<span class="btn-submit-3">
+<p class='bx-fw bx bxs-send'></p>
+</span>
+<a class="text-white">Submit</a>
+</button>
+
   </div>
 </form>
   </div>

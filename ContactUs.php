@@ -50,8 +50,9 @@
             </li>
         </ul>
     </div>
-    <form class="contactform1 d-inline align-content-center fortops forms needs-validation" id="form" novalidate >
 
+
+    <form class="contactform1 d-inline align-content-center fortops forms needs-validation" id="cont">
         <div class="form-floating mb-5 formss align-self-center">
             <input type="text" class="form-control" id="Fullnameinput" placeholder="Firstname Surname" name="Full_Name" required>
             <label for="Firstnameinput">Full Name</label>
@@ -89,10 +90,10 @@
         </div>
         </div>
         <div class="d-flex justify-content-center">
-            <button class="btn-submit4 btn-submit-5" id="sends" name="Submit" onclick="sends()" >
-                <spam class="btn-submit-6">
-                    <p class='bx-fw bx bxs-send'></p>
-                </spam>
+            <button class="btn-submit4 btn-submit-5" id="sends" onclick="send_contacts(); return false;">
+                <span class="btn-submit-6">
+                <p class='bx-fw bx bxs-send'></p>
+                </span>
                 <a class="text-white">Submit</a>
             </button>
         </div>
