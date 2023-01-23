@@ -11,7 +11,7 @@
                         <div class="transaction-details">
                             <div class="transaction-line">
                                 <span>Transaction No.</span>
-                                <input type="text" name="transaction-number" id="trans-no" value="0000">
+                                <input type="text" name="transaction-number" id="trans-no" placeholder="0000" required>
                             </div>
                             <div class="date-container">
                                 <span>Date:</span>
@@ -19,7 +19,7 @@
                             </div>
                         </div>
                         <div class="client-name"><span>Name:</span>
-                            <input type="text" name="name" id="client-name" placeholder="Enter name...">
+                            <input type="text" name="name" id="client-name" placeholder="Enter name..." required>
                         </div>
                     </div>
                 </div>
@@ -399,10 +399,12 @@
 
     function add_data() {
         // code that might throw an error
+
         var checkbox_hall = ["#radio-hall"];
         var checkbox_court = ["#radio-court"];
         var checkbox_miming = ["#radio-miming"];
 
+        var trans_no = $("#trans-no").val();
         var nameadd = $("#client-name").val();
         var from_reservation_date_string = $("#from-reservation-date").val();
         var to_reservation_date_string = $("#to-reservation-date").val();
@@ -437,6 +439,7 @@
                 url: 'adminViews/insert-data-transaction-hall.php',
                 type: 'post',
                 data: {
+                    trans_nosend : trans_no,
                     namesend: nameadd,
                     from_reservation_datesend: from_reservation_date,
                     to_reservation_datesend: to_reservation_date,
@@ -459,6 +462,7 @@
                 url: 'adminViews/insert-data-transaction-court.php',
                 type: 'post',
                 data: {
+                    trans_nosend : trans_no,
                     namesend: nameadd,
                     from_reservation_datesend: from_reservation_date,
                     to_reservation_datesend: to_reservation_date,
@@ -481,6 +485,7 @@
                 url: 'adminViews/insert-data-transaction-miming.php',
                 type: 'post',
                 data: {
+                    trans_nosend : trans_no,
                     namesend: nameadd,
                     from_reservation_datesend: from_reservation_date,
                     to_reservation_datesend: to_reservation_date,
@@ -498,7 +503,7 @@
         }
 
         if ($("#radio-hall" || "#radio-court" || "#radio-miming").is(":checked")) {
-
+            
             var total_price = price_court + price_hall + price_miming;
 
             // date conversion
@@ -506,6 +511,7 @@
                 url: 'adminViews/insert-data-transaction-records.php',
                 type: 'post',
                 data: {
+                    trans_nosend : trans_no,
                     namesend: nameadd,
                     totalprice_send: total_price
                 },
@@ -518,6 +524,31 @@
             console.log("all is empty");
         }
 
+        // ETO YUNG PART NG OTHER SERVICES
+        var rowId = $(this).closest("tr").data("row-id");
+        var category = $("#category" + rowId).val();
+        var quantity = $("#quantity" + rowId).val();
+        var price = $("#price" + rowId).val();
+        var subtotal = $("#subtotal" + rowId).val();
+
+        $.ajax({
+            url: 'adminViews/insert-data-transaction-other.php',
+            type: 'post',
+            data: {
+                trans_nosend : trans_no,
+                namesend: nameadd,
+                categorysend: category,
+                quantitysend: quantity,
+                pricesend: price,
+                subtotalsend: subtotal,
+                rowId: rowId
+            },
+            success: function(data, status) {
+                console.log(status);
+                console.log("ERROR OTHER TRANSAC");
+
+            }
+        });
 
         // clear the forms after pressing the submit  
         $("#trans-no").val("");
@@ -723,10 +754,10 @@
         // Create a new row
         var row = $("<tr>");
         // Add 4 cells to the new row
-        row.append($("<td>").html('<input type="text" name="field1[]" id="category' + counter + '">'));
-        row.append($("<td>").html('<input type="text" name="field2[]" id="Quantity' + counter + '">'));
-        row.append($("<td>").html('<input type="text" name="field3[]" id="Price' + counter + '">'));
-        row.append($("<td>").html('<input type="text" name="field4[]" id="Subtotal' + counter + '">'));
+        row.append($("<td>").html('<input type="text" name="field1[]" id="category' + counter + '" data-row-id=' + counter + '">'));
+        row.append($("<td>").html('<input type="text" name="field1[]" id="quantity' + counter + '" data-row-id=' + counter + '">'));
+        row.append($("<td>").html('<input type="text" name="field1[]" id="price' + counter + '" data-row-id=' + counter + '">'));
+        row.append($("<td>").html('<input type="text" name="field1[]" id="subtotal' + counter + '" data-row-id=' + counter + '">'));
         // Add a delete button to the new row
         row.append(
             $("<td>").html(
