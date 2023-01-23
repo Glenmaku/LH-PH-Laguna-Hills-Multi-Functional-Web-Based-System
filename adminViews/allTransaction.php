@@ -353,9 +353,9 @@
 
                                 <tr>
                                     <td><input type="text" id="category" name="field1" /></td>
-                                    <td><input type="text" id="Quantity" name="field2" /></td>
-                                    <td><input type="text" id="Price" name="field3" /></td>
-                                    <td><input type="text" id="Subtotal" name="field4" /></td>
+                                    <td><input type="text" id="quantity" name="field2" /></td>
+                                    <td><input type="text" id="price" name="field3" /></td>
+                                    <td><input type="text" id="subtotal" name="field4" /></td>
                                     <td><a href="javascript:void(0);" id="addRow" class="add_button" title="Add field"><i class="fa-solid fa-plus "></i>Add</a></td>
                                 </tr>
                             </table>
@@ -713,9 +713,11 @@
         });
     });
 
-    
+
+    // Wag nyo gagalawin tong counter = 1
+    var counter = 1;
     $("#addRow").click(function() {
-        var counter = 1;
+
         // Get the table object
         var table = $("#input_table");
         // Create a new row
