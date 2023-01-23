@@ -189,8 +189,7 @@
                         <h3 class="text-center modal-title mb-5 lh-1" >Thank you for reaching out!</h3>
                         <p>We will respond to you as soon as possible.</p>
                         <div class="justify-content-center lh-1 border-0 p-0 pb-3">
-                            <p class="text-center mb-auto"> If you encountered a problem, please 
-                            <a href="ContactUs.php" class="text-center  dark-green text-reset">Contact Us</a></p>
+                            
                         </div>
                         </div>
                 </div>
@@ -366,19 +365,27 @@ function verify_function(){
 
 
 
-function send_contacts(){
-            $.ajax({
-                type: "POST",
-                url: "includes/Act-Contact.php",
-                data: formData,
-                success: function(data) {
-                    $('#CONTACTMODAL').modal('show');
-                },
-                cache: false,
-                contentType: false,
-                processData: false
-            });
-  
+    function send_contacts(){
+    event.preventDefault();
+    var form = document.querySelector("#cont");
+    if(form.checkValidity() === false){
+        event.stopPropagation();
+    }
+    form.classList.add("was-validated");
+
+    if(form.checkValidity() === true){
+        var Fullname   = $("#Fullnameinput").val();
+        var Email      = $("#Emailinput").val();
+        var Number     = $("#Numberinput").val();
+        var Subject    = $("#Subjectinput").val();
+        var Messages   = $("#Messages").val();
+        // Use jQuery's post method to send data to server
+        $.post("includes/Act-Contact.php", {Fullname:Fullname, Email:Email, Number:Number, Subject:Subject, Messages:Messages}, function(data) {
+            $('#CONTACTMODAL').modal('show');
+            form.reset();
+            form.classList.remove("was-validated");
+        });
+    }
 }
 
     </script>
