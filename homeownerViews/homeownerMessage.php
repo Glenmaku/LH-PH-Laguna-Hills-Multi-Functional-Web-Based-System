@@ -22,6 +22,7 @@
             <div class="announcement-header">
                 <h5 class="announcementHeader-title">Announcement</h5>
             </div>
+        
 
             <div class="homeowner-announcement" id="homeowner-announcement">
 
