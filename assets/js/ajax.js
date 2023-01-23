@@ -27,6 +27,7 @@ function showMap(){  //sidebar
         data:{record:1},
         success:function(data){
             $('.allContent').html(data);
+            displayMapData();
         }
     });
 }
@@ -87,3 +88,4 @@ function showMessage(){  //sidebar
         }
     });
 }
+

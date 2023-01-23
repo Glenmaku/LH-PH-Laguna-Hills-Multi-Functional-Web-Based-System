@@ -2793,52 +2793,53 @@
         </div>
 
         <div class="lot-info">
-                <div class="panel-btn">
-                        <button><i class="fa-solid fa-house"></i></button>
-                        <button><i class="fa-solid fa-scroll"></i></button>
-                        <button><i class="fa-solid fa-user"></i></button>
+                <div class="display-panel">
+                        <div class="panel-btn">
+                                <button id="lot-information-btn"><i class="fa-solid fa-house"></i></button>
+                                <button id="assoc-btn"><i class="fa-solid fa-scroll"></i></button>
+                                <button id="owner-information-btn"><i class="fa-solid fa-user"></i></button>
+
+                        </div>
+
+                        <div id="lot-information-map" class="lot-information-map"></div>
+                        <div id="map-assoc"></div>
+                        <div id="owner-information"></div>
 
                 </div>
 
-                <div id="display-panel">
-
-                </div>
                 <div class="status">
-                        <div class="input-group mb-3">
-                                <div class="input-group-text">
-                                        <input class="form-check-input mt-0" type="checkbox" value="green" id="available" onclick="changeColor('green')">Available
-                                </div>
+                        <div class="status-title">
+                                <h5>STATUS</h5>
                         </div>
-                        <div class="input-group mb-3">
-                                <div class="input-group-text">
-                                        <input class="form-check-input mt-0" type="checkbox" value="red" id="occupied" onclick="changeColor('red')">Occupied
-                                </div>
+                        <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="green" id="available" onclick="changeColor('green')">
+                                <label class="form-check-label" for="flexCheckDefault">Available</label>
                         </div>
-                        <div class="input-group mb-3">
-                                <div class="input-group-text">
-                                        <input class="form-check-input mt-0" type="checkbox" value="blue" id="house" onclick="changeColor('blue')">With House
-                                </div>
+                        <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="red" id="occupied" onclick="changeColor('red')">
+                                <label class="form-check-label" for="flexCheckDefault">Occupied</label>
                         </div>
-                        <div class="input-group mb-3">
-                                <div class="input-group-text">
-                                        <input class="form-check-input mt-0" type="checkbox" value="yellow" id="undisclosed" onclick="changeColor('yellow')">Occupant Undisclosed
-                                </div>
+                        <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="blue" id="house" onclick="changeColor('blue')">
+                                <label class="form-check-label" for="flexCheckDefault">With House</label>
                         </div>
-                        <div class="input-group mb-3">
-                                <div class="input-group-text">
-                                        <input class="form-check-input mt-0" type="checkbox" value="orange" id="foreclosed" onclick="changeColor('orange')">Foreclosed
-                                </div>
+                        <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="yellow" id="undisclosed" onclick="changeColor('yellow')">
+                                <label class="form-check-label" for="flexCheckDefault">Occupant Undisclosed</label>
                         </div>
-                        <div class="input-group mb-3">
-                                <div class="input-group-text">
-                                        <input class="form-check-input mt-0" type="checkbox" value="black" id="open" onclick="changeColor('black')">Open Space
-                                </div>
+                        <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="orange" id="foreclosed" onclick="changeColor('orange')">
+                                <label class="form-check-label" for="flexCheckDefault">Foreclosed</label>
                         </div>
-                        <div class="input-group mb-3">
-                                <div class="input-group-text">
-                                        <input class="form-check-input mt-0" type="checkbox" value="purple" id="amenities" onclick="changeColor('purple')">Amenities
-                                </div>
+                        <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="black" id="open" onclick="changeColor('black')">
+                                <label class="form-check-label" for="flexCheckDefault">Open Space</label>
                         </div>
+                        <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="purple" id="amenities" onclick="changeColor('purple')">
+                                <label class="form-check-label" for="flexCheckDefault">Amenities</label>
+                        </div>
+
                 </div>
 
                 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -2896,10 +2897,6 @@
 
 
         <script type="text/javascript">
-                $(document).ready(function() {
-                        displayMapData();
-                });
-
                 function displayMapData() {
                         var mapData = "true";
                         $.ajax({
@@ -2909,36 +2906,118 @@
                                         mapDataSend: mapData
                                 },
                                 success: function(data, status) {
-                                        $('#display-panel').html(data);
+                                        $('#lot-information-map').html(data);
+
                                 }
-                        });
-
-                        $(document).ready(function() {
-
-                                load_data();
-
-                                function load_data(query) {
-                                        $.ajax({
-                                                url: "adminViews/includes/searchMap.php",
-                                                method: "POST",
-                                                data: {
-                                                        query: query
-                                                },
-                                                success: function(data) {
-                                                        $('#display-panel').html(data);
-                                                }
-                                        });
-                                }
-                                $('#searchMap').keyup(function() {
-                                        var search = $(this).val('');
-                                        if (search != '') {
-                                                load_data(search);
-                                        } else {
-                                                load_data('');
-                                        }
-                                });
                         });
                 }
+
+
+                function displayAssocData() {
+                        var assocData = "true";
+                        $.ajax({
+                                url: 'adminViews/includes/map-Assoc.php',
+                                type: 'post',
+                                data: {
+                                        mapAssocSend: assocData
+                                },
+                                success: function(data, status) {
+                                        $('#map-assoc').html(data);
+
+                                }
+                        });
+                }
+
+                function displayOwner() {
+                        var ownerData = "true";
+                        $.ajax({
+                                url: 'adminViews/includes/map-owner.php',
+                                type: 'post',
+                                data: {
+                                        mapOwnerSend: ownerData
+                                },
+                                success: function(data, status) {
+                                        $('#owner-information').html(data);
+
+                                }
+                        });
+                }
+
+                $(document).ready(function() {
+                        $("#lot-information-btn").click(function() {
+                                if ($("#lot-information-map").is(":visible")) {
+                                        $("#lot-information-map").hide();
+                                        displayMapData();
+                                } else {
+                                        $("#map-assoc").hide();
+                                        $("#owner-information").hide();
+                                        $("#lot-information-map").show();
+
+                                }
+                        });
+
+                        $("#assoc-btn").click(function() {
+                                if ($("#map-assoc").is(":visible")) {
+                                        $("#map-assoc").hide();
+                                        displayAssocData();
+                                } else {
+                                        $("#lot-information-map").hide();
+                                        $("#owner-information").hide();
+                                        $("#map-assoc").show();
+                                }
+                        });
+
+                        $("#owner-information-btn").click(function() {
+                                if ($("#owner-information").is(":visible")) {
+                                        $("#owner-information").hide();
+                                        displayOwner();
+                                } else {
+                                        $("#lot-information-map").hide();
+                                        $("#map-assoc").hide();
+                                        $("#owner-information").show();
+                                }
+                        });
+                });
+
+
+
+
+
+
+
+
+
+
+
+
+
+                $(document).ready(function() {
+
+                        load_data();
+
+                        function load_data(query) {
+                                $.ajax({
+                                        url: "adminViews/includes/searchMap.php",
+                                        method: "POST",
+                                        data: {
+                                                query: query
+                                        },
+                                        success: function(data) {
+                                                $('#display-panel').html(data);
+                                                displayMapData()
+                                        }
+                                });
+                        }
+                        $('#searchMap').keyup(function() {
+                                var search = $(this).val('');
+                                if (search != '') {
+                                        load_data(search);
+                                } else {
+                                        load_data('');
+                                }
+                        });
+                });
+
 
                 function getData(id) {
                         // Use fetch API for HTTP requests
@@ -2979,7 +3058,7 @@
                                                 document.getElementById("amenities").style.backgroundColor = 'purple';
                                         } else if (data.Status === 'foreclosed') {
                                                 document.getElementById("foreclosed").style.backgroundColor = 'orange';
-                                        } 
+                                        }
                                 })
                                 .catch(error => {
                                         console.log('Error:' + error);
@@ -3001,6 +3080,25 @@
                                 getData(button.id);
                         });
                 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
