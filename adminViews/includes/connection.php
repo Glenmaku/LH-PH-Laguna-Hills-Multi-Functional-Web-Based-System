@@ -1,5 +1,5 @@
 <?php 
-$con = new mysqli('localhost','root','','test');
+$con = new mysqli('localhost','root','','lhph');
 
 if (!$con){
     die(mysqli_error($con));
