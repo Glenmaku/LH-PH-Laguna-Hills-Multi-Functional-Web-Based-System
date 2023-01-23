@@ -352,10 +352,10 @@
                                 </tr>
 
                                 <tr>
-                                    <td><input type="text" name="field1" /></td>
-                                    <td><input type="text" name="field2" /></td>
-                                    <td><input type="text" name="field3" /></td>
-                                    <td><input type="text" name="field4" /></td>
+                                    <td><input type="text" id="category" name="field1" /></td>
+                                    <td><input type="text" id="Quantity" name="field2" /></td>
+                                    <td><input type="text" id="Price" name="field3" /></td>
+                                    <td><input type="text" id="Subtotal" name="field4" /></td>
                                     <td><a href="javascript:void(0);" id="addRow" class="add_button" title="Add field"><i class="fa-solid fa-plus "></i>Add</a></td>
                                 </tr>
                             </table>
@@ -393,13 +393,9 @@
 <script>
     //data insertion sa reservation palang
 
-
-
-
     $(document).ready(function() {
         $("#submit").on("click", add_data);
     });
-
 
     function add_data() {
         // code that might throw an error
@@ -453,8 +449,10 @@
                     console.log(status);
                 }
             });
-        } else {console.log("function-hall is empty");}
-        
+        } else {
+            console.log("function-hall is empty");
+        }
+
         if ($("#radio-court").is(":checked")) {
             // date conversion
             $.ajax({
@@ -473,8 +471,10 @@
                     console.log(status);
                 }
             });
-        } else {console.log("function-court is empty");}
-        
+        } else {
+            console.log("function-court is empty");
+        }
+
         if ($("#radio-miming").is(":checked")) {
             // date conversion
             $.ajax({
@@ -493,7 +493,9 @@
                     console.log(status);
                 }
             });
-        } else {console.log("function-miming is empty");}
+        } else {
+            console.log("function-miming is empty");
+        }
 
         if ($("#radio-hall" || "#radio-court" || "#radio-miming").is(":checked")) {
 
@@ -512,10 +514,60 @@
                     console.log(status);
                 }
             });
-        } else {console.log("all is empty");}
+        } else {
+            console.log("all is empty");
+        }
+
+
+        // clear the forms after pressing the submit  
+        $("#trans-no").val("");
+        $("#date").val("");
+        $("#client-name").val("");
+
+        $("#from-reservation-date").val("");
+        $("#to-reservation-date").val("");
+        $("#in-radio-hall1").val("");
+        $("#in-radio-hall2").val("");
+        $("#in-radio-hall3").val("");
+
+        $("#in-radio-court1").val("");
+        $("#in-radio-court2").val("");
+        $("#in-radio-court3").val("");
+
+        $("#in-radio-miming1").val("");
+        $("#in-radio-miming2").val("");
+        $("#in-radio-miming3").val("");
+
+        $("#radio-hall").prop("checked", false);
+        $("#radio-court").prop("checked", false);
+        $("#radio-miming").prop("checked", false);
     }
 
 
+    // clear the forms after pressing the reset button  
+    $("#reset").click(function() {
+        $("#trans-no").val("");
+        $("#date").val("");
+        $("#client-name").val("");
+
+        $("#from-reservation-date").val("");
+        $("#to-reservation-date").val("");
+        $("#in-radio-hall1").val("");
+        $("#in-radio-hall2").val("");
+        $("#in-radio-hall3").val("");
+
+        $("#in-radio-court1").val("");
+        $("#in-radio-court2").val("");
+        $("#in-radio-court3").val("");
+
+        $("#in-radio-miming1").val("");
+        $("#in-radio-miming2").val("");
+        $("#in-radio-miming3").val("");
+
+        $("#radio-hall").prop("checked", false);
+        $("#radio-court").prop("checked", false);
+        $("#radio-miming").prop("checked", false);
+    });
 
     // checkbox reset
     document.getElementById("radio-hall").addEventListener("change", function() {
@@ -661,17 +713,18 @@
         });
     });
 
+    
     $("#addRow").click(function() {
+        var counter = 1;
         // Get the table object
         var table = $("#input_table");
         // Create a new row
         var row = $("<tr>");
-
         // Add 4 cells to the new row
-        row.append($("<td>").html('<input type="text" name="field1[]">'));
-        row.append($("<td>").html('<input type="text" name="field2[]">'));
-        row.append($("<td>").html('<input type="text" name="field3[]">'));
-        row.append($("<td>").html('<input type="text" name="field4[]">'));
+        row.append($("<td>").html('<input type="text" name="field1[]" id="category' + counter + '">'));
+        row.append($("<td>").html('<input type="text" name="field2[]" id="Quantity' + counter + '">'));
+        row.append($("<td>").html('<input type="text" name="field3[]" id="Price' + counter + '">'));
+        row.append($("<td>").html('<input type="text" name="field4[]" id="Subtotal' + counter + '">'));
         // Add a delete button to the new row
         row.append(
             $("<td>").html(
@@ -680,6 +733,7 @@
         );
         // Add the new row to the table
         table.append(row);
+        counter++;
     });
     // Delete a row when the delete button is clicked
     $(document).on("click", "#deleteButton", function() {
