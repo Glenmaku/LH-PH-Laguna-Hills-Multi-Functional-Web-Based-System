@@ -8,7 +8,7 @@ $id = $_GET["id"];
 $sql = "select Block, Lot, Street, Status, Area, Price, Remarks from lot_information where Lot_ID = '$id'";
 
 // Retrieve the data from the database
-$sql = "SELECT Block, Lot, Street, Status, Area, Price, Remarks from lot_information where Lot_ID = '$id'";
+$sql = "select Block, Lot, Street, Status, Area, Price, Remarks from lot_information where Lot_ID = '$id'";
 
 $result = $con->query($sql);
 $lot_info = $result->fetch_assoc();
