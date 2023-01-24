@@ -709,9 +709,18 @@
             return;
         }
         // calculate change
-        var change = parseFloat(total) - (parseFloat(payment));
+        var change = (parseFloat(payment)) - parseFloat(total);
+
         // set the value of change
         document.getElementById("change").value = change.toFixed(2);
+
+        // set the value of change
+        if ( total > payment) {
+            change = 0;
+            document.getElementById("change").value = change.toFixed(2);
+        } else if (payment > total){
+            document.getElementById("change").value = change.toFixed(2);
+        }
 
         // calculate remaining balance
         var remainingBalance = total - payment;
@@ -723,6 +732,8 @@
             remainingBalance = 0;
             document.getElementById("remaining-balance").value = remainingBalance.toFixed(2);
         }
+
+
     }
     // transaction part end
 
