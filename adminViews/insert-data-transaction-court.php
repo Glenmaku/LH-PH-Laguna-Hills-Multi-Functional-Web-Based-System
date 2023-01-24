@@ -13,7 +13,7 @@ if( isset($_POST['trans_nosend']) && isset($_POST['namesend']) && isset($_POST['
     echo "<script>alert('successully sent to database');</script>";
     }
     else {
-        echo "<script>alert('oh no');</script>";
+        echo "<script>alert('oh no. error sending to court');</script>";
     }
 }
 else{

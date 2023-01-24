@@ -339,7 +339,7 @@
 .r-price{
     display: flex;
     justify-content: end;
-    margin-right: 8%;
+    margin-right: 1rem;
 }
 .r-time{
     margin-top: 2%;
