@@ -7,7 +7,12 @@
     box-sizing: border-box;
 
 }
+body{
+    background-color: var(--default-color);
+}
 :root{
+    --default-color:#dadee0;
+    --white: #ffffff;
     --darkgreen: #085D40;
     --light-blue: #CFE8FF;
     --light-green: #0f8e5f;
@@ -961,6 +966,7 @@ svg{
 .homeowner-message .homeowner-title {
     font-family: 'Raleway', sans-serif;
     font-weight: 700;
+    background-color: var(--white);
     color: var(--darkgreen);
     position: relative;
     width: 100%;
@@ -979,6 +985,7 @@ svg{
 .message-area{
     font-family: 'Raleway', sans-serif;
     font-weight: 700;
+    background-color: var(--white);
     color: var(--darkgreen);
     position: relative;
     width: 100%;
@@ -994,6 +1001,7 @@ svg{
     width: 30%;
     font-family: 'Raleway', sans-serif;
     font-weight: 700;
+    background-color: var(--white);
     color: var(--darkgreen);
     position: relative;
     margin-top: 10px;
@@ -1317,6 +1325,71 @@ svg{
 
 }
 
+/*********** Homeowner Sidebar **************/
+.owner-header{
+    top: 0;
+    font-family: 'Raleway', sans-serif;
+    font-size: 13px;
+    color: #fff;
+    background: var(--darkgreen);
+    width: 100%;
+    height: 65px;
+    position: relative;
+}
+.owner-header .owner-head{
+    font-family: 'Raleway', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 2px;
+    margin-left: 68%;
+    display: flex;
+}
 
+.owner-head .date-timezone{
+    width: 37%;
+    margin-top: 20px;
 
+}
 
+.homeowner-profile{
+    width: 60%;
+}
+.homeowner-profile ul{
+    width: 70%;
+    background-color: var(--darkgreen);
+} 
+.homeowner-profile ul li a{
+    font-size: 14px;
+    cursor: pointer;
+    color: var(--white);
+}
+.homeowner-profile ul li a:hover{
+    background-color: var(--light-green);
+    color: var(--white);
+}
+.homeowner-profile .owner-side{
+    width: 100%;
+    background-color: var(--darkgreen);
+    border-color:var(--darkgreen) ;
+}
+.homeowner-profile .owner-side:hover{
+    border-color:var(--light-green); 
+    background-color: var(--darkgreen);
+}
+.profile .owner-pic img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.profile .owner-desc{
+    text-align: left;
+    margin-left: 10px;  
+}
+
+.profile .owner-desc span{
+    font-size: 14px;
+    font-weight: 500 ;
+}
+
+/***********  Sidebar **************/

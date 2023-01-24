@@ -60,7 +60,8 @@
 <script>
     //announcement area
     $(document).ready(function() {
-        
+        displayMessage();
+        ownerCompose();
     });
     $(document).ready(function() {
         var currentPage = localStorage.getItem("currentPage");
@@ -90,33 +91,7 @@
         displayAnnouncement(page);
     }
     //email area
-    $(document).ready(function() {
-        var currentPage = localStorage.getItem("currentPage");
-        if (!currentPage) {
-            currentPage = 1;
-        }
-        displayMessageData(currentPage);
-    });
-
-    function displayMessageData(page) {
-        localStorage.setItem("currentPage", page);
-        var messageData = "true";
-        $.ajax({
-            url: 'homeownerViews/includes/act-displayAnnouncement.php',
-            type: 'post',
-            data: {
-                messageSend: messageData,
-                page: page
-            },
-            success: function(data, status) {
-                $('#current-message').html(data);
-            }
-        });
-    }
-
-    function getMessagePage(page) {
-        displayMessageData(page);
-    }
+    
 //insert data
     function ownerCompose() {
         $(document).on('click', '#addMessage', function() {
@@ -131,9 +106,40 @@
                     MCompose: MCompose
                 },
                 success: function(data) {
-                    $('#adminAddAccountModal').modal('hide');
+                    $('#sendMailModal').modal('hide');
+                    $('form').trigger('reset');
+                    displayMessage();
                 }
             });
         });
+    }
+
+//show table of message
+$(document).ready(function() {
+        var messageCurrentPage = localStorage.getItem("messageCurrentPage");
+        if (!messageCurrentPage) {
+            messageCurrentPage = 1;
+        }
+        displayAnnouncement(messageCurrentPage);
+    });
+
+    function displayMessage(messagePage) {
+        localStorage.setItem("messageCurrentPage", messagePage);
+        var messageData = "true";
+        $.ajax({
+            url: 'homeownerViews/includes/act-displayMessage.php',
+            type: 'post',
+            data: {
+                messageSend: messageData,
+                messagePage: messagePage
+            },
+            success: function(data, status) {
+                $('#current-message').html(data);
+            }
+        });
+    }
+
+    function getMessagePage(messagePage) {
+        displayMessage(messagePage);
     }
 </script>

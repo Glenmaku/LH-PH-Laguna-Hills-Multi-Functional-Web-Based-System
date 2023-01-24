@@ -2,7 +2,7 @@
 require 'connection.php';
 
 if (isset($_POST['announcementSend'])) {
-    $recordsPerPage = 4;
+    $recordsPerPage = 3;
     $currentPage = (int)$_POST["page"] ?? 1;
     $startFrom = ($currentPage - 1) * $recordsPerPage;
 
@@ -17,65 +17,49 @@ if (isset($_POST['announcementSend'])) {
     while ($row = $result->fetch_assoc()) {
         $title = $row['announcement_title'];
         $announcementDate = $row['announcement_date'];
-        $announcementDescription = substr($row['announcement_description'], 0, 30) . "...";
+        $announcementDescription = substr($row['announcement_description'], 0, 30) . " see more..";
 
-        $announcementTable .= '<div class="card text-center" >
+        $announcementTable .= '<div class="card" style="margin-bottom:5px;">
         <div class="card-body">
-          <p class="card-text">'.$title.'</p>
+            <div class="h5 pb-2 mb-4 text-dark border-bottom border-success" style="text-align:center;">
+                '. $title.'
+            </div>
+            '. $announcementDate.'
         </div>
-        <div class="card-footer text-muted" style="font-size: 12px">
-          '.$announcementDate.'
-        </div>
-      </div><br>';
+    </div>
+        <hr class="border border-dark-subtle border-0.5 opacity-75">';
 
     }
 
     $query = "SELECT COUNT(*) as total_records FROM announcement_tb";
-$totalPagesResult = $con->query($query);
-$totalRows = $totalPagesResult->fetch_assoc();
-$totalPages = ceil($totalRows["total_records"] / $recordsPerPage);
-$pagination = '<nav aria-label="Page navigation">
-       <ul class="pagination">';
-if ($currentPage > 1) {
-    $previous = $currentPage - 1;
-    $pagination .= '<li class="page-item"><a class="page-link" onclick="getPage(' . $previous . ')"><i class="fa-solid fa-arrow-left"></i></a></li>';
-}
-if ($totalPages > 3) {
-    if ($currentPage == 1) {
-        for ($i = 1; $i <= 1; $i++) {
+    $totalPagesResult = $con->query($query);
+    $totalRows = $totalPagesResult->fetch_assoc();
+    $totalPages = ceil($totalRows["total_records"] / $recordsPerPage);
+    $pagination = '<nav aria-label="Page navigation">
+       <ul class="pagination pagination-sm justify-content-end">';
+    if ($currentPage > 1) {
+        $previous = $currentPage - 1;
+        $pagination .= '<li class="page-item"><a class="page-link" onclick="getPage(' . $previous . ')">Previous</a></li>';
+    }
+
+    $start = max(1, $currentPage - 1);
+    $end = min($totalPages, $currentPage + 1);
+    for ($i = $start; $i <= $end; $i++) {
+        if ($i == $currentPage) {
+            $pagination .= '<li class="page-item active"><a class="page-link">' . $i . '</a></li>';
+        } else {
             $pagination .= '<li class="page-item"><a class="page-link" onclick="getPage(' . $i . ')">' . $i . '</a></li>';
         }
-        $pagination .= '<li class="page-item">...</li>';
-        $pagination .= '<li class="page-item"><a class="page-link" onclick="getPage(' . $totalPages . ')">' . $totalPages . '</a></li>';
-    } elseif ($currentPage == $totalPages) {
-        $pagination .= '<li class="page-item"><a class="page-link" onclick="getPage(1)">1</a></li>';
-        $pagination .= '<li class="page-item">...</li>';
-        for ($i = $totalPages - 2; $i <= $totalPages; $i++) {
-            $pagination .= '<li class="page-item"><a class="page-link" onclick="getPage(' . $i . ')">' . $i . '</a></li>';
-        }
-    } else {
-        $pagination .= '<li class="page-item"><a class="page-link" onclick="getPage(1)">1</a></li>';
-        $pagination .= '<li class="page-item">...</li>';
-        $pagination .= '<li class="page-item"><a class="page-link" onclick="getPage(' . ($currentPage - 1) . ')">' . ($currentPage - 1) . '</a></li>';
-        $pagination .= '<li class="page-item"><a class="page-link" onclick="getPage(' . $currentPage . ')">' . $currentPage . '</a></li>';
-        $pagination .= '<li class="page-item">...</li>';
-        $pagination .= '<li class="page-item"><a class="page-link" onclick="getPage(' . $totalPages . ')">' . $totalPages . '</a></li>';
     }
-}    else {
-    for ($i = 1; $i <= $totalPages; $i++) {
-        $pagination .= '<li class="page-item"><a class="page-link" onclick="getPage(' . $i . ')">' . $i . '</a></li>';
+
+    if ($currentPage < $totalPages) {
+        $next = $currentPage + 1;
+        $pagination .= '<li class="page-item"><a class="page-link" onclick="getPage(' . $next . ')">Next</a></li>';
     }
-}
-if ($currentPage < $totalPages) {
-    $next = $currentPage + 1;
-    $pagination .= '<li class="page-item"><a class="page-link" onclick="getPage(' . $next . ')"><i class="fa-solid fa-arrow-right"></i></a></li>';
-}
-$pagination .= '</ul></nav>';
+    $pagination .= '</ul></nav>';
 
-// Concatenate the pagination links and the table
-$announcementTable =  $announcementTable . $pagination;
-       
-echo $announcementTable;
-}
-?>
+    // Concatenate the pagination links and the table
+    $announcementTable =  $announcementTable . $pagination;
 
+    echo $announcementTable;
+}

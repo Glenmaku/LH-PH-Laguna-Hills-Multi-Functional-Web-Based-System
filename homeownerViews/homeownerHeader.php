@@ -1,36 +1,29 @@
-<div class="admin-header">
-    <nav class="admin-head">
-        <div class="date-timezone">
-            <span>
-                <?php
-                date_default_timezone_set("Asia/Manila");
-                echo " " . date("D");
-                echo " | " . date("h:i A");
-                ?>
-            </span>
+<div class="owner-header">
+    <nav class="owner-head">
+        <div class="date-timezone" id="date-timezone">
+
         </div>
 
-        <div class="admin-profile">
-            <div class="btn-group">
-                <button type="button" class="btn header-btn" data-bs-toggle="dropdown" aria-expanded="false">
-                    <div class="profile">
-                        <div class="admin-pic">
-                            <img src="assets/images/user-icon.jpg">
-                        </div>
-                        <div class="admin-desc">
-                            <span>Glen Mark Dela Cruz</span><br>
-                            <span>RESIDENT</span>
-                        </div>
+        <div class="dropdown homeowner-profile ">
+            <a class="btn btn-secondary owner-side" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <div class="profile">
+                    <div class="owner-pic">
+                        <img src="assets/images/user-icon.jpg">
                     </div>
-                </button>
-                <ul class="dropdown-menu dropdown-menu-end ">
-                    <li><a class="dropdown-item" onclick="get_user_info()" id="btn_setting_owner_acc" class="btn_setting_owner_acc">My Information</a></li>
-                    <li><a class="dropdown-item" href="#">Change Password</a></li>
-                    <li><a class="dropdown-item" href="index.php">Logout</a></li>
-                </ul>
-            </div>
-
+                    <div class="owner-desc">
+                        <span>Glen Mark Dela Cruz</span>
+                        <span>RESIDENT</span>
+                    </div>
+                </div>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item" href="#"><i class="fa-regular fa-circle-user"></i> My Account</a></li>
+                <li><a class="dropdown-item" onclick="get_user_info()" id="btn_setting_owner_acc" class="btn_setting_owner_acc"><i class="fa-solid fa-fingerprint"></i> Owner Information</a></li>
+                <li><a class="dropdown-item" href="index.php"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></li>
+            </ul>
         </div>
+
+        
     </nav>
 </div>
 
@@ -190,4 +183,35 @@
                 $('#message-updateownerinfo').html(data);
             });
     }
+
+
+
+
+
+// clock
+
+setInterval(function() {
+    var currentTime = new Date();
+    var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    var day = days[currentTime.getUTCDay()];
+    var hours = currentTime.getHours();
+    var minutes = currentTime.getMinutes();
+    var seconds = currentTime.getSeconds();
+    var ampm = hours >= 12 ? 'PM' : 'AM';
+    hours = hours % 12;
+    hours = hours ? hours : 12;
+    if (seconds < 10) {
+      seconds = "0" + seconds;
+    }
+    if (minutes < 10) {
+      minutes = "0" + minutes;
+    }
+    if (hours < 10) {
+      hours = "0" + hours;
+    }
+    var clock = day + " | " + hours + ":" + minutes + ":" + seconds + " " + ampm;
+    $("#date-timezone").text(clock);
+  }, 1000);
+
+
 </script>

@@ -11,7 +11,7 @@
 				<option value="3">Three</option>
 			</select>
 			<h3>|</h3>
-			<input type="text" class="form-control" aria-label="Text input with dropdown button" id="searchMap">
+			<input type="text" class="form-control" aria-label="Text input with dropdown button" id="searchMap" placeholder="Search here : blk1lot1...">
 
 		</div>
 <!-- Generator: Adobe Illustrator 26.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
