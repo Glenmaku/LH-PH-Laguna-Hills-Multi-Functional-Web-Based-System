@@ -1,5 +1,6 @@
 <?php
-require_once('connection.php');
+require_once('includes/connection.php');
+
 $query = "SELECT * FROM all_transaction ORDER BY transaction_num DESC LIMIT 1";
 $result = mysqli_query($con, $query);
 if (mysqli_num_rows($result) > 0) {

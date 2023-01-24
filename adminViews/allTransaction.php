@@ -391,8 +391,27 @@
 
 <!-- SCRIPT NI ADD TRANSACTION-->
 <script>
-    //data insertion sa reservation palang
+    // script ni venn
+    $(document).ready(function() {
+        $.ajax({
+            url: 'adminViews/act-transact.php',
+            type: 'post', //path to PHP script
+            success: function(data) {
+                $("#trans-no").val(data); //update input field with response from server
+            }
+        });
 
+        var today = new Date();
+        var dd = String(today.getDate()).padStart(2, '0');
+        var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+        var yyyy = today.getFullYear();
+        today = yyyy + '-' + mm + '-' + dd;
+        $("#date").val(today);
+    }); // end script venn
+
+
+
+    //data insertion sa reservation palang
     $(document).ready(function() {
         $("#submit").on("click", add_data);
     });
@@ -507,7 +526,7 @@
             var initial_discount = $("#r-discount").val() / 100;
             var reserv_discount = $("#r-discount").val();
             var initial_price = $("#in-radio-miming3").val(); + $("#in-radio-hall3").val(); + $("#in-radio-court3").val();
-            var total_price = $("#in-radio-miming3").val(); + $("#in-radio-hall3").val(); + $("#in-radio-court3").val(); - $("#in-radio-miming3").val(); + $("#in-radio-hall3").val(); + $("#in-radio-court3").val() * (initial_discount);
+            var total_price = $("#in-radio-miming3").val() + $("#in-radio-hall3").val() + $("#in-radio-court3").val() - ($("#in-radio-miming3").val() + $("#in-radio-hall3").val() + $("#in-radio-court3").val() * (initial_discount));
 
             $.ajax({
                 url: 'adminViews/insert-data-transaction-records.php',
@@ -523,35 +542,128 @@
                     console.log(status);
                 }
             });
+        }
+        // OTHER TRANSACTION SECTION - INSERT DATA
+        // ROW 6
+        // if (isNaN(price1) || isNaN(price2) || isNaN(price3) || isNaN(discount)) {
+        //     alert("Please enter valid numbers for all input fields");
+        //     return;
+        // }
+        // document.getElementById("payment").value;
+        // if ($("#category").val().trim() && $("#quantity").val().trim() && $("#price").val().trim() && $("#o_subtotal").val().trim()) {
+        //     var data = {};
+        //     data.transaction_number = $("#trans-no").val();
+        //     data.name = $("#client-name").val();
+        //     data.services = [];
+        //     data.services.push({
+        //         category: $("#category").val(),
+        //         quantity: $("#quantity").val(),
+        //         price: $("#price").val(),
+        //         subtotal: $("#o_subtotal").val()
+        //     });
+        //     data.services.push({
+        //         category: $("#category1").val(),
+        //         quantity: $("#quantity1").val(),
+        //         price: $("#price1").val(),
+        //         subtotal: $("#o_subtotal1").val()
+        //     });
+        //     data.services.push({
+        //         category: $("#category2").val(),
+        //         quantity: $("#quantity2").val(),
+        //         price: $("#price2").val(),
+        //         subtotal: $("#o_subtotal2").val()
+        //     });
+        //     data.services.push({
+        //         category: $("#category3").val(),
+        //         quantity: $("#quantity3").val(),
+        //         price: $("#price3").val(),
+        //         subtotal: $("#o_subtotal3").val()
+        //     });
+        //     data.services.push({
+        //         category: $("#category4").val(),
+        //         quantity: $("#quantity4").val(),
+        //         price: $("#price4").val(),
+        //         subtotal: $("#o_subtotal4").val()
+        //     });
+        //     data.services.push({
+        //         category: $("#category5").val(),
+        //         quantity: $("#quantity5").val(),
+        //         price: $("#price5").val(),
+        //         subtotal: $("#o_subtotal5").val()
+        //     });
+        //     $.post("adminViews/insert-data-transaction-other.php", {
+        //         data: data
+        //     }, function(response) {
+        //         console.log(response);
+        //     });
+        // }else {
+        //     console.log("no input in the other services layer 1");
+        // }
+
+            // OTHER TRANSACTION SECTION - INSERT DATA 
+            //TRYING TO MAKE SOME ALERTS
+        if ($("#category").val().trim() && !isNaN($("#quantity").val().trim()) && !isNaN($("#price").val().trim()) && !isNaN($("#o_subtotal").val().trim())) {
+            var data = {};
+            data.transaction_number = $("#trans-no").val();
+            data.name = $("#client-name").val();
+            data.services = [];
+            data.services.push({
+                category: $("#category").val(),
+                quantity: $("#quantity").val(),
+                price: $("#price").val(),
+                subtotal: $("#o_subtotal").val()
+            });
+            data.services.push({
+                category: $("#category1").val(),
+                quantity: $("#quantity1").val(),
+                price: $("#price1").val(),
+                subtotal: $("#o_subtotal1").val()
+            });
+            data.services.push({
+                category: $("#category2").val(),
+                quantity: $("#quantity2").val(),
+                price: $("#price2").val(),
+                subtotal: $("#o_subtotal2").val()
+            });
+            data.services.push({
+                category: $("#category3").val(),
+                quantity: $("#quantity3").val(),
+                price: $("#price3").val(),
+                subtotal: $("#o_subtotal3").val()
+            });
+            data.services.push({
+                category: $("#category4").val(),
+                quantity: $("#quantity4").val(),
+                price: $("#price4").val(),
+                subtotal: $("#o_subtotal4").val()
+            });
+            data.services.push({
+                category: $("#category5").val(),
+                quantity: $("#quantity5").val(),
+                price: $("#price5").val(),
+                subtotal: $("#o_subtotal5").val()
+            });
+            $.post("adminViews/insert-data-transaction-other.php", {
+                data: data
+            }, function(response) {
+                console.log(response);
+            });
         } else {
-            console.log("all is empty");
+            console.log("no input in the other services layer 1");
+            if (isNaN($("#quantity").val().trim())) {
+                alert("Quantity must be a number.");
+            }
+            if (isNaN($("#price").val().trim())) {
+                alert("Price must be a number.");
+            }
+            if (isNaN($("#o_subtotal").val().trim())) {
+                alert("Subtotal must be a number.");
+            }
         }
 
-        // // ETO YUNG PART NG OTHER SERVICES
-        // var rowId = $(this).closest("tr").data("row-id");
-        // var category = $("#category" + rowId).val();
-        // var quantity = $("#quantity" + rowId).val();
-        // var price = $("#price" + rowId).val();
-        // var subtotal = $("#subtotal" + rowId).val();
 
-        // $.ajax({
-        //     url: 'adminViews/insert-data-transaction-other.php',
-        //     type: 'post',
-        //     data: {
-        //         trans_nosend : trans_no,
-        //         namesend: nameadd,
-        //         categorysend: category,
-        //         quantitysend: quantity,
-        //         pricesend: price,
-        //         subtotalsend: subtotal,
-        //         rowId: rowId
-        //     },
-        //     success: function(data, status) {
-        //         console.log(status);
-        //         console.log("ERROR OTHER TRANSAC");
+        // end OTHER TRANSACTION SECTION - INSERT DATA
 
-        //     }
-        // });
 
         // clear the forms after pressing the submit  
         $("#trans-no").val("");
@@ -577,6 +689,19 @@
         $("#radio-hall").prop("checked", false);
         $("#radio-court").prop("checked", false);
         $("#radio-miming").prop("checked", false);
+
+        $("#category").val("");
+        $("#quantity").val("");
+        $("#price").val("");
+        $("#o_subtotal").val("");
+
+        // OTHER TRANSACTION LOOP FOR EACH ROW
+        for (var i = 1; i <= 10; i++) {
+            $("#category" + i).val("");
+            $("#quantity" + i).val("");
+            $("#price" + i).val("");
+            $("#o_subtotal" + i).val("");
+        }
     }
 
 
@@ -603,6 +728,24 @@
         $("#radio-hall").prop("checked", false);
         $("#radio-court").prop("checked", false);
         $("#radio-miming").prop("checked", false);
+
+        $("#o_subtotal").val("");
+        $("#category").val("");
+        $("#quantity").val("");
+        $("#price").val("");
+
+        $("#o_subtotal1").val("");
+        $("#category1").val("");
+        $("#quantity1").val("");
+        $("#price1").val("");
+
+        for (var i = 1; i <= 10; i++) {
+            $("#category" + i).val("");
+            $("#quantity" + i).val("");
+            $("#price" + i).val("");
+            $("#o_subtotal" + i).val("");
+        }
+
     });
 
     // checkbox reset
@@ -715,10 +858,10 @@
         document.getElementById("change").value = change.toFixed(2);
 
         // set the value of change
-        if ( total > payment) {
+        if (total > payment) {
             change = 0;
             document.getElementById("change").value = change.toFixed(2);
-        } else if (payment > total){
+        } else if (payment > total) {
             document.getElementById("change").value = change.toFixed(2);
         }
 
@@ -841,6 +984,11 @@
         $("#category").val("");
         $("#quantity").val("");
         $("#price").val("");
+
+        $("#o_subtotal1").val("");
+        $("#category1").val("");
+        $("#quantity1").val("");
+        $("#price1").val("");
 
         for (var i = 1; i <= 10; i++) {
             $("#category" + i).val("");
