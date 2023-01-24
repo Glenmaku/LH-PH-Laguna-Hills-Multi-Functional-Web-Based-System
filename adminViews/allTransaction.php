@@ -524,34 +524,198 @@
                 }
             });
         } else {
-            console.log("all is empty");
+            console.log("all transaction records is empty");
         }
 
-        // // ETO YUNG PART NG OTHER SERVICES
-        // var rowId = $(this).closest("tr").data("row-id");
-        // var category = $("#category" + rowId).val();
-        // var quantity = $("#quantity" + rowId).val();
-        // var price = $("#price" + rowId).val();
-        // var subtotal = $("#subtotal" + rowId).val();
-
-        // $.ajax({
-        //     url: 'adminViews/insert-data-transaction-other.php',
-        //     type: 'post',
-        //     data: {
-        //         trans_nosend : trans_no,
-        //         namesend: nameadd,
-        //         categorysend: category,
-        //         quantitysend: quantity,
-        //         pricesend: price,
-        //         subtotalsend: subtotal,
-        //         rowId: rowId
-        //     },
-        //     success: function(data, status) {
-        //         console.log(status);
-        //         console.log("ERROR OTHER TRANSAC");
-
-        //     }
-        // });
+        // OTHER TRANSACTION SECTION - INSERT DATA start
+        if ($("#category5").val().length > 0){
+            var data = {};
+            data.transaction_number = $("#trans-no").val();
+            data.name = $("#client-name").val();
+            data.services = [];
+            data.services.push({
+                category: $("#category").val(),
+                quantity: $("#quantity").val(),
+                price: $("#price").val(),
+                subtotal: $("#o_subtotal").val()
+            });
+            data.services.push({
+                category: $("#category1").val(),
+                quantity: $("#quantity1").val(),
+                price: $("#price1").val(),
+                subtotal: $("#o_subtotal1").val()
+            });
+            data.services.push({
+                category: $("#category2").val(),
+                quantity: $("#quantity2").val(),
+                price: $("#price2").val(),
+                subtotal: $("#o_subtotal2").val()
+            });
+            data.services.push({
+                category: $("#category3").val(),
+                quantity: $("#quantity3").val(),
+                price: $("#price3").val(),
+                subtotal: $("#o_subtotal3").val()
+            });
+            data.services.push({
+                category: $("#category4").val(),
+                quantity: $("#quantity4").val(),
+                price: $("#price4").val(),
+                subtotal: $("#o_subtotal4").val()
+            });
+            data.services.push({
+                category: $("#category5").val(),
+                quantity: $("#quantity5").val(),
+                price: $("#price5").val(),
+                subtotal: $("#o_subtotal5").val()
+            });
+            $.post("adminViews/insert-data-transaction-other.php", {
+                data: data
+            }, function(response) {
+                console.log(response);
+            });
+        } else if ($("#category4").val().length > 0){ 
+            var data = {};
+            data.transaction_number = $("#trans-no").val();
+            data.name = $("#client-name").val();
+            data.services = [];
+            data.services.push({
+                category: $("#category").val(),
+                quantity: $("#quantity").val(),
+                price: $("#price").val(),
+                subtotal: $("#o_subtotal").val()
+            });
+            data.services.push({
+                category: $("#category1").val(),
+                quantity: $("#quantity1").val(),
+                price: $("#price1").val(),
+                subtotal: $("#o_subtotal1").val()
+            });
+            data.services.push({
+                category: $("#category2").val(),
+                quantity: $("#quantity2").val(),
+                price: $("#price2").val(),
+                subtotal: $("#o_subtotal2").val()
+            });
+            data.services.push({
+                category: $("#category3").val(),
+                quantity: $("#quantity3").val(),
+                price: $("#price3").val(),
+                subtotal: $("#o_subtotal3").val()
+            });
+            data.services.push({
+                category: $("#category4").val(),
+                quantity: $("#quantity4").val(),
+                price: $("#price4").val(),
+                subtotal: $("#o_subtotal4").val()
+            });
+            $.post("adminViews/insert-data-transaction-other.php", {
+                data: data
+            }, function(response) {
+                console.log(response);
+            });
+        } else if ($("#category3").val().length > 0){ 
+            var data = {};
+            data.transaction_number = $("#trans-no").val();
+            data.name = $("#client-name").val();
+            data.services = [];
+            data.services.push({
+                category: $("#category").val(),
+                quantity: $("#quantity").val(),
+                price: $("#price").val(),
+                subtotal: $("#o_subtotal").val()
+            });
+            data.services.push({
+                category: $("#category1").val(),
+                quantity: $("#quantity1").val(),
+                price: $("#price1").val(),
+                subtotal: $("#o_subtotal1").val()
+            });
+            data.services.push({
+                category: $("#category2").val(),
+                quantity: $("#quantity2").val(),
+                price: $("#price2").val(),
+                subtotal: $("#o_subtotal2").val()
+            });
+            data.services.push({
+                category: $("#category3").val(),
+                quantity: $("#quantity3").val(),
+                price: $("#price3").val(),
+                subtotal: $("#o_subtotal3").val()
+            });
+            $.post("adminViews/insert-data-transaction-other.php", {
+                data: data
+            }, function(response) {
+                console.log(response);
+            });
+        } else if ($("#category2").val().length > 0){ 
+            var data = {};
+            data.transaction_number = $("#trans-no").val();
+            data.name = $("#client-name").val();
+            data.services = [];
+            data.services.push({
+                category: $("#category").val(),
+                quantity: $("#quantity").val(),
+                price: $("#price").val(),
+                subtotal: $("#o_subtotal").val()
+            });
+            data.services.push({
+                category: $("#category1").val(),
+                quantity: $("#quantity1").val(),
+                price: $("#price1").val(),
+                subtotal: $("#o_subtotal1").val()
+            });
+            data.services.push({
+                category: $("#category2").val(),
+                quantity: $("#quantity2").val(),
+                price: $("#price2").val(),
+                subtotal: $("#o_subtotal2").val()
+            });
+            $.post("adminViews/insert-data-transaction-other.php", {
+                data: data
+            }, function(response) {
+                console.log(response);
+            });
+        } else if ($("#category1").val().length > 0){ 
+            var data = {};
+            data.transaction_number = $("#trans-no").val();
+            data.name = $("#client-name").val();
+            data.services = [];
+            data.services.push({
+                category: $("#category").val(),
+                quantity: $("#quantity").val(),
+                price: $("#price").val(),
+                subtotal: $("#o_subtotal").val()
+            });
+            data.services.push({
+                category: $("#category1").val(),
+                quantity: $("#quantity1").val(),
+                price: $("#price1").val(),
+                subtotal: $("#o_subtotal1").val()
+            });
+            $.post("adminViews/insert-data-transaction-other.php", {
+                data: data
+            }, function(response) {
+                console.log(response);
+            });
+        } else if ($("#category").val().length > 0){ 
+            var data = {};
+            data.transaction_number = $("#trans-no").val();
+            data.name = $("#client-name").val();
+            data.services = [];
+            data.services.push({
+                category: $("#category").val(),
+                quantity: $("#quantity").val(),
+                price: $("#price").val(),
+                subtotal: $("#o_subtotal").val()
+            });
+            $.post("adminViews/insert-data-transaction-other.php", {
+                data: data
+            }, function(response) {
+                console.log(response);
+            });
+        } else {console.log("no input in the other services");}
+        // end OTHER TRANSACTION SECTION - INSERT DATA
 
         // clear the forms after pressing the submit  
         $("#trans-no").val("");
@@ -715,10 +879,10 @@
         document.getElementById("change").value = change.toFixed(2);
 
         // set the value of change
-        if ( total > payment) {
+        if (total > payment) {
             change = 0;
             document.getElementById("change").value = change.toFixed(2);
-        } else if (payment > total){
+        } else if (payment > total) {
             document.getElementById("change").value = change.toFixed(2);
         }
 
