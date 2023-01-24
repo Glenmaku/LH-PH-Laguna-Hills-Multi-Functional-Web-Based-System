@@ -35,26 +35,26 @@ $data = mysqli_query($con, $sql);
             <div class="modal-body">
                 <p id="message-addAdmin" class="text-dark"></p>
                 <form><!--container-->
-                    <div class="input-group  mb-3"><!--FOR OWNER FIRSTNAME FIELD-->
+                    <div class="input-group  mb-3">
                         <span class="input-group-text" id="basic-addon1">First Name</span>
                         <input class="form-control" name=" admin_fname" id="admin_fname" placeholder="First Name">
                     </div>
-                    <div class="input-group  mb-3"><!--FOR OWNER LASTNAME FIELD-->
+                    <div class="input-group  mb-3"><
                         <span class="input-group-text" id="basic-addon1">Last Name</span>
                         <input class="form-control" name="admin_lname" id="admin_lname" placeholder="Last Name">
                     </div>
-                    <div class="input-group  mb-3"><!--FOR OWNER EMAIL FIELD-->
+                    <div class="input-group  mb-3">
                         <span class="input-group-text" id="basic-addon1">Email</span>
                         <input class="form-control" type="email" name="admin_email" id="admin_email" placeholder="owner@email.com">
                     </div>
-                    <div class="input-group  mb-3"><!--FOR OWNER USERNAME FIELD-->
+                    <div class="input-group  mb-3">
                         <span class="input-group-text" id="basic-addon1">Username</span>
                         <input class="form-control" name="admin_username" id="admin_username" value="" readonly>
                         <button id="usernamegenerate" name="usernamegenerate" type="button" hidden>Generate</button>
 
                     </div>
 
-                    <div class="input-group  mb-3"><!--FOR OWNER PASSWORD FIELD-->
+                    <div class="input-group  mb-3">
                         <span class="input-group-text" id="basic-addon1">Password</span>
                         <input class="form-control" name="admin_password" id="admin_password" value="" placeholder="Password">
                         <span class="input-group-text"><button class="btn" id="passgenerate" name="passgenerate" onclick="getPassword()" type="button"><i class="fa-solid fa-rotate"></i></button></span>
@@ -113,7 +113,6 @@ $data = mysqli_query($con, $sql);
 </div>
 
 <!-- Delete Modal-->
-<!-- DeleteModal -->
 
 <div class="modal fade" id="deleteAdminModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
