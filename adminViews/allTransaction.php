@@ -503,17 +503,20 @@
         }
 
         if ($("#radio-hall" || "#radio-court" || "#radio-miming").is(":checked")) {
+            //solution to sa discount and sa total price
+            var initial_discount = $("#r-discount").val() / 100; 
+            var reserv_discount = $("#r-discount").val(); 
+            var initial_price = $("#in-radio-miming3").val(); + $("#in-radio-hall3").val(); + $("#in-radio-court3").val(); 
+            var total_price =   $("#in-radio-miming3").val(); + $("#in-radio-hall3").val(); + $("#in-radio-court3").val(); - $("#in-radio-miming3").val(); + $("#in-radio-hall3").val(); + $("#in-radio-court3").val() * (initial_discount);
             
-            var total_price = price_court + price_hall + price_miming;
-
-            // date conversion
             $.ajax({
                 url: 'adminViews/insert-data-transaction-records.php',
                 type: 'post',
                 data: {
                     trans_nosend : trans_no,
                     namesend: nameadd,
-                    totalprice_send: total_price
+                    totalprice_send: total_price,
+                    reserv_discountsend : reserv_discount
                 },
                 success: function(data, status) {
                     // function to display data
@@ -524,31 +527,31 @@
             console.log("all is empty");
         }
 
-        // ETO YUNG PART NG OTHER SERVICES
-        var rowId = $(this).closest("tr").data("row-id");
-        var category = $("#category" + rowId).val();
-        var quantity = $("#quantity" + rowId).val();
-        var price = $("#price" + rowId).val();
-        var subtotal = $("#subtotal" + rowId).val();
+        // // ETO YUNG PART NG OTHER SERVICES
+        // var rowId = $(this).closest("tr").data("row-id");
+        // var category = $("#category" + rowId).val();
+        // var quantity = $("#quantity" + rowId).val();
+        // var price = $("#price" + rowId).val();
+        // var subtotal = $("#subtotal" + rowId).val();
 
-        $.ajax({
-            url: 'adminViews/insert-data-transaction-other.php',
-            type: 'post',
-            data: {
-                trans_nosend : trans_no,
-                namesend: nameadd,
-                categorysend: category,
-                quantitysend: quantity,
-                pricesend: price,
-                subtotalsend: subtotal,
-                rowId: rowId
-            },
-            success: function(data, status) {
-                console.log(status);
-                console.log("ERROR OTHER TRANSAC");
+        // $.ajax({
+        //     url: 'adminViews/insert-data-transaction-other.php',
+        //     type: 'post',
+        //     data: {
+        //         trans_nosend : trans_no,
+        //         namesend: nameadd,
+        //         categorysend: category,
+        //         quantitysend: quantity,
+        //         pricesend: price,
+        //         subtotalsend: subtotal,
+        //         rowId: rowId
+        //     },
+        //     success: function(data, status) {
+        //         console.log(status);
+        //         console.log("ERROR OTHER TRANSAC");
 
-            }
-        });
+        //     }
+        // });
 
         // clear the forms after pressing the submit  
         $("#trans-no").val("");
