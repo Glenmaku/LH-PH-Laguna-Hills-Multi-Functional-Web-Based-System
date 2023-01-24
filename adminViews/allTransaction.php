@@ -31,7 +31,7 @@
                         <div class="div-title">
                             <h2 id="panelsStayOpen-headingOne">ASSOCIATION DUES</h2>
                         </div>
-                        <div class="hide-option">
+                        <div class="hide-option" id="hide_assoc">
                             <i class="fa-regular fa-eye-slash accordion-button-icon" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
                             </i>
                         </div>
@@ -219,7 +219,7 @@
                                 </div>
                                 <div class="Subtotal">
                                     <span>Subtotal:</span><br>
-                                    <input type="text" name="subtotal" id="subtotal" disabled>
+                                    <input type="text" name="subtotal" id="ubtotal" disabled>
                                 </div>
                             </div>
 
@@ -234,7 +234,7 @@
                         <div class="div-title">
                             <h2 id="panelsStayOpen-headingTwo">RESERVATION
                         </div>
-                        <div class="hide-option">
+                        <div class="hide-option" id="hide_reserv">
                             <i class="fa-regular fa-eye-slash accordion-button-icon" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="true" aria-controls="panelsStayOpen-collapseTwo"></i>
                         </div>
                     </div>
@@ -334,7 +334,7 @@
                             <h2 id="panelsStayOpen-headingThree">OTHER SERVICES
                             </h2>
                         </div>
-                        <div class="hide-option">
+                        <div class="hide-option" id="hide_other">
                             <i class="fa-regular fa-eye-slash accordion-button-icon" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="true" aria-controls="panelsStayOpen-collapseThree">
                             </i>
                         </div>
@@ -355,7 +355,7 @@
                                     <td><input type="text" id="category" name="field1" /></td>
                                     <td><input type="text" id="quantity" name="field2" /></td>
                                     <td><input type="text" id="price" name="field3" /></td>
-                                    <td><input type="text" id="subtotal" name="field4" /></td>
+                                    <td><input type="text" id="o_subtotal" name="field4" /></td>
                                     <td><a href="javascript:void(0);" id="addRow" class="add_button" title="Add field"><i class="fa-solid fa-plus "></i>Add</a></td>
                                 </tr>
                             </table>
@@ -439,7 +439,7 @@
                 url: 'adminViews/insert-data-transaction-hall.php',
                 type: 'post',
                 data: {
-                    trans_nosend : trans_no,
+                    trans_nosend: trans_no,
                     namesend: nameadd,
                     from_reservation_datesend: from_reservation_date,
                     to_reservation_datesend: to_reservation_date,
@@ -462,7 +462,7 @@
                 url: 'adminViews/insert-data-transaction-court.php',
                 type: 'post',
                 data: {
-                    trans_nosend : trans_no,
+                    trans_nosend: trans_no,
                     namesend: nameadd,
                     from_reservation_datesend: from_reservation_date,
                     to_reservation_datesend: to_reservation_date,
@@ -485,7 +485,7 @@
                 url: 'adminViews/insert-data-transaction-miming.php',
                 type: 'post',
                 data: {
-                    trans_nosend : trans_no,
+                    trans_nosend: trans_no,
                     namesend: nameadd,
                     from_reservation_datesend: from_reservation_date,
                     to_reservation_datesend: to_reservation_date,
@@ -504,19 +504,19 @@
 
         if ($("#radio-hall" || "#radio-court" || "#radio-miming").is(":checked")) {
             //solution to sa discount and sa total price
-            var initial_discount = $("#r-discount").val() / 100; 
-            var reserv_discount = $("#r-discount").val(); 
-            var initial_price = $("#in-radio-miming3").val(); + $("#in-radio-hall3").val(); + $("#in-radio-court3").val(); 
-            var total_price =   $("#in-radio-miming3").val(); + $("#in-radio-hall3").val(); + $("#in-radio-court3").val(); - $("#in-radio-miming3").val(); + $("#in-radio-hall3").val(); + $("#in-radio-court3").val() * (initial_discount);
-            
+            var initial_discount = $("#r-discount").val() / 100;
+            var reserv_discount = $("#r-discount").val();
+            var initial_price = $("#in-radio-miming3").val(); + $("#in-radio-hall3").val(); + $("#in-radio-court3").val();
+            var total_price = $("#in-radio-miming3").val(); + $("#in-radio-hall3").val(); + $("#in-radio-court3").val(); - $("#in-radio-miming3").val(); + $("#in-radio-hall3").val(); + $("#in-radio-court3").val() * (initial_discount);
+
             $.ajax({
                 url: 'adminViews/insert-data-transaction-records.php',
                 type: 'post',
                 data: {
-                    trans_nosend : trans_no,
+                    trans_nosend: trans_no,
                     namesend: nameadd,
                     totalprice_send: total_price,
-                    reserv_discountsend : reserv_discount
+                    reserv_discountsend: reserv_discount
                 },
                 success: function(data, status) {
                     // function to display data
@@ -571,6 +571,8 @@
         $("#in-radio-miming1").val("");
         $("#in-radio-miming2").val("");
         $("#in-radio-miming3").val("");
+        $("#r-discount").val("");
+        $("#r-subtotal").val("");
 
         $("#radio-hall").prop("checked", false);
         $("#radio-court").prop("checked", false);
@@ -722,7 +724,7 @@
             document.getElementById("remaining-balance").value = remainingBalance.toFixed(2);
         }
     }
-    // end
+    // transaction part end
 
     // radio button function
     $(function() {
@@ -760,7 +762,7 @@
         row.append($("<td>").html('<input type="text" name="field1[]" id="category' + counter + '" data-row-id=' + counter + '">'));
         row.append($("<td>").html('<input type="text" name="field1[]" id="quantity' + counter + '" data-row-id=' + counter + '">'));
         row.append($("<td>").html('<input type="text" name="field1[]" id="price' + counter + '" data-row-id=' + counter + '">'));
-        row.append($("<td>").html('<input type="text" name="field1[]" id="subtotal' + counter + '" data-row-id=' + counter + '">'));
+        row.append($("<td>").html('<input type="text" name="field1[]" id="o_subtotal' + counter + '" data-row-id=' + counter + '">'));
         // Add a delete button to the new row
         row.append(
             $("<td>").html(
@@ -777,4 +779,63 @@
             .closest("tr")
             .remove();
     });
+
+    // reset form if naka collapse
+    var hide_assoc = document.getElementById("hide_assoc");
+    var hide_reserv = document.getElementById("hide_reserv");
+    var hide_other = document.getElementById("hide_other");
+    // reset form ng association part
+    hide_assoc.addEventListener("click", function() {
+
+        $("#property").val("");
+        $("#unpaid").val("");
+        $("#total-balance").val("");
+        $("#interest").val("");
+        $("#period-of-payment").val("");
+
+        $("#period-total").val("");
+        $("#discount").val("");
+        $("#dues-remaining-balance").val("");
+        $("#subtotal").val("");
+    }); // reset form ng association part
+
+    // reset form ng OTHER SERVICES part
+    hide_reserv.addEventListener("click", function() {
+
+        $("#from-reservation-date").val("");
+        $("#to-reservation-date").val("");
+        $("#in-radio-hall1").val("");
+        $("#in-radio-hall2").val("");
+        $("#in-radio-hall3").val("");
+
+        $("#in-radio-court1").val("");
+        $("#in-radio-court2").val("");
+        $("#in-radio-court3").val("");
+
+        $("#in-radio-miming1").val("");
+        $("#in-radio-miming2").val("");
+        $("#in-radio-miming3").val("");
+        $("#r-discount").val("");
+        $("#r-subtotal").val("");
+
+        $("#radio-hall").prop("checked", false);
+        $("#radio-court").prop("checked", false);
+        $("#radio-miming").prop("checked", false);
+    }); // reset form ng OTHER SERVICES part
+
+    // reset form ng OTHER SERVICES part
+    hide_other.addEventListener("click", function() {
+
+        $("#o_subtotal").val("");
+        $("#category").val("");
+        $("#quantity").val("");
+        $("#price").val("");
+
+        for (var i = 1; i <= 10; i++) {
+            $("#category" + i).val("");
+            $("#quantity" + i).val("");
+            $("#price" + i).val("");
+            $("#o_subtotal" + i).val("");
+        }
+    }); // reset form ng reservation part
 </script>
