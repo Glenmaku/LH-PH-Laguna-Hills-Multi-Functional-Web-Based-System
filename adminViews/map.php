@@ -21,7 +21,7 @@
 
                 </div>
                 <!-- Generator: Adobe Illustrator 26.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1190.25 1683.75" style="enable-background:new 0 0 1190.25 1683.75;" xml:space="preserve">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1190.25 1683.75" style="enable-background:new 0 0 1190.25 1683.75;" xml:space="preserve" id="blk">
                         <font horiz-adv-x="2048">
                                 <!-- Roboto is a trademark of Google. -->
                                 <!-- Copyright: Copyright 2023 Adobe System Incorporated. All rights reserved. -->
@@ -5434,31 +5434,31 @@
                                 <h5>STATUS</h5>
                         </div>
                         <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="green" id="available" onclick="changeColor('green')">
+                                <input class="form-check-input" type="checkbox" value="green" id="available" oncchange="changeColor('green')">
                                 <label class="form-check-label" for="flexCheckDefault">Available</label>
                         </div>
                         <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="red" id="occupied" onclick="changeColor('red')">
+                                <input class="form-check-input" type="checkbox" value="red" id="occupied" onchange="changeColor('red')">
                                 <label class="form-check-label" for="flexCheckDefault">Occupied</label>
                         </div>
                         <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="blue" id="house" onclick="changeColor('blue')">
+                                <input class="form-check-input" type="checkbox" value="blue" id="house" onchange="changeColor('blue')">
                                 <label class="form-check-label" for="flexCheckDefault">With House</label>
                         </div>
                         <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="yellow" id="undisclosed" onclick="changeColor('yellow')">
+                                <input class="form-check-input" type="checkbox" value="yellow" id="undisclosed" onchange="changeColor('yellow')">
                                 <label class="form-check-label" for="flexCheckDefault">Occupant Undisclosed</label>
                         </div>
                         <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="orange" id="foreclosed" onclick="changeColor('orange')">
+                                <input class="form-check-input" type="checkbox" value="orange" id="foreclosed" onchange="changeColor('orange')">
                                 <label class="form-check-label" for="flexCheckDefault">Foreclosed</label>
                         </div>
                         <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="black" id="open" onclick="changeColor('black')">
+                                <input class="form-check-input" type="checkbox" value="black" id="open" onchange="changeColor('black')">
                                 <label class="form-check-label" for="flexCheckDefault">Open Space</label>
                         </div>
                         <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="purple" id="amenities" onclick="changeColor('purple')">
+                                <input class="form-check-input" type="checkbox" value="purple" id="amenities" onchange="changeColor('purple')">
                                 <label class="form-check-label" for="flexCheckDefault">Amenities</label>
                         </div>
 
@@ -5663,36 +5663,8 @@
                                 });
                 }
 
+                
                 function changeColor(id) {
-                        var xhttp = new XMLHttpRequest();
-                        xhttp.onreadystatechange = function() {
-                                if (this.readyState == 4 && this.status == 200) {
-                                        var data = JSON.parse(this.responseText);
-                                        let button = document.querySelector(`#${id}`);
-                                        if (button) {
-                                                if (data.Status === 'available') {
-                                                        button.style.backgroundColor = 'green';
-                                                } else if (data.Status === 'occupied') {
-                                                        button.style.backgroundColor = 'red';
-                                                } else if (data.Status === 'Property Undisclosed') {
-                                                        button.style.backgroundColor = 'pink';
-                                                } else if (data.Status === 'Open space') {
-                                                        button.style.backgroundColor = 'yellow';
-                                                } else if (data.Status === 'With house') {
-                                                        button.style.backgroundColor = 'orange';
-                                                } else if (data.Status === 'Fe-Mi') {
-                                                        button.style.backgroundColor = 'violet';
-                                                }
-                                        }
-                                }
-                        };
-                        xhttp.open("GET", "adminViews/includes/mapsubmit.php?id=" + id, true);
-                        xhttp.send();
-                }
-
-
-
-                /*function changeColor(id) {
                         // Use fetch API for HTTP requests
                         fetch('adminViews/includes/mapsubmit.php?id=' + id)
                                 .then(response => response.json())
@@ -5723,7 +5695,7 @@
                         getData('Blk1Lot5');
                         getData('Blk2Lot1');
                         getData('Blk2Lot2');
-                };*/
+                };
                 /*fetch(`adminViews/includes/mapsubmit.php?id=${id}`)
                 .then(response => response.json())
                 .then(data => {
