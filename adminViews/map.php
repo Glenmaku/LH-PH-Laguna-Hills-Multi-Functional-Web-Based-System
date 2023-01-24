@@ -4867,6 +4867,10 @@
 
 
 	<script type="text/javascript">
+		$(document).ready(function() {
+			changeColor();
+		});
+
 		function displayMapData() {
 			var mapData = "true";
 			$.ajax({
@@ -4960,16 +4964,21 @@
 
 
 
-
 		$(document).ready(function() {
-			var newColor = "red"; // Replace with the desired color
+    var newColor = "#085D40"; 
+    var previousPath; 
+    $("#searchMap").on("input", function() {
+        if (previousPath) {
+            previousPath.css("fill", ""); 
+        }
 
-			$("#searchMap").on("input", function() {
-				var pathId = this.value;
-				var path = $("#" + pathId);
-				path.css("fill", newColor);
-			});
-		});
+        var pathId = $("#searchMap").val();
+        var path = $("#" + pathId);
+        path.css("fill", newColor);
+        previousPath = path; 
+    });
+});
+
 
 
 
@@ -5000,27 +5009,28 @@
 			xhttp.onreadystatechange = function() {
 				if (this.readyState == 4 && this.status == 200) {
 					var data = JSON.parse(this.responseText);
-					let button = document.querySelector(`#${id}`);
-					if (button) {
+					let path = document.querySelector(`#${id}`);
+					if (path) {
 						if (data.Status === 'available') {
-							button.style.backgroundColor = 'green';
+							$(path).css("fill", "green");
 						} else if (data.Status === 'occupied') {
-							button.style.backgroundColor = 'red';
-						} else if (data.Status === 'Property Undisclosed') {
-							button.style.backgroundColor = 'pink';
-						} else if (data.Status === 'Open space') {
-							button.style.backgroundColor = 'yellow';
-						} else if (data.Status === 'With house') {
-							button.style.backgroundColor = 'orange';
+							$(path).css("fill", "red");
+						} else if (data.Status === 'property undisclosed') {
+							$(path).css("fill", "pink");
+						} else if (data.Status === 'open space') {
+							$(path).css("fill", "yellow");
+						} else if (data.Status === 'with house') {
+							$(path).css("fill", "orange");
 						} else if (data.Status === 'Fe-Mi') {
-							button.style.backgroundColor = 'violet';
+							$(path).css("fill", "violet");
 						}
 					}
 				}
 			};
-			xhttp.open("GET", "adminViews/includes/mapsubmit.php?id=" + id, true);
+			xhttp.open("GET", "adminViews/includes/act-selectColor.php?id=" + id, true);
 			xhttp.send();
 		}
+
 
 
 
