@@ -523,12 +523,10 @@
                     console.log(status);
                 }
             });
-        } else {
-            console.log("all transaction records is empty");
-        }
-
-        // OTHER TRANSACTION SECTION - INSERT DATA start
-        if ($("#category5").val().length > 0){
+        } 
+        // OTHER TRANSACTION SECTION - INSERT DATA
+        // ROW 6
+        else if ($("#category5").val().trim() && $("#quantity5").val().trim() && $("#price5").val().trim() && $("#o_subtotal5").val().trim()) {
             var data = {};
             data.transaction_number = $("#trans-no").val();
             data.name = $("#client-name").val();
@@ -574,7 +572,9 @@
             }, function(response) {
                 console.log(response);
             });
-        } else if ($("#category4").val().length > 0){ 
+        } 
+        // ROW 5
+        else if ($("#category4").val().trim() && $("#quantity4").val().trim() && $("#price4").val().trim() && $("#o_subtotal4").val().trim()) {
             var data = {};
             data.transaction_number = $("#trans-no").val();
             data.name = $("#client-name").val();
@@ -614,7 +614,10 @@
             }, function(response) {
                 console.log(response);
             });
-        } else if ($("#category3").val().length > 0){ 
+        } 
+
+        // ROW 4
+        else if ($("#category3").val().trim() && $("#quantity3").val().trim() && $("#price3").val().trim() && $("#o_subtotal3").val().trim()) {
             var data = {};
             data.transaction_number = $("#trans-no").val();
             data.name = $("#client-name").val();
@@ -648,7 +651,10 @@
             }, function(response) {
                 console.log(response);
             });
-        } else if ($("#category2").val().length > 0){ 
+        } 
+
+        // ROW 3
+        else if ($("#category2").val().trim() && $("#quantity2").val().trim() && $("#price2").val().trim() && $("#o_subtotal2").val().trim()) {
             var data = {};
             data.transaction_number = $("#trans-no").val();
             data.name = $("#client-name").val();
@@ -676,7 +682,10 @@
             }, function(response) {
                 console.log(response);
             });
-        } else if ($("#category1").val().length > 0){ 
+        } 
+
+        // ROW 2
+        else if ($("#category1").val().trim() && $("#quantity1").val().trim() && $("#price1").val().trim() && $("#o_subtotal1").val().trim()) {
             var data = {};
             data.transaction_number = $("#trans-no").val();
             data.name = $("#client-name").val();
@@ -698,7 +707,10 @@
             }, function(response) {
                 console.log(response);
             });
-        } else if ($("#category").val().length > 0){ 
+        } 
+
+        // ROW 1
+        else if ($("#category").val().trim() && $("#quantity").val().trim() && $("#price").val().trim() && $("#o_subtotal").val().trim()) {
             var data = {};
             data.transaction_number = $("#trans-no").val();
             data.name = $("#client-name").val();
@@ -714,8 +726,9 @@
             }, function(response) {
                 console.log(response);
             });
-        } else {console.log("no input in the other services");}
+        } else {console.log("no input in the other services layer 1");}
         // end OTHER TRANSACTION SECTION - INSERT DATA
+
 
         // clear the forms after pressing the submit  
         $("#trans-no").val("");
