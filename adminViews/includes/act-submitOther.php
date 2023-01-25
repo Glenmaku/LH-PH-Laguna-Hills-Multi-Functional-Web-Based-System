@@ -13,7 +13,7 @@
         <input type="text" class="form-control" name="remaining-balance" id="remaining-balance" value="0" disabled>
         <span>Remarks:</span>
         <textarea placeholder="Type here.."></textarea>
-        <button type="submit" id="submit">Submit</button>
+        <button type="submit" id="ro_submit">Submit</button>
         <button type="reset" id="reset">Reset Form</button>
     </div>
 </div>

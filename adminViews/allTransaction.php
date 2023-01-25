@@ -188,11 +188,11 @@
                             <div class="address-status">
                                 <div class="unpaid">
                                     <span>Selected Balance</span><br>
-                                    <input type="text" name="selected-balance" id="selected-balance" value="0" required>
+                                    <input type="text" name="selected-balance" id="selected-balance" placeholder="0" required>
                                 </div>
                                 <div class="interest">
                                     <span>Interest/Penalty:</span> <br>
-                                    <input type="number" name="a-interest" id="a-interest" value="0">
+                                    <input type="number" name="a-interest" id="a-interest" placeholder="0">
                                 </div>
                                 <div class="period-of-payment">
                                     <span>Discount:</span><br>
@@ -320,7 +320,7 @@
                             </h2>
                         </div>
                         <div class="hide-option" id="hide_other">
-                            <i class="fa-regular fa-eye-slash accordion-button-icon" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="true" aria-controls="panelsStayOpen-collapseThree" onclick="otherSubmit()">
+                            <i class="fa-regular fa-eye-slash accordion-button-icon" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="true" aria-controls="panelsStayOpen-collapseThree" onclick="reserveSubmit()">
                             </i>
                         </div>
                     </div>
@@ -403,301 +403,11 @@
 
 
     //data insertion sa reservation palang
-    $(document).ready(function() {
-        $("#submit").on("click", add_data);
-    });
-
-    function add_data() {
-        // code that might throw an error
-
-        var checkbox_hall = ["#radio-hall"];
-        var checkbox_court = ["#radio-court"];
-        var checkbox_miming = ["#radio-miming"];
-
-        var trans_no = $("#trans-no").val();
-        var nameadd = $("#client-name").val();
-        var from_reservation_date_string = $("#from-reservation-date").val();
-        var to_reservation_date_string = $("#to-reservation-date").val();
-        var price_hall = $("#in-radio-hall3").val();
-        var price_court = $("#in-radio-court3").val();
-        var price_miming = $("#in-radio-miming3").val();
-
-        var hall_time_start = $("#in-radio-hall1").val();
-        var hall_time_end = $("#in-radio-hall2").val();
-
-        var court_time_start = $("#in-radio-court1").val();
-        var court_time_end = $("#in-radio-court2").val();
-
-        var miming_time_start = $("#in-radio-miming1").val();
-        var miming_time_end = $("#in-radio-miming2").val();
-
-        var from_reservation_date_string = new Date();
-        var month1 = from_reservation_date_string.getUTCMonth() + 1;
-        var day1 = from_reservation_date_string.getUTCDate();
-        var year1 = from_reservation_date_string.getUTCFullYear();
-        var from_reservation_date = year1 + "-" + month1 + "-" + day1;
-
-        var to_reservation_date_string = new Date();
-        var month2 = to_reservation_date_string.getUTCMonth() + 1;
-        var day2 = to_reservation_date_string.getUTCDate();
-        var year2 = to_reservation_date_string.getUTCFullYear();
-        var to_reservation_date = year2 + "-" + month2 + "-" + day2;
-
-        if ($("#radio-hall").is(":checked")) {
-            // date conversion
-            $.ajax({
-                url: 'adminViews/insert-data-transaction-hall.php',
-                type: 'post',
-                data: {
-                    trans_nosend: trans_no,
-                    namesend: nameadd,
-                    from_reservation_datesend: from_reservation_date,
-                    to_reservation_datesend: to_reservation_date,
-                    time_startsend: hall_time_start,
-                    time_endsend: hall_time_end,
-                    pricesend: price_hall
-                },
-                success: function(data, status) {
-                    // function to display data
-                    console.log(status);
-                }
-            });
-        } else {
-            console.log("function-hall is empty");
-        }
-
-        if ($("#radio-court").is(":checked")) {
-            // date conversion
-            $.ajax({
-                url: 'adminViews/insert-data-transaction-court.php',
-                type: 'post',
-                data: {
-                    trans_nosend: trans_no,
-                    namesend: nameadd,
-                    from_reservation_datesend: from_reservation_date,
-                    to_reservation_datesend: to_reservation_date,
-                    time_startsend: court_time_start,
-                    time_endsend: court_time_end,
-                    pricesend: price_court
-                },
-                success: function(data, status) {
-                    // function to display data
-                    console.log(status);
-                }
-            });
-        } else {
-            console.log("function-court is empty");
-        }
-
-        if ($("#radio-miming").is(":checked")) {
-            // date conversion
-            $.ajax({
-                url: 'adminViews/insert-data-transaction-miming.php',
-                type: 'post',
-                data: {
-                    trans_nosend: trans_no,
-                    namesend: nameadd,
-                    from_reservation_datesend: from_reservation_date,
-                    to_reservation_datesend: to_reservation_date,
-                    time_startsend: miming_time_start,
-                    time_endsend: miming_time_end,
-                    pricesend: price_miming
-                },
-                success: function(data, status) {
-                    // function to display data
-                    console.log(status);
-                }
-            });
-        } else {
-            console.log("function-miming is empty");
-        }
-
-        if ($("#radio-hall" || "#radio-court" || "#radio-miming").is(":checked")) {
-            //solution to sa discount and sa total price
-            var initial_discount = $("#r-discount").val() / 100;
-            var reserv_discount = $("#r-discount").val();
-            var initial_price = $("#in-radio-miming3").val(); + $("#in-radio-hall3").val(); + $("#in-radio-court3").val();
-            var total_price = $("#in-radio-miming3").val() + $("#in-radio-hall3").val() + $("#in-radio-court3").val() - ($("#in-radio-miming3").val() + $("#in-radio-hall3").val() + $("#in-radio-court3").val() * (initial_discount));
-
-            $.ajax({
-                url: 'adminViews/insert-data-transaction-records.php',
-                type: 'post',
-                data: {
-                    trans_nosend: trans_no,
-                    namesend: nameadd,
-                    totalprice_send: total_price,
-                    reserv_discountsend: reserv_discount
-                },
-                success: function(data, status) {
-                    // function to display data
-                    console.log(status);
-                }
-            });
-        }
-        // OTHER TRANSACTION SECTION - INSERT DATA
-        // ROW 6
-        // if (isNaN(price1) || isNaN(price2) || isNaN(price3) || isNaN(discount)) {
-        //     alert("Please enter valid numbers for all input fields");
-        //     return;
-        // }
-        // document.getElementById("payment").value;
-        // if ($("#category").val().trim() && $("#quantity").val().trim() && $("#price").val().trim() && $("#o_subtotal").val().trim()) {
-        //     var data = {};
-        //     data.transaction_number = $("#trans-no").val();
-        //     data.name = $("#client-name").val();
-        //     data.services = [];
-        //     data.services.push({
-        //         category: $("#category").val(),
-        //         quantity: $("#quantity").val(),
-        //         price: $("#price").val(),
-        //         subtotal: $("#o_subtotal").val()
-        //     });
-        //     data.services.push({
-        //         category: $("#category1").val(),
-        //         quantity: $("#quantity1").val(),
-        //         price: $("#price1").val(),
-        //         subtotal: $("#o_subtotal1").val()
-        //     });
-        //     data.services.push({
-        //         category: $("#category2").val(),
-        //         quantity: $("#quantity2").val(),
-        //         price: $("#price2").val(),
-        //         subtotal: $("#o_subtotal2").val()
-        //     });
-        //     data.services.push({
-        //         category: $("#category3").val(),
-        //         quantity: $("#quantity3").val(),
-        //         price: $("#price3").val(),
-        //         subtotal: $("#o_subtotal3").val()
-        //     });
-        //     data.services.push({
-        //         category: $("#category4").val(),
-        //         quantity: $("#quantity4").val(),
-        //         price: $("#price4").val(),
-        //         subtotal: $("#o_subtotal4").val()
-        //     });
-        //     data.services.push({
-        //         category: $("#category5").val(),
-        //         quantity: $("#quantity5").val(),
-        //         price: $("#price5").val(),
-        //         subtotal: $("#o_subtotal5").val()
-        //     });
-        //     $.post("adminViews/insert-data-transaction-other.php", {
-        //         data: data
-        //     }, function(response) {
-        //         console.log(response);
-        //     });
-        // }else {
-        //     console.log("no input in the other services layer 1");
-        // }
-
-        // OTHER TRANSACTION SECTION - INSERT DATA 
-        //TRYING TO MAKE SOME ALERTS
-        if ($("#category").val().trim() && !isNaN($("#quantity").val().trim()) && !isNaN($("#price").val().trim()) && !isNaN($("#o_subtotal").val().trim())) {
-            var data = {};
-            data.transaction_number = $("#trans-no").val();
-            data.name = $("#client-name").val();
-            data.services = [];
-            data.services.push({
-                category: $("#category").val(),
-                quantity: $("#quantity").val(),
-                price: $("#price").val(),
-                subtotal: $("#o_subtotal").val()
-            });
-            data.services.push({
-                category: $("#category1").val(),
-                quantity: $("#quantity1").val(),
-                price: $("#price1").val(),
-                subtotal: $("#o_subtotal1").val()
-            });
-            data.services.push({
-                category: $("#category2").val(),
-                quantity: $("#quantity2").val(),
-                price: $("#price2").val(),
-                subtotal: $("#o_subtotal2").val()
-            });
-            data.services.push({
-                category: $("#category3").val(),
-                quantity: $("#quantity3").val(),
-                price: $("#price3").val(),
-                subtotal: $("#o_subtotal3").val()
-            });
-            data.services.push({
-                category: $("#category4").val(),
-                quantity: $("#quantity4").val(),
-                price: $("#price4").val(),
-                subtotal: $("#o_subtotal4").val()
-            });
-            data.services.push({
-                category: $("#category5").val(),
-                quantity: $("#quantity5").val(),
-                price: $("#price5").val(),
-                subtotal: $("#o_subtotal5").val()
-            });
-            $.post("adminViews/insert-data-transaction-other.php", {
-                data: data
-            }, function(response) {
-                console.log(response);
-            });
-        } else {
-            console.log("no input in the other services layer 1");
-            if (isNaN($("#quantity").val().trim())) {
-                alert("Quantity must be a number.");
-            }
-            if (isNaN($("#price").val().trim())) {
-                alert("Price must be a number.");
-            }
-            if (isNaN($("#o_subtotal").val().trim())) {
-                alert("Subtotal must be a number.");
-            }
-        }
-
-
-        // end OTHER TRANSACTION SECTION - INSERT DATA
-
-
-        // clear the forms after pressing the submit  
-        $("#trans-no").val("");
-        $("#date").val("");
-        $("#client-name").val("");
-
-        $("#from-reservation-date").val("");
-        $("#to-reservation-date").val("");
-        $("#in-radio-hall1").val("");
-        $("#in-radio-hall2").val("");
-        $("#in-radio-hall3").val("");
-
-        $("#in-radio-court1").val("");
-        $("#in-radio-court2").val("");
-        $("#in-radio-court3").val("");
-
-        $("#in-radio-miming1").val("");
-        $("#in-radio-miming2").val("");
-        $("#in-radio-miming3").val("");
-        $("#r-discount").val("");
-        $("#r-subtotal").val("");
-
-        $("#radio-hall").prop("checked", false);
-        $("#radio-court").prop("checked", false);
-        $("#radio-miming").prop("checked", false);
-
-        $("#category").val("");
-        $("#quantity").val("");
-        $("#price").val("");
-        $("#o_subtotal").val("");
-
-        // OTHER TRANSACTION LOOP FOR EACH ROW
-        for (var i = 1; i <= 10; i++) {
-            $("#category" + i).val("");
-            $("#quantity" + i).val("");
-            $("#price" + i).val("");
-            $("#o_subtotal" + i).val("");
-        }
-    }
+   
 
 
     // clear the forms after pressing the reset button  
-    $("#reset").click(function() {
+    $("#assoc-reset").click(function() {
         $("#trans-no").val("");
         $("#date").val("");
         $("#client-name").val("");
@@ -1116,14 +826,4 @@ function assocSubmit(){  //sidebar
     });
 }
 
-function otherSubmit(){  //sidebar
-    $.ajax({
-        url:"adminViews/includes/act-submitOther.php",
-        method:"post",
-        data:{record:1},
-        success:function(data){
-            $('.submit-area').html(data);
-        }
-    });
-}
 </script>
