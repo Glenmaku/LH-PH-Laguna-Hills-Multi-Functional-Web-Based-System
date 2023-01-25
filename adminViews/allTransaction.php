@@ -32,8 +32,7 @@
                             <h2 id="panelsStayOpen-headingOne">ASSOCIATION DUES</h2>
                         </div>
                         <div class="hide-option" id="hide_assoc">
-                            <i class="fa-regular fa-eye-slash accordion-button-icon" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
-                            </i>
+                            <i class="fa-regular fa-eye-slash accordion-button-icon" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne" onclick="assocSubmit()"></i>
                         </div>
                     </div>
 
@@ -221,10 +220,10 @@
                             <h2 id="panelsStayOpen-headingTwo">RESERVATION
                         </div>
                         <div class="hide-option" id="hide_reserv">
-                            <i class="fa-regular fa-eye-slash accordion-button-icon" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="true" aria-controls="panelsStayOpen-collapseTwo"></i>
+                            <i class="fa-regular fa-eye-slash accordion-button-icon" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="true" aria-controls="panelsStayOpen-collapseTwo" onclick="reserveSubmit()"></i>
                         </div>
                     </div>
-                    <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingTwo">
+                    <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse hide" aria-labelledby="panelsStayOpen-headingTwo">
                         <div class="accordion-body">
 
                             <!-- label -->
@@ -321,12 +320,12 @@
                             </h2>
                         </div>
                         <div class="hide-option" id="hide_other">
-                            <i class="fa-regular fa-eye-slash accordion-button-icon" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="true" aria-controls="panelsStayOpen-collapseThree">
+                            <i class="fa-regular fa-eye-slash accordion-button-icon" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="true" aria-controls="panelsStayOpen-collapseThree" onclick="reserveSubmit()">
                             </i>
                         </div>
                     </div>
 
-                    <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingThree">
+                    <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse hide" aria-labelledby="panelsStayOpen-headingThree">
                         <div class="accordion-body">
                             <table class="other-services" id="input_table">
                                 <tr>
@@ -351,7 +350,7 @@
             </div>
 
             <!-- submit-area Section -->
-            <div class="submit-area">
+            <div class="submit-area assoc-submit">
                 <div class="transaction-history">
                     <button><i class="fa-solid fa-clock-rotate-left"></i> Transaction History</button>
                 </div>
@@ -1098,4 +1097,27 @@ $(document).ready(function(){
         });
     });
 });
+
+function reserveSubmit(){  //sidebar
+    $.ajax({
+        url:"adminViews/includes/act-submitReserv.php",
+        method:"post",
+        data:{record:1},
+        success:function(data){
+            $('.submit-area').html(data);
+        }
+    });
+}
+
+function assocSubmit(){  //sidebar
+    $.ajax({
+        url:"adminViews/includes/act-submitAssoc.php",
+        method:"post",
+        data:{record:1},
+        success:function(data){
+            $('.submit-area').html(data);
+        }
+    });
+}
+
 </script>
