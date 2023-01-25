@@ -45,6 +45,7 @@ include ('connection.php');
                 <span class="input-group-text">Remarks</span>
                 <textarea class="form-control" id="remarks" disabled>'.$Remarks.'</textarea>
         </div>
+        <input name="lotedit-id" id="lotedit-id" type="hidden">
         <button class="edit-info" id="loteditModal-btn" type="button" data-toggle="modal" data-target="#loteditModal"><i class="fa-solid fa-pen"></i> Edit Information</button>
         <div class="modal fade" id="editModal-lot" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -56,7 +57,7 @@ include ('connection.php');
         </button>
       </div>
       <div class="modal-body">
-        <form id="editForm">
+        <form id="editForm-lot">
           <!-- Form fields here -->
         </form>
       </div>

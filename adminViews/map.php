@@ -4942,7 +4942,7 @@
 			<div class="modal-dialog">
 				<div class="modal-content">
 					<div class="modal-header">
-						<h1 class="modal-title fs-5" id="exampleModalLabel">Edit Information</h1>
+						<h1 class="modal-title fs-5" id="exampleModalLabel_edit">Edit Information</h1>
 						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 					</div>
 					<div class="modal-body">
@@ -4980,9 +4980,10 @@
 							</div>
 						</form>
 					</div>
+					<input name="adminUpdate_edit" id="adminUpdate_edit" type="hidden">
 					<div class="modal-footer">
 						<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-						<button type="button" class="btn btn-primary" id="submit-btn">Submit</button>
+						<button type="button" class="btn btn-primary" id="submit-btn" onclick="updateEditInfo()">Submit</button>
 
 					</div>
 				</div>
@@ -4993,31 +4994,48 @@
 
 
 	<script type="text/javascript">
-		$(document).on('click', '#loteditModal-btn', function() {
-			$("#loteditModal").modal("show");
-		});
+		function get_admin_record(updateAdminEdit) { // to show the current data
+        $('#adminUpdate_edit').val(updateAdminEdit);
+        $.post("adminViews/includes/update_assoc_date.php", {
+            updateAdminEdit : updateAdminEdit 
+        }, function(data, status) {
+            var map = JSON.parse(data);
+            $('#Block').val(map.Block);
+            $('#Lot').val(map.Lot);
+            $('#Street').val(map.Street);
+            $('#Status').val(map.Status);
+			$('#Area').val(map.Area);
+			$('#Price').val(map.Price);
+			$('#Remarks').val(map.Remarks);
+        });
+        $('#loteditModal').modal("show");
+    }
 
-		$(document).on('click', '#editModal-assoc-btn', function() {
-			$("#editModal-assoc").modal("show");
-		});
+    function updateEditInfo() { // updating the data
+        var block = $('#Block').val();
+        var lot = $('#Lot').val();
+        var street = $('#Street').val();
+        var status = $('#Status').val();
+        var areaPerSqm = $('#Area').val();
+		var price = $('#Price').val();
+		var remarks = $('#Remarks').val();
 
-		$(document).on('click', '#saveChanges', function() {
-			var Lot_ID = $('#Lot_ID').val();
-			var date_assigned = $('#date_assigned').val();
-
-			$.ajax({
-				url: "adminViews/includes/update_assoc_date.php",
-				type: "POST",
-				data: {
-					Lot_ID: Lot_ID,
-					date_assigned: date_assigned
-				},
-				success: function(data) {
-					alert('Date Assigned successfully updated!');
-					$('#editModal-assoc').modal('hide');
-				}
-			});
-		});
+        $.post('adminViews/includes/update_assoc_date.php', {
+            Block: Block,
+            Lot: Lot,
+            Street: Street,
+            Status: Status,
+            Area: Area,
+			Price: Price,
+            Remarks: Remarks
+			
+            },
+            function(data, status) {
+                $('#loteditModal').modal('show');
+                $('#map-submit-error').html(data);
+                panelData();
+            });
+    }
 
 
 		$(document).ready(function() {
