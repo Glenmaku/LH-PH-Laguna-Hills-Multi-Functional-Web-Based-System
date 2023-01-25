@@ -188,11 +188,11 @@
                             <div class="address-status">
                                 <div class="unpaid">
                                     <span>Selected Balance</span><br>
-                                    <input type="text" name="selected-balance" id="selected-balance" placeholder="0" required>
+                                    <input type="text" name="selected-balance" id="selected-balance" value="0" required>
                                 </div>
                                 <div class="interest">
                                     <span>Interest/Penalty:</span> <br>
-                                    <input type="number" name="a-interest" id="a-interest" placeholder="0">
+                                    <input type="number" name="a-interest" id="a-interest" value="0">
                                 </div>
                                 <div class="period-of-payment">
                                     <span>Discount:</span><br>
