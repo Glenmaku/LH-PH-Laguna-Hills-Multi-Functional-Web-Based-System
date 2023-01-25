@@ -32,8 +32,7 @@
                             <h2 id="panelsStayOpen-headingOne">ASSOCIATION DUES</h2>
                         </div>
                         <div class="hide-option" id="hide_assoc">
-                            <i class="fa-regular fa-eye-slash accordion-button-icon" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
-                            </i>
+                            <i class="fa-regular fa-eye-slash accordion-button-icon" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne" onclick="assocSubmit()"></i>
                         </div>
                     </div>
 
@@ -180,46 +179,32 @@
                                         <option value="blk6lot1"></option><!--END FOR BLOCK 6-->
                                     </datalist>
                                 </div>
+                                <div class="total-balance">
+                                    <span>Total Balance:</span><br>
+                                    <input name="total-balance" id="total-balance" disabled value="0">
+                                </div>
                             </div>
 
                             <div class="address-status">
                                 <div class="unpaid">
-                                    <span>Unpaid Month/s:</span><br>
-                                    <input type="text" name="unpaid" id="unpaid">
-                                </div>
-                                <div class="total-balance">
-                                    <span>Total Balance:</span> <br>
-                                    <input type="text" name="total-balance" id="total-balance" value="" disabled>
+                                    <span>Selected Balance</span><br>
+                                    <input type="text" name="selected-balance" id="selected-balance" placeholder="0" required>
                                 </div>
                                 <div class="interest">
-                                    <span>Interest/Penalty:</span><br>
-                                    <input type="text" name="interest" id="interest" disabled>
+                                    <span>Interest/Penalty:</span> <br>
+                                    <input type="number" name="a-interest" id="a-interest" placeholder="0">
+                                </div>
+                                <div class="period-of-payment">
+                                    <span>Discount:</span><br>
+                                    <input type="number" name="a-discount" id="a-discount" placeholder="Enter discount.." value="0">
                                 </div>
                             </div>
 
                             <div class="address-status">
-                                <div class="period-of-payment">
-                                    <span>Period of Payment:</span><br>
-                                    <input type="text" name="period-of-payment" id="period-of-payment" placeholder="Enter period of payment..">
-                                </div>
+                                <div></div>
                                 <div class="total">
                                     <span>Total:</span> <br>
-                                    <input type="text" name="period-total" id="period-total" disabled>
-                                </div>
-                                <div class="discount">
-                                    <span>Discount:</span><br>
-                                    <input type="text" name="discount" id="discount" placeholder="Enter discount..">
-                                </div>
-                            </div>
-
-                            <div class="address-status">
-                                <div class="dues-remaining-balance">
-                                    <span>Remaining Dues:</span><br>
-                                    <input type="text" name="dues-remaining-balance" id="dues-remaining-balance" disabled>
-                                </div>
-                                <div class="Subtotal">
-                                    <span>Subtotal:</span><br>
-                                    <input type="text" name="subtotal" id="ubtotal" disabled>
+                                    <input name="balance-total" id="balance-total" readonly value="0">
                                 </div>
                             </div>
 
@@ -235,10 +220,10 @@
                             <h2 id="panelsStayOpen-headingTwo">RESERVATION
                         </div>
                         <div class="hide-option" id="hide_reserv">
-                            <i class="fa-regular fa-eye-slash accordion-button-icon" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="true" aria-controls="panelsStayOpen-collapseTwo"></i>
+                            <i class="fa-regular fa-eye-slash accordion-button-icon" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="true" aria-controls="panelsStayOpen-collapseTwo" onclick="reserveSubmit()"></i>
                         </div>
                     </div>
-                    <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingTwo">
+                    <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse hide" aria-labelledby="panelsStayOpen-headingTwo">
                         <div class="accordion-body">
 
                             <!-- label -->
@@ -335,12 +320,12 @@
                             </h2>
                         </div>
                         <div class="hide-option" id="hide_other">
-                            <i class="fa-regular fa-eye-slash accordion-button-icon" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="true" aria-controls="panelsStayOpen-collapseThree">
+                            <i class="fa-regular fa-eye-slash accordion-button-icon" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="true" aria-controls="panelsStayOpen-collapseThree" onclick="otherSubmit()">
                             </i>
                         </div>
                     </div>
 
-                    <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingThree">
+                    <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse hide" aria-labelledby="panelsStayOpen-headingThree">
                         <div class="accordion-body">
                             <table class="other-services" id="input_table">
                                 <tr>
@@ -365,23 +350,29 @@
             </div>
 
             <!-- submit-area Section -->
-            <div class="submit-area">
+            <div class="submit-area assoc-submit">
                 <div class="transaction-history">
                     <button><i class="fa-solid fa-clock-rotate-left"></i> Transaction History</button>
                 </div>
                 <div class="payment">
-                    <span>Total:</span>
-                    <input type="text" name="total" id="total" value="0" disabled>
-                    <span>Payment:</span>
-                    <input type="text" name="payment" id="payment" value="0" placeholder="Enter amount..." onchange="calculate();">
-                    <span>Change:</span>
-                    <input type="text" name="change" id="change" value="0" disabled>
-                    <span>Remaining Balance:</span>
-                    <input type="text" name="remaining-balance" id="remaining-balance" value="0" disabled>
-                    <span>Remarks:</span>
-                    <textarea placeholder="Type here.."></textarea>
-                    <button type="submit" id="submit">Submit</button>
-                    <button type="reset" id="reset">Reset Form</button>
+                        <span>Total:</span>
+                        <input type="text" class="form-control" name="all-total" id="all-total" value="0" disabled>
+
+                        <span>Payment:</span>
+                        <input type="text" class="form-control" name="payment" id="a-payment" value="0" placeholder="Enter amount...">
+
+                        <span>Change:</span>
+                        <input type="text" class="form-control" name="change" id="a-change" value="0" disabled>
+                        <input type="checkbox" id="ifadvanced"><span style="font-size: 14px;"> Advanced Payment </span><br> 
+
+                        <span>Dues Remaining Balance:</span>
+                        <input type="text" class="form-control" name="remaining-balance" id="a-remaining-balance" disabled>
+
+                        <span>Remarks:</span><br>
+                        <textarea id="a-remarks" placeholder="Type here.."></textarea><br> 
+
+                        <button type="submit" class="btn btn-success" id="assoc-submit">Submit</button>
+                        <button type="reset" class="btn btn-danger" id="assoc-reset">Reset Form</button>
                 </div>
             </div>
         </div>
@@ -394,7 +385,7 @@
     // script ni venn
     $(document).ready(function() {
         $.ajax({
-            url: 'adminViews/act-transact.php',
+            url: 'adminViews/includes/act-transact.php',
             type: 'post', //path to PHP script
             success: function(data) {
                 $("#trans-no").val(data); //update input field with response from server
@@ -600,8 +591,8 @@
         //     console.log("no input in the other services layer 1");
         // }
 
-            // OTHER TRANSACTION SECTION - INSERT DATA 
-            //TRYING TO MAKE SOME ALERTS
+        // OTHER TRANSACTION SECTION - INSERT DATA 
+        //TRYING TO MAKE SOME ALERTS
         if ($("#category").val().trim() && !isNaN($("#quantity").val().trim()) && !isNaN($("#price").val().trim()) && !isNaN($("#o_subtotal").val().trim())) {
             var data = {};
             data.transaction_number = $("#trans-no").val();
@@ -942,15 +933,11 @@
     hide_assoc.addEventListener("click", function() {
 
         $("#property").val("");
-        $("#unpaid").val("");
+        $("#selected-balance").val("");
+        $("#a-interest").val("");
         $("#total-balance").val("");
-        $("#interest").val("");
-        $("#period-of-payment").val("");
-
-        $("#period-total").val("");
-        $("#discount").val("");
-        $("#dues-remaining-balance").val("");
-        $("#subtotal").val("");
+        $("#balance-total").val("");
+        $("#a-discount").val("");
     }); // reset form ng association part
 
     // reset form ng OTHER SERVICES part
@@ -997,4 +984,146 @@
             $("#o_subtotal" + i).val("");
         }
     }); // reset form ng reservation part
+
+
+    $(document).ready(function() {
+        $("#assoc-reset").click(function() {
+            $("input[type='text']").val("0");
+            $("input[type='number']").val("0");
+            $("input[type='text'][list='blkandlots']").val("");
+            $("textarea").val("");
+            $("input[type='checkbox']").prop("checked", false);
+        });
+    });
+
+    $(document).ready(function() {
+    // Get total balance when property is selected
+    $("#property").change(function() {
+        var lot_id = $(this).val();
+        if (lot_id) {
+            $.ajax({
+                url: "adminViews/includes/act-get_balance.php",
+                method: "POST",
+                data: {
+                    lot_id: lot_id
+                },
+                success: function(data) {
+                    $("#total-balance").val(data);
+                    calculateSubtotalsAndPayment();
+                }
+            });
+        } else {
+            $("#total-balance").val(0);
+            calculateSubtotalsAndPayment();
+        }
+
+    });
+    // Calculate the assoc total and payment
+    $("#a-interest, #a-discount, #a-payment").on("input keyup", function() {
+        calculateSubtotalsAndPayment();
+    });
+
+    // listen for change event on ifadvanced checkbox
+    $("#ifadvanced").on("change", function() {
+        calculateSubtotalsAndPayment();
+    });
+
+    function calculateSubtotalsAndPayment() {
+       var totalBalance = parseFloat($("#total-balance").val());
+       var selectedBalance = parseFloat($("#selected-balance").val());
+       var interest = parseFloat($("#a-interest").val()) || 0;
+       var discount = parseFloat($("#a-discount").val()) || 0;
+       var baltotal = (selectedBalance + interest).toFixed(2);
+       var Talltotal = (totalBalance - ((discount / 100) * totalBalance) + interest).toFixed(2);////
+       var alltotal = (selectedBalance - ((discount / 100) * selectedBalance) + interest).toFixed(2);
+
+       var payment = parseFloat($("#a-payment").val());
+       var change = 0;
+       var remainingBalance = 0;
+       var ifadvanced = $("#ifadvanced").is(":checked");
+
+       $("#balance-total").val(baltotal);
+       $("#all-total").val(alltotal);
+
+       if (alltotal >= payment) {
+         // change = 0;
+           remainingBalance = (totalBalance - payment + interest - ((discount / 100) * selectedBalance)).toFixed(2);
+       } else if (alltotal < payment) {
+           if (ifadvanced) {
+               change = 0;
+                remainingBalance = (totalBalance - payment - change + interest - ((discount / 100) * selectedBalance)).toFixed(2);
+           } else {
+               change = (payment - alltotal).toFixed(2);
+                 remainingBalance = (totalBalance - payment +(payment - alltotal) + interest - ((discount / 100) * selectedBalance)).toFixed(2);
+           }
+       }
+
+       $("#a-change").val(change);
+       $("#a-remaining-balance").val(remainingBalance);
+    }
+});
+
+
+
+//SUBMISSION OF TRANSACTION
+$(document).ready(function(){
+    $("#assoc-submit").click(function(){
+        var transaction_num = $("#trans-no").val();
+        var transaction_name = $("#client-name").val();
+        var property = $("#property").val();
+        var total_balance = $("#total-balance").val();
+        var selected_balance = $("#selected-balance").val();
+        var discount = $("#a-discount").val();
+        var interest = $("#a-interest").val();
+        var balance_total = $("#balance-total").val();
+        var payment = $("#a-payment").val();
+        var change = $("#a-change").val();
+        var ifadvanced = $("#ifadvanced").val();
+        var remaining_balance = $("#a-remaining-balance").val();
+        var remarks = $("#a-remarks").val();
+       
+        $.ajax({
+            type: "POST",
+            url: "adminViews/includes/act-assoc_submit.php",
+            data: {transaction_num:transaction_num,transaction_name:transaction_name,property:property, total_balance:total_balance, selected_balance:selected_balance, discount:discount, interest:interest, balance_total:balance_total, payment:payment, change:change, ifadvanced:ifadvanced, remaining_balance:remaining_balance, remarks:remarks},
+            success: function(data) {
+                alert("Data Inserted: " + data);
+                $("#assoc-reset").trigger("click");
+            }
+        });
+    });
+});
+
+function reserveSubmit(){  //sidebar
+    $.ajax({
+        url:"adminViews/includes/act-submitReserv.php",
+        method:"post",
+        data:{record:1},
+        success:function(data){
+            $('.submit-area').html(data);
+        }
+    });
+}
+
+function assocSubmit(){  //sidebar
+    $.ajax({
+        url:"adminViews/includes/act-submitAssoc.php",
+        method:"post",
+        data:{record:1},
+        success:function(data){
+            $('.submit-area').html(data);
+        }
+    });
+}
+
+function otherSubmit(){  //sidebar
+    $.ajax({
+        url:"adminViews/includes/act-submitOther.php",
+        method:"post",
+        data:{record:1},
+        success:function(data){
+            $('.submit-area').html(data);
+        }
+    });
+}
 </script>
