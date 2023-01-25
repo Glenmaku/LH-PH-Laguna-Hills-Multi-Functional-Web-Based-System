@@ -45,8 +45,8 @@ include ('connection.php');
                 <span class="input-group-text">Remarks</span>
                 <textarea class="form-control" id="remarks" disabled>'.$Remarks.'</textarea>
         </div>
-        <button class="edit-info" type="button" data-toggle="modal" data-target="#editModal"><i class="fa-solid fa-pen"></i> Edit Information</button>
-        <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
+        <button class="edit-info" id="loteditModal-btn" type="button" data-toggle="modal" data-target="#loteditModal"><i class="fa-solid fa-pen"></i> Edit Information</button>
+        <div class="modal fade" id="editModal-lot" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">

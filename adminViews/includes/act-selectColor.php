@@ -10,7 +10,7 @@
     
     //check for query error
     if(!$result) {
-        die("Query failed: " . mysqli_error($conn));
+        die("Query failed: " . mysqli_error($con));
     }
     
     //fetch the result as an associative array
