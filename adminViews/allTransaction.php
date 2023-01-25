@@ -933,15 +933,11 @@
     hide_assoc.addEventListener("click", function() {
 
         $("#property").val("");
-        $("#unpaid").val("");
+        $("#selected-balance").val("");
+        $("#a-interest").val("");
         $("#total-balance").val("");
-        $("#interest").val("");
-        $("#period-of-payment").val("");
-
-        $("#period-total").val("");
-        $("#discount").val("");
-        $("#dues-remaining-balance").val("");
-        $("#subtotal").val("");
+        $("#balance-total").val("");
+        $("#a-discount").val("");
     }); // reset form ng association part
 
     // reset form ng OTHER SERVICES part
