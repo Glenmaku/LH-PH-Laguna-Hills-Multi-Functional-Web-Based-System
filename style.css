@@ -2226,7 +2226,7 @@ footer iframe {
     margin-bottom: 10px;
 	
   }
- .login-alert{
+ #login-message{
 	height: 40px!important;
     width: 85%;
     border-radius: 5px;

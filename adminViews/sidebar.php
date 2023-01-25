@@ -62,7 +62,7 @@
         </li>
 
         <li>
-            <a href="./index.php">
+            <a href="includes/Act-logout.php">
                 <i class="fa-solid fa-right-from-bracket"></i>
                 <span class="link-name">Logout</span>
             </a>

@@ -83,7 +83,7 @@
                         </div>
                         <div class="modal-body d-flex flex-column">
                             <h2 class="text-center" class="modal-title">Login</h2>
-                            <div id="login-message" class="login-alert text-white"></div>
+                            <div id="login-message" class=" "></div>
                             <form class="login_form">
 
                                 <div class="form_input ">
@@ -213,7 +213,6 @@ function login_function() {
                         PASS: password
                         },
                     success: function(data) {
-                        $('#login-message').html(data);
                         $('#Login').modal("show");
                         $('form').trigger('reset');
                         var loginMessage = document.getElementById("login-message");
@@ -221,7 +220,8 @@ function login_function() {
                                  loginMessage.classList.add("error");
                                 }
                                  else{
-                                   //loginMessage.classList.remove("error");
+                                   loginMessage.classList.remove("error");
+                                   $('#login-message').html("");
                                 }
                         }
                 })
