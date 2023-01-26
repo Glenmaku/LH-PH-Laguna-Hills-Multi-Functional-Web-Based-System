@@ -4908,31 +4908,31 @@
 				<h5>STATUS</h5>
 			</div>
 			<div class="form-check">
-				<input class="form-check-input" type="checkbox" value="green" id="available" onchange="changeColor('green')">
+				<input class="form-check-input" type="checkbox" value="green" id="available">
 				<label class="form-check-label" for="flexCheckDefault">Available</label>
 			</div>
 			<div class="form-check">
-				<input class="form-check-input" type="checkbox" value="red" id="occupied" onchange="changeColor('red')">
+				<input class="form-check-input" type="checkbox" value="red" id="occupied">
 				<label class="form-check-label" for="flexCheckDefault">Occupied</label>
 			</div>
 			<div class="form-check">
-				<input class="form-check-input" type="checkbox" value="blue" id="house" onchange="changeColor('blue')">
+				<input class="form-check-input" type="checkbox" value="blue" id="house">
 				<label class="form-check-label" for="flexCheckDefault">With House</label>
 			</div>
 			<div class="form-check">
-				<input class="form-check-input" type="checkbox" value="yellow" id="undisclosed" onchange="changeColor('yellow')">
+				<input class="form-check-input" type="checkbox" value="yellow" id="undisclosed">
 				<label class="form-check-label" for="flexCheckDefault">Property Undisclosed</label>
 			</div>
 			<div class="form-check">
-				<input class="form-check-input" type="checkbox" value="orange" id="foreclosed" onchange="changeColor('orange')">
+				<input class="form-check-input" type="checkbox" value="orange" id="foreclosed">
 				<label class="form-check-label" for="flexCheckDefault">Foreclosed</label>
 			</div>
 			<div class="form-check">
-				<input class="form-check-input" type="checkbox" value="black" id="open" onchange="changeColor('black')">
+				<input class="form-check-input" type="checkbox" value="black" id="open">
 				<label class="form-check-label" for="flexCheckDefault">Open Space</label>
 			</div>
 			<div class="form-check">
-				<input class="form-check-input" type="checkbox" value="purple" id="amenities" onchange="changeColor('purple')">
+				<input class="form-check-input" type="checkbox" value="purple" id="amenities">
 				<label class="form-check-label" for="flexCheckDefault">Amenities</label>
 			</div>
 
@@ -4995,54 +4995,56 @@
 
 	<script type="text/javascript">
 		function get_admin_record(updateAdminEdit) { // to show the current data
-        $('#adminUpdate_edit').val(updateAdminEdit);
-        $.post("adminViews/includes/update_assoc_date.php", {
-            updateAdminEdit : updateAdminEdit 
-        }, function(data, status) {
-            var map = JSON.parse(data);
-            $('#Block').val(map.Block);
-            $('#Lot').val(map.Lot);
-            $('#Street').val(map.Street);
-            $('#Status').val(map.Status);
-			$('#Area').val(map.Area);
-			$('#Price').val(map.Price);
-			$('#Remarks').val(map.Remarks);
-        });
-        $('#loteditModal').modal("show");
-    }
+			$('#adminUpdate_edit').val(updateAdminEdit);
+			$.post("adminViews/includes/update_assoc_date.php", {
+				updateAdminEdit: updateAdminEdit
+			}, function(data, status) {
+				var map = JSON.parse(data);
+				$('#Block').val(map.Block);
+				$('#Lot').val(map.Lot);
+				$('#Street').val(map.Street);
+				$('#Status').val(map.Status);
+				$('#Area').val(map.Area);
+				$('#Price').val(map.Price);
+				$('#Remarks').val(map.Remarks);
+			});
+	
+		}
 
-    function updateEditInfo() { // updating the data
-        var block = $('#Block').val();
-        var lot = $('#Lot').val();
-        var street = $('#Street').val();
-        var status = $('#Status').val();
-        var areaPerSqm = $('#Area').val();
-		var price = $('#Price').val();
-		var remarks = $('#Remarks').val();
+		function updateEditInfo() { // updating the data
+			var block = $('#Block').val();
+			var lot = $('#Lot').val();
+			var street = $('#Street').val();
+			var status = $('#Status').val();
+			var areaPerSqm = $('#Area').val();
+			var price = $('#Price').val();
+			var remarks = $('#Remarks').val();
 
-        $.post('adminViews/includes/update_assoc_date.php', {
-            Block: Block,
-            Lot: Lot,
-            Street: Street,
-            Status: Status,
-            Area: Area,
-			Price: Price,
-            Remarks: Remarks
-			
-            },
-            function(data, status) {
-                $('#loteditModal').modal('show');
-                $('#map-submit-error').html(data);
-                panelData();
-            });
-    }
+			$.post('adminViews/includes/update_assoc_date.php', {
+					Block: Block,
+					Lot: Lot,
+					Street: Street,
+					Status: Status,
+					Area: Area,
+					Price: Price,
+					Remarks: Remarks
+
+				},
+				function(data, status) {
+					$('#loteditModal').modal('show');
+					$('#map-submit-error').html(data);
+					panelData();
+				});
+		}
 
 
 		$(document).ready(function() {
 			changeColor();
+			
 		});
 
 		function displayMapData() {
+			
 			var mapData = "true";
 			$.ajax({
 				url: 'adminViews/includes/mapData.php',
@@ -5090,39 +5092,27 @@
 
 		$(document).ready(function() {
 			$("#lot-information-btn").click(function() {
-				if ($("#lot-information-map").is(":visible")) {
-					$("#lot-information-map").hide();
-					displayMapData();
-				} else {
-					$("#map-assoc").hide();
-					$("#owner-information").hide();
-					$("#lot-information-map").show();
-
-				}
+				$("#lot-information-map").show();
+				$("#map-assoc").hide();
+				$("#owner-information").hide();
+				displayMapData();
 			});
 
 			$("#assoc-btn").click(function() {
-				if ($("#map-assoc").is(":visible")) {
-					$("#map-assoc").hide();
-					displayAssocData();
-				} else {
-					$("#lot-information-map").hide();
-					$("#owner-information").hide();
-					$("#map-assoc").show();
-				}
+				$("#lot-information-map").hide();
+				$("#map-assoc").show();
+				$("#owner-information").hide();
+				displayAssocData();
 			});
 
 			$("#owner-information-btn").click(function() {
-				if ($("#owner-information").is(":visible")) {
-					$("#owner-information").hide();
-					displayOwner();
-				} else {
-					$("#lot-information-map").hide();
-					$("#map-assoc").hide();
-					$("#owner-information").show();
-				}
+				$("#lot-information-map").hide();
+				$("#map-assoc").hide();
+				$("#owner-information").show();
+				displayOwner();
 			});
 		});
+
 
 
 
@@ -5149,6 +5139,21 @@
 				previousPath = path;
 			});
 		});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -5226,297 +5231,4 @@
 				colorData(path.id);
 			});
 		});
-
-
-
-
-
-
-
-		/*function changeColor(id) {
-			var xhttp = new XMLHttpRequest();
-			xhttp.onreadystatechange = function() {
-				if (this.readyState == 4 && this.status == 200) {
-					var data = JSON.parse(this.responseText);
-					let path = document.querySelector(`#${id}`);
-					if (path) {
-						if (data.Status === 'available') {
-							$(path).css("fill", "green");
-						} else if (data.Status === 'occupied') {
-							$(path).css("fill", "red");
-						} else if (data.Status === 'property undisclosed') {
-							$(path).css("fill", "pink");
-						} else if (data.Status === 'open space') {
-							$(path).css("fill", "yellow");
-						} else if (data.Status === 'with house') {
-							$(path).css("fill", "orange");
-						} else if (data.Status === 'Fe-Mi') {
-							$(path).css("fill", "violet");
-						}
-					}
-				}
-			};
-			xhttp.open("GET", "adminViews/includes/act-selectColor.php?id=" + id, true);
-			xhttp.send();
-		}
-
-		/*function changeColor() {
-    var occupied = document.getElementById("occupied");
-    var blk1lot1 = document.getElementById("blk1lot1");
-    if (occupied.checked) {
-		blk1lot1.style.fill = "red";
-    } else {
-		blk1lot1.style.fill = "grey";
-    }
-  }*/
-
-
-
-
-
-
-
-
-
-
-
-
-		/*$(document).ready(function(){
-    $('.form-check-input').change(function() {
-        var color = $(this).val();
-        if ($(this).is(':checked')) {
-            $.ajax({
-                type: "POST",
-                url: "adminViews/includes/act-selectColor.php",
-                data: {color: color, action: 'add'},
-                success: function(response) {
-                    console.log(response);
-                }
-            });
-        } else {
-            $.ajax({
-                type: "POST",
-                url: "adminViews/includes/act-selectColor.php",
-                data: {color: color, action: 'remove'},
-                success: function(response) {
-                    console.log(response);
-                }
-            });
-        }
-    });
-});*/
-
-
-
-
-
-
-		/*function changeColor(id) {
-		        // Use fetch API for HTTP requests
-		        fetch('adminViews/includes/mapsubmit.php?id=' + id)
-		                .then(response => response.json())
-		                .then(data => {
-		                        // Update the color of the button
-		                        if (data.Status === 'available') {
-		                                document.getElementById(id).style.backgroundColor = 'green';
-		                        } else if (data.Status === 'occupied') {
-		                                document.getElementById(id).style.backgroundColor = 'red';
-		                        } else if (data.Status === 'Property Undisclosed') {
-		                                document.getElementById(id).style.backgroundColor = 'pink';
-		                        } else if (data.Status === 'Open space') {
-		                                document.getElementById(id).style.backgroundColor = 'yellow';
-		                        } else if (data.Status === 'With house') {
-		                                document.getElementById(id).style.backgroundColor = 'orange';
-		                        } else if (data.Status === 'Fe-Mi') {
-		                                document.getElementById(id).style.backgroundColor = 'violet';
-		                        }
-		                })
-		                .catch(error => {
-		                        console.log('Error:' + error);
-		                });
-		}
-		window.onload = function() {
-		        getData('Blk1Lot1'), getData('Blk1Lot2');
-		        getData('Blk1Lot3');
-		        getData('Blk1Lot4');
-		        getData('Blk1Lot5');
-		        getData('Blk2Lot1');
-		        getData('Blk2Lot2');
-		};*/
-		/*fetch(`adminViews/includes/mapsubmit.php?id=${id}`)
-		.then(response => response.json())
-		.then(data => {
-		        document.getElementById("dues").value = data.Dues;
-		        document.getElementById("yearly").value = data.Yearly;
-		        document.getElementById("stat").value = data.Status;
-
-		        document.getElementById("remarks").value = data.Remarks;
-		})
-		.catch(error => {
-		        console.log(`Error: ${error}`);
-		});*/
-
-
-
-
-
-
-
-
-
-		/*function changeColor(id) {
-		        // Use fetch API for HTTP requests
-		        fetch('adminViews/includes/mapsubmit.php?id=' + id)
-		                .then(response => response.json())
-		                .then(data => {
-		                        // Update the color of the button
-		                        if (data.Status === 'Available') {
-		                                document.getElementById("available").style.backgroundColor = 'green';
-		                        } else if (data.Status === 'Occupied') {
-		                                document.getElementById("occupied").style.backgroundColor = 'red';
-		                        } else if (data.Status === 'Property Undisclosed') {
-		                                document.getElementById("disclosed").style.backgroundColor = 'yellow';
-		                        } else if (data.Status === 'Open space') {
-		                                document.getElementById("open").style.backgroundColor = 'black';
-		                        } else if (data.Status === 'With house') {
-		                                document.getElementById("house").style.backgroundColor = 'blue';
-		                        } else if (data.Status === 'Amenities') {
-		                                document.getElementById("amenities").style.backgroundColor = 'purple';
-		                        } else if (data.Status === 'foreclosed') {
-		                                document.getElementById("foreclosed").style.backgroundColor = 'orange';
-		                        }
-		                })
-		                .catch(error => {
-		                        console.log('Error:' + error);
-		                });
-		}
-
-		window.onload = function() {
-		        getData('Blk1Lot1'), getData('Blk1Lot2');
-		        getData('Blk1Lot3');
-		        getData('Blk1Lot4');
-		        getData('Blk1Lot5');
-		        getData('Blk2Lot1');
-		        getData('Blk2Lot2');
-		};
-
-		const buttons = document.querySelectorAll('button');
-		buttons.forEach(button => {
-		        button.addEventListener('click', () => {
-		                getData(button.id);
-		        });
-		});*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-		/*$(document).ready(function() {
-		        // You need to be listening for the click on the class "detail"
-		        $(".st0").click(function() {
-		                // This captures the current selected DOM object
-		                var obj = $(this);
-		                // This will extract the value inside
-		                var objValue = obj.text();
-		                // This is where you send the data to a new page to get a response
-		                $.ajax({
-		                        url: 'adminViews/includes/mapdata.php',
-		                        type: 'post',
-		                        data: {
-		                                'id': objValue
-		                        },
-		                        success: function(response) {
-		                                // You can see the response in your console log
-		                                console.log(response);
-		                                // To update your html, you can just receive it from
-		                                // your ajax dispatch page and place it into the modal (or wherever)
-		                                $('#display-panel').html(response);
-		                        }
-		                });
-		        });
-		});*/
-
-
-
-
-
-
-		/*$(document).ready(function() {
-		        $("input[type='checkbox']").click(function() {
-		                if ($("#redCheckbox").prop("checked")) {
-		                        $("button").css("background-color", "red");
-		                } else if ($("#blueCheckbox").prop("checked")) {
-		                        $("button").css("background-color", "blue");
-		                } else {
-		                        $("button").css("background-color", "");
-		                }
-		        });
-		});*/
-
-
-
-
-
-
-		/*$(document).ready(function(''){
-  $("#submit-btn").click(function(''){
-    // Collect the form data
-    var formData = {
-      'Block': $('input[name=Block]').val(''),
-      'Lot': $('input[name=Lot]').val(''),
-      'Street': $('input[name=Street]').val(''),
-      'Status': $('input[name=Status]').val(''),
-      'Area': $('input[name=Area]').val(''),
-      'Price': $('input[name=Price]').val(''),
-      'Remarks': $('input[name=Remarks]').val(''),
-    };
-
-    // Send the data to the server
-    $.ajax({
-      type: "POST",
-      url: "adminViews/includes/mapsubmit.php",
-      data: formData,
-      success: function(data) {
-        console.log(data);
-      }
-    });
-  });
-});*/
-
-		/*$("#submit-btn").click(function(''){
-		    $.ajax({
-		        type: "POST",
-		        url: "adminViews/includes/mapsubmit.php",
-		        data: {
-		            Blockvar: $("#Block").val(''),
-		            Lotvar: $("#Lot").val(''),
-		            Streetvar: $("#Street").val(''),
-		            Statusvar: $("#Status").val(''),
-		            Areavar: $("#Area").val(''),
-		            Pricevar: $("#Price").val(''),
-		            Remarksvar: $("#Remarks").val(''),
-
-		        },
-		        success: function(data) {
-		            $('#display-panel').html(data);
-		        }
-		    });
-		});*/
-	</script>
+	</script>			

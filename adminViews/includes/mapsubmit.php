@@ -5,7 +5,7 @@ require_once('connection.php');
 $id = $_GET["id"];
 
 // Retrieve data for lot_information table
-$sql = "select Block, Lot, Street, Status, Area, Price, Remarks from lot_information where Lot_ID = '$id'";
+$sql = "SELECT Block, Lot, Street, Status, Area, Price, Remarks from lot_information where Lot_ID = '$id'";
 
 
 $result = $con->query($sql);

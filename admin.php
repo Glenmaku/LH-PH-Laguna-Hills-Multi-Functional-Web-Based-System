@@ -1,13 +1,4 @@
-<?php 
-session_start();
-if (!empty($_SESSION['admin_I_D'])) {
-    $username = $_SESSION['admin_username'];
-    $adminid = $_SESSION['admin_I_D'];
-} else {
-    header("location:index.php");
-    exit();
-}
-?>
+
 <!DOCTYPE html>
 <html lang="en">
 

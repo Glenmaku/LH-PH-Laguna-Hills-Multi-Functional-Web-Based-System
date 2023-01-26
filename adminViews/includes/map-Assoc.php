@@ -13,7 +13,7 @@ if (isset($_POST['mapAssocSend'])) {
     $Dues_Status = $row['Dues_Status'];
     $date_assigned = $row['date_assigned'];
     $Remarks = $row['Remarks'];
-    $table = '
+    $table= '
         <div class="panel-content" id="panel">
         <h3>ASSOCIATION DUES</h3>
 
@@ -41,33 +41,8 @@ if (isset($_POST['mapAssocSend'])) {
                 <span class="input-group-text">Remarks</span>
                 <textarea class="form-control" id="remarks" disabled>' . $Remarks . '</textarea>
         </div>
-        <button class="edit-info" type="button" id="editModal-assoc-btn" data-toggle="modal" data-target="#editModal-assoc"><i class="fa-solid fa-pen"></i> Edit Information</button>
-        <div class="modal fade" id="editModal-assoc" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="editModalLabel">Edit Information</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form id="editForm">
-        <div class="input-group">
-        <span class="input-group-text">Date Assigned</span>
-        <input type="" id="date_assigned" class="form-control" value ="' . $date_assigned . '">
-</div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" id="saveChanges">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
-</div>';
+        <button class="edit-info" type="button" id="editModal-assoc-btn" data-toggle="modal" data-target="#editModal-assoc"><i class="fa-solid fa-pen"></i> Edit Information</button>';
   }
   echo $table;
 }
+?>
