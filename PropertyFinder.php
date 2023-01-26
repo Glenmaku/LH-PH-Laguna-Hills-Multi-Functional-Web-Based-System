@@ -6,10 +6,14 @@
 <div class="text-center container-fluid" >
 <h5>Laguna Hills</h5>
 <h1>Property Finder</h1>
+
 </div></div>
 <!--END-UPPER BANNER-->
 
 <section class="">
+<?php
+  include 'map-propertyfinder.php';
+?>
 
 </section>
 

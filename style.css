@@ -2869,6 +2869,21 @@ p {
     margin-bottom: 10px;
 
  }
+/* .container-map-svg-pp{
+position: relative;
+display: flex;
+width: 100%;
+justify-content: center;
+} */
+#my-svg{ 
+margin-left: 40%; 
+ } 
+
+#my-svg-pf{
+	margin-left: 20%; 
+ }
+
+ 
  @media (min-width:721px) and (max-width:949px) {
 	.pan1{
 		width: auto;
