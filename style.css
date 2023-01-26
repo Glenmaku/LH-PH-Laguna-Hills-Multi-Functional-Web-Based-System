@@ -2867,3 +2867,13 @@ p {
     margin-bottom: 10px;
 
  }
+/* .container-map-svg-pp{
+position: relative;
+display: flex;
+width: 100%;
+justify-content: center;
+} */
+#my-svg{ 
+padding: 1rem;
+margin-left: 40%; 
+ } 
