@@ -30,7 +30,7 @@
         </div>
       </div>
 
-      <div class=" panelss  flex-grow-1 ">
+      <div class=" panelss flex-grow-1">
         <div class="ame_panel2">
           <div class="pan1">
           <div class="Ame">
@@ -42,7 +42,8 @@
             <button class=" Ame2_2 ">
               <a href="#swimmingpool">Swimming Pool</a>
             </button>
-          </div></div>
+          </div>
+        </div>
           <div class="pan1">
           <div class="Ame">
             <button class="Ame3_2 ">
@@ -53,7 +54,8 @@
             <button href="#TennisCourt" class="Ame4_2 ">
               <a href="#tenniscourt">Tennis Court</a>
             </button>
-          </div></div>
+          </div>
+        </div>
         </div>
       </div>
     </div>

@@ -232,7 +232,7 @@ function login_function() {
                 $('#message').html('');
             })
             $('#FORGOTMODAL').modal("hide");
-        }
+        }   
 function togglePassword() {
     var passwordInput = document.getElementById("login_password");
     var toggleIcon = document.getElementById("toggle-icon");

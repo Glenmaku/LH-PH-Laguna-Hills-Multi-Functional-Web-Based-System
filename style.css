@@ -2542,18 +2542,20 @@ div.swall-button-container{
 		display: flex;
 		max-width: none!important;
 		margin-left: 0!important;
-	
 	}
+
+}
+	@media (max-width:720px) {
+	.pan1{
+		width: 50%;
+		flex-direction: column!important;
+
+	}	
 	.panelss{
 		height: auto!important;
 		flex-direction: column!important;
 		align-content: flex-end;
 		margin-top: 0;
-	}
-	.pan1{
-		width: 50%;
-		flex-direction: column!important;
-
 	}
 }
 @media (min-width:900px) {
@@ -2866,4 +2868,38 @@ p {
     align-items: center;
     margin-bottom: 10px;
 
+ }
+ @media (min-width:721px) and (max-width:949px) {
+	.pan1{
+		width: auto;
+		flex-direction: row!important;
+
+	}
+	.Ame1_2:hover a, .Ame2_2:hover a, .Ame3_2:hover a, .Ame4_2:hover a{
+		font-size: 30px!important;
+	}
+	.Ame1_2 a, .Ame2_2 a, .Ame3_2 a, .Ame4_2 a{
+		font-size: 30px!important;
+	}
+	.ame_panel2{
+		justify-content: center!important;
+		align-content: space-around!important;
+	}
+	.amenitiesarea{
+		flex: none!important;
+	}
+	.ame_information{
+	text-align: center!important;
+	}
+	.panelss{
+		display: block!important;
+		flex-direction: none!important	;
+		flex: none!important;
+		flex-wrap: wrap;
+		flex-grow: 0;
+		min-width: 45vw;
+		min-height: 0!important;
+		justify-content: space-between;
+		align-content: center;
+	}
  }
