@@ -5,14 +5,14 @@ require_once('connection.php');
 $id = $_GET["id"];
 
 // Retrieve data for lot_information table
-$sql = "SELECT Block, Lot, Street, Status, Area, Price, Remarks from lot_information where Lot_ID = '$id'";
+$sql = "SELECT Lot_ID, Block, Lot, Street, Status, Area, Price, Remarks from lot_information where Lot_ID = '$id'";
 
 
 $result = $con->query($sql);
 $lot_info = $result->fetch_assoc();
 
 // Retrieve data for association_dues table
-$sql = "select Monthly_Dues, Yearly_Dues, Dues_Status, Remarks, date_assigned from association_dues where Lot_ID = '$id'";
+$sql = "SELECT Lot_ID, Monthly_Dues, Yearly_Dues, Dues_Status, Remarks, date_assigned from association_dues where Lot_ID = '$id'";
 $result = $con->query($sql);
 $dues_info = $result->fetch_assoc();
 
