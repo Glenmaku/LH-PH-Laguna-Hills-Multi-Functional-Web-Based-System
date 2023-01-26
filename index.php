@@ -215,14 +215,12 @@
   <div class="justify-content-center fortops">
     <h1 class="align-self-center">Property Finder</h1>
     <p class="revealing">Find your Dream Home.</p>
+    <?php
+  include 'map-pfinder.php';
+?>
+
   </div>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
+ 
 
   <a href="PropertyFinder.php"><button class="custom-btn btn-4 revealing">View Properties</button></a>
 </section>
