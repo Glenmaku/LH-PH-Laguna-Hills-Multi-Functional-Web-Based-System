@@ -2856,3 +2856,14 @@ p {
 		padding-top: 10px;
 	}
 }
+.login-alert{
+	height: 40px!important;
+    width: 85%;
+    border-radius: 5px;
+    align-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+
+ }
