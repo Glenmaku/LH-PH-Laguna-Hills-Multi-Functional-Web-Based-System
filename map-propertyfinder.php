@@ -1,4 +1,4 @@
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1300 1800" style="enable-background:new 0 0 1190.2 1683.8;" xml:space="preserve" id="my-svg">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1300 1800" style="enable-background:new 0 0 1190.2 1683.8;" xml:space="preserve" id="my-svg-pf">
 			<style type="text/css">
 				.st0 {
 					fill: none;

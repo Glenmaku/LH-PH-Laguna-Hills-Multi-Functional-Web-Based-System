@@ -2874,6 +2874,11 @@ width: 100%;
 justify-content: center;
 } */
 #my-svg{ 
-padding: 1rem;
 margin-left: 40%; 
  } 
+
+#my-svg-pf{
+	margin-left: 20%; 
+ }
+
+ 
