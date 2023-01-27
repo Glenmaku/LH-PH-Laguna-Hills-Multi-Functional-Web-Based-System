@@ -3,15 +3,16 @@
 </div>
 <div class="lhph-map">
 	<div class="map">
-		<div class="input-group ">
-			<select class="form-select" aria-label="Default select example">
-				<option selected disabled>Monitor by:</option>
-				<option value="lot-information" id="lot-select">Lot Information</option>
-				<option value="association-dues" id="assoc-select">Association Dues</option>
-			</select>
+		<div class="input-group">
+			<div class="col-md-4">
+				<select class="form-select" aria-label="Default select example">
+					<option selected disabled>Monitor by:</option>
+					<option value="lot-information" id="lot-select">Lot Information</option>
+					<option value="association-dues" id="assoc-select">Association Dues</option>
+				</select>
+			</div>
 			<h3>|</h3>
-			<input type="text" class="form-control" aria-label="Text input with dropdown button" id="searchMap" placeholder="Search here : blk1lot1...">
-
+			<input type="text" class="form-control" id="searchMap" placeholder="Search here : blk1lot1..." style="border-radius: 5p;">
 		</div>
 		<!-- Generator: Adobe Illustrator 26.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 		<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1300 1800" style="enable-background:new 0 0 1190.2 1683.8;" xml:space="preserve" id="my-svg">
