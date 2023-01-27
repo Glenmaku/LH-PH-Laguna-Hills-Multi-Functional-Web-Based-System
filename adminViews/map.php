@@ -6,9 +6,8 @@
 		<div class="input-group ">
 			<select class="form-select" aria-label="Default select example">
 				<option selected disabled>Monitor by:</option>
-				<option value="1">One</option>
-				<option value="2">Two</option>
-				<option value="3">Three</option>
+				<option value="lot-information" id="lot-select">Lot Information</option>
+				<option value="association-dues" id="assoc-select">Association Dues</option>
 			</select>
 			<h3>|</h3>
 			<input type="text" class="form-control" aria-label="Text input with dropdown button" id="searchMap" placeholder="Search here : blk1lot1...">
@@ -5008,7 +5007,7 @@
 				$('#Price').val(map.Price);
 				$('#Remarks').val(map.Remarks);
 			});
-	
+
 		}
 
 		function updateEditInfo() { // updating the data
@@ -5040,11 +5039,11 @@
 
 		$(document).ready(function() {
 			changeColor();
-			
+
 		});
 
 		function displayMapData() {
-			
+
 			var mapData = "true";
 			$.ajax({
 				url: 'adminViews/includes/mapData.php',
@@ -5184,7 +5183,7 @@
 			fetch('adminViews/includes/mapsubmit.php?id=' + id)
 				.then(response => response.json())
 				.then(data => {
-					if (buttonSelected === "lot-information-btn") {
+					if (buttonSelected === "lot-select") {
 						if (data.Status === 'available') {
 							document.getElementById(id).style.fill = '#3F9B0B';
 						} else if (data.Status === 'occupied') {
@@ -5200,7 +5199,7 @@
 						} else if (data.Status === 'With House') {
 							document.getElementById(id).style.fill = 'blue';
 						}
-					} else if (buttonSelected === "assoc-btn") {
+					} else if (buttonSelected === "assoc-select") {
 
 						if (data.Dues_Status === 'outdated') {
 							document.getElementById(id).style.fill = '#F70D1A';
@@ -5218,17 +5217,22 @@
 				});
 		}
 
+		const select = document.querySelector('.form-select');
 		const paths = document.querySelectorAll('path');
-		paths.forEach(path => {
-			document.getElementById("lot-information-btn").addEventListener("click", function() {
-				buttonSelected = "lot-information-btn";
-				getData(path.id);
-				colorData(path.id);
-			});
-			document.getElementById("assoc-btn").addEventListener("click", function() {
-				buttonSelected = "assoc-btn";
-				getData(path.id);
-				colorData(path.id);
-			});
+
+		select.addEventListener("change", function() {
+			if (select.value === "lot-information") {
+				buttonSelected = "lot-select";
+				paths.forEach(path => {
+					getData(path.id);
+					colorData(path.id);
+				});
+			} else if (select.value === "association-dues") {
+				buttonSelected = "assoc-select";
+				paths.forEach(path => {
+					getData(path.id);
+					colorData(path.id);
+				});
+			}
 		});
-	</script>			
+	</script>
