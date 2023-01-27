@@ -44,7 +44,7 @@ if(isset($_POST['mapDataSend'])){
               <span class="input-group-text">Remarks</span>
               <textarea class="form-control" id="remarks" disabled>'.$Remarks.'</textarea>
       </div>
-      <input name="lotedit-id" id="lotedit-id"  value="'.$Lot_ID.'" readonly>
+      <input name="lotedit-id" id="lotedit-id"  value="'.$Lot_ID.'" hidden readonly>
       <button class="edit-info" id="loteditModal-btn"><i class="fa-solid fa-pen"></i> Edit Information</button>
       <button class="edit-info" id="lotupdateModal-btn" ><i class="fa-solid fa-pen"></i>Update Information</button>
 </div>';
