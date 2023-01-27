@@ -5107,7 +5107,7 @@
 				.then(response => response.json())
 				.then(data => {
 					// Update the values of the elements with the corresponding ids
-					document.getElementById('lotedit-id').value = data.Lot_ID;
+					document.getElementById('Lot_ID').value = data.Lot_ID;
 					document.getElementById("block").value = data.Block;
 					document.getElementById("lot").value = data.Lot;
 					document.getElementById("street").value = data.Street;
@@ -5118,6 +5118,7 @@
 					document.getElementById("Monthly_Dues").value = data.Monthly_Dues;
 					document.getElementById("Yearly_Dues").value = data.Yearly_Dues;
 					document.getElementById("Dues_Status").value = data.Dues_Status;
+					document.getElementById("lotedit-id").value = data.Lot_ID;
 				})
 				.catch(error => {
 					console.log(`Error: ${error}`);
@@ -5130,30 +5131,30 @@
 				.then(data => {
 					if (buttonSelected === "lot-select") {
 						if (data.Status === 'available') {
-							document.getElementById(id).style.fill = '#3F9B0B';
+							document.getElementById(id).style.fill = '#1FCE6D';
 						} else if (data.Status === 'occupied') {
-							document.getElementById(id).style.fill = 'red';
+							document.getElementById(id).style.fill = '#E94B35';
 						} else if (data.Status === 'Property Undisclosed') {
-							document.getElementById(id).style.fill = 'yellow';
+							document.getElementById(id).style.fill = '#F2C500';
 						} else if (data.Status === 'Open Space') {
-							document.getElementById(id).style.fill = 'black';
+							document.getElementById(id).style.fill = '#33495F';
 						} else if (data.Status === 'amenities') {
-							document.getElementById(id).style.fill = 'purple';
+							document.getElementById(id).style.fill = '#9C56B8';
 						} else if (data.Status === 'foreclosed') {
-							document.getElementById(id).style.fill = 'orange';
+							document.getElementById(id).style.fill = '#E87E04';
 						} else if (data.Status === 'With House') {
-							document.getElementById(id).style.fill = 'blue';
+							document.getElementById(id).style.fill = '#2C97DE';
 						}
 					} else if (buttonSelected === "assoc-select") {
 
 						if (data.Dues_Status === 'outdated') {
-							document.getElementById(id).style.fill = '#F70D1A';
+							document.getElementById(id).style.fill = '#E12323';
 						} else if (data.Dues_Status === 'updated') {
-							document.getElementById(id).style.fill = '#12AD2B';
+							document.getElementById(id).style.fill = '#018E5A';
 						} else if (data.Dues_Status === 'advanced') {
-							document.getElementById(id).style.fill = '#40E0D0';
+							document.getElementById(id).style.fill = '#FDC50C';
 						} else if (data.Dues_Status === 'N/A') {
-							document.getElementById(id).style.fill = '#0C090A';
+							document.getElementById(id).style.fill = '';
 						}
 					}
 				})
