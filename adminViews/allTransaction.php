@@ -352,7 +352,7 @@
             <!-- submit-area Section -->
             <div class="submit-area assoc-submit">
                 <div class="transaction-history">
-                    <button id=transac_history_modal_btn ><i class="fa-solid fa-clock-rotate-left" ></i> Transaction History</button>
+                    <button id="transac_history_modal_btn"onclick="Display_All_Transactions_Rec()" ><i class="fa-solid fa-clock-rotate-left" ></i> Transaction History</button>
                 </div>
                 <div class="payment">
                         <span>Total:</span>
@@ -376,11 +376,7 @@
                 </div>
             </div>
 
-<script>    
-    $("#transac_history_modal_btn").click(function(){
-        $("#transact_history_Modal").modal("show");
-    });
-</script>
+
 
       <!--  TRANSACTIO NHISTORY -->
 
@@ -389,12 +385,53 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Transaction History</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <table></table>
-      </div>
+      <nav>
+          <div class="nav nav-tabs" id="nav-tab" role="tablist">
+            <button class="nav-link active" id="all-transaction-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true" onclick="Display_All_Transactions_Rec()">All Transactions</button>
+
+            <button class="nav-link" id="association-dues-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false" onclick="Display_Association_Dues_Rec()">Association Dues</button>
+
+            <button class="nav-link" id="reservation-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false" onclick="Display_Reservations_Rec()">Reservations</button>
+
+            <button class="nav-link" id="other-services-tab" data-bs-toggle="tab" data-bs-target="#nav-disabled" type="button" role="tab" aria-controls="nav-disabled" aria-selected="false" onclick="Display_Other_Services_Rec()">Other Services</button>
+          </div>
+        </nav>
+
+        <div class="tab-content" id="nav-tabContent">
+
+          <div class="tab-pane fade show active p-5" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab" tabindex="0" >
+          <div class=" input-group  mb-3 owner-search-add-area" style="justify-content: space-between;">
+            <input type="text" class="form-control" id="search-all-transaction" placeholder="Search Here...." style="width: 40px;">
+          </div>
+            <div class=" " id="table-all-transaction_record"></div>
+          </div>
+
+
+          <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="0">
+          <div class=" " id="table-association-dues_record"></div>
+
+          </div>
+          <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab" tabindex="0">
+          <div class=" " id="table-reservations_record"></div>
+
+          </div>
+          <div class="tab-pane fade" id="nav-disabled" role="tabpanel" aria-labelledby="nav-disabled-tab" tabindex="0">
+          <div class=" " id="table-other-services_record"></div>
+
+          </div>
+        </div>
+<div class="tab-content" id="pills-tabContent">
+  <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">  </div>
+
+  <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">...</div>
+  <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab" tabindex="0">...</div>
+  <div class="tab-pane fade" id="pills-disabled" role="tabpanel" aria-labelledby="pills-disabled-tab" tabindex="0">...</div>
+</div>
+          </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
         <button type="button" class="btn btn-success">Save changes</button>
@@ -402,8 +439,136 @@
     </div>
   </div>
 </div>
+<!-- SCRIPT NI TRANSACTION HISTORY-->
+<script>    
+    $("#transac_history_modal_btn").click(function(){
+        $("#transact_history_Modal").modal("show");
+    });
+    $(document).ready(function() {
+        Display_All_Transactions_Rec();
+        Display_Association_Dues_Rec();
+        Display_Reservations_Rec();
+        Display_Other_Services_Rec();
+      });
+  /////////////////////////////////////////////////////////////////////
+  $(document).ready(function() {
+        var currentPage = localStorage.getItem("currentPage");
+        if (!currentPage) {
+            currentPage = 1;
+        }
+        Display_All_Transactions_Rec(currentPage);
+        Display_Association_Dues_Rec(currentPage);
+        Display_Reservations_Rec(currentPage);
+        Display_Other_Services_Rec(currentPage);
+    });
+/////////////////////
+    function  Display_All_Transactions_Rec(page) {
+        localStorage.setItem("currentPage", page);
+        var Display_All_Transactions_Rec = "true";
+        $.ajax({
+            url: 'adminViews/includes/Act-Trans_His.php',
+            type: 'post',
+            data: {
+                AllTransaction_Rec: Display_All_Transactions_Rec,
+                page: page
+            },
+            success: function(data, status) {
+                $("#table-all-transaction_record").html(data);
+            }
+        });
+    } 
+    function Get_All_Transaction_Table(page) {
+        Display_All_Transactions_Rec(page);
+    }
+/////////////////////
+function  Display_Association_Dues_Rec(page) {
+        localStorage.setItem("currentPage", page);
+        var Display_Association_Dues_Rec = "true";
+        $.ajax({
+            url: 'adminViews/includes/Act-Trans_His.php',
+            type: 'post',
+            data: {
+                Assoc_Rec: Display_Association_Dues_Rec,
+                page: page
+            },
+            success: function(data, status) {
+                $("#table-association-dues_record").html(data);
+            }
+        });
+    } 
+    function Get_Association_Dues_Table(page) {
+        Display_Association_Dues_Rec(page);
+        }
+       
+//////////////////////////////////////////////////////////////////////
+function  Display_Reservations_Rec(page) {
+        localStorage.setItem("currentPage", page);
+        var Display_Reservations_Rec = "true";
+        $.ajax({
+            url: 'adminViews/includes/Act-Trans_His.php',
+            type: 'post',
+            data: {
+                Reservations_Rec: Display_Reservations_Rec,
+                page: page
+            },
+            success: function(data, status) {
+                $("#table-reservations_record").html(data);
+            }
+        });
+    } 
+function Get_Reservations_Table(page) {
+            Display_Reservations_Rec(page);
+        }
+       
+//////////////////////////////////////////////////////////////////////
+function  Display_Other_Services_Rec(page) {
+        localStorage.setItem("currentPage", page);
+        var Display_Other_Services_Rec = "true";
+        $.ajax({
+            url: 'adminViews/includes/Act-Trans_His.php',
+            type: 'post',
+            data: {
+                Others_Rec: Display_Other_Services_Rec,
+                page: page
+            },
+            success: function(data, status) {
+                $("#table-other-services_record").html(data);
+            }
+        });
+    } 
 
-               
+function Get_Others_Services_Table(page) {
+            Display_Other_Services_Rec(page);
+        }
+//////////////////////////////////////////////////////////////////////
+$(document).ready(function() {
+
+load_data_all_transaction();
+
+function load_data_all_transaction(alltransquery) {
+    $.ajax({
+        url: "adminViews/includes/Act-Search-Transaction.php",
+        method: "POST",
+        data: {
+            alltransquery: alltransquery
+        },
+        success: function(data) {
+            $("#table-all-transaction_record").html(data);
+        }
+    });
+}
+$('#search-all-transaction').keyup(function() {
+    var search = $(this).val();
+    if (search != '') {
+        load_data_all_transaction(search);
+    } else {
+        load_data_all_transaction();
+    }
+});
+});
+
+</script>
+<!------------------------------------------------------- ENND SCRIPT NI TRANSACTION HISTORY--> 
 
 <!-- SCRIPT NI ADD TRANSACTION-->
 <script>
