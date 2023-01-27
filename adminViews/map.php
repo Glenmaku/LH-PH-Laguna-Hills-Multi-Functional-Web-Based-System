@@ -4994,48 +4994,6 @@
 
 
 	<script type="text/javascript">
-		function get_admin_record(updateAdminEdit) { // to show the current data
-			$('#adminUpdate_edit').val(updateAdminEdit);
-			$.post("adminViews/includes/update_assoc_date.php", {
-				updateAdminEdit: updateAdminEdit
-			}, function(data, status) {
-				var map = JSON.parse(data);
-				$('#Block').val(map.Block);
-				$('#Lot').val(map.Lot);
-				$('#Street').val(map.Street);
-				$('#Status').val(map.Status);
-				$('#Area').val(map.Area);
-				$('#Price').val(map.Price);
-				$('#Remarks').val(map.Remarks);
-			});
-
-		}
-
-		function updateEditInfo() { // updating the data
-			var block = $('#Block').val();
-			var lot = $('#Lot').val();
-			var street = $('#Street').val();
-			var status = $('#Status').val();
-			var areaPerSqm = $('#Area').val();
-			var price = $('#Price').val();
-			var remarks = $('#Remarks').val();
-
-			$.post('adminViews/includes/update_assoc_date.php', {
-					Block: Block,
-					Lot: Lot,
-					Street: Street,
-					Status: Status,
-					Area: Area,
-					Price: Price,
-					Remarks: Remarks
-
-				},
-				function(data, status) {
-					$('#loteditModal').modal('show');
-					$('#map-submit-error').html(data);
-					panelData();
-				});
-		}
 
 
 		$(document).ready(function() {

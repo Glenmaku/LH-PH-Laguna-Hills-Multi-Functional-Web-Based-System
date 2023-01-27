@@ -18,10 +18,11 @@ if (isset($_POST['mapAssocSend'])) {
         <h3>ASSOCIATION DUES</h3>
 
         <div class="input-group">
-        <span class="input-group-text">Block and Lot</span>
-        <input type="text" id="Lot_ID" class="form-control" value ="' . $Lot_ID . '" disabled>
-        
-        <span class="input-group-text">Monthly Dues</span>
+                <span class="input-group-text">Block and Lot</span>
+                <input type="text" id="Lot_ID" class="form-control" value ="' . $Lot_ID . '" disabled>
+        </div>
+        <div class="input-group">
+                <span class="input-group-text">Monthly Dues</span>
                 <input type="number" id="Monthly_Dues" class="form-control" value ="' . $Monthly_Dues . '" disabled>
         </div>
         <div class="input-group">
