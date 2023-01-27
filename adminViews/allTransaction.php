@@ -341,7 +341,7 @@
                                     <td><input type="text" id="quantity" name="field2" /></td>
                                     <td><input type="text" id="price" name="field3" /></td>
                                     <td><input type="text" id="o_subtotal" name="field4" /></td>
-                                    <td><a href="javascript:void(0);" id="addRow" class="add_button" title="Add field"><i class="fa-solid fa-plus "></i>Add</a></td>
+                                    <td><a href="javascript:void(0);" id="addRow" class="add_button btn btn-success" title="Add field"><i class="fa-solid fa-plus "></i> Add</a></td>
                                 </tr>
                             </table>
                         </div>
@@ -353,34 +353,6 @@
             <div class="submit-area assoc-submit">
                 <div class="transaction-history">
                     <button id=transac_history_modal_btn ><i class="fa-solid fa-clock-rotate-left" ></i> Transaction History</button>
-<script>
-    $("#transac_history_modal_btn").click(function(){
-        $("#transact_history_Modal").modal("show");
-    });
-</script>
-
-      <!--  TRANSACTIO NHISTORY -->
-
-<!-- Modal -->
-<div class="modal fade " id="transact_history_Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-fullscreen">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <table></table>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-      <!-- END-------------------------------------------------------- TRANSACTION HISTORY -->
                 </div>
                 <div class="payment">
                         <span>Total:</span>
@@ -403,10 +375,35 @@
                         <button type="reset" class="btn btn-danger" id="assoc-reset">Reset Form</button>
                 </div>
             </div>
-        </div>
-        </form>
+
+<script>    
+    $("#transac_history_modal_btn").click(function(){
+        $("#transact_history_Modal").modal("show");
+    });
+</script>
+
+      <!--  TRANSACTIO NHISTORY -->
+
+<!-- Modal -->
+<div class="modal fade modal-xl " id="transact_history_Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <table></table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-success">Save changes</button>
+      </div>
     </div>
+  </div>
 </div>
+
+               
 
 <!-- SCRIPT NI ADD TRANSACTION-->
 <script>
@@ -649,7 +646,7 @@
         // Add a delete button to the new row
         row.append(
             $("<td>").html(
-                '<a href="javascript:void(0);" id="deleteButton" title="Delete field"><i class="fa-solid fa-minus "></i>Delete</a>'
+                '<a href="javascript:void(0);" id="deleteButton" title="Delete field" class="btn btn-danger"><i class="fa-solid fa-minus "></i>Delete</a>'
             )
         );
         // Add the new row to the table
@@ -838,7 +835,7 @@ function reserveSubmit(){  //sidebar
         method:"post",
         data:{record:1},
         success:function(data){
-            $('.submit-area').html(data);
+            $('.payment').html(data);
         }
     });
 }
@@ -849,7 +846,7 @@ function assocSubmit(){  //sidebar
         method:"post",
         data:{record:1},
         success:function(data){
-            $('.submit-area').html(data);
+            $('.payment').html(data);
         }
     });
 }
