@@ -177,6 +177,11 @@
                                         <option value="blk5lot26"></option>
                                         <option value="blk5lot27"></option><!--END FOR BLOCK 5-->
                                         <option value="blk6lot1"></option><!--END FOR BLOCK 6-->
+                                        <option value="blk10lot1"></option>
+                                        <option value="blk10lot10"></option>
+                                        <option value="blk10lot11"></option>
+                                        <option value="blk10lot12"></option>
+                                        <option value="blk10lot13"></option><!--END FOR BLOCK 10-->
                                     </datalist>
                                 </div>
                                 <div class="total-balance">
@@ -441,11 +446,7 @@
 </div>
           </div>
       <div class="modal-footer">
-<<<<<<< Updated upstream
-=======
-  <!--      <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-success">Save changes</button>-->
->>>>>>> Stashed changes
+
       </div>
     </div>
   </div>
