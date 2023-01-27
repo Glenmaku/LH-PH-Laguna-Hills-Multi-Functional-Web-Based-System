@@ -1,8 +1,5 @@
 <div>
-    <div class="transaction-history">
-        <button><i class="fa-solid fa-clock-rotate-left"></i> Transaction History</button>
-    </div>
-    <div class="payment">
+    <div class="payment-area">
         <span>Total:</span>
         <input type="text" class="form-control" name="all-total" id="all-total" value="0" disabled>
 
