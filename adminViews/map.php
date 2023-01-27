@@ -5101,27 +5101,13 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 		function getData(id) {
 			// Use fetch API for HTTP requests
 			fetch(`adminViews/includes/mapsubmit.php?id=${id}`)
 				.then(response => response.json())
 				.then(data => {
 					// Update the values of the elements with the corresponding ids
+					document.getElementById('lotedit-id').value = data.Lot_ID;
 					document.getElementById("block").value = data.Block;
 					document.getElementById("lot").value = data.Lot;
 					document.getElementById("street").value = data.Street;
