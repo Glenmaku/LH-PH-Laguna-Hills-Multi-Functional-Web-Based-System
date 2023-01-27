@@ -382,7 +382,7 @@
 
 <!-- Modal -->
 <div class="modal fade modal-xl " id="transact_history_Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
+  <div class="modal-dialog modal-dialog-scrollable">
     <div class="modal-content">
       <div class="modal-header">
         <h1 class="modal-title fs-5" id="exampleModalLabel">Transaction History</h1>
@@ -402,26 +402,34 @@
         </nav>
 
         <div class="tab-content" id="nav-tabContent">
-
-          <div class="tab-pane fade show active p-5" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab" tabindex="0" >
+<!---->
+          <div class="tab-pane fade show active p-3" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab" tabindex="0" >
           <div class=" input-group  mb-3 owner-search-add-area" style="justify-content: space-between;">
             <input type="text" class="form-control" id="search-all-transaction" placeholder="Search Here...." style="width: 40px;">
           </div>
             <div class=" " id="table-all-transaction_record"></div>
           </div>
-
-
-          <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="0">
+<!---->
+          <div class="tab-pane fade p-3" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="0">
+          <div class=" input-group  mb-3 owner-search-add-area" style="justify-content: space-between;">
+            <input type="text" class="form-control" id="search-association-dues" placeholder="Search Here...." style="width: 40px;">
+          </div>
           <div class=" " id="table-association-dues_record"></div>
-
+<!---->
           </div>
-          <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab" tabindex="0">
+          <div class="tab-pane fade p-3" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab" tabindex="0">
+          <div class=" input-group  mb-3 owner-search-add-area" style="justify-content: space-between;">
+            <input type="text" class="form-control" id="search-reservations" placeholder="Search Here...." style="width: 40px;">
+          </div>
           <div class=" " id="table-reservations_record"></div>
-
+<!---->
           </div>
-          <div class="tab-pane fade" id="nav-disabled" role="tabpanel" aria-labelledby="nav-disabled-tab" tabindex="0">
+          <div class="tab-pane fade p-3" id="nav-disabled" role="tabpanel" aria-labelledby="nav-disabled-tab" tabindex="0">
+          <div class=" input-group  mb-3 owner-search-add-area" style="justify-content: space-between;">
+            <input type="text" class="form-control" id="search-other-services" placeholder="Search Here...." style="width: 40px;">
+          </div>
           <div class=" " id="table-other-services_record"></div>
-
+<!---->
           </div>
         </div>
 <div class="tab-content" id="pills-tabContent">
@@ -433,6 +441,11 @@
 </div>
           </div>
       <div class="modal-footer">
+<<<<<<< Updated upstream
+=======
+  <!--      <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-success">Save changes</button>-->
+>>>>>>> Stashed changes
       </div>
     </div>
   </div>
@@ -464,7 +477,7 @@
         localStorage.setItem("currentPage", page);
         var Display_All_Transactions_Rec = "true";
         $.ajax({
-            url: 'adminViews/includes/Act-Trans_His.php',
+            url: 'adminViews/includes/Act-Trans_His_All.php',
             type: 'post',
             data: {
                 AllTransaction_Rec: Display_All_Transactions_Rec,
@@ -483,7 +496,7 @@ function  Display_Association_Dues_Rec(page) {
         localStorage.setItem("currentPage", page);
         var Display_Association_Dues_Rec = "true";
         $.ajax({
-            url: 'adminViews/includes/Act-Trans_His.php',
+            url: 'adminViews/includes/Act-Trans_His_Assoc.php',
             type: 'post',
             data: {
                 Assoc_Rec: Display_Association_Dues_Rec,
@@ -503,7 +516,7 @@ function  Display_Reservations_Rec(page) {
         localStorage.setItem("currentPage", page);
         var Display_Reservations_Rec = "true";
         $.ajax({
-            url: 'adminViews/includes/Act-Trans_His.php',
+            url: 'adminViews/includes/Act-Trans_His_Res.php',
             type: 'post',
             data: {
                 Reservations_Rec: Display_Reservations_Rec,
@@ -523,7 +536,7 @@ function  Display_Other_Services_Rec(page) {
         localStorage.setItem("currentPage", page);
         var Display_Other_Services_Rec = "true";
         $.ajax({
-            url: 'adminViews/includes/Act-Trans_His.php',
+            url: 'adminViews/includes/Act-Trans_His_Other.php',
             type: 'post',
             data: {
                 Others_Rec: Display_Other_Services_Rec,
@@ -542,10 +555,14 @@ function Get_Others_Services_Table(page) {
 $(document).ready(function() {
 
 load_data_all_transaction();
+load_data_association_dues();
+load_data_reservations();
+load_data_other_services();
+
 
 function load_data_all_transaction(alltransquery) {
     $.ajax({
-        url: "adminViews/includes/Act-Search-Transaction.php",
+        url: "adminViews/includes/Act-Search-Transaction-All.php",
         method: "POST",
         data: {
             alltransquery: alltransquery
@@ -563,6 +580,74 @@ $('#search-all-transaction').keyup(function() {
         load_data_all_transaction();
     }
 });
+////------------------------------------------------------------------
+function load_data_association_dues(assocquery) {
+    $.ajax({
+        url: "adminViews/includes/Act-Search-Transaction-Assoc.php",
+        method: "POST",
+        data: {
+            assocquery: assocquery
+        },
+        success: function(data) {
+            $("#table-association-dues_record").html(data);
+        }
+    });
+}
+$('#search-association-dues').keyup(function() {
+    var search = $(this).val();
+    if (search != '') {
+        load_data_association_dues(search);
+    } else {
+        load_data_association_dues();
+    }
+});
+////------------------------------------------------------------------
+
+function load_data_reservations(reservequery) {
+    $.ajax({
+        url: "adminViews/includes/Act-Search-Transaction-Res.php",
+        method: "POST",
+        data: {
+            reservequery: reservequery
+        },
+        success: function(data) {
+            $("#table-reservations_record").html(data);
+        }
+    });
+}
+$('#search-reservations').keyup(function() {
+    var search = $(this).val();
+    if (search != '') {
+        load_data_reservations(search);
+    } else {
+        load_data_reservations();
+    }
+});
+////------------------------------------------------------------------
+function load_data_other_services(otherquery) {
+    $.ajax({
+        url: "adminViews/includes/Act-Search-Transaction-Other.php",
+        method: "POST",
+        data: {
+            otherquery: otherquery
+        },
+        success: function(data) {
+            $("#table-other-services_record").html(data);
+        }
+    });
+}
+$('#search-other-services').keyup(function() {
+    var search = $(this).val();
+    if (search != '') {
+        load_data_other_services(search);
+    } else {
+        load_data_other_services();
+    }
+});
+
+
+
+////------------------------------------------------------------------////////////////////////
 });
 
 </script>

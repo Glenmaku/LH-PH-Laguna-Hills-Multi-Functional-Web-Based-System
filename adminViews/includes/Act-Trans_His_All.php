@@ -3,7 +3,7 @@ require_once("connection.php");
 /////////////////////////////////////////////////////////////
 
 if(isset($_POST['AllTransaction_Rec'])){
-    $records_per_page = 2; // number of records per page
+    $records_per_page = 10; // number of records per page
     $page = isset($_POST["page"]) ? (int)$_POST["page"] : 1; // current page number
     $start_from = ($page - 1) * $records_per_page; // start from record
     $AllTransaction_table ='<table class="table">
@@ -57,34 +57,11 @@ $AllTransaction_table .= '</tbody></table>';
   $AllTransaction_table=  $AllTransaction_table . $pagination;
 
   echo $AllTransaction_table;
-}else {
+  
+}
+
+else {
     echo 'Data Not Found ';
   }
-
-/////////////////////////////////////////////////////////////
-
-if(isset($_POST['Assoc_Rec'])){
-    $records_per_page = 10; // number of records per page
-    $page = isset($_POST["page"]) ? (int)$_POST["page"] : 1; // current page number
-    $start_from = ($page - 1) * $records_per_page; // start from record
-}  
-/////////////////////////////////////////////////////////////
-
-if(isset($_POST['Reservations_Rec'])){
-    $records_per_page = 10; // number of records per page
-    $page = isset($_POST["page"]) ? (int)$_POST["page"] : 1; // current page number
-    $start_from = ($page - 1) * $records_per_page; // start from record
-}
-
-/////////////////////////////////////////////////////////////
-
-if(isset($_POST['Other_Rec'])){
-    $records_per_page = 10; // number of records per page
-    $page = isset($_POST["page"]) ? (int)$_POST["page"] : 1; // current page number
-    $start_from = ($page - 1) * $records_per_page; // start from record
-}
-
-/////////////////////////////////////////////////////////////
-
 
 ?>
