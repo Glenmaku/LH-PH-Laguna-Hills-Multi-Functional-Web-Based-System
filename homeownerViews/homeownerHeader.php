@@ -19,7 +19,7 @@
             <ul class="dropdown-menu dropdown-menu-end">
                 <li><a class="dropdown-item" onclick="change_pass()" id="btn_change-pass"><i class="fa-regular fa-circle-user"></i> My Account</a></li>
                 <li><a class="dropdown-item" onclick="get_user_info()" id="btn_setting_owner_acc" class="btn_setting_owner_acc"><i class="fa-solid fa-fingerprint"></i> Owner Information</a></li>
-                <li><a class="dropdown-item" href="index.php"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></li>
+                <li><a class="dropdown-item" href="includes/Act-logout.php"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></li>
             </ul>
         </div>
 
