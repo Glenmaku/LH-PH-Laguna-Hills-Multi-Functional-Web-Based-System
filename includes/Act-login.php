@@ -28,7 +28,7 @@ else{
             $_SESSION['owner_lName']=$row['owner_lname'];
             $_SESSION['owner_username']=$row['owner_username'];
             $_SESSION['owner_email']=$row['owner_email'];
-            $_SESSION['owner_password']=$row['owner_password'];
+           // $_SESSION['owner_password']=$row['owner_password'];
            // echo"<script>remove(#login-message);</script>";
             //header("location: ../homeowneraccountconnect.php?Welcome");
             
@@ -51,7 +51,7 @@ else{
                 $_SESSION['admin_lName']=$row['admin_lname'];
                 $_SESSION['admin_username']=$row['admin_username'];
                 $_SESSION['admin_email']=$row['admin_email'];
-                $_SESSION['admin_password']=$row['admin_password'];
+            //    $_SESSION['admin_password']=$row['admin_password'];
                 echo "<script>window.location.replace('admin.php?Welcome');</script>";
                 //echo"<script>remove(#login-message);</script>";
                 //header("location: ../adminaccountconnect.php?Welcome");//change this to the homepage of the admin panel
