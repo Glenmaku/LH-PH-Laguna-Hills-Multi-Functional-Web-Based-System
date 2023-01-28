@@ -39,8 +39,8 @@
             <div class="modal-body">
                 <div id="message-updateownerinfo"></div>
                 <form class="row g-3">
-                    <input  name="owner_username" id="owner_username" value="<?php echo $username ?>" readonly>
-                    <input  name="ownerview_id" id="ownerview_id" value="<?php echo $ownerid ?>" readonly>
+                    <input  type="hidden" name="owner_username" id="owner_username" value="<?php echo $username ?>" readonly>
+                    <input  type="hidden" name="ownerview_id" id="ownerview_id" value="<?php echo $ownerid ?>" readonly>
                     <div class="col-12">
                         <label for="name" class="form-label">First Name</label>
                         <input type="text" class="form-control" name="owner_fname" id="owner_fname">
