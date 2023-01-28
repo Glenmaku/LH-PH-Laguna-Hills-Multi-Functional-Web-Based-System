@@ -69,7 +69,7 @@ function showAllAddAccount(){  //add account in Account records
 
 function showmessage(){  //sidebar
     $.ajax({
-        url:"./adminViews/sendmail.php",
+        url:"adminViews/sendmail_email.php",
         method:"post",
         data:{record:1},
         success:function(data){
