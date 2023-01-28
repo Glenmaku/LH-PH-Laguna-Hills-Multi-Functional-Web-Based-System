@@ -49,7 +49,7 @@ $data = mysqli_query($con, $sql);
                     </div>
                     <div class="input-group  mb-3">
                         <span class="input-group-text" id="basic-addon1">Username</span>
-                        <input class="form-control" name="admin_username" id="admin_username" value="" readonly>
+                        <input class="form-control" name="aadmin_username" id="aadmin_username" value="" readonly>
                         <button id="usernamegenerate" name="usernamegenerate" type="button" hidden>Generate</button>
 
                     </div>
@@ -144,7 +144,7 @@ $data = mysqli_query($con, $sql);
         displayAdminData();
         Insert_admin_record();
         get_Username();
-        delete_owner_record()
+        delete_owner_record();
     });
 
     $(document).ready(function() {
@@ -182,7 +182,8 @@ $data = mysqli_query($con, $sql);
                 method: "post",
                 url: "adminViews/includes/adminUsername.php",
                 success: function(data) {
-                    $("#admin_username").val(data);
+                    $("#aadmin_username").val(data);
+                    console.log(data);
                 }
             });
         });
@@ -204,7 +205,7 @@ $data = mysqli_query($con, $sql);
             var AFname = $('#admin_fname').val();
             var ALname = $('#admin_lname').val();
             var AEmail = $('#admin_email').val();
-            var AUsername = $('#admin_username').val();
+            var AUsername = $('#aadmin_username').val();
             var APassword = $('#admin_password').val();
             $.ajax({
                 url: 'adminViews/includes/Act-AddAdmin.php',
@@ -235,7 +236,7 @@ $data = mysqli_query($con, $sql);
         $(document).on('click', '#add-account', function() {
             $('#usernamegenerate').trigger('click');
         })
-    }
+    };
     // UPDATE
     function get_admin_record(updateAdminId) { // to show the current data
         $('#adminUpdate_id').val(updateAdminId);

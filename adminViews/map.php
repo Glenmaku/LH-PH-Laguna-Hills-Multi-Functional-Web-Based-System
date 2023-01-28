@@ -422,34 +422,34 @@
 					</sodipodi:namedview>
 					<g id="layer1" transform="translate(-8.242317,-12.593058)" inkscape:groupmode="layer" inkscape:label="Layer 1">
 						<g id="g65" transform="matrix(0.26458333,0,0,0.26458333,23.638951,15.556005)" inkscape:label="Image">
-							<path id="blk4lot4" sodipodi:nodetypes="ccccccccc" style="fill:#808080;stroke:#FFFFFF;stroke-miterlimit:10;" d="
+							<path id="blk4lot4" onclick="getData('blk4lot4')"sodipodi:nodetypes="ccccccccc" style="fill:#808080;stroke:#FFFFFF;stroke-miterlimit:10;" d="
 				M1793.273,2824.002c1.87-1.869,5.397-3.396,8.311-0.617c0.354,0.425,50.696,57.064,51.57,58.333
 				c1.905,1.908,3.933,4.814,2.689,6.482c-1.499,2.246-27.846,34.438-28.681,35.603c-2.201,2.137-4.626,1.846-7.362,1.236
 				l-70.951-15.84c-2.444-1.128-1.821-3.888-1.751-6.24C1746.942,2889.787,1768.702,2849.854,1793.273,2824.002L1793.273,2824.002z" />
 
-							<path id="blk4lot5" onclick="getData('blk4lot4')" sodipodi:nodetypes="ccccccccc" style="fill:#808080;stroke:#FFFFFF;stroke-miterlimit:10;" d="
+							<path id="blk4lot5" onclick="getData('blk4lot5')" sodipodi:nodetypes="ccccccccc" style="fill:#808080;stroke:#FFFFFF;stroke-miterlimit:10;" d="
 				M1744.163,2919.204c0.456-2.605,2.465-5.882,6.447-5.281c0.534,0.145,67.808,14.994,69.252,15.53
 				c2.656,0.467,5.985,1.679,5.926,3.759c0.063,2.699-4.248,46.7-5.24,48.821c-0.573,3.014-3.02,3.673-6.214,3.114l-74.949-6.543
 				c-1.911-0.266-3.741-3.195-3.398-5.008L1744.163,2919.204z" />
 
-							<path id="blk4lot14" onclick="getData('blk4lot5')" sodipodi:nodetypes="ccccccccc" style="fill:#808080;stroke:#FFFFFF;stroke-miterlimit:10;" d="
+							<path id="blk4lot14" onclick="getData('blk4lot14')" sodipodi:nodetypes="ccccccccc" style="fill:#808080;stroke:#FFFFFF;stroke-miterlimit:10;" d="
 				M1965.475,3170.978c1.417-2.111,3.34-3.086,6.185-2.641l51.732,8.308c13.107,2.332,14.895,0.831,14.881,12.653l0.424,83.091
 				c-0.591,11.447-6.326,14.42-23.712,10.386c-41.405-12.126-62.138-23.991-94.522-43.504c-2.258-1.572-2.789-3.071-1.459-4.913
 				L1965.475,3170.978z" />
 
-							<path id="blk4lot10" onclick="getData('blk4lot14')" sodipodi:nodetypes="ccscccccccccscc" style="fill:#808080;stroke:#FFFFFF;stroke-miterlimit:10;" d="
+							<path id="blk4lot10" onclick="getData('blk4lot10')" sodipodi:nodetypes="ccscccccccccscc" style="fill:#808080;stroke:#FFFFFF;stroke-miterlimit:10;" d="
 				M2040.275,3010.864c-1.261-11.333-13.895-17.324-21.816-14.494c-1.079,0.258-17.08,8.189-23.095,12.309
 				c-1.209,0.828-2.594,2.243-2.829,2.644l-12.149,18.176c-0.868,1.201-1.767,2.407-3.128,3.69c-2.271,2.043-5.14,3.396-7.411,4.695
 				c-4.422,3.077-4.168,5.998-4.374,9.663l-2.09,49.098c0.27,3.633,2.327,4.423,4.944,4.708l70.607,3.729
 				c3.122,0.173,5.577-0.694,6.09-3.452c0.237-0.859,0.211-4.225,0.184-4.874
 				C2044.022,3069.082,2047.214,3055.165,2040.275,3010.864L2040.275,3010.864z" />
 
-							<path id="blk4lot9" onclick="getData('blk4lot10')" sodipodi:nodetypes="ccccccccccc" style="fill:#808080;stroke:#FFFFFF;stroke-miterlimit:10;" d="
+							<path id="blk4lot9" onclick="getData('blk4lot9')" sodipodi:nodetypes="ccccccccccc" style="fill:#808080;stroke:#FFFFFF;stroke-miterlimit:10;" d="
 				M1918.92,3040.911c1.22-2.231,2.657-2.468,5.438-1.574c14.57,5.39,22.309,3.595,31.686,4.123c3.29,0.43,5.114,2.211,4.977,4.983
 				l-2.161,48.528c-0.1,3.764-0.432,4.936-2.845,7.737l-23.27,23.267c-2.217,2.89-4.37,2.423-6.716,1.228l-39.428-27.437
 				c-2.391-1.361-3.056-2.806-1.899-4.76L1918.92,3040.911z" />
 
-							<path id="blk4lot6" onclick="getData('blk4lot9')" sodipodi:nodetypes="ccccssccccccc" style="fill:#808080;stroke:#FFFFFF;stroke-miterlimit:10;" d="
+							<path id="blk4lot6" onclick="getData('blk4lot6')" sodipodi:nodetypes="ccccssccccccc" style="fill:#808080;stroke:#FFFFFF;stroke-miterlimit:10;" d="
 				M1823.965,2992.183c-0.089-2.288,2.329-3.781,5.027-3.645l61.167-0.561c3.801,0.427,7.521,0.162,7.257,7.036
 				c-1.064,20.653,3.628,22.84,10.422,32.407c0.231,0.325,1.185,1.444,1.554,1.83c1.789,1.87,3.132,2.863,3.529,3.134
 				c4.761,3.715,1.418,8.323-2.353,14.226l-27.738,46.038c-2.47,2.677-6.075,2.268-8.303,0.865l-47.437-42.427
@@ -4890,19 +4890,19 @@
 
 	<div class="lot-info">
 		<div class="display-panel">
-			<div class="panel-btn">
+			<div class="panel-btn"><!--BUTTON SA UPPER RIGHT-->
 				<button id="lot-information-btn"><i class="fa-solid fa-house"></i></button>
 				<button id="assoc-btn"><i class="fa-solid fa-scroll"></i></button>
 				<button id="owner-information-btn"><i class="fa-solid fa-user"></i></button>
-
 			</div>
 
 			<div id="lot-information-map" class="lot-information-map"></div>
 			<div id="map-assoc"></div>
 			<div id="owner-information"></div>
-
 		</div>
 
+
+<!--STATUS BELOWSSSS-->
 		<div class="status" id="status-check">
 			<div class="status-title">
 				<h5>STATUS</h5>
@@ -4937,70 +4937,20 @@
 			</div>
 
 		</div>
-		<!---ETO PARA SA EDIT INFORMATION--->
-		<div class="modal fade" id="loteditModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-			<div class="modal-dialog">
-				<div class="modal-content">
-					<div class="modal-header">
-						<h1 class="modal-title fs-5" id="exampleModalLabel_edit">Edit Information</h1>
-						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-					</div>
-					<div class="modal-body">
-						<div id="map-submit-error"></div>
-
-
-						<form>
-							<div class="mb-3">
-								<label for="recipient-name" class="col-form-label">Block</label>
-								<input type="number" class="form-control" id="Block">
-							</div>
-							<div class="mb-3">
-								<label for="recipient-name" class="col-form-label">Lot</label>
-								<input type="number" class="form-control" id="Lot">
-							</div>
-							<div class="mb-3">
-								<label for="recipient-name" class="col-form-label">Street</label>
-								<input type="text" class="form-control" id="Street">
-							</div>
-							<div class="mb-3">
-								<label for="recipient-name" class="col-form-label">Status</label>
-								<input type="text" class="form-control" id="Status">
-							</div>
-							<div class="mb-3">
-								<label for="recipient-name" class="col-form-label">Area</label>
-								<input type="number" class="form-control" id="Area">
-							</div>
-							<div class="mb-3">
-								<label for="recipient-name" class="col-form-label">Price</label>
-								<input type="number" class="form-control" id="Price">
-							</div>
-							<div class="mb-3">
-								<label for="message-text" class="col-form-label">Remarks</label>
-								<textarea class="form-control" id="Remarks"></textarea>
-							</div>
-						</form>
-					</div>
-					<input name="adminUpdate_edit" id="adminUpdate_edit" type="hidden">
-					<div class="modal-footer">
-						<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-						<button type="button" class="btn btn-primary" id="submit-btn" onclick="updateEditInfo()">Submit</button>
-
-					</div>
-				</div>
-			</div>
-		</div>
+		
 	</div>
 
 
 
 	<script type="text/javascript">
 
-
 		$(document).ready(function() {
 			changeColor();
+			getData();
+			displayMapData();
 
 		});
-
+///////////////////////////////////////////////////	////////////////MAP
 		function displayMapData() {
 
 			var mapData = "true";
@@ -5017,7 +4967,7 @@
 			});
 		}
 
-
+////////////////////////////////////////////////////////////////////ASOC
 		function displayAssocData() {
 			var assocData = "true";
 			$.ajax({
@@ -5032,7 +4982,7 @@
 				}
 			});
 		}
-
+/////////////////////////////////////////////////////////////////
 		function displayOwner() {
 			var ownerData = "true";
 			$.ajax({
@@ -5047,7 +4997,7 @@
 				}
 			});
 		}
-
+/////////////////////////////////////////////////////////////
 		$(document).ready(function() {
 			$("#lot-information-btn").click(function() {
 				$("#lot-information-map").show();
@@ -5071,7 +5021,7 @@
 			});
 		});
 
-
+////////////////////////////////////////////////////////////////
 
 
 
@@ -5099,14 +5049,17 @@
 		});
 
 
-
-
+//////////////////////////////////////////////////////////////////////////////
 		function getData(id) {
 			// Use fetch API for HTTP requests
+	
 			fetch(`adminViews/includes/mapsubmit.php?id=${id}`)
+
 				.then(response => response.json())
 				.then(data => {
+				
 					// Update the values of the elements with the corresponding ids
+					//document.getElementById("input-field-id").value = myId;
 					document.getElementById('Lot_ID').value = data.Lot_ID;
 					document.getElementById("block").value = data.Block;
 					document.getElementById("lot").value = data.Lot;
@@ -5114,16 +5067,59 @@
 					document.getElementById("status").value = data.Status;
 					document.getElementById("area-per-sqm").value = data.Area;
 					document.getElementById("price").value = data.Price;
-					document.getElementById("remarks").value = data.Remarks;
+					document.getElementById("remarkss").value = data.Remarks;
+					document.getElementById("remarks").value = data.DueRemarks;
 					document.getElementById("Monthly_Dues").value = data.Monthly_Dues;
 					document.getElementById("Yearly_Dues").value = data.Yearly_Dues;
 					document.getElementById("Dues_Status").value = data.Dues_Status;
 					document.getElementById("lotedit-id").value = data.Lot_ID;
 				})
 				.catch(error => {
-					console.log(`Error: ${error}`);
+					alert(`Error: ${error}`);
 				});
 		}
+////////////////////////////////////////////////////////////////////////////////////////////
+// function Update_Lot_Data(){
+
+// 	//$(document).on("click", "#lotupdateModal-btn", function(){
+//   // var Lot_ID = $("#lotedit-id").val();
+    
+//   var Block = $("#block").val();
+//     var Lot = $("#lot").val();
+//     var Street = $("#street").val();
+//     var Status = $("#status").val();
+//     var Area = $("#area-per-sqm").val();
+//     var Price = $("#price").val();
+//     var Remarks = $("#remarks").val();
+//     var Monthly_Dues = $("#Monthly_Dues").val();
+//     var Yearly_Dues = $("#Yearly_Dues").val();
+//     var Dues_Status = $("#Dues_Status").val();
+// 	var LOT_ID = $("#lotedit-id").val();
+
+
+//     $.ajax({
+//         url: "adminViews/includes/Act-update_map_lot.php",
+//         type: "POST",
+//         data: {
+//             Lot_ID: Lot_ID,
+//             Block: Block,
+//             Lot: Lot,
+//             Street: Street,
+//             Status: Status,
+//             Area: Area,
+//             Price: Price,
+//             Remarks: Remarks,
+//         },
+//         success: function(data){
+//             $("#lotupdateModal-btn").hide(); // hide the update button
+//             $("#loteditModal-btn").show(); // show the edit button
+//             $("input").prop("disabled", true); // disable the input fields
+//             $("textarea").prop("disabled", true); // disable the textarea
+// 			alert(data);
+//         }
+//     });
+// }
+/////////////////////////////////////////////////////////////////////////////////////////////
 
 		function colorData(id) {
 			fetch('adminViews/includes/mapsubmit.php?id=' + id)

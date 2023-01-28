@@ -17,6 +17,8 @@ if(isset($_POST['mapDataSend'])){
       $table='
       <div class="panel-content" id="panel">
       <h3>LOT INFORMATION</h3>
+      <input name="lotedit-id" id="lotedit-id"  value="'.$Lot_ID.'" hidden readonly>
+      
       <div class="input-group">
               <span class="input-group-text">Block</span>
               <input type="text" id="block" class="form-control" value ="'.$Block.'" disabled>
@@ -42,40 +44,40 @@ if(isset($_POST['mapDataSend'])){
 
       <div class="input-group">
               <span class="input-group-text">Remarks</span>
-              <textarea class="form-control" id="remarks" disabled>'.$Remarks.'</textarea>
+              <textarea class="form-control" id="remarkss" disabled>'.$Remarks.'</textarea>
+              
       </div>
-      <input name="lotedit-id" id="lotedit-id"  value="'.$Lot_ID.'" hidden readonly>
+     
       <button class="edit-info" id="loteditModal-btn"><i class="fa-solid fa-pen"></i> Edit Information</button>
-      <button class="edit-info" id="lotupdateModal-btn" ><i class="fa-solid fa-pen"></i>Update Information</button>
+      <button class="edit-info" id="lotupdateModal-btn" hidden " onclick="Update_Lot_Data()"><i class="fa-solid fa-pen"></i>Update Information</button>
 </div>';
   }
   echo $table;
 }
 ?>
    
-
-  <!--<button class="edit-info" id="loteditModal-btn" type="button" data-toggle="modal" data-target="#loteditModal"><i class="fa-solid fa-pen"></i> Edit Information</button>-->
   <script>
     $(document).ready(function(){
     $("#loteditModal-btn").click(function(){
         $("input").prop("disabled", false); // enable the input fields
         $("textarea").prop("disabled", false); // enable the textarea
+        $("#lotupdateModal-btn").prop("hidden", false);
         $(this).hide(); // hide the edit button
-        $("#lotupdateModal-btn").show(); // show the update button
+       // $("#lotupdateModal-btn").show(); // show the update button
     });
 });
+</script><script>
+function Update_Lot_Data(){
+//$(document).on("click", "#lotupdateModal-btn", function(){
 
-$(document).on("click", "#lotupdateModal-btn", function(){
-  // var Lot_ID = $("#lotedit-id").val();
- 
-    var Block = $("#block").val();
+    var Lot_ID = $("#lotedit-id").val();     
+   var Block = $("#block").val();
     var Lot = $("#lot").val();
     var Street = $("#street").val();
     var Status = $("#status").val();
     var Area = $("#area-per-sqm").val();
     var Price = $("#price").val();
-    var Remarks = $("#remarks").val();
-
+    var Remarks = $("#remarkss").val();
     $.ajax({
         url: "adminViews/includes/Act-update_map_lot.php",
         type: "POST",
@@ -90,14 +92,11 @@ $(document).on("click", "#lotupdateModal-btn", function(){
             Remarks: Remarks
         },
         success: function(data){
-          console.log(data);
-            alert("Data has been updated successfully!");
+                alert(data);
             $("#lotupdateModal-btn").hide(); // hide the update button
             $("#loteditModal-btn").show(); // show the edit button
             $("input").prop("disabled", true); // disable the input fields
             $("textarea").prop("disabled", true); // disable the textarea
         }
     });
-});
-
-  </script>
+} </script>

@@ -9,14 +9,14 @@
                         <img src="assets/images/user-icon.jpg">
                     </div>
                     <div class="admin-desc">
-                        <span ><?php echo $Fname." ".$Lname?> </span>
+                        <span ><?php echo $Fname." ".$Lname?> </span><br>
                         <span>ADMIN</span>
                     </div>
                 </div>
             </a>
             <ul class="dropdown-menu dropdown-menu-end">
                 <li><a class="dropdown-item" onclick="change_pass()" id="btn_change-pass"><i class="fa-regular fa-circle-user"></i> My Account</a></li>
-                <li><a class="dropdown-item" href="index.php"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></li>
+                <li><a class="dropdown-item" href="includes/Act-logout.php"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></li>
             </ul>
         </div>
     </nav>

@@ -12,7 +12,7 @@ if (isset($_POST['mapAssocSend'])) {
     $Yearly_Dues = $row['Yearly_Dues'];
     $Dues_Status = $row['Dues_Status'];
     $date_assigned = $row['date_assigned'];
-    $Remarks = $row['Remarks'];
+    $Remarks = $row['DueRemarks'];
     $table= '
         <div class="panel-content" id="panel">
         <h3>ASSOCIATION DUES</h3>
@@ -35,15 +35,60 @@ if (isset($_POST['mapAssocSend'])) {
         </div>
         <div class="input-group">
                 <span class="input-group-text">Date Assigned</span>
-                <input type="" id="date_assigned" class="form-control" value ="' . $date_assigned . '" disabled>
+                <input type="date" id="date_assigned" class="form-control" value ="'. $date_assigned .'" disabled>
         </div>
 
         <div class="input-group">
                 <span class="input-group-text">Remarks</span>
                 <textarea class="form-control" id="remarks" disabled>' . $Remarks . '</textarea>
         </div>
-        <button class="edit-info" type="button" id="editModal-assoc-btn" data-toggle="modal" data-target="#editModal-assoc"><i class="fa-solid fa-pen"></i> Edit Information</button>';
+        <button class="edit-info" type="button" id="editModal-assoc-btn" data-toggle="modal" data-target="#editModal-assoc"><i class="fa-solid fa-pen"></i> Edit Information</button>
+        <button class="edit-info" id="assocupdateModal-btn" hidden " onclick="Update_Assoc_Data()"><i class="fa-solid fa-pen"></i>Update Information</button>';
+
   }
   echo $table;
 }
 ?>
+
+
+  <script>
+    $(document).ready(function(){
+    $("#editModal-assoc-btn").click(function(){
+        $("input").prop("disabled", false); // enable the input fields
+        $("textarea").prop("disabled", false); // enable the textarea
+        $("#assocupdateModal-btn").prop("hidden", false);
+        $(this).hide(); // hide the edit button
+    
+    });
+});
+</script><script>
+function Update_Assoc_Data(){
+//$(document).on("click", "#lotupdateModal-btn", function(){
+
+
+        var Lot_ID = $("#Lot_ID").val();     
+        var Monthly_Dues = $("#Monthly_Dues").val();
+        var Yearly_Dues= $("#Yearly_Dues").val();
+        var Dues_Status = $("#Dues_Status").val();
+        var Date_Assigned = $("#date_assigned").val();
+        var Remarks = $("#remarks").val();
+    $.ajax({
+        url: "adminViews/includes/Act-update_assoc_dues.php",
+        type: "POST",
+        data: {
+            Lot_ID: Lot_ID,
+            Monthly_Dues:Monthly_Dues,
+            Yearly_Dues:Yearly_Dues,
+            Dues_Status:Dues_Status,
+            Date_Assigned:Date_Assigned,
+            Remarks: Remarks
+        },
+        success: function(data){
+            alert(data);
+            $("#assocupdateModal-btn").hide(); // hide the update button
+            $("#editModal-assoc-btn").show(); // show the edit button
+            $("input").prop("disabled", true); // disable the input fields
+            $("textarea").prop("disabled", true); // disable the textarea
+        }
+    });
+} </script>

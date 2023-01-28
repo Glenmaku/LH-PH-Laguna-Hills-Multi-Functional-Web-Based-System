@@ -1,6 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=DM+Serif+Display&family=Great+Vibes&family=Nanum+Myeongjo&family=Vollkorn:ital@0;1&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=DM+Serif+Display&family=Great+Vibes&family=Nanum+Myeongjo&family=Vollkorn:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Raleway:wght@100;400&family=Source+Sans+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Raleway:wght@100;400&display=swap');
 *{
     margin: 0;
     padding: 0;
@@ -101,9 +104,8 @@ body{
     height: 100%;
     width: 260px;
     background: var(--darkgreen);
+
 }
-
-
 .logo-details{
     width: 100%;
     padding: 20px;
@@ -126,18 +128,15 @@ body{
     font-family: 'Raleway', sans-serif;
     font-weight: 700;
     height: 100%;
-
 }
 .adminSidebar .nav-links li{
     position: relative;
-    list-style: none!important;
+    list-style: none;
     transition: all 0.4s ease;
-
 }
 
 .adminSidebar ul li a:hover {
     background-color: var(--light-green);
-        transition: all 0.2s ease-in-out;
   }
 
 .adminSidebar .nav-links li i{
@@ -946,25 +945,25 @@ svg{
 
 
 .status #available  {
-    background-color: #1FCE6D;
+    background-color: green;
 }
 .status #occupied  {
-    background-color: #E94B35;
+    background-color: red;
 }
 .status #house  {
-    background-color: #2C97DE;
+    background-color: blue;
 }
 .status #undisclosed  {
-    background-color: #F2C500;
+    background-color: yellow;
 }
 .status #foreclosed  {
-    background-color: #E87E04;
+    background-color: orange;
 }
 .status #open  {
-    background-color: #33495F;
+    background-color: black;
 }
 .status #amenities  {
-    background-color: #9C56B8;
+    background-color: purple;
 }
 
 
@@ -1284,10 +1283,12 @@ svg{
     /* top: 50%;
     left: 50%;
     transform: translate(-50%, -50%); */
-    font-family: 'Poppins', sans-serif;
+    /* font-family: 'Poppins', sans-serif; */
+font-family: 'Raleway', sans-serif;
+font-weight: 500;
     width: 100%;
     height: 100%;
-    padding: 10% 10%;
+    padding: 4% 10%;
 }
 
 .container .mail-form{
@@ -1322,6 +1323,9 @@ svg{
     height: 100px;
     resize: none;
     height: 10rem;
+    font-weight: 800;
+    font-family: 'Source Sans Pro', sans-serif;
+
 }
 .container .mail-form h2{
     font-size: 30px;
@@ -1340,5 +1344,104 @@ svg{
 
 }
 
+/* SENDMAIL */
+
+.list-container{
+    margin: 2px auto 10px auto;
+    width: 350px;
+    height: 152px;
+    border: 3px solid rgba(4,26,16,0.15);
+    font-weight: 600;
+}
+.list-header h4{
+    width: 50%;
+    font-size: 15px;
+    margin-top: 40px;
+}
+
+.user-details-container{
+    font-size: 13px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 5px;
+}
+.listed-container{
+    justify-content: center;
+    display: flex;
+    border-top: 3px solid rgba(4,26,16,0.15);
+    flex-direction: column;
+}
+
+.message-container .message-inner-container > form > .info-msg {
+    font-size: 85%;
+    color: white;
+}
+
+.info-msg{
+    font-size: 12px;
+}
+.text-center{
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 800;
+}
+.button_section{
+    display: flex;
+width: 100%;
+  padding-bottom: 10px;
+}
 
 
+ /* CSS NUNG TOGGLE NI SENDMAIL */
+input[type=checkbox]{
+    height: 0;
+    width: 0;
+    visibility: hidden;
+  }
+  
+  label {
+    cursor: pointer;
+    text-indent: -9999px;
+    background: grey;
+    width: 64px;
+    height: 30px;
+    background: grey;
+    display: block;
+    border-radius: 100px;
+    position: relative;
+  }
+  
+  label:after {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 22px;
+    height: 19px;
+    background: #fff;
+    border-radius: 90px;
+    transition: 0.3s;
+  }
+  
+  input:checked + label {
+    background: #28A745;
+  }
+  
+  input:checked + label:after {
+    left: calc(100% - 5px);
+    transform: translateX(-100%);
+  }
+  
+  label:active:after {
+    width: 30px;
+  }
+  .text_switch{
+    position: relative;
+    margin-right: 10px;
+    font-weight: 700;
+    font-size: 18px;
+  }
+.switch_label{
+    position: relative;
+    display: flex;
+}

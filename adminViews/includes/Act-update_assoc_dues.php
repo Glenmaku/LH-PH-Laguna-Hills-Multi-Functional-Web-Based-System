@@ -3,15 +3,14 @@ include ('connection.php');
 if(isset($_POST['Lot_ID'])){
 
     $Lot_ID = $_POST['Lot_ID'];
-    $Block = $_POST['Block'];
-    $Lot = $_POST['Lot'];
-    $Street = $_POST['Street'];
-    $Status = $_POST['Status'];
-    $Area = $_POST['Area'];
-    $Price = $_POST['Price'];
+    $MontlyDues = $_POST['Monthly_Dues'];
+    $YearlyDues = $_POST['Yearly_Dues'];
+    $DuesStatus = $_POST['Dues_Status'];
+    $DateAssigned = $_POST['Date_Assigned'];
     $Remarks = $_POST['Remarks'];
+
     
-    $sql = "UPDATE `lot_information` SET `Block`='$Block',`Lot`='$Lot',`Street`='$Street',`Status`='$Status',`Area`='$Area',`Price`='$Price',`Remarks`='$Remarks' WHERE `Lot_ID`='$Lot_ID'";
+    $sql = "UPDATE `association_dues` SET `Monthly_Dues`='$MontlyDues',`Yearly_Dues`='$YearlyDues',`DueRemarks`='$Remarks',`date_assigned`='$DateAssigned' WHERE `Lot_ID`='$Lot_ID'";
     $result = mysqli_query($con, $sql);
     
     if($result){
