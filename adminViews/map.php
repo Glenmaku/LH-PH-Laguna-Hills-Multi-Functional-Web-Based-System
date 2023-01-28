@@ -4890,19 +4890,19 @@
 
 	<div class="lot-info">
 		<div class="display-panel">
-			<div class="panel-btn">
+			<div class="panel-btn"><!--BUTTON SA UPPER RIGHT-->
 				<button id="lot-information-btn"><i class="fa-solid fa-house"></i></button>
 				<button id="assoc-btn"><i class="fa-solid fa-scroll"></i></button>
 				<button id="owner-information-btn"><i class="fa-solid fa-user"></i></button>
-
 			</div>
 
 			<div id="lot-information-map" class="lot-information-map"></div>
 			<div id="map-assoc"></div>
 			<div id="owner-information"></div>
-
 		</div>
 
+
+<!--STATUS BELOWSSSS-->
 		<div class="status" id="status-check">
 			<div class="status-title">
 				<h5>STATUS</h5>
@@ -4937,8 +4937,8 @@
 			</div>
 
 		</div>
-		<!---ETO PARA SA EDIT INFORMATION--->
-		<div class="modal fade" id="loteditModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		
+	<!--<div class="modal fade" id="loteditModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 			<div class="modal-dialog">
 				<div class="modal-content">
 					<div class="modal-header">
@@ -4947,8 +4947,6 @@
 					</div>
 					<div class="modal-body">
 						<div id="map-submit-error"></div>
-
-
 						<form>
 							<div class="mb-3">
 								<label for="recipient-name" class="col-form-label">Block</label>
@@ -4988,19 +4986,20 @@
 					</div>
 				</div>
 			</div>
-		</div>
+		</div>-->
 	</div>
 
 
 
 	<script type="text/javascript">
 
-
 		$(document).ready(function() {
 			changeColor();
+			getData();
+			displayMapData();
 
 		});
-
+///////////////////////////////////////////////////	////////////////MAP
 		function displayMapData() {
 
 			var mapData = "true";
@@ -5017,7 +5016,7 @@
 			});
 		}
 
-
+////////////////////////////////////////////////////////////////////ASOC
 		function displayAssocData() {
 			var assocData = "true";
 			$.ajax({
@@ -5032,7 +5031,7 @@
 				}
 			});
 		}
-
+/////////////////////////////////////////////////////////////////
 		function displayOwner() {
 			var ownerData = "true";
 			$.ajax({
@@ -5047,7 +5046,7 @@
 				}
 			});
 		}
-
+/////////////////////////////////////////////////////////////
 		$(document).ready(function() {
 			$("#lot-information-btn").click(function() {
 				$("#lot-information-map").show();
@@ -5071,7 +5070,7 @@
 			});
 		});
 
-
+////////////////////////////////////////////////////////////////
 
 
 
@@ -5099,14 +5098,17 @@
 		});
 
 
-
-
+//////////////////////////////////////////////////////////////////////////////
 		function getData(id) {
 			// Use fetch API for HTTP requests
+	
 			fetch(`adminViews/includes/mapsubmit.php?id=${id}`)
+
 				.then(response => response.json())
 				.then(data => {
+				
 					// Update the values of the elements with the corresponding ids
+					//document.getElementById("input-field-id").value = myId;
 					document.getElementById('Lot_ID').value = data.Lot_ID;
 					document.getElementById("block").value = data.Block;
 					document.getElementById("lot").value = data.Lot;
@@ -5114,16 +5116,58 @@
 					document.getElementById("status").value = data.Status;
 					document.getElementById("area-per-sqm").value = data.Area;
 					document.getElementById("price").value = data.Price;
-					document.getElementById("remarks").value = data.Remarks;
+					document.getElementById("remarkss").value = data.Remarks;
 					document.getElementById("Monthly_Dues").value = data.Monthly_Dues;
 					document.getElementById("Yearly_Dues").value = data.Yearly_Dues;
 					document.getElementById("Dues_Status").value = data.Dues_Status;
 					document.getElementById("lotedit-id").value = data.Lot_ID;
 				})
 				.catch(error => {
-					console.log(`Error: ${error}`);
+					alert(`Error: ${error}`);
 				});
 		}
+////////////////////////////////////////////////////////////////////////////////////////////
+// function Update_Lot_Data(){
+
+// 	//$(document).on("click", "#lotupdateModal-btn", function(){
+//   // var Lot_ID = $("#lotedit-id").val();
+    
+//   var Block = $("#block").val();
+//     var Lot = $("#lot").val();
+//     var Street = $("#street").val();
+//     var Status = $("#status").val();
+//     var Area = $("#area-per-sqm").val();
+//     var Price = $("#price").val();
+//     var Remarks = $("#remarks").val();
+//     var Monthly_Dues = $("#Monthly_Dues").val();
+//     var Yearly_Dues = $("#Yearly_Dues").val();
+//     var Dues_Status = $("#Dues_Status").val();
+// 	var LOT_ID = $("#lotedit-id").val();
+
+
+//     $.ajax({
+//         url: "adminViews/includes/Act-update_map_lot.php",
+//         type: "POST",
+//         data: {
+//             Lot_ID: Lot_ID,
+//             Block: Block,
+//             Lot: Lot,
+//             Street: Street,
+//             Status: Status,
+//             Area: Area,
+//             Price: Price,
+//             Remarks: Remarks,
+//         },
+//         success: function(data){
+//             $("#lotupdateModal-btn").hide(); // hide the update button
+//             $("#loteditModal-btn").show(); // show the edit button
+//             $("input").prop("disabled", true); // disable the input fields
+//             $("textarea").prop("disabled", true); // disable the textarea
+// 			alert(data);
+//         }
+//     });
+// }
+/////////////////////////////////////////////////////////////////////////////////////////////
 
 		function colorData(id) {
 			fetch('adminViews/includes/mapsubmit.php?id=' + id)

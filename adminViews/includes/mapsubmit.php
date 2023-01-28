@@ -12,9 +12,9 @@ $result = $con->query($sql);
 $lot_info = $result->fetch_assoc();
 
 // Retrieve data for association_dues table
-$sql = "SELECT Lot_ID, Monthly_Dues, Yearly_Dues, Dues_Status, Remarks, date_assigned from association_dues where Lot_ID = '$id'";
-$result = $con->query($sql);
-$dues_info = $result->fetch_assoc();
+$sql1 = "SELECT Lot_ID, Monthly_Dues, Yearly_Dues, Dues_Status, DueRemarks, date_assigned from association_dues where Lot_ID = '$id'";
+$sresult = $con->query($sql1);
+$dues_info = $sresult->fetch_assoc();
 
 //check if the dues_info array has values
 if(!empty($dues_info)){

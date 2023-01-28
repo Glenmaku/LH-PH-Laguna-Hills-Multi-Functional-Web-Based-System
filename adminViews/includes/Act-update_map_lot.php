@@ -15,10 +15,13 @@ if(isset($_POST['Lot_ID'])){
     $result = mysqli_query($con, $sql);
     
     if($result){
-        echo "success";
+        echo "Data has been updated successfully!";
     }else{
-        echo "error";
+        echo "Error: There was an error updating the data";
     }
 }
-
+else{
+    echo "'Error: No data to update";
+    mysqli_close($con);
+}
 ?>
