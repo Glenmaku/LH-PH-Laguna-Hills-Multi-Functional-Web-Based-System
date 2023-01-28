@@ -60,7 +60,7 @@
       </div>
    </div>
 
-   <script src="/adminViews/phpmailer/link.js"></script>
+   <script src="/adminViews/phpmailer/sendmail_database/link.js"></script>
    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
    <script>
       $(function() {
@@ -91,6 +91,24 @@
             })
          })
       })
+
+      $("#s1d").change(function() {
+    if(this.checked) {
+        show_email_all();
+    }
+});
+function show_email_all(){  
+    $.ajax({
+        url:"./adminViews/phpmailer/sendmail_database/sendmail_database.php",
+        method:"post",
+        data:{record:1},
+        success:function(data){
+            $('.container').html(data);
+            console.log(data);
+        }
+    });
+}
+
    </script>
 </body>
 

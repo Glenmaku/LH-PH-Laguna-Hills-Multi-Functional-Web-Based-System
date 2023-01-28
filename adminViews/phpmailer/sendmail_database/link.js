@@ -5,11 +5,12 @@ $("#s1d").change(function() {
 });
 function show_email_all(){  
     $.ajax({
-        url:"sendmail_database.php",
+        url:"/sendmail_database.php",
         method:"post",
         data:{record:1},
         success:function(data){
             $('.container').html(data);
+            console.log(data);
         }
     });
 }
