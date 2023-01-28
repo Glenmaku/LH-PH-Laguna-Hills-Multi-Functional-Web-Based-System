@@ -101,8 +101,9 @@ body{
     height: 100%;
     width: 260px;
     background: var(--darkgreen);
-
 }
+
+
 .logo-details{
     width: 100%;
     padding: 20px;
@@ -125,15 +126,18 @@ body{
     font-family: 'Raleway', sans-serif;
     font-weight: 700;
     height: 100%;
+
 }
 .adminSidebar .nav-links li{
     position: relative;
-    list-style: none;
+    list-style: none!important;
     transition: all 0.4s ease;
+
 }
 
 .adminSidebar ul li a:hover {
     background-color: var(--light-green);
+        transition: all 0.2s ease-in-out;
   }
 
 .adminSidebar .nav-links li i{
