@@ -45,6 +45,25 @@ if (isset($_POST['mapAssocSend'])) {
         <button class="edit-info" type="button" id="editModal-assoc-btn" data-toggle="modal" data-target="#editModal-assoc"><i class="fa-solid fa-pen"></i> Edit Information</button>
         <button class="edit-info" id="assocupdateModal-btn" hidden " onclick="Update_Assoc_Data()"><i class="fa-solid fa-pen"></i>Update Information</button>';
 
+        $table.= '<div class="status" id="status-check">
+			<div class="status-title">
+				<h5>STATUS</h5>
+			</div>
+			<div class="form-check">
+				<input class="form-check-input" type="checkbox" value="#018E5A" id="Updated">
+				<label class="form-check-label" for="flexCheckDefault">Updated</label>
+			</div>
+			<div class="form-check">
+				<input class="form-check-input" type="checkbox" value="#E12323" id="Outdated">
+				<label class="form-check-label" for="flexCheckDefault">Outdated</label>
+			</div>
+			<div class="form-check">
+				<input class="form-check-input" type="checkbox" value="#FDC50C" id="Advanced">
+				<label class="form-check-label" for="flexCheckDefault">Advanced</label>
+			</div>
+		
+
+		</div>';
   }
   echo $table;
 }
@@ -84,7 +103,7 @@ function Update_Assoc_Data(){
             Remarks: Remarks
         },
         success: function(data){
-            alert(data);
+          
             $("#assocupdateModal-btn").hide(); // hide the update button
             $("#editModal-assoc-btn").show(); // show the edit button
             $("input").prop("disabled", true); // disable the input fields
