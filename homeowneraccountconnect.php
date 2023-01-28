@@ -4,11 +4,6 @@ session_start();
 if (!empty($_SESSION['owner_I_D'])) {
     $username = $_SESSION['owner_username'];
     $ownerid = $_SESSION['owner_I_D'];
-    $Fname = $_SESSION['owner_fName'];
-    $Lame=$_SESSION['owner_lName'];
-    $Email=$_SESSION['owner_email'];
-    
-
 } else{
     header("location:index.php");
     exit();
