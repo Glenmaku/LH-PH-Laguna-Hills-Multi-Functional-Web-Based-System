@@ -5,7 +5,7 @@ require_once('connection.php');
 $id = $_GET["id"];
 
 // Retrieve the data from the database
-$sql = "select Monthly_Dues, Yearly_Dues, Dues_Status, Remarks, date_assigned from association_dues where Lot_ID = '$id'";
+$sql = "select Monthly_Dues, Yearly_Dues, Dues_Status, DueRemarks, date_assigned from association_dues where Lot_ID = '$id'";
 $result = $con->query($sql);
 $row = $result->fetch_assoc();
 

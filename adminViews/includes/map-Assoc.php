@@ -12,7 +12,7 @@ if (isset($_POST['mapAssocSend'])) {
     $Yearly_Dues = $row['Yearly_Dues'];
     $Dues_Status = $row['Dues_Status'];
     $date_assigned = $row['date_assigned'];
-    $Remarks = $row['Remarks'];
+    $Remarks = $row['DueRemarks'];
     $table= '
         <div class="panel-content" id="panel">
         <h3>ASSOCIATION DUES</h3>
