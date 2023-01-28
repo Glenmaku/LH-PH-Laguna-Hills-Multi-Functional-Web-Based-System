@@ -11,7 +11,7 @@
                         <img src="assets/images/user-icon.jpg">
                     </div>
                     <div class="owner-desc">
-                        <span>Glen Mark Dela Cruz</span>
+                        <span><?php echo $Fname." ".$Lname?></span>
                         <span>RESIDENT</span>
                     </div>
                 </div>
