@@ -10,22 +10,25 @@
    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/js/bootstrap.min.js"></script>
 
    <!-- <link rel="stylesheet" href="../sendmail_database/mailstyle.css"> -->
-   <link rel="stylesheet" href="../sendmail_database/mailstyle.css">
-   <link rel="stylesheet" href="../mailstyle.css">
+   <link rel="stylesheet" href="mailstyle.css">
+
 </head>
 
 <body>
 
    <div class="container">
-      <div class="switch_label">
-         <div class="text_switch">Send to All</div>
-         <input id="s1d" type="checkbox" class="switch">
-         <label for="s1d">Switch</label>
-      </div>
+
       <div class="container-form">
 
          <div class="row">
+            <div class="custom-switch button_section d-flex flex-row-reverse">
 
+               <div class="switch_label">
+                  <div class="text_switch">Send to All</div>
+                  <input id="s1d" type="checkbox" class="switch" checked>
+                  <label for="s1d">Switch</label>
+               </div>
+            </div>
             <div class="col-lg mail-form">
                <h1 class="text-center">
                   Notify All Homeowners
@@ -58,7 +61,7 @@
                <form id="message-form">
                   <div class="info-msg"> <br></div>
                   <div class="form-group" required>
-                     <textarea cols="80" rows="10" class="form-control textarea" name="message" id="message" placeholder="Compose your message.."></textarea>
+                     <textarea cols="80" rows="10" class="form-control textarea" name="message" id="message" placeholder="Compose your message.." required></textarea>
                   </div>
                   <div class="btn-container">
                      <button class="btn btn-success btn-lg btn-block">Send Email</button>
@@ -90,6 +93,23 @@
             })
          })
       })
+
+$("#s1d").change(function() {
+    if(this.unchecked) {
+        show_email_all();
+    }
+});
+function show_email_all(){  
+    $.ajax({
+        url:"../../sendmail_email.php",
+        method:"post",
+        data:{record:1},
+        success:function(data){
+            $('.container').html(data);
+            console.log(data);
+        }
+    });
+}
    </script>
 </body>
 
