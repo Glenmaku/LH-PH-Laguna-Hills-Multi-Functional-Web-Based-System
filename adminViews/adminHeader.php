@@ -9,7 +9,7 @@
                         <img src="assets/images/user-icon.jpg">
                     </div>
                     <div class="admin-desc">
-                        <span ><?php echo $Fname." ".$Lname?> </span>
+                        <span ><?php echo $Fname." ".$Lname?> </span><br>
                         <span>ADMIN</span>
                     </div>
                 </div>

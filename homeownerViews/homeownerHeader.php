@@ -11,7 +11,7 @@
                         <img src="assets/images/user-icon.jpg">
                     </div>
                     <div class="owner-desc">
-                        <span><?php echo $Fname." ".$Lname?></span>
+                        <span><?php echo $Fname." ".$Lname?></span><br>
                         <span>RESIDENT</span>
                     </div>
                 </div>
@@ -110,8 +110,8 @@
                         
 
                             <!--PALATANDAAN--> 
-                            <input  name="owner_username" id="owner_username" value="<?php echo $username ?>" readonly hidden >
-                            <input name="ownerview_id" id="ownerview_id" value="<?php echo $ownerid?>" readonly hidden> <!--PALATANDAAN--> 
+                            <input  name="oowner_username" id="oowner_username" value="<?php echo $username ?>" readonly hidden >
+                            <input name="oownerview_id" id="oownerview_id" value="<?php echo $ownerid?>" readonly hidden> <!--PALATANDAAN--> 
 
                             <div class="form-group">
                                 <label for="" class="fs-6 mb-2"><b>Old Password</b></label>
@@ -127,7 +127,7 @@
                             </div>
                         </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="btn_close">Cancel</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="btn_close closess">Cancel</button>
                         <button type="button" class="btn btn-primary" id="btn_check_pass" name="btn_updateuserinfo" >Verify</button>
                     </div>
                     </form>
@@ -222,7 +222,7 @@ setInterval(function() {
 function change_pass(){
     $('#btn_check_pass').on('click',function(){
         var old_pass = $("#old_pass").val();
-        var owner_username = $("#owner_username").val();
+        var owner_username = $("#oowner_username").val();
         $.ajax({
                     type: "POST",
                     url: "homeownerViews/includes/act-check-password.php",
@@ -256,7 +256,7 @@ function update_pass(){
   
         var new_pass = $("#new_pass").val();
         var conf_pass = $("#conf_pass").val();
-        var owner_username = $("#owner_username").val();
+        var owner_username = $("#oowner_username").val();
         $.ajax({
     type: "POST",
     url: "homeownerViews/includes/act-update-password.php",
