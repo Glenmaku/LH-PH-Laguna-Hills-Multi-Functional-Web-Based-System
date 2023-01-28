@@ -47,7 +47,7 @@
                             <a href="Amenities.php" class="nav-link nas">Amenities</a>
                         </li>
                         <li class="nav-item">
-                            <a href="PropertyFinder.php" class="nav-link nas">Property Finder</a>
+                            <a href="PropertyFinder.php" class="nav-link nas" id="property-finder-page">Property Finder</a>
                         </li>
                         <li class="nav-item">
                             <a href="ContactUs.php" class="nav-link nas">Contact Us</a>

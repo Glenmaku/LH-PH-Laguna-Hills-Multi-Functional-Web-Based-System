@@ -942,25 +942,25 @@ svg{
 
 
 .status #available  {
-    background-color: green;
+    background-color: #1FCE6D;
 }
 .status #occupied  {
-    background-color: red;
+    background-color: #E94B35;
 }
 .status #house  {
-    background-color: blue;
+    background-color: #2C97DE;
 }
 .status #undisclosed  {
-    background-color: yellow;
+    background-color: #F2C500;
 }
 .status #foreclosed  {
-    background-color: orange;
+    background-color: #E87E04;
 }
 .status #open  {
-    background-color: black;
+    background-color: #33495F;
 }
 .status #amenities  {
-    background-color: purple;
+    background-color: #9C56B8;
 }
 
 
