@@ -4908,31 +4908,31 @@
 				<h5>STATUS</h5>
 			</div>
 			<div class="form-check">
-				<input class="form-check-input" type="checkbox" value="green" id="available">
+				<input class="form-check-input" type="checkbox" value="#1FCE6D" id="available">
 				<label class="form-check-label" for="flexCheckDefault">Available</label>
 			</div>
 			<div class="form-check">
-				<input class="form-check-input" type="checkbox" value="red" id="occupied">
+				<input class="form-check-input" type="checkbox" value="#E94B35" id="occupied">
 				<label class="form-check-label" for="flexCheckDefault">Occupied</label>
 			</div>
 			<div class="form-check">
-				<input class="form-check-input" type="checkbox" value="blue" id="house">
+				<input class="form-check-input" type="checkbox" value="#2C97DE" id="house">
 				<label class="form-check-label" for="flexCheckDefault">With House</label>
 			</div>
 			<div class="form-check">
-				<input class="form-check-input" type="checkbox" value="yellow" id="undisclosed">
+				<input class="form-check-input" type="checkbox" value="#F2C500" id="undisclosed">
 				<label class="form-check-label" for="flexCheckDefault">Property Undisclosed</label>
 			</div>
 			<div class="form-check">
-				<input class="form-check-input" type="checkbox" value="orange" id="foreclosed">
+				<input class="form-check-input" type="checkbox" value="#E87E04" id="foreclosed">
 				<label class="form-check-label" for="flexCheckDefault">Foreclosed</label>
 			</div>
 			<div class="form-check">
-				<input class="form-check-input" type="checkbox" value="black" id="open">
+				<input class="form-check-input" type="checkbox" value="#33495F" id="open">
 				<label class="form-check-label" for="flexCheckDefault">Open Space</label>
 			</div>
 			<div class="form-check">
-				<input class="form-check-input" type="checkbox" value="purple" id="amenities">
+				<input class="form-check-input" type="checkbox" value="#9C56B8" id="amenities">
 				<label class="form-check-label" for="flexCheckDefault">Amenities</label>
 			</div>
 
