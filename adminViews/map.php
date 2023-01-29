@@ -4952,7 +4952,7 @@
 			<div class="status-title">
 				<h5>STATUS</h5>
 			</div>
-			<div>
+			<div class="mt-4">
 			<div class="form-check">
 				<input class="form-check-input" type="checkbox" value="#018E5A" id="Updated">
 				<label class="form-check-label" for="flexCheckDefault">Updated</label>
