@@ -4881,21 +4881,21 @@
 
 				<div class="input-group">
 					<span class="input-group-text">Block</span>
-					<input type="text" id="block" class="form-control"  disabled>
+					<input type="text" id="finder-block" class="form-control"  disabled>
 					<span class="input-group-text">Lot</span>
-					<input type="text" id="lot" class="form-control"  disabled>
+					<input type="text" id="finder-lot" class="form-control"  disabled>
 				</div>
 				<div class="input-group">
 					<span class="input-group-text">Street</span>
-					<input type="text" id="street" class="form-control"  disabled>
+					<input type="text" id="finder-street" class="form-control"  disabled>
 				</div>
 				<div class="input-group">
 					<span class="input-group-text">Status</span>
-					<input type="text" id="status" class="form-control"  disabled>
+					<input type="text" id="finder-status" class="form-control"  disabled>
 				</div>
 				<div class="input-group">
 					<span class="input-group-text">Area per Sqm</span>
-					<input type="text" id="area-per-sqm" class="form-control" disabled>
+					<input type="text" id="finder-area-per-sqm" class="form-control" disabled>
 				</div>
 
 				<button class="btn btn-success" id="loteditModal-btn"><i class="fa-solid fa-circle-question"></i> Inquire</button>

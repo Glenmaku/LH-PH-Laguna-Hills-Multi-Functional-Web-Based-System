@@ -60,26 +60,47 @@
 
 
 <script>
-function displayMapData() {
+  function displayMapData() {
 
-var mapData = "true";
-$.ajax({
-  url: 'adminViews/includes/mapData.php',
-  type: 'post',
-  data: {
-    mapDataSend: mapData
-  },
-  success: function(data, status) {
-    $('#finder-panel').html(data);
+    var mapData = "true";
+    $.ajax({
+      url: 'adminViews/includes/property-finder-panel.php',
+      type: 'post',
+      data: {
+        mapDataSend: mapData
+      },
+      success: function(data, status) {
+        $('#finder-panel').html(data);
 
+      }
+    });
   }
-});
-}
+  function getData(id) {
+			// Use fetch API for HTTP requests
+			
+			fetch(`adminViews/includes/mapsubmit.phpid=${id}`)
+				.then(response => response.json())
+				.then(data => {
+					displayOwner(id);
+					// Update the values of the elements with the corresponding ids
+					//document.getElementById("input-field-id").value = myId;
+					document.getElementById("finder-block").value = data.Block;
+					document.getElementById("finder-lot").value = data.Lot;
+					document.getElementById("finder-street").value = data.Street;
+					document.getElementById("finder-status").value = data.Status;
+					document.getElementById("finder-area-per-sqm").value = data.Area;
+        })
+				.catch(error => {
+
+
+					console.log(`Error: ${error}`);
+
+				});
+		}
 
 
 
-
-var paths = document.querySelectorAll('.mapping');
+  var paths = document.querySelectorAll('.mapping');
   paths.forEach(function(path) {
     path.addEventListener('mouseover', function() {
       this.style.fill = "#085D40";
