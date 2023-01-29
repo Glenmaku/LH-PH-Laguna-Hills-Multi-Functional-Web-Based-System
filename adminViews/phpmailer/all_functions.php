@@ -10,9 +10,9 @@
 // require_once '../sendmail_database/class.smtp.php';
 // require_once '../sendmail_database/class.phpmailer.php';
 
-require_once '../PHPMailerAutoload.php';
-require_once '../class.phpmailer.php';
-require_once '../class.smtp.php';
+require_once 'PHPMailerAutoload.php';
+require_once 'class.phpmailer.php';
+require_once 'class.smtp.php';
 
 function dbConnection() {
     $conn = mysqli_connect('localhost', 'root', '', 'lhph');

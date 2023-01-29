@@ -51,6 +51,41 @@ if(isset($_POST['mapDataSend'])){
       <button class="edit-info" id="loteditModal-btn"><i class="fa-solid fa-pen"></i> Edit Information</button>
       <button class="edit-info" id="lotupdateModal-btn" hidden " onclick="Update_Lot_Data()"><i class="fa-solid fa-pen"></i>Update Information</button>
 </div>';
+
+$table.='<div class="status" id="status-check">
+<div class="status-title">
+        <h5>STATUS</h5>
+</div>
+<div class="form-check">
+        <input class="form-check-input" type="checkbox" value="#1FCE6D" id="available">
+        <label class="form-check-label" for="flexCheckDefault">Available</label>
+</div>
+<div class="form-check">
+        <input class="form-check-input" type="checkbox" value="#E94B35" id="occupied">
+        <label class="form-check-label" for="flexCheckDefault">Occupied</label>
+</div>
+<div class="form-check">
+        <input class="form-check-input" type="checkbox" value="#2C97DE" id="house">
+        <label class="form-check-label" for="flexCheckDefault">With House</label>
+</div>
+<div class="form-check">
+        <input class="form-check-input" type="checkbox" value="#F2C500" id="undisclosed">
+        <label class="form-check-label" for="flexCheckDefault">Property Undisclosed</label>
+</div>
+<div class="form-check">
+        <input class="form-check-input" type="checkbox" value="#E87E04" id="foreclosed">
+        <label class="form-check-label" for="flexCheckDefault">Foreclosed</label>
+</div>
+<div class="form-check">
+        <input class="form-check-input" type="checkbox" value="#33495F" id="open">
+        <label class="form-check-label" for="flexCheckDefault">Open Space</label>
+</div>
+<div class="form-check">
+        <input class="form-check-input" type="checkbox" value="#9C56B8" id="amenities">
+        <label class="form-check-label" for="flexCheckDefault">Amenities</label>
+</div>
+
+</div>';
   }
   echo $table;
 }
@@ -92,7 +127,7 @@ function Update_Lot_Data(){
             Remarks: Remarks
         },
         success: function(data){
-                alert(data);
+                
             $("#lotupdateModal-btn").hide(); // hide the update button
             $("#loteditModal-btn").show(); // show the edit button
             $("input").prop("disabled", true); // disable the input fields

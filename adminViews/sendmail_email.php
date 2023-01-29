@@ -9,7 +9,8 @@
    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/js/bootstrap.min.js"></script>
 
-   <link rel="stylesheet" href="/adminViews/phpmailer/mailstyle.css">
+   <link rel="stylesheet" href="../adminViews/phpmailer/mailstyle.css">
+   <!-- <link rel="stylesheet" href="phpmailer/sendmail_database.php/mailstyle.css"> -->
 </head>
 
 <body>
@@ -38,18 +39,18 @@
                   <div class="form-group">
                      <!-- <label for="exampleFormControlInput1">Email address</label> -->
                      <span>Email address</span>
-                     <input type="email" class="form-control emailadd_send" id="send_email" placeholder="name@example.com">
+                     <input type="email" class="form-control emailadd_send" id="send_email" placeholder="name@example.com" required>
                   </div>
 
                   <div class="form-group">
                      <!-- <label for="subject">Subject</label> -->
                      <span>Subject</span>
-                     <input type="subject" class="form-control emailadd_send" id="send_subject" placeholder="Subject">
+                     <input type="subject" class="form-control emailadd_send" id="send_subject" placeholder="Subject" required>
                   </div>
 
                   <div class="info-msg"> <br></div>
-                  <div class="form-group" id="txtareabox" required>
-                     <textarea cols="80" rows="10" class="form-control textarea " name="message" id="message" placeholder="Compose your message.."></textarea>
+                  <div class="form-group" id="txtareabox" >
+                     <textarea cols="80" rows="10" class="form-control textarea " name="message" id="message" placeholder="Compose your message.."required></textarea>
                   </div>
                   <div class="btn-container">
                      <button class="btn btn-success btn-lg btn-block">Send Email</button>
@@ -60,7 +61,7 @@
       </div>
    </div>
 
-   <script src="/adminViews/phpmailer/sendmail_database/link.js"></script>
+   <script src="../adminViews/phpmailer/link.js"></script>
    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
    <script>
       $(function() {
@@ -73,7 +74,7 @@
             $(".info-msg").text('sending email...');
 
             $.ajax({
-               url: './adminViews/phpmailer/emailHandler.php',
+               url: '../adminViews/phpmailer/one_emailHandler.php',
 
                method: 'POST',
                data: {
@@ -92,22 +93,35 @@
          })
       })
 
-      $("#s1d").change(function() {
-    if(this.checked) {
-        show_email_all();
-    }
-});
-function show_email_all(){  
-    $.ajax({
-        url:"./adminViews/phpmailer/sendmail_database/sendmail_database.php",
-        method:"post",
-        data:{record:1},
-        success:function(data){
-            $('.container').html(data);
-            console.log(data);
-        }
-    });
-}
+//       $("#s1d").change(function() {
+//     if(this.checked) {
+//         show_email_all();
+//     } else if(!this.checked) {
+//         show_email_one(); }
+// });
+// function show_email_all(){  
+//     $.ajax({
+//         url:"./adminViews/phpmailer/sendmail_database/sendmail_database.php",
+//         method:"post",
+//         data:{record:1},
+//         success:function(data){
+//             $('.container').html(data);
+//             console.log(data);
+//         }
+//     });
+// }
+
+// function show_email_one(){  
+//     $.ajax({
+//         url:"../../adminViews/sendmail_email.php",
+//         method:"post",
+//         data:{record:1},
+//         success:function(data){
+//             $('.container').html(data);
+//             console.log(data);
+//         }
+//     });
+// }
 
    </script>
 </body>
