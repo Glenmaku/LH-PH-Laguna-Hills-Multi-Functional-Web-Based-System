@@ -4910,11 +4910,10 @@
 			</div>
 		</div>
 
-
-
 <!--STATUS BELOWSSSS-->
 		
 		<div class="status statuslotss" id="status-check" >
+
 			<div class="status-title">
 				<h5>STATUS</h5>
 			</div>

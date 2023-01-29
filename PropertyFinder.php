@@ -60,6 +60,24 @@
 
 
 <script>
+function displayMapData() {
+
+var mapData = "true";
+$.ajax({
+  url: 'adminViews/includes/mapData.php',
+  type: 'post',
+  data: {
+    mapDataSend: mapData
+  },
+  success: function(data, status) {
+    $('#finder-panel').html(data);
+
+  }
+});
+}
+
+
+
 
 var paths = document.querySelectorAll('.mapping');
   paths.forEach(function(path) {
@@ -70,9 +88,6 @@ var paths = document.querySelectorAll('.mapping');
       this.style.fill = "grey";
     });
   });
-
-
-
 
   var zoomInCounter = 0;
   var zoomOutCounter = 0;
