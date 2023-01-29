@@ -4911,13 +4911,12 @@
 		</div>
 
 
-<<<<<<< Updated upstream
 <!--STATUS BELOWSSSS-->
 		<div class="status" id="status-check">
-=======
+
 
 		<div class="status statuslotss" id="status-check" >
->>>>>>> Stashed changes
+
 			<div class="status-title">
 				<h5>STATUS</h5>
 			</div>
