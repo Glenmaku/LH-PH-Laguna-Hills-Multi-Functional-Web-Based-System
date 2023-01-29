@@ -58,7 +58,7 @@ if (isset($_POST['mapAssocSend'])) {
         $("textarea").prop("disabled", false); // enable the textarea
         $("#assocupdateModal-btn").prop("hidden", false);
         $(this).hide(); // hide the edit button
-    
+        $("#assocupdateModal-btn").show(); // show the update button
     });
 });
 </script><script>
@@ -84,7 +84,8 @@ function Update_Assoc_Data(){
             Remarks: Remarks
         },
         success: function(data){
-          
+
+                alert('Update successful');
             $("#assocupdateModal-btn").hide(); // hide the update button
             $("#editModal-assoc-btn").show(); // show the edit button
             $("input").prop("disabled", true); // disable the input fields

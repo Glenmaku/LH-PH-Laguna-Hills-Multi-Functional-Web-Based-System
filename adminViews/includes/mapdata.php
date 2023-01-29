@@ -64,10 +64,17 @@ if(isset($_POST['mapDataSend'])){
         $("textarea").prop("disabled", false); // enable the textarea
         $("#lotupdateModal-btn").prop("hidden", false);
         $(this).hide(); // hide the edit button
-       // $("#lotupdateModal-btn").show(); // show the update button
+       $("#lotupdateModal-btn").show(); // show the update button
     });
+//     $(document).ready(function(){
+//     $("#loteditModal-btn").click(function(){
+//         $("input").prop("disabled", false); // enable the input fields
+//         $("textarea").prop("disabled", false); // enable the textarea
+//         $("#lotupdateModal-btn").toggle(); // toggle the visibility of the update button
+//         $(this).toggle(); // toggle the visibility of the edit button
+//     });
+// });
 });
-</script><script>
 function Update_Lot_Data(){
 //$(document).on("click", "#lotupdateModal-btn", function(){
 
@@ -92,8 +99,8 @@ function Update_Lot_Data(){
             Price: Price,
             Remarks: Remarks
         },
-        success: function(data){
-                
+        success: function(data){   
+            alert('Update successful');    
             $("#lotupdateModal-btn").hide(); // hide the update button
             $("#loteditModal-btn").show(); // show the edit button
             $("input").prop("disabled", true); // disable the input fields

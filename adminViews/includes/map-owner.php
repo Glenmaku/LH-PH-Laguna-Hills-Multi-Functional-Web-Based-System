@@ -80,7 +80,7 @@ $Lot_ID= $_POST["id"];
     if(mysqli_num_rows($result)>0){
     $table = '          
                         <div class="panel-content" id="panel">
-                        <h3>OWNER INFORMATION</h3>
+                    
                         <table class="table text-center"id="ownership-table" >
 
                         <thead>
