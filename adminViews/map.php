@@ -4902,7 +4902,7 @@
 		</div>
 
 
-<!--STATUS BELOWSSSS
+<!--STATUS BELOWSSSS-->
 		<div class="status" id="status-check">
 			<div class="status-title">
 				<h5>STATUS</h5>
@@ -4937,7 +4937,7 @@
 			</div>
 
 		</div>
-		-->
+		
 	</div>
 
 
@@ -5075,7 +5075,7 @@
 					document.getElementById("lotedit-id").value = data.Lot_ID;
 				})
 				.catch(error => {
-					echo (`Error: ${error}`);
+					alert(`Error: ${error}`);
 				});
 		}
 ////////////////////////////////////////////////////////////////////////////////////////////

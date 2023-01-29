@@ -4875,7 +4875,7 @@
 
 		</div>
 		<div class="panel">
-			<div class="finder-panel" id="panel">
+			<div class="finder" id="finder-panel">
 				<h3>LOT INFORMATION</h3>
 				<input name="lotedit-id" id="lotedit-id"  hidden readonly>
 
@@ -4896,10 +4896,6 @@
 				<div class="input-group">
 					<span class="input-group-text">Area per Sqm</span>
 					<input type="text" id="area-per-sqm" class="form-control" disabled>
-				</div>
-				<div class="input-group">
-					<span class="input-group-text">price</span>
-					<input type="text" id="price" class="form-control"  disabled>
 				</div>
 
 				<button class="btn btn-success" id="loteditModal-btn"><i class="fa-solid fa-circle-question"></i> Inquire</button>
