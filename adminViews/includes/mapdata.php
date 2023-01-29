@@ -16,7 +16,7 @@ if(isset($_POST['mapDataSend'])){
       $Remarks=$row['Remarks'];
       $table='
       <div class="panel-content" id="panel">
-      <h3>LOT INFORMATION</h3>
+     
       <input name="lotedit-id" id="lotedit-id"  value="'.$Lot_ID.'" hidden readonly>
       
       <div class="input-group">
@@ -52,40 +52,6 @@ if(isset($_POST['mapDataSend'])){
       <button class="edit-info" id="lotupdateModal-btn" hidden " onclick="Update_Lot_Data()"><i class="fa-solid fa-pen"></i>Update Information</button>
 </div>';
 
-$table.='<div class="status" id="status-check">
-<div class="status-title">
-        <h5>STATUS</h5>
-</div>
-<div class="form-check">
-        <input class="form-check-input" type="checkbox" value="#1FCE6D" id="available">
-        <label class="form-check-label" for="flexCheckDefault">Available</label>
-</div>
-<div class="form-check">
-        <input class="form-check-input" type="checkbox" value="#E94B35" id="occupied">
-        <label class="form-check-label" for="flexCheckDefault">Occupied</label>
-</div>
-<div class="form-check">
-        <input class="form-check-input" type="checkbox" value="#2C97DE" id="house">
-        <label class="form-check-label" for="flexCheckDefault">With House</label>
-</div>
-<div class="form-check">
-        <input class="form-check-input" type="checkbox" value="#F2C500" id="undisclosed">
-        <label class="form-check-label" for="flexCheckDefault">Property Undisclosed</label>
-</div>
-<div class="form-check">
-        <input class="form-check-input" type="checkbox" value="#E87E04" id="foreclosed">
-        <label class="form-check-label" for="flexCheckDefault">Foreclosed</label>
-</div>
-<div class="form-check">
-        <input class="form-check-input" type="checkbox" value="#33495F" id="open">
-        <label class="form-check-label" for="flexCheckDefault">Open Space</label>
-</div>
-<div class="form-check">
-        <input class="form-check-input" type="checkbox" value="#9C56B8" id="amenities">
-        <label class="form-check-label" for="flexCheckDefault">Amenities</label>
-</div>
-
-</div>';
   }
   echo $table;
 }
