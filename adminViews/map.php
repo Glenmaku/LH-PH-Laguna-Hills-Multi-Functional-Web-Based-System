@@ -4895,15 +4895,29 @@
 				<button id="assoc-btn"><i class="fa-solid fa-scroll"></i></button>
 				<button id="owner-information-btn"><i class="fa-solid fa-user"></i></button>
 			</div>
-
-			<div id="lot-information-map" class="lot-information-map"></div>
-			<div id="map-assoc"></div>
-			<div id="owner-information"></div>
+			<div class="panel-containers" style="min-height:80vh;">
+				<div class="text-center titlessss">
+					<h3 class="" id="lot-information-map-t">LOT INFORMATION</h3>
+					<h3 class="" id="map-assoc-t">ASSOCIATION DUES</h3>
+					<h3 class="" id="owner-information-t">OWNER INFORMATION</h3>
+				</div>
+				<div id="lot-information-map" class="lot-information-map">	
+				</div>
+				<div id="map-assoc">
+				</div>
+				<div id="owner-information">
+				</div>
+			</div>
 		</div>
 
 
+<<<<<<< Updated upstream
 <!--STATUS BELOWSSSS-->
 		<div class="status" id="status-check">
+=======
+
+		<div class="status statuslotss" id="status-check" >
+>>>>>>> Stashed changes
 			<div class="status-title">
 				<h5>STATUS</h5>
 			</div>
@@ -4935,19 +4949,42 @@
 				<input class="form-check-input" type="checkbox" value="#9C56B8" id="amenities">
 				<label class="form-check-label" for="flexCheckDefault">Amenities</label>
 			</div>
+		</div>
+		<div class="status  statusassocss" id="status-check" >
+			<div class="status-title">
+				<h5>STATUS</h5>
+			</div>
+			<div class="form-check">
+				<input class="form-check-input" type="checkbox" value="#018E5A" id="Updated">
+				<label class="form-check-label" for="flexCheckDefault">Updated</label>
+			</div>
+			<div class="form-check">
+				<input class="form-check-input" type="checkbox" value="#E12323" id="Outdated">
+				<label class="form-check-label" for="flexCheckDefault">Outdated</label>
+			</div>
+			<div class="form-check">
+				<input class="form-check-input" type="checkbox" value="#FDC50C" id="Advanced">
+				<label class="form-check-label" for="flexCheckDefault">Advanced</label>
+			</div>
+		
 
 		</div>
+<<<<<<< Updated upstream
 		
+=======
+	
+>>>>>>> Stashed changes
 	</div>
 
 
-
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	<script type="text/javascript">
 
 		$(document).ready(function() {
 			changeColor();
 			getData();
 			displayMapData();
+			 displayOwner();
 
 		});
 ///////////////////////////////////////////////////	////////////////MAP
@@ -4983,13 +5020,15 @@
 			});
 		}
 /////////////////////////////////////////////////////////////////
-		function displayOwner() {
+		function displayOwner(id) {
+
+			var id = id;
 			var ownerData = "true";
 			$.ajax({
 				url: 'adminViews/includes/map-owner.php',
 				type: 'post',
 				data: {
-					mapOwnerSend: ownerData
+					mapOwnerSend: ownerData, id:id
 				},
 				success: function(data, status) {
 					$('#owner-information').html(data);
@@ -5024,15 +5063,6 @@
 ////////////////////////////////////////////////////////////////
 
 
-
-
-
-
-
-
-
-
-
 		$(document).ready(function() {
 			var newColor = "#000000";
 			var previousPath;
@@ -5052,12 +5082,11 @@
 //////////////////////////////////////////////////////////////////////////////
 		function getData(id) {
 			// Use fetch API for HTTP requests
-	
+			
 			fetch(`adminViews/includes/mapsubmit.php?id=${id}`)
-
 				.then(response => response.json())
 				.then(data => {
-				
+					displayOwner(id);
 					// Update the values of the elements with the corresponding ids
 					//document.getElementById("input-field-id").value = myId;
 					document.getElementById('Lot_ID').value = data.Lot_ID;
@@ -5073,54 +5102,28 @@
 					document.getElementById("Yearly_Dues").value = data.Yearly_Dues;
 					document.getElementById("Dues_Status").value = data.Dues_Status;
 					document.getElementById("lotedit-id").value = data.Lot_ID;
-				})
+					document.getElementById("ownergets").value = data.Lot_ID;
+					document.getElementById("ownershipfname").value = data.owner_fname;
+					document.getElementById("ownershiplname").value = data.owner_lname;
+					document.getElementById("ownerships").value = data.ownership;
+					document.getElementById("ownusername").value = data.owner_username;
+	
+					
+					// Append the ownership table to the appropriate element
+					//document.getElementById("ownership-table").innerHTML = data.ownership_info;//
+					})
 				.catch(error => {
+<<<<<<< Updated upstream
 					alert(`Error: ${error}`);
+=======
+					console.log(`Error: ${error}`);
+
+>>>>>>> Stashed changes
 				});
 		}
-////////////////////////////////////////////////////////////////////////////////////////////
-// function Update_Lot_Data(){
+//////////////////////////////////////////////////////////////////////////////
 
-// 	//$(document).on("click", "#lotupdateModal-btn", function(){
-//   // var Lot_ID = $("#lotedit-id").val();
-    
-//   var Block = $("#block").val();
-//     var Lot = $("#lot").val();
-//     var Street = $("#street").val();
-//     var Status = $("#status").val();
-//     var Area = $("#area-per-sqm").val();
-//     var Price = $("#price").val();
-//     var Remarks = $("#remarks").val();
-//     var Monthly_Dues = $("#Monthly_Dues").val();
-//     var Yearly_Dues = $("#Yearly_Dues").val();
-//     var Dues_Status = $("#Dues_Status").val();
-// 	var LOT_ID = $("#lotedit-id").val();
-
-
-//     $.ajax({
-//         url: "adminViews/includes/Act-update_map_lot.php",
-//         type: "POST",
-//         data: {
-//             Lot_ID: Lot_ID,
-//             Block: Block,
-//             Lot: Lot,
-//             Street: Street,
-//             Status: Status,
-//             Area: Area,
-//             Price: Price,
-//             Remarks: Remarks,
-//         },
-//         success: function(data){
-//             $("#lotupdateModal-btn").hide(); // hide the update button
-//             $("#loteditModal-btn").show(); // show the edit button
-//             $("input").prop("disabled", true); // disable the input fields
-//             $("textarea").prop("disabled", true); // disable the textarea
-// 			alert(data);
-//         }
-//     });
-// }
-/////////////////////////////////////////////////////////////////////////////////////////////
-
+//////////////////////////////////////////////////////////////////////////////
 		function colorData(id) {
 			fetch('adminViews/includes/mapsubmit.php?id=' + id)
 				.then(response => response.json())
@@ -5177,4 +5180,43 @@
 				});
 			}
 		});
+
+
+
+
+
+//////////////////////////////////////////////////////////////////DESIGNS
+//On load, display the lot-information-map-t and hide the other two
+document.getElementById("lot-information-map-t").style.display = "block";
+document.getElementById("map-assoc-t").style.display = "none";
+document.getElementById("owner-information-t").style.display = "none";
+document.getElementsByClassName("statuslotss")[0].style.display = "block";
+document.getElementsByClassName("statusassocss")[0].style.display = "none";
+//When lot-information-btn is clicked
+document.getElementById("lot-information-btn").addEventListener("click", function(){
+  document.getElementById("lot-information-map-t").style.display = "block";
+  document.getElementById("map-assoc-t").style.display = "none";
+  document.getElementById("owner-information-t").style.display = "none";
+  document.getElementsByClassName("statuslotss")[0].style.display = "block";
+  document.getElementsByClassName("statusassocss")[0].style.display = "none";
+});
+
+//When assoc-btn is clicked
+document.getElementById("assoc-btn").addEventListener("click", function(){
+  document.getElementById("lot-information-map-t").style.display = "none";
+  document.getElementById("map-assoc-t").style.display = "block";
+  document.getElementById("owner-information-t").style.display = "none";
+  document.getElementsByClassName("statuslotss")[0].style.display = "none";
+  document.getElementsByClassName("statusassocss")[0].style.display = "block";
+});
+
+//When owner-information-btn is clicked
+document.getElementById("owner-information-btn").addEventListener("click", function(){
+  document.getElementById("lot-information-map-t").style.display = "none";
+  document.getElementById("map-assoc-t").style.display = "none";
+  document.getElementById("owner-information-t").style.display = "block";
+  document.getElementsByClassName("statuslotss")[0].style.display = "none";
+  document.getElementsByClassName("statusassocss")[0].style.display = "none";
+});
+
 	</script>

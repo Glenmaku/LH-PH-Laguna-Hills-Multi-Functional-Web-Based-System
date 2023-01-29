@@ -4,12 +4,12 @@
 if(isset($_POST['displayLotSend'])){
 
   $VUsername =$_POST['VUsername'];
-    $ownerLotTable= '<table class="table">
+    $ownerLotTable= '<table class="table text-center">
     <thead>
       <tr>
         <th scope="col">Property</th>
         <th scope="col">Type of Ownership</th>
-        <th scope="col"></th>
+       
       </tr>
     </thead>';
 
@@ -25,7 +25,7 @@ if(isset($_POST['displayLotSend'])){
     $ownerLotTable.= '<tr>
         <td scope="row">'.$Lotid.'</td>
         <td>'. $Ownership.'</td>
-        <td>'. $hihi.'</td>
+        
   
 
       </tr>';
@@ -35,3 +35,7 @@ if(isset($_POST['displayLotSend'])){
 }}
 
 ?>
+
+
+
+<!--<td>'. $hihi.'</td>-->
