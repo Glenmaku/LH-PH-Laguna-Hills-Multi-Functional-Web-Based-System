@@ -12,7 +12,7 @@
         </li>
 
         <li>
-            <a href="#map" onclick="showMap()" class="ps-4">
+            <a href="#map" onclick="showMap()" class="ps-4" id="mapcons">
                 <i class="fa-solid fa-map"></i>
                 <span>Map</span>
             </a>
