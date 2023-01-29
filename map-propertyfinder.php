@@ -4874,21 +4874,37 @@
 
 
 		</div>
-	</div>
-	<div class="finder-panel">
-		<div class="input-group">
-			<span class="input-group-text">Block</span>
-			<input type="text" id="block" class="form-control" value="" disabled>
-			<span class="input-group-text">Lot</span>
-			<input type="text" id="lot" class="form-control" value="" disabled>
-		</div>
-		<div class="input-group">
-			<span class="input-group-text">Status</span>
-			<input type="text" id="status" class="form-control" value="" disabled>
-		</div>
-		<div class="input-group">
-			<span class="input-group-text">Area per Sqm</span>
-			<input type="text" id="area-per-sqm" class="form-control" value="" disabled>
+		<div class="panel">
+			<div class="finder-panel" id="panel">
+				<h3>LOT INFORMATION</h3>
+				<input name="lotedit-id" id="lotedit-id"  hidden readonly>
+
+				<div class="input-group">
+					<span class="input-group-text">Block</span>
+					<input type="text" id="block" class="form-control"  disabled>
+					<span class="input-group-text">Lot</span>
+					<input type="text" id="lot" class="form-control"  disabled>
+				</div>
+				<div class="input-group">
+					<span class="input-group-text">Street</span>
+					<input type="text" id="street" class="form-control"  disabled>
+				</div>
+				<div class="input-group">
+					<span class="input-group-text">Status</span>
+					<input type="text" id="status" class="form-control"  disabled>
+				</div>
+				<div class="input-group">
+					<span class="input-group-text">Area per Sqm</span>
+					<input type="text" id="area-per-sqm" class="form-control" disabled>
+				</div>
+				<div class="input-group">
+					<span class="input-group-text">price</span>
+					<input type="text" id="price" class="form-control"  disabled>
+				</div>
+
+				<button class="btn btn-success" id="loteditModal-btn"><i class="fa-solid fa-circle-question"></i> Inquire</button>
+	
+			</div>
 		</div>
 	</div>
 </div>

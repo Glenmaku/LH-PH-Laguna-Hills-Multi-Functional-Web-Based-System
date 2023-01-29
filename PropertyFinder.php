@@ -40,6 +40,21 @@
   .mapside{
     display: flex;
   }
+ 
+  .finder-panel{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    color: var(--darkgreen);
+    position: relative;
+    padding: 20px;
+    max-width: 100%;
+    margin-top: 10px;
+    margin-right: 40px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  }
+
 </style>
 
 
