@@ -4969,11 +4969,8 @@
 		
 
 		</div>
-<<<<<<< Updated upstream
-		
-=======
-	
->>>>>>> Stashed changes
+
+
 	</div>
 
 
@@ -5113,12 +5110,11 @@
 					//document.getElementById("ownership-table").innerHTML = data.ownership_info;//
 					})
 				.catch(error => {
-<<<<<<< Updated upstream
+
 					alert(`Error: ${error}`);
-=======
+
 					console.log(`Error: ${error}`);
 
->>>>>>> Stashed changes
 				});
 		}
 //////////////////////////////////////////////////////////////////////////////
