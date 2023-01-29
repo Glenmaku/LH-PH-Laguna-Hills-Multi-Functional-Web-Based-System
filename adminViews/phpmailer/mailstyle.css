@@ -1288,7 +1288,7 @@ font-family: 'Raleway', sans-serif;
 font-weight: 500;
     width: 100%;
     height: 100%;
-    padding: 4% 10%;
+    padding: 3% 10%;
 }
 
 .container .mail-form{
@@ -1358,6 +1358,13 @@ font-weight: 500;
     font-size: 15px;
     margin-top: 40px;
 }
+.list-header h3 {
+    width: 100%;
+    font-size: 18px;
+    margin: 33px auto;
+    display: flex;
+    justify-content: center;
+}
 
 .user-details-container{
     font-size: 13px;
@@ -1389,6 +1396,10 @@ font-weight: 500;
     display: flex;
     width: 100%;
   padding-bottom: 10px;
+}
+
+#txtareabox{
+    margin-top: 10px;
 }
 
 
@@ -1445,10 +1456,30 @@ input[type=checkbox]{
     position: relative;
     display: flex;
 }
-/* ajsdklasdjkl; */
 
 .senddtb_container{
     display: flex;
     flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.button_section{
+    display: flex;
+    width: 100%;
+  padding-bottom: 10px;
+}
+
+.list-header h3 {
+    width: 100%;
+    font-size: 18px;
+    margin: 33px auto;
+    display: flex;
+    justify-content: center;
+}
+
+.listed-container{
+    justify-content: center;
+    display: flex;
+    border-top: 3px solid rgba(4,26,16,0.15);
     flex-direction: column;
 }

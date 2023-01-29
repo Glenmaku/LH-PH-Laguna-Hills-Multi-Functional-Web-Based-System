@@ -10,7 +10,8 @@
    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/js/bootstrap.min.js"></script>
 
    <!-- <link rel="stylesheet" href="../sendmail_database/mailstyle.css"> -->
-   <link rel="stylesheet" href="mailstyle.css">
+   <!-- <link rel="stylesheet" href="mailstyle.css"> -->
+   <link rel="stylesheet" href="../adminViews/phpmailer/mailstyle.css">
 
 </head>
 
@@ -44,7 +45,7 @@
                   <div class="list-container overflow-auto">
                      <?php
                      // require('../send_email/functions.php');
-                     require('../sendmail_database/functions.php');
+                     require('phpmailer/all_functions.php');
                      $conn = dbConnection();
                      $fetch_users_sql = "SELECT * FROM dummyowner_accounts";
                      $fetch_result = mysqli_query($conn, $fetch_users_sql);
@@ -72,6 +73,7 @@
       </div>
    </div>
 
+   <script src="../adminViews/phpmailer/link.js"></script>
    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
    <script>
       $(function() {
@@ -81,7 +83,7 @@
             $(".info-msg").text('sending email...');
 
             $.ajax({
-               url: '../sendmail_database/emailHandler.php',
+               url: '../adminViews/phpmailer/all_emailHandler.php',
                data: $(form).serialize(),
                method: 'POST'
             }).done(function(response) {
@@ -94,22 +96,36 @@
          })
       })
 
-$("#s1d").change(function() {
-    if(this.unchecked) {
-        show_email_all();
-    }
-});
-function show_email_all(){  
-    $.ajax({
-        url:"../../sendmail_email.php",
-        method:"post",
-        data:{record:1},
-        success:function(data){
-            $('.container').html(data);
-            console.log(data);
-        }
-    });
-}
+// $("#s1d").change(function() {
+//     if(!this.checked) {
+//         show_email_one();
+//     } else if(this.checked) {
+//         show_email_all();
+//     }
+// });
+// function show_email_one(){  
+//     $.ajax({
+//         url:"../sendmail_email.php",
+//         method:"post",
+//         data:{record:1},
+//         success:function(data){
+//             $('.container').html(data);
+//             // console.log(data);
+//         }
+//     });
+// }
+
+// function show_email_all(){  
+//     $.ajax({
+//         url:"sendmail_database.php",
+//         method:"post",
+//         data:{record:1},
+//         success:function(data){
+//             $('.container').html(data);
+//             console.log(data);
+//         }
+//     });
+// }
    </script>
 </body>
 

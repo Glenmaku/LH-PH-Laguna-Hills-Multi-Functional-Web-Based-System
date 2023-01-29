@@ -1,5 +1,5 @@
 <?php
-require('../sendmail_database/functions.php');
+require('all_functions.php');
 // require('./adminViews/phpmailer/functions.php');
 
 $conn = dbConnection();

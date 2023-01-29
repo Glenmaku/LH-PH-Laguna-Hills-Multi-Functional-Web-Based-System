@@ -3,9 +3,9 @@
 //These must be at the top of your script, not inside a function
 
 
-require_once '../phpmailer/PHPMailerAutoload.php';
-require_once '../phpmailer/class.smtp.php';
-require_once '../phpmailer/class.phpmailer.php';
+require_once 'PHPMailerAutoload.php';
+require_once 'class.smtp.php';
+require_once 'class.phpmailer.php';
 
 
 // function dbConnection() {
