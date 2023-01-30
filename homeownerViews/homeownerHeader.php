@@ -22,7 +22,7 @@
             </a>
             <ul class="dropdown-menu dropdown-menu-end">
                 <li><a class="dropdown-item" onclick="get_user_info()" id="btn_setting_owner_acc" class="btn_setting_owner_acc"><i class="fa-solid fa-fingerprint"></i> Owner Information</a></li>
-                <li><a class="dropdown-item" onclick="change_pass()" id="btn_change-pass"><i class="fa-regular fa-circle-user"></i> My Account</a></li>
+                <li><a class="dropdown-item" onclick="change_pass()" id="btn_change-pass"><i class="fa-regular fa-circle-user"></i> Reset Password</a></li>
                 
                 <li><a class="dropdown-item" onclick="outnow()" id="outfirst-button"><i class="fa-solid fa-right-from-bracket"></i>Logout</a></li>
             </ul>
@@ -41,7 +41,11 @@
                 </button>
             </div>
             <div class="modal-body">
-                <div id="message-updateownerinfo"></div>
+                         <div class="alert alert-success alert-dismissible fade show " role="alert" id="personal-error">
+                            Please enter your personal information.
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+               <div id="message-updateownerinfo"></div>
                 <form class="row g-3">
                     <input  type="hidden" name="owner_username" id="owner_username" value="<?php echo $username ?>" readonly>
                     <input  type="hidden" name="ownerview_id" id="ownerview_id" value="<?php echo $ownerid ?>" readonly>
@@ -131,7 +135,7 @@
                             </div>
                         </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="btn_close closess">Cancel</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="btn_close_closess">Cancel</button>
                         <button type="button" class="btn btn-primary" id="btn_check_pass" name="btn_updateuserinfo" >Verify</button>
                     </div>
                     </form>
@@ -152,7 +156,7 @@
                         <h4 class="text-center">Are you sure you want to log out your account?</h4>
                         </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="btn_close closess">Cancel</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="btn_close_close">Cancel</button>
                         <button type="button" class="btn btn-primary" id="btn_logout" name="btn_logout"><a class="dropdown-item" href="includes/Act-logout.php">Confirm</a></button>
                     </div>
                     </form>
@@ -213,8 +217,33 @@
 
             },
             function(data, status) {
-                $('#settingOwnerModal').modal('show');
+                $("#settingOwnerModal").modal("show");
                 $('#message-updateownerinfo').html(data);
+                // if (data ==="Fill all the blanks"){
+                //     document.getElementById("personal-error").innerHTML = "Fill all the blanks.";
+                //     document.getElementById("personal-error").classList.remove("alert-success");
+                //     document.getElementById("personal-error").classList.add("alert-danger");
+                // }
+                // else if(data==="Invalid Characters"){
+                //     document.getElementById("personal-error").innerHTML = "Invalid Characters.";
+                //     document.getElementById("personal-error").classList.remove("alert-success");
+                //     document.getElementById("personal-error").classList.add("alert-danger");
+                // }
+                // else if(data=="Invalid Email"){
+                //     document.getElementById("personal-error").innerHTML = "Invalid Email.";
+                //     document.getElementById("personal-error").classList.remove("alert-success");
+                //     document.getElementById("personal-error").classList.add("alert-danger");
+                // }
+                // else if(data==="Successfully updated user information"){
+                //     document.getElementById("personal-error").innerHTML = "You successfully updated your information.";
+                //     document.getElementById("personal-error").classList.remove("alert-danger");
+                //     document.getElementById("personal-error").classList.add("alert-success");
+                // }
+                // else{
+                //     document.getElementById("personal-error").innerHTML = "Error. Please try again";
+                //     document.getElementById("personal-error").classList.remove("alert-success");
+                //     document.getElementById("personal-error").classList.add("alert-danger");
+                // }
             });
     }
 

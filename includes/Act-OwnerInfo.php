@@ -65,7 +65,12 @@ if(isset($_POST['ownerusername'])){
                     
                     $ownerresult = mysqli_query($con, $ownersql);
 
-                    echo 'Successfully updated user information';
+    
+                    if($ownerresult){
+                          echo 'Successfully updated user information';
+                      } else {
+                        echo "Update failed";
+                      }
 
                     }
                     }
