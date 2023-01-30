@@ -21,16 +21,17 @@
                 </div>
             </a>
             <ul class="dropdown-menu dropdown-menu-end">
-                <li><a class="dropdown-item" onclick="change_pass()" id="btn_change-pass"><i class="fa-regular fa-circle-user"></i> My Account</a></li>
                 <li><a class="dropdown-item" onclick="get_user_info()" id="btn_setting_owner_acc" class="btn_setting_owner_acc"><i class="fa-solid fa-fingerprint"></i> Owner Information</a></li>
-                <li><a class="dropdown-item" href="includes/Act-logout.php"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></li>
+                <li><a class="dropdown-item" onclick="change_pass()" id="btn_change-pass"><i class="fa-regular fa-circle-user"></i> My Account</a></li>
+                
+                <li><a class="dropdown-item" onclick="outnow()" id="outfirst-button"><i class="fa-solid fa-right-from-bracket"></i>Logout</a></li>
             </ul>
         </div>
         </div>
     </nav>
 </div>
 
-
+<!--SETTING FOR PERSONAL INFORMATION-->
 <div class="modal fade" id="settingOwnerModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-scrollable " role="document">
         <div class="modal-content">
@@ -93,7 +94,7 @@
         </div>
     </div>
 </div>
-
+<!--PASSWORD RESET-->
 <div class="modal fade" id="ResetPasswordModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-scrollable" role="document">
                 <div class="modal-content">
@@ -137,7 +138,27 @@
                 </div>
             </div>
         </div>
-
+<!--SURE LOGOUT????-->
+<div class="modal fade" id="sure-logout" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                        </button>
+                    </div>
+                    <form class="logout-form">
+                    <div class="modal-body ps-5 pe-5 d-flex flex-column justify-content-center align-items-center for-logout">
+                    <i class="fa-solid fa-circle-exclamation text-danger"></i>
+                        <h4 class="text-center">Are you sure you want to log out your account?</h4>
+                        </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="btn_close closess">Cancel</button>
+                        <button type="button" class="btn btn-primary" id="btn_logout" name="btn_logout"><a class="dropdown-item" href="includes/Act-logout.php">Confirm</a></button>
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
 <script>
     //SCRIPTS FOR UPDATING ACCOUNT BUTTONS
     function get_user_info() { // to show the current data
@@ -255,6 +276,7 @@ function change_pass(){
     });
     $('#ResetPasswordModal').modal("show");
 }
+
 function update_pass(){
   
         var new_pass = $("#new_pass").val();
@@ -311,5 +333,10 @@ function open_sidebar(){
         $('.ownerSidebar').prop('hidden',false);
         
     });
+}
+function outnow(){
+    $(document).on('click','#outfirst-button',function(){
+        $('#sure-logout').modal('show');
+    })
 }
 </script>
