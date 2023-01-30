@@ -1,16 +1,20 @@
 <div class="owner-header">
-    <nav class="owner-head">
-        <div class="date-timezone" id="date-timezone">
+    <nav class="owner-head navbar justify-content-between">
 
+        <button class=" nav-responsives navbar-toggler d-flex flex-start bg-white ms-4" type="button" data-toggle="collapse" data-target="#narbar-to-collapse" aria-controls="" area-expanded="false" aria-label="Toggle navigation">  
+            <span class="navbar-toggler-icon" onclick="open_sidebar()"></span>
+        </button>
+
+        <div class="d-flex">
+        <div class="date-timezone " id="date-timezone">
         </div>
-
         <div class="dropdown homeowner-profile ">
             <a class="btn btn-secondary owner-side" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 <div class="profile">
                     <div class="owner-pic">
                         <img src="assets/images/user-icon.jpg">
                     </div>
-                    <div class="owner-desc">
+                    <div  iv class="owner-desc">
                         <span><?php echo $Fname." ".$Lname?></span><br>
                         <span>RESIDENT</span>
                     </div>
@@ -22,8 +26,7 @@
                 <li><a class="dropdown-item" href="includes/Act-logout.php"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></li>
             </ul>
         </div>
-
-        
+        </div>
     </nav>
 </div>
 
@@ -33,7 +36,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">Personal Information</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                <button type="button" class="btn-close btn-danger" data-bs-dismiss="modal" aria-label="Close">
                 </button>
             </div>
             <div class="modal-body">
@@ -303,5 +306,10 @@ function update_pass(){
     }
 })
     }
-
+function open_sidebar(){
+    $(document).on('click','.nav-responsives',function(){
+        $('.ownerSidebar').prop('hidden',false);
+        
+    });
+}
 </script>

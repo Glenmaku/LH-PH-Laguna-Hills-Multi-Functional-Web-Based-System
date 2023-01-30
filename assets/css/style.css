@@ -18,8 +18,7 @@ body{
     --light-green: #0f8e5f;
 }
 /*********** Headers **************/
-.admin-header,
-.owner-header{
+.admin-header{
     top: 0;
     font-family: 'Raleway', sans-serif;
     font-size: 13px;
@@ -29,8 +28,7 @@ body{
     height: 65px;
     position: relative;
 }
-.admin-header .admin-head,
-.owner-header .owner-head{
+.admin-header .admin-head{
     font-family: 'Raleway', sans-serif;
     font-size: 14px;
     font-weight: 700;
@@ -38,62 +36,53 @@ body{
     margin-left: 70%;
     display: flex;
 }
-.admin-head .date-timezone,
-.owner-head .date-timezone{
+.admin-head .date-timezone{
     width: 30%;
     margin-top: 20px;
 
 }
-.admin-profile,
-.homeowner-profile{
+.admin-profile{
     width: 60%;
 }
-.admin-profile ul,
-.homeowner-profile ul{
+.admin-profile ul{
     width: 70%;
     background-color: var(--darkgreen);
 } 
-.admin-profile ul li a,
-.homeowner-profile ul li a{
+.admin-profile ul li a{
     font-size: 14px;
     cursor: pointer;
     color: var(--white);
 }
-.admin-profile ul li a:hover,
-.homeowner-profile ul li a:hover{
+.admin-profile ul li a:hover{
     background-color: var(--light-green);
     color: var(--white);
 }
-.admin-profile .admin-side,
-.homeowner-profile .owner-side{
+.admin-profile .admin-side{
     width: 100%;
     background-color: var(--darkgreen);
     border-color:var(--darkgreen) ;
 }
-.admin-profile .admin-side:hover,
-.homeowner-profile .owner-side:hover{
+.admin-profile .admin-side:hover{
     border-color:var(--light-green); 
     background-color: var(--darkgreen);
 }
 .profile{
     display: flex;
 }
-.profile .admin-pic img,
-.profile .owner-pic img{
+.profile .admin-pic img{
     width: 40px;
     height: 40px;
     border-radius: 50%;
 }
-.profile .admin-desc,
-.profile .owner-desc{
+.profile .admin-desc{
     text-align: left;
     margin-left: 10px;  
 }
-.profile .admin-desc span,
-.profile .owner-desc span{
+.profile .admin-desc span{
     font-size: 14px;
     font-weight: 500 ;
 }
+
 /*********** Admin Sidebar **************/
 .adminSidebar{
     position: fixed;
@@ -169,6 +158,180 @@ body{
     transition: all 0.4s ease;
 }
 
+/*********************************************************************************************************/
+.owner-header{/*outer container*/
+    top: 0;
+    font-family: 'Raleway', sans-serif;
+    font-size: 13px;
+    color: #fff;
+    background: var(--darkgreen);
+    width: 100%;
+    height: 65px;
+    position: relative;
+}
+.owner-header .owner-head{
+    font-family: 'Raleway', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 2px;
+    right: 0;
+    display: flex;
+    justify-content: end;
+}
+
+.sidebar-btn_close{
+    background-color: transparent!important;
+    outline: none!important;
+    border: none;
+    display: flex;
+    padding-left: 220px;
+}
+.sidebar-btn_close span{
+    right: 0;
+    outline: none!important;
+    display: flex;
+    font-size: 40px;
+    color: white;
+    
+}
+.owner-head .date-timezone{
+    width: 20   0px;
+    align-items: center;
+    right: 0;
+    text-align: end;
+    vertical-align: middle;
+    align-self: center;
+    border-right: #dadee0 1px solid;
+    padding-right: 5px;
+
+}
+.homeowner-profile{
+    width: 300px;
+}
+.homeowner-profile ul{
+    width: 300px;
+    background-color: var(--darkgreen);
+
+} 
+.homeowner-profile ul li a{
+    font-size: 14px;
+    cursor: pointer;
+    color: var(--white);
+}
+.homeowner-profile ul li a:hover{
+    background-color: var(--light-green);
+    color: var(--white);
+}
+.homeowner-profile .owner-side{
+    width: 100%;
+    background-color: var(--darkgreen);
+    border-color:var(--darkgreen) ;
+}
+.homeowner-profile .owner-side:hover{
+    border-color:var(--light-green); 
+    background-color: var(--darkgreen);
+}
+.profile{
+    display: flex;
+}
+.profile .owner-pic img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+.profile .owner-desc{
+    text-align: left;
+    margin-left: 10px;  
+}
+@media (max-width:940px) {
+    .profile .owner-desc{
+        display: none;
+    }
+    .homeowner-profile{
+        width: 80px;
+    }
+}
+.profile .owner-desc span{
+    font-size: 14px;
+    font-weight: 500 ;
+}
+/*********** OWNER Sidebar **************/
+.ownerSidebar{
+    position: fixed;
+    top: 0;
+    height: 100%;
+    width: 260px;
+    background: var(--darkgreen);
+}
+
+.logo-details{
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+}
+
+.logo-details img{
+    width: 180px;
+    margin-bottom: 10px;
+}
+.logo-details .logo-name{
+    font-family: 'Great Vibes', cursive;
+    font-weight: 400;
+    font-size: 30px;
+    color: #fff;
+    margin-top: 20px;
+}
+
+.ownerSidebar .nav-links{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    height: 100%;
+
+}
+.ownerSidebar .nav-links li{
+    position: relative;
+    list-style: none!important;
+    transition: all 0.4s ease;
+
+}
+
+.ownerSidebar ul li:hover {
+    background-color: var(--light-green);
+        transition: all 0.2s ease-in-out;
+  }
+
+.ownerSidebar .nav-links li i{
+    height: 50px;
+    width: 40px;
+    line-height: 50px;
+    color: #fff;
+    font-size: 20px;
+    transition: all 0.3s ease;
+}
+
+.ownerSidebar .nav-links li a{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.ownerSidebar ul li a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 17px;
+}
+.ownerSidebar ul li ul {
+    display: none;
+  }
+
+.ownerSidebar ul li:hover ul  {
+    display: block;
+    transition: all 0.4s ease;
+}
+
+
+
+/**************************************************************************************/
 /*********** Admin Dashboard **************/
 .allContent{
     position: block;
@@ -179,16 +342,17 @@ body{
     font-family: 'Raleway', sans-serif;
     color: #fff;
     display: flex;
+    flex-direction: column;
 }
 
 .dashboard .dashboard-row{
     margin-top: 30px;
-    margin-right: 50px;
+    margin-right: 20px;
 }
 
 .dashboard .admin-overview{
     display: flex;
-    width: 450px;
+    width: 300px;
     background-color: var(--darkgreen);
     padding:20px;
     margin: 10px;
@@ -198,6 +362,9 @@ body{
 
 .dashboard .admin-overview .overview-desc{
     margin-left: 20px;
+}
+.dashboard .admin-overview .overview-desc h5{
+    margin-top: -10px;
 }
 
 .dashboard .admin-overview .fa-solid{
