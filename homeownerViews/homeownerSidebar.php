@@ -11,7 +11,7 @@
             </a>
         </li>
         <li>
-            <a href="#map" onclick="">
+            <a href="#map" onclick="showHomeMap()">
                 <i class="fa-solid fa-map"></i>
                 <span>Map</span>
             </a>

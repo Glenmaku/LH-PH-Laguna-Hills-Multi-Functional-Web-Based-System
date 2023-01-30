@@ -88,4 +88,16 @@ function showMessage(){  //sidebar
         }
     });
 }
+function showHomeMap(){  //sidebar
+    $.ajax({
+        url:"homeownerViews/map-homeowner.php",
+        method:"post",
+        data:{record:1},
+        success:function(data){
+            $('.allContent').html(data);
+        }
+    });
+}
+
+
 

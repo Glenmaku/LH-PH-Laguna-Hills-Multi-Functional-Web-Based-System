@@ -1,6 +1,6 @@
 <!--JUST COPY THE CODE BETWEEN THE COMMENT AND PASTE IT TO THE HOMEOWNER BODY OR HEADER-->
 <?php
-session_start();
+/*session_start();
 if (!empty($_SESSION['owner_I_D'])) {
     $username = $_SESSION['owner_username'];
     $ownerid = $_SESSION['owner_I_D'];
@@ -12,7 +12,7 @@ if (!empty($_SESSION['owner_I_D'])) {
 } else{
     header("location:index.php");
     exit();
-}
+}*/
 
 ?>
 <!DOCTYPE html>
@@ -96,6 +96,8 @@ if (!empty($_SESSION['owner_I_D'])) {
         </div>
     </div>
 </div>
+
+
 
 <script>
     //announcement area
