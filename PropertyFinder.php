@@ -58,45 +58,28 @@
   }
 </style>
 
-
 <script>
-		function displayMapData() {
+  function getData(id) {
+    // Use fetch API for HTTP requests
 
-			var mapData = "true";
-			$.ajax({
-				url: 'adminViews/includes/property-finder-panel.php',
-				type: 'post',
-				data: {
-					mapDataSend: mapData
-				},
-				success: function(data, status) {
-					$('#property-panel').html(data);
-				}
-			});
-		}
+    fetch(`adminViews/includes/property-finder-panel.php?id=${id}`)
+      .then(response => response.json())
+      .then(data => {
+        // Update the values of the elements with the corresponding ids
+        //document.getElementById("input-field-id").value = myId;
+        document.getElementById("finder-block").value = data.Block;
+        document.getElementById("finder-lot").value = data.Lot;
+        document.getElementById("finder-street").value = data.Street;
+        document.getElementById("finder-status").value = data.Status;
+        document.getElementById("finder-area-per-sqm").value = data.Area;
 
-
-		function getData(id) {
-			// Use fetch API for HTTP requests
-			
-			fetch(`adminViews/includes/property-finder-panel.php?id=${id}`)
-				.then(response => response.json())
-				.then(data => {
-					// Update the values of the elements with the corresponding ids
-					//document.getElementById("input-field-id").value = myId;
-					document.getElementById("finder-block").value = data.Block;
-					document.getElementById("finder-lot").value = data.Lot;
-					document.getElementById("finder-street").value = data.Street;
-					document.getElementById("finder-status").value = data.Status;
-					document.getElementById("finder-area-per-sqm").value = data.Area;
-					
-					// Append the ownership table to the appropriate element
-					//document.getElementById("ownership-table").innerHTML = data.ownership_info;//
-					})
-				.catch(error => {
-					console.log(`Error: ${error}`);
-				});
-		}
+        // Append the ownership table to the appropriate element
+        //document.getElementById("ownership-table").innerHTML = data.ownership_info;//
+      })
+      .catch(error => {
+        console.log(`Error: ${error}`);
+      });
+  }
 
   var paths = document.querySelectorAll('.mapping');
   paths.forEach(function(path) {
@@ -152,6 +135,51 @@
     translateY += deltaY;
     svg.setAttribute("transform", currentScale + "translate(" + translateX + "," + translateY + ")");
   }
+
+
+  function colorData(id) {
+    $.ajax({
+      url: 'adminViews/includes/property-finder-panel.php',
+      type: 'GET',
+      dataType: 'json',
+      success: function(data) {
+        data.forEach(function(data) {
+          if (data.Status === 'available') {
+            document.getElementById(data.id).style.fill = '#1FCE6D';
+          } else if (data.Status === 'undefined') {
+            document.getElementById(data.id).style.display = '';
+          } else {
+            document.getElementById(data.id).style.display = 'none';
+          }
+        });
+      },
+      
+      error: function(error) {
+        console.log('Error:', error);
+      }
+    });
+  }
+
+  const select = document.querySelector('.trigger');
+  const path = document.querySelectorAll('path');
+
+  select.addEventListener("click", function() {
+    if (select.value === "trigger-prop") {
+      buttonSelected = "trigger-prop";
+      path.forEach(path => {
+        getData(path.id);
+        colorData(path.id);
+      });
+    }
+  });
+
+  // Show color onload
+  document.addEventListener("DOMContentLoaded", function() {
+    path.forEach(path => {
+      getData(path.id);
+      colorData(path.id);
+    });
+  });
 </script>
 
 
