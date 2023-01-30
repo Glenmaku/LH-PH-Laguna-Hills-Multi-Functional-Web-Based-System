@@ -1,4 +1,4 @@
-<div class="mapHome" >
+<div class="mapHome">
 	<div class="HomeMap">
 		<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1300 1800" style="enable-background:new 0 0 1190.2 1683.8;" xml:space="preserve" id="my-svg-pf">
 			<style type="text/css">
@@ -4871,6 +4871,10 @@
 
 
 	</div>
+
+	<button id="zoom-in-btn-home" class="btn btn-success"><i class="fa-sharp fa-solid fa-plus"></i></button>
+	<button id="zoom-out-btn-home" class="btn btn-success"><i class="fa-sharp fa-solid fa-minus"></i></button>
+
 	<div class="property-panel">
 		<div class="finder" id="finder-panel">
 			<h3>LOT INFORMATION</h3>
@@ -4893,8 +4897,128 @@
 				<input type="text" id="finder-area-per-sqm" class="form-control" disabled>
 			</div>
 
-			<button class="btn btn-success" id="loteditModal-btn"><i class="fa-solid fa-circle-question"></i> Inquire</button>
-
 		</div>
 	</div>
 </div>
+
+<script>
+	function getData(id) {
+		// Use fetch API for HTTP requests
+
+		fetch(`adminViews/includes/property-finder-panel.php?id=${id}`)
+			.then(response => response.json())
+			.then(data => {
+				// Update the values of the elements with the corresponding ids
+				//document.getElementById("input-field-id").value = myId;
+				document.getElementById("finder-block").value = data.Block;
+				document.getElementById("finder-lot").value = data.Lot;
+				document.getElementById("finder-street").value = data.Street;
+				document.getElementById("finder-status").value = data.Status;
+				document.getElementById("finder-area-per-sqm").value = data.Area;
+
+				// Append the ownership table to the appropriate element
+				//document.getElementById("ownership-table").innerHTML = data.ownership_info;//
+			})
+			.catch(error => {
+				console.log(`Error: ${error}`);
+			});
+	}
+
+	var paths = document.querySelectorAll('.mapping');
+	paths.forEach(function(path) {
+		path.addEventListener('mouseover', function() {
+			this.style.fill = "#085D40";
+		});
+		path.addEventListener('mouseout', function() {
+			this.style.fill = "grey";
+		});
+	});
+
+	var zoomInCounter = 0;
+	var zoomOutCounter = 0;
+	var svg = document.getElementById("my-svg-pf"); // get the SVG element
+	var currentScale = svg.getAttribute("transform") || "scale(1)"; // get the current scale
+
+	// add event listeners to zoom in and out buttons
+	document.getElementById("zoom-in-btn-home").addEventListener("click", function() {
+		if (zoomInCounter < 7) {
+			var newScale = "scale(" + (parseFloat(currentScale.slice(6)) + 0.1) + ")";
+			svg.setAttribute("transform", newScale);
+			currentScale = newScale;
+			zoomInCounter++;
+		}
+	});
+	document.getElementById("zoom-out-btn-home").addEventListener("click", function() {
+		if (zoomOutCounter < 4) {
+			var newScale = "scale(" + (parseFloat(currentScale.slice(6)) - 0.1) + ")";
+			svg.setAttribute("transform", newScale);
+			currentScale = newScale;
+			zoomOutCounter++;
+		}
+	});
+
+	//add event listener for drag
+	var startX, startY, translateX = 0,
+		translateY = 0;
+	svg.addEventListener("mousedown", function(event) {
+		startX = event.clientX;
+		startY = event.clientY;
+		svg.addEventListener("mousemove", drag);
+	});
+	svg.addEventListener("mouseup", function() {
+		svg.removeEventListener("mousemove", drag);
+	});
+
+	function drag(event) {
+		var deltaX = event.clientX - startX;
+		var deltaY = event.clientY - startY;
+		startX = event.clientX;
+		startY = event.clientY;
+		translateX += deltaX;
+		translateY += deltaY;
+		svg.setAttribute("transform", currentScale + "translate(" + translateX + "," + translateY + ")");
+	}
+
+
+	function colorData(id) {
+		$.ajax({
+			url: 'adminViews/includes/property-finder-panel.php',
+			type: 'GET',
+			dataType: 'json',
+			success: function(data) {
+				data.forEach(function(data) {
+					if (data.Status === 'available') {
+						document.getElementById(id).style.fill = '#1FCE6D';
+					} else {
+						document.getElementById(id).style.display = 'none';
+					}
+				});
+			},
+			error: function(error) {
+				console.log('Error:', error);
+			}
+		});
+	}
+
+	const select = document.querySelector('.trigger');
+	const path = document.querySelectorAll('path');
+
+	select.addEventListener("click", function() {
+		if (select.value === "trigger-prop") {
+			buttonSelected = "trigger-prop";
+			path.forEach(path => {
+				getData(path.id);
+				colorData(path.id);
+			});
+		}
+	});
+
+	// Show color onload
+	document.addEventListener("DOMContentLoaded", function() {
+		path.forEach(path => {
+			getData(path.id, function() {
+				colorData(path.id);
+			});
+		});
+	});
+</script>
