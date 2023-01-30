@@ -145,15 +145,12 @@
       success: function(data) {
         data.forEach(function(data) {
           if (data.Status === 'available') {
-            document.getElementById(data.id).style.fill = '#1FCE6D';
-          } else if (data.Status === 'undefined') {
-            document.getElementById(data.id).style.display = '';
+            document.getElementById(id).style.fill = '#1FCE6D';
           } else {
-            document.getElementById(data.id).style.display = 'none';
+            document.getElementById(id).style.display = 'none';
           }
         });
       },
-      
       error: function(error) {
         console.log('Error:', error);
       }
@@ -176,8 +173,9 @@
   // Show color onload
   document.addEventListener("DOMContentLoaded", function() {
     path.forEach(path => {
-      getData(path.id);
-      colorData(path.id);
+      getData(path.id, function() {
+        colorData(path.id);
+      });
     });
   });
 </script>
