@@ -1,43 +1,51 @@
 <div class="owner-header">
-    <nav class="owner-head">
-        <div class="date-timezone" id="date-timezone">
+    <nav class="owner-head navbar justify-content-between">
 
+        <button class=" nav-responsives navbar-toggler d-flex flex-start bg-white ms-4" type="button" data-toggle="collapse" data-target="#narbar-to-collapse" aria-controls="" area-expanded="false" aria-label="Toggle navigation">  
+            <span class="navbar-toggler-icon" onclick="open_sidebar()"></span>
+        </button>
+
+        <div class="d-flex">
+        <div class="date-timezone " id="date-timezone">
         </div>
-
         <div class="dropdown homeowner-profile ">
             <a class="btn btn-secondary owner-side" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 <div class="profile">
                     <div class="owner-pic">
                         <img src="assets/images/user-icon.jpg">
                     </div>
-                    <div class="owner-desc">
+                    <div  iv class="owner-desc">
                         <span><?php echo $Fname." ".$Lname?></span><br>
                         <span>RESIDENT</span>
                     </div>
                 </div>
             </a>
             <ul class="dropdown-menu dropdown-menu-end">
-                <li><a class="dropdown-item" onclick="change_pass()" id="btn_change-pass"><i class="fa-regular fa-circle-user"></i> My Account</a></li>
                 <li><a class="dropdown-item" onclick="get_user_info()" id="btn_setting_owner_acc" class="btn_setting_owner_acc"><i class="fa-solid fa-fingerprint"></i> Owner Information</a></li>
-                <li><a class="dropdown-item" href="includes/Act-logout.php"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></li>
+                <li><a class="dropdown-item" onclick="change_pass()" id="btn_change-pass"><i class="fa-regular fa-circle-user"></i> Reset Password</a></li>
+                
+                <li><a class="dropdown-item" onclick="outnow()" id="outfirst-button"><i class="fa-solid fa-right-from-bracket"></i>Logout</a></li>
             </ul>
         </div>
-
-        
+        </div>
     </nav>
 </div>
 
-
+<!--SETTING FOR PERSONAL INFORMATION-->
 <div class="modal fade" id="settingOwnerModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-scrollable " role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">Personal Information</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                <button type="button" class="btn-close btn-danger" data-bs-dismiss="modal" aria-label="Close">
                 </button>
             </div>
             <div class="modal-body">
-                <div id="message-updateownerinfo"></div>
+                         <div class="alert alert-success alert-dismissible fade show " role="alert" id="personal-error">
+                            Please enter your personal information.
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+               <div id="message-updateownerinfo"></div>
                 <form class="row g-3">
                     <input  type="hidden" name="owner_username" id="owner_username" value="<?php echo $username ?>" readonly>
                     <input  type="hidden" name="ownerview_id" id="ownerview_id" value="<?php echo $ownerid ?>" readonly>
@@ -90,7 +98,7 @@
         </div>
     </div>
 </div>
-
+<!--PASSWORD RESET-->
 <div class="modal fade" id="ResetPasswordModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-scrollable" role="document">
                 <div class="modal-content">
@@ -127,14 +135,34 @@
                             </div>
                         </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="btn_close closess">Cancel</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="btn_close_closess">Cancel</button>
                         <button type="button" class="btn btn-primary" id="btn_check_pass" name="btn_updateuserinfo" >Verify</button>
                     </div>
                     </form>
                 </div>
             </div>
         </div>
-
+<!--SURE LOGOUT????-->
+<div class="modal fade" id="sure-logout" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                        </button>
+                    </div>
+                    <form class="logout-form">
+                    <div class="modal-body ps-5 pe-5 d-flex flex-column justify-content-center align-items-center for-logout">
+                    <i class="fa-solid fa-circle-exclamation text-danger"></i>
+                        <h4 class="text-center">Are you sure you want to log out your account?</h4>
+                        </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="btn_close_close">Cancel</button>
+                        <button type="button" class="btn btn-primary" id="btn_logout" name="btn_logout"><a class="dropdown-item" href="includes/Act-logout.php">Confirm</a></button>
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
 <script>
     //SCRIPTS FOR UPDATING ACCOUNT BUTTONS
     function get_user_info() { // to show the current data
@@ -189,8 +217,33 @@
 
             },
             function(data, status) {
-                $('#settingOwnerModal').modal('show');
+                $("#settingOwnerModal").modal("show");
                 $('#message-updateownerinfo').html(data);
+                // if (data ==="Fill all the blanks"){
+                //     document.getElementById("personal-error").innerHTML = "Fill all the blanks.";
+                //     document.getElementById("personal-error").classList.remove("alert-success");
+                //     document.getElementById("personal-error").classList.add("alert-danger");
+                // }
+                // else if(data==="Invalid Characters"){
+                //     document.getElementById("personal-error").innerHTML = "Invalid Characters.";
+                //     document.getElementById("personal-error").classList.remove("alert-success");
+                //     document.getElementById("personal-error").classList.add("alert-danger");
+                // }
+                // else if(data=="Invalid Email"){
+                //     document.getElementById("personal-error").innerHTML = "Invalid Email.";
+                //     document.getElementById("personal-error").classList.remove("alert-success");
+                //     document.getElementById("personal-error").classList.add("alert-danger");
+                // }
+                // else if(data==="Successfully updated user information"){
+                //     document.getElementById("personal-error").innerHTML = "You successfully updated your information.";
+                //     document.getElementById("personal-error").classList.remove("alert-danger");
+                //     document.getElementById("personal-error").classList.add("alert-success");
+                // }
+                // else{
+                //     document.getElementById("personal-error").innerHTML = "Error. Please try again";
+                //     document.getElementById("personal-error").classList.remove("alert-success");
+                //     document.getElementById("personal-error").classList.add("alert-danger");
+                // }
             });
     }
 
@@ -252,6 +305,7 @@ function change_pass(){
     });
     $('#ResetPasswordModal').modal("show");
 }
+
 function update_pass(){
   
         var new_pass = $("#new_pass").val();
@@ -303,5 +357,15 @@ function update_pass(){
     }
 })
     }
-
+function open_sidebar(){
+    $(document).on('click','.nav-responsives',function(){
+        $('.ownerSidebar').prop('hidden',false);
+        
+    });
+}
+function outnow(){
+    $(document).on('click','#outfirst-button',function(){
+        $('#sure-logout').modal('show');
+    })
+}
 </script>

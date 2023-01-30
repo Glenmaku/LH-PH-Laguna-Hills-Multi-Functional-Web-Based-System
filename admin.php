@@ -39,13 +39,21 @@ if (!empty($_SESSION['admin_I_D'])) {
     ?>
 
     <div class=" allContent" id="main-content">
-        <div class="dashboard">
-            <div class="dashboard-row">
+<div class="d-flex flex-row">
+    <div></div>
+<div class="d-flex flex-column">
+        <div class="dashboard ">
+            <div class="d-flex flex-row justify-content-center border border-success rounded d-flex flex-column  ">
+            <div class="d-flex justify-content-center">
+            <h1 class="text-center text-dark d-block d-flex">Population</h1>
+            </div>
+             <div class="d-flex flex-row justify-content-center"> 
+                <div class="dashboard-row">
                 <div class="admin-overview">
                     <i class="fa-solid fa-users-line"></i>
                     <div class="overview-desc">
                         <h1>48</h1>
-                        <h4>Residents</h4>
+                        <h5>Residents</h5>
                     </div>
                 </div>
             </div>
@@ -53,19 +61,27 @@ if (!empty($_SESSION['admin_I_D'])) {
                 <div class="admin-overview">
                     <i class="fa-solid fa-people-roof"></i>
                     <div class="overview-desc">
-                        <h1>1000</h1>
-                        <h4>Homeowners</h4>
+                        <h1 class="text-end">1000</h1>
+                        <h5>Homeowners</h5>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+</div>
+
         <div class="dashboard">
+        <div class="d-flex flex-row justify-content-center border border-success rounded d-flex flex-column  ">
+            <div class="d-flex justify-content-center">
+            <h1 class="text-center text-dark d-block d-flex">Association Dues</h1>
+            </div>
+             <div class="d-flex flex-row justify-content-center"> 
             <div class="dashboard-row">
                 <div class="admin-overview">
                     <i class="fa-solid fa-file-circle-xmark"></i>
                     <div class="overview-desc">
                         <h1>500</h1>
-                        <h4>Delinquent</h4>
+                        <h5>Delinquent</h5>
                     </div>
                 </div>
             </div>
@@ -74,13 +90,13 @@ if (!empty($_SESSION['admin_I_D'])) {
                     <i class="fa-solid fa-file-circle-check"></i>
                     <div class="overview-desc">
                         <h1>234</h1>
-                        <h4>Updated</h4>
+                        <h5>Updated</h5>
                     </div>
-                </div>
+                </div</div>
             </div>
         </div>
     </div>
-
+</div></div>
 
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
