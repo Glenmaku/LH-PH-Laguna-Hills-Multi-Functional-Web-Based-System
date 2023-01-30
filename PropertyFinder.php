@@ -60,28 +60,28 @@
 
 
 <script>
-  function displayMapData() {
+		function displayMapData() {
 
-    var mapData = "true";
-    $.ajax({
-      url: 'adminViews/includes/property-finder-panel.php',
-      type: 'post',
-      data: {
-        mapDataSend: mapData
-      },
-      success: function(data, status) {
-        $('#finder-panel').html(data);
+			var mapData = "true";
+			$.ajax({
+				url: 'adminViews/includes/property-finder-panel.php',
+				type: 'post',
+				data: {
+					mapDataSend: mapData
+				},
+				success: function(data, status) {
+					$('#property-panel').html(data);
+				}
+			});
+		}
 
-      }
-    });
-  }
-  function getData(id) {
+
+		function getData(id) {
 			// Use fetch API for HTTP requests
 			
-			fetch(`adminViews/includes/mapsubmit.phpid=${id}`)
+			fetch(`adminViews/includes/property-finder-panel.php?id=${id}`)
 				.then(response => response.json())
 				.then(data => {
-					displayOwner(id);
 					// Update the values of the elements with the corresponding ids
 					//document.getElementById("input-field-id").value = myId;
 					document.getElementById("finder-block").value = data.Block;
@@ -89,16 +89,14 @@
 					document.getElementById("finder-street").value = data.Street;
 					document.getElementById("finder-status").value = data.Status;
 					document.getElementById("finder-area-per-sqm").value = data.Area;
-        })
+					
+					// Append the ownership table to the appropriate element
+					//document.getElementById("ownership-table").innerHTML = data.ownership_info;//
+					})
 				.catch(error => {
-
-
 					console.log(`Error: ${error}`);
-
 				});
 		}
-
-
 
   var paths = document.querySelectorAll('.mapping');
   paths.forEach(function(path) {

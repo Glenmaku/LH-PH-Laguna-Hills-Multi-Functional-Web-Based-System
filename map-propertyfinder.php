@@ -4874,11 +4874,9 @@
 
 
 		</div>
-		<div class="panel">
+		<div class="property-panel">
 			<div class="finder" id="finder-panel">
 				<h3>LOT INFORMATION</h3>
-				<input name="lotedit-id" id="lotedit-id"  hidden readonly>
-
 				<div class="input-group">
 					<span class="input-group-text">Block</span>
 					<input type="text" id="finder-block" class="form-control"  disabled>
