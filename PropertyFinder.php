@@ -129,53 +129,52 @@
 
 
   (function() {
-  let buttonSelected = "trigger-prop";
+    let buttonSelected = "trigger-prop";
 
-  function getData(id, callback) {
-    fetch('adminViews/includes/property-finder-panel.php?id=' + id)
-      .then(response => response.json())
-      .then(data => {
-        callback(data);
-      })
-      .catch(error => {
-        console.log('Error:' + error);
-      });
-  }
+    function getData(id, callback) {
+      fetch('adminViews/includes/property-finder-panel.php?id=' + id)
+        .then(response => response.json())
+        .then(data => {
+          callback(data);
+        })
+        .catch(error => {
+          console.log('Error:' + error);
+        });
+    }
 
-  function colorData(data, id) {
-    if (buttonSelected === "trigger-prop") {
-      if (data.Status === 'available') {
-        document.getElementById(id).style.fill = '#1FCE6D';
-      } else if (data.Status === 'occupied') {
-        document.getElementById(id).style.fill = '#E94B35';
+    function colorData(data, id) {
+      if (buttonSelected === "trigger-prop") {
+        if (data.Status === 'available') {
+          document.getElementById(id).style.fill = '#1FCE6D';
+        } else if (data.Status === 'none' || data.Status === null) {
+          document.getElementById(id).style.fill = 'none';
+        }
       }
     }
-  }
 
-  const select = document.querySelector('.trigger');
-  const path = document.querySelectorAll('path');
+    const select = document.querySelector('.trigger');
+    const path = document.querySelectorAll('path');
 
-  select.addEventListener("click", function() {
-    if (select.value === "trigger-prop") {
-      buttonSelected = "trigger-prop";
+    select.addEventListener("click", function() {
+      if (select.value === "trigger-prop") {
+        buttonSelected = "trigger-prop";
+        path.forEach(path => {
+          getData(path.id, data => {
+            colorData(data, path.id);
+          });
+        });
+      }
+    });
+
+    // Show color onload
+    document.addEventListener("DOMContentLoaded", function() {
       path.forEach(path => {
         getData(path.id, data => {
           colorData(data, path.id);
         });
       });
-    }
-  });
-
-  // Show color onload
-  document.addEventListener("DOMContentLoaded", function() {
-    path.forEach(path => {
-      getData(path.id, data => {
-        colorData(data, path.id);
-      });
     });
-  });
-})();
-
+  })();
 </script>
 
 
