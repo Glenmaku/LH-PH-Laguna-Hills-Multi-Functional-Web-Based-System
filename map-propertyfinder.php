@@ -4896,7 +4896,7 @@
 					<input type="text" id="finder-area-per-sqm" class="form-control" disabled>
 				</div>
 
-				<button class="btn btn-success" id="loteditModal-btn"><i class="fa-solid fa-circle-question"></i> Inquire</button>
+				<button class="btn btn-success" id="loteditModal-btn"><i class="fa-solid fa-circle-question"></i><a href="ContactUs.php" class="nav-link nas">Inquire</a></button>
 						<button class="trigger" id="trigger-prop" value="trigger-prop" hidden></button>
 			</div>
 		</div>
