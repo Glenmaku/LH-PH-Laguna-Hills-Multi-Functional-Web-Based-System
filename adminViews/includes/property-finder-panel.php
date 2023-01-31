@@ -1,7 +1,6 @@
 <?php
 
 include ('connection.php');
-require_once('connection.php');
 
 // Get the ID from the query string
 $id = $_GET["id"];

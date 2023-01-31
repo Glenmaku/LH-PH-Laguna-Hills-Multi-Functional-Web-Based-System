@@ -81,15 +81,6 @@
       });
   }
 
-  var paths = document.querySelectorAll('.mapping');
-  paths.forEach(function(path) {
-    path.addEventListener('mouseover', function() {
-      this.style.fill = "#085D40";
-    });
-    path.addEventListener('mouseout', function() {
-      this.style.fill = "grey";
-    });
-  });
 
   var zoomInCounter = 0;
   var zoomOutCounter = 0;
@@ -137,24 +128,28 @@
   }
 
 
-  function colorData(id) {
-    $.ajax({
-      url: 'adminViews/includes/property-finder-panel.php',
-      type: 'GET',
-      dataType: 'json',
-      success: function(data) {
-        data.forEach(function(data) {
-          if (data.Status === 'available') {
-            document.getElementById(id).style.fill = '#1FCE6D';
-          } else {
-            document.getElementById(id).style.display = 'none';
-          }
-        });
-      },
-      error: function(error) {
-        console.log('Error:', error);
+  (function() {
+  let buttonSelected = "trigger-prop";
+
+  function getData(id, callback) {
+    fetch('adminViews/includes/property-finder-panel.php?id=' + id)
+      .then(response => response.json())
+      .then(data => {
+        callback(data);
+      })
+      .catch(error => {
+        console.log('Error:' + error);
+      });
+  }
+
+  function colorData(data, id) {
+    if (buttonSelected === "trigger-prop") {
+      if (data.Status === 'available') {
+        document.getElementById(id).style.fill = '#1FCE6D';
+      } else if (data.Status === 'occupied') {
+        document.getElementById(id).style.fill = '#E94B35';
       }
-    });
+    }
   }
 
   const select = document.querySelector('.trigger');
@@ -164,8 +159,9 @@
     if (select.value === "trigger-prop") {
       buttonSelected = "trigger-prop";
       path.forEach(path => {
-        getData(path.id);
-        colorData(path.id);
+        getData(path.id, data => {
+          colorData(data, path.id);
+        });
       });
     }
   });
@@ -173,11 +169,13 @@
   // Show color onload
   document.addEventListener("DOMContentLoaded", function() {
     path.forEach(path => {
-      getData(path.id, function() {
-        colorData(path.id);
+      getData(path.id, data => {
+        colorData(data, path.id);
       });
     });
   });
+})();
+
 </script>
 
 
