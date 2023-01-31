@@ -1,17 +1,17 @@
 <div>
     <div class="payment-area">
         <span>Total:</span>
-        <input type="text" class="form-control" name="total" id="total" value="0" disabled>
+        <input type="text" class="form-control reserv_total" name="reserv_total" id="reserv_total" value="0" disabled>
         <span>Payment:</span>
-        <input type="text" class="form-control" name="payment" id="payment" value="0" placeholder="Enter amount..." onchange="calculate();">
+        <input type="text" class="form-control reserv_payment" name="reserv_payment" id="reserv_payment" value="0" placeholder="Enter amount..." onchange="calculate();">
         <span>Change:</span>
-        <input type="text" class="form-control" name="change" id="change" value="0" disabled>
+        <input type="text" class="form-control reserv_change" name="reserv_change" id="reserv_change" value="0" disabled>
         <span>Remaining Balance:</span>
-        <input type="text" class="form-control" name="remaining-balance" id="remaining-balance" value="0" disabled>
+        <input type="text" class="form-control reserv_remaining-balance" name="remaining-balance" id="reserv_remaining-balance" value="0" disabled>
         <span>Remarks:</span>
         <textarea placeholder="Type here.."></textarea>
-        <button type="submit" id="ro_submit" class="btn btn-success">Submit</button>
-        <button type="reset" id="reset">Reset Form</button>
+        <button type="submit" id="reserv_submit" class="btn btn-success reserv_submit">Submit</button>
+        <button type="reset" id="reserv_reset" class="btn btn-danger reserv_reset">Reset Form</button>
     </div>
 </div>
 
@@ -35,7 +35,7 @@
 
 <script>
    $(document).ready(function() {
-        $("#ro_submit").on("click", add_data);
+        $("#reserv_submit").on("click", add_data);
     });
 
     function add_data() {
@@ -166,71 +166,7 @@
             });
         }
         
-
-        // OTHER TRANSACTION SECTION - INSERT DATA 
-        //TRYING TO MAKE SOME ALERTS
-        if ($("#category").val().trim() && !isNaN($("#quantity").val().trim()) && !isNaN($("#price").val().trim()) && !isNaN($("#o_subtotal").val().trim())) {
-            var data = {};
-            data.transaction_number = $("#trans-no").val();
-            data.name = $("#client-name").val();
-            data.services = [];
-            data.services.push({
-                category: $("#category").val(),
-                quantity: $("#quantity").val(),
-                price: $("#price").val(),
-                subtotal: $("#o_subtotal").val()
-            });
-            data.services.push({
-                category: $("#category1").val(),
-                quantity: $("#quantity1").val(),
-                price: $("#price1").val(),
-                subtotal: $("#o_subtotal1").val()
-            });
-            data.services.push({
-                category: $("#category2").val(),
-                quantity: $("#quantity2").val(),
-                price: $("#price2").val(),
-                subtotal: $("#o_subtotal2").val()
-            });
-            data.services.push({
-                category: $("#category3").val(),
-                quantity: $("#quantity3").val(),
-                price: $("#price3").val(),
-                subtotal: $("#o_subtotal3").val()
-            });
-            data.services.push({
-                category: $("#category4").val(),
-                quantity: $("#quantity4").val(),
-                price: $("#price4").val(),
-                subtotal: $("#o_subtotal4").val()
-            });
-            data.services.push({
-                category: $("#category5").val(),
-                quantity: $("#quantity5").val(),
-                price: $("#price5").val(),
-                subtotal: $("#o_subtotal5").val()
-            });
-            $.post("adminViews/insert-data-transaction-other.php", {
-                data: data
-            }, function(response) {
-                console.log(response);
-            });
-        } else {
-            console.log("no input in the other services layer 1");
-            if (isNaN($("#quantity").val().trim())) {
-                alert("Quantity must be a number.");
-            }
-            if (isNaN($("#price").val().trim())) {
-                alert("Price must be a number.");
-            }
-            if (isNaN($("#o_subtotal").val().trim())) {
-                alert("Subtotal must be a number.");
-            }
-        }
-
-
         // end OTHER TRANSACTION SECTION - INSERT DATA
-
 
         // clear the forms after pressing the submit  
         $("#trans-no").val("");
@@ -257,17 +193,7 @@
         $("#radio-court").prop("checked", false);
         $("#radio-miming").prop("checked", false);
 
-        $("#category").val("");
-        $("#quantity").val("");
-        $("#price").val("");
-        $("#o_subtotal").val("");
-
-        // OTHER TRANSACTION LOOP FOR EACH ROW
-        for (var i = 1; i <= 10; i++) {
-            $("#category" + i).val("");
-            $("#quantity" + i).val("");
-            $("#price" + i).val("");
-            $("#o_subtotal" + i).val("");
-        }
     }
+
+    
 </script>
