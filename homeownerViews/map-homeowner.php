@@ -1,5 +1,6 @@
 <div class="mapHome">
 	<div class="HomeMap">
+
 		<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1300 1800" style="enable-background:new 0 0 1190.2 1683.8;" xml:space="preserve" id="my-svg-pf">
 			<style type="text/css">
 				.st0 {
@@ -4877,7 +4878,7 @@
 
 	<div class="property-panel">
 		<div class="finder" id="finder-panel">
-			<h3>LOT INFORMATION</h3>
+			<h3>OWNER INFORMATION</h3>
 			<div class="input-group">
 				<span class="input-group-text">Block</span>
 				<input type="text" id="finder-block" class="form-control" disabled>
@@ -4934,29 +4935,22 @@
 		});
 	});
 
-	var zoomInCounter = 0;
-	var zoomOutCounter = 0;
 	var svg = document.getElementById("my-svg-pf"); // get the SVG element
 	var currentScale = svg.getAttribute("transform") || "scale(1)"; // get the current scale
 
 	// add event listeners to zoom in and out buttons
 	document.getElementById("zoom-in-btn-home").addEventListener("click", function() {
-		if (zoomInCounter < 7) {
-			var newScale = "scale(" + (parseFloat(currentScale.slice(6)) + 0.1) + ")";
-			svg.setAttribute("transform", newScale);
-			currentScale = newScale;
-			zoomInCounter++;
-		}
+		var newScale = "scale(" + (parseFloat(currentScale.slice(6)) + 0.1) + ")";
+		svg.setAttribute("transform", newScale);
+		currentScale = newScale;
 	});
 	document.getElementById("zoom-out-btn-home").addEventListener("click", function() {
-		if (zoomOutCounter < 4) {
-			var newScale = "scale(" + (parseFloat(currentScale.slice(6)) - 0.1) + ")";
-			svg.setAttribute("transform", newScale);
-			currentScale = newScale;
-			zoomOutCounter++;
+		var newScale = parseFloat(currentScale.slice(6)) - 0.1;
+		if (newScale >= 0.7) {
+			svg.setAttribute("transform", "scale(" + newScale + ")");
+			currentScale = "scale(" + newScale + ")";
 		}
 	});
-
 	//add event listener for drag
 	var startX, startY, translateX = 0,
 		translateY = 0;
@@ -5020,5 +5014,12 @@
 				colorData(path.id);
 			});
 		});
+	});
+
+	let paths = document.querySelectorAll('path');
+	paths.forEach(function(path) {
+		if (path.id.includes('multiple')) {
+			path.style.display = 'none';
+		}
 	});
 </script>

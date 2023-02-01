@@ -21,9 +21,11 @@
 </section>
 
 <style>
-  .map-pfinder{
+  .map-pfinder {
     overflow: hidden;
   }
+
+
   .map-zoom {
     box-sizing: border-box;
     overflow: hidden;
@@ -56,14 +58,16 @@
     border-radius: 5px;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
   }
-  .property-panel #finder-panel h3{
+
+  .property-panel #finder-panel h3 {
     font-family: 'Raleway', sans-serif;
     font-weight: 700;
     color: var(--darkgreen);
     text-align: center;
   }
+
   .property-panel #finder-panel span,
-  .property-panel #finder-panel input{
+  .property-panel #finder-panel input {
     color: var(--darkgreen);
     font-weight: 700;
     font-family: 'Raleway', sans-serif;
@@ -71,10 +75,12 @@
     background-color: white;
 
   }
-  .control-map button{
+
+  .control-map button {
     margin-bottom: 10px;
   }
-  .property-panel  a{
+
+  .property-panel a {
     font-size: 15px;
     font-weight: 700;
     color: white;
@@ -83,7 +89,8 @@
 
   @media only screen and (max-width: 767px) {
     .property-panel {
-    grid-template-columns: 1fr;}
+      grid-template-columns: 1fr;
+    }
   }
 </style>
 
@@ -112,14 +119,14 @@
 
   var paths = document.querySelectorAll('.mapping');
   paths.forEach(function(path) {
-    var defaultFill = path.style.fill;
     path.addEventListener('mouseover', function() {
       this.style.fill = "#085D40";
     });
     path.addEventListener('mouseout', function() {
-      this.style.fill = defaultFill;
+      this.style.fill = "grey";
     });
   });
+
 
   /*var zoomInCounter = 0;
   var zoomOutCounter = 0;
@@ -144,21 +151,21 @@
     }
   });*/
   var svg = document.getElementById("my-svg-pf"); // get the SVG element
-var currentScale = svg.getAttribute("transform") || "scale(1)"; // get the current scale
+  var currentScale = svg.getAttribute("transform") || "scale(1)"; // get the current scale
 
-// add event listeners to zoom in and out buttons
-document.getElementById("zoom-in-btn").addEventListener("click", function() {
-var newScale = "scale(" + (parseFloat(currentScale.slice(6)) + 0.1) + ")";
-svg.setAttribute("transform", newScale);
-currentScale = newScale;
-});
-document.getElementById("zoom-out-btn").addEventListener("click", function() {
-var newScale = parseFloat(currentScale.slice(6)) - 0.1;
-if (newScale >= 0.7) {
-svg.setAttribute("transform", "scale(" + newScale + ")");
-currentScale = "scale(" + newScale + ")";
-}
-});
+  // add event listeners to zoom in and out buttons
+  document.getElementById("zoom-in-btn").addEventListener("click", function() {
+    var newScale = "scale(" + (parseFloat(currentScale.slice(6)) + 0.1) + ")";
+    svg.setAttribute("transform", newScale);
+    currentScale = newScale;
+  });
+  document.getElementById("zoom-out-btn").addEventListener("click", function() {
+    var newScale = parseFloat(currentScale.slice(6)) - 0.1;
+    if (newScale >= 0.7) {
+      svg.setAttribute("transform", "scale(" + newScale + ")");
+      currentScale = "scale(" + newScale + ")";
+    }
+  });
   //add event listener for drag
   var startX, startY, translateX = 0,
     translateY = 0;
@@ -229,6 +236,12 @@ currentScale = "scale(" + newScale + ")";
       });
     });
   })();
+
+  const pathIds = ['blk1lot1', 'blk1lot2', 'blk1lot3','blk1lot4','blk1lot5','blk1lot6','blk1lot7','blk1lot8','blk1lot9','blk1lot10','blk1lot11','blk1lot12'];
+  pathIds.forEach(id => {
+    const path = document.getElementById(id);
+    path.style.pointerEvents = 'none';
+  });
 </script>
 
 
