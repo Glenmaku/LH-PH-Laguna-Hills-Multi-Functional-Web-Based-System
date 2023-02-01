@@ -102,6 +102,36 @@
                 price: $("#o_price10").val(),
                 subtotal: $("#o_subtotal10").val()
             });
+            data.services.push({
+                category: $("#o_category11").val(),
+                quantity: $("#o_quantity11").val(),
+                price: $("#o_price11").val(),
+                subtotal: $("#o_subtotal11").val()
+            });
+            data.services.push({
+                category: $("#o_category12").val(),
+                quantity: $("#o_quantity12").val(),
+                price: $("#o_price12").val(),
+                subtotal: $("#o_subtotal12").val()
+            });
+            data.services.push({
+                category: $("#o_category13").val(),
+                quantity: $("#o_quantity13").val(),
+                price: $("#o_price13").val(),
+                subtotal: $("#o_subtotal13").val()
+            });
+            data.services.push({
+                category: $("#o_category14").val(),
+                quantity: $("#o_quantity14").val(),
+                price: $("#o_price14").val(),
+                subtotal: $("#o_subtotal14").val()
+            });
+            data.services.push({
+                category: $("#o_category15").val(),
+                quantity: $("#o_quantity15").val(),
+                price: $("#o_price15").val(),
+                subtotal: $("#o_subtotal15").val()
+            });
 
             $.post("adminViews/insert-data-transaction-other.php", {
                 data: data
@@ -136,7 +166,7 @@
         $("#o_quantity1").val("");
         $("#o_rice1").val("");
 
-        for (var i = 1; i <= 10; i++) {
+        for (var i = 1; i <= 15; i++) {
             $("#o_category" + i).val("");
             $("#o_quantity" + i).val("");
             $("#o_price" + i).val("");
@@ -144,5 +174,22 @@
         }
     }
 
-    
+    $(document).ready(function() {
+    $(".o_quantity, .o_price").on("keyup", function() {
+        var quantity = $(".o_quantity").val();
+        var price = $(".o_price").val();
+        var subtotal = quantity * price;
+        $(".o_subtotal").val(subtotal);
+    });
+    $(document).ready(function() {
+    $(".o_subtotal").on("change", function() {
+        var total = 0;
+        $(".o_subtotal").each(function() {
+            total += parseFloat($(this).val());
+        });
+        $("#other_total").val(total);
+    });
+});
+});
+
 </script>

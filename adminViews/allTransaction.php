@@ -32,7 +32,7 @@
                             <h2 id="panelsStayOpen-headingOne">ASSOCIATION DUES</h2>
                         </div>
                         <div class="hide-option" id="hide_assoc">
-                            <i class="fa-regular fa-eye-slash accordion-button-icon" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne" onclick="assocSubmit()"></i>
+                            <i class="fa-solid fa-chevron-up accordion-button-icon" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne" onclick="assocSubmit()"></i>
                         </div>
                     </div>
 
@@ -225,7 +225,7 @@
                             <h2 id="panelsStayOpen-headingTwo">RESERVATION
                         </div>
                         <div class="hide-option" id="hide_reserv">
-                            <i class="fa-regular fa-eye-slash accordion-button-icon" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="true" aria-controls="panelsStayOpen-collapseTwo" onclick="reserveSubmit()"></i>
+                            <i class="fa-solid fa-chevron-down accordion-button-icon" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="true" aria-controls="panelsStayOpen-collapseTwo" onclick="reserveSubmit()"></i>
                         </div>
                     </div>
                     <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse hide" aria-labelledby="panelsStayOpen-headingTwo">
@@ -325,7 +325,7 @@
                             </h2>
                         </div>
                         <div class="hide-option" id="hide_other">
-                            <i class="fa-regular fa-eye-slash accordion-button-icon" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="true" aria-controls="panelsStayOpen-collapseThree" onclick="otherSubmit()">
+                            <i class="fa-solid fa-chevron-down accordion-button-icon" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="true" aria-controls="panelsStayOpen-collapseThree" onclick="otherSubmit()">
                             </i>
                         </div>
                     </div>
@@ -334,18 +334,20 @@
                         <div class="accordion-body">
                             <table class="other-services" id="input_table">
                                 <tr>
-                                    <td>Category</td>
-                                    <td>Quantity</td>
-                                    <td>Price</td>
-                                    <td>Subtotal</td>
-                                    <td>Add/Remove</td>
+                                    <th style="width: 20px">#</th>
+                                    <th>Category</th>
+                                    <th>Quantity</th>
+                                    <th>Price</th>
+                                    <th>Subtotal</th>
+                                    <th>Add/Remove</th>
                                 </tr>
 
                                 <tr>
+                                    <td>1</td>
                                     <td><input type="text" class="form-control" id="o_category" name="field1" /></td>
                                     <td><input type="text" class="form-control o_quantity" id="o_quantity" name="field2" /></td>
                                     <td><input type="text" class="form-control o_price" id="o_price" name="field3" /></td>
-                                    <td><input type="text" class="form-control o_subtotal" id="o_subtotal" name="field4" /></td>
+                                    <td><input type="text" class="form-control o_subtotal" id="o_subtotal" name="field4" readonly /></td>
                                     <td><a href="javascript:void(0);" id="addRow" class="add_button btn btn-success" title="Add field"><i class="fa-solid fa-plus "></i> Add</a></td>
                                 </tr>
                             </table>
@@ -689,7 +691,7 @@
                     $("#client-name").val("");
 
                 });
-                
+
                 $("#reserv_reset").click(function() {
                     $("#trans-no").val("");
                     $("#date").val("");
@@ -902,11 +904,12 @@
                     var table = $("#input_table");
                     // Create a new row
                     var row = $("<tr>");
-                    // Add 4 cells to the new row
+                    // Add 5 cells to the new row
+                    row.append($("<td>").html('<p>' + counter + '</p>'));
                     row.append($("<td>").html('<input type="text" name="field1[]" class="form-control o_category" id="o_category' + counter + '" data-row-id=' + counter + '">'));
                     row.append($("<td>").html('<input type="text" name="field1[]" class="form-control o_quantity" id="o_quantity' + counter + '" data-row-id=' + counter + '">'));
                     row.append($("<td>").html('<input type="text" name="field1[]" class="form-control o_price" id="o_price' + counter + '" data-row-id=' + counter + '">'));
-                    row.append($("<td>").html('<input type="text" name="field1[]" class="form-control o_subtotal" id="o_subtotal' + counter + '" data-row-id=' + counter + '">'));
+                    row.append($("<td>").html('<input type="text" name="field1[]" class="form-control o_subtotal" id="o_subtotal' + counter + '" data-row-id=' + counter + '" readonly>'));
                     // Add a delete button to the new row
                     row.append(
                         $("<td>").html(
@@ -923,6 +926,7 @@
                         .closest("tr")
                         .remove();
                 });
+
 
                 // reset form if naka collapse
                 var hide_assoc = document.getElementById("hide_assoc");
@@ -1065,7 +1069,7 @@
 
 
                 //SUBMISSION OF TRANSACTION
-                
+
 
 
 
