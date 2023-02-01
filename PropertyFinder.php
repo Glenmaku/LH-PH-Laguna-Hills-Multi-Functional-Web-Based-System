@@ -82,6 +82,16 @@
   }
 
 
+  var paths = document.querySelectorAll('.mapping');
+  paths.forEach(function(path) {
+    path.addEventListener('mouseover', function() {
+      this.style.fill = "#085D40";
+    });
+    path.addEventListener('mouseout', function() {
+      this.style.fill = "grey";
+    });
+  });
+
   var zoomInCounter = 0;
   var zoomOutCounter = 0;
   var svg = document.getElementById("my-svg-pf"); // get the SVG element
