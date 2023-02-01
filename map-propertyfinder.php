@@ -1,8 +1,14 @@
 <div class="map-pfinder">
+
+
 	<div class="mapside" style="display: flex;">
-		<div class="map-zoom">
+		<div class="control-map">
 			<button id="zoom-in-btn" class="btn btn-success"><i class="fa-sharp fa-solid fa-plus"></i></button>
 			<button id="zoom-out-btn" class="btn btn-success"><i class="fa-sharp fa-solid fa-minus"></i></button>
+		</div>
+		<div class="map-zoom">
+
+
 			<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1300 1800" style="enable-background:new 0 0 1190.2 1683.8;" xml:space="preserve" id="my-svg-pf">
 				<style type="text/css">
 					.st0 {
@@ -4879,25 +4885,27 @@
 				<h3>LOT INFORMATION</h3>
 				<div class="input-group">
 					<span class="input-group-text">Block</span>
-					<input type="text" id="finder-block" class="form-control"  disabled>
+					<input type="text" id="finder-block" class="form-control" disabled>
 					<span class="input-group-text">Lot</span>
-					<input type="text" id="finder-lot" class="form-control"  disabled>
+					<input type="text" id="finder-lot" class="form-control" disabled>
 				</div>
 				<div class="input-group">
 					<span class="input-group-text">Street</span>
-					<input type="text" id="finder-street" class="form-control"  disabled>
+					<input type="text" id="finder-street" class="form-control" disabled>
 				</div>
 				<div class="input-group">
 					<span class="input-group-text">Status</span>
-					<input type="text" id="finder-status" class="form-control"  disabled>
+					<input type="text" id="finder-status" class="form-control" disabled>
 				</div>
 				<div class="input-group">
 					<span class="input-group-text">Area per Sqm</span>
 					<input type="text" id="finder-area-per-sqm" class="form-control" disabled>
 				</div>
-
-				<button class="btn btn-success" id="loteditModal-btn"><i class="fa-solid fa-circle-question"></i><a href="ContactUs.php" class="nav-link nas">Inquire</a></button>
-						<button class="trigger" id="trigger-prop" value="trigger-prop" hidden></button>
+				<div class="d-grid gap-2">
+					<button class="btn btn-success text-white" id="inqure-btn" type="button"><i class="fa-solid fa-circle-question"></i><a href="ContactUs.php"> INQUIRE NOW!!</a></button>
+					<button class="trigger" id="trigger-prop" value="trigger-prop" hidden></button>
+				</div>
+				
 			</div>
 		</div>
 	</div>

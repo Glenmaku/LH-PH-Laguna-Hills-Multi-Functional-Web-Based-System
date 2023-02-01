@@ -21,6 +21,9 @@
 </section>
 
 <style>
+  .map-pfinder{
+    overflow: hidden;
+  }
   .map-zoom {
     box-sizing: border-box;
     overflow: hidden;
@@ -43,18 +46,44 @@
     display: flex;
   }
 
-  .finder-panel {
-    font-family: 'Raleway', sans-serif;
-    font-weight: 700;
-    color: var(--darkgreen);
+  .property-panel #finder-panel {
     position: relative;
     padding: 20px;
-    max-width: 100%;
+    width: 100%;
     margin-top: 10px;
     margin-right: 40px;
     margin-bottom: 10px;
     border-radius: 5px;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  }
+  .property-panel #finder-panel h3{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    color: var(--darkgreen);
+    text-align: center;
+  }
+  .property-panel #finder-panel span,
+  .property-panel #finder-panel input{
+    color: var(--darkgreen);
+    font-weight: 700;
+    font-family: 'Raleway', sans-serif;
+    margin-bottom: 10px;
+    background-color: white;
+
+  }
+  .control-map button{
+    margin-bottom: 10px;
+  }
+  .property-panel  a{
+    font-size: 15px;
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+  }
+
+  @media only screen and (max-width: 767px) {
+    .property-panel {
+    grid-template-columns: 1fr;}
   }
 </style>
 
@@ -81,18 +110,18 @@
       });
   }
 
-
   var paths = document.querySelectorAll('.mapping');
   paths.forEach(function(path) {
+    var defaultFill = path.style.fill;
     path.addEventListener('mouseover', function() {
       this.style.fill = "#085D40";
     });
     path.addEventListener('mouseout', function() {
-      this.style.fill = "grey";
+      this.style.fill = defaultFill;
     });
   });
 
-  var zoomInCounter = 0;
+  /*var zoomInCounter = 0;
   var zoomOutCounter = 0;
   var svg = document.getElementById("my-svg-pf"); // get the SVG element
   var currentScale = svg.getAttribute("transform") || "scale(1)"; // get the current scale
@@ -113,8 +142,23 @@
       currentScale = newScale;
       zoomOutCounter++;
     }
-  });
+  });*/
+  var svg = document.getElementById("my-svg-pf"); // get the SVG element
+var currentScale = svg.getAttribute("transform") || "scale(1)"; // get the current scale
 
+// add event listeners to zoom in and out buttons
+document.getElementById("zoom-in-btn").addEventListener("click", function() {
+var newScale = "scale(" + (parseFloat(currentScale.slice(6)) + 0.1) + ")";
+svg.setAttribute("transform", newScale);
+currentScale = newScale;
+});
+document.getElementById("zoom-out-btn").addEventListener("click", function() {
+var newScale = parseFloat(currentScale.slice(6)) - 0.1;
+if (newScale >= 0.7) {
+svg.setAttribute("transform", "scale(" + newScale + ")");
+currentScale = "scale(" + newScale + ")";
+}
+});
   //add event listener for drag
   var startX, startY, translateX = 0,
     translateY = 0;
