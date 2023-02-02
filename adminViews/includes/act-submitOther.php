@@ -166,7 +166,7 @@
         $("#o_quantity1").val("");
         $("#o_rice1").val("");
 
-        for (var i = 1; i <= 15; i++) {
+        for (var i = 1; i <= 6; i++) {
             $("#o_category" + i).val("");
             $("#o_quantity" + i).val("");
             $("#o_price" + i).val("");
@@ -174,22 +174,66 @@
         }
     }
 
-    $(document).ready(function() {
-    $(".o_quantity, .o_price").on("keyup", function() {
-        var quantity = $(".o_quantity").val();
-        var price = $(".o_price").val();
-        var subtotal = quantity * price;
-        $(".o_subtotal").val(subtotal);
-    });
-    $(document).ready(function() {
-    $(".o_subtotal").on("change", function() {
-        var total = 0;
-        $(".o_subtotal").each(function() {
-            total += parseFloat($(this).val());
-        });
-        $("#other_total").val(total);
-    });
+    //auto compute
+$(document).ready(function() {
+  $('.o_quantity, .o_price').on('input', function() {
+    var row = $(this).closest('tr');
+    var quantity = row.find('.o_quantity').val();
+    var price = row.find('.o_price').val();
+    var subtotal = quantity * price;
+    row.find('.o_subtotal').val(subtotal);
+  });
+
+  $('.o_subtotal').on('input', function() {
+    var subtotals = $('.o_subtotal').map(function() {
+      return $(this).val();
+    }).get();
+    var total = 0;
+    for (var i = 0; i < subtotals.length; i++) {
+      total += parseInt(subtotals[i]);
+    }
+    $('#other_total').val(total);
+  });
 });
+
+    $(document).ready(function() {
+  $("input[id^='o_quantity']").on("input", function() {
+    calculate($(this).attr("id"));
+  });
+  $("input[id^='o_price']").on("input", function() {
+    calculate($(this).attr("id"));
+  });
+
+  function calculate(inputId) {
+    let idx = inputId.match(/\d+/);
+    let quantity = $("#o_quantity" + idx).val();
+    let price = $("#o_price" + idx).val();
+    let subtotal = quantity * price;
+    $("#o_subtotal" + idx).val(subtotal);
+
+    let total = 0;
+    $("input[id^='o_subtotal']").each(function() {
+      total += Number($(this).val());
+    });
+    $("#other_total").val(total);
+    
+  }
+});
+
+//compute ng payments rem balance change
+
+
+document.getElementById("other_payment").addEventListener("input", function() {
+  let otherTotal = parseFloat(document.getElementById("other_total").value);
+  let otherPayment = parseFloat(document.getElementById("other_payment").value);
+
+  if (otherTotal > otherPayment) {
+    document.getElementById("other_remaining-balance").value = otherTotal - otherPayment;
+    document.getElementById("other_change").value = 0;
+  } else {
+    document.getElementById("other_change").value = otherPayment - otherTotal;
+    document.getElementById("other_remaining-balance").value = 0;
+  }
 });
 
 </script>

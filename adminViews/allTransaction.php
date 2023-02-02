@@ -333,23 +333,67 @@
                     <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse hide" aria-labelledby="panelsStayOpen-headingThree">
                         <div class="accordion-body">
                             <table class="other-services" id="input_table">
-                                <tr>
-                                    <th style="width: 20px">#</th>
-                                    <th>Category</th>
-                                    <th>Quantity</th>
-                                    <th>Price</th>
-                                    <th>Subtotal</th>
-                                    <th>Add/Remove</th>
-                                </tr>
+                                <thead>
+                                    <tr>
+                                        <th style="width: 30px">#</th>
+                                        <th>Category</th>
+                                        <th>Quantity</th>
+                                        <th>Price</th>
+                                        <th>Subtotal</th>
+                                    </tr>
+                                </thead>
 
-                                <tr>
-                                    <td>1</td>
-                                    <td><input type="text" class="form-control" id="o_category" name="field1" /></td>
-                                    <td><input type="text" class="form-control o_quantity" id="o_quantity" name="field2" /></td>
-                                    <td><input type="text" class="form-control o_price" id="o_price" name="field3" /></td>
-                                    <td><input type="text" class="form-control o_subtotal" id="o_subtotal" name="field4" readonly /></td>
-                                    <td><a href="javascript:void(0);" id="addRow" class="add_button btn btn-success" title="Add field"><i class="fa-solid fa-plus "></i> Add</a></td>
-                                </tr>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td><input type="text" class="form-control" id="o_category" name="field1" /></td>
+                                        <td><input type="text" class="form-control o_quantity" id="o_quantity" name="field2" /></td>
+                                        <td><input type="text" class="form-control o_price" id="o_price" name="field3" /></td>
+                                        <td><input type="text" class="form-control o_subtotal" id="o_subtotal" name="field4" /></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>2</td>
+                                        <td><input type="text" class="form-control" id="o_category1" name="field1" /></td>
+
+                                        <td><input type="text" class="form-control o_quantity1" id="o_quantity1" name="field2" /></td>
+
+                                        <td><input type="text" class="form-control o_price1" id="o_price1" name="field3" /></td>
+
+                                        <td><input type="text" class="form-control o_subtotal1" id="o_subtotal1" name="field4" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td><input type="text" class="form-control" id="o_category2" name="field1" /></td>
+
+                                        <td><input type="text" class="form-control o_quantity2" id="o_quantity2" name="field2" /></td>
+
+                                        <td><input type="text" class="form-control o_price2" id="o_price2" name="field3" /></td>
+
+                                        <td><input type="text" class="form-control o_subtotal2" id="o_subtotal2" name="field4" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td><input type="text" class="form-control" id="o_category3" name="field1" /></td>
+
+                                        <td><input type="text" class="form-control o_quantity3" id="o_quantity3" name="field2" /></td>
+                                        
+                                        <td><input type="text" class="form-control o_price3" id="o_price3" name="field3" /></td>
+
+                                        <td><input type="text" class="form-control o_subtotal3" id="o_subtotal3" name="field4" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td>5</td>
+                                        <td><input type="text" class="form-control" id="o_category4" name="field1" /></td>
+
+                                        <td><input type="text" class="form-control o_quantity4" id="o_quantity4" name="field2" /></td>
+                                        
+                                        <td><input type="text" class="form-control o_price4" id="o_price4" name="field3" /></td>
+
+                                        <td><input type="text" class="form-control o_subtotal4" id="o_subtotal4" name="field4" /></td>
+                                    </tr>
+
+                                </tbody>
                             </table>
                         </div>
                     </div>
@@ -895,38 +939,7 @@
                     });
                 });
 
-
-                // Wag nyo gagalawin tong counter = 1
-                var counter = 1;
-                $("#addRow").click(function() {
-
-                    // Get the table object
-                    var table = $("#input_table");
-                    // Create a new row
-                    var row = $("<tr>");
-                    // Add 5 cells to the new row
-                    row.append($("<td>").html('<p>' + counter + '</p>'));
-                    row.append($("<td>").html('<input type="text" name="field1[]" class="form-control o_category" id="o_category' + counter + '" data-row-id=' + counter + '">'));
-                    row.append($("<td>").html('<input type="text" name="field1[]" class="form-control o_quantity" id="o_quantity' + counter + '" data-row-id=' + counter + '">'));
-                    row.append($("<td>").html('<input type="text" name="field1[]" class="form-control o_price" id="o_price' + counter + '" data-row-id=' + counter + '">'));
-                    row.append($("<td>").html('<input type="text" name="field1[]" class="form-control o_subtotal" id="o_subtotal' + counter + '" data-row-id=' + counter + '" readonly>'));
-                    // Add a delete button to the new row
-                    row.append(
-                        $("<td>").html(
-                            '<a href="javascript:void(0);" id="deleteButton" title="Delete field" class="btn btn-danger"><i class="fa-solid fa-minus "></i>Delete</a>'
-                        )
-                    );
-                    // Add the new row to the table
-                    table.append(row);
-                    counter++;
-                });
-                // Delete a row when the delete button is clicked
-                $(document).on("click", "#deleteButton", function() {
-                    $(this)
-                        .closest("tr")
-                        .remove();
-                });
-
+                //     // Get the table object
 
                 // reset form if naka collapse
                 var hide_assoc = document.getElementById("hide_assoc");
