@@ -73,6 +73,10 @@
       </div>
    </div>
 
+
+
+
+
    <script src="sendmail_database/link.js"></script>
    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
    <script>
@@ -126,6 +130,10 @@ function show_email_all(){
         }
     });
 }
+
+
+
+
    </script>
 </body>
 

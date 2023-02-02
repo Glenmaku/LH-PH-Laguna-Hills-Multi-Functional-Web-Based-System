@@ -57,11 +57,11 @@
                         <label for="last-name" class="form-label">Last Name</label>
                         <input type="text" class="form-control" name="owner_lname" id="owner_lname">
                     </div>
-                    <div class="col-md-6">
+                    <div class="">
                         <label for="inputCity" class="form-label">Birth Date</label>
                         <input type="date" class="form-control" id="owner_birthdate" name="owner_birthdate">
                     </div>
-                    <div class="col-md-6">
+                   <!-- <div class="col-md-6">
                         <label for="inputState" class="form-label">Gender</label>
                         <select id="inputState" class="form-select" name="owner_gender" id="owner_gender">
                             <option selected>Choose...</option>
@@ -69,7 +69,7 @@
                             <option value="Female">Female</option>
                             <option value="Others">Others</option>
                         </select>
-                    </div>
+                    </div>-->
 
                     <h5>Contact Details</h5>
                     <div class="form-group">
@@ -178,7 +178,7 @@
 
             $('#owner_fname').val(owner.owner_fname);
             $('#owner_lname').val(owner.owner_lname);
-            $('#owner_gender').val(owner.owner_gender);
+         //   $('#owner_gender').val(owner.owner_gender);
             $('#owner_birthdate').val(owner.owner_birthdate);
 
             $('#owner_email').val(owner.owner_email);
@@ -194,7 +194,7 @@
         var owner_username = $('#owner_username').val();
         var owner_fname = $('#owner_fname').val();
         var owner_lname = $('#owner_lname').val();
-        var owner_gender = $('#owner_gender').val();
+      //  var owner_gender = $('#owner_gender').val();
 
         var owner_birthdate = $('#owner_birthdate').val();
         var owner_email = $('#owner_email').val();
@@ -208,7 +208,7 @@
                 owner_username: owner_username,
                 owner_fname: owner_fname,
                 owner_lname: owner_lname,
-                owner_gender: owner_gender,
+              //  owner_gender: owner_gender,
                 owner_birthdate: owner_birthdate,
                 owner_email: owner_email,
                 owner_cpnum: owner_cpnum,
@@ -219,31 +219,31 @@
             function(data, status) {
                 $("#settingOwnerModal").modal("show");
                 $('#message-updateownerinfo').html(data);
-                // if (data ==="Fill all the blanks"){
-                //     document.getElementById("personal-error").innerHTML = "Fill all the blanks.";
-                //     document.getElementById("personal-error").classList.remove("alert-success");
-                //     document.getElementById("personal-error").classList.add("alert-danger");
-                // }
-                // else if(data==="Invalid Characters"){
-                //     document.getElementById("personal-error").innerHTML = "Invalid Characters.";
-                //     document.getElementById("personal-error").classList.remove("alert-success");
-                //     document.getElementById("personal-error").classList.add("alert-danger");
-                // }
-                // else if(data=="Invalid Email"){
-                //     document.getElementById("personal-error").innerHTML = "Invalid Email.";
-                //     document.getElementById("personal-error").classList.remove("alert-success");
-                //     document.getElementById("personal-error").classList.add("alert-danger");
-                // }
-                // else if(data==="Successfully updated user information"){
-                //     document.getElementById("personal-error").innerHTML = "You successfully updated your information.";
-                //     document.getElementById("personal-error").classList.remove("alert-danger");
-                //     document.getElementById("personal-error").classList.add("alert-success");
-                // }
-                // else{
-                //     document.getElementById("personal-error").innerHTML = "Error. Please try again";
-                //     document.getElementById("personal-error").classList.remove("alert-success");
-                //     document.getElementById("personal-error").classList.add("alert-danger");
-                // }
+                if (data ==="Fill all the blanks"){
+                    document.getElementById("personal-error").innerHTML = "Fill all the blanks.";
+                    document.getElementById("personal-error").classList.remove("alert-success");
+                    document.getElementById("personal-error").classList.add("alert-danger");
+                }
+                else if(data==="Invalid Characters"){
+                    document.getElementById("personal-error").innerHTML = "Invalid Characters.";
+                    document.getElementById("personal-error").classList.remove("alert-success");
+                    document.getElementById("personal-error").classList.add("alert-danger");
+                }
+                else if(data=="Invalid Email"){
+                    document.getElementById("personal-error").innerHTML = "Invalid Email.";
+                    document.getElementById("personal-error").classList.remove("alert-success");
+                    document.getElementById("personal-error").classList.add("alert-danger");
+                }
+                else if(data==="Successfully updated user information"){
+                    document.getElementById("personal-error").innerHTML = "You successfully updated your information.";
+                    document.getElementById("personal-error").classList.remove("alert-danger");
+                    document.getElementById("personal-error").classList.add("alert-success");
+                }
+                else{
+                    document.getElementById("personal-error").innerHTML = "Error. Please try again";
+                    document.getElementById("personal-error").classList.remove("alert-success");
+                    document.getElementById("personal-error").classList.add("alert-danger");
+                }
             });
     }
 

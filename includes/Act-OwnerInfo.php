@@ -31,7 +31,7 @@ if(isset($_POST['ownerusername'])){
         $owner_fname        = $_POST['owner_fname'];
         $owner_lname        = $_POST['owner_lname'];
         $owner_email        = $_POST['owner_email'];
-        $owner_gender       = $_POST['owner_gender'];
+   //     $owner_gender       = $_POST['owner_gender'];
         $owner_birthdate    = $_POST['owner_birthdate'];
         $owner_cpnum        = $_POST['owner_cpnum'];
         $owner_telnum       = $_POST['owner_telnum'];
@@ -61,7 +61,7 @@ if(isset($_POST['ownerusername'])){
                 echo 'Invalid Email';
                     }
                 else{
-                    $ownersql ="UPDATE `owner_accounts` SET owner_fname = '$owner_fname', owner_lname = '$owner_lname', owner_gender='$owner_gender',owner_birthdate='$owner_birthdate',owner_email='$owner_email',owner_mobile='$owner_cpnum',owner_telephone='$owner_telnum',owner_address='$owner_add'where owner_username = '$owner_username'";
+                    $ownersql ="UPDATE `owner_accounts` SET owner_fname = '$owner_fname', owner_lname = '$owner_lname',owner_birthdate='$owner_birthdate',owner_email='$owner_email',owner_mobile='$owner_cpnum',owner_telephone='$owner_telnum',owner_address='$owner_add'where owner_username = '$owner_username'";
                     
                     $ownerresult = mysqli_query($con, $ownersql);
 

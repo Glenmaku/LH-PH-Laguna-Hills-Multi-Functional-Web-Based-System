@@ -347,7 +347,7 @@
 
     <!-- View Modal -->
 
-    <div class="modal fade viewOwnerModal" id="viewOwnerModal" name="viewOwnerModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade viewOwnerModal" id="viewContactsModal" name="viewOwnerModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-scrollable " role="document">
             <div class="modal-content" id="eventsss">
                 <div class="modal-header">
@@ -367,10 +367,10 @@
                             <label class="input-group-text" for="view_lname">Last Name</label>
                             <input type="text" name="view_lname" id="view_lname" class="form-control" placeholder="" readonly>
                         </div>
-                        <div class="input-group  mb-3">
+                     <!--   <div class="input-group  mb-3"hidden>
                             <label class="input-group-text" for="view_gender">Gender</label>
                             <input type="text" name="view_gender" id="view_gender" class="form-control" placeholder="" readonly>
-                        </div>
+                        </div>-->
                         <div class="input-group  mb-3">
                             <label class="input-group-text" for="birthdate">Birthdate</label>
                             <input type="text" name="view_birthdate" id="view_birthdate" class="form-control" placeholder="" readonly>
@@ -633,7 +633,7 @@
                 $('#view_lname').val(view.owner_lname);
                 $('#view_username').val(view.owner_username);
                 $('#view_email').val(view.owner_email);
-                $('#view_gender').val(view.owner_gender);
+           //     $('#view_gender').val(view.owner_gender);
                 $('#view_birthdate').val(view.owner_birthdate);
                 $('#view_cpnum').val(view.owner_mobile);
                 $('#view_telnum').val(view.owner_telephone);
