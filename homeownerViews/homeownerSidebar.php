@@ -9,7 +9,7 @@
         <ul class="nav-links list-unstyled">
             <li>
                 <a href="homeowneraccountconnect.php" class="ps-4">
-                    <i class="fa-solid fa-map"></i>
+                 <i class="fa-solid fa-border-all"></i>
                     <span>Dashboard</span>
                 </a>
             </li>

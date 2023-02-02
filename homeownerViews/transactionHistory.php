@@ -12,14 +12,14 @@
 </div>
 
 <script>
-    $(document).ready(function() {
+     $(document).ready(function(){
         displayHistory();
-    });
-    // to display with page
+     })
+     
     $(document).ready(function() {
-        var messageCurrentPage = localStorage.getItem("currentPage");
-        if (!messageCurrentPage) {
-            messageCurrentPage = 1;
+        var currentPage = localStorage.getItem("currentPage");
+        if (!currentPage) {
+            currentPage = 1;
         }
         displayHistory(page);
     });
@@ -40,7 +40,7 @@
         });
     }
 
-    function getPage(page) {
+    function getHistoryPage(page) {
         displayHistory(page);
     }
 </script>

@@ -5,11 +5,9 @@ if (!empty($_SESSION['owner_I_D'])) {
     $username = $_SESSION['owner_username'];
     $ownerid = $_SESSION['owner_I_D'];
     $Fname = $_SESSION['owner_fName'];
-    $Lname= $_SESSION['owner_lName'];
-    $Email= $_SESSION['owner_email'];
-    
-
-} else{
+    $Lname = $_SESSION['owner_lName'];
+    $Email = $_SESSION['owner_email'];
+} else {
     header("location:index.php");
     exit();
 }
@@ -39,8 +37,21 @@ if (!empty($_SESSION['owner_I_D'])) {
     include 'homeownerViews/homeownerSidebar.php';
     ?>
     <div class="allContent">
-        
+        <div class="home-dashboard">
+            <div class="dashboard-title">
+                <h1>DASHBOARD</h1>
+            </div>
 
+            <div class="dashboard-content">
+                
+            </div>
+        </div>
+
+        <div class="transaction-history-content">
+            <div class="history-content" id="history-content">
+
+            </div>
+        </div>
     </div>
 
 
@@ -50,5 +61,38 @@ if (!empty($_SESSION['owner_I_D'])) {
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 <script src="assets/js/ajax.js"></script>
+<script>
+    $(document).ready(function() {
+        displayHistory();
+    })
+
+    $(document).ready(function() {
+        var currentPage = localStorage.getItem("currentPage");
+        if (!currentPage) {
+            currentPage = 1;
+        }
+        displayHistory(page);
+    });
+
+    function displayHistory(page) {
+        localStorage.setItem("currentPage", page);
+        var historyData = "true";
+        $.ajax({
+            url: 'homeownerViews/includes/act-displayHistory.php',
+            type: 'post',
+            data: {
+                historySend: historyData,
+                page: page
+            },
+            success: function(data, status) {
+                $('#history-content').html(data);
+            }
+        });
+    }
+
+    function getHistoryPage(page) {
+        displayHistory(page);
+    }
+</script>
 
 </html>
