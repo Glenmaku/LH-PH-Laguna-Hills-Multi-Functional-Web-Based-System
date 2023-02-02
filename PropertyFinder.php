@@ -117,15 +117,15 @@
       });
   }
 
-  /*var paths = document.querySelectorAll('.mapping');
+  var paths = document.querySelectorAll('.mapping');
   paths.forEach(function(path) {
     path.addEventListener('mouseover', function() {
       this.style.fill = "#085D40";
     });
     path.addEventListener('mouseout', function() {
-      this.style.fill = "grey";
+      this.style.fill = "#1FCE6D";
     });
-  });*/
+  });
 
 
   /*var zoomInCounter = 0;
