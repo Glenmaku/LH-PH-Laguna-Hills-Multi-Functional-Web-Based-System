@@ -82,8 +82,13 @@
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body d-flex flex-column">
-                            <h2 class="text-center" class="modal-title">Login</h2>
-                            <div id="login-message" class="login-alert text-white"></div>
+                            <h2 class="text-center mb-3" class="modal-title">Login</h2>
+
+                           <div id="login-message" class="login-alert d-flex"></div>
+                          <!-- <div class="alert alert-success alert-dismissible fade show " role="alert" id="login-messages">
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                           </div>-->
+
                             <form class="login_form">
 
                                 <div class="form_input ">
@@ -213,16 +218,18 @@ function login_function() {
                         PASS: password
                         },
                     success: function(data) {
-                        $('#login-message').html(data);
+                     $('#login-message').html(data);
                         $('#Login').modal("show");
                         $('form').trigger('reset');
-                        var loginMessage = document.getElementById("login-message");
-                             if (data === "Invalid Password"||"Please fill in the blanks"||"User not found") {
-                                 loginMessage.classList.add("error");
-                                }
-                                 else{
+                       // var loginMessage = document.getElementById("login-message");
+                            // if (data === "Invalid Password"||"Please fill in the blanks"||"User not found") {
+                                // loginMessage.classList.add("error");
+                             //   document.getElementById("reset-error").classList.add("alert-danger");
+                            //    document.getElementById("reset-error").classList.remove("alert-success");
+                            //    }
+                          //       else{
                                    //loginMessage.classList.remove("error");
-                                }
+                             //   }
                         }
                 })
             })

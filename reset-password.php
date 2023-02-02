@@ -38,11 +38,11 @@ require_once('includes/connection.php');
     <input class="form-control" id="hide-username" value="<?php echo $_SESSION['username'];?>"hidden>
       <div class="group-reset">
       <label for="New-Pass" class="mb-2 align-content-center text-center">New Password</label>
-      <input class="form-control mb-3" id="New-Pass">
+      <input class="form-control mb-3" id="New-Pass" type="password">
       </div>
       <div class="group-reset">
       <label for="Confirm-Pass" class="mb-2 text-center">Confirm Password</label>
-      <input class="form-control mb-2" id="Confirm-Pass">
+      <input class="form-control mb-2" id="Confirm-Pass" type="password">
       </div>
 
       <div class=" login_button_area d-flex justify-content-center">

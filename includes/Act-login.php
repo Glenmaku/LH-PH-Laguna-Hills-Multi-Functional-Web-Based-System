@@ -6,7 +6,12 @@ $UserName = $_POST['EU'];
 $Password = $_POST['PASS'];
 
 if(empty($UserName)||empty($Password)){
-    echo 'Please fill in the blanks';
+  //  echo 'Please fill in the blanks';
+    echo'<div class="alert alert-danger alert-dismissible fade show login-messages w-100" role="alert" id="login-messages">
+    Please fill in the blanks
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                           </div>';
+
 }
 else{
     $owner_query = "select * from owner_accounts where  owner_email = '".$UserName."' or owner_username = '".$UserName."'";
@@ -18,7 +23,11 @@ else{
         $HashPass = password_verify($Password,$row['owner_password']);
         if($HashPass==false)
         {
-            echo 'Invalid Password';
+          //  echo 'Invalid Password';
+            echo'<div class="alert alert-danger alert-dismissible fade show login-messages w-100" role="alert" id="login-messages">
+            Invalid Password
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                           </div>';
         }
         else if($HashPass==true)
         {
@@ -41,7 +50,12 @@ else{
 
         if($HashPass==false)
         {
-            echo 'Invalid Password';
+           // echo 'Invalid Password';
+           echo'<div class="alert alert-danger alert-dismissible fade show login-messages w-100" role="alert" id="login-messages">
+           Invalid Password
+                       <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                          </div>';
+           
         }
         else if($HashPass==true)
             {
@@ -59,7 +73,11 @@ else{
             } 
     }
     else{
-        echo 'User not found';
+       // echo 'User not found';
+        echo'<div class="alert alert-danger alert-dismissible fade show login-messages w-100" role="alert" id="login-messages">
+        User not found
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                       </div>';
     }
 
 }
