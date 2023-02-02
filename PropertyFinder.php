@@ -117,7 +117,7 @@
       });
   }
 
-  var paths = document.querySelectorAll('.mapping');
+  /*var paths = document.querySelectorAll('.mapping');
   paths.forEach(function(path) {
     path.addEventListener('mouseover', function() {
       this.style.fill = "#085D40";
@@ -125,7 +125,7 @@
     path.addEventListener('mouseout', function() {
       this.style.fill = "grey";
     });
-  });
+  });*/
 
 
   /*var zoomInCounter = 0;
@@ -207,11 +207,21 @@
       if (buttonSelected === "trigger-prop") {
         if (data.Status === 'available') {
           document.getElementById(id).style.fill = '#1FCE6D';
-        } else if (data.Status === 'none' || data.Status === null) {
-          document.getElementById(id).style.fill = 'none';
+          document.getElementById(id).disabled = false; // make sure the element is not disabled if it's available
+        } else {
+          document.getElementById(id).style.fill = 'grey';
+          document.getElementById(id).disabled = true; // disable the element if it's not available
+          document.getElementById(id).style.pointerEvents = 'none'; // make sure the element is not clickable if it's disabled
         }
       }
     }
+
+
+
+
+
+
+
 
     const select = document.querySelector('.trigger');
     const path = document.querySelectorAll('path');
@@ -236,12 +246,6 @@
       });
     });
   })();
-
-  const pathIds = ['blk1lot1', 'blk1lot2', 'blk1lot3','blk1lot4','blk1lot5','blk1lot6','blk1lot7','blk1lot8','blk1lot9','blk1lot10','blk1lot11','blk1lot12'];
-  pathIds.forEach(id => {
-    const path = document.getElementById(id);
-    path.style.pointerEvents = 'none';
-  });
 </script>
 
 
