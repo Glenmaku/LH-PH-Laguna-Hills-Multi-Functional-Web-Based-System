@@ -216,13 +216,6 @@
       }
     }
 
-
-
-
-
-
-
-
     const select = document.querySelector('.trigger');
     const path = document.querySelectorAll('path');
 
