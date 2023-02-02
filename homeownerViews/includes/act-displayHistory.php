@@ -15,10 +15,10 @@ if (isset($_POST['historySend'])) {
     // Calculate the start index for the current page
     $start_from = ($page - 1) * $records_per_page;
 
-    $Table = '<table class="table">
+    $Table = '<table class="table " >
         <thead>
           <tr>
-            <th >Transaction No.</th>
+            <th scope="row">Transaction No.</th>
             <th >Date</th>
             <th>Block & Lot</th>
             <th>Assoc Balance</th>

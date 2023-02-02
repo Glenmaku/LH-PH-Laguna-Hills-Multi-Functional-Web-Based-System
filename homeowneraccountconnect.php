@@ -21,12 +21,11 @@ if (!empty($_SESSION['owner_I_D'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LH-PH: Homeowners</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"></link>
     <!--------- Stylesheet ------------>
-    <link rel="stylesheet" href="assets/css/style.css">
-    </link>
+    <link rel="stylesheet" href="assets/css/style.css"></link>
     <!--------- Icon ------------>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"></link>
 
 </head>
 
@@ -41,9 +40,11 @@ if (!empty($_SESSION['owner_I_D'])) {
             <div class="dashboard-title">
                 <h1>DASHBOARD</h1>
             </div>
+        </div>
 
-            <div class="dashboard-content">
-                
+        <div class="dashboard-status" id="dashboard-status">
+            <div class="home-lot-status" id="home-lot-status">
+
             </div>
         </div>
 
@@ -62,16 +63,32 @@ if (!empty($_SESSION['owner_I_D'])) {
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 <script src="assets/js/ajax.js"></script>
 <script>
+
+function displayHomeStatus() {
+    var DBstatusData = "true";
+    $.ajax({
+        url: 'homeownerViews/includes/act-displaydashboard.php',
+        type: 'post',
+        data: {
+            DBstatusSend: DBstatusData
+        },
+        success: function(data, status) {
+            $('#home-lot-status').html(data);
+        }
+    });
+}
+
     $(document).ready(function() {
         displayHistory();
+        displayHomeStatus()
     })
 
+    //display history
     $(document).ready(function() {
         var currentPage = localStorage.getItem("currentPage");
         if (!currentPage) {
             currentPage = 1;
         }
-        displayHistory(page);
     });
 
     function displayHistory(page) {

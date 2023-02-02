@@ -1463,6 +1463,50 @@ svg{
 .adminAddAccountModal  #passgenerate{
     color: #fff; 
 }
+.dashboard-status{
+    margin-bottom: 10px;
+    margin-right: 40px;
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.dash-status tr{
+    border: 0;
+    border-collapse: collapse;
+}
+.home-lot-status{
+    padding: 10px;
+}
+.dash-status .dashboard-home{
+    width: 100%;
+    border-radius: 5px;
+    background-color: var(--darkgreen);
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.dashboard-home .dash-desc{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700; 
+    padding: 10px;
+    color: white;
+}
+
+.dashboard-home .dash-desc h1{
+    text-transform: uppercase;
+    font-size: 25px;
+    font-weight: 700; 
+}
+.dashboard-home .dash-desc h3{
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: 700;
+}
+.dashboard-home .dash-desc h5{
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+
 /*********** Scrollbar  **************/
 ::-webkit-scrollbar {
     width: 8px;  /* width of the scrollbar */
@@ -1478,6 +1522,11 @@ svg{
     background-color: #ffffff;  /* color of the track (the part that the thumb scrolls over) */
     border-radius: 5px;  /* rounded corners of the track */
   }
+
+
+
+
+
 
 /* sendmail css start*/
 /* custom css styling */
