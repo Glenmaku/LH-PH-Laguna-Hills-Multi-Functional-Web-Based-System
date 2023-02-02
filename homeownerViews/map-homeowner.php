@@ -4897,6 +4897,7 @@
 				<span class="input-group-text">Area per Sqm</span>
 				<input type="text" id="finder-area-per-sqm" class="form-control" disabled>
 			</div>
+			<button class="trigger-home" id="trigger-prop-home" value="trigger-prop" hidden></button>
 
 		</div>
 	</div>
@@ -4974,52 +4975,54 @@
 	}
 
 
-	function colorData(id) {
-		$.ajax({
-			url: 'adminViews/includes/property-finder-panel.php',
-			type: 'GET',
-			dataType: 'json',
-			success: function(data) {
-				data.forEach(function(data) {
-					if (data.Status === 'available') {
-						document.getElementById(id).style.fill = '#1FCE6D';
-					} else {
-						document.getElementById(id).style.display = 'none';
-					}
-				});
-			},
-			error: function(error) {
-				console.log('Error:', error);
-			}
-		});
-	}
+	(function() {
+    let buttonSelected = "trigger-prop";
 
-	const select = document.querySelector('.trigger');
-	const path = document.querySelectorAll('path');
+    function getData(id, callback) {
+      fetch('adminViews/includes/property-finder-panel.php?id=' + id)
+        .then(response => response.json())
+        .then(data => {
+          callback(data);
+        })
+        .catch(error => {
+          console.log('Error:' + error);
+        });
+    }
 
-	select.addEventListener("click", function() {
-		if (select.value === "trigger-prop") {
-			buttonSelected = "trigger-prop";
-			path.forEach(path => {
-				getData(path.id);
-				colorData(path.id);
-			});
-		}
-	});
+    function colorData(data, id) {
+      if (buttonSelected === "trigger-prop-home") {
+        if (data.Status === 'available') {
+          document.getElementById(id).style.fill = '#1FCE6D';
+          document.getElementById(id).disabled = false; // make sure the element is not disabled if it's available
+        } else {
+          document.getElementById(id).style.fill = 'grey';
+          document.getElementById(id).disabled = true; // disable the element if it's not available
+          document.getElementById(id).style.pointerEvents = 'none'; // make sure the element is not clickable if it's disabled
+        }
+      }
+    }
 
-	// Show color onload
-	document.addEventListener("DOMContentLoaded", function() {
-		path.forEach(path => {
-			getData(path.id, function() {
-				colorData(path.id);
-			});
-		});
-	});
+    const select = document.querySelector('.trigger-home');
+    const path = document.querySelectorAll('path');
 
-	let paths = document.querySelectorAll('path');
-	paths.forEach(function(path) {
-		if (path.id.includes('multiple')) {
-			path.style.display = 'none';
-		}
-	});
+    select.addEventListener("click", function() {
+      if (select.value === "trigger-prop-home") {
+        buttonSelected = "trigger-prop-home";
+        path.forEach(path => {
+          getData(path.id, data => {
+            colorData(data, path.id);
+          });
+        });
+      }
+    });
+
+    // Show color onload
+    document.addEventListener("DOMContentLoaded", function() {
+      path.forEach(path => {
+        getData(path.id, data => {
+          colorData(data, path.id);
+        });
+      });
+    });
+  })();
 </script>
