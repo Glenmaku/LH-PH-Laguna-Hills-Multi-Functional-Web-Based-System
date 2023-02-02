@@ -385,7 +385,8 @@ body{
 /*********** Transaction Content **************/
 .homeTransaction-history .transaction-history-title,
 .transaction-title,
-.dashboard-title{
+.dashboard-title,
+.owner-announcement-title{
     font-family: 'Raleway', sans-serif;
     font-weight: 700;
     color: var(--darkgreen);
@@ -401,7 +402,8 @@ body{
 
 .homeTransaction-history .transaction-history-title h1,
 .transaction-title h1,
-.dashboard-title h1{
+.dashboard-title h1,
+.owner-announcement-title h1{
     font-weight: 700;
     text-align: center;
     padding: 5px;
@@ -434,7 +436,8 @@ body{
     font-size: 18px;
     color: var(--darkgreen);
 }
-.transaction-history-content{
+.transaction-history-content,
+.owner-announcement-content{
     padding: 15px;
     margin-right: 40px;
     background-color: white;
