@@ -263,7 +263,7 @@
                                             <input type="text" name="f-time-to" id="in-radio-hall2" placeholder="10am" disabled="disabled">
                                         </div>
                                         <div class="reservation-price">
-                                            <input type="text" name="reservation-price" id="in-radio-hall3" value="0" disabled="disabled" onchange="calculate();">
+                                            <input type="text" name="reservation-price" id="in-radio-hall3" value="0" disabled="disabled"">
                                         </div>
                                     </div>
 
@@ -280,7 +280,7 @@
                                             <input type="text" name="f-time-to" id="in-radio-court2" placeholder="10am" disabled="disabled">
                                         </div>
                                         <div class="reservation-price">
-                                            <input type="text" name="reservation-price" id="in-radio-court3" value="0" disabled="disabled" onchange="calculate();">
+                                            <input type="text" name="reservation-price" id="in-radio-court3" value="0" disabled="disabled">
                                         </div>
                                     </div>
 
@@ -296,7 +296,7 @@
                                             <input type="text" name="f-time-to" placeholder="10am" id="in-radio-miming2" disabled="disabled">
                                         </div>
                                         <div class="reservation-price">
-                                            <input type="text" name="reservation-price" id="in-radio-miming3" value="0" disabled="disabled" onchange="calculate();">
+                                            <input type="text" name="reservation-price" id="in-radio-miming3" value="0" disabled="disabled">
                                         </div>
                                     </div>
                             </div>
@@ -305,12 +305,9 @@
                                 <div class="r-subtotal-label">
                                     <div class="r-discount">
                                         <span>Discount:</span><br>
-                                        <input type="text" name="r-discount" id="r-discount" value="0" onchange="calculate();">
+                                        <input type="text" name="r-discount" id="r-discount" value="0">
                                     </div>
-                                    <div class="r-subtotal">
-                                        <span>Subtotal:</span><br>
-                                        <input type="text" name="r-subtotal" id="r-subtotal" disabled>
-                                    </div>
+                                    
                                 </div>
                             </div>
                         </div> <!-- accordion-body -->
@@ -853,68 +850,7 @@
                 });
                 //end checkbox reset 
 
-                // transaction part
-                function calculate() {
-                    // Declare variables for the input values
-                    var price1 = document.getElementById("in-radio-hall3").value;
-                    var price2 = document.getElementById("in-radio-court3").value;
-                    var price3 = document.getElementById("in-radio-miming3").value;
-                    var discount = document.getElementById("r-discount").value;
-                    var subtotal = 0;
-
-                    // check if any input values are not a number
-                    if (isNaN(price1) || isNaN(price2) || isNaN(price3) || isNaN(discount)) {
-                        alert("Please enter valid numbers for all input fields");
-                        return;
-                    }
-                    // calculate subtotal
-                    subtotal += parseFloat(price1) || 0;
-                    subtotal += parseFloat(price2) || 0;
-                    subtotal += parseFloat(price3) || 0;
-                    subtotal -= (subtotal * (parseFloat(discount) / 100));
-
-                    // set the value of subtotal
-                    document.getElementById("r-subtotal").value = subtotal.toFixed(2);
-
-                    // set the value of total 
-                    var total = document.getElementById("r-subtotal").value;
-                    document.getElementById("reserv_total").value = subtotal.toFixed(2);
-
-                    // Declare variable for payment value
-                    var payment = document.getElementById("reserv_payment").value;
-
-                    // check if the payment is not a number
-                    if (isNaN(payment)) {
-                        alert("Please enter a valid number for reserv_payment");
-                        return;
-                    }
-                    // calculate change
-                    var change = (parseFloat(payment)) - parseFloat(total);
-
-                    // set the value of change
-                    document.getElementById("reserv_change").value = change.toFixed(2);
-
-                    // set the value of change
-                    if (total > payment) {
-                        change = 0;
-                        document.getElementById("reserv_change").value = change.toFixed(2);
-                    } else if (payment > total) {
-                        document.getElementById("reserv_change").value = change.toFixed(2);
-                    }
-
-                    // calculate remaining balance
-                    var remainingBalance = total - payment;
-
-                    // set the value of remaining balance
-                    if (remainingBalance > 0) {
-                        document.getElementById("reserv_remaining-balance").value = remainingBalance.toFixed(2);
-                    } else {
-                        remainingBalance = 0;
-                        document.getElementById("reserv_remaining-balance").value = remainingBalance.toFixed(2);
-                    }
-
-                }
-                // transaction part end
+                
 
                 // radio button function
                 $(function() {
@@ -973,7 +909,6 @@
                     $("#in-radio-miming2").val("");
                     $("#in-radio-miming3").val("");
                     $("#r-discount").val("");
-                    $("#r-subtotal").val("");
 
                     $("#radio-hall").prop("checked", false);
                     $("#radio-court").prop("checked", false);

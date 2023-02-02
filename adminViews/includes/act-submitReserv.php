@@ -1,15 +1,15 @@
 <div>
     <div class="payment-area">
         <span>Total:</span>
-        <input type="text" class="form-control reserv_total" name="reserv_total" id="reserv_total" value="0" disabled>
+        <input type="text" class="form-control reserv_total" name="reserv_total" id="reserv_total" disabled>
         <span>Payment:</span>
-        <input type="text" class="form-control reserv_payment" name="reserv_payment" id="reserv_payment" value="0" placeholder="Enter amount..." onchange="calculate();">
+        <input type="text" class="form-control reserv_payment" name="reserv_payment" id="reserv_payment" value="0" placeholder="Enter amount...">
         <span>Change:</span>
         <input type="text" class="form-control reserv_change" name="reserv_change" id="reserv_change" value="0" disabled>
         <span>Remaining Balance:</span>
         <input type="text" class="form-control reserv_remaining-balance" name="remaining-balance" id="reserv_remaining-balance" value="0" disabled>
         <span>Remarks:</span>
-        <textarea placeholder="Type here.."></textarea>
+        <textarea id="reserv_remark" placeholder="Type here.."></textarea>
         <button type="submit" id="reserv_submit" class="btn btn-success reserv_submit">Submit</button>
         <button type="reset" id="reserv_reset" class="btn btn-danger reserv_reset">Reset Form</button>
     </div>
@@ -149,6 +149,7 @@
             var reserv_discount = $("#r-discount").val();
             var initial_price = $("#in-radio-miming3").val(); + $("#in-radio-hall3").val(); + $("#in-radio-court3").val();
             var total_price = $("#in-radio-miming3").val() + $("#in-radio-hall3").val() + $("#in-radio-court3").val() - ($("#in-radio-miming3").val() + $("#in-radio-hall3").val() + $("#in-radio-court3").val() * (initial_discount));
+            var remarks = $("#reserv_remark").val();
 
             $.ajax({
                 url: 'adminViews/insert-data-transaction-records.php',
@@ -157,7 +158,8 @@
                     trans_nosend: trans_no,
                     namesend: nameadd,
                     totalprice_send: total_price,
-                    reserv_discountsend: reserv_discount
+                    reserv_discountsend: reserv_discount,
+                    remarks_send : remarks
                 },
                 success: function(data, status) {
                     // function to display data
@@ -187,7 +189,6 @@
         $("#in-radio-miming2").val("");
         $("#in-radio-miming3").val("");
         $("#r-discount").val("");
-        $("#r-subtotal").val("");
 
         $("#radio-hall").prop("checked", false);
         $("#radio-court").prop("checked", false);
@@ -195,5 +196,57 @@
 
     }
 
-    
+    function calculateTotal() {
+  const hall = parseFloat(document.getElementById("in-radio-hall3").value);
+  const court = parseFloat(document.getElementById("in-radio-court3").value);
+  const miming = parseFloat(document.getElementById("in-radio-miming3").value);
+  const discount = parseFloat(document.getElementById("r-discount").value) / 100;
+  const total = hall + court + miming;
+  const subtotal = total - total * discount;
+  document.getElementById("reserv_total").value = subtotal.toFixed(2);
+}
+
+document.getElementById("in-radio-hall3").addEventListener("change", calculateTotal);
+document.getElementById("in-radio-court3").addEventListener("change", calculateTotal);
+document.getElementById("in-radio-miming3").addEventListener("change", calculateTotal);
+document.getElementById("r-discount").addEventListener("change", calculateTotal);
+
+let total = 0;
+
+document.querySelectorAll(".selected-reservation input[type=text][id^=in-radio]").forEach(input => {
+  total += parseFloat(input.value);
+});
+
+let discount = parseFloat(document.querySelector("#r-discount").value);
+total -= discount;
+
+document.querySelector("#reserv_total").value = total.toFixed(2);
+
+$(document).ready(function() {
+  $("#r-discount").change(function() {
+    let hall = parseInt($("#in-radio-hall3").val());
+    let miming = parseInt($("#in-radio-miming3").val());
+    let court = parseInt($("#in-radio-court3").val());
+    let total = hall + miming + court;
+    let discount = parseInt($("#r-discount").val());
+    let discountedAmount = total - (total * discount / 100);
+    $("#reserv_total").val(discountedAmount);
+  });
+});
+
+$("#reserv_payment").on("change", function() {
+  var reserv_total = parseFloat($("#reserv_total").val());
+  var reserv_payment = parseFloat($("#reserv_payment").val());
+  if (reserv_total > reserv_payment) {
+    var reserv_remaining_balance = reserv_total - reserv_payment;
+    $("#reserv_remaining-balance").val(reserv_remaining_balance);
+    $("#reserv_change").val(0);
+  } else {
+    var reserv_change = reserv_payment - reserv_total;
+    $("#reserv_change").val(reserv_change);
+    $("#reserv_remaining-balance").val(0);
+  }
+});
+
+
 </script>
