@@ -1,3 +1,18 @@
+<?php
+session_start();
+if (!empty($_SESSION['owner_I_D'])) {
+    $username = $_SESSION['owner_username'];
+    $ownerid = $_SESSION['owner_I_D'];
+    $Fname = $_SESSION['owner_fName'];
+    $Lname= $_SESSION['owner_lName'];
+    $Email= $_SESSION['owner_email'];
+    
+
+} else{
+    header("location:index.php");
+    exit();
+}
+?>
 <div class="homeowner-message">
     <div class="email-area">
         <div class="homeowner-title">
@@ -41,6 +56,8 @@
             <form id="myform">
                 <div class="modal-body">
                     <div class="mb-3">
+                    <input type="text" class="form-control" id="message_name" name="message_name" value="<?php echo $Fname." ".$Lname?>">
+                    <input type="text" class="form-control" id="message_username" name="message_username" value="<?php echo $username?>">
                         <input type="text" class="form-control" id="emailTitle" name="emailTitle" placeholder="Enter a Title" required>
                     </div>
                     <div class="form-floating">
@@ -95,6 +112,8 @@
 //insert data
     function ownerCompose() {
         $(document).on('click', '#addMessage', function() {
+            var Mname = $('#message_name').val();
+            var Musername = $('#message_username').val();
             var MTitle = $('#emailTitle').val();
             var MCompose = $('#emailDescription').val();
 
@@ -102,6 +121,8 @@
                 url: 'homeownerViews/includes/act-sendMail.php',
                 method: 'post',
                 data: {
+                    Musername:Musername,
+                    Mname:Mname,
                     MTitle: MTitle,
                     MCompose: MCompose
                 },
