@@ -20,7 +20,7 @@
           </tr>
         </thead>';
 
-        $sql = "SELECT * FROM email_tb ORDER BY message_id  DESC LIMIT $start_from, $records_per_page";
+        $sql = "SELECT * FROM message_tb ORDER BY message_id DESC LIMIT $start_from, $records_per_page";
         $result = mysqli_query($con, $sql);
         while($row = mysqli_fetch_assoc($result)){
             $message_id = $row['message_id'];
@@ -35,12 +35,13 @@
             }
             $Table.='</table>';
            // Add the pagination links
-           $query = "SELECT COUNT(*) as total_records FROM email_tb";
+           $query = "SELECT COUNT(*) as total_records FROM message_tb";
            $total_pages_result = mysqli_query($con, $query);
            $total_rows = mysqli_fetch_array($total_pages_result);
            $total_pages = ceil($total_rows["total_records"] / $records_per_page);
            $pagination = '<nav aria-label="Page navigation">
            <ul class="pagination">';
+           $page = 1;
            if($page > 1) {
                $previous = $page - 1;
                $pagination .= '<li class="page-item"><a class="page-link" onclick="getMessagePage('.$previous.')">Previous</a></li>';

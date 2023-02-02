@@ -42,7 +42,7 @@ if (isset($_POST['announcementSend'])) {
         $pagination .= '<li class="page-item"><a class="page-link" onclick="getPage(' . $previous . ')">Previous</a></li>';
     }
 
-    $start = max(1, $currentPage - 1);
+    $start = max(1, $currentPage - 2);
     $end = min($totalPages, $currentPage + 1);
     for ($i = $start; $i <= $end; $i++) {
         if ($i == $currentPage) {

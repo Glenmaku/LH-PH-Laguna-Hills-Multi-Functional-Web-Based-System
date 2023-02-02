@@ -1,13 +1,19 @@
     <div class="ownerSidebar" id="narbar-to-collapse" hidden>
         <button type="button" class="sidebar-btn_close justify-item-center" onclick="close_sidebar()">
-        <span aria-hidden="true" class="">&times;</span>
+            <span aria-hidden="true" class="">&times;</span>
         </button>
         <div class="logo-details">
             <img src="./assets/images/logo-icon.png">
             <span class="logo-name"> The Laguna Hills</span>
         </div>
         <ul class="nav-links list-unstyled">
-             <li>
+            <li>
+                <a href="homeowneraccountconnect.php" class="ps-4">
+                    <i class="fa-solid fa-map"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+            <li>
                 <a href="#map" onclick="showHomeMap()" class="ps-4">
                     <i class="fa-solid fa-map"></i>
                     <span>Map</span>
@@ -20,7 +26,7 @@
                 </a>
             </li>
             <li>
-                <a href="#transaction-menu" onclick="" class="ps-4">
+                <a href="#transaction" onclick="showHomeTrans()" class="ps-4">
                     <i class="fa-solid fa-calculator"></i>
                     <span>Transaction History</span>
                 </a>
@@ -38,12 +44,9 @@
 
 
     <script>
-
-function close_sidebar(){
-    $(document).on('click','.sidebar-btn_close',function(){
-        $('.ownerSidebar').prop('hidden',true);
-    })
-}
-
-
+        function close_sidebar() {
+            $(document).on('click', '.sidebar-btn_close', function() {
+                $('.ownerSidebar').prop('hidden', true);
+            })
+        }
     </script>

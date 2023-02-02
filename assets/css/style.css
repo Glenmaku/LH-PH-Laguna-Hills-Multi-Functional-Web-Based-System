@@ -336,6 +336,13 @@ body{
 
 
 /**************************************************************************************/
+
+
+
+
+
+
+
 /*********** Admin Dashboard **************/
 .allContent{
     position: block;
@@ -376,6 +383,7 @@ body{
 }
 
 /*********** Transaction Content **************/
+.homeTransaction-history .transaction-history-title,
 .transaction-title{
     font-family: 'Raleway', sans-serif;
     font-weight: 700;
@@ -385,10 +393,12 @@ body{
     margin-top: 10px;
     margin-right: 40px;
     margin-bottom: 10px;
+    background-color: white;
     border-radius: 5px;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
+.homeTransaction-history .transaction-history-title h1,
 .transaction-title h1{
     text-align: center;
     padding: 5px;
@@ -420,6 +430,13 @@ body{
     font-weight: 700;
     font-size: 18px;
     color: var(--darkgreen);
+}
+.transaction-history-content{
+    padding: 15px;
+    margin-right: 40px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 .transaction-container{
     padding: 15px;

@@ -99,5 +99,14 @@ function showHomeMap(){  //sidebar
     });
 }
 
-
+function showHomeTrans(){  //sidebar
+    $.ajax({
+        url:"homeownerViews/transactionHistory.php",
+        method:"post",
+        data:{record:1},
+        success:function(data){
+            $('.allContent').html(data);
+        }
+    });
+}
 
