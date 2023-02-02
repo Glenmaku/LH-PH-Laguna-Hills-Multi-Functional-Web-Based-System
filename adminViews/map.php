@@ -14,6 +14,8 @@
 			<h3>|</h3>
 			<input type="text" class="form-control" id="searchMap" placeholder="Search here : blk1lot1..." style="border-radius: 5p;">
 		</div>
+		<button id="zoom-in-btn-admin" class="btn btn-success"><i class="fa-sharp fa-solid fa-plus"></i></button>
+		<button id="zoom-out-btn-admin" class="btn btn-success"><i class="fa-sharp fa-solid fa-minus"></i></button>
 		<!-- Generator: Adobe Illustrator 26.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 		<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1300 1800" style="enable-background:new 0 0 1190.2 1683.8;" xml:space="preserve" id="my-svg">
 			<style type="text/css">
@@ -422,7 +424,7 @@
 					</sodipodi:namedview>
 					<g id="layer1" transform="translate(-8.242317,-12.593058)" inkscape:groupmode="layer" inkscape:label="Layer 1">
 						<g id="g65" transform="matrix(0.26458333,0,0,0.26458333,23.638951,15.556005)" inkscape:label="Image">
-							<path id="blk4lot4" onclick="getData('blk4lot4')"sodipodi:nodetypes="ccccccccc" style="fill:#808080;stroke:#FFFFFF;stroke-miterlimit:10;" d="
+							<path id="blk4lot4" onclick="getData('blk4lot4')" sodipodi:nodetypes="ccccccccc" style="fill:#808080;stroke:#FFFFFF;stroke-miterlimit:10;" d="
 				M1793.273,2824.002c1.87-1.869,5.397-3.396,8.311-0.617c0.354,0.425,50.696,57.064,51.57,58.333
 				c1.905,1.908,3.933,4.814,2.689,6.482c-1.499,2.246-27.846,34.438-28.681,35.603c-2.201,2.137-4.626,1.846-7.362,1.236
 				l-70.951-15.84c-2.444-1.128-1.821-3.888-1.751-6.24C1746.942,2889.787,1768.702,2849.854,1793.273,2824.002L1793.273,2824.002z" />
@@ -4897,11 +4899,11 @@
 			</div>
 			<div class="panel-containers" style="min-height:80vh;">
 				<div class="text-center titlessss">
-					<h3 class="" id="lot-information-map-t" >LOT INFORMATION</h3>
-					<h3 class="" id="map-assoc-t"hidden>ASSOCIATION DUES</h3>
-					<h3 class="" id="owner-information-t"hidden>OWNER INFORMATION</h3>
+					<h3 class="" id="lot-information-map-t">LOT INFORMATION</h3>
+					<h3 class="" id="map-assoc-t" hidden>ASSOCIATION DUES</h3>
+					<h3 class="" id="owner-information-t" hidden>OWNER INFORMATION</h3>
 				</div>
-				<div id="lot-information-map" class="lot-information-map">	
+				<div id="lot-information-map" class="lot-information-map">
 				</div>
 				<div id="map-assoc">
 				</div>
@@ -4910,337 +4912,372 @@
 			</div>
 		</div>
 
-<!--STATUS BELOWSSSS-->
-		
-		<div class="status statuslotss" id="status-check" >
+		<!--STATUS BELOWSSSS-->
+
+		<div class="status statuslotss" id="status-check">
 
 			<div class="status-title">
 				<h5>STATUS</h5>
 			</div>
 			<div>
-			<div class="form-check">
-				<input class="form-check-input" type="checkbox" value="#1FCE6D" id="available">
-				<label class="form-check-label" for="flexCheckDefault">Available</label>
-			</div>
-			<div class="form-check">
-				<input class="form-check-input" type="checkbox" value="#E94B35" id="occupied">
-				<label class="form-check-label" for="flexCheckDefault">Occupied</label>
-			</div>
-			<div class="form-check">
-				<input class="form-check-input" type="checkbox" value="#2C97DE" id="house">
-				<label class="form-check-label" for="flexCheckDefault">With House</label>
-			</div>
-			<div class="form-check">
-				<input class="form-check-input" type="checkbox" value="#F2C500" id="undisclosed">
-				<label class="form-check-label" for="flexCheckDefault">Property Undisclosed</label>
-			</div>
-			<div class="form-check">
-				<input class="form-check-input" type="checkbox" value="#E87E04" id="foreclosed">
-				<label class="form-check-label" for="flexCheckDefault">Foreclosed</label>
-			</div>
-			<div class="form-check">
-				<input class="form-check-input" type="checkbox" value="#33495F" id="open">
-				<label class="form-check-label" for="flexCheckDefault">Open Space</label>
-			</div>
-			<div class="form-check">
-				<input class="form-check-input" type="checkbox" value="#9C56B8" id="amenities">
-				<label class="form-check-label" for="flexCheckDefault">Amenities</label>
-			</div>
+				<div class="form-check">
+					<input class="form-check-input" type="checkbox" value="#1FCE6D" id="available">
+					<label class="form-check-label" for="flexCheckDefault">Available</label>
 				</div>
+				<div class="form-check">
+					<input class="form-check-input" type="checkbox" value="#E94B35" id="occupied">
+					<label class="form-check-label" for="flexCheckDefault">Occupied</label>
+				</div>
+				<div class="form-check">
+					<input class="form-check-input" type="checkbox" value="#2C97DE" id="house">
+					<label class="form-check-label" for="flexCheckDefault">With House</label>
+				</div>
+				<div class="form-check">
+					<input class="form-check-input" type="checkbox" value="#F2C500" id="undisclosed">
+					<label class="form-check-label" for="flexCheckDefault">Property Undisclosed</label>
+				</div>
+				<div class="form-check">
+					<input class="form-check-input" type="checkbox" value="#E87E04" id="foreclosed">
+					<label class="form-check-label" for="flexCheckDefault">Foreclosed</label>
+				</div>
+				<div class="form-check">
+					<input class="form-check-input" type="checkbox" value="#33495F" id="open">
+					<label class="form-check-label" for="flexCheckDefault">Open Space</label>
+				</div>
+				<div class="form-check">
+					<input class="form-check-input" type="checkbox" value="#9C56B8" id="amenities">
+					<label class="form-check-label" for="flexCheckDefault">Amenities</label>
+				</div>
+			</div>
 		</div>
-		<div class="status  statusassocss" id="status-check"hidden>
+		<div class="status  statusassocss" id="status-check" hidden>
 			<div class="status-title">
 				<h5>STATUS</h5>
 			</div>
 			<div class="mt-4">
-			<div class="form-check">
-				<input class="form-check-input" type="checkbox" value="#018E5A" id="Updated">
-				<label class="form-check-label" for="flexCheckDefault">Updated</label>
-			</div>
-			<div class="form-check">
-				<input class="form-check-input" type="checkbox" value="#E12323" id="Outdated">
-				<label class="form-check-label" for="flexCheckDefault">Outdated</label>
-			</div>
-			<div class="form-check">
-				<input class="form-check-input" type="checkbox" value="#FDC50C" id="Advanced">
-				<label class="form-check-label" for="flexCheckDefault">Advanced</label>
-			</div>
+				<div class="form-check">
+					<input class="form-check-input" type="checkbox" value="#018E5A" id="Updated">
+					<label class="form-check-label" for="flexCheckDefault">Updated</label>
 				</div>
+				<div class="form-check">
+					<input class="form-check-input" type="checkbox" value="#E12323" id="Outdated">
+					<label class="form-check-label" for="flexCheckDefault">Outdated</label>
+				</div>
+				<div class="form-check">
+					<input class="form-check-input" type="checkbox" value="#FDC50C" id="Advanced">
+					<label class="form-check-label" for="flexCheckDefault">Advanced</label>
+				</div>
+			</div>
 		</div>
-	
 
 
-	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-	<script type="text/javascript">
 
-		$(document).ready(function() {
-			changeColor();
-			getData();
-			displayMapData();
-			 displayOwner();
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				changeColor();
+				getData();
+				displayMapData();
+				displayOwner();
 
-		});
-		/////////////////////////////////////////////
-	
-///////////////////////////////////////////////////	////////////////MAP
-		function displayMapData() {
+			});
+			/////////////////////////////////////////////
+			var svg = document.getElementById("my-svg"); // get the SVG element
+			var currentScale = svg.getAttribute("transform") || "scale(1)"; // get the current scale
 
-			var mapData = "true";
-			$.ajax({
-				url: 'adminViews/includes/mapData.php',
-				type: 'post',
-				data: {
-					mapDataSend: mapData
-				},
-				success: function(data, status) {
-					$('#lot-information-map').html(data);
-					// document.getElementById("lot-information-map-t").style.display = "block";
-					// document.getElementById("map-assoc-t").style.display = "none";
-					// document.getElementById("owner-information-t").style.display = "none";
-					// document.getElementsByClassName("statuslotss")[0].style.display = "block";
-					// document.getElementsByClassName("statusassocss")[0].style.display = "none";
+			// add event listeners to zoom in and out buttons
+			document.getElementById("zoom-in-btn-admin").addEventListener("click", function() {
+				var newScale = "scale(" + (parseFloat(currentScale.slice(6)) + 0.1) + ")";
+				svg.setAttribute("transform", newScale);
+				currentScale = newScale;
+			});
+			document.getElementById("zoom-out-btn-admin").addEventListener("click", function() {
+				var newScale = parseFloat(currentScale.slice(6)) - 0.1;
+				if (newScale >= 0.7) {
+					svg.setAttribute("transform", "scale(" + newScale + ")");
+					currentScale = "scale(" + newScale + ")";
 				}
 			});
-		}
-
-////////////////////////////////////////////////////////////////////ASOC
-		function displayAssocData() {
-			var assocData = "true";
-			$.ajax({
-				url: 'adminViews/includes/map-Assoc.php',
-				type: 'post',
-				data: {
-					mapAssocSend: assocData
-				},
-				success: function(data, status) {
-					$('#map-assoc').html(data);
-
-				}
+			//add event listener for drag
+			var startX, startY, translateX = 0,
+				translateY = 0;
+			svg.addEventListener("mousedown", function(event) {
+				startX = event.clientX;
+				startY = event.clientY;
+				svg.addEventListener("mousemove", drag);
 			});
-		}
-/////////////////////////////////////////////////////////////////
-		function displayOwner(id) {
-
-			var id = id;
-			var ownerData = "true";
-			$.ajax({
-				url: 'adminViews/includes/map-owner.php',
-				type: 'post',
-				data: {
-					mapOwnerSend: ownerData, id:id
-				},
-				success: function(data, status) {
-					$('#owner-information').html(data);
-
-				}
+			svg.addEventListener("mouseup", function() {
+				svg.removeEventListener("mousemove", drag);
 			});
-		}
-/////////////////////////////////////////////////////////////
-		// $(document).ready(function() {
-		// 	$("#lot-information-btn").click(function() {
-		// 		$("#lot-information-map").show();
-		// 		$("#lot-information-map-t").prop("hidden", false);
-		// 		$("#map-assoc").hide();
-		// 		$("#map-assoc-t").prop("hidden", true);
-		// 		$("#owner-information").hide();
-		// 		displayMapData();
-		// 	});})
+
+			function drag(event) {
+				var deltaX = event.clientX - startX;
+				var deltaY = event.clientY - startY;
+				startX = event.clientX;
+				startY = event.clientY;
+				translateX += deltaX;
+				translateY += deltaY;
+				svg.setAttribute("transform", currentScale + "translate(" + translateX + "," + translateY + ")");
+			}
+			///////////////////////////////////////////////////	////////////////MAP
+			function displayMapData() {
+
+				var mapData = "true";
+				$.ajax({
+					url: 'adminViews/includes/mapData.php',
+					type: 'post',
+					data: {
+						mapDataSend: mapData
+					},
+					success: function(data, status) {
+						$('#lot-information-map').html(data);
+						// document.getElementById("lot-information-map-t").style.display = "block";
+						// document.getElementById("map-assoc-t").style.display = "none";
+						// document.getElementById("owner-information-t").style.display = "none";
+						// document.getElementsByClassName("statuslotss")[0].style.display = "block";
+						// document.getElementsByClassName("statusassocss")[0].style.display = "none";
+					}
+				});
+			}
+
+			////////////////////////////////////////////////////////////////////ASOC
+			function displayAssocData() {
+				var assocData = "true";
+				$.ajax({
+					url: 'adminViews/includes/map-Assoc.php',
+					type: 'post',
+					data: {
+						mapAssocSend: assocData
+					},
+					success: function(data, status) {
+						$('#map-assoc').html(data);
+
+					}
+				});
+			}
+			/////////////////////////////////////////////////////////////////
+			function displayOwner(id) {
+
+				var id = id;
+				var ownerData = "true";
+				$.ajax({
+					url: 'adminViews/includes/map-owner.php',
+					type: 'post',
+					data: {
+						mapOwnerSend: ownerData,
+						id: id
+					},
+					success: function(data, status) {
+						$('#owner-information').html(data);
+
+					}
+				});
+			}
+			/////////////////////////////////////////////////////////////
+			// $(document).ready(function() {
+			// 	$("#lot-information-btn").click(function() {
+			// 		$("#lot-information-map").show();
+			// 		$("#lot-information-map-t").prop("hidden", false);
+			// 		$("#map-assoc").hide();
+			// 		$("#map-assoc-t").prop("hidden", true);
+			// 		$("#owner-information").hide();
+			// 		displayMapData();
+			// 	});})
 
 			$("#mapcons").on("click", function() {
-					$("#lot-information-map").show();
-						$("#lot-information-map-t").show();
-						$("#map-assoc").hide();
-						$("#map-assoc-t").hide();
-						$("#owner-information").hide();
-						$("#owner-information-t").hide();
-						$(".statuslotss").show();
-						$(".statusassocss").hide();
-						displayMapData();
-			});
-				$(document).ready(function() {
-
-				$("#lot-information-btn").click(function() {
 				$("#lot-information-map").show();
 				$("#lot-information-map-t").show();
 				$("#map-assoc").hide();
 				$("#map-assoc-t").hide();
-				$("#map-assoc-t").prop("hidden", true);
 				$("#owner-information").hide();
 				$("#owner-information-t").hide();
-				$("#owner-information-t").prop("hidden", true);
 				$(".statuslotss").show();
 				$(".statusassocss").hide();
-				$(".statusassocss").prop("hidden", true);
 				displayMapData();
-
 			});
-			// $("#assoc-btn").click(function() {
-			// 	$("#lot-information-map").hide();
-			// 	$("#lot-information-map-t").prop("hidden", true);
-			// 	$("#map-assoc").show();
-			// 	$("#map-assoc-t").show();
-			// 	$("#map-assoc-t").prop("hidden", false);
-			// 	$("#owner-information").hide();
-			// 	displayAssocData();
-			// });
+			$(document).ready(function() {
+
+				$("#lot-information-btn").click(function() {
+					$("#lot-information-map").show();
+					$("#lot-information-map-t").show();
+					$("#map-assoc").hide();
+					$("#map-assoc-t").hide();
+					$("#map-assoc-t").prop("hidden", true);
+					$("#owner-information").hide();
+					$("#owner-information-t").hide();
+					$("#owner-information-t").prop("hidden", true);
+					$(".statuslotss").show();
+					$(".statusassocss").hide();
+					$(".statusassocss").prop("hidden", true);
+					displayMapData();
+
+				});
+				// $("#assoc-btn").click(function() {
+				// 	$("#lot-information-map").hide();
+				// 	$("#lot-information-map-t").prop("hidden", true);
+				// 	$("#map-assoc").show();
+				// 	$("#map-assoc-t").show();
+				// 	$("#map-assoc-t").prop("hidden", false);
+				// 	$("#owner-information").hide();
+				// 	displayAssocData();
+				// });
 				$("#assoc-btn").click(function() {
-				$("#lot-information-map").hide();
-				$("#lot-information-map-t").hide();
-				$("#map-assoc").show();
-				$("#map-assoc-t").show();
-				$("#map-assoc-t").prop("hidden", false);
-				$("#owner-information").hide();
-				$("#owner-information-t").hide();
-				$("#owner-information-t").prop("hidden", true);
-				$(".statusassocss").show();
-				$(".statuslotss").hide();
-				$(".statusassocss").prop("hidden", false);
-				displayAssocData();
-			});
+					$("#lot-information-map").hide();
+					$("#lot-information-map-t").hide();
+					$("#map-assoc").show();
+					$("#map-assoc-t").show();
+					$("#map-assoc-t").prop("hidden", false);
+					$("#owner-information").hide();
+					$("#owner-information-t").hide();
+					$("#owner-information-t").prop("hidden", true);
+					$(".statusassocss").show();
+					$(".statuslotss").hide();
+					$(".statusassocss").prop("hidden", false);
+					displayAssocData();
+				});
 				$("#owner-information-btn").click(function() {
-				$("#lot-information-map").hide();
-				$("#lot-information-map-t").hide();
-				$("#map-assoc").hide();
-				$("#map-assoc-t").hide();
-				$("#map-assoc-t").prop("hidden", true);
-				$("#owner-information").show();
-				$("#owner-information-t").show();
-				$("#owner-information-t").prop("hidden", false);
-				$(".statuslotss").hide();
-				$(".statusassocss").hide();
-				$(".statusassocss").prop("hidden", true);
-				displayOwner();
-			});
-			// $("#owner-information-btn").click(function() {
-			// 	$("#lot-information-map").hide();
-			// 	$("#lot-information-map-t").prop("hidden", true);
-			// 	$("#lot-information-map-t").hide();
-			// 	$("#map-assoc").hide();
-			// 	$("#map-assoc-t").hide();
-			// 	$("#owner-information").show();
-			// 	$("#owner-information-t").prop("hidden", false);
-			// 	displayOwner();
-			// });
-		});
-
-////////////////////////////////////////////////////////////////
-
-
-		$(document).ready(function() {
-			var newColor = "#000000";
-			var previousPath;
-			$("#searchMap").on("input", function() {
-				if (previousPath) {
-					previousPath.css("fill", "");
-				}
-
-				var id = $("#searchMap").val();
-				var path = $("#" + id);
-				path.css("fill", newColor);
-				previousPath = path;
-			});
-		});
-
-
-//////////////////////////////////////////////////////////////////////////////
-		function getData(id) {
-			// Use fetch API for HTTP requests
-			
-			fetch(`adminViews/includes/mapsubmit.php?id=${id}`)
-				.then(response => response.json())
-				.then(data => {
-					displayOwner(id);
-					// Update the values of the elements with the corresponding ids
-					//document.getElementById("input-field-id").value = myId;
-					document.getElementById('Lot_ID').value = data.Lot_ID;
-					document.getElementById("block").value = data.Block;
-					document.getElementById("lot").value = data.Lot;
-					document.getElementById("street").value = data.Street;
-					document.getElementById("status").value = data.Status;
-					document.getElementById("area-per-sqm").value = data.Area;
-					document.getElementById("price").value = data.Price;
-					document.getElementById("remarkss").value = data.Remarks;
-					document.getElementById("remarks").value = data.DueRemarks;
-					document.getElementById("Monthly_Dues").value = data.Monthly_Dues;
-					document.getElementById("Yearly_Dues").value = data.Yearly_Dues;
-					document.getElementById("Dues_Status").value = data.Dues_Status;
-					document.getElementById("lotedit-id").value = data.Lot_ID;
-					document.getElementById("ownergets").value = data.Lot_ID;
-					document.getElementById("ownershipfname").value = data.owner_fname;
-					document.getElementById("ownershiplname").value = data.owner_lname;
-					document.getElementById("ownerships").value = data.ownership;
-					document.getElementById("ownusername").value = data.owner_username;
-	
-					
-					// Append the ownership table to the appropriate element
-					//document.getElementById("ownership-table").innerHTML = data.ownership_info;//
-					})
-				.catch(error => {
-					console.log(`Error: ${error}`);
+					$("#lot-information-map").hide();
+					$("#lot-information-map-t").hide();
+					$("#map-assoc").hide();
+					$("#map-assoc-t").hide();
+					$("#map-assoc-t").prop("hidden", true);
+					$("#owner-information").show();
+					$("#owner-information-t").show();
+					$("#owner-information-t").prop("hidden", false);
+					$(".statuslotss").hide();
+					$(".statusassocss").hide();
+					$(".statusassocss").prop("hidden", true);
+					displayOwner();
 				});
-		}
-//////////////////////////////////////////////////////////////////////////////
+				// $("#owner-information-btn").click(function() {
+				// 	$("#lot-information-map").hide();
+				// 	$("#lot-information-map-t").prop("hidden", true);
+				// 	$("#lot-information-map-t").hide();
+				// 	$("#map-assoc").hide();
+				// 	$("#map-assoc-t").hide();
+				// 	$("#owner-information").show();
+				// 	$("#owner-information-t").prop("hidden", false);
+				// 	displayOwner();
+				// });
+			});
 
-//////////////////////////////////////////////////////////////////////////////
-		function colorData(id) {
-			fetch('adminViews/includes/mapsubmit.php?id=' + id)
-				.then(response => response.json())
-				.then(data => {
-					if (buttonSelected === "lot-select") {
-						if (data.Status === 'available') {
-							document.getElementById(id).style.fill = '#1FCE6D';
-						} else if (data.Status === 'occupied') {
-							document.getElementById(id).style.fill = '#E94B35';
-						} else if (data.Status === 'Property Undisclosed') {
-							document.getElementById(id).style.fill = '#F2C500';
-						} else if (data.Status === 'Open Space') {
-							document.getElementById(id).style.fill = '#33495F';
-						} else if (data.Status === 'amenities') {
-							document.getElementById(id).style.fill = '#9C56B8';
-						} else if (data.Status === 'foreclosed') {
-							document.getElementById(id).style.fill = '#E87E04';
-						} else if (data.Status === 'With House') {
-							document.getElementById(id).style.fill = '#2C97DE';
-						}
-					} else if (buttonSelected === "assoc-select") {
+			////////////////////////////////////////////////////////////////
 
-						if (data.Dues_Status === 'outdated') {
-							document.getElementById(id).style.fill = '#E12323';
-						} else if (data.Dues_Status === 'updated') {
-							document.getElementById(id).style.fill = '#018E5A';
-						} else if (data.Dues_Status === 'advanced') {
-							document.getElementById(id).style.fill = '#FDC50C';
-						} else if (data.Dues_Status === 'N/A') {
-							document.getElementById(id).style.fill = '';
-						}
+
+			$(document).ready(function() {
+				var newColor = "#000000";
+				var previousPath;
+				$("#searchMap").on("input", function() {
+					if (previousPath) {
+						previousPath.css("fill", "");
 					}
-				})
-				.catch(error => {
-					console.log('Error:' + error);
-				});
-		}
 
-		const select = document.querySelector('.form-select');
-		const paths = document.querySelectorAll('path');
+					var id = $("#searchMap").val();
+					var path = $("#" + id);
+					path.css("fill", newColor);
+					previousPath = path;
+				});
+			});
 
-		select.addEventListener("change", function() {
-			if (select.value === "lot-information") {
-				buttonSelected = "lot-select";
-				paths.forEach(path => {
-					getData(path.id);
-					colorData(path.id);
-				});
-			} else if (select.value === "association-dues") {
-				buttonSelected = "assoc-select";
-				paths.forEach(path => {
-					getData(path.id);
-					colorData(path.id);
-				});
+
+			//////////////////////////////////////////////////////////////////////////////
+			function getData(id) {
+				// Use fetch API for HTTP requests
+
+				fetch(`adminViews/includes/mapsubmit.php?id=${id}`)
+					.then(response => response.json())
+					.then(data => {
+						displayOwner(id);
+						// Update the values of the elements with the corresponding ids
+						//document.getElementById("input-field-id").value = myId;
+						document.getElementById('Lot_ID').value = data.Lot_ID;
+						document.getElementById("block").value = data.Block;
+						document.getElementById("lot").value = data.Lot;
+						document.getElementById("street").value = data.Street;
+						document.getElementById("status").value = data.Status;
+						document.getElementById("area-per-sqm").value = data.Area;
+						document.getElementById("price").value = data.Price;
+						document.getElementById("remarkss").value = data.Remarks;
+						document.getElementById("remarks").value = data.DueRemarks;
+						document.getElementById("Monthly_Dues").value = data.Monthly_Dues;
+						document.getElementById("Yearly_Dues").value = data.Yearly_Dues;
+						document.getElementById("Dues_Status").value = data.Dues_Status;
+						document.getElementById("lotedit-id").value = data.Lot_ID;
+						document.getElementById("ownergets").value = data.Lot_ID;
+						document.getElementById("ownershipfname").value = data.owner_fname;
+						document.getElementById("ownershiplname").value = data.owner_lname;
+						document.getElementById("ownerships").value = data.ownership;
+						document.getElementById("ownusername").value = data.owner_username;
+
+
+						// Append the ownership table to the appropriate element
+						//document.getElementById("ownership-table").innerHTML = data.ownership_info;//
+					})
+					.catch(error => {
+						console.log(`Error: ${error}`);
+					});
 			}
-		});
+			//////////////////////////////////////////////////////////////////////////////
+
+			//////////////////////////////////////////////////////////////////////////////
+			function colorData(id) {
+				fetch('adminViews/includes/mapsubmit.php?id=' + id)
+					.then(response => response.json())
+					.then(data => {
+						if (buttonSelected === "lot-select") {
+							if (data.Status === 'available') {
+								document.getElementById(id).style.fill = '#1FCE6D';
+							} else if (data.Status === 'occupied') {
+								document.getElementById(id).style.fill = '#E94B35';
+							} else if (data.Status === 'Property Undisclosed') {
+								document.getElementById(id).style.fill = '#F2C500';
+							} else if (data.Status === 'Open Space') {
+								document.getElementById(id).style.fill = '#33495F';
+							} else if (data.Status === 'amenities') {
+								document.getElementById(id).style.fill = '#9C56B8';
+							} else if (data.Status === 'foreclosed') {
+								document.getElementById(id).style.fill = '#E87E04';
+							} else if (data.Status === 'With House') {
+								document.getElementById(id).style.fill = '#2C97DE';
+							}
+						} else if (buttonSelected === "assoc-select") {
+
+							if (data.Dues_Status === 'outdated') {
+								document.getElementById(id).style.fill = '#E12323';
+							} else if (data.Dues_Status === 'updated') {
+								document.getElementById(id).style.fill = '#018E5A';
+							} else if (data.Dues_Status === 'advanced') {
+								document.getElementById(id).style.fill = '#FDC50C';
+							} else if (data.Dues_Status === 'N/A') {
+								document.getElementById(id).style.fill = '';
+							}
+						}
+					})
+					.catch(error => {
+						console.log('Error:' + error);
+					});
+			}
+
+			const select = document.querySelector('.form-select');
+			const paths = document.querySelectorAll('path');
+
+			select.addEventListener("change", function() {
+				if (select.value === "lot-information") {
+					buttonSelected = "lot-select";
+					paths.forEach(path => {
+						getData(path.id);
+						colorData(path.id);
+					});
+				} else if (select.value === "association-dues") {
+					buttonSelected = "assoc-select";
+					paths.forEach(path => {
+						getData(path.id);
+						colorData(path.id);
+					});
+				}
+			});
 
 
-//////////////////////////////////////////////////////////////////DESIGNS
-//On load, display the lot-information-map-t and hide the other two
-
-	</script>
+			//////////////////////////////////////////////////////////////////DESIGNS
+			//On load, display the lot-information-map-t and hide the other two
+		</script>
