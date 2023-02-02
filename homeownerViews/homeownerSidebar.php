@@ -32,7 +32,7 @@
                 </a>
             </li>
             <li>
-                <a href="#announcements" onclick="" class="ps-4">
+                <a href="#announcements" onclick="showHomeAnnounce()" class="ps-4">
                     <i class="fa-solid fa-bullhorn"></i>
                     <span>Announcement</span>
                 </a>

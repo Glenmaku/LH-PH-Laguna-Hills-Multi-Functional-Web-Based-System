@@ -110,3 +110,13 @@ function showHomeTrans(){  //sidebar
     });
 }
 
+function showHomeAnnounce(){  //sidebar
+    $.ajax({
+        url:"homeownerViews/homeowner-announcement.php",
+        method:"post",
+        data:{record:1},
+        success:function(data){
+            $('.allContent').html(data);
+        }
+    });
+}

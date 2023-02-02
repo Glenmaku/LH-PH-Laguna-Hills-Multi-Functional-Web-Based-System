@@ -15,17 +15,17 @@ if (isset($_POST['historySend'])) {
     // Calculate the start index for the current page
     $start_from = ($page - 1) * $records_per_page;
 
-    $Table = '<table class="table " >
+    $Table = '<table class="table">
         <thead>
           <tr>
-            <th scope="row">Transaction No.</th>
-            <th >Date</th>
-            <th>Block & Lot</th>
-            <th>Assoc Balance</th>
-            <th>Penalty</th>
-            <th>Discount</th>
-            <th>Payment</th>
-            <th>Change</th>
+            <th scope="col">Transaction No.</th>
+            <th scope="col" >Date</th>
+            <th scope="col">Block & Lot</th>
+            <th scope="col">Assoc Balance</th>
+            <th scope="col">Penalty</th>
+            <th scope="col">Discount</th>
+            <th scope="col">Payment</th>
+            <th scope="col">Change</th>
         </tr>
         </thead>';
 
@@ -50,7 +50,7 @@ if (isset($_POST['historySend'])) {
 
             $assoc_remarks = $row['assoc_remarks'];
             $Table .= '  <tr>
-                              <td>' . $assoc_no . '</td>
+                              <td scope="row">' . $assoc_no . '</td>
                               <td>' . $assoc_date . '</td>
                               <td>' . $Lot_ID . '</td>
                             

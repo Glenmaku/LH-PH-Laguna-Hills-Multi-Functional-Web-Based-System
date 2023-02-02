@@ -32,7 +32,7 @@ if (isset($_POST['DBstatusSend'])) {
             $Status = $row['Dues_Status'];
             $Balance = $row['Balance'];
 
-            $Table .= ' <td>
+            $Table .= ' <td >
             <div class="dashboard-home">
           <div class="dash-desc">
               <h1>'.$Lot_ID.'</h1>

@@ -19,7 +19,7 @@ if (!empty($_SESSION['admin_I_D'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LH-PH: Admin</title>
-
+    <link rel="icon" type="image/x-icon" href="images/Untitled.png">
     <!--------- Stylesheet ------------>
     <link rel="stylesheet" href="assets/css/style.css"></link>
     <!--------- Icon ------------>
