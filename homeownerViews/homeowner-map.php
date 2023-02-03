@@ -7,6 +7,7 @@
         <div class="control-map">
             <button id="zoom-in-btn" class="btn btn-success"><i class="fa-sharp fa-solid fa-plus"></i></button>
             <button id="zoom-out-btn" class="btn btn-success"><i class="fa-sharp fa-solid fa-minus"></i></button>
+            <button class="btn trigger-home" id="trigger-home" value="trigger-home" ><i class="fa-regular fa-user"></i></button>
         </div>
 
         <div class="homeMap">
@@ -41,7 +42,6 @@ include 'map-homeowner.php';
                     <span class="input-group-text">Area per Sqm</span>
                     <input type="text" id="finder-area-per-sqm" class="form-control" disabled>
                 </div>
-                <button class="trigger-home" id="trigger-home" value="trigger-home">onload</button>
 
             </div>
         </div>
@@ -78,7 +78,7 @@ include 'map-homeowner.php';
 			this.style.fill = "#085D40";
 		});
 		path.addEventListener('mouseout', function() {
-			this.style.fill = "grey";
+			this.style.fill = "#1FCE6D";
 		});
 	});
 
@@ -86,12 +86,12 @@ include 'map-homeowner.php';
 	var currentScale = svg.getAttribute("transform") || "scale(1)"; // get the current scale
 
 	// add event listeners to zoom in and out buttons
-	document.getElementById("zoom-in-btn-home").addEventListener("click", function() {
+	document.getElementById("zoom-in-btn").addEventListener("click", function() {
 		var newScale = "scale(" + (parseFloat(currentScale.slice(6)) + 0.1) + ")";
 		svg.setAttribute("transform", newScale);
 		currentScale = newScale;
 	});
-	document.getElementById("zoom-out-btn-home").addEventListener("click", function() {
+	document.getElementById("zoom-out-btn").addEventListener("click", function() {
 		var newScale = parseFloat(currentScale.slice(6)) - 0.1;
 		if (newScale >= 0.7) {
 			svg.setAttribute("transform", "scale(" + newScale + ")");
