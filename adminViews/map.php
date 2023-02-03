@@ -1,7 +1,11 @@
 <div class="map-title">
 	<h1>LAGUNA HILLS MAP</h1>
 </div>
-<div class="lhph-map">
+	<div class="lhph-map">
+		<div class="control-map">
+			<button id="zoom-in-btn-admin" class="btn btn-success"><i class="fa-sharp fa-solid fa-plus"></i></button>
+			<button id="zoom-out-btn-admin" class="btn btn-success"><i class="fa-sharp fa-solid fa-minus"></i></button>
+        </div>
 	<div class="map">
 		<div class="input-group">
 			<div class="col-md-4">
@@ -14,9 +18,11 @@
 			<h3>|</h3>
 			<input type="text" class="form-control" id="searchMap" placeholder="Search here : blk1lot1..." style="border-radius: 5p;">
 		</div>
-		<button id="zoom-in-btn-admin" class="btn btn-success"><i class="fa-sharp fa-solid fa-plus"></i></button>
-		<button id="zoom-out-btn-admin" class="btn btn-success"><i class="fa-sharp fa-solid fa-minus"></i></button>
+		<div class="map-admin" style="overflow:hidden;">
+			
+
 		<!-- Generator: Adobe Illustrator 26.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+
 		<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1300 1800" style="enable-background:new 0 0 1190.2 1683.8;" xml:space="preserve" id="my-svg">
 			<style type="text/css">
 				.st0 {
@@ -4886,7 +4892,7 @@
 			</g>
 		</svg>
 
-
+		</div>
 
 	</div>
 

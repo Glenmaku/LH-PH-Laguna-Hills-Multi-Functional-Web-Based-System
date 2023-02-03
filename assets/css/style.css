@@ -912,7 +912,6 @@ svg{
     width: 70%;
     margin-right: 5px;
     border-radius: 5px;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 
@@ -1559,6 +1558,13 @@ svg{
     color: white;
     background-color: white;
     border: 0;
+}
+.lhph-map .control-map{
+    background-color: var(--white);
+    padding: 5px;  
+}
+.lhph-map .control-map button{
+    margin-bottom: 5px;
 }
 /*********** Scrollbar  **************/
 ::-webkit-scrollbar {
