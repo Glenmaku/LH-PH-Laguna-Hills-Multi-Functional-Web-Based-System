@@ -12,7 +12,7 @@ if(isset($_POST['get_HomeMessages_Rec'])){
             <th>Full Name</th>
             <th>Subject</th>
             <th>Message</th>
-            <th>View Info</th>
+            <th hidden>View Info</th>
         </tr>
     </thread><tbody>';
     $contact_sql = "SELECT * FROM `message_tb` ORDER BY message_id DESC LIMIT $start_from, $records_per_page";
@@ -32,7 +32,7 @@ while($row=mysqli_fetch_assoc($contact_result)){
                       <td>'.$message_Fullname.'</td>
                       <td>'.$message_subject.'</td>
                       <td>'.$message_message.'</td>
-                       <td><button id="btn_view_owner_contact" class="btn_view_owner_contact btn btn-primary" name="view_button" onclick="get_owner_contact('.$message_username.')"><i class="fa-solid fa-eye"></i></button></td>
+                       <td hidden><button id="btn_view_owner_contact" class="btn_view_owner_contact btn btn-primary" name="view_button" onclick="get_owner_contact('.$message_username.')" hidden ><i class="fa-solid fa-eye"></i></button></td>
                       </tr>';
 }
 $Messagetable.='</tbody><table>';

@@ -39,7 +39,7 @@ if (mysqli_num_rows($result) > 0) {
             <th>Full Name</th>
             <th>Subject</th>
             <th>Message</th>
-            <th>View Info</th>
+            <th hidden>View Info</th>
         </tr>
     </thread><tbody>';
     while($row=mysqli_fetch_assoc($result)){
@@ -56,7 +56,7 @@ if (mysqli_num_rows($result) > 0) {
                             <td>'.$message_Fullname.'</td>
                             <td>'.$message_subject.'</td>
                             <td>'.$message_message.'</td>
-                            <td><button id="btn_view_owner_contact" class="btn_view_owner_contact btn btn-primary" name="view_button" onclick="get_owner_contact('.$message_username.')"><i class="fa-solid fa-eye"></i></button></td>
+                            <td><button id="btn_view_owner_contact" class="btn_view_owner_contact btn btn-primary" name="view_button" onclick="get_owner_contact('.$message_username.')" hidden><i class="fa-solid fa-eye"></i></button></td>
                             </tr>';
     }
     $Messagetable.='</tbody><table>';
