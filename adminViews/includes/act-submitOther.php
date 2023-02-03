@@ -7,9 +7,9 @@
         <span>Change:</span>
         <input type="text" class="form-control" name="other_change" id="other_change" value="0" disabled>
         <span>Remaining Balance:</span>
-        <input type="text" class="form-control" name="other_remaining-balance" id="other_remaining-balance" value="0" disabled>
+        <input type="text" class="form-control" name="other_remaining_balance" id="other_remaining_balance" value="0" disabled>
         <span>Remarks:</span>
-        <textarea placeholder="Type here.."></textarea>
+        <textarea id="other_remarks" placeholder="Type here.."></textarea>
         <button type="other_submit" class="btn btn-success other_submit" id="other_submit">Submit</button>
         <button type="other_reset" class="btn btn-danger other_reset" id="other_reset">Reset Form</button>
     </div>
@@ -23,7 +23,7 @@
 
     function other_add_data() {
         // OTHER TRANSACTION SECTION - INSERT DATA 
-        //TRYING TO MAKE SOME ALERTS
+
         if ($("#o_category").val().trim() && !isNaN($("#o_quantity").val().trim()) && !isNaN($("#o_price").val().trim()) && !isNaN($("#o_subtotal").val().trim())) {
             var data = {};
             data.transaction_number = $("#trans-no").val();
@@ -59,80 +59,7 @@
                 price: $("#o_price4").val(),
                 subtotal: $("#o_subtotal4").val()
             });
-            data.services.push({
-                category: $("#o_category5").val(),
-                quantity: $("#o_quantity5").val(),
-                price: $("#o_price5").val(),
-                subtotal: $("#o_subtotal5").val()
-            });
-
-            data.services.push({
-                category: $("#o_category6").val(),
-                quantity: $("#o_quantity6").val(),
-                price: $("#o_price6").val(),
-                subtotal: $("#o_subtotal6").val()
-            });
-            data.services.push({
-                category: $("#o_category7").val(),
-                quantity: $("#o_quantity7").val(),
-                price: $("#o_price7").val(),
-                subtotal: $("#o_subtotal7").val()
-            });
-            data.services.push({
-                category: $("#o_category7").val(),
-                quantity: $("#o_quantity7").val(),
-                price: $("#o_price7").val(),
-                subtotal: $("#o_subtotal7").val()
-            });
-            data.services.push({
-                category: $("#o_category8").val(),
-                quantity: $("#o_quantity8").val(),
-                price: $("#o_price8").val(),
-                subtotal: $("#o_subtotal8").val()
-            });
-            data.services.push({
-                category: $("#o_category9").val(),
-                quantity: $("#o_quantity9").val(),
-                price: $("#o_price9").val(),
-                subtotal: $("#o_subtotal9").val()
-            });
-            data.services.push({
-                category: $("#o_category10").val(),
-                quantity: $("#o_quantity10").val(),
-                price: $("#o_price10").val(),
-                subtotal: $("#o_subtotal10").val()
-            });
-            data.services.push({
-                category: $("#o_category11").val(),
-                quantity: $("#o_quantity11").val(),
-                price: $("#o_price11").val(),
-                subtotal: $("#o_subtotal11").val()
-            });
-            data.services.push({
-                category: $("#o_category12").val(),
-                quantity: $("#o_quantity12").val(),
-                price: $("#o_price12").val(),
-                subtotal: $("#o_subtotal12").val()
-            });
-            data.services.push({
-                category: $("#o_category13").val(),
-                quantity: $("#o_quantity13").val(),
-                price: $("#o_price13").val(),
-                subtotal: $("#o_subtotal13").val()
-            });
-            data.services.push({
-                category: $("#o_category14").val(),
-                quantity: $("#o_quantity14").val(),
-                price: $("#o_price14").val(),
-                subtotal: $("#o_subtotal14").val()
-            });
-            data.services.push({
-                category: $("#o_category15").val(),
-                quantity: $("#o_quantity15").val(),
-                price: $("#o_price15").val(),
-                subtotal: $("#o_subtotal15").val()
-            });
-
+            
             $.post("adminViews/insert-data-transaction-other.php", {
                 data: data
             }, function(response) {
@@ -150,6 +77,34 @@
                 alert("Subtotal must be a number.");
             }
         }
+
+        //TRYING TO MAKE SOME ALERTS
+        var transaction_number_all = $("#trans-no").val();
+        var name_all = $("#client-name").val();
+        var total_all = $("#other_total").val();
+        var other_payment_all = $("#other_payment").val();
+        var other_change_all = $("#other_change").val();
+        var other_remaining_balance_all = $("#other_remaining_balance").val();
+        var other_remarks_all = $("#other_remarks").val();
+        
+        $.ajax({
+        url: 'adminViews/insert-data-transaction-other-all.php',
+        type: 'post',
+        data: {
+
+          trans_no_all_send: transaction_number_all,
+          name_all_send: name_all,
+          total_all_send: total_all,
+          other_payment_all_send: other_payment_all,
+          other_change_all_send : other_change_all,
+          other_remaining_balance_all_send: other_remaining_balance_all,
+          other_remarks_all_send: other_remarks_all
+        },
+        success: function(data, status) {
+          // function to display data
+          console.log(status);
+        }
+      });
 
         // clear the forms after pressing the submit  
         $("#trans-no").val("");
@@ -228,11 +183,11 @@ document.getElementById("other_payment").addEventListener("input", function() {
   let otherPayment = parseFloat(document.getElementById("other_payment").value);
 
   if (otherTotal > otherPayment) {
-    document.getElementById("other_remaining-balance").value = otherTotal - otherPayment;
+    document.getElementById("other_remaining_balance").value = otherTotal - otherPayment;
     document.getElementById("other_change").value = 0;
   } else {
     document.getElementById("other_change").value = otherPayment - otherTotal;
-    document.getElementById("other_remaining-balance").value = 0;
+    document.getElementById("other_remaining_balance").value = 0;
   }
 });
 
