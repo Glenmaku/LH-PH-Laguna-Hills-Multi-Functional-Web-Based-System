@@ -5214,6 +5214,7 @@
 						document.getElementById("ownershiplname").value = data.owner_lname;
 						document.getElementById("ownerships").value = data.ownership;
 						document.getElementById("ownusername").value = data.owner_username;
+						document.getElementById("date_assigned").value = data.date_assigned;
 
 
 						// Append the ownership table to the appropriate element

@@ -20,7 +20,7 @@ if(isset($_POST['Lot_ID'])){
     }
 }
 else{
-    echo "'Error: No data to update";
+    echo "Error: No data to update";
     mysqli_close($con);
 }
 ?>

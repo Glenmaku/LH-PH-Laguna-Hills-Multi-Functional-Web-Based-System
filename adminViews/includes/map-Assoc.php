@@ -3,7 +3,7 @@
 include('connection.php');
 
 
-if (isset($_POST['mapAssocSend'])) {
+if(isset($_POST['mapAssocSend'])) {
   $sql = "SELECT * FROM `association_dues`";
   $result = mysqli_query($con, $sql);
   while ($row = mysqli_fetch_assoc($result)) {
@@ -34,15 +34,14 @@ if (isset($_POST['mapAssocSend'])) {
         </div>
         <div class="input-group">
                 <span class="input-group-text">Date Assigned</span>
-                <input id="date_assigned" class="form-control" value ="'. $date_assigned .'" disabled>
+                <input id="date_assigned" class="form-control" value ="' . $date_assigned . '" disabled>
         </div>
-
         <div class="input-group">
                 <span class="input-group-text">Remarks</span>
                 <textarea class="form-control" id="remarks" disabled>' . $Remarks . '</textarea>
         </div>
-        <button class="edit-info" type="button" id="editModal-assoc-btn" data-toggle="modal" data-target="#editModal-assoc"><i class="fa-solid fa-pen"></i> Edit Information</button>
-        <button class="edit-info" id="assocupdateModal-btn" hidden " onclick="Update_Assoc_Data()"><i class="fa-solid fa-pen"></i>Update Information</button>';
+        <button class="edit-info" id="editModal-assoc-btn"><i class="fa-solid fa-pen"></i> Edit Information</button>
+        <button class="edit-info" id="assocupdateModal-btn" hidden onclick="Update_Assoc_Data()"><i class="fa-solid fa-pen"></i>Update Information</button>';
 
       
   }
