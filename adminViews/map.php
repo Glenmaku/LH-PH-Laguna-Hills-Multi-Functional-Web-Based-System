@@ -5220,6 +5220,12 @@
 			//////////////////////////////////////////////////////////////////////////////
 
 			//////////////////////////////////////////////////////////////////////////////
+			function clearColor() {
+				paths.forEach(path => {
+					path.style.fill = '';
+				});
+			}
+
 			function colorData(id) {
 				fetch('adminViews/includes/mapsubmit.php?id=' + id)
 					.then(response => response.json())
@@ -5241,7 +5247,6 @@
 								document.getElementById(id).style.fill = '#2C97DE';
 							}
 						} else if (buttonSelected === "assoc-select") {
-
 							if (data.Dues_Status === 'outdated') {
 								document.getElementById(id).style.fill = '#E12323';
 							} else if (data.Dues_Status === 'updated') {
@@ -5262,6 +5267,7 @@
 			const paths = document.querySelectorAll('path');
 
 			select.addEventListener("change", function() {
+				clearColor();
 				if (select.value === "lot-information") {
 					buttonSelected = "lot-select";
 					paths.forEach(path => {
@@ -5276,6 +5282,7 @@
 					});
 				}
 			});
+
 
 
 			//////////////////////////////////////////////////////////////////DESIGNS
