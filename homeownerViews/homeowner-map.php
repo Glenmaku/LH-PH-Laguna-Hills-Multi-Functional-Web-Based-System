@@ -3,7 +3,7 @@
         <h1>LAGUNA HILLS MAP</h1>
     </div>
 
-    <div class="map-side" style="display: flex;">
+    <div class="owner-map-side" style="display: flex;">
         <div class="control-map">
             <button id="zoom-in-btn" class="btn btn-success"><i class="fa-sharp fa-solid fa-plus"></i></button>
             <button id="zoom-out-btn" class="btn btn-success"><i class="fa-sharp fa-solid fa-minus"></i></button>

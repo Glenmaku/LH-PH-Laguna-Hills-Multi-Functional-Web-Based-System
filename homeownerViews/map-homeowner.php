@@ -1,10 +1,5 @@
 <div class="mapHome">
-	<div class="mapHome-title">
-		<h1>LAGUNA HILLS MAP</h1>
-	</div>
-	<div class="HomeMap">
-
-		<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1300 1800" style="enable-background:new 0 0 1190.2 1683.8;" xml:space="preserve" id="my-svg-pf">
+	<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1300 1800" style="enable-background:new 0 0 1190.2 1683.8;" xml:space="preserve" id="my-svg-pf">
 			<style type="text/css">
 				.st0 {
 					fill: none;
@@ -4873,38 +4868,9 @@
 			</g>
 		</svg>
 
-
 	</div>
 
-	<button id="zoom-in-btn-home" class="btn btn-success"><i class="fa-sharp fa-solid fa-plus"></i></button>
-	<button id="zoom-out-btn-home" class="btn btn-success"><i class="fa-sharp fa-solid fa-minus"></i></button>
-
-	<div class="property-panel">
-		<div class="finder" id="finder-panel">
-			<h3>OWNER INFORMATION</h3>
-			<div class="input-group">
-				<span class="input-group-text">Block</span>
-				<input type="text" id="finder-block" class="form-control" disabled>
-				<span class="input-group-text">Lot</span>
-				<input type="text" id="finder-lot" class="form-control" disabled>
-			</div>
-			<div class="input-group">
-				<span class="input-group-text">Street</span>
-				<input type="text" id="finder-street" class="form-control" disabled>
-			</div>
-			<div class="input-group">
-				<span class="input-group-text">Status</span>
-				<input type="text" id="finder-status" class="form-control" disabled>
-			</div>
-			<div class="input-group">
-				<span class="input-group-text">Area per Sqm</span>
-				<input type="text" id="finder-area-per-sqm" class="form-control" disabled>
-			</div>
-			<button class="trigger-home" id="trigger-home" value="trigger-home">bobo</button>
-
-		</div>
-	</div>
-</div>
+	
 
 <script>
 	function getData(id) {
