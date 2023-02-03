@@ -90,7 +90,7 @@ function showMessage(){  //sidebar
 }
 function showHomeMap(){  //sidebar
     $.ajax({
-        url:"homeownerViews/map-homeowner.php",
+        url:"homeownerViews/homeowner-map.php",
         method:"post",
         data:{record:1},
         success:function(data){
