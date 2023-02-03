@@ -10,9 +10,6 @@
     box-sizing: border-box;
 
 }
-body{
-    background-color: var(--default-color);
-}
 :root{
     --default-color:#dadee0;
     --white: #ffffff;
