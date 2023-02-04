@@ -23,8 +23,14 @@
 </head>
 
 <body>
+<div class="  pre-loading-home"   >
+<div class="spinner-border text-success" role="status">
+  <span class="visually-hidden">Loading...</span>
+</div>
+</div>
+
     <!--Navigation Bar-->
-    <nav class="navbar navbar-expand-lg fixed-top   p-md-1">
+    <nav class="navbar navbar-expand-lg fixed-top p-md-1">
         <div class="container-fluid">
             <a class="navbar-brand" href="index.php">
                 <img src="Images/LHPHlogo.png" class="logo">
