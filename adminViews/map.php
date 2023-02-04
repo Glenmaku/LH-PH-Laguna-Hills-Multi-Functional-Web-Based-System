@@ -5208,13 +5208,14 @@
 						document.getElementById("Monthly_Dues").value = data.Monthly_Dues;
 						document.getElementById("Yearly_Dues").value = data.Yearly_Dues;
 						document.getElementById("Dues_Status").value = data.Dues_Status;
+						document.getElementById("date_assigned").value = data.date_assigned;
 						document.getElementById("lotedit-id").value = data.Lot_ID;
 						document.getElementById("ownergets").value = data.Lot_ID;
 						document.getElementById("ownershipfname").value = data.owner_fname;
 						document.getElementById("ownershiplname").value = data.owner_lname;
 						document.getElementById("ownerships").value = data.ownership;
 						document.getElementById("ownusername").value = data.owner_username;
-						document.getElementById("date_assigned").value = data.date_assigned;
+						
 
 
 						// Append the ownership table to the appropriate element
@@ -5291,7 +5292,16 @@
 			});
 
 
-
+			window.onload = function() {
+            $.ajax({
+                type: "POST",
+                url: "adminViews/includes/act-update_month_count.php",
+                data: {},
+                success: function(result) {
+                    console.log(result);
+                }
+            });
+        }
 			//////////////////////////////////////////////////////////////////DESIGNS
 			//On load, display the lot-information-map-t and hide the other two
 		</script>

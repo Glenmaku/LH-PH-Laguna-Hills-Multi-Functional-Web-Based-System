@@ -1,10 +1,10 @@
 <?php
 
-include('connection.php');
-
+include ('connection.php');
 
 if(isset($_POST['mapAssocSend'])) {
-  $sql = "SELECT * FROM `association_dues`";
+        $sql = "SELECT Lot_ID, Monthly_Dues, Yearly_Dues, Dues_Status, date_assigned, DueRemarks FROM association_dues";
+ // $sql = "SELECT * FROM `association_dues`";
   $result = mysqli_query($con, $sql);
   while ($row = mysqli_fetch_assoc($result)) {
     $Lot_ID = $row['Lot_ID'];
@@ -18,27 +18,27 @@ if(isset($_POST['mapAssocSend'])) {
 
         <div class="input-group">
                 <span class="input-group-text">Block and Lot</span>
-                <input type="text" id="Lot_ID" class="form-control" value ="' . $Lot_ID . '" disabled>
+                <input type="text" id="Lot_ID" class="form-control" value ="'.$Lot_ID.'" disabled>
         </div>
         <div class="input-group">
                 <span class="input-group-text">Monthly Dues</span>
-                <input type="number" id="Monthly_Dues" class="form-control" value ="' . $Monthly_Dues . '" disabled>
+                <input type="number" id="Monthly_Dues" class="form-control" value ="'.$Monthly_Dues.'" disabled>
         </div>
         <div class="input-group">
                 <span class="input-group-text">Yearly Dues</span>
-                <input type="number" id="Yearly_Dues" class="form-control" value ="' . $Yearly_Dues . '" disabled>
+                <input type="number" id="Yearly_Dues" class="form-control" value ="'.$Yearly_Dues.'" disabled>
         </div>
         <div class="input-group">
                 <span class="input-group-text">Status</span>
-                <input type="text" id="Dues_Status" class="form-control" value ="' . $Dues_Status . '" disabled>
+                <input type="text" id="Dues_Status" class="form-control" value ="'.$Dues_Status.'" disabled>
         </div>
         <div class="input-group">
                 <span class="input-group-text">Date Assigned</span>
-                <input id="date_assigned" class="form-control" value ="' . $date_assigned . '" disabled>
+                <input type="text" id="date_assigned" class="form-control" value ="'.$date_assigned.'" disabled>
         </div>
         <div class="input-group">
                 <span class="input-group-text">Remarks</span>
-                <textarea class="form-control" id="remarks" disabled>' . $Remarks . '</textarea>
+                <textarea class="form-control" id="remarks" disabled>'.$Remarks.'</textarea>
         </div>
         <button class="edit-info" id="editModal-assoc-btn"><i class="fa-solid fa-pen"></i> Edit Information</button>
         <button class="edit-info" id="assocupdateModal-btn" hidden onclick="Update_Assoc_Data()"><i class="fa-solid fa-pen"></i>Update Information</button>';
@@ -69,7 +69,9 @@ function Update_Assoc_Data(){
         var Monthly_Dues = $("#Monthly_Dues").val();
         var Yearly_Dues= $("#Yearly_Dues").val();
         var Dues_Status = $("#Dues_Status").val();
+        
         var Date_Assigned = $("#date_assigned").val();
+
         var Remarks = $("#remarks").val();
     $.ajax({
         url: "adminViews/includes/Act-update_assoc_dues.php",
