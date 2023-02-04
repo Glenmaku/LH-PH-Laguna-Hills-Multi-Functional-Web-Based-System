@@ -120,10 +120,12 @@
   var paths = document.querySelectorAll('.mapping');
   paths.forEach(function(path) {
     path.addEventListener('mouseover', function() {
-      this.style.fill = "#085D40";
+      this.style.stroke = "black";
+      this.style.strokeWidth = "3px";
     });
     path.addEventListener('mouseout', function() {
-      this.style.fill = "#1FCE6D";
+      this.style.stroke = "grey";
+      this.style.strokeWidth = "1px";
     });
   });
 
