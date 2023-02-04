@@ -1,51 +1,51 @@
 <div class="mapHome">
-    <div class="mapHome-title">
-        <h1>LAGUNA HILLS MAP</h1>
-    </div>
+	<div class="mapHome-title">
+		<h1>LAGUNA HILLS MAP</h1>
+	</div>
 
-    <div class="owner-map-side" style="display: flex;">
-        <div class="control-map">
-            <button id="zoom-in-btn" class="btn btn-success"><i class="fa-sharp fa-solid fa-plus"></i></button>
-            <button id="zoom-out-btn" class="btn btn-success"><i class="fa-sharp fa-solid fa-minus"></i></button>
-            <button class="btn trigger-home" id="trigger-home" value="trigger-home" ><i class="fa-regular fa-user"></i></button>
-        </div>
+	<div class="owner-map-side" style="display: flex;">
+		<div class="control-map">
+			<button id="zoom-in-btn" class="btn btn-success"><i class="fa-sharp fa-solid fa-plus"></i></button>
+			<button id="zoom-out-btn" class="btn btn-success"><i class="fa-sharp fa-solid fa-minus"></i></button>
+			<button class="btn trigger-home" id="trigger-home" value="trigger-home"><i class="fa-regular fa-user"></i></button>
+		</div>
 
-        <div class="homeMap">
-
-
-
-<?php
-include 'map-homeowner.php';
-?>
+		<div class="homeMap">
 
 
-        </div>
 
-        <div class="property-owner-panel">
-            <div class="owner-finder" id="finder-panel">
-                <h3>OWNER INFORMATION</h3>
-                <div class="input-group">
-                    <span class="input-group-text">Block</span>
-                    <input type="text" id="finder-block" class="form-control" disabled>
-                    <span class="input-group-text">Lot</span>
-                    <input type="text" id="finder-lot" class="form-control" disabled>
-                </div>
-                <div class="input-group">
-                    <span class="input-group-text">Street</span>
-                    <input type="text" id="finder-street" class="form-control" disabled>
-                </div>
-                <div class="input-group">
-                    <span class="input-group-text">Status</span>
-                    <input type="text" id="finder-status" class="form-control" disabled>
-                </div>
-                <div class="input-group">
-                    <span class="input-group-text">Area per Sqm</span>
-                    <input type="text" id="finder-area-per-sqm" class="form-control" disabled>
-                </div>
+			<?php
+			include 'map-homeowner.php';
+			?>
 
-            </div>
-        </div>
-    </div>
+
+		</div>
+
+		<div class="property-owner-panel">
+			<div class="owner-finder" id="finder-panel">
+				<h3>OWNER INFORMATION</h3>
+				<div class="input-group">
+					<span class="input-group-text">Block</span>
+					<input type="text" id="finder-block" class="form-control" disabled>
+					<span class="input-group-text">Lot</span>
+					<input type="text" id="finder-lot" class="form-control" disabled>
+				</div>
+				<div class="input-group">
+					<span class="input-group-text">Street</span>
+					<input type="text" id="finder-street" class="form-control" disabled>
+				</div>
+				<div class="input-group">
+					<span class="input-group-text">Status</span>
+					<input type="text" id="finder-status" class="form-control" disabled>
+				</div>
+				<div class="input-group">
+					<span class="input-group-text">Area per Sqm</span>
+					<input type="text" id="finder-area-per-sqm" class="form-control" disabled>
+				</div>
+
+			</div>
+		</div>
+	</div>
 
 </div>
 
@@ -75,10 +75,12 @@ include 'map-homeowner.php';
 	var paths = document.querySelectorAll('.mapping');
 	paths.forEach(function(path) {
 		path.addEventListener('mouseover', function() {
-			this.style.fill = "#085D40";
+			this.style.stroke = "black";
+			this.style.strokeWidth = "3px";
 		});
 		path.addEventListener('mouseout', function() {
-			this.style.fill = "#1FCE6D";
+			this.style.stroke = "grey";
+			this.style.strokeWidth = "1px";
 		});
 	});
 
