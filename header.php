@@ -23,12 +23,20 @@
 </head>
 
 <body>
-<div class="  pre-loading-home"   >
+<div class="pre-loading-home">
 <div class="spinner-border text-success" role="status">
   <span class="visually-hidden">Loading...</span>
 </div>
 </div>
-
+<script>
+    const spinnerWrapperEl=document.querySelector('.pre-loading-home');
+    window.addEventListener('load',()=>{
+          spinnerWrapperEl.style.opacity = '0';
+          setTimeout(()=>{
+            spinnerWrapperEl.style.display = 'none'; 
+          },100);
+    });
+</script>
     <!--Navigation Bar-->
     <nav class="navbar navbar-expand-lg fixed-top p-md-1">
         <div class="container-fluid">

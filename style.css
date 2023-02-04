@@ -44,12 +44,19 @@ body {
 	height: 100vh;
 	width: 100vw;
 	z-index: 999999999999!important;
-	background-color: #BFC0C0;
+	background-color: white;
 	position: fixed;
+	display: flex;
 	top: 0;
+	justify-content: center;
+	align-items: center;
+	transition: all 0.5s;
 }
- .pre-loading-home .spinner-border{
-display: flex;
+ .pre-loading-home .spinner-border {
+	--bs-spinner-width:7rem!important;
+	--bs-spinner-height: 7rem!important;
+	--bs-spinner-border-width: 0.7rem!important;
+	--bs-spinner-animation-speed: 0.8s!important;
  }
 /*-----------------------------END-LOADING*/
 /*NAVBARS*/
