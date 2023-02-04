@@ -64,7 +64,6 @@ if(isset($_POST['mapAssocSend'])) {
 function Update_Assoc_Data(){
 //$(document).on("click", "#lotupdateModal-btn", function(){
 
-
         var Lot_ID = $("#Lot_ID").val();     
         var Monthly_Dues = $("#Monthly_Dues").val();
         var Yearly_Dues= $("#Yearly_Dues").val();
@@ -93,4 +92,6 @@ function Update_Assoc_Data(){
             $("textarea").prop("disabled", true); // disable the textarea
         }
     });
+
+
 } </script>
