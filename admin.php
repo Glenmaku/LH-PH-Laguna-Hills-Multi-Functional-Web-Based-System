@@ -410,7 +410,7 @@ if (!empty($_SESSION['admin_I_D'])) {
 
                         </div><!--END LEFT SIDE-->
                         <div class="right-side-trans"><!--RIGHT SIDE-->
-                            <div class="trans-rows"><h6>Association Dues</h6><span>121231</span></div>
+                            <div class="trans-rows"><h6>Association Dues</h6><span id="dash-assocdues-num"></span></div>
                             <div class="trans-rows"><h6>Other Services</h6><span>121231</span></div>
                         </div><!--END RIGHT SIDE-->
                     </div>
@@ -567,6 +567,17 @@ $(document).ready(function(){
     });
   }
   ////////////////////////////////////////for lot
+  ////////////////////////
+  function get_assocdues_num(){
+    $.ajax({
+      type: "GET",
+      url: "adminViews/includes/act-dash-count-assocdues.php",
+      success: function(response) {
+        $("#dash-assocdues-num").html(response);
+      }
+    });
+  }
+  ////////////////////////////////////////
   get_dash_updated_num();
   get_dash_outdated_num();
   get_dash_available_num();
@@ -576,6 +587,7 @@ $(document).ready(function(){
   get_dash_openspace_num();
   get_dash_homeowners_num();
   get_dash_lotowners_num();
+  get_assocdues_num();
 
 
 
