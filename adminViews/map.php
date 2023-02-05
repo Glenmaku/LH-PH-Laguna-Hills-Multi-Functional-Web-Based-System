@@ -13,6 +13,7 @@
 					<option selected disabled>Monitor by:</option>
 					<option value="lot-information" id="lot-select">Lot Information</option>
 					<option value="association-dues" id="assoc-select">Association Dues</option>
+					<option value="block-select" id="block-select">Block</option>
 				</select>
 			</div>
 			<h3>|</h3>
@@ -1322,25 +1323,25 @@
 				M1634.663,4162.286c2.149-5.736,4.84-6.773,12.972-5.758l86.234,9.589c5.723,1.031,9.369,0.905,8.083,10.422l-13.029,87.688
 				c-1.778,11.968-11.667,15.117-22.409,11.824l-84.101-20.453c-3.398-1.077-6.064-3.536-4.627-11.494L1634.663,4162.286z" />
 
-								<path id="blk3lot35" class="mapping" onclick="getData('blk31lot35')" sodipodi:nodetypes="ccccccccc" style="fill:#808080;stroke:#FFFFFF;stroke-miterlimit:10;" d="
+								<path id="blk3lot35" class="mapping" onclick="getData('blk3lot35')" sodipodi:nodetypes="ccccccccc" style="fill:#808080;stroke:#FFFFFF;stroke-miterlimit:10;" d="
 				M2158.403,4143.483c-0.326-6.336,1.458-9.744,9.56-13.787l85.054-50.927c5.48-3.029,5.864-3.169,7.311,5.496l15.228,113.095
 				c1.182,5.497,1.417,9.429-4.711,7.666l-98.752-41.722c-7.676-2.486-12.52-4.824-13.247-8.129
 				C2158.531,4152.279,2158.505,4146.04,2158.403,4143.483L2158.403,4143.483z" />
 
-								<path id="blk3lot33" class="mapping" onclick="getData('blk31lot33')" sodipodi:nodetypes="ccccccccc" style="fill:#808080;stroke:#FFFFFF;stroke-miterlimit:10;" d="
+								<path id="blk3lot33" class="mapping" onclick="getData('blk3lot33')" sodipodi:nodetypes="ccccccccc" style="fill:#808080;stroke:#FFFFFF;stroke-miterlimit:10;" d="
 				M2085.091,4037.696c1.305-7.895-0.568-6.776,10.344-6.691l54.505,2.224c10.447,0.406,11.179,1.968,6.333,11.474l-30.305,56.865
 				c-1.915,3.629-3.606,5.162-7.456,4.876c-9.911-0.427-18.452-2.524-37.458,11.674c-8.809,5.665-9.348,2.885-8.27-5.129
 				L2085.091,4037.696z" />
 
-								<path id="blk3lot32" class="mapping" onclick="getData('blk31lot32')" sodipodi:nodetypes="ccccccccc" style="fill:#808080;stroke:#FFFFFF;stroke-miterlimit:10;" d="
+								<path id="blk3lot32" class="mapping" onclick="getData('blk3lot32')" sodipodi:nodetypes="ccccccccc" style="fill:#808080;stroke:#FFFFFF;stroke-miterlimit:10;" d="
 				M2022.291,4033.269c0.908-7.862,1.828-8.191,12.618-7.176l37.019,4.137c5.295,0.458,8.86,0.344,7.574,7.48l-11.144,77.365
 				c-0.538,4.173-3.278,5.145-7.11,4.687l-43.386-6.435c-5.524-0.723-7.937-2.298-6.499-10.256L2022.291,4033.269z" />
 
-								<path id="blk3lot30" class="mapping" onclick="getData('blk31lot30')" sodipodi:nodetypes="ccccccccc" style="fill:#808080;stroke:#FFFFFF;stroke-miterlimit:10;" d="
+								<path id="blk3lot30" class="mapping" onclick="getData('blk3lot30')" sodipodi:nodetypes="ccccccccc" style="fill:#808080;stroke:#FFFFFF;stroke-miterlimit:10;" d="
 				M1825.155,4006.176c0.908-7.862,1.828-8.191,12.618-7.176l111.699,16.41c4.785,0.943,6.822,2.249,6.068,8.588l-8.213,68.729
 				c-0.537,4.173-3.163,5.815-6.995,5.357l-111.248-25.253c-7.916-1.697-12.986-10.137-11.549-18.095L1825.155,4006.176z" />
 
-								<path id="blk3lot31" class="mapping" onclick="getData('blk31lot31')" sodipodi:nodetypes="ccccccccc" style="fill:#808080;stroke:#FFFFFF;stroke-miterlimit:10;" d="
+								<path id="blk3lot31" class="mapping" onclick="getData('blk3lot31')" sodipodi:nodetypes="ccccccccc" style="fill:#808080;stroke:#FFFFFF;stroke-miterlimit:10;" d="
 				M1959.329,4025.686c0.908-7.862,1.828-8.191,12.617-7.176l39.681,4.983c5.671,1.209,7.354,1.982,6.068,9.119l-11.048,72.626
 				c-0.537,4.173-3.34,4.487-7.173,4.029l-42.065-8.422c-5.524-0.723-7.317-2.785-5.879-10.743L1959.329,4025.686z" />
 
@@ -1361,7 +1362,7 @@
 				M2015.006,4176.732c0.908-7.862,1.828-8.191,12.618-7.176l33.793,4.983c5.546,1.208,8.356,1.732,7.071,11.248l-10.422,71.625
 				c-0.537,4.173-3.34,4.487-7.173,4.028l-39.81-5.04c-5.524-0.723-7.317-2.784-5.879-10.742L2015.006,4176.732z" />
 
-								<path id="blk3lot34" class="mapping" onclick="getData('blk31lot34')" sodipodi:nodetypes="ccccccccccc" style="fill:#808080;stroke:#FFFFFF;stroke-miterlimit:10;" d="
+								<path id="blk3lot34" class="mapping" onclick="getData('blk3lot34')" sodipodi:nodetypes="ccccccccccc" style="fill:#808080;stroke:#FFFFFF;stroke-miterlimit:10;" d="
 				M2161.893,4043.065c3.223-7.192,7.577-10.476,15.981-10.448l67.588,0.218c2.937,0.614,6.159-0.23,8.883,8.454
 				c3.236,12.561,3.633,17.303,3.148,24.662c-0.214,5.763-3.379,7.49-7.174,9.836l-88.844,51.704
 				c-2.969,1.775-7.052,1.797-8.966-0.375c-4.806-5.375-9.412-10.776-17.656-15.693c-4.275-2.622-7.331-3.004-3.688-9.806
@@ -5266,6 +5267,86 @@
 							} else if (data.Dues_Status === 'N/A') {
 								document.getElementById(id).style.fill = '';
 							}
+						} else if (buttonSelected === "block-select"){
+							if (data.Block === '1') {
+								document.getElementById(id).style.fill = 'black';
+							} else if (data.Block === '2') {
+								document.getElementById(id).style.fill = 'blue';
+							} else if (data.Block === '3') {
+								document.getElementById(id).style.fill = 'red';
+							} else if (data.Block === '4') {
+								document.getElementById(id).style.fill = 'brown';
+							} else if (data.Block === '5') {
+								document.getElementById(id).style.fill = 'purple';
+							} else if (data.Block === '6') {
+								document.getElementById(id).style.fill = 'green';
+							} else if (data.Block === '7') {
+								document.getElementById(id).style.fill = 'yellow';
+							} else if (data.Block === '8') {
+								document.getElementById(id).style.fill = 'magenta';
+							} else if (data.Block === '9') {
+								document.getElementById(id).style.fill = 'darkblue';
+							} else if (data.Block === '10') {
+								document.getElementById(id).style.fill = 'olive';
+							} else if (data.Block === '11') {
+								document.getElementById(id).style.fill = 'lime';
+							} else if (data.Block === '12') {
+								document.getElementById(id).style.fill = 'maroon';
+							} else if (data.Block === '13') {
+								document.getElementById(id).style.fill = '#033E3E';
+							} else if (data.Block === '14') {
+								document.getElementById(id).style.fill = '#F67280';
+							} else if (data.Block === '15') {
+								document.getElementById(id).style.fill = '#E799A3';
+							} else if (data.Block === '16') {
+								document.getElementById(id).style.fill = '#D891EF';
+							} else if (data.Block === '17') {
+								document.getElementById(id).style.fill = '#DC143C';
+							} else if (data.Block === '18') {
+								document.getElementById(id).style.fill = '#F8B88B';
+							} else if (data.Block === '19') {
+								document.getElementById(id).style.fill = '#DC381F';
+							} else if (data.Block === '20') {
+								document.getElementById(id).style.fill = '#FF7722';
+							} else if (data.Block === '21') {
+								document.getElementById(id).style.fill = '#43302E';
+							} else if (data.Block === '22') {
+								document.getElementById(id).style.fill = '#665D1E';
+							} else if (data.Block === '23') {
+								document.getElementById(id).style.fill = '#A97142';
+							} else if (data.Block === '24') {
+								document.getElementById(id).style.fill = '#C19A6B';
+							} else if (data.Block === '25') {
+								document.getElementById(id).style.fill = '#FFD700';
+							} else if (data.Block === '26') {
+								document.getElementById(id).style.fill = '#F5F5DC';
+							} else if (data.Block === '27') {
+								document.getElementById(id).style.fill = '#C2E5D3';
+							} else if (data.Block === '28') {
+								document.getElementById(id).style.fill = '#9DC209';
+							} else if (data.Block === '29') {
+								document.getElementById(id).style.fill = '#8C001A';
+							} else if (data.Block === '30') {
+								document.getElementById(id).style.fill = '#43C6DB';
+							} else if (data.Block === '31') {
+								document.getElementById(id).style.fill = '#50EBEC';
+							} else if (data.Block === '32') {
+								document.getElementById(id).style.fill = '#29465B';
+							} else if (data.Block === '33') {
+								document.getElementById(id).style.fill = '#D5D6EA';
+							} else if (data.Block === '34') {
+								document.getElementById(id).style.fill = '#4E5B31';
+							} else if (data.Block === '35') {
+								document.getElementById(id).style.fill = '#00FA9A';
+							} else if (data.Block === '36') {
+								document.getElementById(id).style.fill = '#B21807';
+							} else if (data.Block === '37') {
+								document.getElementById(id).style.fill = '#C5908E';
+							} else if (data.Block === '38') {
+								document.getElementById(id).style.fill = '#614051';
+							} else if (data.Block === '39') {
+								document.getElementById(id).style.fill = '#4B0082';
+							} 
 						}
 					})
 					.catch(error => {
@@ -5290,7 +5371,12 @@
 						getData(path.id);
 						colorData(path.id);
 					});
-				}
+				} else if (select.value === "block-select")
+					buttonSelected = "block-select";
+					paths.forEach(path => {
+						getData(path.id);
+						colorData(path.id);
+					})
 			});
 			paths.forEach(function(path) {
 				path.addEventListener('mouseover', function() {
