@@ -13,6 +13,12 @@ if(isset($_POST['Reservations_Rec'])){
           <th>Date</th>
           <th>Full Name</th>
           <th>Total</th>
+
+          <th>Discount</th>
+          <th>Remarks</th>
+          <th>Payment</th>
+          <th>Change</th>
+          <th>Remaining Balance</th>
       </tr>
     </thead>
     <tbody>';
@@ -23,6 +29,13 @@ if(isset($_POST['Reservations_Rec'])){
       $reservation_ID = $row['records_transaction_no'];
       $reservation_name =	$row['t_name'];
       $reservation_total = $row['total'];
+
+      $reservation_discount = $row['discount'];
+      $reservation_remarks = $row['remarks'];
+      $reservation_reserv_payment = $row['reserv_payment'];
+      $reservation_reserv_change = $row['reserv_change'];
+      $reservation_remaining_balance = $row['remaining_balance'];
+
      // $Category = $row['category'];
       $reservations_date = $row['date_created'];
       $Rtable .= '  <tr>
@@ -30,6 +43,14 @@ if(isset($_POST['Reservations_Rec'])){
                               <td>'.$reservations_date.'</td>
                               <td>'.$reservation_name.'</td>
                               <td>'.$reservation_total.'</td>
+
+                              <td>'.$reservation_discount.'</td>
+                              <td>'.$reservation_remarks.'</td>
+                              <td>'.$reservation_reserv_payment.'</td>
+                              <td>'.$reservation_reserv_change.'</td>
+                              <td>'.$reservation_remaining_balance.'</td>
+                              
+
                       <tr>';
   }
 $Rtable .= '</tbody></table>';
