@@ -4,7 +4,7 @@
     </div>
     <div class="message-content">
         <div class="compose-area">
-            <button class="compose-btn" id="compose-btn"><i class="fa-solid fa-feather"></i> Compose</button>
+            <button class="compose-btn" id="compose-btn" data-bs-toggle="modal" data-bs-target="#composeModal"><i class="fa-solid fa-feather"></i> Compose</button>
         </div>
         <div class="email-message-area">
             <div class="message-history">
@@ -103,7 +103,46 @@
     </div>
 </div>
 
-</div>
+<div class="modal fade modal-lg" id="composeModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Compose a Message</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body info-msg">
+                <div class="custom-switch button_section d-flex flex-row-reverse">
+                    <div class="switch_label">
+                        <div class="text_switch">Send to All</div>
+                        <input id="s1d" type="checkbox" class="switch">
+                        <label for="s1d">Switch</label>
+                    </div>
+                </div>
+                <form id="message-form">
+                    <div class="form-group">
+                        <!-- <label for="exampleFormControlInput1">Email address</label> -->
+                        <span>Email address</span>
+                        <input type="email" class="form-control emailadd_send" id="send_email" placeholder="name@example.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <!-- <label for="subject">Subject</label> -->
+                        <span>Subject</span>
+                        <input type="subject" class="form-control emailadd_send" id="send_subject" placeholder="Subject" required>
+                    </div>
+
+                    <div class="info-msg"> <br></div>
+
+                    <div class="form-group" id="txtareabox">
+                        <textarea cols="80" rows="10" class="form-control textarea " name="message" id="message" placeholder="Compose your message.." required></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-success  btn-block">Send Email</button>
+            </div>
+        </div>
+    </div>
 </div>
 
 <script>

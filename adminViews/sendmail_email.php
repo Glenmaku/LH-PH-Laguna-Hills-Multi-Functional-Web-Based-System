@@ -28,8 +28,6 @@
                         <input id="s1d" type="checkbox" class="switch">
                         <label for="s1d">Switch</label>
                     </div>
-
-
                 </div>
                 <div class="col-lg mail-form">
 
