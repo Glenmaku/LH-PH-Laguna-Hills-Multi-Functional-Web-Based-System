@@ -28,6 +28,7 @@ if (!empty($_SESSION['admin_I_D'])) {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
     <!--------- Script ------------>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <style>
     .dashboard-holder {
@@ -382,7 +383,7 @@ if (!empty($_SESSION['admin_I_D'])) {
                                 <h5 class="text-center mb-0">UPDATED</h5>
                             </div>
                             <div class="nums">
-                                <h1 class="text-center ">555</h1>
+                                <h1 class="text-center" id="dash-updated-num">000</h1>
                             </div>
                         </div><!--END UPDATED-->
                         <div class="for-outdated"><!--OUTDATED-->
@@ -391,7 +392,7 @@ if (!empty($_SESSION['admin_I_D'])) {
                                 <h5 class="text-center mb-0">OUTDATED</h5>
                             </div>
                             <div class="nums">
-                                <h1 class="text-center ">555</h1>
+                                <h1 class="text-center" id="dash-outdated-num">000</h1>
                             </div>
                         </div><!--END OUTDATED-->
                     </div><!--END OF PARTITION-->
@@ -423,23 +424,23 @@ if (!empty($_SESSION['admin_I_D'])) {
                     <div class="this-long-lots ">
                         <div class="box-available">
                             <h6>AVAILABLE</h6>
-                            <h1>111</h1>
+                            <h1 id="dash-available-num"></h1>
                         </div>
                         <div class="box-withhouse">
                         <h6>WITH HOUSE</h6>
-                            <h1>222</h1>
+                        <h1 id="dash-withhouse-num"></h1>
                         </div> 
                        <div class="box-occupied">
                        <h6>OCCUPIED</h6>
-                            <h1>333</h1>
+                       <h1 id="dash-occupied-num"></h1>
                         </div>
                         <div class="box-foreclosed">
                         <h6>FORECLOSED</h6>
-                            <h1>444</h1>
+                        <h1 id="dash-foreclosed-num"></h1>
                         </div>
                         <div class="box-openspace">
                         <h6>OPEN SPACE</h6>
-                            <h1>555</h1>
+                        <h1 id="dash-openspace-num"></h1>
                         </div>
                     </div>
                 </div><!-- END LOWER DIV-->
@@ -449,7 +450,7 @@ if (!empty($_SESSION['admin_I_D'])) {
                         <div class="num-homeowners">
                         <div class="top-numss">    
                         <h6>HOMEOWNERS</h6>
-                            <h1>400</h1>
+                            <h1 id="dash-homeowners-num">000</h1>
                         </div>
                           <div class="iconssss"><i class="fa-solid fa-people-roof"></i>
                         </div>
@@ -457,7 +458,7 @@ if (!empty($_SESSION['admin_I_D'])) {
                         <div class="num-lotowners">
                         <div class="top-numss">    
                         <h6>LOT OWNERS</h6>
-                            <h1>400</h1>
+                        <h1 id="dash-lotowners-num">000</h1>
                         </div>
                           <div class="iconssss"><i class="fa-solid fa-users-line"></i>
                         </div>
@@ -467,7 +468,7 @@ if (!empty($_SESSION['admin_I_D'])) {
             </div><!--DASH MOST END-->
         </div><!--END OF DASHBOARD HOLDER-->
     </div><!--END OF MAIN-CONTENT-->
-    <script>
+<script>
         window.onload = function() {
             $.ajax({
                 type: "POST",
@@ -478,15 +479,119 @@ if (!empty($_SESSION['admin_I_D'])) {
                 }
             });
         }
-    </script>
-</body>
+        </script>
+        <script>
+$(document).ready(function(){
+    //FORDUES///////////////////////////////////////////
+  function get_dash_outdated_num(){
+    $.ajax({
+      type: "GET",
+      url: "adminViews/includes/act-dash-count-outdated.php",
+      success: function(response) {
+        $("#dash-outdated-num").html(response);
+      }
+    });
+  }
+  function get_dash_updated_num(){
+    $.ajax({
+      type: "GET",
+      url: "adminViews/includes/act-dash-count-updated.php",
+      success: function(response) {
+        $("#dash-updated-num").html(response);
+      }
+    });
+  }
+  ////////////////////////////////////////FOR DUES
+  //////////////////////////
+  function get_dash_available_num(){
+    $.ajax({
+      type: "GET",
+      url: "adminViews/includes/act-dash-count-available.php",
+      success: function(response) {
+        $("#dash-available-num").html(response);
+      }
+    });
+  }
+  function get_dash_withhouse_num(){
+    $.ajax({
+      type: "GET",
+      url: "adminViews/includes/act-dash-count-withhouse.php",
+      success: function(response) {
+        $("#dash-withhouse-num").html(response);
+      }
+    });
+  }
+  function get_dash_occupied_num(){
+    $.ajax({
+      type: "GET",
+      url: "adminViews/includes/act-dash-count-occupied.php",
+      success: function(response) {
+        $("#dash-occupied-num").html(response);
+      }
+    });
+  }
+  function get_dash_foreclosed_num(){
+    $.ajax({
+      type: "GET",
+      url: "adminViews/includes/act-dash-count-foreclosed.php",
+      success: function(response) {
+        $("#dash-foreclosed-num").html(response);
+      }
+    });
+  }
+  function get_dash_openspace_num(){
+    $.ajax({
+      type: "GET",
+      url: "adminViews/includes/act-dash-count-openspace.php",
+      success: function(response) {
+        $("#dash-openspace-num").html(response);
+      }
+    });
+  }
+  function get_dash_homeowners_num(){
+    $.ajax({
+      type: "GET",
+      url: "adminViews/includes/act-dash-count-homeowners.php",
+      success: function(response) {
+        $("#dash-homeowners-num").html(response);
+      }
+    });
+  }
+  function get_dash_lotowners_num(){
+    $.ajax({
+      type: "GET",
+      url: "adminViews/includes/act-dash-count-lotowners.php",
+      success: function(response) {
+        $("#dash-lotowners-num").html(response);
+      }
+    });
+  }
+  ////////////////////////////////////////for lot
+  get_dash_updated_num();
+  get_dash_outdated_num();
+  get_dash_available_num();
+  get_dash_withhouse_num();
+  get_dash_occupied_num();
+  get_dash_foreclosed_num();
+  get_dash_openspace_num();
+  get_dash_homeowners_num();
+  get_dash_lotowners_num();
+
+
+
+
+
+});
+</script>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
 <script src="assets/js/ajax.js"></script>
 <script src="assets/js/script.js"></script>
 <script src="script.js"></script>
 <script src="adminViews/includes/edit-info.js"></script>
 <script src="../adminViews/phpmailer/link.js"></script>
+</body>
 
 </html>
 <?php
