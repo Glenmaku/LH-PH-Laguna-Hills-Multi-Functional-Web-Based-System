@@ -5295,7 +5295,7 @@
 			paths.forEach(function(path) {
 				path.addEventListener('mouseover', function() {
 					this.style.stroke = "black";
-					this.style.strokeWidth = "3px";
+					this.style.strokeWidth = "10px";
 				});
 				path.addEventListener('mouseout', function() {
 					this.style.stroke = "grey";
