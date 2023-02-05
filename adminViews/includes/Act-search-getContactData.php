@@ -36,7 +36,6 @@ if (mysqli_num_rows($result) > 0) {
     $Contacttable='<table class="table">
     <thread>
         <tr>
-            <th>Contact No.</th>
             <th>Date</th>
             <th>Full Name</th>
             <th>Email Address</th>
@@ -55,7 +54,6 @@ if (mysqli_num_rows($result) > 0) {
         $contact_message = $row['Message'];
         $Contacttable.='
                             <tr>
-                            <td>'.$contact_id.'</td>
                             <td>'.$contact_date.'</td>
                             <td>'.$contact_Fullname.'</td>
                             <td>'.$contact_Email.'</td>

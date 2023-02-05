@@ -26,7 +26,7 @@
         </li>
 
         <li>
-            <a href="#message" onclick="showmessage()"class="ps-4">
+            <a href="#message" onclick=" showAdminMessage()"class="ps-4">
                 <i class="fa-solid fa-envelope"></i>
                 <span class="link-name">Message</span>
             </a>

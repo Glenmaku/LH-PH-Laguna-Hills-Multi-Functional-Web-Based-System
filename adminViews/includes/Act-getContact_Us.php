@@ -7,7 +7,6 @@ if(isset($_POST['get_ContactData_Rec'])){
     $Contacttable ='<table class="table">
     <thread>
         <tr>
-            <th>Contact No.</th>
             <th>Date</th>
             <th>Full Name</th>
             <th>Email Address</th>
@@ -29,7 +28,6 @@ while($row=mysqli_fetch_assoc($contact_result)){
     $contact_message = $row['Message'];
     $Contacttable.='
                         <tr>
-                        <td>'.$contact_id.'</td>
                         <td>'.$contact_date.'</td>
                         <td>'.$contact_Fullname.'</td>
                         <td>'.$contact_Email.'</td>

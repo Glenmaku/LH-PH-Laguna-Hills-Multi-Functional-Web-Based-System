@@ -7,11 +7,10 @@ if(isset($_POST['get_HomeMessages_Rec'])){
     $Messagetable ='<table class="table">
     <thread>
         <tr>
-            <th>Message No.</th>
             <th>Date</th>
-            <th>Full Name</th>
+            <th style="width:200px">Full Name</th>
             <th>Subject</th>
-            <th>Message</th>
+            <th style="text-align:center;">Message</th>
             <th hidden>View Info</th>
         </tr>
     </thread><tbody>';
@@ -27,10 +26,9 @@ while($row=mysqli_fetch_assoc($contact_result)){
   $message_message = $row['email_desc'];
   $Messagetable.='
                       <tr>
-                      <td>'.$message_id.'</td>
-                      <td>'.$message_date.'</td>
-                      <td>'.$message_Fullname.'</td>
-                      <td>'.$message_subject.'</td>
+                      <td style="width:100px">'.$message_date.'</td>
+                      <td style="width:200px">'.$message_Fullname.'</td>
+                      <td style="width:100px">'.$message_subject.'</td>
                       <td>'.$message_message.'</td>
                        <td hidden><button id="btn_view_owner_contact" class="btn_view_owner_contact btn btn-primary" name="view_button" onclick="get_owner_contact('.$message_username.')" hidden ><i class="fa-solid fa-eye"></i></button></td>
                       </tr>';

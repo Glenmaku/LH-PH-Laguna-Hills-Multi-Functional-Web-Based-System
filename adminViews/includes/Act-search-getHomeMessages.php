@@ -34,9 +34,9 @@ if (mysqli_num_rows($result) > 0) {
     $Messagetable='<table class="table">
     <thread>
         <tr>
-            <th>Contact No.</th>
+        
             <th>Date</th>
-            <th>Full Name</th>
+            <th style="width:250px">Full Name</th>
             <th>Subject</th>
             <th>Message</th>
             <th hidden>View Info</th>
@@ -51,10 +51,9 @@ if (mysqli_num_rows($result) > 0) {
         $message_message = $row['email_desc'];
         $Messagetable.='
                             <tr>
-                            <td>'.$message_id.'</td>
-                            <td>'.$message_date.'</td>
-                            <td>'.$message_Fullname.'</td>
-                            <td>'.$message_subject.'</td>
+                            <td style="width:100px">'.$message_date.'</td>
+                            <td style="width:250px">'.$message_Fullname.'</td>
+                            <td style="width:100px">'.$message_subject.'</td>
                             <td>'.$message_message.'</td>
                             <td><button id="btn_view_owner_contact" class="btn_view_owner_contact btn btn-primary" name="view_button" onclick="get_owner_contact('.$message_username.')" hidden><i class="fa-solid fa-eye"></i></button></td>
                             </tr>';

@@ -78,6 +78,20 @@ function showmessage(){  //sidebar
     });
 }
 
+function showAdminMessage(){  //sidebar
+    $.ajax({
+        url:"adminViews/admin-Message.php",
+        method:"post",
+        data:{record:1},
+        success:function(data){
+            $('.allContent').html(data);
+        }
+    });
+}
+
+
+
+
 function showMessage(){  //sidebar
     $.ajax({
         url:"homeownerViews/homeownerMessage.php",

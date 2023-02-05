@@ -1660,3 +1660,64 @@ svg{
     text-align: center;
     color: var(--darkgreen); 
 }
+
+.admin-message-title{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 40px;
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    padding: 3px;
+}
+
+.admin-message-title h1{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    text-align: center;
+    color: var(--darkgreen);  
+}
+
+.admin-message .message-content{
+    margin-right: 40px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    background-color: white;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+ .message-content .compose-area{
+    margin-left: 75%;
+    margin-bottom: 20px;
+ }
+
+ .compose-area .compose-btn{
+    width: 80%;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    color: var(--white);
+    padding: 13px;
+    border: 0;
+    background-color: var(--darkgreen);
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-left: 20px;
+ }
+
+ .compose-area .compose-btn:hover{
+    background-color: var(--light-green);
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+ }
+ 
+ .message-content .email-message-area{
+    width: 100%;
+ }
+ 
+ .message-history .nav-tabs button{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    color: var(--white);
+    text-transform: uppercase;
+    text-decoration: none;
+    background-color: var(--darkgreen);
+ }
