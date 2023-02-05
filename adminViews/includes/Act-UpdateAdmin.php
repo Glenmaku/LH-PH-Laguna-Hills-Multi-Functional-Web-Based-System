@@ -24,18 +24,30 @@
         $admin_lname = $_POST['up_admin_lname'];
         $admin_email = $_POST['up_admin_email'];
         if(empty($admin_fname)||empty($admin_lname)||empty($admin_email)){
-            echo 'Fill all the blanks';
+            echo'<div class="alert alert-danger alert-dismissible fade show w-100" role="alert" >
+            Fill all the blanks
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+               </div>';
         }
         else{
             if (!preg_match("/^[a-zA-Z -]*$/",  $admin_fname) || !preg_match("/^[a-zA-Z -]*$/",  $admin_lname)) {
-                echo 'Invalid Characters';
+                echo'<div class="alert alert-danger alert-dismissible fade show w-100" role="alert" >
+                Invalid Characters
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+               </div>';
         }else{
             if (!filter_var($admin_email, FILTER_VALIDATE_EMAIL)) {
-                echo 'Invalid Email';
+                echo'<div class="alert alert-danger alert-dismissible fade show w-100" role="alert" >
+                Invalid Email
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+               </div>';
         }else{
                     $sql ="UPDATE `admin_accounts` SET admin_fname = '$admin_fname', admin_lname = '$admin_lname', admin_email = '$admin_email' WHERE admin_id = '$admin_id'";
                     $result = mysqli_query($con, $sql);
-                    echo 'Successfully updated user information';
+                    echo'<div class="alert alert-success alert-dismissible fade show w-100" role="alert" >
+                    Successfully updated user information
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                   </div>';
         }
     }
     }}
