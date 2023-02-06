@@ -45,7 +45,8 @@
 					<select class="form-select" aria-label="Default select example">
 						<option selected disabled>Monitor by:</option>
 						<option value="available-home" id="avail-select">Available</option>
-						<option value="house-home" id="house-select">Occupied</option>
+						<option value="house-home" id="house-select">With House</option>
+						<option value="occu-home" id="occu-select">Occupied</option>
 					</select>
 				</div>
 			</div>
@@ -95,6 +96,10 @@
 					if (data.Status === 'With House') {
 						document.getElementById(id).style.fill = '#2C97DE';
 					}
+				} else if (buttonSelected === 'occu-select') {
+					if (data.Status === 'occupied') {
+						document.getElementById(id).style.fill = '#A70D2A';
+					}
 				}
 			})
 	}
@@ -113,6 +118,12 @@
 		} else if (select.value === "house-home") {
 			buttonSelected = "house-select";
 			paths.forEach(path => {
+				getData(path.id);
+				colorData(path.id);
+			});
+		} else if (select.value === "occu-home") {
+			buttonSelected = "occu-select";
+			paths.forEarh(path => {
 				getData(path.id);
 				colorData(path.id);
 			});

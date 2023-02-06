@@ -1,6 +1,6 @@
 <?php
 require_once("connection.php");
-$sql = "SELECT COUNT(*) as num FROM `lot_information` WHERE `Status`='Fe-Mi'";
+$sql = "SELECT COUNT(*) as num FROM `lot_information` WHERE `Status`='foreclosed'";
 $result = $con->query($sql);
 
 if($result->num_rows > 0){
