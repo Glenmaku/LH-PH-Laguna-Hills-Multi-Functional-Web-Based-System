@@ -272,6 +272,9 @@ $data = mysqli_query($con, $sql);
                 displayAdminData();
             });
     }
+    $('#updateAdminModal').on('hidden.bs.modal', function (e) {
+    $('#message-updateAdmin').html('');
+        });
 //Delete
     function delete_owner_record() {
             $(document).on('click', '#btn_deleteAdminAcc', function() {

@@ -1192,14 +1192,8 @@ svg{
 }
 
 .homeowner-message{
-    display: flex;
-    width: 100%;
+    margin-right: 40px
 }
-
-.homeowner-message .email-area{
-    width: 70%;
-}
-
 
 .homeowner-message .homeowner-title {
     font-family: 'Raleway', sans-serif;
@@ -1381,7 +1375,14 @@ svg{
     border-bottom: 1px solid;
 }
 
-
+.panel-titles h3{
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    margin-top: 10px;
+    color: var(--darkgreen);
+}
 
 .btn_view_admin_acc,
 .btn_edit_admin_acc,
@@ -1605,75 +1606,40 @@ svg{
 /* custom css styling */
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
 
-.container{
-    position: relative;
-    /* top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); */
-    font-family: 'Poppins', sans-serif;
-    width: 100%;
-    height: 100%;
-    padding: 10% 10%;
-}
 
-.container .mail-form{
-    background: #fff;
-    padding: 25px 35px;
-    border-radius: 5px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 
-                0 6px 20px 0 rgba(0, 0, 0, 0.19);
+.mail-form h1{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    font-size: 23px;
+    color: var(--darkgreen);
 }
-
-.row {
-    position: relative;
-    margin: 0 auto;
-    justify-content: center;
-    width: 100%;
-    
+.list-header h3{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    font-size: 19px;
+    color: var(--darkgreen);
+    margin-bottom: 30px;
 }
-.container-form {
-    width: 80%;
-    display: flex;
-    margin: auto;
-}
-
-.container-form .form-control{
-    height: 3rem;
-    font-size: 15px;
-}
-.container .mail-form form .form-group .button{
-    font-size: 17px!important;
-}
-.container form .textarea{
-    height: 100px;
-    resize: none;
-    height: 10rem;
-}
-.container .mail-form h2{
-    font-size: 30px;
-    font-weight: 600;
-}
-.container .mail-form p{
-    font-size: 14px;
-}
-
-/* sendmail css end */
-
-
-/* transaction part glen accordion*/
-.hide-option:hover{
-    cursor: pointer;
-
-}
-
-.titlessss h3{
-    padding-top: 25px;
+.list-header h4{
     font-family: 'Raleway', sans-serif;
     font-weight: 700;
     font-size: 20px;
+    text-transform: uppercase;
     text-align: center;
     color: var(--darkgreen); 
 }
+
+.list-container{
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    overflow-y: scroll;
+    max-height: 200px; /* adjust the height as needed */
+}
+
 
 .admin-message-title{
     margin-top: 10px;

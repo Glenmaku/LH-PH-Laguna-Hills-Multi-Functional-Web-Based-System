@@ -3711,7 +3711,7 @@
 				c2.631-1.269,4.34-0.885,5.475,1.164l34.196,67.767c2.068,4.334,2.006,4.464-2.064,6.625l-48.557,23.812
 				c-4.169,1.943-4.131,2.093-6.35-1.321l-35.453-61.5C520.669,4624.495,520.664,4624.496,527.279,4622.137L527.279,4622.137z" />
 
-								<path id="blk14lot107" class="mapping" onclick="getData('blk41lot107')" sodipodi:nodetypes="ccccccccc" style="fill:#808080;stroke:#FFFFFF;stroke-miterlimit:10;" d="
+								<path id="blk14lot107" class="mapping" onclick="getData('blk14lot107')" sodipodi:nodetypes="ccccccccc" style="fill:#808080;stroke:#FFFFFF;stroke-miterlimit:10;" d="
 				M586.656,4585.958c-1.746,2.03-1.775,2.378-1.071,5.342l35.1,68.25c2.355,3.513,2.752,3.058,6.68,1.193l43.986-21.241
 				c2.564-1.568,2.395-2.43,1.512-5.719l-36.235-75.917c-2.758-4.05-3.246-4.005-7.499-1.885L586.656,4585.958z" />
 
@@ -4978,8 +4978,6 @@
 		</div>
 
 
-
-		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 		<script type="text/javascript">
 			$(document).ready(function() {
 				changeColor();

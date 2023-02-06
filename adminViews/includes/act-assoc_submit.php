@@ -45,9 +45,10 @@ $remarks = $_POST['remarks'];
 
 
 $conv_discount = (($discount/100)* $selected_balance);
+$conv_balance_val = $payment - $change;
 
 //insert data into database
-$sql = "INSERT INTO  transaction_assoc (transaction_num,Lot_ID,assoc_selectedBal,assoc_payment,assoc_change,assoc_penalty,assoc_discount,assoc_remarks) VALUES ('$trans_num','$property','$selected_balance', '$payment','$change','$interest','$conv_discount', '$remarks')";
+$sql = "INSERT INTO  transaction_assoc (transaction_num,Lot_ID,assoc_selectedBal,assoc_payment,assoc_change,assoc_penalty,assoc_discount,assoc_remarks, balance_val) VALUES ('$trans_num','$property','$selected_balance', '$payment','$change','$interest','$conv_discount', '$remarks','$conv_balance_val')";
 
 if(mysqli_query($con, $sql)){
     echo "Data inserted successfully";

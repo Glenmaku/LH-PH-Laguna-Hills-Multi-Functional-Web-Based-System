@@ -24,18 +24,30 @@
         $owner_lname = $_POST['up_owner_lname'];
         $owner_email = $_POST['up_owner_email'];
         if(empty($owner_fname)||empty($owner_lname)||empty($owner_email)){
-            echo 'Fill all the blanks';
+            echo'<div class="alert alert-danger alert-dismissible fade show w-100" role="alert">
+            Fill all the blanks
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                           </div>';
         }
         else{
             if (!preg_match("/^[a-zA-Z -]*$/",  $owner_fname) || !preg_match("/^[a-zA-Z -]*$/",  $owner_lname)) {
-                echo 'Invalid Characters';
+                echo'<div class="alert alert-danger alert-dismissible fade show w-100" role="alert">
+                Invalid Characters
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                               </div>';
         }else{
             if (!filter_var($owner_email, FILTER_VALIDATE_EMAIL)) {
-                echo 'Invalid Email';
+                echo'<div class="alert alert-danger alert-dismissible fade show w-100" role="alert" >
+                Invalid Email
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                               </div>';
         }else{
                     $ownersql ="UPDATE `owner_accounts` SET owner_fname = '$owner_fname', owner_lname = '$owner_lname', owner_email = '$owner_email' WHERE owner_id = '$owner_id'";
                     $ownerresult = mysqli_query($con, $ownersql);
-                    echo 'Successfully updated user information';
+                    echo'<div class="alert alert-success alert-dismissible fade show w-100" role="alert" >
+                    Successfully updated user information
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                   </div>';
         }
     }
     }}

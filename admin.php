@@ -22,8 +22,6 @@ if (!empty($_SESSION['admin_I_D'])) {
     <link rel="icon" type="image/x-icon" href="images/Untitled.png">
     <!--------- Stylesheet ------------>
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="../adminViews/phpmailer/mailstyle.css">
-    </link>
     <!--------- Icon ------------>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
     <!--------- Script ------------>
@@ -410,7 +408,7 @@ if (!empty($_SESSION['admin_I_D'])) {
 
                         </div><!--END LEFT SIDE-->
                         <div class="right-side-trans"><!--RIGHT SIDE-->
-                            <div class="trans-rows"><h6>Association Dues</h6><span>121231</span></div>
+                            <div class="trans-rows"><h6>Association Dues</h6><span id="dash-assocdues-num"></span></div>
                             <div class="trans-rows"><h6>Other Services</h6><span>121231</span></div>
                         </div><!--END RIGHT SIDE-->
                     </div>
@@ -479,6 +477,18 @@ if (!empty($_SESSION['admin_I_D'])) {
                 }
             });
         }
+        $(document).ready(function(){
+    $.ajax({
+        type: 'POST',
+        url: 'adminViews/includes/act-row-sum.php',
+        success: function(response){
+            console.log(response);
+        },
+        error: function(XMLHttpRequest, textStatus, errorThrown) {
+            console.log(textStatus, errorThrown);
+        }
+    });
+});
         </script>
         <script>
 $(document).ready(function(){
@@ -567,6 +577,17 @@ $(document).ready(function(){
     });
   }
   ////////////////////////////////////////for lot
+  ////////////////////////
+  function get_assocdues_num(){
+    $.ajax({
+      type: "GET",
+      url: "adminViews/includes/act-dash-count-assocdues.php",
+      success: function(response) {
+        $("#dash-assocdues-num").html(response);
+      }
+    });
+  }
+  ////////////////////////////////////////
   get_dash_updated_num();
   get_dash_outdated_num();
   get_dash_available_num();
@@ -576,6 +597,7 @@ $(document).ready(function(){
   get_dash_openspace_num();
   get_dash_homeowners_num();
   get_dash_lotowners_num();
+  get_assocdues_num();
 
 
 

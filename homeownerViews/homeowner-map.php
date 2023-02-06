@@ -9,7 +9,6 @@
 			<button id="zoom-out-btn" class="btn btn-success"><i class="fa-sharp fa-solid fa-minus"></i></button>
 			<button class="btn trigger-home" id="trigger-home" value="trigger-home"><i class="fa-regular fa-user"></i></button>
 		</div>
-
 		<div class="homeMap">
 
 
@@ -42,7 +41,14 @@
 					<span class="input-group-text">Area per Sqm</span>
 					<input type="text" id="finder-area-per-sqm" class="form-control" disabled>
 				</div>
-
+				<div class="input-group">
+				<select class="form-select" aria-label="Default select example">
+					<option selected disabled>Monitor by:</option>
+					<option value="lot-information" id="lot-select">Lot Information</option>
+					<option value="association-dues" id="assoc-select">Association Dues</option>
+					<option value="block-select" id="block-select">Block</option>
+				</select>
+			</div>
 			</div>
 		</div>
 	</div>

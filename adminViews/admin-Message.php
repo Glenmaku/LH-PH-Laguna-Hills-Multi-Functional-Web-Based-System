@@ -110,12 +110,10 @@
                 <h1 class="modal-title fs-5" id="exampleModalLabel">Compose a Message</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body info-msg">
+            <div class="modal-body all-send">
                 <div class="custom-switch button_section d-flex flex-row-reverse">
                     <div class="switch_label">
-                        <div class="text_switch">Send to All</div>
-                        <input id="s1d" type="checkbox" class="switch">
-                        <label for="s1d">Switch</label>
+                            <button class="btn btn-success" onclick="showAllSend()">Send to All</button>
                     </div>
                 </div>
                 <form id="message-form">
@@ -337,4 +335,15 @@
         });
         $('#viewOwnersModal').modal('show');
     }
+
+    function showAllSend(){  //sidebar
+    $.ajax({
+        url:"adminViews/sendmail_database.php",
+        method:"post",
+        data:{record:1},
+        success:function(data){
+            $('.all-send').html(data);
+        }
+    });
+}
 </script>
