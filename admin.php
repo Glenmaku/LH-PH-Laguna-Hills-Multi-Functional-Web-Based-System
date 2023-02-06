@@ -59,6 +59,9 @@ if (!empty($_SESSION['admin_I_D'])) {
         padding: 15px;
         box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     }
+    .dashboard-holder .dash-transaction-records .transaction-areas h1{
+      font-size: 4vw;
+    } 
  .total-amount-transactions{
     margin-top: -20px!important;
     font-size: 50px;
@@ -122,13 +125,19 @@ if (!empty($_SESSION['admin_I_D'])) {
         display: flex;
         align-items: center;
         justify-content: end;
-        padding-right:15px;
+        padding-right:3vw;
         width: 50%;
     }
 
     .nums h1 {
-        font-size: 40px;
+        font-size: calc(35px + 1.5vw);
     }
+.nums .lessers{
+bottom: 0;
+right: 0;
+margin-right: -40px;
+
+}
 
     .dashboard-holder .dash-transaction-records .assoc-number-areas .partition .for-outdated {
         width: 100%;
@@ -143,7 +152,7 @@ if (!empty($_SESSION['admin_I_D'])) {
     }
 
     .dashboard-holder .dash-transaction-records .assoc-number-areas .partition .for-outdated i {
-        font-size: 35px;
+        font-size: calc(2vw);
         margin-right: 10px;
     }
 
@@ -158,7 +167,10 @@ if (!empty($_SESSION['admin_I_D'])) {
         padding-left: 15px;
 
     }
+    .for-outdated .setss h5{
+       font-size: calc(1.8vw);
 
+    }
     .dashboard-holder .dash-transaction-records .assoc-number-areas .partition .for-updated {
         width: 100%;
         height: 50%;
@@ -173,7 +185,7 @@ if (!empty($_SESSION['admin_I_D'])) {
     }
 
     .dashboard-holder .dash-transaction-records .assoc-number-areas .partition .for-updated i {
-        font-size: 35px;
+        font-size: calc(2vw);
         margin-right: 10px;
     }
 
@@ -188,7 +200,10 @@ if (!empty($_SESSION['admin_I_D'])) {
         padding-left: 15px;
 
     }
+    .for-updated .setss h5{
+       font-size: calc(1.8vw);
 
+    }
     .dashboard-holder .dash-most-container {
         width: 100%;
         height: 50%;
@@ -249,7 +264,7 @@ if (!empty($_SESSION['admin_I_D'])) {
         display: flex;
         justify-content: end;
         text-align: center;
-        font-size: 50px;
+        font-size: calc(20px + 2vw);
     }
     
     .dashboard-holder .dash-most-container .right-divs .partitionsss .num-lotowners{
@@ -273,7 +288,7 @@ if (!empty($_SESSION['admin_I_D'])) {
         height: 70%;
     }
     .top-numss h1{
-        font-size: 50px;
+        font-size: calc(35px + 2vw);
     }
     .top-numss{
         font-size: 50px;
@@ -293,7 +308,7 @@ if (!empty($_SESSION['admin_I_D'])) {
     .dashboard-holder .dash-most-container .right-divs .partitionsss .num-lotowners .iconssss .fa-users-line{
         display: flex;
         text-align: center;
-        font-size: 50px;
+        font-size: calc(20px + 2vw);
     }
     .dashboard-holder .dash-most-container .left-divs {
         width: 65%;
@@ -329,31 +344,51 @@ if (!empty($_SESSION['admin_I_D'])) {
         padding-top: 10px;
     }
     .dashboard-holder .dash-most-container .left-divs .this-long-lots .box-available h1, .box-occupied h1, .box-foreclosed h1, .box-openspace h1, .box-withhouse h1{
-        font-size: 50px;
+        font-size: calc(35px + 2vw);
         
     }
 .box-available{
     border: solid 2px #1FCE6D  ;
     background-color: #1FCE6D  ;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
 }
 .box-withhouse{
     border: solid 2px #2C97DE  ;
     background-color: #2C97DE  ;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
 }
 .box-occupied{
     border: solid 2px #E94B35  ;
     background-color: #E94B35  ;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
 }
 .box-foreclosed{
     border: solid 2px #E87E04  ;
     background-color: #E87E04  ;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 .box-openspace{
     border: solid 2px #33495F  ;
     background-color: #33495F;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 </style>
 
@@ -382,7 +417,9 @@ if (!empty($_SESSION['admin_I_D'])) {
                             </div>
                             <div class="nums">
                                 <h1 class="text-center" id="dash-updated-num">000</h1>
+                              
                             </div>
+  <div class="lessers"><i class="fa-solid fa-ellipsis-vertical" id="updatedlistModal"></i></div>
                         </div><!--END UPDATED-->
                         <div class="for-outdated"><!--OUTDATED-->
                             <div class="setss">
@@ -392,24 +429,26 @@ if (!empty($_SESSION['admin_I_D'])) {
                             <div class="nums">
                                 <h1 class="text-center" id="dash-outdated-num">000</h1>
                             </div>
+  <div class="lessers"><i class="fa-solid fa-ellipsis-vertical" id="outdatedlistModal"></i></div>
+
                         </div><!--END OUTDATED-->
                     </div><!--END OF PARTITION-->
                 </div><!--END ASSOC NUMBERS-->
 
                 <div class="transaction-areas"><!--TOTAL PESOSS-->
                     <h5 class="text-start ms-3 mt-2">Transaction Records</h5>
-                    <h1 class="total-amount-transactions text-end">P 1000.00</h1>
+                    <h1 class="total-amount-transactions text-end">P 00000.00</h1>
                     <div class="partitionss">
                         <div class="left-side-trans"><!--LEFT SIDE-->
-                            <div class="trans-rows"><h6>Reservations</h6><span>121231</span></div>
-                            <div class="trans-rows"><h6>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Function Hall</h6><span>121231</span></div>
-                            <div class="trans-rows"><h6>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Swimming Pool</h6><span>121231</span></div>      
-                            <div class="trans-rows"><h6>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Covered Court</h6><span>121231</span></div>
+                            <div class="trans-rows"><h6>Reservations</h6><b><span id="dash-reserv-num" >P 0.00</span></b></div>
+                            <div class="trans-rows"><h6>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Function Hall</h6><span id="dash-hall-num">P 0.00</span></div>
+                            <div class="trans-rows"><h6>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Swimming Pool</h6><span id="dash-pool-num">P 0.00</span></div>      
+                            <div class="trans-rows"><h6>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Covered Court</h6><span id="dash-court-num">P 0.00</span></div>
 
                         </div><!--END LEFT SIDE-->
                         <div class="right-side-trans"><!--RIGHT SIDE-->
-                            <div class="trans-rows"><h6>Association Dues</h6><span id="dash-assocdues-num"></span></div>
-                            <div class="trans-rows"><h6>Other Services</h6><span>121231</span></div>
+                            <div class="trans-rows"><h6>Association Dues</h6><b><span id="dash-assocdues-num"></span></b></div>
+                            <div class="trans-rows"><h6>Other Services</h6><b><span>P 0.00</span></b></div>
                         </div><!--END RIGHT SIDE-->
                     </div>
                 </div><!--END TOTAL PESSOS-->
@@ -587,6 +626,42 @@ $(document).ready(function(){
       }
     });
   }
+  function get_hall_num(){
+    $.ajax({
+      type: "GET",
+      url: "adminViews/includes/act-dash-count-hall.php",
+      success: function(response) {
+        $("#dash-hall-num").html(response);
+      }
+    });
+  }
+  function get_pool_num(){
+    $.ajax({
+      type: "GET",
+      url: "adminViews/includes/act-dash-count-pool.php",
+      success: function(response) {
+        $("#dash-pool-num").html(response);
+      }
+    });
+  }
+  function get_court_num(){
+    $.ajax({
+      type: "GET",
+      url: "adminViews/includes/act-dash-count-court.php",
+      success: function(response) {
+        $("#dash-court-num").html(response);
+      }
+    });
+  }
+  function get_reserv_num(){
+    $.ajax({
+      type: "GET",
+      url: "adminViews/includes/act-dash-count-reserv.php",
+      success: function(response) {
+        $("#dash-reserv-num").html(response);
+      }
+    });
+  }
   ////////////////////////////////////////
   get_dash_updated_num();
   get_dash_outdated_num();
@@ -598,8 +673,10 @@ $(document).ready(function(){
   get_dash_homeowners_num();
   get_dash_lotowners_num();
   get_assocdues_num();
-
-
+  get_hall_num();
+  get_pool_num();
+  get_court_num();
+  get_reserv_num();
 
 
 

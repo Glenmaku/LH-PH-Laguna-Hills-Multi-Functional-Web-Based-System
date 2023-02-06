@@ -15,30 +15,12 @@
   </div>
 </div>
 
-<div class="modal modal-lg" tabindex="-1" id="reservation-history-modal">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Modal title</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body reserveTable">
-
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
-
 <script>
   $(document).ready(function() {
     $("#reserv_submit").on("click", add_data);
   });
 
-  function add_data() {
+  function add_data(){
     // code that might throw an error
 
     var checkbox_hall = ["#radio-hall"];
@@ -61,18 +43,20 @@
 
     var miming_time_start = $("#in-radio-miming1").val();
     var miming_time_end = $("#in-radio-miming2").val();
+    var r_discounts = $("#r-discount").val();
+    var from_reservation_date = $("#from-reservation-date").val();
+    var to_reservation_date = $("#to-reservation-date").val();
+  //  var from_reservation_date_string = new Date();
+  //  var month1 = from_reservation_date_string.getUTCMonth() + 1;
+   // var day1 = from_reservation_date_string.getUTCDate();
+   // var year1 = from_reservation_date_string.getUTCFullYear();
+   // var from_reservation_date = year1 + "-" + month1 + "-" + day1;
 
-    var from_reservation_date_string = new Date();
-    var month1 = from_reservation_date_string.getUTCMonth() + 1;
-    var day1 = from_reservation_date_string.getUTCDate();
-    var year1 = from_reservation_date_string.getUTCFullYear();
-    var from_reservation_date = year1 + "-" + month1 + "-" + day1;
-
-    var to_reservation_date_string = new Date();
-    var month2 = to_reservation_date_string.getUTCMonth() + 1;
-    var day2 = to_reservation_date_string.getUTCDate();
-    var year2 = to_reservation_date_string.getUTCFullYear();
-    var to_reservation_date = year2 + "-" + month2 + "-" + day2;
+   // var to_reservation_date_string = new Date();
+   // var month2 = to_reservation_date_string.getUTCMonth() + 1;
+   // var day2 = to_reservation_date_string.getUTCDate();
+  //  var year2 = to_reservation_date_string.getUTCFullYear();
+  //  var to_reservation_date = year2 + "-" + month2 + "-" + day2;
 
     if ($("#radio-hall").is(":checked")) {
       // date conversion
@@ -86,7 +70,8 @@
           to_reservation_datesend: to_reservation_date,
           time_startsend: hall_time_start,
           time_endsend: hall_time_end,
-          pricesend: price_hall
+          pricesend: price_hall,
+          r_discounts: r_discounts
         },
         success: function(data, status) {
           // function to display data
@@ -109,7 +94,8 @@
           to_reservation_datesend: to_reservation_date,
           time_startsend: court_time_start,
           time_endsend: court_time_end,
-          pricesend: price_court
+          pricesend: price_court,
+          r_discounts: r_discounts
         },
         success: function(data, status) {
           // function to display data
@@ -132,7 +118,8 @@
           to_reservation_datesend: to_reservation_date,
           time_startsend: miming_time_start,
           time_endsend: miming_time_end,
-          pricesend: price_miming
+          pricesend: price_miming,
+          r_discounts: r_discounts
         },
         success: function(data, status) {
           // function to display data
@@ -177,6 +164,13 @@
         success: function(data, status) {
           // function to display data
           console.log(status);
+          $.ajax({
+                        url: 'adminViews/includes/act-transact.php',
+                        type: 'post', //path to PHP script
+                        success: function(data) {
+                            $("#trans-no").val(data); //update input field with response from server
+                        }
+                    });
         }
       });
     }
@@ -184,25 +178,29 @@
     // end OTHER TRANSACTION SECTION - INSERT DATA
 
     // clear the forms after pressing the submit  
-    $("#trans-no").val("");
-    $("#date").val("");
+    //$("#trans-no").val("");
+   // $("#date").val("");
     $("#client-name").val("");
 
     $("#from-reservation-date").val("");
     $("#to-reservation-date").val("");
     $("#in-radio-hall1").val("");
     $("#in-radio-hall2").val("");
-    $("#in-radio-hall3").val("");
+    $("#in-radio-hall3").val("0");
 
     $("#in-radio-court1").val("");
     $("#in-radio-court2").val("");
-    $("#in-radio-court3").val("");
+    $("#in-radio-court3").val("0");
 
     $("#in-radio-miming1").val("");
     $("#in-radio-miming2").val("");
-    $("#in-radio-miming3").val("");
-    $("#r-discount").val("");
-
+    $("#in-radio-miming3").val("0");
+    $("#r-discount").val("0");
+ 
+    $("#reserv_total").val("0");
+    $("#reserv_payment").val("0");
+    $("#reserv_change").val("0");
+    $("#reserv_remark").val("0");
     $("#radio-hall").prop("checked", false);
     $("#radio-court").prop("checked", false);
     $("#radio-miming").prop("checked", false);

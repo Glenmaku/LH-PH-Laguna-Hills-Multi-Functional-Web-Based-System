@@ -47,21 +47,7 @@
                                         <span>BlockLot</span>
                                     </label><br>
                                     <input list="blkandlots" name="property" id="property" placeholder="property">
-                                    <datalist id="blkandlots">
-                                    
-                                    </datalist>
-<script>
-// $.ajax({
-//   type: "POST",
-//   url: "adminViews/includes/fetch_property.php",
-//   success: function(data) {
-//     var lots = JSON.parse(data);
-//     $.each(lots, function(index, lot) {
-//       $("#blkandlots").append("<option value='" + lot.Lot_ID + "'>");
-//     });
-//   }
-// });
-</script>
+                                    <datalist id="blkandlots"></datalist>
 
                                 </div>
                                 <div class="total-balance">
@@ -73,11 +59,11 @@
                             <div class="address-status">
                                 <div class="unpaid">
                                     <span>Selected Balance</span><br>
-                                    <input type="text" name="selected-balance" id="selected-balance" placeholder="0" required>
+                                    <input type="text" name="selected-balance" id="selected-balance" placeholder="0" value="0" required>
                                 </div>
                                 <div class="interest">
                                     <span>Interest/Penalty:</span> <br>
-                                    <input type="number" name="a-interest" id="a-interest" placeholder="0">
+                                    <input type="number" name="a-interest" id="a-interest" placeholder="0" value="0">
                                 </div>
                                 <div class="period-of-payment">
                                     <span>Discount:</span><br>
@@ -96,7 +82,6 @@
                         </div> <!-- accordion-body -->
                     </div>
                 </div>
-
 
                 <!-- reservation section-->
                 <div class="reservation">
@@ -143,7 +128,7 @@
                                             <input type="text" name="f-time-to" id="in-radio-hall2" placeholder="10am" disabled="disabled">
                                         </div>
                                         <div class="reservation-price">
-                                            <input type="text" name="reservation-price" id="in-radio-hall3" value="0" disabled="disabled"">
+                                            <input type="number" name="reservation-price" id="in-radio-hall3" value="0" disabled="disabled">
                                         </div>
                                     </div>
 
@@ -160,7 +145,7 @@
                                             <input type="text" name="f-time-to" id="in-radio-court2" placeholder="10am" disabled="disabled">
                                         </div>
                                         <div class="reservation-price">
-                                            <input type="text" name="reservation-price" id="in-radio-court3" value="0" disabled="disabled">
+                                            <input type="number" name="reservation-price" id="in-radio-court3" value="0" disabled="disabled">
                                         </div>
                                     </div>
 
@@ -176,7 +161,7 @@
                                             <input type="text" name="f-time-to" placeholder="10am" id="in-radio-miming2" disabled="disabled">
                                         </div>
                                         <div class="reservation-price">
-                                            <input type="text" name="reservation-price" id="in-radio-miming3" value="0" disabled="disabled">
+                                            <input type="number" name="reservation-price" id="in-radio-miming3" value="0" disabled="disabled">
                                         </div>
                                     </div>
                             </div>
@@ -185,7 +170,7 @@
                                 <div class="r-subtotal-label">
                                     <div class="r-discount">
                                         <span>Discount:</span><br>
-                                        <input type="text" name="r-discount" id="r-discount" value="0">
+                                        <input type="number" name="r-discount" id="r-discount" value="0">
                                     </div>
                                     
                                 </div>
@@ -607,30 +592,30 @@
 
                 // clear the forms after pressing the reset button  
                 $("#assoc-reset").click(function() {
-                    $("#trans-no").val("");
-                    $("#date").val("");
+                 //   $("#trans-no").val("");
+                 //   $("#date").val("");
                     $("#client-name").val("");
 
                 });
 
                 $("#reserv_reset").click(function() {
-                    $("#trans-no").val("");
-                    $("#date").val("");
+                    //$("#trans-no").val("");
+                //    $("#date").val("");
                     $("#client-name").val("");
 
                     $("#from-reservation-date").val("");
                     $("#to-reservation-date").val("");
                     $("#in-radio-hall1").val("");
                     $("#in-radio-hall2").val("");
-                    $("#in-radio-hall3").val("");
+                    $("#in-radio-hall3").val("0");
 
                     $("#in-radio-court1").val("");
                     $("#in-radio-court2").val("");
-                    $("#in-radio-court3").val("");
+                    $("#in-radio-court3").val("0");
 
                     $("#in-radio-miming1").val("");
                     $("#in-radio-miming2").val("");
-                    $("#in-radio-miming3").val("");
+                    $("#in-radio-miming3").val("0");
 
                     $("#radio-hall").prop("checked", false);
                     $("#radio-court").prop("checked", false);
@@ -639,8 +624,8 @@
                 });
 
                 $("#other_reset").click(function() {
-                    $("#trans-no").val("");
-                    $("#date").val("");
+                //    $("#trans-no").val("");
+                 //   $("#date").val("");
                     $("#client-name").val("");
 
                     $("#o_subtotal").val("");
@@ -681,7 +666,7 @@
                         input3.disabled = true;
                         input1.value = "";
                         input2.value = "";
-                        input3.value = "";
+                        input3.value = "0";
                     }
                 });
 
@@ -703,7 +688,7 @@
                         input3.disabled = true;
                         input1.value = "";
                         input2.value = "";
-                        input3.value = "";
+                        input3.value = "0";
                     }
                 });
 
@@ -725,7 +710,7 @@
                         input3.disabled = true;
                         input1.value = "";
                         input2.value = "";
-                        input3.value = "";
+                        input3.value = "0";
                     }
                 });
                 //end checkbox reset 
@@ -765,11 +750,11 @@
                 hide_assoc.addEventListener("click", function() {
 
                     $("#property").val("");
-                    $("#selected-balance").val("");
-                    $("#a-interest").val("");
-                    $("#total-balance").val("");
-                    $("#balance-total").val("");
-                    $("#a-discount").val("");
+                    $("#selected-balance").val("0");
+                    $("#a-interest").val("0");
+                    $("#total-balance").val("0");
+                    $("#balance-total").val("0");
+                    $("#a-discount").val("0");
                 }); // reset form ng association part
 
                 // reset form ng OTHER SERVICES part
@@ -779,16 +764,16 @@
                     $("#to-reservation-date").val("");
                     $("#in-radio-hall1").val("");
                     $("#in-radio-hall2").val("");
-                    $("#in-radio-hall3").val("");
+                    $("#in-radio-hall3").val("0");
 
                     $("#in-radio-court1").val("");
                     $("#in-radio-court2").val("");
-                    $("#in-radio-court3").val("");
+                    $("#in-radio-court3").val("0");
 
                     $("#in-radio-miming1").val("");
                     $("#in-radio-miming2").val("");
-                    $("#in-radio-miming3").val("");
-                    $("#r-discount").val("");
+                    $("#in-radio-miming3").val("0");
+                    $("#r-discount").val("0");
 
                     $("#radio-hall").prop("checked", false);
                     $("#radio-court").prop("checked", false);
@@ -899,10 +884,6 @@
                 //SUBMISSION OF TRANSACTION
 
 
-
-
-
-
                 // association dues
                 $(document).ready(function() {
                     $("#assoc-submit").click(function() {
@@ -941,8 +922,16 @@
                             success: function(data) {
                                 alert("Data Inserted: " + data);
                                 $("#assoc-reset").trigger("click");
+                                $.ajax({
+                                    url: 'adminViews/includes/act-transact.php',
+                                    type: 'post', //path to PHP script
+                                    success: function(data) {
+                                    $("#trans-no").val(data); //update input field with response from server
+                                    }               
+                                 });
                             }
                         });
+                        
                     });
                 });
 
@@ -986,17 +975,6 @@
                 }
             </script>
 <script>
-//     $.ajax({
-//   type: "POST",
-//   url: "adminViews/includes/fetch_names.php",
-//   success: function(data) {
-//     var names = JSON.parse(data);
-//     $.each(names, function(index, name) {
-//       $("#fullnames").append("<option value='" + name.owner_fname + " " + name.owner_lname + "'>");
-//     });
-//   }
-// });
-
 $.ajax({
     type: "POST",
     url: "adminViews/includes/fetch_names.php",
