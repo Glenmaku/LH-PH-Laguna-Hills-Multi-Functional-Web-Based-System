@@ -34,7 +34,7 @@ if(isset($_POST['mapAssocSend'])) {
         </div>
         <div class="input-group">
                 <span class="input-group-text">Date Assigned</span>
-                <input type="text" id="date_assigned" class="form-control" value ="'.$date_assigned.'" disabled>
+                <input type="date" id="date_assigned" class="form-control" value ="'.$date_assigned.'" disabled>
         </div>
         <div class="input-group">
                 <span class="input-group-text">Remarks</span>
