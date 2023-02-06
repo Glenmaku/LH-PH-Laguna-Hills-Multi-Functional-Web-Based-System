@@ -1,132 +1,109 @@
-<!DOCTYPE html>
-<html lang="en">
+<div class="container">
 
-<head>
-   <meta charset="UTF-8">
-   <title>Send Mail From Localhost</title>
-   <!-- bootstrap cdn link -->
-   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/js/bootstrap.min.js"></script>
+   <div class="container-form">
 
-   <!-- <link rel="stylesheet" href="../sendmail_database/mailstyle.css"> -->
-   <!-- <link rel="stylesheet" href="mailstyle.css"> -->
-   <link rel="stylesheet" href="../adminViews/phpmailer/mailstyle.css">
-
-</head>
-
-<body>
-
-   <div class="container">
-
-      <div class="container-form">
-
-         <div class="row">
-            <div class="custom-switch button_section d-flex flex-row-reverse">
-
-               <div class="switch_label">
-                  <div class="text_switch">Send to All</div>
-                  <input id="s1d" type="checkbox" class="switch" checked>
-                  <label for="s1d">Switch</label>
-               </div>
+      <div class="row">
+         <div class="custom-switch button_section d-flex flex-row-reverse">
+            <div class="switch_label">
+               <button class="btn btn-success" onclick="showAllSend()">Send to One</button>
             </div>
-            <div class="col-lg mail-form">
-               <h1 class="text-center">
-                  Notify All Homeowners
-               </h1>
-
-               <div class="listed-container">
-
-                  <div class="list-header">
-                     <h3>Subject: Notification from Laguna Hills Philippines</h3>
-                     <h4>List of Emails in Database</h4>
-                  </div>
-
-                  <div class="list-container overflow-auto">
-                     <?php
-                     // require('../send_email/functions.php');
-                     require('phpmailer/all_functions.php');
-                     $conn = dbConnection();
-                     $fetch_users_sql = "SELECT * FROM dummyowner_accounts";
-                     $fetch_result = mysqli_query($conn, $fetch_users_sql);
-                     while ($user = mysqli_fetch_assoc($fetch_result)) { ?>
-                        <div class="user-details-container">
-                           <div class="username"><?php echo $user['owner_username']; ?></div>
-                           <div class="userEmail"><?php echo $user['owner_email']; ?></div>
-                        </div>
-                     <?php } ?>
-                  </div>
+         </div>
+         <div class=" mail-form">
+            <h1>Notify All Homeowners</h1>
+            <div class="listed-container">
+               <div class="list-header">
+                  <h3>Subject: Notification from Laguna Hills Philippines</h3>
+                  <h4>List of Emails in Database</h4>
                </div>
 
-               <!-- message -->
-               <form id="message-form">
-                  <div class="info-msg"> <br></div>
-                  <div class="form-group" required>
-                     <textarea cols="80" rows="10" class="form-control textarea" name="message" id="message" placeholder="Compose your message.." required></textarea>
-                  </div>
-                  <div class="btn-container">
-                     <button class="btn btn-success btn-lg btn-block">Send Email</button>
-                  </div>
-               </form>
+               <div class="list-container ">
+                  <?php
+                  // require('../send_email/functions.php');
+                  require('phpmailer/all_functions.php');
+                  $conn = dbConnection();
+                  $fetch_users_sql = "SELECT * FROM dummyowner_accounts";
+                  $fetch_result = mysqli_query($conn, $fetch_users_sql);
+                  while ($user = mysqli_fetch_assoc($fetch_result)) { ?>
+                     <div class="user-details-container">
+                        <div class="username"><?php echo $user['owner_fname']; ?> <?php echo $user['owner_lname']; ?> - <?php echo $user['owner_email']; ?></div>
+                        <!--<div class="userEmail"><?php echo $user['owner_email']; ?></div>-->
+                     </div>
+                  <?php } ?>
+               </div>
             </div>
+
+            <!-- message -->
+            <form id="message-form">
+               <div class="info-msg"> <br></div>
+               <div class="form-group" required>
+                  <textarea cols="80" rows="10" class="form-control textarea" name="message" id="message" placeholder="Compose your message.." required></textarea>
+               </div>
+            </form>
          </div>
       </div>
    </div>
+</div>
 
-   <script src="../adminViews/phpmailer/link.js"></script>
-   <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
-   <script>
-      $(function() {
-         $("#message-form").submit(function(e) {
-            e.preventDefault();
-            var form = this;
-            $(".info-msg").text('sending email...');
+<script>
+   $(function() {
+      $("#message-form").submit(function(e) {
+         e.preventDefault();
+         var form = this;
+         $(".info-msg").text('sending email...');
 
-            $.ajax({
-               url: '../adminViews/phpmailer/all_emailHandler.php',
-               data: $(form).serialize(),
-               method: 'POST'
-            }).done(function(response) {
-               $(".info-msg").html("<p>Message Sent</p>");
-               //  $(".info-msg").html(response);
-               setTimeout(function() {
-                  $(".info-msg").hide();
-               }, 4000);
-            })
+         $.ajax({
+            url: '../adminViews/phpmailer/all_emailHandler.php',
+            data: $(form).serialize(),
+            method: 'POST'
+         }).done(function(response) {
+            $(".info-msg").html("<p>Message Sent</p>");
+            //  $(".info-msg").html(response);
+            setTimeout(function() {
+               $(".info-msg").hide();
+            }, 4000);
          })
       })
+   })
 
-// $("#s1d").change(function() {
-//     if(!this.checked) {
-//         show_email_one();
-//     } else if(this.checked) {
-//         show_email_all();
-//     }
-// });
-// function show_email_one(){  
-//     $.ajax({
-//         url:"../sendmail_email.php",
-//         method:"post",
-//         data:{record:1},
-//         success:function(data){
-//             $('.container').html(data);
-//             // console.log(data);
-//         }
-//     });
-// }
+   // $("#s1d").change(function() {
+   //     if(!this.checked) {
+   //         show_email_one();
+   //     } else if(this.checked) {
+   //         show_email_all();
+   //     }
+   // });
+   // function show_email_one(){  
+   //     $.ajax({
+   //         url:"../sendmail_email.php",
+   //         method:"post",
+   //         data:{record:1},
+   //         success:function(data){
+   //             $('.container').html(data);
+   //             // console.log(data);
+   //         }
+   //     });
+   // }
 
-// function show_email_all(){  
-//     $.ajax({
-//         url:"sendmail_database.php",
-//         method:"post",
-//         data:{record:1},
-//         success:function(data){
-//             $('.container').html(data);
-//             console.log(data);
-//         }
-//     });
-// }
-   </script>
-</body>
+   // function show_email_all(){  
+   //     $.ajax({
+   //         url:"sendmail_database.php",
+   //         method:"post",
+   //         data:{record:1},
+   //         success:function(data){
+   //             $('.container').html(data);
+   //             console.log(data);
+   //         }
+   //     });
+   // }
 
-</html>
+   function showAllSend(){  //sidebar
+    $.ajax({
+        url:"adminViews/act-sendToOne.php",
+        method:"post",
+        data:{record:1},
+        success:function(data){
+            $('.all-send').html(data);
+        }
+    });
+}
+</script>
