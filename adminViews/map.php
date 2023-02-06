@@ -5038,11 +5038,6 @@
 					},
 					success: function(data, status) {
 						$('#lot-information-map').html(data);
-						// document.getElementById("lot-information-map-t").style.display = "block";
-						// document.getElementById("map-assoc-t").style.display = "none";
-						// document.getElementById("owner-information-t").style.display = "none";
-						// document.getElementsByClassName("statuslotss")[0].style.display = "block";
-						// document.getElementsByClassName("statusassocss")[0].style.display = "none";
 					}
 				});
 			}
@@ -5081,16 +5076,6 @@
 				});
 			}
 			/////////////////////////////////////////////////////////////
-			// $(document).ready(function() {
-			// 	$("#lot-information-btn").click(function() {
-			// 		$("#lot-information-map").show();
-			// 		$("#lot-information-map-t").prop("hidden", false);
-			// 		$("#map-assoc").hide();
-			// 		$("#map-assoc-t").prop("hidden", true);
-			// 		$("#owner-information").hide();
-			// 		displayMapData();
-			// 	});})
-
 			$("#mapcons").on("click", function() {
 				$("#lot-information-map").show();
 				$("#lot-information-map-t").show();
@@ -5119,15 +5104,6 @@
 					displayMapData();
 
 				});
-				// $("#assoc-btn").click(function() {
-				// 	$("#lot-information-map").hide();
-				// 	$("#lot-information-map-t").prop("hidden", true);
-				// 	$("#map-assoc").show();
-				// 	$("#map-assoc-t").show();
-				// 	$("#map-assoc-t").prop("hidden", false);
-				// 	$("#owner-information").hide();
-				// 	displayAssocData();
-				// });
 				$("#assoc-btn").click(function() {
 					$("#lot-information-map").hide();
 					$("#lot-information-map-t").hide();
@@ -5156,16 +5132,6 @@
 					$(".statusassocss").prop("hidden", true);
 					displayOwner();
 				});
-				// $("#owner-information-btn").click(function() {
-				// 	$("#lot-information-map").hide();
-				// 	$("#lot-information-map-t").prop("hidden", true);
-				// 	$("#lot-information-map-t").hide();
-				// 	$("#map-assoc").hide();
-				// 	$("#map-assoc-t").hide();
-				// 	$("#owner-information").show();
-				// 	$("#owner-information-t").prop("hidden", false);
-				// 	displayOwner();
-				// });
 			});
 
 			////////////////////////////////////////////////////////////////
@@ -5191,14 +5157,11 @@
 
 			//////////////////////////////////////////////////////////////////////////////
 			function getData(id) {
-				// Use fetch API for HTTP requests
 
 				fetch(`adminViews/includes/mapsubmit.php?id=${id}`)
 					.then(response => response.json())
 					.then(data => {
 						displayOwner(id);
-						// Update the values of the elements with the corresponding ids
-						//document.getElementById("input-field-id").value = myId;
 						document.getElementById('Lot_ID').value = data.Lot_ID;
 						document.getElementById("block").value = data.Block;
 						document.getElementById("lot").value = data.Lot;
@@ -5218,11 +5181,6 @@
 						document.getElementById("ownershiplname").value = data.owner_lname;
 						document.getElementById("ownerships").value = data.ownership;
 						document.getElementById("ownusername").value = data.owner_username;
-
-
-
-						// Append the ownership table to the appropriate element
-						//document.getElementById("ownership-table").innerHTML = data.ownership_info;//
 					})
 					.catch(error => {
 						console.log(`Error: ${error}`);

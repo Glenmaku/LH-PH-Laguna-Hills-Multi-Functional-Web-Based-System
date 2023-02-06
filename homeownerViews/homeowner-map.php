@@ -42,13 +42,12 @@
 					<input type="text" id="finder-area-per-sqm" class="form-control" disabled>
 				</div>
 				<div class="input-group">
-				<select class="form-select" aria-label="Default select example">
-					<option selected disabled>Monitor by:</option>
-					<option value="lot-information" id="lot-select">Lot Information</option>
-					<option value="association-dues" id="assoc-select">Association Dues</option>
-					<option value="block-select" id="block-select">Block</option>
-				</select>
-			</div>
+					<select class="form-select" aria-label="Default select example">
+						<option selected disabled>Monitor by:</option>
+						<option value="available-home" id="avail-select">Available</option>
+						<option value="house-home" id="house-select">Occupied</option>
+					</select>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -78,7 +77,48 @@
 			});
 	}
 
-	var paths = document.querySelectorAll('.mapping');
+	function clearColor() {
+		paths.forEach(path => {
+			path.style.fill = '';
+		});
+	}
+
+	function colorData(id) {
+		fetch('adminViews/includes/mapsubmit.php?id=' + id)
+			.then(response => response.json())
+			.then(data => {
+				if (buttonSelected === "avail-select") {
+					if (data.Status === 'available') {
+						document.getElementById(id).style.fill = '#1FCE6D';
+					}
+				} else if (buttonSelected === 'house-select') {
+					if (data.Status === 'With House') {
+						document.getElementById(id).style.fill = '#2C97DE';
+					}
+				}
+			})
+	}
+
+	const select = document.querySelector('.form-select');
+	const paths = document.querySelectorAll('.mapping');
+
+	select.addEventListener("change", function() {
+		clearColor();
+		if (select.value === "available-home") {
+			buttonSelected = "avail-select";
+			paths.forEach(path => {
+				getData(path.id);
+				colorData(path.id);
+			});
+		} else if (select.value === "house-home") {
+			buttonSelected = "house-select";
+			paths.forEach(path => {
+				getData(path.id);
+				colorData(path.id);
+			});
+		}
+	});
+
 	paths.forEach(function(path) {
 		path.addEventListener('mouseover', function() {
 			this.style.stroke = "black";
@@ -127,56 +167,4 @@
 		translateY += deltaY;
 		svg.setAttribute("transform", currentScale + "translate(" + translateX + "," + translateY + ")");
 	}
-
-
-	(function() {
-		let buttonSelected = "trigger-home";
-
-		function getData(id, callback) {
-			fetch('adminViews/includes/property-finder-panel.php?id=' + id)
-				.then(response => response.json())
-				.then(data => {
-					callback(data);
-				})
-				.catch(error => {
-					console.error('Error:' + error);
-				});
-		}
-
-		function colorData(data, id) {
-			if (buttonSelected === "trigger-home") {
-				if (data.Status === 'available') {
-					document.getElementById(id).style.fill = '#1FCE6D';
-					document.getElementById(id).disabled = false; // make sure the element is not disabled if it's available
-				} else {
-					document.getElementById(id).style.fill = 'grey';
-					document.getElementById(id).disabled = true; // disable the element if it's not available
-					document.getElementById(id).style.pointerEvents = 'none'; // make sure the element is not clickable if it's disabled
-				}
-			}
-		}
-
-		const select = document.querySelector('.trigger-home');
-		const path = document.querySelectorAll('path');
-
-		select.addEventListener("click", function() {
-			if (select.value === "trigger-home") {
-				buttonSelected = "trigger-home";
-				path.forEach(path => {
-					getData(path.id, data => {
-						colorData(data, path.id);
-					});
-				});
-			}
-		});
-
-		// Show color onload
-		window.onload = function() {
-			path.forEach(path => {
-				getData(path.id, data => {
-					colorData(data, path.id);
-				});
-			});
-		};
-	})();
 </script>
