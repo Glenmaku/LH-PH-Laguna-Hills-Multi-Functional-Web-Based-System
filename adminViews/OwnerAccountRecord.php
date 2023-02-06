@@ -71,141 +71,21 @@
                         </div>
                         <div class=" input-group  mb-3"><!--FOR OWNER lot_id FIELD-->
                             <span class="input-group-text" id="basic-addon1">PROPERTY</span>
-                            <input list="blkandlots" name="property" id="property" class="form-control property" placeholder="Select Property..." />
-                            <datalist id="blkandlots">
-                                <option value="blk1lot1"></option>
-                                <option value="blk1lot2"></option>
-                                <option value="blk1lot3"></option>
-                                <option value="blk1lot4"></option>
-                                <option value="blk1lot5"></option>
-                                <option value="blk1lot6"></option>
-                                <option value="blk1lot7"></option>
-                                <option value="blk1lot8"></option>
-                                <option value="blk1lot9"></option>
-                                <option value="blk1lot10"></option>
-                                <option value="blk1lot11"></option>
-                                <option value="blk1lot12"></option><!--END FOR BLOCK 1-->
-                                <option value="blk2lot1"></option>
-                                <option value="blk2lot2"></option>
-                                <option value="blk2lot3"></option>
-                                <option value="blk2lot4"></option>
-                                <option value="blk2lot5"></option>
-                                <option value="blk2lot6"></option>
-                                <option value="blk2lot7"></option>
-                                <option value="blk2lot8"></option>
-                                <option value="blk2lot9"></option>
-                                <option value="blk2lot10"></option>
-                                <option value="blk2lot11"></option>
-                                <option value="blk2lot12"></option>
-                                <option value="blk2lot13"></option>
-                                <option value="blk2lot14"></option>
-                                <option value="blk2lot15"></option>
-                                <option value="blk2lot16"></option>
-                                <option value="blk2lot17"></option>
-                                <option value="blk2lot18"></option>
-                                <option value="blk2lot19"></option>
-                                <option value="blk2lot20"></option>
-                                <option value="blk2lot21"></option>
-                                <option value="blk2lot22"></option>
-                                <option value="blk2lot23"></option>
-                                <option value="blk2lot24"></option>
-                                <option value="blk2lot25"></option>
-                                <option value="blk2lot26"></option>
-                                <option value="blk2lot27"></option>
-                                <option value="blk2lot28"></option>
-                                <option value="blk2lot29"></option>
-                                <option value="blk2lot30"></option>
-                                <option value="blk2lot31"></option>
-                                <option value="blk2lot32"></option>
-                                <option value="blk2lot33"></option>
-                                <option value="blk2lot34"></option>
-                                <option value="blk2lot35"></option>
-                                <option value="blk2lot36"></option>
-                                <option value="blk2lot37"></option>
-                                <option value="blk2lot38"></option>
-                                <option value="blk2lot39"></option>
-                                <option value="blk1lot12"></option>
-                                <option value="blk2lot40"></option><!--END FOR BLOCK 2-->
-                                <option value="blk3lot1"></option>
-                                <option value="blk3lot2"></option>
-                                <option value="blk3lot3"></option>
-                                <option value="blk3lot4"></option>
-                                <option value="blk3lot5"></option>
-                                <option value="blk3lot6"></option>
-                                <option value="blk3lot7"></option>
-                                <option value="blk3lot8"></option>
-                                <option value="blk3lot9"></option>
-                                <option value="blk3lot10"></option>
-                                <option value="blk3lot11"></option>
-                                <option value="blk3lot12"></option>
-                                <option value="blk3lot13"></option>
-                                <option value="blk3lot14"></option>
-                                <option value="blk3lot15"></option>
-                                <option value="blk3lot16"></option>
-                                <option value="blk3lot17"></option>
-                                <option value="blk3lot18"></option>
-                                <option value="blk3lot19"></option>
-                                <option value="blk3lot20"></option>
-                                <option value="blk3lot21"></option>
-                                <option value="blk3lot22"></option>
-                                <option value="blk3lot23"></option>
-                                <option value="blk3lot24"></option>
-                                <option value="blk3lot25"></option>
-                                <option value="blk3lot26"></option>
-                                <option value="blk3lot27"></option>
-                                <option value="blk3lot28"></option>
-                                <option value="blk3lot29"></option>
-                                <option value="blk3lot30"></option>
-                                <option value="blk3lot31"></option>
-                                <option value="blk3lot32"></option>
-                                <option value="blk3lot33"></option>
-                                <option value="blk3lot34"></option>
-                                <option value="blk3lot35"></option><!--END FOR BLOCK 3-->
-                                <option value="blk4lot1"></option>
-                                <option value="blk4lot2"></option>
-                                <option value="blk4lot3"></option>
-                                <option value="blk4lot4"></option>
-                                <option value="blk4lot5"></option>
-                                <option value="blk4lot6"></option>
-                                <option value="blk4lot7"></option>
-                                <option value="blk4lot8"></option>
-                                <option value="blk4lot9"></option>
-                                <option value="blk4lot10"></option>
-                                <option value="blk4lot11"></option>
-                                <option value="blk4lot12"></option>
-                                <option value="blk4lot13"></option>
-                                <option value="blk4lot14"></option><!--END FOR BLOCK 4-->
-                                <option value="blk5lot1"></option>
-                                <option value="blk5lot2"></option>
-                                <option value="blk5lot3"></option>
-                                <option value="blk5lot4"></option>
-                                <option value="blk5lot5"></option>
-                                <option value="blk5lot6"></option>
-                                <option value="blk5lot7"></option>
-                                <option value="blk5lot8"></option>
-                                <option value="blk5lot9"></option>
-                                <option value="blk5lot10"></option>
-                                <option value="blk5lot11"></option>
-                                <option value="blk5lot12"></option>
-                                <option value="blk5lot13"></option>
-                                <option value="blk5lot14"></option>
-                                <option value="blk5lot15"></option>
-                                <option value="blk5lot16"></option>
-                                <option value="blk5lot17"></option>
-                                <option value="blk5lot18"></option>
-                                <option value="blk5lot19"></option>
-                                <option value="blk5lot20"></option>
-                                <option value="blk5lot21"></option>
-                                <option value="blk5lot22"></option>
-                                <option value="blk5lot23"></option>
-                                <option value="blk5lot24"></option>
-                                <option value="blk5lot25"></option>
-                                <option value="blk5lot26"></option>
-                                <option value="blk5lot27"></option><!--END FOR BLOCK 5-->
-                                <option value="blk6lot1"></option><!--END FOR BLOCK 6-->
-                            </datalist>
+                            <input list="blkandlotss" name="property" id="property" class="form-control property" placeholder="Select Property..." />
+                            <datalist id="blkandlotss"></datalist>
                         </div>
-
+<script>
+    $.ajax({
+  type: "POST",
+  url: "adminViews/includes/fetch_property_forassign.php",
+  success: function(data) {
+    var lots = JSON.parse(data);
+    $.each(lots, function(index, lot) {
+      $("#blkandlotss").append("<option value='" + lot.lot_id + "'>");
+    });
+  }
+});
+</script>
                         <div class=" input-group  mb-3 "><!--FOR OWNERSHIP FIELD-->
                             <span class="input-group-text" id="basic-addon1">OWNERSHIP</span>
                             <div class="input-group-text">
