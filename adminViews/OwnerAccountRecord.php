@@ -601,7 +601,9 @@
                 display_owner_table_record();
             });
     }
-
+    $('#updateOwnerModal').on('hidden.bs.modal', function (e) {
+    $('#message-updateowner').html('');
+        });
     //DELETE OWNER RECORDS
     function delete_owner_record() {
         $(document).on('click', '#btn_delete_owner_acc', function() {

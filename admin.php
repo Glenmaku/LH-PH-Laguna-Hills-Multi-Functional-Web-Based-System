@@ -479,6 +479,18 @@ if (!empty($_SESSION['admin_I_D'])) {
                 }
             });
         }
+        $(document).ready(function(){
+    $.ajax({
+        type: 'POST',
+        url: 'adminViews/includes/act-row-sum.php',
+        success: function(response){
+            console.log(response);
+        },
+        error: function(XMLHttpRequest, textStatus, errorThrown) {
+            console.log(textStatus, errorThrown);
+        }
+    });
+});
         </script>
         <script>
 $(document).ready(function(){

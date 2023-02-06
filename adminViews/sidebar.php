@@ -5,7 +5,7 @@
     </div>
     <ul class="nav-links list-unstyled">
         <li class="">
-            <a href="/admin.php" class="ps-4">
+            <a href="admin.php" class="ps-4">
                 <i class="fa-solid fa-border-all"></i>
                 <span class="link-name">Dashboard</span>
             </a>

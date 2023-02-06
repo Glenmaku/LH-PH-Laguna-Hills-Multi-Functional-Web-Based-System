@@ -1,6 +1,6 @@
 <?php
 require_once("connection.php");
-$sql = "SELECT COUNT(*) as num FROM association_dues WHERE Dues_Status='updated'";
+$sql = "SELECT COUNT(*) as num FROM association_dues WHERE Dues_Status IN ('updated', 'advanced')";
 $result = $con->query($sql);
 
 if($result->num_rows > 0){

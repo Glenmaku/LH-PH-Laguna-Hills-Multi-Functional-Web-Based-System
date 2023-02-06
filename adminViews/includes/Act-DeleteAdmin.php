@@ -8,10 +8,17 @@ $result = mysqli_query($con,$query);
 
 if($result)
 {
-    echo ' Your Record Has Been Delete ';
+    echo'<div class="alert alert-danger alert-dismissible fade show w-100" role="alert" >
+    A record has been deleted
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+       </div>';
+       exit();
 }
 else
 {
-    echo ' Please Check Your Query ';
+    echo'<div class="alert alert-danger alert-dismissible fade show w-100" role="alert" >
+    Please Check Your Query
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+       </div>';
 }
 ?>
