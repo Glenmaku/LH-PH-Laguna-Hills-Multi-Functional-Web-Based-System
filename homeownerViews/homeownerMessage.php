@@ -16,7 +16,7 @@ if (!empty($_SESSION['owner_I_D'])) {
 <div class="homeowner-message">
     <div class="email-area">
         <div class="homeowner-title">
-            <h1>EMAILS</h1>
+            <h1>MESSAGE</h1>
         </div>
 
         <div class="message-area">
@@ -25,20 +25,6 @@ if (!empty($_SESSION['owner_I_D'])) {
             </div>
 
             <div class="current-message" id="current-message">
-
-            </div>
-        </div>
-    </div>
-
-    <div class="announcement-panel">
-        <div class="latest-announcement">
-            <div class="announcement-header">
-                <h5 class="announcementHeader-title">Announcement</h5>
-            </div>
-
-
-            <div class="homeowner-announcement" id="homeowner-announcement">
-
 
             </div>
         </div>
@@ -56,8 +42,8 @@ if (!empty($_SESSION['owner_I_D'])) {
             <form id="myform">
                 <div class="modal-body">
                     <div class="mb-3">
-                    <input type="text" class="form-control" id="message_name" name="message_name" value="<?php echo $Fname." ".$Lname?>">
-                    <input type="text" class="form-control" id="message_username" name="message_username" value="<?php echo $username?>">
+                    <input type="text" class="form-control" id="message_name" name="message_name" value="<?php echo $Fname." ".$Lname?>" hidden>
+                    <input type="text" class="form-control" id="message_username" name="message_username" value="<?php echo $username?>" hidden>
                         <input type="text" class="form-control" id="emailTitle" name="emailTitle" placeholder="Enter a Title" required>
                     </div>
                     <div class="form-floating">
@@ -80,33 +66,7 @@ if (!empty($_SESSION['owner_I_D'])) {
         displayMessage();
         ownerCompose();
     });
-    $(document).ready(function() {
-        var currentPage = localStorage.getItem("currentPage");
-        if (!currentPage) {
-            currentPage = 1;
-        }
-        displayAnnouncement(currentPage);
-    });
-
-    function displayAnnouncement(page) {
-        localStorage.setItem("currentPage", page);
-        var announcementData = "true";
-        $.ajax({
-            url: 'homeownerViews/includes/act-displayAnnouncement.php',
-            type: 'post',
-            data: {
-                announcementSend: announcementData,
-                page: page
-            },
-            success: function(data, status) {
-                $('#homeowner-announcement').html(data);
-            }
-        });
-    }
-
-    function getPage(page) {
-        displayAnnouncement(page);
-    }
+    
     //email area
     
 //insert data

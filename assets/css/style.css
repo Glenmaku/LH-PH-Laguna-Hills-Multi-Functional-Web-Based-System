@@ -1192,12 +1192,11 @@ svg{
 }
 
 .homeowner-message{
-    display: flex;
-    width: 100%;
+    margin-right: 40px
 }
 
 .homeowner-message .email-area{
-    width: 70%;
+
 }
 
 
