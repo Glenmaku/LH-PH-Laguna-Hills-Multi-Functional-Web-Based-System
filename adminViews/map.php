@@ -5164,7 +5164,6 @@
 			}
 			///////////////////////////////////////////////////	////////////////MAP
 			function displayMapData() {
-
 				var mapData = "true";
 				$.ajax({
 					url: 'adminViews/includes/mapData.php',
@@ -5174,10 +5173,11 @@
 					},
 					success: function(data, status) {
 						$('#lot-information-map').html(data);
+						displayAssocData();
 					}
 				});
 			}
-			////////////////////////////////////////////////////////////////////ASOC
+
 			function displayAssocData() {
 				var assocData = "true";
 				$.ajax({
@@ -5188,13 +5188,11 @@
 					},
 					success: function(data, status) {
 						$('#map-assoc').html(data);
-
 					}
 				});
 			}
-			/////////////////////////////////////////////////////////////////
-			function displayOwner(id) {
 
+			function displayOwner(id) {
 				var id = id;
 				var ownerData = "true";
 				$.ajax({
@@ -5206,11 +5204,25 @@
 					},
 					success: function(data, status) {
 						$('#owner-information').html(data);
-
 					}
 				});
 			}
+
+
 			/////////////////////////////////////////////////////////////
+			$("#mapcons").on("click", function() {
+				$("#lot-information-map").show();
+				$("#lot-information-map-t").show();
+				$("#map-assoc").hide();
+				$("#map-assoc-t").hide();
+				$("#owner-information").hide();
+				$("#owner-information-t").hide();
+				$(".statuslotss").show();
+				$(".statusassocss").hide();
+				displayMapData();
+				getData();
+			});
+
 			$(document).ready(function() {
 
 				$("#lot-information-btn").click(function() {
@@ -5311,6 +5323,7 @@
 					path.style.fill = '';
 				});
 			}
+
 			function colorData(id) {
 				fetch('adminViews/includes/mapsubmit.php?id=' + id)
 					.then(response => response.json())
