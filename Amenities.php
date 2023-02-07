@@ -23,7 +23,22 @@
         <p class="">The Laguna Hills in Bukal, Calamba, Laguna is a place fit enough to be a tourist haven.<br></p>
         <p>The Laguna Hills encompases of the best amenities that a subdivision could offer. </p>
         <p> There is the Community Clubhouse with a terrace lanai, and a bar for pleasurable conversations. There is the Sports Clubhouse with an Aqua Park, basketball and tennis courts for an active lifestyle. Highlighting a lifetime of leisure.</p>
+<style>
+  .EEM_Icons i {
+  transition: all 0.1s ease-in-out;
+}
 
+.EEM_Icons i:hover {
+  transform: translateY(-10px);
+}
+.iconbig {
+  transition: all 0.1s ease-in-out;
+}
+
+.iconbig:hover {
+  transform: translateY(-10px);
+}
+</style>
         <div class="EEM_Icons d-flex justify-content-center"><i class="bx bx-lg bx-drink"></i><i
             class="bx bx-lg bx-basketball"></i><i class="bx bx-lg bx-tennis-ball"></i><i class="bx bx-lg bx-swim"></i><i
             class="bx  bx-lg bx-party"></i><i class="bx bx-lg bx-chair"></i><i class="bx bx-lg bx-bed"></i>

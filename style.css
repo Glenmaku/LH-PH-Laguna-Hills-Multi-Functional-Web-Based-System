@@ -2939,3 +2939,33 @@ margin-left: 40%;
 		align-content: center;
 	}
  }
+ img.img-homeowners {
+	max-width: 100%;
+	height: auto;
+  transition: transform .3s;
+  }
+  img.img-homeowners:hover {
+  transform: scale(1.1);
+}
+.iconbig {
+	transition: all 0.1s ease-in-out;
+  }
+  
+  .iconbig:hover {
+	transform: translateY(-10px);
+  }
+
+  .iconbigs {
+	  transition: all 0.1s ease-in-out;
+	}
+	
+	.iconbigs:hover {
+	  transform: translateY(-10px);
+	}
+	.EEM_Icons i {
+		transition: all 0.1s ease-in-out;
+	  }
+	  
+	  .EEM_Icons i:hover {
+		transform: translateY(-10px);
+	  }

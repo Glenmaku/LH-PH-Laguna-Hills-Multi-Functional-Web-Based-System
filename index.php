@@ -110,7 +110,15 @@
     </div>
 
     <div class="d-flex flex-wrap topdivhighlights">
+<style>
+  .iconbig {
+  transition: all 0.1s ease-in-out;
+}
 
+.iconbig:hover {
+  transform: translateY(-10px);
+}
+</style>
       <div class="divhighlights d-block reveal">
         <div class="iconbig align-self-center"><i class=' bx bxs-tree'></i></div>
         <div class="texticon flex-grow-1 align-self-center">
@@ -213,7 +221,7 @@
 <!--FIND YOUR DREAM HOME PROPERTY FINDER-->
 <section class="section1 minheight  text-center minheight bg-light">
   <div class="justify-content-center fortops">
-    <h1 class="align-self-center">Property Finder</h1>
+    <h1 class="align-self-center reveal">Property Finder</h1>
     <p class="revealing">Find your Dream Home.</p>
     <?php
   include 'map-pfinder.php';
