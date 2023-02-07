@@ -38,15 +38,13 @@
         <p id="delete-message" class="text-dark"></p>
         <div id="owneraccounttable"></div>
 
-        <button class="btn btn-success"><i class="fa-solid fa-download"></i> Download</button>
+        <div class="download">
+            <form action="../PDF/pdf_gen_homeowner.php" method="POST" target="_blank">
+                <button type="submit" name="btn_pdf" class="btn btn-success" target="_blank"><i class="fa-solid fa-download"></i> Download PDF</button>
+            </form>
+        </div>
     </section>
-    <!--////////////////////////////////////////////////////////////////////////////-->
-    <!--////////////////////////////////////////////////////////////////////////////-->
-    <!--////////////////////////////////////////////////////////////////////////////-->
-    <!--button to open a pdf to be downloaded-->
-    <!--////////////////////////////////////////////////////////////////////////////-->
-    <!--////////////////////////////////////////////////////////////////////////////-->
-    <!--////////////////////////////////////////////////////////////////////////////-->
+    
     <!-- POP UP MODALSSS-->
 
     <!--ASSIGN LOT MODAL-->
