@@ -231,7 +231,7 @@
   let discount = parseFloat(document.querySelector("#r-discount").value);
   total -= discount;
 
-  document.querySelector("#reserv_total").value = total.toFixed(2);
+  // document.querySelector("#reserv_total").value = total.toFixed(2);
 
   $(document).ready(function() {
     $("#r-discount").change(function() {
@@ -246,7 +246,8 @@
   });
 
   $("#reserv_payment").on("change", function() {
-    var reserv_total = parseFloat($("#reserv_total").val());
+    // var reserv_total = parseFloat($("#reserv_total").val());
+    
     var reserv_payment = parseFloat($("#reserv_payment").val());
     if (reserv_total > reserv_payment) {
       var reserv_remaining_balance = reserv_total - reserv_payment;
