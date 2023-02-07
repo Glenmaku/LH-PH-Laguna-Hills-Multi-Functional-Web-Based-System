@@ -1,5 +1,5 @@
-    <div class="ownerSidebar" id="narbar-to-collapse" hidden>
-        <button type="button" class="sidebar-btn_close justify-item-center" onclick="close_sidebar()">
+    <div class="ownerSidebar" id="narbar-to-collapse">
+        <button type="button" class="sidebar-btn_close justify-item-center" onclick="close_sidebar()" hidden>
             <span aria-hidden="true" class="">&times;</span>
         </button>
         <div class="logo-details">
@@ -49,4 +49,10 @@
                 $('.ownerSidebar').prop('hidden', true);
             })
         }
+        function open_sidebar(){
+    $(document).on('click','.nav-responsives',function(){
+        $('.ownerSidebar').prop('hidden',false);
+        
+    });
+}
     </script>

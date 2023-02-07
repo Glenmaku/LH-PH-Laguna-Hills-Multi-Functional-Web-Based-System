@@ -1854,6 +1854,12 @@ svg{
  }
 
  @media only screen and (max-width: 940px) {
+    .ownerSidebar {
+        display: none;
+      }
+      .sidebar-btn_close {
+        display: block;
+      }
     .ownerAllContent{
         margin-left: 10px;  
     }
@@ -1889,6 +1895,5 @@ svg{
         margin-bottom: 10px;
     }
 
-
-
 }
+
