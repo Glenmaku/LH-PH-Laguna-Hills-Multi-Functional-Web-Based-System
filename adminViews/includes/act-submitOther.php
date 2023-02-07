@@ -154,7 +154,6 @@
       url: 'adminViews/insert-data-transaction-other-all.php',
       type: 'post',
       data: {
-
         trans_no_all_send: transaction_number_all,
         name_all_send: name_all,
         total_all_send: total_all,
@@ -165,31 +164,34 @@
       },
       success: function(data, status) {
         // function to display data
-        console.log(status);
+        console.log(data);
+        $.ajax({
+          url: 'adminViews/includes/act-transact.php',
+          type: 'post', //path to PHP script
+          success: function(data) {
+          $("#trans-no").val(data); //update input field with response from server
+          }               
+        });                          
+        $("#client-name").val("");
+
+          $("#o_subtotal").val("");
+          $("#o_category").val("");
+          $("#o_quantity").val("");
+          $("#o_price").val("");
+
+          $("#o_subtotal1").val("");
+          $("#o_category1").val("");
+          $("#o_quantity1").val("");
+          $("#o_rice1").val("");
+
+          for (var i = 1; i <= 6; i++) {
+            $("#o_category" + i).val("");
+            $("#o_quantity" + i).val("");
+            $("#o_price" + i).val("");
+            $("#o_subtotal" + i).val("");
+          }
       }
     });
-
-    // clear the forms after pressing the submit  
-    $("#trans-no").val("");
-    $("#date").val("");
-    $("#client-name").val("");
-
-    $("#o_subtotal").val("");
-    $("#o_category").val("");
-    $("#o_quantity").val("");
-    $("#o_price").val("");
-
-    $("#o_subtotal1").val("");
-    $("#o_category1").val("");
-    $("#o_quantity1").val("");
-    $("#o_rice1").val("");
-
-    for (var i = 1; i <= 6; i++) {
-      $("#o_category" + i).val("");
-      $("#o_quantity" + i).val("");
-      $("#o_price" + i).val("");
-      $("#o_subtotal" + i).val("");
-    }
   }
 
   //auto compute

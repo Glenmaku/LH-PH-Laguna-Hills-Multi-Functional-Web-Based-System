@@ -56,7 +56,7 @@ if(mysqli_query($con, $sql)){
     echo "Error: " . $sql . "<br>" . mysqli_error($con);
 }
 
-$sql2 = "INSERT INTO all_transaction (transaction_num,transaction_name) VALUES ('$trans_num','$transaction_name')";
+$sql2 = "INSERT INTO all_transaction (transaction_num,transaction_name,Category) VALUES ('$trans_num','$transaction_name','Association Dues')";
 
 if(mysqli_query($con, $sql2)){
     echo "Data inserted successfully to all_transaction";
