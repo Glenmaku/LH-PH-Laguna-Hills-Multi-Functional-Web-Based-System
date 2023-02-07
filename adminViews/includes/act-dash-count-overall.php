@@ -26,7 +26,7 @@ if ($result->num_rows > 0) {
 }
 
 $count = $other_total_sum + $total_sum + $balance_val_sum;
-echo '&#8369;' . $count . '.00';
+echo '&#8369;' . $count;
 
 $con->close();
 ?>

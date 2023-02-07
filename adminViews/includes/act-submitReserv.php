@@ -75,11 +75,11 @@
         },
         success: function(data, status) {
           // function to display data
-          console.log(status);
+          //console.log(status);
         }
       });
     } else {
-      console.log("function-hall is empty");
+      //console.log("function-hall is empty");
     }
 
     if ($("#radio-court").is(":checked")) {
@@ -99,11 +99,11 @@
         },
         success: function(data, status) {
           // function to display data
-          console.log(status);
+       //   console.log(status);
         }
       });
     } else {
-      console.log("function-court is empty");
+     // console.log("function-court is empty");
     }
 
     if ($("#radio-miming").is(":checked")) {
@@ -123,11 +123,11 @@
         },
         success: function(data, status) {
           // function to display data
-          console.log(status);
+      //    console.log(status);
         }
       });
     } else {
-      console.log("function-miming is empty");
+  //    console.log("function-miming is empty");
     }
 
     if ($("#radio-hall" || "#radio-court" || "#radio-miming").is(":checked")) {
@@ -163,7 +163,7 @@
         },
         success: function(data, status) {
           // function to display data
-          console.log(status);
+          alert(data);
           $.ajax({
                         url: 'adminViews/includes/act-transact.php',
                         type: 'post', //path to PHP script
@@ -245,18 +245,34 @@
     });
   });
 
-  $("#reserv_payment").on("change", function() {
-    // var reserv_total = parseFloat($("#reserv_total").val());
+  // $("#reserv_payment").on("change", function() {
+  //   // var reserv_total = parseFloat($("#reserv_total").val());
     
-    var reserv_payment = parseFloat($("#reserv_payment").val());
-    if (reserv_total > reserv_payment) {
-      var reserv_remaining_balance = reserv_total - reserv_payment;
-      $("#reserv_remaining_balance").val(reserv_remaining_balance);
-      $("#reserv_change").val(0);
-    } else {
-      var reserv_change = reserv_payment - reserv_total;
-      $("#reserv_change").val(reserv_change);
-      $("#reserv_remaining_balance").val(0);
-    }
-  });
+  //   var reserv_payment = parseFloat($("#reserv_payment").val());
+  //   if (reserv_total > reserv_payment) {
+  //     var reserv_remaining_balance = reserv_total - reserv_payment;
+  //     $("#reserv_remaining_balance").val(reserv_remaining_balance);
+  //     $("#reserv_change").val(0);
+  //   } else {
+  //     var reserv_change = reserv_payment - reserv_total;
+  //     $("#reserv_change").val(reserv_change);
+  //     $("#reserv_remaining_balance").val(0);
+  //   }
+  // });
+  $("#reserv_payment").on("change", function() {
+  var reserv_total = parseFloat($("#reserv_total").val());
+  var reserv_payment = parseFloat($("#reserv_payment").val());
+  if (reserv_total === reserv_payment) {
+    $("#reserv_remaining_balance").val(0);
+    $("#reserv_change").val(0);
+  } else if (reserv_total > reserv_payment) {
+    var reserv_remaining_balance = reserv_total - reserv_payment;
+    $("#reserv_remaining_balance").val(reserv_remaining_balance);
+    $("#reserv_change").val(0);
+  } else {
+    var reserv_change = reserv_payment - reserv_total;
+    $("#reserv_change").val(reserv_change);
+    $("#reserv_remaining_balance").val(0);
+  }
+});
 </script>

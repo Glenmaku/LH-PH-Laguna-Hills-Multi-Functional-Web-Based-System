@@ -31,10 +31,10 @@ if(isset($_POST['trans_nosend']) && isset($_POST['namesend']) && isset($_POST['t
     $result2 = mysqli_query($con,$sql2);
 
     if($result1 && $result2){
-        echo "<script>alert('Successfully sent to database - records and all_transaction');</script>";
+        echo "Successfully recorded transaction ".$trans_nosend;
     } 
     else {
-        echo "<script>alert('Oh no. Error sending to records transaction and all_transaction');</script>";
+        echo "Transaction unsuccessful. Please try again.";
     }
 }
 ?>

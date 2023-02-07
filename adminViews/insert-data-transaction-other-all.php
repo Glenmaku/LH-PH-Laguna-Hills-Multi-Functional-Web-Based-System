@@ -46,10 +46,10 @@ $trans_no_all_send = $_POST['trans_no_all_send'];
     $result2 = mysqli_query($con,$sql2);
 
     if($result && $result2){
-        echo 'Successfully sent to database - records-ALL';
+        echo "Successfully recorded transaction ".$trans_no_all_send;
     } 
     else {
-        echo 'Oh no. Error sending to records transaction';
+        echo "Transaction unsuccessful. Please try again.";
     }
 }
 ?>

@@ -164,15 +164,14 @@
       },
       success: function(data, status) {
         // function to display data
-        console.log(data);
-        $.ajax({
-          url: 'adminViews/includes/act-transact.php',
-          type: 'post', //path to PHP script
-          success: function(data) {
-          $("#trans-no").val(data); //update input field with response from server
-          }               
-        });                          
-        $("#client-name").val("");
+        alert(data);
+          $("#other_remaining_balance").val("0");
+          $("#other_total").val("0");
+          $("#other_payment").val("0");
+          $("#other_change").val("0");
+          $("#other_remarks").val("");       
+          
+          $("#client-name").val("");
 
           $("#o_subtotal").val("");
           $("#o_category").val("");
@@ -190,6 +189,15 @@
             $("#o_price" + i).val("");
             $("#o_subtotal" + i).val("");
           }
+        $.ajax({
+          url: 'adminViews/includes/act-transact.php',
+          type: 'post', //path to PHP script
+          success: function(data) {
+          $("#trans-no").val(data); //update input field with response from server
+          }     
+
+        });                          
+
       }
     });
   }

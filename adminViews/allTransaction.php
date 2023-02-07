@@ -11,11 +11,11 @@
                         <div class="transaction-details">
                             <div class="transaction-line">
                                 <span>Transaction No.</span>
-                                <input type="text" name="transaction-number" id="trans-no" placeholder="0000" required>
+                                <input type="text" name="transaction-number" id="trans-no" placeholder="0000" required readonly>
                             </div>
                             <div class="date-container">
                                 <span>Date:</span>
-                                <input type="date" name="date" id="date" disabled>
+                                <input type="date" name="date" id="date" disabled readonly>
                             </div>
                         </div>
                         <div class="client-name"><span>Name:</span>
@@ -33,7 +33,7 @@
                             <h2 id="panelsStayOpen-headingOne">ASSOCIATION DUES</h2>
                         </div>
                         <div class="hide-option" id="hide_assoc">
-                            <i class="fa-solid fa-chevron-up accordion-button-icon" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne" onclick="assocSubmit()"></i>
+                            <i id="hide_assoc_i" class="fa-solid fa-chevron-up accordion-button-icon" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne" onclick="assocSubmit()"></i>
                         </div>
                     </div>
 
@@ -90,7 +90,7 @@
                             <h2 id="panelsStayOpen-headingTwo">RESERVATION
                         </div>
                         <div class="hide-option" id="hide_reserv">
-                            <i class="fa-solid fa-chevron-down accordion-button-icon" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="true" aria-controls="panelsStayOpen-collapseTwo" onclick="reserveSubmit()"></i>
+                            <i id="hide_reserv_i" class="fa-solid fa-chevron-down accordion-button-icon" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="true" aria-controls="panelsStayOpen-collapseTwo" onclick="reserveSubmit()"></i>
                         </div>
                     </div>
                     <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse hide" aria-labelledby="panelsStayOpen-headingTwo">
@@ -187,7 +187,7 @@
                             </h2>
                         </div>
                         <div class="hide-option" id="hide_other">
-                            <i class="fa-solid fa-chevron-down accordion-button-icon" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="true" aria-controls="panelsStayOpen-collapseThree" onclick="otherSubmit()">
+                            <i id="hide_other_i" class="fa-solid fa-chevron-down accordion-button-icon" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="true" aria-controls="panelsStayOpen-collapseThree" onclick="otherSubmit()">
                             </i>
                         </div>
                     </div>
@@ -595,6 +595,9 @@
                  //   $("#trans-no").val("");
                  //   $("#date").val("");
                     $("#client-name").val("");
+                    $("#property").val("");
+                    $("#balance-total").val("0");
+                    $("#total-balance").val("0");
 
                 });
 
@@ -755,6 +758,7 @@
                     $("#total-balance").val("0");
                     $("#balance-total").val("0");
                     $("#a-discount").val("0");
+
                 }); // reset form ng association part
 
                 // reset form ng OTHER SERVICES part
@@ -918,8 +922,9 @@
                                 remarks: remarks
                             },
                             success: function(data) {
-                                alert("Data Inserted: " + data);
+                                alert(data);
                                 $("#assoc-reset").trigger("click");
+
                                 $.ajax({
                                     url: 'adminViews/includes/act-transact.php',
                                     type: 'post', //path to PHP script
@@ -974,6 +979,7 @@
                 }
 
                 function assocSubmit() { //sidebar
+                    
                     $.ajax({
                         url: "adminViews/includes/act-submitAssoc.php",
                         method: "post",
@@ -985,6 +991,9 @@
                         }
                     });
                 }
+                
+
+
             </script>
 <script>
 $.ajax({
