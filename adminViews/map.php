@@ -5297,7 +5297,7 @@
 
 			$(document).ready(function() {
 				var newColor = "green";
-				var newWidth = "5";
+				var newWidth = "10";
 				var previousPath;
 				$("#searchMap").on("input", function() {
 					if (previousPath) {
