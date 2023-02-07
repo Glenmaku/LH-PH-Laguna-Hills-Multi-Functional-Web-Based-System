@@ -125,12 +125,12 @@ if (!empty($_SESSION['admin_I_D'])) {
         display: flex;
         align-items: center;
         justify-content: end;
-        padding-right:3vw;
+        padding-right:2vw;
         width: 50%;
     }
 
     .nums h1 {
-        font-size: calc(35px + 1.5vw);
+        font-size: calc(25px + 1.5vw);
     }
 .nums .lessers{
 bottom: 0;
@@ -266,7 +266,20 @@ margin-right: -40px;
         text-align: center;
         font-size: calc(20px + 2vw);
     }
-    
+    .ell{
+      width: 100%;
+      justify-content: end;
+      text-align: end;
+      margin-top: -30px;
+      margin-bottom: 5px;
+    }
+    .ell i{
+       right: 0;
+       bottom: 0;
+       font-size: calc(2vw);
+       padding-right: 10px;
+       margin-top: -40px;
+    }
     .dashboard-holder .dash-most-container .right-divs .partitionsss .num-lotowners{
         display: flex;
         flex-direction: column;
@@ -419,7 +432,24 @@ margin-right: -40px;
                                 <h1 class="text-center" id="dash-updated-num">000</h1>
                               
                             </div>
-  <div class="lessers"><i class="fa-solid fa-ellipsis-vertical" id="updatedlistModal"></i></div>
+  <div class="lessers"><i class="fa-solid fa-ellipsis-vertical" id="updatedlistModal-btn"></i></div>
+ 
+<div class="modal fade" id="updatedlistModal" >
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Updated Dues</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" id="updatedlistModal-body">
+        
+      </div>
+      <div class="modal-footer">
+
+      </div>
+    </div>
+  </div>
+</div> 
                         </div><!--END UPDATED-->
                         <div class="for-outdated"><!--OUTDATED-->
                             <div class="setss">
@@ -429,8 +459,24 @@ margin-right: -40px;
                             <div class="nums">
                                 <h1 class="text-center" id="dash-outdated-num">000</h1>
                             </div>
-  <div class="lessers"><i class="fa-solid fa-ellipsis-vertical" id="outdatedlistModal"></i></div>
+    <div class="lessers"><i class="fa-solid fa-ellipsis-vertical" id="outdatedlistModal-btn"></i></div>
 
+<div class="modal fade" id="outdatedlistModal" >
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Outdated Dues</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" id="outdatedlistModal-body">
+        
+      </div>
+      <div class="modal-footer">
+
+      </div>
+    </div>
+  </div>
+</div>
                         </div><!--END OUTDATED-->
                     </div><!--END OF PARTITION-->
                 </div><!--END ASSOC NUMBERS-->
@@ -497,9 +543,7 @@ margin-right: -40px;
                         <h6>LOT OWNERS</h6>
                         <h1 id="dash-lotowners-num">000</h1>
                         </div>
-                          <div class="iconssss"><i class="fa-solid fa-users-line"></i>
-                        </div>
-                        </div>
+                          <div class="iconssss"><i class="fa-solid fa-users-line"></i></div>
                     </div>
                 </div><!-- END TOP-DIVS-->
             </div><!--DASH MOST END-->
@@ -681,9 +725,30 @@ $(document).ready(function(){
 
 
 });
-
-
-
+document.getElementById("outdatedlistModal-btn").addEventListener("click", function(){
+    $("#outdatedlistModal").modal("show");
+  });
+  document.getElementById("updatedlistModal-btn").addEventListener("click", function(){
+    $("#updatedlistModal").modal("show");
+  });
+  $(document).ready(function() {
+  $.ajax({
+    type: "POST",
+    url: "adminViews/includes/act-dash-updatedlistModal.php",
+    success: function(data) {
+      $("#updatedlistModal-body").html(data);
+    }
+  });
+});
+$(document).ready(function() {
+  $.ajax({
+    type: "POST",
+    url: "adminViews/includes/act-dash-outdatedlistModal.php",
+    success: function(data) {
+      $("#outdatedlistModal-body").html(data);
+    }
+  });
+});
 
 </script>
 
