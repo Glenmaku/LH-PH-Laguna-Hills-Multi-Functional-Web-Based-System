@@ -483,7 +483,7 @@ margin-right: -40px;
 
                 <div class="transaction-areas"><!--TOTAL PESOSS-->
                     <h5 class="text-start ms-3 mt-2">Transaction Records</h5>
-                    <h1 class="total-amount-transactions text-end">P 00000.00</h1>
+                    <h1 class="total-amount-transactions text-end" id="overall-trans-num">P 00000.00</h1>
                     <div class="partitionss">
                         <div class="left-side-trans"><!--LEFT SIDE-->
                             <div class="trans-rows"><h6>Reservations</h6><b><span id="dash-reserv-num" >P 0.00</span></b></div>
@@ -493,8 +493,8 @@ margin-right: -40px;
 
                         </div><!--END LEFT SIDE-->
                         <div class="right-side-trans"><!--RIGHT SIDE-->
-                            <div class="trans-rows"><h6>Association Dues</h6><b><span id="dash-assocdues-num"></span></b></div>
-                            <div class="trans-rows"><h6>Other Services</h6><b><span>P 0.00</span></b></div>
+                            <div class="trans-rows"><h6>Association Dues</h6><b><span id="dash-assocdues-num">P 0.00</span></b></div>
+                            <div class="trans-rows"><h6>Other Services</h6><b><span id="dash-other-num">P 0.00</span></b></div>
                         </div><!--END RIGHT SIDE-->
                     </div>
                 </div><!--END TOTAL PESSOS-->
@@ -706,6 +706,24 @@ $(document).ready(function(){
       }
     });
   }
+  function get_other_num(){
+    $.ajax({
+      type: "GET",
+      url: "adminViews/includes/act-dash-count-others.php",
+      success: function(response) {
+        $("#dash-other-num").html(response);
+      }
+    });
+  }
+  function get_overall_trans_num(){
+    $.ajax({
+      type: "GET",
+      url: "adminViews/includes/act-dash-count-overall.php",
+      success: function(response) {
+        $("#overall-trans-num").html(response);
+      }
+    });
+  }
   ////////////////////////////////////////
   get_dash_updated_num();
   get_dash_outdated_num();
@@ -721,8 +739,8 @@ $(document).ready(function(){
   get_pool_num();
   get_court_num();
   get_reserv_num();
-
-
+  get_other_num();
+get_overall_trans_num();
 
 });
 document.getElementById("outdatedlistModal-btn").addEventListener("click", function(){
