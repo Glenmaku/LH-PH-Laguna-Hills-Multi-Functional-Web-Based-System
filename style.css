@@ -2969,3 +2969,20 @@ margin-left: 40%;
 	  .EEM_Icons i:hover {
 		transform: translateY(-10px);
 	  }
+
+
+	  /*********** Scrollbar  **************/
+::-webkit-scrollbar {
+    width: 8px;  /* width of the scrollbar */
+    background-color: var(--darkgreen);  /* background color of the scrollbar */
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--darkgreen);  /* color of the scrollbar thumb (the part that you drag) */
+    border-radius: 10px;  /* rounded corners of the scrollbar thumb */
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: #ffffff;  /* color of the track (the part that the thumb scrolls over) */
+    border-radius: 5px;  /* rounded corners of the track */
+  }
