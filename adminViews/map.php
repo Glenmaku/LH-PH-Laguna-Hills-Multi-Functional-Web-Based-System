@@ -1,4 +1,4 @@
-<div class="map-title">
+<div class="map-title" onload="loadData()">
 	<h1>LAGUNA HILLS MAP</h1>
 </div>
 <div class="lhph-map">
@@ -5007,7 +5007,7 @@
 						</td>
 						<td><input class="form-check-input" type="checkbox" value="#F2C500" id="block-33">
 							<label class="form-check-label" for="flexCheckDefault">BLOCK 33</label>
-						</td> 
+						</td>
 						<td><input class="form-check-input" type="checkbox" value="#F2C500" id="block-34">
 							<label class="form-check-label" for="flexCheckDefault">BLOCK 34</label>
 						</td>
@@ -5120,10 +5120,8 @@
 
 		<script type="text/javascript">
 			$(document).ready(function() {
-				changeColor();
 				getData();
-				displayMapData();
-				displayOwner();
+
 
 			});
 			/////////////////////////////////////////////
@@ -5179,7 +5177,6 @@
 					}
 				});
 			}
-
 			////////////////////////////////////////////////////////////////////ASOC
 			function displayAssocData() {
 				var assocData = "true";
@@ -5214,18 +5211,6 @@
 				});
 			}
 			/////////////////////////////////////////////////////////////
-			$("#mapcons").on("click", function() {
-				$("#lot-information-map").show();
-				$("#lot-information-map-t").show();
-				$("#map-assoc").hide();
-				$("#map-assoc-t").hide();
-				$("#owner-information").hide();
-				$("#owner-information-t").hide();
-				$(".statuslotss").show();
-				$(".statusassocss").hide();
-				displayMapData();
-				getData();
-			});
 			$(document).ready(function() {
 
 				$("#lot-information-btn").click(function() {
@@ -5272,10 +5257,7 @@
 					displayOwner();
 				});
 			});
-
 			////////////////////////////////////////////////////////////////
-
-
 			$(document).ready(function() {
 				var newColor = "green";
 				var newWidth = "10";
@@ -5292,11 +5274,8 @@
 					previousPath = path;
 				});
 			});
-
-
 			//////////////////////////////////////////////////////////////////////////////
 			function getData(id) {
-
 				fetch(`adminViews/includes/mapsubmit.php?id=${id}`)
 					.then(response => response.json())
 					.then(data => {
@@ -5326,14 +5305,12 @@
 					});
 			}
 			//////////////////////////////////////////////////////////////////////////////
-
 			//////////////////////////////////////////////////////////////////////////////
 			function clearColor() {
 				paths.forEach(path => {
 					path.style.fill = '';
 				});
 			}
-
 			function colorData(id) {
 				fetch('adminViews/includes/mapsubmit.php?id=' + id)
 					.then(response => response.json())
@@ -5450,7 +5427,6 @@
 						console.log('Error:' + error);
 					});
 			}
-
 			const select = document.querySelector('.form-select');
 			const paths = document.querySelectorAll('.mapping');
 
@@ -5485,7 +5461,6 @@
 					this.style.strokeWidth = "1px";
 				});
 			});
-
 
 			window.onload = function() {
 				$.ajax({
