@@ -10,24 +10,22 @@ if(isset($_POST['btn_pdf']))
 {   
     //check nyo nalang dito specifications http://www.fpdf.org
     //$pdf = new FPDF('Portrait','mm','A4');
-    $pdf = new FPDF('L', 'mm','legal');
+    $pdf = new FPDF('P', 'mm','legal');
     $pdf->AddPage();
 
     // Page header
         // Logo left then up then image size in px ata to
-        $pdf->Image('../images/LagunaHillsLogo.jpg',150,6,50);
+        $pdf->Image('../images/LagunaHillsLogo.jpg',90,15,30);
         // Line break
-        $pdf->Ln(40);
+        $pdf->Ln(30);
     // END of page header
 
     // SetFont(). We choose Arial bold 16:
     $pdf->SetFont('Arial','B',10);
-    $pdf->SetLeftMargin(40);
+
     // Cell (width, height, txt, border, ln line break, align(Center))
-    $pdf->Cell(20,10,'ID', '1', '0' , 'C');
     $pdf->Cell(40,10,'First Name', '1', '0' , 'C');
     $pdf->Cell(40,10,'Last Name', '1', '0' , 'C');
-    //$pdf->Cell(60,10,'Full Name', '1', '0' , 'C');
     $pdf->Cell(40,10,'Username', '1', '0' , 'C');
     $pdf->Cell(80,10,'Email', '1', '1' , 'C');
     // $pdf->Cell(30,10,'Password', '1', '1' , 'C');
@@ -36,14 +34,11 @@ if(isset($_POST['btn_pdf']))
 
         while($row = mysqli_fetch_assoc($data))
     {
-        $pdf->Cell(20,10,$row['admin_id'], '1', '0' , 'C');
         $pdf->Cell(40,10,$row['admin_fname'], '1', '0' , 'C');
         $pdf->Cell(40,10,$row['admin_lname'], '1', '0' , 'C');
-        //$pdf->Cell(60,10,$row['admin_fullname'], '1', '0' , 'C');
         $pdf->Cell(40,10,$row['admin_username'], '1', '0' , 'C');
         $pdf->Cell(80,10,$row['admin_email'], '1', '1' , 'C');
         // $pdf->Cell(30,10,$row['admin_password'], '1', '1' , 'C');
-
     }
 
     //Remark: the line break can also be done with Ln(). This method additionnaly allows to specify the height of the break.
