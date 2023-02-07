@@ -40,7 +40,7 @@
         </li>
 
         <li>
-            <a href=""class="ps-4">
+            <a class="ps-4" style="cursor:pointer;">
                 <i class="fa-regular fa-clipboard"></i>
                 <span class="link-name">Account Records</span>
             </a>
