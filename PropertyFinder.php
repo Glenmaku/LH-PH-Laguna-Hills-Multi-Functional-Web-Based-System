@@ -21,10 +21,49 @@
 </section>
 
 <style>
-  .map-pfinder {
+  @media (max-width: 700px) {
+    .mapside {
+    display: block!important;
+    flex-direction: column;
+    z-index: 999999;
+
+  }
+  .map-zoom {
+    box-sizing: border-box;
     overflow: hidden;
+    width: auto!important;
+    height: auto!important;
+  }
+  #my-svg-pf {
+    margin-left: 0%;
+}
+.control-map{
+  display: flex;
+  justify-content: end;
+  right: 0;
+}
+.control-map button{
+ width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+.map-pfinder {
+  position: relative;
+  width: 90vw;
+  height: auto!important;
+}
+.property-map-map {
+    height: max-content!important;
+    max-width: 100vw;
+    max-height: max-content!important;
+    overflow: auto!important;
   }
 
+  }
+  .map-pfinder {
+    overflow: hidden;
+    
+  }
 
   .map-zoom {
     box-sizing: border-box;
