@@ -1158,6 +1158,12 @@ svg{
     border-radius: 50%;
     margin-left: 10px;
 }
+.titlessss h3{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    color: var(--darkgreen);
+    font-size: 20px;
+}
 
 
 .status #available  {
