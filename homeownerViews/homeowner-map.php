@@ -7,15 +7,15 @@
 		<div class="control-map">
 			<button id="zoom-in-btn" class="btn btn-success"><i class="fa-sharp fa-solid fa-plus"></i></button>
 			<button id="zoom-out-btn" class="btn btn-success"><i class="fa-sharp fa-solid fa-minus"></i></button>
-			<button class="btn trigger-home" id="trigger-home" value="trigger-home"><i class="fa-regular fa-user"></i></button>
+			<button class="btn trigger-home" id="trigger-home" value="trigger-home" hidden><i class="fa-regular fa-user"></i></button>
 		</div>
 		<div class="homeMap">
 
-
-
+			<div class="map-holder-owner">
 			<?php
 			include 'map-homeowner.php';
 			?>
+			</div>
 
 
 		</div>

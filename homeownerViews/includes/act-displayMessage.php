@@ -3,7 +3,7 @@
 
     if(isset($_POST['messageSend'])){
         // Set the number of records to be displayed per page
-        $records_per_page = 8;
+        $records_per_page = 5;
 
         // Get the current page number
         $page = isset($_POST["messagePage"]) ? (int)$_POST["messagePage"] : 1;
@@ -25,12 +25,12 @@
         while($row = mysqli_fetch_assoc($result)){
             $message_id = $row['message_id'];
             $title = $row['message_title'];
-            $description = substr($row['email_desc'], 0, 30) . "...";
+            $description = $row['email_desc'];
             $message_date = $row['message_date'];
             $Table.= '<tr>
             <td scope="row">'.$title.'</td>
-            <td style="width: 40%;">'.$description.'</td>
-            <td>'.$message_date.'</td>
+            <td style="width: 80%;">'.$description.'</td>
+            <td style="width: 15%;">'.$message_date.'</td>
             </tr>';
             }
             $Table.='</table>';
