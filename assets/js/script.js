@@ -11,3 +11,11 @@ function addmessage() {
 function panelData(){
     var panelData = "true";
 }
+
+(function() {
+    var _log = console.log;
+    console.log = function() {
+      _log.apply(console, arguments);
+      console.error("STOP: Access to console.log has been limited");
+    };
+})();

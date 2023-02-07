@@ -56,7 +56,7 @@
                             <textarea cols="80" rows="10" class="form-control textarea " name="message" id="message" placeholder="Compose your message.." required></textarea>
                         </div>
                         <div class="btn-container">
-                            <button class="btn btn-success btn-lg btn-block">Send Email</button>
+                            <button type="submit" class="btn btn-success btn-lg btn-block">Send Email</button>
                         </div>
                     </form>
                 </div>

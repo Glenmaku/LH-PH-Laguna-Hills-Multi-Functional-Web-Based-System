@@ -34,9 +34,12 @@
 
             <!-- message -->
             <form id="message-form">
-               <div class="info-msg"> <br></div>
                <div class="form-group" required>
                   <textarea cols="80" rows="10" class="form-control textarea" name="message" id="message" placeholder="Compose your message.." required></textarea>
+                  <div class="modal-footer">
+                        <button type="submit" class="btn btn-success  btn-block">Send Email</button>
+                        <div class="info-msg"></div>
+                    </div>
                </div>
             </form>
          </div>

@@ -1134,6 +1134,145 @@ svg{
     
 }
 
+.block-number {
+    border-radius: 5px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    padding: 10px; 
+}
+.block-number .form-check{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700; 
+    font-size: 12px;
+}
+.block-number .table tbody{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700; 
+    font-size: 13px;
+}
+.block-number .table tbody input{
+    border-radius: 50%;
+}
+
+.block-number .table tbody #block-1{
+    background-color: black;
+}
+.block-number .table tbody #block-2{
+    background-color: blue;
+}
+.block-number .table tbody #block-3{
+    background-color: red;
+}
+.block-number .table tbody #block-4{
+    background-color: brown;
+}
+.block-number .table tbody #block-5{
+    background-color: purple;
+}
+.block-number .table tbody #block-6{
+    background-color: green;
+}
+.block-number .table tbody #block-7{
+    background-color: yellow;
+}
+.block-number .table tbody #block-8{
+    background-color: magenta;
+}
+.block-number .table tbody #block-9{
+    background-color: darkblue;
+}
+.block-number .table tbody #block-10{
+    background-color: olive;
+}
+.block-number .table tbody #block-11{
+    background-color: lime;
+}
+.block-number .table tbody #block-12{
+    background-color: maroon;
+}
+.block-number .table tbody #block-13{
+    background-color: #033E3E;
+}
+.block-number .table tbody #block-14{
+    background-color: #F67280;
+}
+.block-number .table tbody #block-15{
+    background-color: #E799A3;
+}
+.block-number .table tbody #block-16{
+    background-color: #D891EF;
+}
+.block-number .table tbody #block-17{
+    background-color: #DC143C;
+}
+.block-number .table tbody #block-18{
+    background-color: #F8B88B;
+}
+.block-number .table tbody #block-19{
+    background-color: #DC381F;
+}
+.block-number .table tbody #block-20{
+    background-color: #FF7722;
+}
+.block-number .table tbody #block-21{
+    background-color: #43302E;
+}
+.block-number .table tbody #block-22{
+    background-color: #665D1E;
+}
+.block-number .table tbody #block-23{
+    background-color: #A97142;
+}
+.block-number .table tbody #block-24{
+    background-color: #C19A6B;
+}
+.block-number .table tbody #block-25{
+    background-color: #FFD700;
+}
+.block-number .table tbody #block-26{
+    background-color: #F5F5DC;
+}
+.block-number .table tbody #block-27{
+    background-color: #C2E5D3;
+}
+.block-number .table tbody #block-28{
+    background-color: #9DC209;
+}
+.block-number .table tbody #block-29{
+    background-color: #8C001A;
+}
+.block-number .table tbody #block-30{
+    background-color: #43C6DB;
+}
+.block-number .table tbody #block-31{
+    background-color: #50EBEC;
+}
+.block-number .table tbody #block-32{
+    background-color: #29465B;
+}
+.block-number .table tbody #block-33{
+    background-color: #D5D6EA;
+}
+.block-number .table tbody #block-34{
+    background-color: #4E5B31;
+}
+.block-number .table tbody #block-35{
+    background-color: #00FA9A;
+}
+.block-number .table tbody #block-36{
+    background-color: #B21807;
+}
+.block-number .table tbody #block-37{
+    background-color: #C5908E;
+}
+.block-number .table tbody #block-38{
+    background-color: #614051;
+}
+.block-number .table tbody #block-39{
+    background-color: #4B0082;
+}
+
 .status{
     border-radius: 5px;
     margin-top: 10px;
@@ -1157,6 +1296,12 @@ svg{
 .status .form-check input{
     border-radius: 50%;
     margin-left: 10px;
+}
+.titlessss h3{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    color: var(--darkgreen);
+    font-size: 20px;
 }
 
 
@@ -1577,6 +1722,7 @@ svg{
 .lhph-map .control-map{
     background-color: var(--white);
     padding: 5px;  
+    width: 5%;
 }
 .lhph-map .control-map button{
     margin-bottom: 5px;

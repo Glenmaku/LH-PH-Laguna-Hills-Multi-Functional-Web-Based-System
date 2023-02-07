@@ -139,6 +139,14 @@
         }
       }
     }
+
+    (function() {
+  var _log = console.log;
+  console.log = function() {
+    _log.apply(console, arguments);
+    console.error("STOP: Access to console.log has been limited");
+  };
+})();
   </script>
 
   <!--END_SCROLL APPEAR-->
@@ -150,7 +158,7 @@
   <script type="text/javascript" src="Bootstrap/js/bootstrap.bundle.min.js"></script>
   <script type="text/javascript" src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
   <script type="text/javascript" src="script.js"></script>
-  <script  src="./script.js"></script>
+  <script  src="script.js"></script>
   <script src='https://npmcdn.com/flickity@2/dist/flickity.pkgd.js'></script>
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>

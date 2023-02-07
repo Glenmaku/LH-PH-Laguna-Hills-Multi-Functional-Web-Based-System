@@ -5,164 +5,6 @@
 	<div class="control-map">
 		<button id="zoom-in-btn-admin" class="btn btn-success"><i class="fa-sharp fa-solid fa-plus"></i></button>
 		<button id="zoom-out-btn-admin" class="btn btn-success"><i class="fa-sharp fa-solid fa-minus"></i></button>
-		<div>
-			<div class="form-check">
-				<input class="form-check-input" type="checkbox" value="#1FCE6D" id="available">
-				<label class="form-check-label" for="flexCheckDefault">BLOCK 1</label>
-			</div>
-			<div class="form-check">
-				<input class="form-check-input" type="checkbox" value="#E94B35" id="occupied">
-				<label class="form-check-label" for="flexCheckDefault">BLOCK 2</label>
-			</div>
-			<div class="form-check">
-				<input class="form-check-input" type="checkbox" value="#2C97DE" id="house">
-				<label class="form-check-label" for="flexCheckDefault">BLOCK 3</label>
-			</div>
-			<div class="form-check">
-				<input class="form-check-input" type="checkbox" value="#F2C500" id="undisclosed">
-				<label class="form-check-label" for="flexCheckDefault">BLOCK 4</label>
-			</div>
-			<div class="form-check">
-				<input class="form-check-input" type="checkbox" value="#E87E04" id="foreclosed">
-				<label class="form-check-label" for="flexCheckDefault">BLOCK 5</label>
-			</div>
-			<div class="form-check">
-				<input class="form-check-input" type="checkbox" value="#33495F" id="open">
-				<label class="form-check-label" for="flexCheckDefault">BLOCK 6</label>
-			</div>
-			<div class="form-check">
-				<input class="form-check-input" type="checkbox" value="#9C56B8" id="amenities">
-				<label class="form-check-label" for="flexCheckDefault">BLOCK 7</label>
-			</div>
-			<div class="form-check">
-				<input class="form-check-input" type="checkbox" value="#1FCE6D" id="available">
-				<label class="form-check-label" for="flexCheckDefault">BLOCK 8</label>
-			</div>
-			<div class="form-check">
-				<input class="form-check-input" type="checkbox" value="#E94B35" id="occupied">
-				<label class="form-check-label" for="flexCheckDefault">BLOCK 9</label>
-			</div>
-			<div class="form-check">
-				<input class="form-check-input" type="checkbox" value="#2C97DE" id="house">
-				<label class="form-check-label" for="flexCheckDefault">BLOCK 10</label>
-			</div>
-			<div class="form-check">
-				<input class="form-check-input" type="checkbox" value="#F2C500" id="undisclosed">
-				<label class="form-check-label" for="flexCheckDefault">BLOCK 11</label>
-			</div>
-			<div class="form-check">
-				<input class="form-check-input" type="checkbox" value="#E87E04" id="foreclosed">
-				<label class="form-check-label" for="flexCheckDefault">BLOCK 12</label>
-			</div>
-			<div class="form-check">
-				<input class="form-check-input" type="checkbox" value="#33495F" id="open">
-				<label class="form-check-label" for="flexCheckDefault">BLOCK 13</label>
-			</div>
-			<div class="form-check">
-				<input class="form-check-input" type="checkbox" value="#9C56B8" id="amenities">
-				<label class="form-check-label" for="flexCheckDefault">BLOCK 14</label>
-			</div>
-			<div class="form-check">
-				<input class="form-check-input" type="checkbox" value="#1FCE6D" id="available">
-				<label class="form-check-label" for="flexCheckDefault">BLOCK 15</label>
-			</div>
-			<div class="form-check">
-				<input class="form-check-input" type="checkbox" value="#E94B35" id="occupied">
-				<label class="form-check-label" for="flexCheckDefault">BLOCK 16</label>
-			</div>
-			<div class="form-check">
-				<input class="form-check-input" type="checkbox" value="#2C97DE" id="house">
-				<label class="form-check-label" for="flexCheckDefault">BLOCK 17</label>
-			</div>
-			<div class="form-check">
-				<input class="form-check-input" type="checkbox" value="#F2C500" id="undisclosed">
-				<label class="form-check-label" for="flexCheckDefault">BLOCK 18</label>
-			</div>
-			<div class="form-check">
-				<input class="form-check-input" type="checkbox" value="#E87E04" id="foreclosed">
-				<label class="form-check-label" for="flexCheckDefault">BLOCK 19</label>
-			</div>
-			<div class="form-check">
-				<input class="form-check-input" type="checkbox" value="#33495F" id="open">
-				<label class="form-check-label" for="flexCheckDefault">BLOCK 20</label>
-			</div>
-			<div class="form-check">
-				<input class="form-check-input" type="checkbox" value="#9C56B8" id="amenities">
-				<label class="form-check-label" for="flexCheckDefault">BLOCK 21</label>
-			</div>
-			<div class="form-check">
-				<input class="form-check-input" type="checkbox" value="#1FCE6D" id="available">
-				<label class="form-check-label" for="flexCheckDefault">BLOCK 22</label>
-			</div>
-			<div class="form-check">
-				<input class="form-check-input" type="checkbox" value="#E94B35" id="occupied">
-				<label class="form-check-label" for="flexCheckDefault">BLOCK 23</label>
-			</div>
-			<div class="form-check">
-				<input class="form-check-input" type="checkbox" value="#2C97DE" id="house">
-				<label class="form-check-label" for="flexCheckDefault">BLOCK 24</label>
-			</div>
-			<div class="form-check">
-				<input class="form-check-input" type="checkbox" value="#F2C500" id="undisclosed">
-				<label class="form-check-label" for="flexCheckDefault">BLOCK 25</label>
-			</div>
-			<div class="form-check">
-				<input class="form-check-input" type="checkbox" value="#E87E04" id="foreclosed">
-				<label class="form-check-label" for="flexCheckDefault">BLOCK 26</label>
-			</div>
-			<div class="form-check">
-				<input class="form-check-input" type="checkbox" value="#33495F" id="open">
-				<label class="form-check-label" for="flexCheckDefault">BLOCK 27</label>
-			</div>
-			<div class="form-check">
-				<input class="form-check-input" type="checkbox" value="#9C56B8" id="amenities">
-				<label class="form-check-label" for="flexCheckDefault">BLOCK 28</label>
-			</div>
-			<div class="form-check">
-				<input class="form-check-input" type="checkbox" value="#1FCE6D" id="available">
-				<label class="form-check-label" for="flexCheckDefault">BLOCK 29</label>
-			</div>
-			<div class="form-check">
-				<input class="form-check-input" type="checkbox" value="#E94B35" id="occupied">
-				<label class="form-check-label" for="flexCheckDefault">BLOCK 30</label>
-			</div>
-			<div class="form-check">
-				<input class="form-check-input" type="checkbox" value="#2C97DE" id="house">
-				<label class="form-check-label" for="flexCheckDefault">BLOCK 31</label>
-			</div>
-			<div class="form-check">
-				<input class="form-check-input" type="checkbox" value="#F2C500" id="undisclosed">
-				<label class="form-check-label" for="flexCheckDefault">BLOCK 32</label>
-			</div>
-			<div class="form-check">
-				<input class="form-check-input" type="checkbox" value="#E87E04" id="foreclosed">
-				<label class="form-check-label" for="flexCheckDefault">BLOCK 33</label>
-			</div>
-			<div class="form-check">
-				<input class="form-check-input" type="checkbox" value="#33495F" id="open">
-				<label class="form-check-label" for="flexCheckDefault">BLOCK 34</label>
-			</div>
-			<div class="form-check">
-				<input class="form-check-input" type="checkbox" value="#9C56B8" id="amenities">
-				<label class="form-check-label" for="flexCheckDefault">BLOCK 35</label>
-			</div>
-			<div class="form-check">
-				<input class="form-check-input" type="checkbox" value="#1FCE6D" id="available">
-				<label class="form-check-label" for="flexCheckDefault">BLOCK 36</label>
-			</div>
-			<div class="form-check">
-				<input class="form-check-input" type="checkbox" value="#E94B35" id="occupied">
-				<label class="form-check-label" for="flexCheckDefault">BLOCK 37</label>
-			</div>
-			<div class="form-check">
-				<input class="form-check-input" type="checkbox" value="#2C97DE" id="house">
-				<label class="form-check-label" for="flexCheckDefault">BLOCK 38</label>
-			</div>
-			<div class="form-check">
-				<input class="form-check-input" type="checkbox" value="#F2C500" id="undisclosed">
-				<label class="form-check-label" for="flexCheckDefault">BLOCK 39</label>
-			</div>
-		</div>
 	</div>
 
 	<div class="map">
@@ -5053,7 +4895,146 @@
 			</svg>
 
 		</div>
-
+		<div class="block-number ">
+			<table class="table">
+				<tbody>
+					<tr>
+						<td scope="row"><input class="form-check-input" type="checkbox" value="#1FCE6D" id="block-1">
+							<label class="form-check-label" for="flexCheckDefault">BLOCK 1</label>
+						</td>
+						<td><input class="form-check-input" type="checkbox" value="#E94B35" id="block-2">
+							<label class="form-check-label" for="flexCheckDefault">BLOCK 2</label>
+						</td>
+						<td><input class="form-check-input" type="checkbox" value="#2C97DE" id="block-3">
+							<label class="form-check-label" for="flexCheckDefault">BLOCK 3</label>
+						</td>
+						<td> <input class="form-check-input" type="checkbox" value="#F2C500" id="block-4">
+							<label class="form-check-label" for="flexCheckDefault">BLOCK 4</label>
+						</td>
+						<td> <input class="form-check-input" type="checkbox" value="#F2C500" id="block-5">
+							<label class="form-check-label" for="flexCheckDefault">BLOCK 5</label>
+						</td>
+						<td> <input class="form-check-input" type="checkbox" value="#F2C500" id="block-6">
+							<label class="form-check-label" for="flexCheckDefault">BLOCK 6</label>
+						</td>
+					</tr>
+					<tr>
+						<td scope="row"><input class="form-check-input" type="checkbox" value="#F2C500" id="block-7">
+							<label class="form-check-label" for="flexCheckDefault">BLOCK 7</label>
+						</td>
+						<td><input class="form-check-input" type="checkbox" value="#F2C500" id="block-8">
+							<label class="form-check-label" for="flexCheckDefault">BLOCK 8</label>
+						</td>
+						<td><input class="form-check-input" type="checkbox" value="#F2C500" id="block-9">
+							<label class="form-check-label" for="flexCheckDefault">BLOCK 9</label>
+						</td>
+						<td><input class="form-check-input" type="checkbox" value="#F2C500" id="block-10">
+							<label class="form-check-label" for="flexCheckDefault">BLOCK 10</label>
+						</td>
+						<td><input class="form-check-input" type="checkbox" value="#F2C500" id="block-11">
+							<label class="form-check-label" for="flexCheckDefault">BLOCK 11</label>
+						</td>
+						<td><input class="form-check-input" type="checkbox" value="#F2C500" id="block-12">
+							<label class="form-check-label" for="flexCheckDefault">BLOCK 12</label>
+						</td>
+					</tr>
+					<tr>
+						<td scope="row"><input class="form-check-input" type="checkbox" value="#F2C500" id="block-13">
+							<label class="form-check-label" for="flexCheckDefault">BLOCK 13</label>
+						</td>
+						<td><input class="form-check-input" type="checkbox" value="#F2C500" id="block-14">
+							<label class="form-check-label" for="flexCheckDefault">BLOCK 14</label>
+						</td>
+						<td><input class="form-check-input" type="checkbox" value="#F2C500" id="block-15">
+							<label class="form-check-label" for="flexCheckDefault">BLOCK 15</label>
+						</td>
+						<td><input class="form-check-input" type="checkbox" value="#F2C500" id="block-16">
+							<label class="form-check-label" for="flexCheckDefault">BLOCK 16</label>
+						</td>
+						<td><input class="form-check-input" type="checkbox" value="#F2C500" id="block-17">
+							<label class="form-check-label" for="flexCheckDefault">BLOCK 17</label>
+						</td>
+						<td><input class="form-check-input" type="checkbox" value="#F2C500" id="block-18">
+							<label class="form-check-label" for="flexCheckDefault">BLOCK 18</label>
+						</td>
+					</tr>
+					<tr>
+						<td scope="row"><input class="form-check-input" type="checkbox" value="#F2C500" id="block-19">
+							<label class="form-check-label" for="flexCheckDefault">BLOCK 19</label>
+						</td>
+						<td><input class="form-check-input" type="checkbox" value="#F2C500" id="block-20">
+							<label class="form-check-label" for="flexCheckDefault">BLOCK 20</label>
+						</td>
+						<td><input class="form-check-input" type="checkbox" value="#F2C500" id="block-21">
+							<label class="form-check-label" for="flexCheckDefault">BLOCK 21</label>
+						</td>
+						<td><input class="form-check-input" type="checkbox" value="#F2C500" id="block-22">
+							<label class="form-check-label" for="flexCheckDefault">BLOCK 22</label>
+						</td>
+						<td><input class="form-check-input" type="checkbox" value="#F2C500" id="block-23">
+							<label class="form-check-label" for="flexCheckDefault">BLOCK 23</label>
+						</td>
+						<td><input class="form-check-input" type="checkbox" value="#F2C500" id="block-24">
+							<label class="form-check-label" for="flexCheckDefault">BLOCK 24</label>
+						</td>
+					</tr>
+					<tr>
+						<td scope="row"><input class="form-check-input" type="checkbox" value="#F2C500" id="block-25">
+							<label class="form-check-label" for="flexCheckDefault">BLOCK 25</label>
+						</td>
+						<td><input class="form-check-input" type="checkbox" value="#F2C500" id="block-26">
+							<label class="form-check-label" for="flexCheckDefault">BLOCK 26</label>
+						</td>
+						<td><input class="form-check-input" type="checkbox" value="#F2C500" id="block-27">
+							<label class="form-check-label" for="flexCheckDefault">BLOCK 27</label>
+						</td>
+						<td><input class="form-check-input" type="checkbox" value="#F2C500" id="block-28">
+							<label class="form-check-label" for="flexCheckDefault">BLOCK 28</label>
+						</td>
+						<td><input class="form-check-input" type="checkbox" value="#F2C500" id="block-29">
+							<label class="form-check-label" for="flexCheckDefault">BLOCK 29</label>
+						</td>
+						<td><input class="form-check-input" type="checkbox" value="#F2C500" id="block-30">
+							<label class="form-check-label" for="flexCheckDefault">BLOCK 30</label>
+						</td>
+					</tr>
+					<tr>
+						<td scope="row"><input class="form-check-input" type="checkbox" value="#F2C500" id="block-31">
+							<label class="form-check-label" for="flexCheckDefault">BLOCK 31</label>
+						</td>
+						<td><input class="form-check-input" type="checkbox" value="#F2C500" id="block-32">
+							<label class="form-check-label" for="flexCheckDefault">BLOCK 32</label>
+						</td>
+						<td><input class="form-check-input" type="checkbox" value="#F2C500" id="block-33">
+							<label class="form-check-label" for="flexCheckDefault">BLOCK 33</label>
+						</td> 
+						<td><input class="form-check-input" type="checkbox" value="#F2C500" id="block-34">
+							<label class="form-check-label" for="flexCheckDefault">BLOCK 34</label>
+						</td>
+						<td><input class="form-check-input" type="checkbox" value="#F2C500" id="block-35">
+							<label class="form-check-label" for="flexCheckDefault">BLOCK 35</label>
+						</td>
+						<td><input class="form-check-input" type="checkbox" value="#F2C500" id="block-36">
+							<label class="form-check-label" for="flexCheckDefault">BLOCK 36</label>
+						</td>
+					</tr>
+					<tr>
+						<td scope="row"><input class="form-check-input" type="checkbox" value="#F2C500" id="block-37">
+							<label class="form-check-label" for="flexCheckDefault">BLOCK 37</label>
+						</td>
+						<td><input class="form-check-input" type="checkbox" value="#F2C500" id="block-38">
+							<label class="form-check-label" for="flexCheckDefault">BLOCK 38</label>
+						</td>
+						<td><input class="form-check-input" type="checkbox" value="#F2C500" id="block-39">
+							<label class="form-check-label" for="flexCheckDefault">BLOCK 39</label>
+						</td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
 	</div>
 
 	<div class="lot-info">
@@ -5297,7 +5278,7 @@
 
 			$(document).ready(function() {
 				var newColor = "green";
-				var newWidth = "5";
+				var newWidth = "10";
 				var previousPath;
 				$("#searchMap").on("input", function() {
 					if (previousPath) {
