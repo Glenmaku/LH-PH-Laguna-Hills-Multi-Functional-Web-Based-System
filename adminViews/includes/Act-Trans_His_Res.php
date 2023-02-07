@@ -22,7 +22,7 @@ if(isset($_POST['Reservations_Rec'])){
       </tr>
     </thead>
     <tbody>';
-    $reservations_sql = "SELECT * FROM transac_reserv_records ORDER BY records_transaction_no LIMIT $start_from, $records_per_page";
+    $reservations_sql = "SELECT * FROM transac_reserv_records ORDER BY records_transaction_no DESC LIMIT $start_from, $records_per_page";
     $reservations_result = mysqli_query($con,$reservations_sql);
 
     while($row=mysqli_fetch_assoc($reservations_result)){

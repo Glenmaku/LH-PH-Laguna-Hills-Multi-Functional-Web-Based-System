@@ -23,7 +23,7 @@ if(isset($_POST['Assoc_Rec'])){
     </thead>
     <tbody>';
     
-    $assoc_sql = "SELECT * FROM transaction_assoc ORDER BY transaction_num LIMIT $start_from, $records_per_page";
+    $assoc_sql = "SELECT * FROM transaction_assoc ORDER BY transaction_num DESC LIMIT $start_from, $records_per_page";
     $assoc_result = mysqli_query($con,$assoc_sql);
 
     while($row=mysqli_fetch_assoc($assoc_result)){

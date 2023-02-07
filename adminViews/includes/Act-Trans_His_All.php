@@ -16,7 +16,7 @@ if(isset($_POST['AllTransaction_Rec'])){
       </tr>
     </thead>
     <tbody>';
-    $alltransac_sql = "SELECT * FROM all_transaction ORDER BY transaction_num LIMIT $start_from, $records_per_page";
+    $alltransac_sql = "SELECT * FROM all_transaction ORDER BY transaction_num DESC LIMIT $start_from, $records_per_page";
     $alltransac_result = mysqli_query($con,$alltransac_sql);
 
     while($row=mysqli_fetch_assoc($alltransac_result)){

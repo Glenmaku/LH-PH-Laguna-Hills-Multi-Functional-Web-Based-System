@@ -22,24 +22,29 @@ if(isset($_POST['Others_Rec'])){
   </thead>
   <tbody>';
   
-  $others_sql = "SELECT * FROM transac_other_total ORDER BY transaction_no LIMIT $start_from, $records_per_page";
+  $others_sql = "SELECT * FROM transac_other ORDER BY transaction_no DESC LIMIT $start_from, $records_per_page";
   $others_result = mysqli_query($con,$others_sql);
 
   while($row=mysqli_fetch_assoc($others_result)){
     $others_ID = $row['transaction_no'];
     $others_name =	$row['t_name'];
-    $payments = $row['other_payment'];
-    $change = $row['other_change'];
-    $rem_bal = $row['other_remaining_balance'];
-    $remarks = $row['other_remarks'];
-    $otherss_date = $row['time_created'];
+    $category = $row['category'];
+    $quantity = $row['quantity'];
+    $price = $row['price'];
+    $subtotal = $row['subtotal'];
+  //  $payments = $row['payment'];
+    $otherss_date = $row['created_at'];
+   // $change = $row['other_change'];
+   // $rem_bal = $row['other_remaining_balance'];
+   // $remarks = $row['other_remarks'];
+   // $otherss_date = $row['time_created'];
     $Otable .= '  <tr>
                             <td>'.$others_ID.'</td>
                             <td>'.$others_name.'</td>
-                             <td>'.$payments.'</td>
-                             <td>'.$change.'</td>
-                             <td>'.$rem_bal.'</td>
-                             <td>'.$remarks.'</td>
+                            <td>'.$category.'</td>
+                             <td>'.$quantity.'</td>
+                             <td>'.$price.'</td>
+                             <td>'.$subtotal.'</td>
                              <td>'.$otherss_date.'</td>
                            
                             
