@@ -879,8 +879,6 @@
                     }
                 });
 
-
-
                 //SUBMISSION OF TRANSACTION
 
 
@@ -944,6 +942,13 @@
                         },
                         success: function(data) {
                             $('.payment').html(data);
+                            $.ajax({
+                                    url: 'adminViews/includes/act-transact.php',
+                                    type: 'post', //path to PHP script
+                                    success: function(data) {
+                                    $("#trans-no").val(data); //update input field with response from server
+                                    }               
+                                 });
                         }
                     });
                 }
@@ -957,6 +962,13 @@
                         },
                         success: function(data) {
                             $('.payment').html(data);
+                            $.ajax({
+                                    url: 'adminViews/includes/act-transact.php',
+                                    type: 'post', //path to PHP script
+                                    success: function(data) {
+                                    $("#trans-no").val(data); //update input field with response from server
+                                    }               
+                                 });
                         }
                     });
                 }
