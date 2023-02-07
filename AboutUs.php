@@ -1,5 +1,15 @@
 <?php require_once('header.php'); ?>
 <?php require_once('includes/connection.php');?>
+<style>
+img.img-homeowners {
+	max-width: 100%;
+	height: auto;
+  transition: transform .3s;
+  }
+  img.img-homeowners:hover {
+  transform: scale(1.1);
+}
+  </style>
 
 <!--UPPER BANNER-->
 <div class=" Top TopAbout Topbanner container-fluid" >
@@ -24,6 +34,15 @@
 
     </div>
   </section>
+  <style>
+.iconbigs {
+	transition: all 0.1s ease-in-out;
+  }
+  
+  .iconbigs:hover {
+	transform: translateY(-10px);
+  }
+  </style>
     <div class="d-flex flex-wrap topdivhighlightsss ">
       <div class="divhighlightsss d-block reveal">
         <div class="iconbigs align-self-center expands"><i class='bx bxs-flag-alt'></i></div>
@@ -63,8 +82,9 @@
 <section class=" section1 AboutHomeowners reveal">
   <h2 class="">Laguna Hills Subdivision</h2>
   <h1 class="">Homeowner Association, Inc.</h1>
-  <p class="">Laguna Hills Subdivision is managed by our own Community, the Laguna Hills Homeowners Association(LHSHOA). Where, we take the lead in making the Subdivision a harmonious and an enjoyable place. With joint effort, we keep the subdivision in a good and clean state.</p>
+  <p class="">The Laguna Hills Subdivision is a tight-knit community that takes pride in its self-governance through the Laguna Hills Homeowners Association (LHSHOA). This dedicated group of residents works tirelessly to maintain a peaceful and enjoyable atmosphere within the subdivision. By coming together and putting in a collective effort, the residents of Laguna Hills are able to keep the neighborhood well-maintained and visually appealing for all who live there. The LHSHOA plays a crucial role in ensuring the success of the community by providing leadership and direction. Whether it's organizing neighborhood events, monitoring the appearance of the community, or taking care of essential maintenance tasks, the LHSHOA is dedicated to creating a harmonious and well-functioning neighborhood for all residents to enjoy.</p>
   
+  <img class="img-homeowners" src="Images/homeownerss.jpg">
 </section>
  <!--FEEDBACKS-->
  <section class="section1 minheight  text-center minheight section3 align-content-center justify-content-center ">
