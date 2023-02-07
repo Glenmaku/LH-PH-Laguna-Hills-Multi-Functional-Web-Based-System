@@ -36,7 +36,7 @@ if (!empty($_SESSION['owner_I_D'])) {
     include 'homeownerViews/homeownerHeader.php';
     include 'homeownerViews/homeownerSidebar.php';
     ?>
-    <div class="allContent">
+    <div class="ownerAllContent">
         <div class="home-dashboard">
             <div class="dashboard-title">
                 <h1>DASHBOARD</h1>

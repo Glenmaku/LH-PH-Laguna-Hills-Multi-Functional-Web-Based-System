@@ -33,7 +33,7 @@ function showMap(){  //sidebar
 }
 
 
-function showAllAdminRecord(){  //sidebar
+function showAllAdminRecord(){  
     $.ajax({
         url:"./adminViews/AdminAccountRecord.php",
         method:"post",
@@ -44,7 +44,7 @@ function showAllAdminRecord(){  //sidebar
     });
 }
 
-function showAllOwnerRecord(){  //sidebar
+function showAllOwnerRecord(){  
     $.ajax({
         url:"./adminViews/OwnerAccountRecord.php",
         method:"post",
@@ -98,7 +98,7 @@ function showMessage(){  //sidebar
         method:"post",
         data:{record:1},
         success:function(data){
-            $('.allContent').html(data);
+            $('.ownerAllContent').html(data);
         }
     });
 }
@@ -108,7 +108,7 @@ function showHomeMap(){  //sidebar
         method:"post",
         data:{record:1},
         success:function(data){
-            $('.allContent').html(data);
+            $('.ownerAllContent').html(data);
         }
     });
 }
@@ -119,7 +119,7 @@ function showHomeTrans(){  //sidebar
         method:"post",
         data:{record:1},
         success:function(data){
-            $('.allContent').html(data);
+            $('.ownerAllContent').html(data);
         }
     });
 }
@@ -130,7 +130,7 @@ function showHomeAnnounce(){  //sidebar
         method:"post",
         data:{record:1},
         success:function(data){
-            $('.allContent').html(data);
+            $('.ownerAllContent').html(data);
         }
     });
 }
