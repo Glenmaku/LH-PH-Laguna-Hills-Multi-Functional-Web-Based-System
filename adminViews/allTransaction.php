@@ -208,10 +208,10 @@
                                 <tbody>
                                     <tr>
                                         <td>1</td>
-                                        <td><input type="text" class="form-control" id="o_category" name="field1" /></td>
-                                        <td><input type="text" class="form-control o_quantity" id="o_quantity" name="field2" /></td>
-                                        <td><input type="text" class="form-control o_price" id="o_price" name="field3" /></td>
-                                        <td><input type="text" class="form-control o_subtotal" id="o_subtotal" name="field4" /></td>
+                                        <td><input type="text" class="form-control" id="o_category" name="field1" required/></td>
+                                        <td><input type="text" class="form-control o_quantity" id="o_quantity" name="field2" required/></td>
+                                        <td><input type="text" class="form-control o_price" id="o_price" name="field3" required/></td>
+                                        <td><input type="text" class="form-control o_subtotal" id="o_subtotal" name="field4" required/></td>
                                     </tr>
 
                                     <tr>
