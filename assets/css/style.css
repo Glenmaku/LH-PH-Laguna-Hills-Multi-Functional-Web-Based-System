@@ -1847,11 +1847,19 @@ svg{
  .message-history .nav-tabs button{
     font-family: 'Raleway', sans-serif;
     font-weight: 700;
-    color: var(--white);
+    color: var(--darkgreen);
     text-transform: uppercase;
     text-decoration: none;
-    background-color: var(--darkgreen);
  }
+
+/*notif*/
+ span #notif-inq {
+    color: red;
+}
+
+
+
+
 
  @media only screen and (max-width: 940px) {
     .ownerAllContent{
