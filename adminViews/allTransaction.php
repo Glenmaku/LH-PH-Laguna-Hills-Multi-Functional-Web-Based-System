@@ -932,6 +932,16 @@
                                     $("#trans-no").val(data); //update input field with response from server
                                     }               
                                  });
+                                 $.ajax({
+                                    type: 'POST',
+                                    url: 'adminViews/includes/act-row-sum.php',
+                                    success: function(response){
+                                        console.log(response);
+                                    },
+                                    error: function(XMLHttpRequest, textStatus, errorThrown) {
+                                        console.log(textStatus, errorThrown);
+                                    }
+                                });
                             }
                         });
                         
