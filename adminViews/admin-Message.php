@@ -10,9 +10,12 @@
             <div class="message-history">
                 <nav>
                     <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                        <button class="nav-link active" id="all-transaction-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true" onclick="get_ContactData()">Inquiries</button>
 
-                        <button class="nav-link" id="association-dues-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false" onclick="get_HomeMessage()">Homeowners Messages</button>
+                        <button class="nav-link active" id="all-transaction-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true" onclick="get_ContactData()">Inquiries <i id="notif-inq"></i></button>
+                        
+
+                        <button class="nav-link" id="association-dues-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false" onclick="get_HomeMessage()">Homeowners Messages <i id="notif-home"></i></button>
+                        
                     </div>
                 </nav>
 
@@ -354,7 +357,7 @@
             var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
-                    document.getElementById("all-transaction-tab").innerHTML = this.responseText;
+                    document.getElementById("notif-inq").innerHTML = this.responseText;
                 }
             };
             xhttp.open("GET", "adminViews/includes/notification_number-inquiries.php", true);
@@ -367,7 +370,7 @@
             var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
-                    document.getElementById("association-dues-tab").innerHTML = this.responseText;
+                    document.getElementById("notif-home").innerHTML = this.responseText;
                 }
             };
             xhttp.open("GET", "adminViews/includes/notification_number_homeowners.php", true);
