@@ -828,13 +828,20 @@
 
 
                 $(document).ready(function() {
-                    $("#assoc-reset").click(function() {
-                        $("input[type='text']").val("0");
-                        $("input[type='number']").val("0");
-                        $("input[type='text'][list='blkandlots']").val("");
-                        $("textarea").val("");
-                        $("input[type='checkbox']").prop("checked", false);
-                    });
+                    $("#assoc_reset").click(function() {
+                    $("#client-name").val("");
+                    $("#property").val("");
+                    $("#total-balance").val("0");
+                    $("#selected-balance").val("0");
+                    $("#a-interest").val("0");
+                    $("#a-discount").val("0");
+                    $("#balance-total").val("0");
+                    $("#all-total").val("0");
+                    $("#a-payment").val("0");
+                    $("#ifadvanced").prop("checked", false);
+                    $("#a-remaining-balance").val("");
+                    $("#a-remarks").val("");
+  });
                 });
 
                 $(document).ready(function() {
