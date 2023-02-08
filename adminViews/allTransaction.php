@@ -751,6 +751,13 @@
                 var hide_other = document.getElementById("hide_other");
                 // reset form ng association part
                 hide_assoc.addEventListener("click", function() {
+                    $('#panelsStayOpen-collapseOne').removeClass('collapse hide').addClass('collapse show');
+                    $('#panelsStayOpen-collapseTwo').removeClass('collapse show').addClass('collapse hide');
+                    $('#panelsStayOpen-collapseThree').removeClass('collapse show').addClass('collapse hide');
+
+                    $('#hide_assoc_i').removeClass('fa-chevron-down').addClass('fa-chevron-up');
+                    $('#hide_reserv_i').removeClass('fa-chevron-up').addClass('fa-chevron-down');
+                    $('#hide_other_i').removeClass('fa-chevron-up').addClass('fa-chevron-down');
 
                     $("#property").val("");
                     $("#selected-balance").val("0");
@@ -763,6 +770,13 @@
 
                 // reset form ng OTHER SERVICES part
                 hide_reserv.addEventListener("click", function() {
+                    $('#panelsStayOpen-collapseOne').removeClass('collapse show').addClass('collapse hide');
+                    $('#panelsStayOpen-collapseTwo').removeClass('collapse hide').addClass('collapse show');
+                    $('#panelsStayOpen-collapseThree').removeClass('collapse show').addClass('collapse hide');
+
+                    $('#hide_assoc_i').removeClass('fa-chevron-up').addClass('fa-chevron-down');
+                    $('#hide_reserv_i').removeClass('fa-chevron-down').addClass('fa-chevron-up');
+                    $('#hide_other_i').removeClass('fa-chevron-up').addClass('fa-chevron-down');
 
                     $("#from-reservation-date").val("");
                     $("#to-reservation-date").val("");
@@ -786,6 +800,13 @@
 
                 // reset form ng OTHER SERVICES part
                 hide_other.addEventListener("click", function() {
+                    $('#panelsStayOpen-collapseOne').removeClass('collapse show').addClass('collapse hide');
+                    $('#panelsStayOpen-collapseTwo').removeClass('collapse show').addClass('collapse hide');
+                    $('#panelsStayOpen-collapseThree').removeClass('collapse hide').addClass('collapse show');
+
+                    $('#hide_assoc_i').removeClass('fa-chevron-up').addClass('fa-chevron-down');
+                    $('#hide_reserv_i').removeClass('fa-chevron-up').addClass('fa-chevron-down');
+                    $('#hide_other_i').removeClass('fa-chevron-down').addClass('fa-chevron-up');
 
                     $("#o_subtotal").val("");
                     $("#o_category").val("");
