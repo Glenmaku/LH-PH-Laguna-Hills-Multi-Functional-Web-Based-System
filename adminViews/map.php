@@ -5080,10 +5080,6 @@
 					<label class="form-check-label" for="flexCheckDefault">With House</label>
 				</div>
 				<div class="form-check">
-					<input class="form-check-input" type="checkbox" value="#F2C500" id="undisclosed">
-					<label class="form-check-label" for="flexCheckDefault">Property Undisclosed</label>
-				</div>
-				<div class="form-check">
 					<input class="form-check-input" type="checkbox" value="#E87E04" id="foreclosed">
 					<label class="form-check-label" for="flexCheckDefault">Foreclosed</label>
 				</div>
