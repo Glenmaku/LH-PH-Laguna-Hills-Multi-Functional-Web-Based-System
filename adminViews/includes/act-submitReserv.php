@@ -6,8 +6,8 @@
     <input type="text" class="form-control reserv_payment" name="reserv_payment" id="reserv_payment" value="0" placeholder="Enter amount...">
     <span>Change:</span>
     <input type="text" class="form-control reserv_change" name="reserv_change" id="reserv_change" value="0" disabled>
-    <span>Remaining Balance:</span>
-    <input type="text" class="form-control reserv_remaining_balance" name="reserv_remaining_balance" id="reserv_remaining_balance" value="0" disabled>
+    <span hidden>Remaining Balance:</span>
+    <input type="text" class="form-control reserv_remaining_balance" name="reserv_remaining_balance" id="reserv_remaining_balance" value="0" disabled hidden>
     <span>Remarks:</span>
     <textarea id="reserv_remark" placeholder="Type here.."></textarea>
     <button type="submit" id="reserv_submit" class="btn btn-success reserv_submit">Submit</button>
@@ -164,46 +164,70 @@
         success: function(data, status) {
           // function to display data
           alert(data);
-          $.ajax({
+          if (data === "Successfully recorded transaction") {
+                    $("#client-name").val("");
+                    $("#from-reservation-date").val("");
+                    $("#to-reservation-date").val("");
+                    $("#in-radio-hall1").val("");
+                    $("#in-radio-hall2").val("");
+                    $("#in-radio-hall3").val("0");
+
+                    $("#in-radio-court1").val("");
+                    $("#in-radio-court2").val("");
+                    $("#in-radio-court3").val("0");
+
+                    $("#in-radio-miming1").val("");
+                    $("#in-radio-miming2").val("");
+                    $("#in-radio-miming3").val("0");
+                    $("#r-discount").val("0");
+                
+                    $("#reserv_total").val("0");
+                    $("#reserv_payment").val("0");
+                    $("#reserv_change").val("0");
+                    $("#reserv_remark").val("0");
+                    $("#radio-hall").prop("checked", false);
+                    $("#radio-court").prop("checked", false);
+                    $("#radio-miming").prop("checked", false); }
+                     $.ajax({
                         url: 'adminViews/includes/act-transact.php',
                         type: 'post', //path to PHP script
                         success: function(data) {
                             $("#trans-no").val(data); //update input field with response from server
                         }
                     });
+                       
         }
       });
     }
-
     // end OTHER TRANSACTION SECTION - INSERT DATA
 
     // clear the forms after pressing the submit  
     //$("#trans-no").val("");
-   // $("#date").val("");
-    $("#client-name").val("");
+  //  // $("#date").val("");
+  //   $("#client-name").val("");
 
-    $("#from-reservation-date").val("");
-    $("#to-reservation-date").val("");
-    $("#in-radio-hall1").val("");
-    $("#in-radio-hall2").val("");
-    $("#in-radio-hall3").val("0");
+  //   $("#from-reservation-date").val("");
+  //   $("#to-reservation-date").val("");
+  //   $("#in-radio-hall1").val("");
+  //   $("#in-radio-hall2").val("");
+  //   $("#in-radio-hall3").val("0");
 
-    $("#in-radio-court1").val("");
-    $("#in-radio-court2").val("");
-    $("#in-radio-court3").val("0");
+  //   $("#in-radio-court1").val("");
+  //   $("#in-radio-court2").val("");
+  //   $("#in-radio-court3").val("0");
 
-    $("#in-radio-miming1").val("");
-    $("#in-radio-miming2").val("");
-    $("#in-radio-miming3").val("0");
-    $("#r-discount").val("0");
+  //   $("#in-radio-miming1").val("");
+  //   $("#in-radio-miming2").val("");
+  //   $("#in-radio-miming3").val("0");
+  //   $("#r-discount").val("0");
  
-    $("#reserv_total").val("0");
-    $("#reserv_payment").val("0");
-    $("#reserv_change").val("0");
-    $("#reserv_remark").val("0");
-    $("#radio-hall").prop("checked", false);
-    $("#radio-court").prop("checked", false);
-    $("#radio-miming").prop("checked", false);
+  //   $("#reserv_total").val("0");
+  //   $("#reserv_payment").val("0");
+  //   $("#reserv_change").val("0");
+  //   $("#reserv_remark").val("0");
+  //   $("#radio-hall").prop("checked", false);
+  //   $("#radio-court").prop("checked", false);
+  //   $("#radio-miming").prop("checked", false);
 
   }
 

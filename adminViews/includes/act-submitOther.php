@@ -6,8 +6,8 @@
     <input type="text" class="form-control" name="other_payment" id="other_payment" value="0" placeholder="Enter amount...">
     <span>Change:</span>
     <input type="text" class="form-control" name="other_change" id="other_change" value="0" disabled>
-    <span>Remaining Balance:</span>
-    <input type="text" class="form-control" name="other_remaining_balance" id="other_remaining_balance" value="0" disabled>
+    <span hidden>Remaining Balance:</span>
+    <input type="text" class="form-control" name="other_remaining_balance" id="other_remaining_balance" value="0" disabled hidden >
     <span>Remarks:</span>
     <textarea id="other_remarks" placeholder="Type here.."></textarea>
     <button type="other_submit" class="btn btn-success other_submit" id="other_submit">Submit</button>
@@ -21,12 +21,8 @@
   $(document).ready(function() {
     $("#other_submit").on("click", other_add_data);
   });
-
-  function other_add_data() {
-    // OTHER TRANSACTION SECTION - INSERT DATA 
-
-
-    var data = {};
+  function other_add_new_data(){
+    var data = {}; 
     data.transaction_number = $("#trans-no").val();
     data.name = $("#client-name").val();
     data.services = [];
@@ -81,66 +77,12 @@
     }, function(response) {
       console.log(response);
     });
+  }
 
 
-    // if ($("#o_category").val().trim() && !isNaN($("#o_quantity").val().trim()) && !isNaN($("#o_price").val().trim()) && !isNaN($("#o_subtotal").val().trim())) {
-    //     var data = {};
-    //     data.transaction_number = $("#trans-no").val();
-    //     data.name = $("#client-name").val();
-    //     data.services = [];
-
-    //     data.services.push({
-    //         category: $("#o_category").val(),
-    //         quantity: $("#o_quantity").val(),
-    //         price: $("#o_price").val(),
-    //         subtotal: $("#o_subtotal").val()
-    //     });
-    //     data.services.push({
-    //         category: $("#o_category1").val(),
-    //         quantity: $("#o_quantity1").val(),
-    //         price: $("#o_price1").val(),
-    //         subtotal: $("#o_subtotal1").val()
-    //     });
-    //     data.services.push({
-    //         category: $("#o_category2").val(),
-    //         quantity: $("#o_quantity2").val(),
-    //         price: $("#o_price2").val(),
-    //         subtotal: $("#o_subtotal2").val()
-    //     });
-    //     data.services.push({
-    //         category: $("#o_category3").val(),
-    //         quantity: $("#o_quantity3").val(),
-    //         price: $("#o_price3").val(),
-    //         subtotal: $("#o_subtotal3").val()
-    //     });
-    //     data.services.push({
-    //         category: $("#o_category4").val(),
-    //         quantity: $("#o_quantity4").val(),
-    //         price: $("#o_price4").val(),
-    //         subtotal: $("#o_subtotal4").val()
-    //     });
-
-
-
-    //     $.post("adminViews/insert-data-transaction-other.php", {
-    //         data: data
-    //     }, function(response) {
-    //         console.log(response);
-    //     });
-    // } else {
-    //     console.log("no input in the other services layer 1");
-    //     if (isNaN($("#o_quantity").val().trim())) {
-    //         alert("Quantity must be a number.");
-    //     }
-    //     if (isNaN($("#o_price").val().trim())) {
-    //         alert("Price must be a number.");
-    //     }
-    //     if (isNaN($("#o_subtotal").val().trim())) {
-    //         alert("Subtotal must be a number.");
-    //     }
-    // }
-    //<------------------------------------------------------------>
-
+  function other_add_data() {
+    // OTHER TRANSACTION SECTION - INSERT DATA 
+    
     // other-total sql
     var transaction_number_all = $("#trans-no").val();
     var name_all = $("#client-name").val();
@@ -165,6 +107,8 @@
       success: function(data, status) {
         // function to display data
         alert(data);
+        if (data === "Successfully recorded transaction") {
+          other_add_new_data();
           $("#other_remaining_balance").val("0");
           $("#other_total").val("0");
           $("#other_payment").val("0");
@@ -189,15 +133,14 @@
             $("#o_price" + i).val("");
             $("#o_subtotal" + i).val("");
           }
+        }
         $.ajax({
           url: 'adminViews/includes/act-transact.php',
           type: 'post', //path to PHP script
           success: function(data) {
           $("#trans-no").val(data); //update input field with response from server
           }     
-
         });                          
-
       }
     });
   }

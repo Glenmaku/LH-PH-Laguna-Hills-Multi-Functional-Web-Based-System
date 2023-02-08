@@ -36,9 +36,16 @@ $trans_no_all_send = $_POST['trans_no_all_send'];
         $other_change_all_send = $_POST['other_change_all_send'];
         $other_remaining_balance_all_send = $_POST['other_remaining_balance_all_send'];
         $other_remarks_all_send = $_POST['other_remarks_all_send'];
+
     if(isset($_POST['trans_no_all_send']) && isset($_POST['name_all_send']) && isset($_POST['total_all_send']) && isset($_POST['other_payment_all_send'])){
         
-
+   if (!$other_payment_all_send || $other_payment_all_send == 0) {
+        echo "Please input a valid payment amount.";
+    } else if ($total_all_send > $other_payment_all_send) {
+        echo "Please input a valid payment amount.";
+    } else if (!$name_all_send) {
+        echo "Name field cannot be empty. Please input a name.";
+    } else {
     $sql = "INSERT into transac_other_total (transaction_no,t_name, other_total, other_payment, other_change, other_remaining_balance, other_remarks) values ('$trans_no_all_send','$name_all_send','$total_all_send', '$other_payment_all_send','$other_change_all_send', '$other_remaining_balance_all_send', '$other_remarks_all_send')";
     $result = mysqli_query($con,$sql);
 
@@ -46,10 +53,10 @@ $trans_no_all_send = $_POST['trans_no_all_send'];
     $result2 = mysqli_query($con,$sql2);
 
     if($result && $result2){
-        echo "Successfully recorded transaction ".$trans_no_all_send;
+        echo "Successfully recorded transaction";
     } 
     else {
         echo "Transaction unsuccessful. Please try again.";
-    }
+    }}
 }
 ?>
