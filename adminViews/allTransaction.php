@@ -963,7 +963,8 @@
                             },
                             success: function(data) {
                                 alert(data);
-                                $("#assoc-reset").trigger("click");
+                                if(data=== "Successfully recorded transaction"){
+                                $("#assoc-reset").trigger("click");}
 
                                 $.ajax({
                                     url: 'adminViews/includes/act-transact.php',
