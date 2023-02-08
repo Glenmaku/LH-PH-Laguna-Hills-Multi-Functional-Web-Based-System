@@ -5052,9 +5052,9 @@
 				</div>
 				<div id="lot-information-map" class="lot-information-map">
 				</div>
-				<div id="map-assoc">
+				<div id="map-assoc" hidden>
 				</div>
-				<div id="owner-information">
+				<div id="owner-information" hidden>
 				</div>
 			</div>
 		</div>
@@ -5228,10 +5228,10 @@
 				$("#lot-information-btn").click(function() {
 					$("#lot-information-map").show();
 					$("#lot-information-map-t").show();
-					$("#map-assoc").hide();
+					$("#map-assoc").prop("hidden", true);
 					$("#map-assoc-t").hide();
 					$("#map-assoc-t").prop("hidden", true);
-					$("#owner-information").hide();
+					$("#owner-information").prop("hidden", true);
 					$("#owner-information-t").hide();
 					$("#owner-information-t").prop("hidden", true);
 					$(".statuslotss").show();
@@ -5243,10 +5243,10 @@
 				$("#assoc-btn").click(function() {
 					$("#lot-information-map").hide();
 					$("#lot-information-map-t").hide();
-					$("#map-assoc").show();
+					$("#map-assoc").prop("hidden", false);
 					$("#map-assoc-t").show();
 					$("#map-assoc-t").prop("hidden", false);
-					$("#owner-information").hide();
+					$("#owner-information").prop("hidden", true);
 					$("#owner-information-t").hide();
 					$("#owner-information-t").prop("hidden", true);
 					$(".statusassocss").show();
@@ -5257,10 +5257,10 @@
 				$("#owner-information-btn").click(function() {
 					$("#lot-information-map").hide();
 					$("#lot-information-map-t").hide();
-					$("#map-assoc").hide();
+					$("#map-assoc").prop("hidden", true);
 					$("#map-assoc-t").hide();
 					$("#map-assoc-t").prop("hidden", true);
-					$("#owner-information").show();
+					$("#owner-information").prop("hidden", false);
 					$("#owner-information-t").show();
 					$("#owner-information-t").prop("hidden", false);
 					$(".statuslotss").hide();
