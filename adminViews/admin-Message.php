@@ -11,10 +11,10 @@
                 <nav>
                     <div class="nav nav-tabs" id="nav-tab" role="tablist">
 
-                        <button class="nav-link active" id="all-transaction-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true" onclick="get_ContactData()">Inquiries <i id="notif-inq"></i></button>
+                        <button class="nav-link active" id="all-transaction-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true" onclick="get_ContactData()">Inquiries <span id="notif-inq" style="color:red;"></span></button>
                         
 
-                        <button class="nav-link" id="association-dues-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false" onclick="get_HomeMessage()">Homeowners Messages <i id="notif-home"></i></button>
+                        <button class="nav-link" id="association-dues-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false" onclick="get_HomeMessage()">Homeowners Messages <i id="notif-home" style="color:red;"></i></button>
                         
                     </div>
                 </nav>
