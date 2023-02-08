@@ -20,8 +20,8 @@ if (isset($_POST['btn_pdf'])) {
     // END of page header
 
     // SetFont(). We choose Arial bold 16:
-    $pdf->SetFont('Arial', 'B', 9.5);
-    $pdf->SetLeftMargin(15);
+    $pdf->SetFont('Arial', 'B', 12);
+    $pdf->SetLeftMargin(80);
     // Cell (width, height, txt, border, ln line break, align(Center))
     $pdf->Cell(40, 10, 'Transaction #', '1', '0', 'C');
     $pdf->Cell(40, 10, 'Name', '1', '0', 'C');
@@ -33,7 +33,7 @@ if (isset($_POST['btn_pdf'])) {
     // $pdf->Cell(80, 10, 'Address', '1', '1', 'C');
     // $pdf->Cell(30,10,'Password', '1', '1' , 'C');
 
-    $pdf->SetFont('Arial', 'B', 8.5);
+    $pdf->SetFont('Arial', 'B', 11);
 
     while ($row = mysqli_fetch_assoc($data)) {
         $pdf->Cell(40, 10, $row['transaction_num'], '1', '0', 'C');
