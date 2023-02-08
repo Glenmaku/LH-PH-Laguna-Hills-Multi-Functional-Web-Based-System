@@ -41,7 +41,7 @@
         <div class="download">
             <form action="../PDF/pdf_gen_homeowner.php" method="POST" target="_blank">
                 <button type="submit" name="btn_pdf" class="btn btn-success" target="_blank"><i class="fa-solid fa-download"></i> Download PDF</button>
-            </form>
+            </form> 
         </div>
     </section>
     

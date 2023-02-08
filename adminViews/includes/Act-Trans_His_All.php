@@ -65,3 +65,8 @@ else {
   }
 
 ?>
+<div class="download">
+            <form action="../PDF/pdf_gen_all_transaction.php" method="POST" target="_blank">
+                <button type="submit" name="btn_pdf" class="btn btn-success" target="_blank"><i class="fa-solid fa-download"></i> Download PDF</button>
+            </form> 
+        </div>
