@@ -12,6 +12,9 @@ if (isset($_POST["reservequery"])) {
   OR t_name LIKE '%" . $search . "%'
   OR total LIKE '%" . $search . "%' 
   OR date_created LIKE '%" . $search . "%'
+  OR discount LIKE '%" . $search . "%' 
+  OR remarks LIKE '%" . $search . "%' 
+
  ";
 } 
 else {
@@ -33,30 +36,48 @@ $query = "SELECT * FROM `transac_reserv_records` ORDER BY records_transaction_no
 $result = mysqli_query($con, $query);
 if (mysqli_num_rows($result) > 0) {
   $Rtable ='<table class="table">
-  <thead>
-    <tr>
-          <th>Transaction No.</th>
-        <th>Date</th>
-        <th>Full Name</th>
-        <th>Total</th>
-    </tr>
-  </thead>
-  <tbody>';
+    <thead>
+      <tr>
+            <th>Transaction No.</th>
+          <th>Date</th>
+          <th>Full Name</th>
+          <th>Total</th>
+
+          <th>Discount</th>
+          <th>Remarks</th>
+          <th>Payment</th>
+          <th>Change</th>
+
+      </tr>
+    </thead>
+    <tbody>';
   while($row=mysqli_fetch_assoc($result)){
-    $reservation_ID = $row['records_transaction_no'];
-    $reservation_name =	$row['t_name'];
-    $reservation_total = $row['total'];
-   // $Category = $row['category'];
-    $reservations_date = $row['date_created'];
-    $Rtable .= '  <tr>
-                            <td>'.$reservation_ID.'</td>
-                            <td>'.$reservations_date.'</td>
-                            <td>'.$reservation_name.'</td>
-                            <td>'.$reservation_total.'</td>
-                           
-                            
-                    <tr>';
-}
+  $reservation_ID = $row['records_transaction_no'];
+      $reservation_name =	$row['t_name'];
+      $reservation_total = $row['total'];
+
+      $reservation_discount = $row['discount'];
+      $reservation_remarks = $row['remarks'];
+      $reservation_reserv_payment = $row['reserv_payment'];
+      $reservation_reserv_change = $row['reserv_change'];
+      $reservation_remaining_balance = $row['remaining_balance'];
+
+     // $Category = $row['category'];
+      $reservations_date = $row['date_created'];
+      $Rtable .= '  <tr>
+                              <td>'.$reservation_ID.'</td>
+                              <td>'.$reservations_date.'</td>
+                              <td>'.$reservation_name.'</td>
+                              <td>'.$reservation_total.'</td>
+
+                              <td>'.$reservation_discount.'</td>
+                              <td>'.$reservation_remarks.'</td>
+                              <td>'.$reservation_reserv_payment.'</td>
+                              <td>'.$reservation_reserv_change.'</td>
+                              
+
+                      <tr>';
+  }
 $Rtable .= '</tbody></table>';
 // Add the pagination links
 $query = "SELECT COUNT(*) as total_records FROM `transac_reserv_records`";
