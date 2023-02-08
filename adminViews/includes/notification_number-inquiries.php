@@ -9,12 +9,13 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 // Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
-} 
+}
 
-$sql = "SELECT * FROM message_tb";
+$sql = "SELECT * FROM contact_us";
 $result = $conn->query($sql);
 
 echo $result->num_rows;
+
 /*
 if ($result->num_rows > 0) {
     // output data of each row

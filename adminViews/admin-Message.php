@@ -348,4 +348,33 @@
             }
         });
     }
+
+    function loadAllTransactionTab() {
+        setInterval(function() {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("all-transaction-tab").innerHTML = this.responseText;
+                }
+            };
+            xhttp.open("GET", "adminViews/includes/notification_number-inquiries.php", true);
+            xhttp.send();
+        }, 1000);
+    }
+
+    function loadAssociationDuesTab() {
+        setInterval(function() {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("association-dues-tab").innerHTML = this.responseText;
+                }
+            };
+            xhttp.open("GET", "adminViews/includes/notification_number_homeowners.php", true);
+            xhttp.send();
+        }, 1000);
+    }
+
+    loadAllTransactionTab();
+    loadAssociationDuesTab();
 </script>
