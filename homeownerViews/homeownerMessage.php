@@ -101,7 +101,7 @@ $(document).ready(function() {
         if (!messageCurrentPage) {
             messageCurrentPage = 1;
         }
-        displayAnnouncement(messageCurrentPage);
+        displayMessage(messagePage);
     });
 
     function displayMessage(messagePage) {
