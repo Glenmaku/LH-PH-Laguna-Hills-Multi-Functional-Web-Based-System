@@ -1,5 +1,5 @@
     <div class="ownerSidebar" id="narbar-to-collapse">
-        <button type="button" class="sidebar-btn_close justify-item-center" onclick="close_sidebar()" hidden>
+        <button type="button" class="sidebar-btn_close justify-item-center" onclick="close_sidebar()">
             <span aria-hidden="true" class="">&times;</span>
         </button>
         <div class="logo-details">
