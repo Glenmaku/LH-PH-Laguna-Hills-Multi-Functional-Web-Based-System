@@ -40,11 +40,6 @@ CREATE TABLE `message_tb` (
 -- Dumping data for table `message_tb`
 --
 
-INSERT INTO `message_tb` (`message_id`, `Homeowner_Username`, `Homeowner_Full_Name`, `message_title`, `email_desc`, `message_date`) VALUES
-(1, '', '', 'sample', '123', '2023-02-01'),
-(2, '', '', 'sample', 'Attention all staff,\n\nWe are pleased to announce that our company will be holding its annual holiday party on December 15th from 6pm to 10pm at the Grand Hotel. The evening will include a festive dinner, music, and fun activities for everyone to enjoy.\n\nWe encourage all employees to attend and celebrate the end of another successful year. Dress code is semi-formal.\n\nPlease RSVP to the HR department by December 5th with your attendance confirmation and any dietary restrictions.\n\nWe look forward to seeing you all there!\n\nBest regards,\nThe HR Team.\n\n\n\n', '2023-02-01'),
-(3, '', 'Vennice Cosino', 'dfsdf', 'werwerwerwerwer', '2023-02-02'),
-(4, 'LHS2023-0004', 'Vennice Cosinos', 'sfsdf', 'dfsdfsdfsdf', '2023-02-02');
 
 --
 -- Indexes for dumped tables

@@ -38,24 +38,6 @@ CREATE TABLE `assigned_lot` (
 -- Dumping data for table `assigned_lot`
 --
 
-INSERT INTO `assigned_lot` (`assign_no`, `lot_id`, `owner_username`, `ownership`) VALUES
-(7, 'blk1lot3', 'LHS2023-0033', 'homeowner,Lotowner'),
-(8, 'blk1lot2', 'LHS2023-0033', 'homeowner,Lotowner'),
-(9, 'blk1lot2', 'LHS2023-0031', 'homeowner'),
-(10, 'blk1lot1', 'LHS2023-0035', 'homeowner,Lotowner'),
-(11, 'blk1lot2', 'LHS2023-0035', 'homeowner'),
-(12, 'blk1lot3', 'LHS2023-0035', 'Lotowner'),
-(13, 'blk1lot1', 'LHS2023-0002', 'homeowner,Lotowner'),
-(14, 'blk1lot2', 'LHS2023-0002', 'homeowner,Lotowner'),
-(15, 'blk1lot3', 'LHS2023-0002', 'homeowner,Lotowner'),
-(16, 'blk1lot1', 'LHS2023-0004', 'homeowner'),
-(17, 'blk1lot3', 'LHS2023-0001', 'homeowner'),
-(18, 'blk1lot5', 'LHS2023-0001', 'homeowner'),
-(19, 'blk1lot10', 'LHS2023-0008', 'homeowner'),
-(20, 'blk1lot2', 'LHS2023-0004', 'homeowner'),
-(21, 'blk1lot3', 'LHS2023-0004', 'homeowner'),
-(23, 'blk1lot4', 'LHS2023-0004', 'homeowner'),
-(24, 'blk1lot5', 'LHS2023-0004', 'homeowner,Lotowner');
 
 --
 -- Indexes for dumped tables
