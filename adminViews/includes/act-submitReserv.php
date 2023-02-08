@@ -20,7 +20,7 @@
     $("#reserv_submit").on("click", add_data);
   });
 
-  function add_reserv_set_data(){
+  function add_reserv_set_data() {
     // code that might throw an error
 
     var checkbox_hall = ["#radio-hall"];
@@ -47,7 +47,7 @@
     var from_reservation_date = $("#from-reservation-date").val();
     var to_reservation_date = $("#to-reservation-date").val();
 
-    if($("#radio-hall").is(":checked")) {
+    if ($("#radio-hall").is(":checked")) {
       // date conversion
       $.ajax({
         url: 'adminViews/insert-data-transaction-hall.php',
@@ -67,8 +67,7 @@
           //console.log(status);
         }
       });
-    } 
-    else {
+    } else {
       //console.log("function-hall is empty");
     }
 
@@ -89,11 +88,11 @@
         },
         success: function(data, status) {
           // function to display data
-       //   console.log(status);
+          //   console.log(status);
         }
       });
     } else {
-     // console.log("function-court is empty");
+      // console.log("function-court is empty");
     }
 
     if ($("#radio-miming").is(":checked")) {
@@ -113,15 +112,15 @@
         },
         success: function(data, status) {
           // function to display data
-      //    console.log(status);
+          //    console.log(status);
         }
       });
     } else {
-  //    console.log("function-miming is empty");
+      //    console.log("function-miming is empty");
     }
   }
 
-  function add_data(){
+  function add_data() {
     if ($("#radio-hall" || "#radio-court" || "#radio-miming").is(":checked")) {
       //solution to sa discount and sa total price
       // var initial_discount = $("#r-discount").val() / 100;
@@ -139,30 +138,30 @@
       var reserv_payment = $("#reserv_payment").val();
       var reserv_change = $("#reserv_change").val();
       var reserv_remaining_balance = $("#reserv_remaining_balance").val();
-      
-    var checkbox_hall = ["#radio-hall"];
-    var checkbox_court = ["#radio-court"];
-    var checkbox_miming = ["#radio-miming"];
 
-    var trans_no = $("#trans-no").val();
-    var nameadd = $("#client-name").val();
-    var from_reservation_date_string = $("#from-reservation-date").val();
-    var to_reservation_date_string = $("#to-reservation-date").val();
-    var price_hall = $("#in-radio-hall3").val();
-    var price_court = $("#in-radio-court3").val();
-    var price_miming = $("#in-radio-miming3").val();
+      var checkbox_hall = ["#radio-hall"];
+      var checkbox_court = ["#radio-court"];
+      var checkbox_miming = ["#radio-miming"];
 
-    var hall_time_start = $("#in-radio-hall1").val();
-    var hall_time_end = $("#in-radio-hall2").val();
+      var trans_no = $("#trans-no").val();
+      var nameadd = $("#client-name").val();
+      var from_reservation_date_string = $("#from-reservation-date").val();
+      var to_reservation_date_string = $("#to-reservation-date").val();
+      var price_hall = $("#in-radio-hall3").val();
+      var price_court = $("#in-radio-court3").val();
+      var price_miming = $("#in-radio-miming3").val();
 
-    var court_time_start = $("#in-radio-court1").val();
-    var court_time_end = $("#in-radio-court2").val();
+      var hall_time_start = $("#in-radio-hall1").val();
+      var hall_time_end = $("#in-radio-hall2").val();
 
-    var miming_time_start = $("#in-radio-miming1").val();
-    var miming_time_end = $("#in-radio-miming2").val();
-    var r_discounts = $("#r-discount").val();
-    var from_reservation_date = $("#from-reservation-date").val();
-    var to_reservation_date = $("#to-reservation-date").val();
+      var court_time_start = $("#in-radio-court1").val();
+      var court_time_end = $("#in-radio-court2").val();
+
+      var miming_time_start = $("#in-radio-miming1").val();
+      var miming_time_end = $("#in-radio-miming2").val();
+      var r_discounts = $("#r-discount").val();
+      var from_reservation_date = $("#from-reservation-date").val();
+      var to_reservation_date = $("#to-reservation-date").val();
 
       $.ajax({
         url: 'adminViews/insert-data-transaction-records.php',
@@ -181,38 +180,39 @@
           // function to display data
           alert(data);
           if (data === "Successfully recorded transaction") {
-                      add_reserv_set_data();
-                    $("#client-name").val("");
-                    $("#from-reservation-date").val("");
-                    $("#to-reservation-date").val("");
-                    $("#in-radio-hall1").val("");
-                    $("#in-radio-hall2").val("");
-                    $("#in-radio-hall3").val("0");
+            add_reserv_set_data();
+            $("#client-name").val("");
+            $("#from-reservation-date").val("");
+            $("#to-reservation-date").val("");
+            $("#in-radio-hall1").val("");
+            $("#in-radio-hall2").val("");
+            $("#in-radio-hall3").val("0");
 
-                    $("#in-radio-court1").val("");
-                    $("#in-radio-court2").val("");
-                    $("#in-radio-court3").val("0");
+            $("#in-radio-court1").val("");
+            $("#in-radio-court2").val("");
+            $("#in-radio-court3").val("0");
 
-                    $("#in-radio-miming1").val("");
-                    $("#in-radio-miming2").val("");
-                    $("#in-radio-miming3").val("0");
-                    $("#r-discount").val("0");
-                
-                    $("#reserv_total").val("0");
-                    $("#reserv_payment").val("0");
-                    $("#reserv_change").val("0");
-                    $("#reserv_remark").val("0");
-                    $("#radio-hall").prop("checked", false);
-                    $("#radio-court").prop("checked", false);
-                    $("#radio-miming").prop("checked", false); }
-                     $.ajax({
-                        url: 'adminViews/includes/act-transact.php',
-                        type: 'post', //path to PHP script
-                        success: function(data) {
-                            $("#trans-no").val(data); //update input field with response from server
-                        }
-                    });
-                       
+            $("#in-radio-miming1").val("");
+            $("#in-radio-miming2").val("");
+            $("#in-radio-miming3").val("0");
+            $("#r-discount").val("0");
+
+            $("#reserv_total").val("0");
+            $("#reserv_payment").val("0");
+            $("#reserv_change").val("0");
+            $("#reserv_remark").val("0");
+            $("#radio-hall").prop("checked", false);
+            $("#radio-court").prop("checked", false);
+            $("#radio-miming").prop("checked", false);
+          }
+          $.ajax({
+            url: 'adminViews/includes/act-transact.php',
+            type: 'post', //path to PHP script
+            success: function(data) {
+              $("#trans-no").val(data); //update input field with response from server
+            }
+          });
+
         }
       });
     }
@@ -260,7 +260,7 @@
 
   // $("#reserv_payment").on("change", function() {
   //   // var reserv_total = parseFloat($("#reserv_total").val());
-    
+
   //   var reserv_payment = parseFloat($("#reserv_payment").val());
   //   if (reserv_total > reserv_payment) {
   //     var reserv_remaining_balance = reserv_total - reserv_payment;
@@ -273,19 +273,50 @@
   //   }
   // });
   $("#reserv_payment").on("change", function() {
-  var reserv_total = parseFloat($("#reserv_total").val());
-  var reserv_payment = parseFloat($("#reserv_payment").val());
-  if (reserv_total === reserv_payment) {
-    $("#reserv_remaining_balance").val(0);
-    $("#reserv_change").val(0);
-  } else if (reserv_total > reserv_payment) {
-    var reserv_remaining_balance = reserv_total - reserv_payment;
-    $("#reserv_remaining_balance").val(reserv_remaining_balance);
-    $("#reserv_change").val(0);
-  } else {
-    var reserv_change = reserv_payment - reserv_total;
-    $("#reserv_change").val(reserv_change);
-    $("#reserv_remaining_balance").val(0);
+    var reserv_total = parseFloat($("#reserv_total").val());
+    var reserv_payment = parseFloat($("#reserv_payment").val());
+    if (reserv_total === reserv_payment) {
+      $("#reserv_remaining_balance").val(0);
+      $("#reserv_change").val(0);
+    } else if (reserv_total > reserv_payment) {
+      var reserv_remaining_balance = reserv_total - reserv_payment;
+      $("#reserv_remaining_balance").val(reserv_remaining_balance);
+      $("#reserv_change").val(0);
+    } else {
+      var reserv_change = reserv_payment - reserv_total;
+      $("#reserv_change").val(reserv_change);
+      $("#reserv_remaining_balance").val(0);
+    }
+  });
+
+
+$(document).ready(function() {
+    $("#reserv_reset").on("click", reserv_reset_data);
+  });
+
+  function reserv_reset_data() {
+
+    $("#radio-hall").prop("checked", false);
+  $("#radio-court").prop("checked", false);
+  $("#radio-miming").prop("checked", false);
+  
+    $("#from-reservation-date").val("");
+  $("#to-reservation-date").val("");
+
+    $("#in-radio-hall1").val("");
+    $("#in-radio-hall2").val("");
+    $("#in-radio-hall3").val("");
+
+    $("#in-radio-court1").val("");
+    $("#in-radio-court2").val("");
+    $("#in-radio-court3").val("");
+
+    $("#in-radio-miming1").val("");
+    $("#in-radio-miming2").val("");
+    $("#in-radio-miming3").val("");
+
+    $("#r-discount").val("");
+
   }
-});
+
 </script>

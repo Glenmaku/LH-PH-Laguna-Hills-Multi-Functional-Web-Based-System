@@ -206,4 +206,46 @@
       document.getElementById("other_remaining_balance").value = 0;
     }
   });
+
+
+
+  $(document).ready(function() {
+    $("#other_reset").on("click", other_reset_data);
+  });
+
+  function other_reset_data() {
+
+  $("#radio-hall").prop("checked", false);
+  $("#radio-court").prop("checked", false);
+  $("#radio-miming").prop("checked", false);
+  
+  $("#from-reservation-date").val("");
+  $("#to-reservation-date").val("");
+
+    $("#o_category").val("");
+    $("#o_quantity").val("");
+    $("#o_price").val("");
+    $("#o_subtotal").val("");
+
+    $("#o_category1").val("");
+    $("#o_quantity1").val("");
+    $("#o_price1").val("");
+    $("#o_subtotal1").val("");
+
+    $("#o_category2").val("");
+    $("#o_quantity2").val("");
+    $("#o_price2").val("");
+    $("#o_subtotal2").val("");
+
+    $("#o_category3").val("");
+    $("#o_quantity3").val("");
+    $("#o_price3").val("");
+    $("#o_subtotal3").val("");
+
+    $("#o_category4").val("");
+    $("#o_quantity4").val("");
+    $("#o_price4").val("");
+    $("#o_subtotal4").val("");
+  }
+
 </script>
