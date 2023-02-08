@@ -1059,7 +1059,7 @@
 				M808.756,3783.95c-1.53-4.619,0.361-6.573,8.22-11.028l53.993-29.667c3.154-1.619,8.054-2.555,11.075,3.599l23.255,38.007
 				c2.264,4.222,0.624,6.441-3.077,8.304l-61.706,33.386c-5.99,3.557-8.117,3.255-11.38-2.297L808.756,3783.95z" />
 
-								<path id="path3743" class="mapping" onclick="getData('blklot')" style="fill:#808080;stroke:#FFFFFF;stroke-miterlimit:10;" d="
+								<path id="path3743" class="mapping"  style="fill:#808080;stroke:#FFFFFF;stroke-miterlimit:10;" d="
 				M861.125,3782.319" />
 
 								<path id="blk18lot8" class="mapping" onclick="getData('blk18lot8')" sodipodi:nodetypes="ccccccccc" style="fill:#808080;stroke:#FFFFFF;stroke-miterlimit:10;" d="
@@ -1373,12 +1373,12 @@
 				M1898.377,4157.288c2.219-7.82,2.033-10.266,12.752-8.667l31.395,5.323c4.884,0.786,6.988,4.603,5.189,14.035l-14.754,71.737
 				c-0.465,3.275-4.121,3.893-7.38,3.634l-36.355-8.371c-5.477-1.021-7.155-3.177-5.289-11.045L1898.377,4157.288z" />
 
-								<path id="blk27lot30" class="mapping" onclick="getData('blklot')" sodipodi:nodetypes="ccccccccc" style="fill:#808080;stroke:#FFFFFF;stroke-miterlimit:10;" d="
+								<path id="blk27lot30" class="mapping"  sodipodi:nodetypes="ccccccccc" style="fill:#808080;stroke:#FFFFFF;stroke-miterlimit:10;" d="
 				M1790.745,4223.247c1.638-6.652,1.805-8.766,10.474-6.428l87.583,22.931c5.6,1.662,7.619,0.859,5.994,9.996l-15.125,72.339
 				c-0.748,3.492-3.532,3.938-7.392,3.179l-75.585-18.064c-13.015-3.905-16.912-10.027-15.927-21.354
 				C1781.4,4279.715,1785.609,4247.458,1790.745,4223.247L1790.745,4223.247z" />
 
-								<path id="blk27lot31" class="mapping" onclick="getData('blklot')" sodipodi:nodetypes="ccccccccc" style="fill:#808080;stroke:#FFFFFF;stroke-miterlimit:10;" d="
+								<path id="blk27lot31" class="mapping"  sodipodi:nodetypes="ccccccccc" style="fill:#808080;stroke:#FFFFFF;stroke-miterlimit:10;" d="
 				M1805.257,4135.54c3.489-7.215,9.249-10.982,19.923-8.321l62.883,15.374c4.884,0.785,7.874,2.653,6.075,12.086l-15.923,72.016
 				c-0.952,4.073-5.007,3.981-8.709,3.191l-69.444-18.756c-5.289-0.958-7.128-2.938-6.367-8.379
 				C1796.792,4181.693,1796.384,4153.932,1805.257,4135.54z" />
@@ -1525,10 +1525,10 @@
 				M1129.581,4473.879c-1.531,1.425-0.594,3.484,0.729,5.17l45.641,54.4c2.205,2.591,4.834,3.667,6.86,2.183l42.413-35.18
 				c1.591-1.416,1.478-2.748-0.492-5.34l-47.714-57.58c-3.291-4.03-7.477-2.676-9.415-0.699L1129.581,4473.879z" />
 
-								<path id="path17996-8" class="mapping" onclick="getData('blklot')" style="fill:#808080;stroke:#FFFFFF;stroke-miterlimit:10;" d="
+								<path id="path17996-8" class="mapping"  style="fill:#808080;stroke:#FFFFFF;stroke-miterlimit:10;" d="
 				M1178.246,4482.606" />
 
-								<path id="path17996" class="mapping" onclick="getData('blklot')" style="fill:#808080;stroke:#FFFFFF;stroke-miterlimit:10;" d="
+								<path id="path17996" class="mapping"  style="fill:#808080;stroke:#FFFFFF;stroke-miterlimit:10;" d="
 				M1181.79,4478.177" />
 
 								<path id="blk25lot8" class="mapping" onclick="getData('blk25lot8')" sodipodi:nodetypes="ccccccccc" style="fill:#808080;stroke:#FFFFFF;stroke-miterlimit:10;" d="
@@ -2357,7 +2357,7 @@
 				c-9.225,4.523-7.907-2.062-10.004-10.217l-6.982-27.154l-11.324-45.298l-5.662-29.444c-3.678-11.563-1.155-10.422,9.713-12.67
 				c17.208-3.417,34.314-7.306,51.439-11.111C1312.202,2085.688,1311.486,2079.228,1315.761,2097.752L1315.761,2097.752z" />
 
-								<path id="path3934" class="mapping" onclick="getData('blklot')" style="fill:#808080;stroke:#FFFFFF;stroke-miterlimit:10;" d="
+								<path id="path3934" class="mapping"  style="fill:#808080;stroke:#FFFFFF;stroke-miterlimit:10;" d="
 				M1070.478,2126.947l0.801,10.01l241.429-58.055l-2.002-9.209L1070.478,2126.947z" />
 
 								<path id="blk8lot2" class="mapping" onclick="getData('blk8lot2')" sodipodi:nodetypes="ccccccccc" style="fill:#808080;stroke:#FFFFFF;stroke-miterlimit:10;" d="
@@ -2380,7 +2380,7 @@
 				l24.618,75.026c3.38,9.861,4.929,7.783,13.964,4.663l58.801-23.921C1542.328,1977.961,1541.244,1977.41,1537.91,1969.402
 				L1537.91,1969.402z" />
 
-								<path id="path5513" class="mapping" onclick="getData('blklot')" sodipodi:nodetypes="ccccccc" style="fill:#808080;stroke:#FFFFFF;stroke-miterlimit:10;" d="
+								<path id="path5513" class="mapping"  sodipodi:nodetypes="ccccccc" style="fill:#808080;stroke:#FFFFFF;stroke-miterlimit:10;" d="
 				M1378.139,2061.587l162.816-64.029c6.186-2.388,8.525-1.493,6.424-7.797c-1.754-7.98-3.576-5.541-10.284-2.861l-164.185,65.6
 				c-5.227,1.379-4.266,2.169-2.927,6.951C1371.005,2065.616,1371.289,2064.053,1378.139,2061.587z" />
 
@@ -2638,7 +2638,7 @@
 				c-15.895,1.62-29.716,7.359-44.125,13.64l-20.545,11.525c-13.645,7.469-12.986,4.506-18.926-8.534l-14.146-31.053l-19.042-36.58
 				c-3.89-8.122,7.003-8.446,13.29-10.985l70.162-28.335C844.394,2476.101,841.369,2471.628,849.464,2490.998L849.464,2490.998z" />
 
-								<path id="path3316" class="mapping" onclick="getData('blklot')" style="fill:#808080;stroke:#FFFFFF;stroke-miterlimit:10;" d="
+								<path id="path3316" class="mapping"  style="fill:#808080;stroke:#FFFFFF;stroke-miterlimit:10;" d="
 				M580.051,2201.332l0.251,8.519l198.686-27.561l0.501-9.271L580.051,2201.332z" />
 
 								<path id="blk13lot2" class="mapping" onclick="getData('blk13lot2')" sodipodi:nodetypes="ccccccccc" style="fill:#808080;stroke:#FFFFFF;stroke-miterlimit:10;" d="
@@ -2681,7 +2681,7 @@
 				l-49.063,5.652c-19.252,2.324-17.053,6.003-19.751-12.34l-4.506-30.641C827.048,2095.751,825.253,2098.863,842.773,2097.733
 				L842.773,2097.733z" />
 
-								<path id="path3334" class="mapping" onclick="getData('blklot')" style="fill:#808080;stroke:#FFFFFF;stroke-miterlimit:10;" d="
+								<path id="path3334" class="mapping"  style="fill:#808080;stroke:#FFFFFF;stroke-miterlimit:10;" d="
 				M1001.802,2143.698l1.772,10.276l-166.181,20.197l-0.709-10.276L1001.802,2143.698z" />
 
 								<path id="blk13lot9" class="mapping" onclick="getData('blk13lot9')" sodipodi:nodetypes="ccccccccc" style="fill:#808080;stroke:#FFFFFF;stroke-miterlimit:10;" d="
@@ -2822,10 +2822,10 @@
 				c8.06,27.839,13.632,11.715,37.25-2.241c18.668-12.274,37.326-24.563,55.984-36.85c16.003-11.397,37.004-23.784,39.685-42.52
 				l-14.261-26.621C607.264,2657.292,609.474,2660.502,593.803,2668.804z" />
 
-								<path id="path14519" class="mapping" onclick="getData('blklot')" style="fill:#808080;stroke:#FFFFFF;stroke-miterlimit:10;" d="
+								<path id="path14519" class="mapping"  style="fill:#808080;stroke:#FFFFFF;stroke-miterlimit:10;" d="
 				M504.886,2697.421l6.264,9.771l95.46-51.613l0.251-4.009l-3.257-4.259l-4.009-0.752L504.886,2697.421z" />
 
-								<path id="path14521" class="mapping" onclick="getData('blklot')" style="fill:#808080;stroke:#FFFFFF;stroke-miterlimit:10;" d="
+								<path id="path14521" class="mapping"  style="fill:#808080;stroke:#FFFFFF;stroke-miterlimit:10;" d="
 				M433.98,2239.917l-0.251,10.273l87.191-8.519l0.752-10.272L433.98,2239.917z" />
 
 								<path id="blk5lot27" class="mapping" onclick="getData('blk5lot27')" sodipodi:nodetypes="cccccccccccccc" style="fill:#808080;stroke:#FFFFFF;stroke-miterlimit:10;" d="
@@ -4715,31 +4715,31 @@
 				l-12.596,10.077c-6.483,6.182-6.063,3.497-9.148-3.775l-7.341-17.303C2846.604,2434.797,2844.858,2434.164,2851.2,2431.602
 				L2851.2,2431.602z" />
 
-								<path id="path4640" class="mapping" onclick="getData('blklot')" style="fill:#808080;stroke:#FFFFFF;stroke-miterlimit:10;" d="
+								<path id="path4640" class="mapping"  style="fill:#808080;stroke:#FFFFFF;stroke-miterlimit:10;" d="
 				M2261.328,4658.24l6.612,5.638l81.822-92.825l-6.612-5.638L2261.328,4658.24z" />
 
-								<path id="path5518" class="mapping" onclick="getData('blklot')" style="fill:#808080;stroke:#FFFFFF;stroke-miterlimit:10;" d="
+								<path id="path5518" class="mapping"  style="fill:#808080;stroke:#FFFFFF;stroke-miterlimit:10;" d="
 				M401.365,4347.811l0.501,12.026l96.712-10.022l112.246-64.642l-5.512-10.022l-106.734,64.141L401.365,4347.811z" />
 
-								<path id="path5520" class="mapping" onclick="getData('blklot')" sodipodi:nodetypes="ccccccc" style="fill:#808080;stroke:#FFFFFF;stroke-miterlimit:10;" d="
+								<path id="path5520" class="mapping"  sodipodi:nodetypes="ccccccc" style="fill:#808080;stroke:#FFFFFF;stroke-miterlimit:10;" d="
 				M1787.644,2291.642c5.616-6.638,5.134-2.172,7.159,4.419l19.161,62.341c1.183,3.575,0.599,3.926-2.147,5.303
 				c-2.932,1.526-4.529-0.35-5.394-2.955l-21.145-60.511C1783.001,2295.485,1784.096,2295.043,1787.644,2291.642L1787.644,2291.642z
 				" />
 
-								<path id="path5522" class="mapping" onclick="getData('blklot')" sodipodi:nodetypes="cccccccccc" style="fill:#808080;stroke:#FFFFFF;stroke-miterlimit:10;" d="
+								<path id="path5522" class="mapping"  sodipodi:nodetypes="cccccccccc" style="fill:#808080;stroke:#FFFFFF;stroke-miterlimit:10;" d="
 				M2564.498,2085.601c4.059,5.205,4.064,4.277,8.18-0.257l79.762-87.84l103.497-96.71c5.242-4.163,4.494-4.38,0.713-9.355
 				c-3.039-4.906-3.475-3.239-7.341,0.209l-110.334,98.415l-74.656,89.382C2561.301,2082.505,2562.161,2083.689,2564.498,2085.601
 				L2564.498,2085.601z" />
 
-								<path id="path5526" class="mapping" onclick="getData('blklot')" style="fill:#808080;stroke:#FFFFFF;stroke-miterlimit:10;" d="
+								<path id="path5526" class="mapping"  style="fill:#808080;stroke:#FFFFFF;stroke-miterlimit:10;" d="
 				M2951.964,1459.22l5.762,4.76l-18.541,109.24l-4.51-3.758l0.501-21.297L2951.964,1459.22z" />
 
-								<path id="path5530" class="mapping" onclick="getData('blklot')" sodipodi:nodetypes="ccccccccc" style="fill:#808080;stroke:#FFFFFF;stroke-miterlimit:10;" d="
+								<path id="path5530" class="mapping"  sodipodi:nodetypes="ccccccccc" style="fill:#808080;stroke:#FFFFFF;stroke-miterlimit:10;" d="
 				M2199.54,4404.831l-2.502,7.286c-0.127,0.745,0.162,1.075,0.743,1.111l127.614,48.295c3.185,1.273,4.438,0.238,4.044-1.69
 				l-1.657-8.491c-0.108-0.487-0.447-0.981-1.234-1.251l-125.326-45.47C2200.822,4404.499,2199.762,4404.425,2199.54,4404.831
 				L2199.54,4404.831z" />
 
-								<path id="path5532" class="mapping" onclick="getData('blklot')" sodipodi:nodetypes="cscccccc" style="fill:#808080;stroke:#FFFFFF;stroke-miterlimit:10;" d="
+								<path id="path5532" class="mapping"  sodipodi:nodetypes="cscccccc" style="fill:#808080;stroke:#FFFFFF;stroke-miterlimit:10;" d="
 				M2163.664,4163.709c-0.833-0.25-1.34-0.272-1.774-0.127c-2.087,0.688-1.766,3.426-0.552,4.202l113.2,49.129
 				c0.421,0.074,0.921,0.147,1.19-0.545c0.081-1.719,0.62-2.888-0.391-5.918c-0.151-0.746-0.575-0.944-0.967-1.209
 				L2163.664,4163.709z" />
