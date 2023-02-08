@@ -18,7 +18,7 @@ if(isset($_POST['Reservations_Rec'])){
           <th>Remarks</th>
           <th>Payment</th>
           <th>Change</th>
-          <th>Remaining Balance</th>
+
       </tr>
     </thead>
     <tbody>';
@@ -48,7 +48,6 @@ if(isset($_POST['Reservations_Rec'])){
                               <td>'.$reservation_remarks.'</td>
                               <td>'.$reservation_reserv_payment.'</td>
                               <td>'.$reservation_reserv_change.'</td>
-                              <td>'.$reservation_remaining_balance.'</td>
                               
 
                       <tr>';
