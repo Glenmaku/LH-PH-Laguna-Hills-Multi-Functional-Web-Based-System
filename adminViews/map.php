@@ -762,7 +762,7 @@
 				c-0.111,2.293,0.152,56.772-0.133,58.683c-0.193,4.649-3.367,5.687-7.736,5.411l-80.352-0.769
 				c-5.464-0.159-5.722-3.219-6.261-5.666C1221.966,3674.813,1220.811,3658.343,1219.855,3641.861L1219.855,3641.861z" />
 
-								<path id="path28172" class="mapping" onclick="getData('blklot')" style="fill:#808080;stroke:#FFFFFF;stroke-miterlimit:10;" d="
+								<path id="path28172" class="mapping"  style="fill:#808080;stroke:#FFFFFF;stroke-miterlimit:10;" d="
 				M1270.727,3665.696" />
 
 								<path id="blk14lot66" class="mapping" onclick="getData('blk14lot66')" sodipodi:nodetypes="ccccccccc" style="fill:#808080;stroke:#FFFFFF;stroke-miterlimit:10;" d="
@@ -3069,7 +3069,7 @@
 				c-5.112-5.465-5.116-4.699-9.878,0.426c-7.596,17.73-13.347,39.189-13.217,55.091c0.618,26.235,0.896,47.35,4.285,70.571
 				C2844.675,2431.081,2843.977,2428.839,2859.752,2423L2859.752,2423z" />
 
-								<path id="path24175" class="mapping" onclick="getData('blklot')" sodipodi:nodetypes="ccccccccccc" style="fill:#808080;stroke:#FFFFFF;stroke-miterlimit:10;" d="
+								<path id="path24175" class="mapping"  sodipodi:nodetypes="ccccccccccc" style="fill:#808080;stroke:#FFFFFF;stroke-miterlimit:10;" d="
 				M3173.631,1677.515l33.092-36.402c6.608-5.92,3.696-6.371-2.263-11.633l-259.742-229.363c-2.097,0.42-3.822,1.15-3.121,3.901
 				l97.537,85.053l39.015,50.719l36.674,48.379l23.409,42.136c7.141,15.365,14.287,30.728,21.453,46.081
 				C3164.801,1689.478,3165.011,1686.997,3173.631,1677.515z" />
@@ -3184,7 +3184,7 @@
 				l-88.991,109.312c-5.073,6.36-7.193,6.754-11.193-0.514l-37.829-69.424C2966.83,2504.397,2968.256,2499.942,2971.864,2495.253
 				L2971.864,2495.253z" />
 
-								<path id="path24221" class="mapping" onclick="getData('blklot')" sodipodi:nodetypes="cccccccccccccsc" style="fill:#808080;stroke:#FFFFFF;stroke-miterlimit:10;" d="
+								<path id="path24221" class="mapping"  sodipodi:nodetypes="cccccccccccccsc" style="fill:#808080;stroke:#FFFFFF;stroke-miterlimit:10;" d="
 				M2885.286,1708.688l22.192-28.459l5.518-9.932c4.375-10.543,16.794-15.226,20.967,2.207c2.262,18.551,9.973,33.638,18.217,49.782
 				c3.251,5.014,4.072,9.209,4.875,15.131l6.659,49.109c1.208,5.205,1.067,10.3,0.833,15.57l-1.891,42.556l-2.207,18.76
 				c-3.756,13.57-16.382,14.862-23.174-1.104l-37.336-99.236c-2.12-8.403-6.503-15.078-11.218-22.151

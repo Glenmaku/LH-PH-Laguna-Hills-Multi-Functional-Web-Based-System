@@ -12,9 +12,9 @@
 		<div class="homeMap">
 
 			<div class="map-holder-owner">
-			<?php
-			include 'map-homeowner.php';
-			?>
+				<?php
+				include 'map-homeowner.php';
+				?>
 			</div>
 
 
@@ -91,21 +91,52 @@
 				if (buttonSelected === "avail-select") {
 					if (data.Status === 'available') {
 						document.getElementById(id).style.fill = '#1FCE6D';
+					} else {
+						document.getElementById(id).style.fill = '';
+						document.getElementById(id).style.pointerEvents = 'none';
 					}
+					document.getElementById(id).disabled = false;
+
 				} else if (buttonSelected === 'house-select') {
 					if (data.Status === 'With House') {
 						document.getElementById(id).style.fill = '#2C97DE';
+					} else {
+						document.getElementById(id).style.fill = '';
+						document.getElementById(id).style.pointerEvents = 'none';
 					}
+					document.getElementById(id).disabled = false;
+
 				} else if (buttonSelected === 'occu-select') {
 					if (data.Status === 'occupied') {
-						document.getElementById(id).style.fill = '#A70D2A';
+						document.getElementById(id).style.fill = 'black';
+					} else {
+						document.getElementById(id).style.fill = '';
+						document.getElementById(id).style.pointerEvents = 'none';
 					}
+					document.getElementById(id).disabled = false;
+
+				} else {
+					if (data.Status !== '') {
+						document.getElementById(id).style.fill = '';
+						document.getElementById(id).style.pointerEvents = 'none';
+					}
+					document.getElementById(id).disabled = true;
 				}
-			})
+				document.getElementById(id).style.pointerEvents = 'auto';
+				document.getElementById(id).style.cursor = 'pointer';
+				document.getElementById(id).addEventListener("click", function() {
+					// Add code for the action to be performed when the area is clicked
+				});
+			});
 	}
+
+
 
 	const select = document.querySelector('.form-select');
 	const paths = document.querySelectorAll('.mapping');
+
+
+
 
 	select.addEventListener("change", function() {
 		clearColor();
@@ -133,7 +164,7 @@
 	paths.forEach(function(path) {
 		path.addEventListener('mouseover', function() {
 			this.style.stroke = "black";
-			this.style.strokeWidth = "3px";
+			this.style.strokeWidth = "10px";
 		});
 		path.addEventListener('mouseout', function() {
 			this.style.stroke = "grey";
