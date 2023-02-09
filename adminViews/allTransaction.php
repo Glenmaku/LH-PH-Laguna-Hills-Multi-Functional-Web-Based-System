@@ -3,6 +3,7 @@
         <div class="transaction-title">
             <h1>TRANSACTION</h1>
         </div>
+        <div id="transaction_errors" class=" ms-1 me-5"></div>
         <div class="transaction-content">
             <div class="transaction-sheet">
                 <div class="transaction-container">
@@ -11,11 +12,11 @@
                         <div class="transaction-details">
                             <div class="transaction-line">
                                 <span>Transaction No.</span>
-                                <input type="text" name="transaction-number" id="trans-no" placeholder="YYYY-0000" required disabled>
+                                <input type="text" name="transaction-number" id="trans-no" placeholder="YYYY-0000" disabled>
                             </div>
                             <div class="date-container">
                                 <span>Date:</span>
-                                <input type="date" name="date" id="date" disabled readonly>
+                                <input type="date" name="date" id="date" disabled >
                             </div>
                         </div>
                         <div class="client-name"><span>Name:</span>
@@ -38,6 +39,7 @@
                     </div>
 
                     <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
+                        <div id="trans-assoc-error"></div>
                         <div class="accordion-body">
                             <div class="lot-number">
                                 <div class="propertycontainer">
@@ -288,7 +290,7 @@
                     <button type="reset" class="btn btn-danger" id="assoc-reset">Reset Form</button>
                 </div>
             </div>
-
+            <!--MODAL FOR SUBMIT-->
 
 
             <!--  TRANSACTIO NHISTORY -->
@@ -967,7 +969,8 @@
                                 remarks: remarks
                             },
                             success: function(data) {
-                                alert(data);
+                                //alert(data);
+                                $("#transaction_errors").html(data);
                                 if(data=== "Successfully recorded transaction"){
                                 $("#assoc-reset").trigger("click");}
 
