@@ -11,7 +11,7 @@
                         <div class="transaction-details">
                             <div class="transaction-line">
                                 <span>Transaction No.</span>
-                                <input type="text" name="transaction-number" id="trans-no" placeholder="0000" required readonly>
+                                <input type="text" name="transaction-number" id="trans-no" placeholder="YYYY-0000" required disabled>
                             </div>
                             <div class="date-container">
                                 <span>Date:</span>
