@@ -1063,11 +1063,31 @@ section .loc {
 	padding: 10px;
 }
 
-.status-prop .form-check {
+.status-prop h5{
 	font-family: 'Raleway', sans-serif;
 	font-weight: 700;
-	font-size: 12px;
+	font-size: 18px;
+	color: var(--darkgreen);
 }
+.status-prop .form-check label{
+	font-family: 'Raleway', sans-serif;
+	font-weight: 700;
+	color: var(--darkgreen);
+}
+
+.status-prop .form-check #available-prop{
+	background-color: #1FCE6D;
+	border-radius: 50%;
+	border: none;
+}
+
+.status-prop .form-check #occupied-prop{
+	background-color: grey;
+	border-radius: 50%;
+	border: none;
+}
+
+
 
 /*End-Property Finder*/
 /*Feebacks*/
