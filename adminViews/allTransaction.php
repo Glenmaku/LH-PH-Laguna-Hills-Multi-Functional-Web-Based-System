@@ -32,11 +32,11 @@ if (!empty($_SESSION['admin_I_D'])) {
                         <div class="client-name d-flex flex-row justify-content-between">
                             <div class="d-flex flex-fill justify-content-start   align-items-center">
                             <span class="me-2">First Name:</span>
-                            <input type="text" list="firstnames" name="name" id="first-name" placeholder="Enter firstname..." class="d-flex flex-fill" required>
+                            <input type="text" list="firstnames" name="name" id="first-name" placeholder="Enter firstname..." class="d-flex flex-fill border border-dark" required>
                             <datalist id="firstnames"></datalist></div>
                             <div class="d-flex flex-fill justify-content-start align-items-center ms-1">
                             <span class="me-2">Last Name:</span>
-                            <input type="text" list="lastnames" name="name" id="last-name" placeholder="Enter lastname..." class="d-flex flex-fill" required>
+                            <input type="text" list="lastnames" name="name" id="last-name" placeholder="Enter lastname..." class="d-flex flex-fill border border-dark" required>
                             <datalist id="lastnames"></datalist></div>
                         </div>
                     </div>
@@ -64,7 +64,7 @@ if (!empty($_SESSION['admin_I_D'])) {
                                     <label for="Blocklot">
                                         <span>BlockLot</span>
                                     </label><br>
-                                    <input list="blkandlots" name="property" id="property" placeholder="property">
+                                    <input list="blkandlots" name="property" id="property" placeholder="property" class="border border-dark">
                                     <datalist id="blkandlots"></datalist>
 
                                 </div>
@@ -77,15 +77,15 @@ if (!empty($_SESSION['admin_I_D'])) {
                             <div class="address-status">
                                 <div class="unpaid">
                                     <span>Selected Balance</span><br>
-                                    <input type="text" name="selected-balance" id="selected-balance" placeholder="0" value="0" required dir="rtl">
+                                    <input type="number" name="selected-balance" id="selected-balance" placeholder="0" value="0" required dir="rtl"class="border border-dark">
                                 </div>
                                 <div class="interest">
                                     <span>Interest/Penalty:</span> <br>
-                                    <input type="number" name="a-interest" id="a-interest" placeholder="0" value="0" dir="rtl">
+                                    <input type="number" name="a-interest" id="a-interest" placeholder="0" value="0" dir="rtl"class="border border-dark">
                                 </div>
                                 <div class="period-of-payment">
                                     <span>Discount:</span><br>
-                                    <input type="number" name="a-discount" id="a-discount" placeholder="Enter discount.." value="0" dir="rtl">
+                                    <input type="number" name="a-discount" id="a-discount" placeholder="Enter discount.." value="0" dir="rtl"class="border border-dark">
                                 </div>
                             </div>
 
@@ -290,7 +290,7 @@ if (!empty($_SESSION['admin_I_D'])) {
                     <input type="text" class="form-control" name="all-total" id="all-total" value="0" disabled dir="rtl">
 
                     <span>Payment:</span>
-                    <input type="text" class="form-control" name="payment" id="a-payment" value="0" placeholder="Enter amount..." dir="rtl">
+                    <input type="text" class="form-control border border-dark" name="payment" id="a-payment" value="0" placeholder="Enter amount..." dir="rtl">
 
                     <span>Change:</span>
                     <input type="text" class="form-control" name="change" id="a-change" value="0" disabled dir="rtl">
@@ -300,7 +300,7 @@ if (!empty($_SESSION['admin_I_D'])) {
                     <input type="text" class="form-control" name="remaining-balance" id="a-remaining-balance" disabled dir="rtl">
 
                     <span>Remarks:</span><br>
-                    <textarea id="a-remarks" placeholder="Type here.."></textarea><br>
+                    <textarea id="a-remarks" placeholder="Type here.."class="border border-dark"></textarea><br>
 
                     <button type="submit" class="btn btn-success" id="assoc-submit">Submit</button>
                     <button type="reset" class="btn btn-danger" id="assoc-reset">Reset Form</button>
@@ -1162,16 +1162,6 @@ if (!empty($_SESSION['admin_I_D'])) {
             </script>
 <script>
     //FOR DATALIST FIRST NAME
-// $.ajax({
-//     type: "POST",
-//     url: "adminViews/includes/fetch_names.php",
-//     success: function(data) {
-//       var names = JSON.parse(data);
-//       $.each(names, function(index, name) {
-//         $("#fullnames").append("<option value='" + name.owner_fname + " " + name.owner_lname + "'>");
-//       });
-//     }
-//   });
   $.ajax({
     type: "POST",
     url: "adminViews/includes/fetch_names.php",

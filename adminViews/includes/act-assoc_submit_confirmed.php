@@ -31,14 +31,14 @@ $sql = "INSERT INTO transaction_assoc (transaction_num,Lot_ID,assoc_selectedBal,
         VALUES ('$trans_num','$transaction_name','Association Dues','$admin_confirmed')";
 
 if(mysqli_multi_query($con, $sql)){
-    echo'<div class="alert alert-success alert-dismissible fade show  w-100" role="alert">
+    echo'<div class="alert alert-success alert-dismissible fade show  w-100 text-center" role="alert">
 Successfully recorded transaction.
              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>';
                 exit();  
 
 } else {
- echo'<div class="alert alert-danger alert-dismissible fade show  w-100" role="alert">
+ echo'<div class="alert alert-danger alert-dismissible fade show  w-100 text-center" role="alert">
  Error: Transaction unsuccessful. Please try again.
              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>';
