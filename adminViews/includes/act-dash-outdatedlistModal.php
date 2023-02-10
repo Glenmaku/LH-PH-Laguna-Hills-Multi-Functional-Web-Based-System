@@ -1,22 +1,4 @@
 <?php
-// require("connection.php");
-
-
-// $sql = "SELECT Lot_ID FROM association_dues WHERE Dues_Status IN ('outdated')";
-// $result = mysqli_query($con, $sql);
-
-// // Display the results in a table
-// echo '<table class="table text-center">';
-// echo '<thead><tr><th>Block & Lot</th></tr></thead>';
-// echo '<tbody>';
-// while ($row = mysqli_fetch_assoc($result)) {
-//     echo '<tr><td>' . $row['Lot_ID'] . '</td></tr>';
-// }
-// echo '</tbody></table>';
-// // Close the connection
-// mysqli_close($con);
-?>
-<?php
 require("connection.php");
 
 $sql = "SELECT a.Lot_ID, COALESCE(b.assoc_date_payment, '') as assoc_date_payment, a.Balance 
@@ -25,19 +7,23 @@ $sql = "SELECT a.Lot_ID, COALESCE(b.assoc_date_payment, '') as assoc_date_paymen
               FROM transaction_assoc 
               GROUP BY Lot_ID) b 
         ON a.Lot_ID = b.Lot_ID 
-        WHERE a.Dues_Status IN ('outdated')";
+        WHERE a.Dues_Status IN ('outdated') ORDER BY a.Balance DESC";
 
 $result = mysqli_query($con, $sql);
 
+$count = 1;
 // Display the results in a table
-echo '<table class="table text-center">';
-echo '<thead><tr><th>Block & Lot</th><th>Balance</th><th>Last Payment Date</th></tr></thead>';
+echo '<table class="table text-center viewOutdatedList">';
+echo '<thead><tr><th>No.</th><th>Block & Lot</th><th>Balance</th><th>Last Payment Date</th><th>Notice</th></tr></thead>';
 echo '<tbody>';
 while ($row = mysqli_fetch_assoc($result)) {
-    echo '<tr><td>' . $row['Lot_ID'] . '</td>';
+    echo '<tr><td>' . $count. '</td>';
+    echo '<td>' . $row['Lot_ID'] . '</td>';
     echo '<td>' . $row['Balance'] . '</td>';
-    echo '<td>' . $row['assoc_date_payment'] . '</td></tr>';
-    
+    echo '<td>' . $row['assoc_date_payment'] . '</td>';
+    echo '<td><button  class="btn btn-primary" ><i class="fa-solid fa-eye"></i></button>
+    <button class="btn btn-success"><i class="fa-solid fa-paper-plane"></i></button></td></tr>';
+    $count++;
 }
 echo '</tbody></table>';
 

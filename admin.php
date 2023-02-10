@@ -171,6 +171,7 @@ margin-right: -40px;
        font-size: calc(1.8vw);
 
     }
+
     .dashboard-holder .dash-transaction-records .assoc-number-areas .partition .for-updated {
         width: 100%;
         height: 50%;
@@ -461,7 +462,7 @@ margin-right: -40px;
                             </div>
     <div class="lessers"><i class="fa-solid fa-ellipsis-vertical" id="outdatedlistModal-btn"></i></div>
 
-<div class="modal fade" id="outdatedlistModal" >
+<div class="modal fade modal-lg" id="outdatedlistModal" >
   <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
     <div class="modal-content">
       <div class="modal-header">
@@ -469,7 +470,7 @@ margin-right: -40px;
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body" id="outdatedlistModal-body">
-        
+
       </div>
       <div class="modal-footer">
 
