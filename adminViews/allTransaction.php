@@ -30,14 +30,14 @@ if (!empty($_SESSION['admin_I_D'])) {
                             </div>
                         </div>
                         <div class="client-name d-flex flex-row ">
-                            <div class="d-flex flex-fill">
+                            <div class="d-flex flex-fill justify-content-center align-items-center">
                             <span>First Name:</span>
                             <input type="text" list="fullnames" name="name" id="client-name" placeholder="Enter firstname..." class="d-flex flex-fil" required>
                             <datalist id="fullnames"></datalist></div>
 
-                            <div class="d-flex flex-fill ">
-                            <span class="d-flex no-wrap">Last Name:</span>
-                            <input type="text" list="fullnames" name="name" id="client-name" placeholder="Enter lastname..." class="d-flex flex-shrink" required>
+                            <div class="d-flex flex-fill justify-content-center align-items-center">
+                            <span class="d-flex no-wrap justify-content-center">Last Name:</span>
+                            <input type="text" list="fullnames" name="name" id="client-name" placeholder="Enter lastname..." class="d-flex flex-fill" required>
                             <datalist id="fullnames"></datalist></div>
                         </div>
                     </div>
