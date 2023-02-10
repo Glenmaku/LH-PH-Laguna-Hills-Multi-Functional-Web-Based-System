@@ -9,7 +9,7 @@
         <ul class="nav-links list-unstyled">
             <li>
                 <a href="homeowneraccountconnect.php" class="ps-4">
-                 <i class="fa-solid fa-border-all"></i>
+                    <i class="fa-solid fa-border-all"></i>
                     <span>Dashboard</span>
                 </a>
             </li>
@@ -34,7 +34,7 @@
             <li>
                 <a href="#announcements" onclick="showHomeAnnounce()" class="ps-4">
                     <i class="fa-solid fa-bullhorn"></i>
-                    <span>Announcement</span>
+                    <span>Announcement <span id="notif-announce" style="color:red;"></span></span>
                 </a>
             </li>
 
@@ -49,10 +49,27 @@
                 $('.ownerSidebar').prop('hidden', true);
             })
         }
-        function open_sidebar(){
-    $(document).on('click','.nav-responsives',function(){
-        $('.ownerSidebar').prop('hidden',false);
-        
-    });
-}
+
+        function open_sidebar() {
+            $(document).on('click', '.nav-responsives', function() {
+                $('.ownerSidebar').prop('hidden', false);
+
+            });
+        }
+
+        function showHomeAnnounce() {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("notif-announce").innerHTML = this.responseText;
+                    if (this.responseText !== "0") {
+                        document.getElementById("notif-announce").addEventListener("click", function() {
+                            document.getElementById("notif-announce").innerHTML = "0";
+                        });
+                    }
+                }
+            };
+            xhttp.open("GET", "homeownerViews/includes/act-displayHomeAnnounce.php", true);
+            xhttp.send();
+        }
     </script>
