@@ -29,16 +29,15 @@ if (!empty($_SESSION['admin_I_D'])) {
                                 <input type="date" name="date" id="date" disabled >
                             </div>
                         </div>
-                        <div class="client-name d-flex flex-row ">
-                            <div class="d-flex flex-fill justify-content-center align-items-center">
-                            <span>First Name:</span>
-                            <input type="text" list="fullnames" name="name" id="client-name" placeholder="Enter firstname..." class="d-flex flex-fil" required>
-                            <datalist id="fullnames"></datalist></div>
-
-                            <div class="d-flex flex-fill justify-content-center align-items-center">
-                            <span class="d-flex no-wrap justify-content-center">Last Name:</span>
-                            <input type="text" list="fullnames" name="name" id="client-name" placeholder="Enter lastname..." class="d-flex flex-fill" required>
-                            <datalist id="fullnames"></datalist></div>
+                        <div class="client-name d-flex flex-row justify-content-between">
+                            <div class="d-flex flex-fill justify-content-start   align-items-center">
+                            <span class="me-2">First Name:</span>
+                            <input type="text" list="firstnames" name="name" id="first-name" placeholder="Enter firstname..." class="d-flex flex-fill" required>
+                            <datalist id="firstnames"></datalist></div>
+                            <div class="d-flex flex-fill justify-content-start align-items-center ms-1">
+                            <span class="me-2">Last Name:</span>
+                            <input type="text" list="lastnames" name="name" id="last-name" placeholder="Enter lastname..." class="d-flex flex-fill" required>
+                            <datalist id="lastnames"></datalist></div>
                         </div>
                     </div>
                 </div>
@@ -71,22 +70,22 @@ if (!empty($_SESSION['admin_I_D'])) {
                                 </div>
                                 <div class="total-balance">
                                     <span>Total Balance:</span><br>
-                                    <input name="total-balance" id="total-balance" readonly value="0">
+                                    <input name="total-balance" id="total-balance" readonly value="0" dir="rtl">
                                 </div>
                             </div>
 
                             <div class="address-status">
                                 <div class="unpaid">
                                     <span>Selected Balance</span><br>
-                                    <input type="text" name="selected-balance" id="selected-balance" placeholder="0" value="0" required>
+                                    <input type="text" name="selected-balance" id="selected-balance" placeholder="0" value="0" required dir="rtl">
                                 </div>
                                 <div class="interest">
                                     <span>Interest/Penalty:</span> <br>
-                                    <input type="number" name="a-interest" id="a-interest" placeholder="0" value="0">
+                                    <input type="number" name="a-interest" id="a-interest" placeholder="0" value="0" dir="rtl">
                                 </div>
                                 <div class="period-of-payment">
                                     <span>Discount:</span><br>
-                                    <input type="number" name="a-discount" id="a-discount" placeholder="Enter discount.." value="0">
+                                    <input type="number" name="a-discount" id="a-discount" placeholder="Enter discount.." value="0" dir="rtl">
                                 </div>
                             </div>
 
@@ -94,7 +93,7 @@ if (!empty($_SESSION['admin_I_D'])) {
                                 <div></div>
                                 <div class="total">
                                     <span>Total:</span> <br>
-                                    <input name="balance-total" id="balance-total" readonly value="0">
+                                    <input name="balance-total" id="balance-total" readonly value="0" dir="rtl">
                                 </div>
                             </div>
 
@@ -142,12 +141,12 @@ if (!empty($_SESSION['admin_I_D'])) {
                                         </div>
 
                                         <div class="reservation-time">
-                                            <input type="text" name="f-time-from" id="in-radio-hall1" disabled="disabled" placeholder="6am">
+                                            <input type="text" name="f-time-from" id="in-radio-hall1" disabled="disabled" placeholder="6am"dir="rtl">
                                             <span>-</span>
-                                            <input type="text" name="f-time-to" id="in-radio-hall2" placeholder="10am" disabled="disabled">
+                                            <input type="text" name="f-time-to" id="in-radio-hall2" placeholder="10am" disabled="disabled"dir="rtl">
                                         </div>
                                         <div class="reservation-price">
-                                            <input type="number" name="reservation-price" id="in-radio-hall3" value="0" disabled="disabled">
+                                            <input type="number" name="reservation-price" id="in-radio-hall3" value="0" disabled="disabled"dir="rtl">
                                         </div>
                                     </div>
 
@@ -159,12 +158,12 @@ if (!empty($_SESSION['admin_I_D'])) {
                                             <span>Court</span>
                                         </div>
                                         <div class="reservation-time">
-                                            <input type="text" name="f-time-from" id="in-radio-court1" placeholder="6am" disabled="disabled">
+                                            <input type="text" name="f-time-from" id="in-radio-court1" placeholder="6am" disabled="disabled"dir="rtl">
                                             <span>-</span>
-                                            <input type="text" name="f-time-to" id="in-radio-court2" placeholder="10am" disabled="disabled">
+                                            <input type="text" name="f-time-to" id="in-radio-court2" placeholder="10am" disabled="disabled"dir="rtl">
                                         </div>
                                         <div class="reservation-price">
-                                            <input type="number" name="reservation-price" id="in-radio-court3" value="0" disabled="disabled">
+                                            <input type="number" name="reservation-price" id="in-radio-court3" value="0" disabled="disabled"dir="rtl">
                                         </div>
                                     </div>
 
@@ -175,12 +174,12 @@ if (!empty($_SESSION['admin_I_D'])) {
                                             <span>Swimming Pool</span>
                                         </div>
                                         <div class="reservation-time">
-                                            <input type="text" name="f-time-from" id="in-radio-miming1" placeholder="6am" disabled="disabled">
+                                            <input type="text" name="f-time-from" id="in-radio-miming1" placeholder="6am" disabled="disabled"dir="rtl">
                                             <span>-</span>
-                                            <input type="text" name="f-time-to" placeholder="10am" id="in-radio-miming2" disabled="disabled">
+                                            <input type="text" name="f-time-to" placeholder="10am" id="in-radio-miming2" disabled="disabled"dir="rtl">
                                         </div>
                                         <div class="reservation-price">
-                                            <input type="number" name="reservation-price" id="in-radio-miming3" value="0" disabled="disabled">
+                                            <input type="number" name="reservation-price" id="in-radio-miming3" value="0" disabled="disabled"dir="rtl">
                                         </div>
                                     </div>
                             </div>
@@ -189,7 +188,7 @@ if (!empty($_SESSION['admin_I_D'])) {
                                 <div class="r-subtotal-label">
                                     <div class="r-discount">
                                         <span>Discount:</span><br>
-                                        <input type="number" name="r-discount" id="r-discount" value="0">
+                                        <input type="number" name="r-discount" id="r-discount" value="0"dir="rtl">
                                     </div>
                                     
                                 </div>
@@ -229,8 +228,8 @@ if (!empty($_SESSION['admin_I_D'])) {
                                         <td>1</td>
                                         <td><input type="text" class="form-control" id="o_category" name="field1" required/></td>
                                         <td><input type="text" class="form-control o_quantity" id="o_quantity" name="field2" required/></td>
-                                        <td><input type="text" class="form-control o_price" id="o_price" name="field3" required/></td>
-                                        <td><input type="text" class="form-control o_subtotal" id="o_subtotal" name="field4" required/></td>
+                                        <td><input type="text" class="form-control o_price" id="o_price" name="field3" dir="rtl"required/></td>
+                                        <td><input type="text" class="form-control o_subtotal" id="o_subtotal" name="field4" required dir="rtl"/></td>
                                     </tr>
 
                                     <tr>
@@ -239,9 +238,9 @@ if (!empty($_SESSION['admin_I_D'])) {
 
                                         <td><input type="text" class="form-control o_quantity1" id="o_quantity1" name="field2" /></td>
 
-                                        <td><input type="text" class="form-control o_price1" id="o_price1" name="field3" /></td>
+                                        <td><input type="text" class="form-control o_price1" id="o_price1" name="field3"dir="rtl" /></td>
 
-                                        <td><input type="text" class="form-control o_subtotal1" id="o_subtotal1" name="field4" /></td>
+                                        <td><input type="text" class="form-control o_subtotal1" id="o_subtotal1" name="field4" dir="rtl"/></td>
                                     </tr>
                                     <tr>
                                         <td>3</td>
@@ -249,9 +248,9 @@ if (!empty($_SESSION['admin_I_D'])) {
 
                                         <td><input type="text" class="form-control o_quantity2" id="o_quantity2" name="field2" /></td>
 
-                                        <td><input type="text" class="form-control o_price2" id="o_price2" name="field3" /></td>
+                                        <td><input type="text" class="form-control o_price2" id="o_price2" name="field3" dir="rtl"/></td>
 
-                                        <td><input type="text" class="form-control o_subtotal2" id="o_subtotal2" name="field4" /></td>
+                                        <td><input type="text" class="form-control o_subtotal2" id="o_subtotal2" name="field4" dir="rtl"/></td>
                                     </tr>
                                     <tr>
                                         <td>4</td>
@@ -259,9 +258,9 @@ if (!empty($_SESSION['admin_I_D'])) {
 
                                         <td><input type="text" class="form-control o_quantity3" id="o_quantity3" name="field2" /></td>
                                         
-                                        <td><input type="text" class="form-control o_price3" id="o_price3" name="field3" /></td>
+                                        <td><input type="text" class="form-control o_price3" id="o_price3" name="field3"dir="rtl" /></td>
 
-                                        <td><input type="text" class="form-control o_subtotal3" id="o_subtotal3" name="field4" /></td>
+                                        <td><input type="text" class="form-control o_subtotal3" id="o_subtotal3" name="field4"dir="rtl" /></td>
                                     </tr>
                                     <tr>
                                         <td>5</td>
@@ -269,9 +268,9 @@ if (!empty($_SESSION['admin_I_D'])) {
 
                                         <td><input type="text" class="form-control o_quantity4" id="o_quantity4" name="field2" /></td>
                                         
-                                        <td><input type="text" class="form-control o_price4" id="o_price4" name="field3" /></td>
+                                        <td><input type="text" class="form-control o_price4" id="o_price4" name="field3"dir="rtl" /></td>
 
-                                        <td><input type="text" class="form-control o_subtotal4" id="o_subtotal4" name="field4" /></td>
+                                        <td><input type="text" class="form-control o_subtotal4" id="o_subtotal4" name="field4"dir="rtl" /></td>
                                     </tr>
 
                                 </tbody>
@@ -288,17 +287,17 @@ if (!empty($_SESSION['admin_I_D'])) {
                 </div>
                 <div class="payment">
                     <span>Total:</span>
-                    <input type="text" class="form-control" name="all-total" id="all-total" value="0" disabled>
+                    <input type="text" class="form-control" name="all-total" id="all-total" value="0" disabled dir="rtl">
 
                     <span>Payment:</span>
-                    <input type="text" class="form-control" name="payment" id="a-payment" value="0" placeholder="Enter amount...">
+                    <input type="text" class="form-control" name="payment" id="a-payment" value="0" placeholder="Enter amount..." dir="rtl">
 
                     <span>Change:</span>
-                    <input type="text" class="form-control" name="change" id="a-change" value="0" disabled>
-                    <input type="checkbox" id="ifadvanced"><span style="font-size: 14px;"> Advanced Payment </span><br>
+                    <input type="text" class="form-control" name="change" id="a-change" value="0" disabled dir="rtl">
+                    <input type="checkbox" id="ifadvanced" ><span style="font-size: 14px;"> Advanced Payment </span><br>
 
                     <span>Dues Remaining Balance:</span>
-                    <input type="text" class="form-control" name="remaining-balance" id="a-remaining-balance" disabled>
+                    <input type="text" class="form-control" name="remaining-balance" id="a-remaining-balance" disabled dir="rtl">
 
                     <span>Remarks:</span><br>
                     <textarea id="a-remarks" placeholder="Type here.."></textarea><br>
@@ -983,7 +982,9 @@ if (!empty($_SESSION['admin_I_D'])) {
                 $(document).ready(function() {
                     $("#assoc-submit").click(function() {
                         var transaction_num = $("#trans-no").val();
-                        var transaction_name = $("#client-name").val();
+                       // var transaction_name = $("#client-name").val();
+                        var t_fname = $("#first-name").val();
+                        var t_lname = $("#last-name").val();
                         var property = $("#property").val();
                         var total_balance = $("#total-balance").val();
                         var selected_balance = $("#selected-balance").val();
@@ -1003,7 +1004,9 @@ if (!empty($_SESSION['admin_I_D'])) {
                             url: "adminViews/includes/act-assoc_submit.php",
                             data: {
                                 transaction_num: transaction_num,
-                                transaction_name: transaction_name,
+                                //transaction_name: transaction_name,
+                                t_fname:t_fname,
+                                t_lname:t_lname,
                                 property: property,
                                 total_balance: total_balance,
                                 selected_balance: selected_balance,
@@ -1032,7 +1035,8 @@ if (!empty($_SESSION['admin_I_D'])) {
                  // for submission of association transaction to database
                   $(document).on('click','#assoc-submit-confirmed',function(){
                     var transaction_num = $("#trans-no").val();
-                        var transaction_name = $("#client-name").val();
+                    var t_fname = $("#first-name").val();
+                        var t_lname = $("#last-name").val();
                         var property = $("#property").val();
                         var total_balance = $("#total-balance").val();
                         var selected_balance = $("#selected-balance").val();
@@ -1051,7 +1055,8 @@ if (!empty($_SESSION['admin_I_D'])) {
                             url: "adminViews/includes/act-assoc_submit_confirmed.php",
                             data: {
                                 transaction_num: transaction_num,
-                                transaction_name: transaction_name,
+                                t_fname:t_fname,
+                                t_lname:t_lname,
                                 property: property,
                                 total_balance: total_balance,
                                 selected_balance: selected_balance,
@@ -1156,28 +1161,70 @@ if (!empty($_SESSION['admin_I_D'])) {
 
             </script>
 <script>
-$.ajax({
+    //FOR DATALIST FIRST NAME
+// $.ajax({
+//     type: "POST",
+//     url: "adminViews/includes/fetch_names.php",
+//     success: function(data) {
+//       var names = JSON.parse(data);
+//       $.each(names, function(index, name) {
+//         $("#fullnames").append("<option value='" + name.owner_fname + " " + name.owner_lname + "'>");
+//       });
+//     }
+//   });
+  $.ajax({
     type: "POST",
     url: "adminViews/includes/fetch_names.php",
     success: function(data) {
       var names = JSON.parse(data);
       $.each(names, function(index, name) {
-        $("#fullnames").append("<option value='" + name.owner_fname + " " + name.owner_lname + "'>");
+        $("#firstnames").append("<option value='" + name.owner_fname + "'>");
       });
     }
   });
-  $("#client-name").change(function() {
+
+  $.ajax({
+    type: "POST",
+    url: "adminViews/includes/fetch_lnames.php",
+    success: function(data) {
+      var names = JSON.parse(data);
+      $.each(names, function(index, name) {
+        $("#lastnames").append("<option value='" + name.owner_lname + "'>");
+      });
+    }
+  });
+  $(document).ready(function(){
+  $("#first-name, #last-name").on("input", function() {
+    var firstName = $("#first-name").val();
+    var lastName = $("#last-name").val();
+
     $.ajax({
       type: "POST",
       url: "adminViews/includes/fetch_property.php",
-      data: { name: $(this).val() },
+      data: {first_name: firstName, last_name: lastName},
       success: function(data) {
+        var lotIds = JSON.parse(data);
         $("#blkandlots").empty();
-        var lots = JSON.parse(data);
-        $.each(lots, function(index, lot) {
-          $("#blkandlots").append("<option value='" + lot.lot_id + "'>");
-        });
+        for (var i = 0; i < lotIds.length; i++) {
+          $("#blkandlots").append("<option value='" + lotIds[i] + "'>");
+        }
       }
     });
   });
+});
+//   $("#first-name").change(function() {
+//     $.ajax({
+//       type: "POST",
+//       url: "adminViews/includes/fetch_property.php",
+//       data: { name: $(this).val() },
+//       success: function(data) {
+//         $("#blkandlots").empty();
+//         var lots = JSON.parse(data);
+//         $.each(lots, function(index, lot) {
+//           $("#blkandlots").append("<option value='" + lot.lot_id + "'>");
+//         });
+//       }
+//     });
+//   });
+
     </script>
