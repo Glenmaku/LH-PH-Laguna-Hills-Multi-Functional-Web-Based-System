@@ -1,8 +1,5 @@
 <?php
 require_once("connection.php");
-if(mysqli_connect_errno()){
-  echo "Failed to connect to MySQL: " . mysqli_connect_error();
-}
 if(isset($_POST['transaction_num'])){
 
 $trans_num = $_POST['transaction_num'];
@@ -18,7 +15,8 @@ $change = $_POST['change'];
 $ifadvanced = $_POST['ifadvanced'];
 $remaining_balance = $_POST['remaining_balance'];
 $remarks = $_POST['remarks'];
-
+$admin_confirmed = $_POST['admin_confirmed'];
+$trans_date = $_POST['trans_date'];
 
 if (empty($transaction_name)) {
   //echo "Error: Transaction name is required.";
@@ -59,28 +57,40 @@ else if(empty($selected_balance) || $selected_balance == 0) {
                  exit();
 }
 else{
-$conv_discount = (($discount/100)* $selected_balance);
-$conv_balance_val = $payment - $change;
+  echo '<div class="modal fade" id="assoc-submit-confirmation" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog ">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Transaction Confirmation</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="close_assoc_confirmed"></button>
+      </div>
+      <div class="modal-body">
+      <h6>Please verify the information below</h6>
+      <h6>Transaction No:</h6><span>'.$trans_num.'</span>
+      <h6>Date:</h6><span>'.$trans_date.'</span><br>
+      <h6>Name:</h6><span>'.$transaction_name.'</span>
+      <h6>Block and lot:</h6><span>'.$property.'</span>
+      <h6>Total Balance:</h6><span>'.$total_balance.'</span>
+      <h6>Interest/Penalty:</h6><span>'.$interest.'</span>
+      <h6>Discount:</h6><span>'.$discount.'."%".</span>
+      <h6>Payment:</h6><span>'.$payment.'</span>
+      <h6>Change:</h6><span>'.$change.'</span>
+      <h6>Remaining Balance:</h6><span>'.$remaining_balance.'</span>
+      <h6>Remarks:</h6><span>'.$remarks.'</span>
 
-//insert data into database
-$sql = "INSERT INTO transaction_assoc (transaction_num,Lot_ID,assoc_selectedBal,assoc_payment,assoc_change,assoc_penalty,assoc_discount,assoc_remarks, balance_val) 
-        VALUES ('$trans_num','$property','$selected_balance', '$payment','$change','$interest','$conv_discount', '$remarks','$conv_balance_val');
-        INSERT INTO all_transaction (transaction_num,transaction_name,Category) 
-        VALUES ('$trans_num','$transaction_name','Association Dues')";
-
-if(mysqli_multi_query($con, $sql)){
-    echo "Successfully recorded transaction";
-                exit();
-
-} else {
- //   echo "Error: " .$sql. "<br>" . mysqli_error($con);
- //echo "Transaction unsuccessful. Please try again.";
- echo'<div class="alert alert-danger alert-dismissible fade show  w-100" role="alert">
- Error: Transaction unsuccessful. Please try again.
-             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                </div>';
-                exit();
-}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Edit</button>
+        <button type="button" class="btn btn-primary" id="assoc-submit-confirmed">Confirm</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+$(document).ready(function(){
+  $("#assoc-submit-confirmation").modal("show");});
+</script>';
+exit();
 }
 }else{
  // echo "Transaction unsuccessful. Please try again.";

@@ -1,0 +1,44 @@
+<?php
+require_once("connection.php");
+
+if(isset($_POST['transaction_num'])){
+
+$trans_num = $_POST['transaction_num'];
+$transaction_name = $_POST['transaction_name'];
+$property = $_POST['property'];
+$total_balance = $_POST['total_balance'];
+$selected_balance = $_POST['selected_balance'];
+$discount = $_POST['discount'];
+$interest = $_POST['interest'];
+$balance_total = $_POST['balance_total'];
+$payment = $_POST['payment'];
+$change = $_POST['change'];
+$ifadvanced = $_POST['ifadvanced'];
+$remaining_balance = $_POST['remaining_balance'];
+$remarks = $_POST['remarks'];
+$admin_confirmed = $_POST['admin_confirmed'];
+
+$conv_discount = (($discount/100)* $selected_balance);
+$conv_balance_val = $payment - $change;
+
+//insert data into database
+$sql = "INSERT INTO transaction_assoc (transaction_num,Lot_ID,assoc_selectedBal,assoc_payment,assoc_change,assoc_penalty,assoc_discount,assoc_remarks, balance_val) 
+        VALUES ('$trans_num','$property','$selected_balance', '$payment','$change','$interest','$conv_discount', '$remarks','$conv_balance_val');
+        INSERT INTO all_transaction (transaction_num,transaction_name,Category,confirmed_by) 
+        VALUES ('$trans_num','$transaction_name','Association Dues','$admin_confirmed')";
+
+if(mysqli_multi_query($con, $sql)){
+    echo'<div class="alert alert-success alert-dismissible fade show  w-100" role="alert">
+Successfully recorded transaction.
+             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>';
+                exit();  
+
+} else {
+ echo'<div class="alert alert-danger alert-dismissible fade show  w-100" role="alert">
+ Error: Transaction unsuccessful. Please try again.
+             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>';
+                exit();
+}
+}

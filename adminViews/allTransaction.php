@@ -1,9 +1,19 @@
+<?php
+session_start();
+if (!empty($_SESSION['admin_I_D'])) {
+    $username = $_SESSION['admin_username'];
+    $Fname = $_SESSION['admin_fName'];
+    $Lname = $_SESSION['admin_lName'];
+    $Email = $_SESSION['admin_email'];
+}
+    ?>
 <div class="all-transaction">
     <div class="transaction-menu">
         <div class="transaction-title">
             <h1>TRANSACTION</h1>
         </div>
         <div id="transaction_errors" class=" ms-1 me-5"></div>
+        <input id="admin-name-trans" value="<?php echo $Fname." ".$Lname?>" hidden>
         <div class="transaction-content">
             <div class="transaction-sheet">
                 <div class="transaction-container">
@@ -290,10 +300,39 @@
                     <button type="reset" class="btn btn-danger" id="assoc-reset">Reset Form</button>
                 </div>
             </div>
-            <!--MODAL FOR SUBMIT-->
+            <!--MODAL FOR SUBMIT-------------------------------------------------------------------
+<div class="modal fade" id="assoc-submit-confirmation" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog ">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Transaction Confirmation</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h6>Please verify the information below</h6>
+        <h6>Transaction No:</h6><span></span>
+        <h6>Date:</h6><span></span><br>
+        <h6>Name:</h6><span></span>
+        <h6>Block and lot:</h6><span></span>
+        <h6>Total Balance:</h6><span></span>
+        <h6>Interest/Penalty:</h6><span></span>
+        <h6>Discount:</h6><span></span>
+        <h6>Payment:</h6><span></span>
+        <h6>Change:</h6><span></span>
+        <h6>Remaining Balance:</h6><span></span>
+        <h6>Remarks:</h6><span></span>
 
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Edit</button>
+        <button type="button" class="btn btn-primary" id="assoc-submit-confirmed">Confirm</button>
+      </div>
+    </div>
+  </div>
+</div>
+            end MODAL FOR SUBMIT-------------------------------------------------------------------->
 
-            <!--  TRANSACTIO NHISTORY -->
+            <!--  TRANSACTION NHISTORY -->
 
             <!-- Modal -->
             <div class="modal fade modal-xl " id="transact_history_Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -597,21 +636,21 @@
                  //   $("#trans-no").val("");
                  //   $("#date").val("");
                  $("#client-name").val("");
-    $("#property").val("");
-    $("#total-balance").val("0");
-    $("#selected-balance").val("0");
-    $("#a-interest").val("0");
-    $("#a-discount").val("0");
-    $("#balance-total").val("0");
-    $("#all-total").val("0");
-    $("#a-payment").val("0");
-    $("#a-change").val("0");
-    $("#ifadvanced").prop("checked", false);
-    $("#a-remaining-balance").val("");
-    $("#a-remarks").val("");
-    $("#selected-balance").val("0");
-    $("#a-interest").val("0");
-    $("#a-discount").val("0");
+                    $("#property").val("");
+                    $("#total-balance").val("0");
+                    $("#selected-balance").val("0");
+                    $("#a-interest").val("0");
+                    $("#a-discount").val("0");
+                    $("#balance-total").val("0");
+                    $("#all-total").val("0");
+                    $("#a-payment").val("0");
+                    $("#a-change").val("0");
+                    $("#ifadvanced").prop("checked", false);
+                    $("#a-remaining-balance").val("");
+                    $("#a-remarks").val("");
+                    $("#selected-balance").val("0");
+                    $("#a-interest").val("0");
+                    $("#a-discount").val("0");
 
                 });
 
@@ -949,6 +988,8 @@
                         var ifadvanced = $("#ifadvanced").val();
                         var remaining_balance = $("#a-remaining-balance").val();
                         var remarks = $("#a-remarks").val();
+                        var admin_confirmed = $("#admin-name-trans").val();
+                        var trans_date = $("#date").val();
 
                         $.ajax({
                             type: "POST",
@@ -966,14 +1007,62 @@
                                 change: change,
                                 ifadvanced: ifadvanced,
                                 remaining_balance: remaining_balance,
-                                remarks: remarks
+                                remarks: remarks,
+                                admin_confirmed:admin_confirmed,
+                                trans_date:trans_date
                             },
                             success: function(data) {
                                 //alert(data);
                                 $("#transaction_errors").html(data);
-                                if(data=== "Successfully recorded transaction"){
-                                $("#assoc-reset").trigger("click");}
+                                if(data==="Confirmation"){
+                                    $('#assoc-submit-confirmation').modal('show');
+                                //$("#assoc-reset").trigger("click");
+                            }
+                            }
+                        });
+                        
+                    });
+                 // for submission of association transaction to database
+                  $(document).on('click','#assoc-submit-confirmed',function(){
+                    var transaction_num = $("#trans-no").val();
+                        var transaction_name = $("#client-name").val();
+                        var property = $("#property").val();
+                        var total_balance = $("#total-balance").val();
+                        var selected_balance = $("#selected-balance").val();
+                        var discount = $("#a-discount").val();
+                        var interest = $("#a-interest").val();
+                        var balance_total = $("#balance-total").val();
+                        var payment = $("#a-payment").val();
+                        var change = $("#a-change").val();
+                        var ifadvanced = $("#ifadvanced").val();
+                        var remaining_balance = $("#a-remaining-balance").val();
+                        var remarks = $("#a-remarks").val();
+                        var admin_confirmed = $("#admin-name-trans").val();
 
+                        $.ajax({
+                            type: "POST",
+                            url: "adminViews/includes/act-assoc_submit_confirmed.php",
+                            data: {
+                                transaction_num: transaction_num,
+                                transaction_name: transaction_name,
+                                property: property,
+                                total_balance: total_balance,
+                                selected_balance: selected_balance,
+                                discount: discount,
+                                interest: interest,
+                                balance_total: balance_total,
+                                payment: payment,
+                                change: change,
+                                ifadvanced: ifadvanced,
+                                remaining_balance: remaining_balance,
+                                remarks: remarks,
+                                admin_confirmed:admin_confirmed
+                            },
+                            success: function(data) {
+                                $("#close_assoc_confirmed").trigger("click");
+                                $("#transaction_errors").html(data);
+                                $("#assoc-reset").trigger("click");
+                                
                                 $.ajax({
                                     url: 'adminViews/includes/act-transact.php',
                                     type: 'post', //path to PHP script
@@ -993,9 +1082,14 @@
                                 });
                             }
                         });
-                        
-                    });
+                  })
+                  $('#assoc-submit-confirmation').on('hidden.bs.modal', function (e) {
+  $(this).remove();
+  $('.modal-backdrop').remove();
+  $('.show').remove();
+})
                 });
+              
 
                 function reserveSubmit() { //sidebar
                     $.ajax({
