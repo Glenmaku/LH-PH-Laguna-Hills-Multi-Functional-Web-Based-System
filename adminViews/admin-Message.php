@@ -12,10 +12,10 @@
                     <div class="nav nav-tabs" id="nav-tab" role="tablist">
 
                         <button class="nav-link active" id="all-transaction-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true" onclick="get_ContactData()">Inquiries <span id="notif-inq" style="color:red;"></span></button>
-                        
+
 
                         <button class="nav-link" id="association-dues-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false" onclick="get_HomeMessage()">Homeowners Messages <i id="notif-home" style="color:red;"></i></button>
-                        
+
                     </div>
                 </nav>
 
@@ -353,29 +353,35 @@
     }
 
     function loadAllTransactionTab() {
-        setInterval(function() {
-            var xhttp = new XMLHttpRequest();
-            xhttp.onreadystatechange = function() {
-                if (this.readyState == 4 && this.status == 200) {
-                    document.getElementById("notif-inq").innerHTML = this.responseText;
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("notif-inq").innerHTML = this.responseText;
+                if (this.responseText !== "0") {
+                    document.getElementById("notif-inq").addEventListener("click", function() {
+                        document.getElementById("notif-inq").innerHTML = "0";
+                    });
                 }
-            };
-            xhttp.open("GET", "adminViews/includes/notification_number-inquiries.php", true);
-            xhttp.send();
-        }, 1000);
+            }
+        };
+        xhttp.open("GET", "adminViews/includes/notification_number-inquiries.php", true);
+        xhttp.send();
     }
 
     function loadAssociationDuesTab() {
-        setInterval(function() {
-            var xhttp = new XMLHttpRequest();
-            xhttp.onreadystatechange = function() {
-                if (this.readyState == 4 && this.status == 200) {
-                    document.getElementById("notif-home").innerHTML = this.responseText;
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("notif-home").innerHTML = this.responseText;
+                if (this.responseText !== "0") {
+                    document.getElementById("notif-home").addEventListener("click", function() {
+                        document.getElementById("notif-home").innerHTML = "0";
+                    });
                 }
-            };
-            xhttp.open("GET", "adminViews/includes/notification_number_homeowners.php", true);
-            xhttp.send();
-        }, 1000);
+            }
+        };
+        xhttp.open("GET", "adminViews/includes/notification_number_homeowners.php", true);
+        xhttp.send();
     }
 
     loadAllTransactionTab();
