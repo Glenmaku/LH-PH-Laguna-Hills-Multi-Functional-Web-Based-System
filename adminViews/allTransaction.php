@@ -29,9 +29,16 @@ if (!empty($_SESSION['admin_I_D'])) {
                                 <input type="date" name="date" id="date" disabled >
                             </div>
                         </div>
-                        <div class="client-name"><span>Name:</span>
-                            <input type="text" list="fullnames" name="name" id="client-name" placeholder="Enter name..." required>
-                            <datalist id="fullnames"></datalist>
+                        <div class="client-name d-flex flex-row ">
+                            <div class="d-flex flex-fill">
+                            <span>First Name:</span>
+                            <input type="text" list="fullnames" name="name" id="client-name" placeholder="Enter firstname..." class="d-flex flex-fil" required>
+                            <datalist id="fullnames"></datalist></div>
+
+                            <div class="d-flex flex-fill ">
+                            <span class="d-flex no-wrap">Last Name:</span>
+                            <input type="text" list="fullnames" name="name" id="client-name" placeholder="Enter lastname..." class="d-flex flex-shrink" required>
+                            <datalist id="fullnames"></datalist></div>
                         </div>
                     </div>
                 </div>
