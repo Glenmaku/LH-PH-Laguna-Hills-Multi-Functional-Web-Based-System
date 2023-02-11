@@ -1,17 +1,17 @@
 <div>
     <div class="payment-area">
         <span>Total:</span>
-        <input type="text" class="form-control" name="all-total" id="all-total" value="0" disabled>
+        <input type="number" class="form-control" name="all-total" id="all-total" value="0" disabled dir="rtl">
 
         <span>Payment:</span>
-        <input type="text" class="form-control" name="payment" id="a-payment" value="0" placeholder="Enter amount...">
+        <input type="number" class="form-control" name="payment" id="a-payment" value="0" placeholder="Enter amount..." dir="rtl">
 
         <span>Change:</span>
-        <input type="text" class="form-control" name="change" id="a-change" value="0" disabled>
+        <input type="number" class="form-control" name="change" id="a-change" value="0" disabled dir="rtl">
         <input type="checkbox" id="ifadvanced"><span style="font-size: 14px;"> Advanced Payment </span><br>
 
         <span>Dues Remaining Balance:</span>
-        <input type="text" class="form-control" name="remaining-balance" id="a-remaining-balance" disabled>
+        <input type="number" class="form-control" name="remaining-balance" id="a-remaining-balance" disabled dir="rtl">
 
         <span>Remarks:</span><br>
         <textarea id="a-remarks" placeholder="Type here.."></textarea><br>
