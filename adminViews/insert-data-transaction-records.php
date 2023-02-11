@@ -1,21 +1,4 @@
 <?php
-// include "includes/connection.php";
-
-// extract($_POST);
-// if(isset($_POST['trans_nosend']) && isset($_POST['namesend']) && isset($_POST['totalprice_send']) && isset($_POST['reserv_discountsend']) && isset($_POST['remarks_send']) && isset($_POST['reserv_paymentsend']) && isset($_POST['reserv_changesend']) && isset($_POST['reserv_remaining_balancesend'])  ){
-
-//     $sql = "INSERT into transac_reserv_records (records_transaction_no,t_name, total, discount, remarks, reserv_payment, reserv_change, remaining_balance) values ('$trans_nosend','$namesend','$totalprice_send', '$reserv_discountsend','$remarks_send', '$reserv_paymentsend', '$reserv_changesend', '$reserv_remaining_balancesend')";
-
-//     $result = mysqli_query($con,$sql);
-
-//     if($result){
-//     echo "<script>alert('successully sent to database - records');</script>";
-//     } 
-//     else {
-//         echo "<script>alert('oh no. error sending to records transaction');</script>";
-//     }
-// }
-?><?php
 include "includes/connection.php";
 
 $trans_nosend = $_POST['trans_nosend'];
@@ -32,10 +15,25 @@ if(isset($_POST['trans_nosend']) && isset($_POST['namesend']) && isset($_POST['t
     
     if (!$reserv_paymentsend || $reserv_paymentsend == 0) {
         echo "Please input a valid payment amount.";
+        echo'<div class="alert alert-danger alert-dismissible fade show  w-100 text-center" role="alert">
+ Error: Transaction unsuccessful. Please try again.
+             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>';
+                exit();
     } else if ($totalprice_send > $reserv_paymentsend) {
         echo "Please input a valid payment amount.";
+        echo'<div class="alert alert-danger alert-dismissible fade show  w-100 text-center" role="alert">
+ Error: Transaction unsuccessful. Please try again.
+             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>';
+                exit();
     } else if (!$namesend) {
         echo "Name field cannot be empty. Please input a name.";
+        echo'<div class="alert alert-danger alert-dismissible fade show  w-100 text-center" role="alert">
+ Error: Transaction unsuccessful. Please try again.
+             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>';
+                exit();
     } else {
         // insert into transac_reserv_records table
         $sql1 = "INSERT into transac_reserv_records (records_transaction_no,t_name, total, discount, remarks, reserv_payment, reserv_change, remaining_balance) values ('$trans_nosend','$namesend','$totalprice_send', '$reserv_discountsend','$remarks_send', '$reserv_paymentsend', '$reserv_changesend', '$reserv_remaining_balancesend')";
@@ -49,7 +47,11 @@ if(isset($_POST['trans_nosend']) && isset($_POST['namesend']) && isset($_POST['t
             echo "Successfully recorded transaction";
         } 
         else {
-            echo "Transaction unsuccessful. Please try again.";
+            echo'<div class="alert alert-danger alert-dismissible fade show  w-100 text-center" role="alert">
+            Error: Transaction unsuccessful. Please try again.
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                           </div>';
+                           exit();
         }
     }
 }

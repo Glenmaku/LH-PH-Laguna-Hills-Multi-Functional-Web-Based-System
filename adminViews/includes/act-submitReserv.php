@@ -1,15 +1,15 @@
 <div>
   <div class="payment-area">
     <span>Total:</span>
-    <input type="text" class="form-control reserv_total" name="reserv_total" id="reserv_total" disabled>
+    <input type="text" class="form-control reserv_total" name="reserv_total" id="reserv_total" disabled value="0"dir="rtl">
     <span>Payment:</span>
-    <input type="text" class="form-control reserv_payment" name="reserv_payment" id="reserv_payment" value="0" placeholder="Enter amount...">
+    <input type="text" class="form-control reserv_payment border border-dark" name="reserv_payment" id="reserv_payment" value="0" placeholder="Enter amount..." dir="rtl">
     <span>Change:</span>
-    <input type="text" class="form-control reserv_change" name="reserv_change" id="reserv_change" value="0" disabled>
+    <input type="text" class="form-control reserv_change" name="reserv_change" id="reserv_change" value="0" disabled dir="rtl">
     <span hidden>Remaining Balance:</span>
-    <input type="text" class="form-control reserv_remaining_balance" name="reserv_remaining_balance" id="reserv_remaining_balance" value="0" disabled hidden>
+    <input type="text" class="form-control reserv_remaining_balance" name="reserv_remaining_balance" id="reserv_remaining_balance" value="0" disabled hidden dir="rtl">
     <span>Remarks:</span>
-    <textarea id="reserv_remark" placeholder="Type here.."></textarea>
+    <textarea id="reserv_remark" placeholder="Type here.." class=" border border-dark"></textarea>
     <button type="submit" id="reserv_submit" class="btn btn-success reserv_submit">Submit</button>
     <button type="reset" id="reserv_reset" class="btn btn-danger reserv_reset">Reset Form</button>
   </div>
@@ -28,7 +28,9 @@
     var checkbox_miming = ["#radio-miming"];
 
     var trans_no = $("#trans-no").val();
-    var nameadd = $("#client-name").val();
+   // var nameadd = $("#client-name").val();
+    var t_fname = $("#first-name").val();
+    var t_lname = $("#last-name").val();
     var from_reservation_date_string = $("#from-reservation-date").val();
     var to_reservation_date_string = $("#to-reservation-date").val();
     var price_hall = $("#in-radio-hall3").val();
