@@ -17,6 +17,9 @@ body{
     --light-blue: #CFE8FF;
     --light-green: #0f8e5f;
 }
+ .text-space {
+    letter-spacing: 3px;
+  }
 /*********** Headers **************/
 .admin-header{
     top: 0;
@@ -472,7 +475,7 @@ body{
     justify-content: space-between;
 }
 .transaction-sheet .transaction-details input{
-    font-family: 'Raleway', sans-serif;
+   font-family: 'Raleway', sans-serif;
     font-weight: 500;
     font-size: 17px;
     color: var(--darkgreen);
@@ -483,15 +486,14 @@ body{
 
 .fornames .form-control{
    /* display: inline;*/
-
     font-family: 'Raleway', sans-serif!important;
     font-weight: 500!important;
-    font-size: 17px!important;
+    font-size: 15px!important;
     color: var(--darkgreen)!important;
     padding: 5px!important;
-    margin-top: 3px!important;
+   
     border-radius: 5px!important;
-    border: 0!important;
+    margin-right: 3px;
     background-color: var(--light-blue)!important;
 }
 
@@ -547,7 +549,9 @@ body{
 }
 .association-dues .lot-number input,
 .association-dues .address-status input{
-    font-family: 'Raleway', sans-serif;
+    /*font-family: 'Raleway', sans-serif;*/
+    font-family: 'Roboto Mono', monospace;
+    letter-spacing: 3px;
     font-weight: 500;
     font-size: 16px;
     color: var(--darkgreen);
@@ -588,7 +592,8 @@ body{
 }
 
 .transaction-sheet .reservation-date input{
-    font-family: 'Raleway', sans-serif;
+    /*font-family: 'Raleway', sans-serif;*/
+    font-family: 'Roboto Mono', monospace;
     font-weight: 500;
     font-size: 16px;
     color: var(--darkgreen);
@@ -618,10 +623,12 @@ body{
     height: 15px;
 }
 .selected-reservation .reservation-time input{
-    width: 40%;
-    font-family: 'Raleway', sans-serif;
+    width: 45%;
+    /*font-family: 'Raleway', sans-serif;*/
+    font-family: 'Roboto Mono', monospace;
+    letter-spacing: 0px;
     font-weight: 500;
-    font-size: 16px;
+    font-size: 14px;
     color: var(--darkgreen);
     padding: 5px;
     border: 0;
@@ -631,7 +638,9 @@ body{
  
 .selected-reservation .reservation-price input{
     width: 100%;
-    font-family: 'Raleway', sans-serif;
+    /*font-family: 'Raleway', sans-serif;*/
+    font-family: 'Roboto Mono', monospace;
+    letter-spacing: 3px;
     font-weight: 500;
     font-size: 16px;
     color: var(--darkgreen);
@@ -651,7 +660,9 @@ body{
 
 .reservation-subtotal .r-subtotal-label input{
     width: 100%;
-    font-family: 'Raleway', sans-serif;
+    /*font-family: 'Raleway', sans-serif;*/
+    font-family: 'Roboto Mono', monospace;
+    letter-spacing: 3px;
     font-weight: 500;
     font-size: 16px;
     color: var(--darkgreen);
@@ -674,7 +685,9 @@ body{
 
 .o-transaction-sheet .o-transaction-label input{
     width:80%;
-    font-family: 'Raleway', sans-serif;
+   /*font-family: 'Raleway', sans-serif;*/
+   font-family: 'Roboto Mono', monospace;
+   letter-spacing: 3px;
     font-weight: 500;
     font-size: 16px;
     color: var(--darkgreen);
@@ -695,7 +708,9 @@ body{
   }
 .other-services input{
     width: 90%;
-    font-family: 'Raleway', sans-serif;
+    /*font-family: 'Raleway', sans-serif;*/
+    font-family: 'Roboto Mono', monospace;
+    letter-spacing: 3px;
     font-weight: 500;
     font-size: 16px;
     color: var(--darkgreen);
@@ -737,7 +752,9 @@ td {
 
  .other-transaction .o-discount input{
     width: 20%;
-    font-family: 'Raleway', sans-serif;
+    /*font-family: 'Raleway', sans-serif;*/
+    font-family: 'Roboto Mono', monospace;
+    letter-spacing: 3px;
     font-weight: 500;
     font-size: 16px;
     color: var(--darkgreen);
@@ -784,7 +801,9 @@ td {
 }
 
 .submit-area .payment input{
-    font-family: 'Raleway', sans-serif;
+    /*font-family: 'Raleway', sans-serif;*/
+    font-family: 'Roboto Mono', monospace;
+    letter-spacing: 3px;
     font-weight: 500;
     font-size: 16px;
     color: var(--darkgreen);

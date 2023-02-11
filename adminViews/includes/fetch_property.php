@@ -1,7 +1,7 @@
 <?php
   require("connection.php");
 
-  if(isset($_POST['first_name']) && isset($_POST['last_name'])) {
+ // if(isset($_POST['first_name']) && isset($_POST['last_name'])) {
     $firstName = $_POST['first_name'];
     $lastName = $_POST['last_name'];
 
@@ -16,17 +16,17 @@
     } else {
       $sql = "SELECT lot_id FROM get_lot_ids";
       $result = $con->query($sql);
-      if ($result->num_rows > 0) {
+     // if ($result->num_rows > 0) {
         while($row = $result->fetch_assoc()) {
           array_push($lotIds, $row['lot_id']);
         }
-      }
+      //}
     }
 
     echo json_encode($lotIds);
 
     $con->close();
-  }
+ // }
 ?>
 
 

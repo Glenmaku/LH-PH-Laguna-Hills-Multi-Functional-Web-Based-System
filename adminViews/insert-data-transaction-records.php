@@ -9,12 +9,13 @@ $remarks_send = $_POST['remarks_send'];
 $reserv_paymentsend = $_POST['reserv_paymentsend'];
 $reserv_changesend = $_POST['reserv_changesend'];
 $reserv_remaining_balancesend = $_POST['reserv_remaining_balancesend'];
-
+$t_email =$_POST['t_email'];
+$admin_confirmed = $_POST['admin_confirmed'];
 
 if(isset($_POST['trans_nosend']) && isset($_POST['namesend']) && isset($_POST['totalprice_send']) && isset($_POST['reserv_discountsend']) && isset($_POST['reserv_paymentsend'])){
     
     if (!$reserv_paymentsend || $reserv_paymentsend == 0) {
-        echo "Please input a valid payment amount.";
+     //   echo "Please input a valid payment amount.";
         echo'<div class="alert alert-danger alert-dismissible fade show  w-100 text-center" role="alert">
  Error: Transaction unsuccessful. Please try again.
              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
@@ -40,7 +41,7 @@ if(isset($_POST['trans_nosend']) && isset($_POST['namesend']) && isset($_POST['t
         $result1 = mysqli_query($con,$sql1);
 
         // insert into all_transaction table
-        $sql2 = "INSERT into all_transaction (transaction_num, transaction_name, Category) values ('$trans_nosend', '$namesend', 'Reservation')";
+        $sql2 = "INSERT into all_transaction (transaction_num, transaction_name, Category,transaction_email,confirmed_by) values ('$trans_nosend', '$namesend', 'Reservation','$t_email','$admin_confirmed')";
         $result2 = mysqli_query($con,$sql2);
 
         if($result1 && $result2){
@@ -55,4 +56,3 @@ if(isset($_POST['trans_nosend']) && isset($_POST['namesend']) && isset($_POST['t
         }
     }
 }
-?>

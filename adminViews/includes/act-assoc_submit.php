@@ -25,7 +25,7 @@ $trans_date = $_POST['trans_date'];
 if (empty($t_fname) || empty($t_lname)||empty($t_email)) {
   //echo "Error: Transaction name is required.";
   echo'<div class="alert alert-danger alert-dismissible fade show  w-100 text-center" role="alert">
-  Error: Please enter the first name,last name, and email of recipient.
+  Error: Please enter the first name, last name, and email of recipient.
               <button type="button" class="btn-close close_alert_info" data-bs-dismiss="alert" aria-label="Close"></button>
                  </div>';
                  exit();
@@ -150,4 +150,3 @@ exit();
                 exit();
 }
 mysqli_close($con);
-?>

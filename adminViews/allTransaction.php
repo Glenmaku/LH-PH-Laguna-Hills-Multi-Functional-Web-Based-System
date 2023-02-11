@@ -41,20 +41,19 @@ if (!empty($_SESSION['admin_I_D'])) {
                         </div>-->
                         <div class="row align-items-start d-flex flex-row">
                         <div class="col-8">
-                        <div class="input-group">
+                        <div class="input-group fornames ">
                             <span class="input-group-text">First and last name</span>
-                            <input type="text" aria-label="First name" class="form-control" list="firstnames" name="name" id="first-name" placeholder="Enter firstname..."> <datalist id="firstnames"></datalist>
-                            <input type="text" aria-label="Last name" class="form-control "list="lastnames" name="name" id="last-name" placeholder="Enter lastname..."><datalist id="lastnames"></datalist>
+                            <input type="text" aria-label="First name" class="form-control border border-dark" list="firstnames" name="name" id="first-name" placeholder="Enter firstname..."> <datalist id="firstnames"></datalist>
+                            <input type="text" aria-label="Last name" class="form-control border border-dark"list="lastnames" name="name" id="last-name" placeholder="Enter lastname..."><datalist id="lastnames"></datalist>
                         </div></div>
                         <div class="col-4">
-                        <div class="input-group">
+                        <div class="input-group fornames">
                             <span class="input-group-text">Email</span>
-                            <input type="text" list="emailsss" class="form-control" placeholder="Enter email..." id="transaction-email"><datalist id="emailsss"></datalist>
+                            <input type="text" list="emailsss" class="form-control border border-dark" placeholder="Enter email..." id="transaction-email"><datalist id="emailsss"></datalist>
                             </div></div>
                         </div>
                     </div>
                 </div>
-
 
                 <!-- ASSOCIATION DUES -->
                 <div class="association-dues" id="association-dues">
@@ -83,7 +82,7 @@ if (!empty($_SESSION['admin_I_D'])) {
                                 </div>
                                 <div class="total-balance">
                                     <span>Total Balance:</span><br>
-                                    <input name="total-balance" id="total-balance" readonly value="0" dir="rtl">
+                                    <input name="total-balance" id="total-balance" readonly value="0" dir="rtl" class="text-space">
                                 </div>
                             </div>
 
@@ -114,11 +113,11 @@ if (!empty($_SESSION['admin_I_D'])) {
                     </div>
                 </div>
 
-                <!-- reservation section-->
+                <!--RESERVATION SECTION-->
                 <div class="reservation">
                     <div class="reservation-title">
                         <div class="div-title">
-                            <h2 id="panelsStayOpen-headingTwo">RESERVATION
+                            <h2 id="panelsStayOpen-headingTwo">RESERVATION</h2>
                         </div>
                         <div class="hide-option" id="hide_reserv">
                             <i id="hide_reserv_i" class="fa-solid fa-chevron-down accordion-button-icon" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="true" aria-controls="panelsStayOpen-collapseTwo" onclick="reserveSubmit()"></i>
@@ -130,9 +129,9 @@ if (!empty($_SESSION['admin_I_D'])) {
                             <!-- label -->
                             <div class="reservation-date">
                                 <span>Reservation Date:</span>
-                                <input type="date" name="from-reservation-date" id="from-reservation-date">
+                                <input type="date" name="from-reservation-date" id="from-reservation-date" class="text-center">
                                 <span>-</span>
-                                <input type="date" name="to-reservation-date" id="to-reservation-date">
+                                <input type="date" name="to-reservation-date" id="to-reservation-date"class="text-center">
                             </div>
 
                             <div class="amenities-reservation">
@@ -154,9 +153,9 @@ if (!empty($_SESSION['admin_I_D'])) {
                                         </div>
 
                                         <div class="reservation-time">
-                                            <input type="text" name="f-time-from" id="in-radio-hall1" disabled="disabled" placeholder="6am"dir="rtl">
+                                            <input type="time" name="f-time-from" id="in-radio-hall1" disabled="disabled" placeholder="6am"class="text-center">
                                             <span>-</span>
-                                            <input type="text" name="f-time-to" id="in-radio-hall2" placeholder="10am" disabled="disabled"dir="rtl">
+                                            <input type="time" name="f-time-to" id="in-radio-hall2" placeholder="10am" disabled="disabled"class="text-center">
                                         </div>
                                         <div class="reservation-price">
                                             <input type="number" name="reservation-price" id="in-radio-hall3" value="0" disabled="disabled"dir="rtl">
@@ -171,9 +170,9 @@ if (!empty($_SESSION['admin_I_D'])) {
                                             <span>Court</span>
                                         </div>
                                         <div class="reservation-time">
-                                            <input type="text" name="f-time-from" id="in-radio-court1" placeholder="6am" disabled="disabled"dir="rtl">
+                                            <input type="time" name="f-time-from" id="in-radio-court1" placeholder="6am" disabled="disabled"class="text-center">
                                             <span>-</span>
-                                            <input type="text" name="f-time-to" id="in-radio-court2" placeholder="10am" disabled="disabled"dir="rtl">
+                                            <input type="time" name="f-time-to" id="in-radio-court2" placeholder="10am" disabled="disabled"class="text-center">
                                         </div>
                                         <div class="reservation-price">
                                             <input type="number" name="reservation-price" id="in-radio-court3" value="0" disabled="disabled"dir="rtl">
@@ -187,9 +186,9 @@ if (!empty($_SESSION['admin_I_D'])) {
                                             <span>Swimming Pool</span>
                                         </div>
                                         <div class="reservation-time">
-                                            <input type="text" name="f-time-from" id="in-radio-miming1" placeholder="6am" disabled="disabled"dir="rtl">
+                                            <input type="time" name="f-time-from" id="in-radio-miming1" placeholder="6am" disabled="disabled"class="text-center">
                                             <span>-</span>
-                                            <input type="text" name="f-time-to" placeholder="10am" id="in-radio-miming2" disabled="disabled"dir="rtl">
+                                            <input type="time" name="f-time-to" placeholder="10am" id="in-radio-miming2" disabled="disabled"class="text-center">
                                         </div>
                                         <div class="reservation-price">
                                             <input type="number" name="reservation-price" id="in-radio-miming3" value="0" disabled="disabled"dir="rtl">
@@ -599,7 +598,7 @@ if (!empty($_SESSION['admin_I_D'])) {
 
             <!-- SCRIPT NI ADD TRANSACTION-->
             <script>
-                // script ni venn
+              
                 $(document).ready(function() {
                     $.ajax({
                         url: 'adminViews/includes/act-transact.php',
@@ -615,22 +614,14 @@ if (!empty($_SESSION['admin_I_D'])) {
                     var yyyy = today.getFullYear();
                     today = yyyy + '-' + mm + '-' + dd;
                     $("#date").val(today);
-                }); // end script venn
-
-
+                }); 
 
                 //data insertion sa reservation palang
-
-
-
                 // clear the forms after pressing the reset button  
                 $("#assoc-reset").click(function() {
-                 //   $("#trans-no").val("");
-                 //   $("#date").val("");
-                 //$("#client-name").val("");
-                 $("#last-name").val("");
-                 $("#first-name").val("");
-                 $("#transaction-email").val("");
+                    $("#last-name").val("");
+                    $("#first-name").val("");
+                    $("#transaction-email").val("");
                     $("#property").val("");
                     $("#total-balance").val("0");
                     $("#selected-balance").val("0");
@@ -646,16 +637,13 @@ if (!empty($_SESSION['admin_I_D'])) {
                     $("#selected-balance").val("0");
                     $("#a-interest").val("0");
                     $("#a-discount").val("0");
-
                 });
 
                 $("#reserv_reset").click(function() {
-                    //$("#trans-no").val("");
-                //    $("#date").val("");
-                //   $("#client-name").val("");
-                $("#last-name").val("");
-                 $("#first-name").val("");
-                 $("#transaction-email").val("");
+                    $("#last-name").val("");
+                    $("#first-name").val("");
+                    $("#transaction-email").val("");
+
                     $("#from-reservation-date").val("");
                     $("#to-reservation-date").val("");
                     $("#in-radio-hall1").val("");
@@ -677,9 +665,7 @@ if (!empty($_SESSION['admin_I_D'])) {
                 });
 
                 $("#other_reset").click(function() {
-                //    $("#trans-no").val("");
-                 //   $("#date").val("");
-                 //   $("#client-name").val("");
+
                  $("#last-name").val("");
                  $("#first-name").val("");
                  $("#transaction-email").val("");
@@ -699,7 +685,6 @@ if (!empty($_SESSION['admin_I_D'])) {
                         $("#o_price" + i).val("");
                         $("#o_subtotal" + i).val("");
                     }
-
                 });
 
                 // checkbox reset
@@ -770,8 +755,6 @@ if (!empty($_SESSION['admin_I_D'])) {
                 });
                 //end checkbox reset 
 
-                
-
                 // radio button function
                 $(function() {
                     $("input[name='reservation-location']").click(function() {
@@ -795,7 +778,7 @@ if (!empty($_SESSION['admin_I_D'])) {
                     });
                 });
 
-                //     // Get the table object
+                // Get the table object
 
                 // reset form if naka collapse
                 var hide_assoc = document.getElementById("hide_assoc");

@@ -65,8 +65,7 @@
           r_discounts: r_discounts
         },
         success: function(data, status) {
-          // function to display data
-          //console.log(status);
+
         }
       });
     } else {
@@ -89,8 +88,7 @@
           r_discounts: r_discounts
         },
         success: function(data, status) {
-          // function to display data
-          //   console.log(status);
+          
         }
       });
     } else {
@@ -113,8 +111,7 @@
           r_discounts: r_discounts
         },
         success: function(data, status) {
-          // function to display data
-          //    console.log(status);
+         
         }
       });
     } else {
@@ -298,11 +295,11 @@ $(document).ready(function() {
 
   function reserv_reset_data() {
 
-    $("#radio-hall").prop("checked", false);
+  $("#radio-hall").prop("checked", false);
   $("#radio-court").prop("checked", false);
   $("#radio-miming").prop("checked", false);
   
-    $("#from-reservation-date").val("");
+  $("#from-reservation-date").val("");
   $("#to-reservation-date").val("");
 
     $("#in-radio-hall1").val("");
