@@ -7,6 +7,7 @@ $trans_num = $_POST['transaction_num'];
 
 $t_fname = $_POST['t_fname'];
 $t_lname = $_POST['t_lname'];
+$t_email = $_POST['t_email'];
 $property = $_POST['property'];
 $total_balance = $_POST['total_balance'];
 $selected_balance = $_POST['selected_balance'];
@@ -27,8 +28,8 @@ $transaction_name = $t_fname." ".$t_lname;
 //insert data into database
 $sql = "INSERT INTO transaction_assoc (transaction_num,Lot_ID,assoc_selectedBal,assoc_payment,assoc_change,assoc_penalty,assoc_discount,assoc_remarks, balance_val) 
         VALUES ('$trans_num','$property','$selected_balance', '$payment','$change','$interest','$conv_discount', '$remarks','$conv_balance_val');
-        INSERT INTO all_transaction (transaction_num,transaction_name,Category,confirmed_by) 
-        VALUES ('$trans_num','$transaction_name','Association Dues','$admin_confirmed')";
+        INSERT INTO all_transaction (transaction_num,transaction_name,Category,transaction_email,confirmed_by) 
+        VALUES ('$trans_num','$transaction_name','Association Dues','$t_email','$admin_confirmed')";
 
 if(mysqli_multi_query($con, $sql)){
     echo'<div class="alert alert-success alert-dismissible fade show  w-100 text-center" role="alert">

@@ -12,7 +12,6 @@ if (!empty($_SESSION['admin_I_D'])) {
         <div class="transaction-title">
             <h1>TRANSACTION</h1>
         </div>
-        <div id="transaction_errors" class=" ms-1 me-5"></div>
         <input id="admin-name-trans" value="<?php echo $Fname." ".$Lname?>" hidden>
         <div class="transaction-content">
             <div class="transaction-sheet">
@@ -28,8 +27,9 @@ if (!empty($_SESSION['admin_I_D'])) {
                                 <span>Date:</span>
                                 <input type="date" name="date" id="date" disabled >
                             </div>
-                        </div>
-                        <div class="client-name d-flex flex-row justify-content-between">
+                            
+                        </div><div id="transaction_errors_info" class=" ms-1 me-1"></div>
+                       <!-- <div class="client-name d-flex flex-row justify-content-between">
                             <div class="d-flex flex-fill justify-content-start   align-items-center">
                             <span class="me-2">First Name:</span>
                             <input type="text" list="firstnames" name="name" id="first-name" placeholder="Enter firstname..." class="d-flex flex-fill border border-dark" required>
@@ -38,6 +38,19 @@ if (!empty($_SESSION['admin_I_D'])) {
                             <span class="me-2">Last Name:</span>
                             <input type="text" list="lastnames" name="name" id="last-name" placeholder="Enter lastname..." class="d-flex flex-fill border border-dark" required>
                             <datalist id="lastnames"></datalist></div>
+                        </div>-->
+                        <div class="row align-items-start d-flex flex-row">
+                        <div class="col-8">
+                        <div class="input-group">
+                            <span class="input-group-text">First and last name</span>
+                            <input type="text" aria-label="First name" class="form-control" list="firstnames" name="name" id="first-name" placeholder="Enter firstname..."> <datalist id="firstnames"></datalist>
+                            <input type="text" aria-label="Last name" class="form-control "list="lastnames" name="name" id="last-name" placeholder="Enter lastname..."><datalist id="lastnames"></datalist>
+                        </div></div>
+                        <div class="col-4">
+                        <div class="input-group">
+                            <span class="input-group-text">Email</span>
+                            <input type="text" list="emailsss" class="form-control" placeholder="Enter email..." id="transaction-email"><datalist id="emailsss"></datalist>
+                            </div></div>
                         </div>
                     </div>
                 </div>
@@ -53,7 +66,7 @@ if (!empty($_SESSION['admin_I_D'])) {
                             <i id="hide_assoc_i" class="fa-solid fa-chevron-up accordion-button-icon" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne" onclick="assocSubmit()"></i>
                         </div>
                     </div>
-
+                    <div id="transaction_errors_assoc" class=" ms-1 me-1"></div>
                     <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
                         <div id="trans-assoc-error"></div>
                         <div class="accordion-body">
@@ -286,6 +299,7 @@ if (!empty($_SESSION['admin_I_D'])) {
                     <button id="transac_history_modal_btn" onclick="Display_All_Transactions_Rec()"><i class="fa-solid fa-clock-rotate-left"></i> Transaction History</button>
                 </div>
                 <div class="payment">
+                <div id="transaction_errors_assocpanel" class=" ms-1 me-1"></div>
                     <span>Total:</span>
                     <input type="text" class="form-control" name="all-total" id="all-total" value="0" disabled dir="rtl">
 
@@ -307,35 +321,7 @@ if (!empty($_SESSION['admin_I_D'])) {
                 </div>
             </div>
             <!--MODAL FOR SUBMIT-------------------------------------------------------------------
-<div class="modal fade" id="assoc-submit-confirmation" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog ">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Transaction Confirmation</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <h6>Please verify the information below</h6>
-        <h6>Transaction No:</h6><span></span>
-        <h6>Date:</h6><span></span><br>
-        <h6>Name:</h6><span></span>
-        <h6>Block and lot:</h6><span></span>
-        <h6>Total Balance:</h6><span></span>
-        <h6>Interest/Penalty:</h6><span></span>
-        <h6>Discount:</h6><span></span>
-        <h6>Payment:</h6><span></span>
-        <h6>Change:</h6><span></span>
-        <h6>Remaining Balance:</h6><span></span>
-        <h6>Remarks:</h6><span></span>
 
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Edit</button>
-        <button type="button" class="btn btn-primary" id="assoc-submit-confirmed">Confirm</button>
-      </div>
-    </div>
-  </div>
-</div>
             end MODAL FOR SUBMIT-------------------------------------------------------------------->
 
             <!--  TRANSACTION NHISTORY -->
@@ -641,7 +627,10 @@ if (!empty($_SESSION['admin_I_D'])) {
                 $("#assoc-reset").click(function() {
                  //   $("#trans-no").val("");
                  //   $("#date").val("");
-                 $("#client-name").val("");
+                 //$("#client-name").val("");
+                 $("#last-name").val("");
+                 $("#first-name").val("");
+                 $("#transaction-email").val("");
                     $("#property").val("");
                     $("#total-balance").val("0");
                     $("#selected-balance").val("0");
@@ -663,8 +652,10 @@ if (!empty($_SESSION['admin_I_D'])) {
                 $("#reserv_reset").click(function() {
                     //$("#trans-no").val("");
                 //    $("#date").val("");
-                    $("#client-name").val("");
-
+                //   $("#client-name").val("");
+                $("#last-name").val("");
+                 $("#first-name").val("");
+                 $("#transaction-email").val("");
                     $("#from-reservation-date").val("");
                     $("#to-reservation-date").val("");
                     $("#in-radio-hall1").val("");
@@ -688,8 +679,10 @@ if (!empty($_SESSION['admin_I_D'])) {
                 $("#other_reset").click(function() {
                 //    $("#trans-no").val("");
                  //   $("#date").val("");
-                    $("#client-name").val("");
-
+                 //   $("#client-name").val("");
+                 $("#last-name").val("");
+                 $("#first-name").val("");
+                 $("#transaction-email").val("");
                     $("#o_subtotal").val("");
                     $("#o_category").val("");
                     $("#o_quantity").val("");
@@ -985,6 +978,7 @@ if (!empty($_SESSION['admin_I_D'])) {
                        // var transaction_name = $("#client-name").val();
                         var t_fname = $("#first-name").val();
                         var t_lname = $("#last-name").val();
+                        var t_email = $("#transaction-email").val();
                         var property = $("#property").val();
                         var total_balance = $("#total-balance").val();
                         var selected_balance = $("#selected-balance").val();
@@ -1007,6 +1001,7 @@ if (!empty($_SESSION['admin_I_D'])) {
                                 //transaction_name: transaction_name,
                                 t_fname:t_fname,
                                 t_lname:t_lname,
+                                t_email:t_email,
                                 property: property,
                                 total_balance: total_balance,
                                 selected_balance: selected_balance,
@@ -1023,11 +1018,11 @@ if (!empty($_SESSION['admin_I_D'])) {
                             },
                             success: function(data) {
                                 //alert(data);
-                                $("#transaction_errors").html(data);
+                                $("#transaction_errors_assoc").html(data);
                                 if(data==="Confirmation"){
                                     $('#assoc-submit-confirmation').modal('show');
                                 //$("#assoc-reset").trigger("click");
-                            }
+                                }
                             }
                         });
                         
@@ -1037,6 +1032,7 @@ if (!empty($_SESSION['admin_I_D'])) {
                     var transaction_num = $("#trans-no").val();
                     var t_fname = $("#first-name").val();
                         var t_lname = $("#last-name").val();
+                        var t_email = $("#transaction-email").val();
                         var property = $("#property").val();
                         var total_balance = $("#total-balance").val();
                         var selected_balance = $("#selected-balance").val();
@@ -1057,6 +1053,7 @@ if (!empty($_SESSION['admin_I_D'])) {
                                 transaction_num: transaction_num,
                                 t_fname:t_fname,
                                 t_lname:t_lname,
+                                t_email:t_email,
                                 property: property,
                                 total_balance: total_balance,
                                 selected_balance: selected_balance,
@@ -1072,7 +1069,7 @@ if (!empty($_SESSION['admin_I_D'])) {
                             },
                             success: function(data) {
                                 $("#close_assoc_confirmed").trigger("click");
-                                $("#transaction_errors").html(data);
+                                $("#transaction_errors_assoc").html(data);
                                 $("#assoc-reset").trigger("click");
                                 
                                 $.ajax({
@@ -1095,11 +1092,11 @@ if (!empty($_SESSION['admin_I_D'])) {
                             }
                         });
                   })
-                  $('#assoc-submit-confirmation').on('hidden.bs.modal', function (e) {
-  $(this).remove();
-  $('.modal-backdrop').remove();
-  $('.show').remove();
-})
+                    $('#assoc-submit-confirmation').on('hidden.bs.modal', function (e) {
+                        $(this).remove();
+                        $('.modal-backdrop').remove();
+                        $('.show').remove();
+                    })
                 });
               
 
@@ -1200,21 +1197,23 @@ if (!empty($_SESSION['admin_I_D'])) {
         }
       }
     });
+
+    $.ajax({
+      type: "POST",
+      url: "adminViews/includes/fetch_transaction_emails.php",
+      data: {first_name: firstName, last_name: lastName},
+      success: function(data) {
+        var Temails = JSON.parse(data);
+        $("#emailsss").empty();
+        for (var i = 0; i < Temails.length; i++) {
+          $("#emailsss").append("<option value='" + Temails[i] + "'>");
+        }
+      }
+    });
   });
+
+  
 });
-//   $("#first-name").change(function() {
-//     $.ajax({
-//       type: "POST",
-//       url: "adminViews/includes/fetch_property.php",
-//       data: { name: $(this).val() },
-//       success: function(data) {
-//         $("#blkandlots").empty();
-//         var lots = JSON.parse(data);
-//         $.each(lots, function(index, lot) {
-//           $("#blkandlots").append("<option value='" + lot.lot_id + "'>");
-//         });
-//       }
-//     });
-//   });
+
 
     </script>
