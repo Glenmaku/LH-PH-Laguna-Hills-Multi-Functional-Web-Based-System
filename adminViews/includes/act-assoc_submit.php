@@ -6,7 +6,7 @@ $trans_num = $_POST['transaction_num'];
 $t_fname = $_POST['t_fname'];
 $t_lname = $_POST['t_lname'];
 $t_email = $_POST['t_email'];
-//$transaction_name = $_POST['transaction_name'];
+
 $property = $_POST['property'];
 $total_balance = $_POST['total_balance'];
 $selected_balance = $_POST['selected_balance'];
@@ -73,7 +73,7 @@ else{
       <div class="modal-body ms-5 me-5">
       <h6 class="text-center"><i>Please verify the information below</i></h6><br>
 
-        <div class="d-flex flex-row align-items-center row align-items-start border-bottom">
+        <div class="d-flex flex-row align-items-center row align-items-start border-bottom border-top">
         <div class="col-8">
           <h6 class="d-flex mb-0">Transaction No:</h6>
           <i class="d-flex" >'.$trans_num.'</i>
@@ -84,45 +84,45 @@ else{
         </div>
       </div><br>
       
-      <div class="row align-items-start align-items-center border-bottom">
+      <div class="row align-items-start align-items-center  border-top">
           <h6 class="col-5 mb-0">Recipient&apos;s Name:</h6>
-          <i class=" col d-flex justify-content-end">'.$transaction_name.'</i>  </div>
+          <i class=" col d-flex justify-content-end"><b>'.$transaction_name.'</b></i>  </div>
           <div class="row align-items-start align-items-center border-bottom">
           <h6 class="col-4 mb-0">Recipient&apos;s Email:</h6>
           <i class=" col d-flex justify-content-end">'.$t_email.'</i>
         </div>
         <div class="row align-items-start align-items-center border-bottom">
           <h6 class="col-5 mb-0">Block and lot:</h6>
-          <i class=" col d-flex justify-content-end">'.$property.'</i>
+          <i class=" col d-flex justify-content-end"><b>'.$property.'</b></i>
         </div><br>
 
 
-      <div class="row align-items-start align-items-center border-bottom">
+      <div class="row align-items-start align-items-center border-top">
         <h6 class="col-5 mb-0">Total Balance:</h6>
-        <i class=" col d-flex justify-content-end">'.$total_balance.'</i>
+        <i class=" col d-flex justify-content-end"><b>&#8369; '.$total_balance.'</b></i>
       </div>
       <div class="row align-items-start align-items-center border-bottom">
         <h6 class="col-5 mb-0">Interest/Penalty:</h6>
-        <i class=" col d-flex justify-content-end">'.$interest.'</i>
-      </div><br>
-      <div class="row align-items-start align-items-center border-bottom">
+        <i class=" col d-flex justify-content-end">&#8369; '.$interest.'</i>
+      </div>
+      <div class="row align-items-start align-items-center ">
         <h6 class="col-5 mb-0">Discount:</h6>
-        <i class=" col d-flex justify-content-end">('.$discount.'%) '.$dis.'</i>
+        <i class=" col d-flex justify-content-end">('.$discount.'%) &#8369; '.$dis.'</i>
       </div>
 
       <div class="row align-items-start align-items-center border-bottom">
       <h6 class="col-5 mb-0">Payment:</h6>
-      <i class=" col d-flex justify-content-end">'.$payment.'</i>
+      <i class=" col d-flex justify-content-end"><b>&#8369; '.$payment.'</b></i>
       </div>
 
       <div class="d-flex flex-row align-items-center border-bottom">
       <h6 class="col-5 mb-0">Change:</h6>
-      <i class=" col d-flex justify-content-end">'.$change.'</i>
+      <i class=" col d-flex justify-content-end">&#8369; '.$change.'</i>
       </div><br>
 
       <div class="d-flex flex-row align-items-center border-bottom">
       <h6 class="col-5 mb-0">Remaining Balance:</h6>
-      <i class=" col d-flex justify-content-end"><b>'.$remaining_balance.'</b></i>
+      <i class=" col d-flex justify-content-end"><b>&#8369; '.$remaining_balance.'</b></i>
       </div><br>
       <div class=" align-items-center ">
       <h6 class="d-flex mb-0 text-center">Remarks:</h6>

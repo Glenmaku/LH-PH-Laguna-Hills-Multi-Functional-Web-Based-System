@@ -17,7 +17,6 @@ if (!empty($_SESSION['admin_I_D'])) {
             <div class="transaction-sheet">
                 <div class="transaction-container">
                     <div class="container-horizontal">
-
                         <div class="transaction-details">
                             <div class="transaction-line">
                                 <span>Transaction No.</span>
@@ -29,20 +28,10 @@ if (!empty($_SESSION['admin_I_D'])) {
                             </div>
                             
                         </div><div id="transaction_errors_info" class=" ms-1 me-1"></div>
-                       <!-- <div class="client-name d-flex flex-row justify-content-between">
-                            <div class="d-flex flex-fill justify-content-start   align-items-center">
-                            <span class="me-2">First Name:</span>
-                            <input type="text" list="firstnames" name="name" id="first-name" placeholder="Enter firstname..." class="d-flex flex-fill border border-dark" required>
-                            <datalist id="firstnames"></datalist></div>
-                            <div class="d-flex flex-fill justify-content-start align-items-center ms-1">
-                            <span class="me-2">Last Name:</span>
-                            <input type="text" list="lastnames" name="name" id="last-name" placeholder="Enter lastname..." class="d-flex flex-fill border border-dark" required>
-                            <datalist id="lastnames"></datalist></div>
-                        </div>-->
-                        <div class="row align-items-start d-flex flex-row">
+                        <div class="row align-items-start d-flex flex-row mt-2">
                         <div class="col-8">
                         <div class="input-group fornames ">
-                            <span class="input-group-text">First and last name</span>
+                            <span class="input-group-text">Full name</span>
                             <input type="text" aria-label="First name" class="form-control border border-dark" list="firstnames" name="name" id="first-name" placeholder="Enter firstname..."> <datalist id="firstnames"></datalist>
                             <input type="text" aria-label="Last name" class="form-control border border-dark"list="lastnames" name="name" id="last-name" placeholder="Enter lastname..."><datalist id="lastnames"></datalist>
                         </div></div>
@@ -119,10 +108,12 @@ if (!empty($_SESSION['admin_I_D'])) {
                         <div class="div-title">
                             <h2 id="panelsStayOpen-headingTwo">RESERVATION</h2>
                         </div>
+                        
                         <div class="hide-option" id="hide_reserv">
                             <i id="hide_reserv_i" class="fa-solid fa-chevron-down accordion-button-icon" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="true" aria-controls="panelsStayOpen-collapseTwo" onclick="reserveSubmit()"></i>
                         </div>
                     </div>
+                     <div id="transaction_errors_reserv" class=" ms-1 me-1"></div>
                     <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse hide" aria-labelledby="panelsStayOpen-headingTwo">
                         <div class="accordion-body">
 
@@ -162,7 +153,6 @@ if (!empty($_SESSION['admin_I_D'])) {
                                         </div>
                                     </div>
 
-
                                     <!-- court -->
                                     <div class="selected-reservation">
                                         <div class="reservation-place">
@@ -200,9 +190,31 @@ if (!empty($_SESSION['admin_I_D'])) {
                                 <div class="r-subtotal-label">
                                     <div class="r-discount">
                                         <span>Discount:</span><br>
-                                        <input type="number" name="r-discount" id="r-discount" value="0"dir="rtl">
+                                        <input type="number" class="r-discounts" name="r-discount" id="r-discount" value="0"dir="rtl">
                                     </div>
-                                    
+                                    <div class="selection_authorization d-flex flex-column flex-fill ms-4 justify-content-center ">
+                                    <span>Authorization:</span>
+                                    <div class="authorization-class d-flex flex-row justify-content-end">
+                                        <div class="form-check">
+                                            <input class="form-check-input authorization_type" type="checkbox" value="Valid ID" id="authorize_id">
+                                            <label class="form-check-label me-3" for="flexCheckDefault">
+                                                Valid ID
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input authorization_type" type="checkbox" value="Authorization letter" id="authorize_letter">
+                                            <label class="form-check-label me-3" for="flexCheckDefault">
+                                                Authorization letter
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input authorization_type" type="checkbox" value="Referral" id="authorize_referral">
+                                            <label class="form-check-label me-3" for="flexCheckDefault">
+                                                Referral
+                                            </label>
+                                        </div>
+                                    </div>
+                                    </div>
                                 </div>
                             </div>
                         </div> <!-- accordion-body -->
@@ -213,15 +225,14 @@ if (!empty($_SESSION['admin_I_D'])) {
                 <div class="other-transaction">
                     <div class="other-transaction-title">
                         <div class="div-title">
-                            <h2 id="panelsStayOpen-headingThree">OTHER SERVICES
-                            </h2>
+                            <h2 id="panelsStayOpen-headingThree">OTHER TRANSACTIONS</h2>
                         </div>
                         <div class="hide-option" id="hide_other">
                             <i id="hide_other_i" class="fa-solid fa-chevron-down accordion-button-icon" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="true" aria-controls="panelsStayOpen-collapseThree" onclick="otherSubmit()">
                             </i>
                         </div>
                     </div>
-
+                    <div id="transaction_errors_others" class=" ms-1 me-1"></div>
                     <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse hide" aria-labelledby="panelsStayOpen-headingThree">
                         <div class="accordion-body">
                             <table class="other-services" id="input_table">
@@ -243,45 +254,32 @@ if (!empty($_SESSION['admin_I_D'])) {
                                         <td><input type="text" class="form-control o_price" id="o_price" name="field3" dir="rtl"required/></td>
                                         <td><input type="text" class="form-control o_subtotal" id="o_subtotal" name="field4" required dir="rtl"/></td>
                                     </tr>
-
                                     <tr>
                                         <td>2</td>
                                         <td><input type="text" class="form-control" id="o_category1" name="field1" /></td>
-
                                         <td><input type="text" class="form-control o_quantity1" id="o_quantity1" name="field2" /></td>
-
                                         <td><input type="text" class="form-control o_price1" id="o_price1" name="field3"dir="rtl" /></td>
-
                                         <td><input type="text" class="form-control o_subtotal1" id="o_subtotal1" name="field4" dir="rtl"/></td>
                                     </tr>
                                     <tr>
                                         <td>3</td>
                                         <td><input type="text" class="form-control" id="o_category2" name="field1" /></td>
-
                                         <td><input type="text" class="form-control o_quantity2" id="o_quantity2" name="field2" /></td>
-
                                         <td><input type="text" class="form-control o_price2" id="o_price2" name="field3" dir="rtl"/></td>
-
                                         <td><input type="text" class="form-control o_subtotal2" id="o_subtotal2" name="field4" dir="rtl"/></td>
                                     </tr>
                                     <tr>
                                         <td>4</td>
                                         <td><input type="text" class="form-control" id="o_category3" name="field1" /></td>
-
                                         <td><input type="text" class="form-control o_quantity3" id="o_quantity3" name="field2" /></td>
-                                        
                                         <td><input type="text" class="form-control o_price3" id="o_price3" name="field3"dir="rtl" /></td>
-
                                         <td><input type="text" class="form-control o_subtotal3" id="o_subtotal3" name="field4"dir="rtl" /></td>
                                     </tr>
                                     <tr>
                                         <td>5</td>
                                         <td><input type="text" class="form-control" id="o_category4" name="field1" /></td>
-
                                         <td><input type="text" class="form-control o_quantity4" id="o_quantity4" name="field2" /></td>
-                                        
                                         <td><input type="text" class="form-control o_price4" id="o_price4" name="field3"dir="rtl" /></td>
-
                                         <td><input type="text" class="form-control o_subtotal4" id="o_subtotal4" name="field4"dir="rtl" /></td>
                                     </tr>
 
@@ -639,33 +637,43 @@ if (!empty($_SESSION['admin_I_D'])) {
                     $("#a-discount").val("0");
                 });
 
-                $("#reserv_reset").click(function() {
-                    $("#last-name").val("");
-                    $("#first-name").val("");
-                    $("#transaction-email").val("");
+                // $("#reserv_reset").click(function() {
+                //     $("#last-name").val("");
+                //     $("#first-name").val("");
+                //     $("#transaction-email").val("");
 
-                    $("#from-reservation-date").val("");
-                    $("#to-reservation-date").val("");
-                    $("#in-radio-hall1").val("");
-                    $("#in-radio-hall2").val("");
-                    $("#in-radio-hall3").val("0");
+                //     $("#from-reservation-date").val("");
+                //     $("#to-reservation-date").val("");
+                //     $("#in-radio-hall1").val("");
+                //     $("#in-radio-hall2").val("");
+                //     $("#in-radio-hall3").val("0");
 
-                    $("#in-radio-court1").val("");
-                    $("#in-radio-court2").val("");
-                    $("#in-radio-court3").val("0");
+                //     $("#in-radio-court1").val("");
+                //     $("#in-radio-court2").val("");
+                //     $("#in-radio-court3").val("0");
 
-                    $("#in-radio-miming1").val("");
-                    $("#in-radio-miming2").val("");
-                    $("#in-radio-miming3").val("0");
+                //     $("#in-radio-miming1").val("");
+                //     $("#in-radio-miming2").val("");
+                //     $("#in-radio-miming3").val("0");
 
-                    $("#radio-hall").prop("checked", false);
-                    $("#radio-court").prop("checked", false);
-                    $("#radio-miming").prop("checked", false);
+                //     $("#radio-hall").prop("checked", false);
+                //     $("#radio-court").prop("checked", false);
+                //     $("#radio-miming").prop("checked", false);
 
-                });
+                //     $("#r-discount").val("0");
+                //     $("#authorize_id").prop("checked", false);
+                //     $("#authorize_letter").prop("checked", false);
+                //     $("#authorize_referral").prop("checked", false);
+
+                //     $("#reserv_total").val("0");
+                //     $("#reserv_payment").val("0");
+                //     $("#reserv_change").val("0");
+                //     $("#reserv_remaining_balance").val("0");
+                //     $("#reserv_remark").val("");
+
+                // });
 
                 $("#other_reset").click(function() {
-
                  $("#last-name").val("");
                  $("#first-name").val("");
                  $("#transaction-email").val("");
@@ -779,7 +787,6 @@ if (!empty($_SESSION['admin_I_D'])) {
                 });
 
                 // Get the table object
-
                 // reset form if naka collapse
                 var hide_assoc = document.getElementById("hide_assoc");
                 var hide_reserv = document.getElementById("hide_reserv");
@@ -862,27 +869,26 @@ if (!empty($_SESSION['admin_I_D'])) {
                 }); // reset form ng reservation part
 
 
-                $(document).ready(function() {
-                    $("#assoc_reset").click(function() {
-                     $("#client-name").val("");
-                    $("#property").val("");
-                    $("#total-balance").val("0");
-                    $("#selected-balance").val("0");
-                    $("#a-interest").val("0");
-                    $("#a-discount").val("0");
-                    $("#balance-total").val("0");
-                    $("#all-total").val("0");
+//                 $(document).ready(function() {
+//                     $("#assoc_reset").click(function() {
+//                     $("#property").val("");
+//                     $("#total-balance").val("0");
+//                     $("#selected-balance").val("0");
+//                     $("#a-interest").val("0");
+//                     $("#a-discount").val("0");
+//                     $("#balance-total").val("0");
+//                     $("#all-total").val("0");
                     
-                    $("#a-payment").val("0");
-                    $("#a-change").val("0");
-                    $("#ifadvanced").prop("checked", false);
-                    $("#a-remaining-balance").val("");
-                    $("#a-remarks").val("");
-                    $("#selected-balance").val("0");
-                    $("#a-interest").val("0");
-                    $("#a-discount").val("0");
-  });
-                });
+//                     $("#a-payment").val("0");
+//                     $("#a-change").val("0");
+//                     $("#ifadvanced").prop("checked", false);
+//                     $("#a-remaining-balance").val("");
+//                     $("#a-remarks").val("");
+//                     $("#selected-balance").val("0");
+//                     $("#a-interest").val("0");
+//                     $("#a-discount").val("0");
+//   });
+//                 });
 
                 $(document).ready(function() {
                     // Get total balance when property is selected
@@ -1136,9 +1142,6 @@ if (!empty($_SESSION['admin_I_D'])) {
                         }
                     });
                 }
-                
-
-
             </script>
 <script>
     //FOR DATALIST FIRST NAME
@@ -1194,9 +1197,5 @@ if (!empty($_SESSION['admin_I_D'])) {
       }
     });
   });
-
-  
 });
-
-
     </script>

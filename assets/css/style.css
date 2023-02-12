@@ -658,7 +658,7 @@ body{
     justify-content: space-between;
 }
 
-.reservation-subtotal .r-subtotal-label input{
+.reservation-subtotal .r-subtotal-label .r-discounts{
     width: 100%;
     /*font-family: 'Raleway', sans-serif;*/
     font-family: 'Roboto Mono', monospace;
@@ -671,6 +671,7 @@ body{
     border-radius: 5px;
     background: var(--light-blue);
 }
+
 .transaction-sheet .other-transaction{
     margin-top: 10px;
     margin-bottom: 10px;
