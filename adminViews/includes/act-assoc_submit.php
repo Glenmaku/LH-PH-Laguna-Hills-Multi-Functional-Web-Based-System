@@ -1,5 +1,5 @@
 <?php
-require_once("connection.php");
+require("connection.php");
 if(isset($_POST['transaction_num'])){
 
 $trans_num = $_POST['transaction_num'];
@@ -26,7 +26,7 @@ if (empty($t_fname) || empty($t_lname)||empty($t_email)) {
   //echo "Error: Transaction name is required.";
   echo'<div class="alert alert-danger alert-dismissible fade show  w-100 text-center" role="alert">
   Error: Please enter the first name, last name, and email of recipient.
-              <button type="button" class="btn-close close_alert_info" data-bs-dismiss="alert" aria-label="Close"></button>
+              <button type="button" class="btn-close close_alert_assoc" data-bs-dismiss="alert" aria-label="Close"></button>
                  </div>';
                  exit();
 }
@@ -56,7 +56,7 @@ else if(empty($selected_balance) || $selected_balance == 0) {
  // echo "Please input a payment amount.";
   echo'<div class="alert alert-danger alert-dismissible fade show text-center" role="alert">
   Error: Please enter a valid payment.
-              <button type="button" class="btn-close close_alert_assocpanel" data-bs-dismiss="alert" aria-label="Close"></button>
+              <button type="button" class="btn-close close_alert_assoc" data-bs-dismiss="alert" aria-label="Close"></button>
                  </div>';
                  exit();
 }
@@ -145,7 +145,7 @@ exit();
  // echo "Transaction unsuccessful. Please try again.";
   echo'<div class="alert alert-danger alert-dismissible fade show  w-100 text-center" role="alert">
  Error: Transaction unsuccessful. Please try again.
-             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+             <button type="button" class="btn-close close_alert_assoc" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>';
                 exit();
 }

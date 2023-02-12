@@ -249,38 +249,38 @@ if (!empty($_SESSION['admin_I_D'])) {
                                 <tbody>
                                     <tr>
                                         <td>1</td>
-                                        <td><input type="text" class="form-control" id="o_category" name="field1" required/></td>
-                                        <td><input type="text" class="form-control o_quantity" id="o_quantity" name="field2" required/></td>
-                                        <td><input type="text" class="form-control o_price" id="o_price" name="field3" dir="rtl"required/></td>
-                                        <td><input type="text" class="form-control o_subtotal" id="o_subtotal" name="field4" required dir="rtl"/></td>
+                                        <td><input type="text" list="other_categories" class="form-control" id="o_category" name="field1" required/><datalist id="other_categories" class="other_categories"></datalist></td>
+                                        <td><input type="number" class="form-control o_quantity text-center" id="o_quantity" name="field2" required/></td>
+                                        <td><input type="number" class="form-control o_price" id="o_price" name="field3" dir="rtl"required/></td>
+                                        <td><input type="number" class="form-control o_subtotal" id="o_subtotal" name="field4" required dir="rtl"/></td>
                                     </tr>
                                     <tr>
                                         <td>2</td>
-                                        <td><input type="text" class="form-control" id="o_category1" name="field1" /></td>
-                                        <td><input type="text" class="form-control o_quantity1" id="o_quantity1" name="field2" /></td>
-                                        <td><input type="text" class="form-control o_price1" id="o_price1" name="field3"dir="rtl" /></td>
-                                        <td><input type="text" class="form-control o_subtotal1" id="o_subtotal1" name="field4" dir="rtl"/></td>
+                                        <td><input type="text" list="other_categories1" class="form-control" id="o_category1" name="field1" /><datalist id="other_categories1"class="other_categories"></datalist></td>
+                                        <td><input type="number" class="form-control o_quantity1 text-center" id="o_quantity1" name="field2" /></td>
+                                        <td><input type="number" class="form-control o_price1" id="o_price1" name="field3" dir="rtl" /></td>
+                                        <td><input type="number" class="form-control o_subtotal1" id="o_subtotal1" name="field4" dir="rtl"/></td>
                                     </tr>
                                     <tr>
                                         <td>3</td>
-                                        <td><input type="text" class="form-control" id="o_category2" name="field1" /></td>
-                                        <td><input type="text" class="form-control o_quantity2" id="o_quantity2" name="field2" /></td>
-                                        <td><input type="text" class="form-control o_price2" id="o_price2" name="field3" dir="rtl"/></td>
-                                        <td><input type="text" class="form-control o_subtotal2" id="o_subtotal2" name="field4" dir="rtl"/></td>
+                                        <td><input type="text" list="other_categories2" class="form-control" id="o_category2" name="field1" /><datalist id="other_categories2"class="other_categories"></datalist></td>
+                                        <td><input type="number" class="form-control o_quantity2 text-center" id="o_quantity2" name="field2" /></td>
+                                        <td><input type="number" class="form-control o_price2" id="o_price2" name="field3" dir="rtl"/></td>
+                                        <td><input type="number" class="form-control o_subtotal2" id="o_subtotal2" name="field4" dir="rtl"/></td>
                                     </tr>
                                     <tr>
                                         <td>4</td>
-                                        <td><input type="text" class="form-control" id="o_category3" name="field1" /></td>
-                                        <td><input type="text" class="form-control o_quantity3" id="o_quantity3" name="field2" /></td>
-                                        <td><input type="text" class="form-control o_price3" id="o_price3" name="field3"dir="rtl" /></td>
-                                        <td><input type="text" class="form-control o_subtotal3" id="o_subtotal3" name="field4"dir="rtl" /></td>
+                                        <td><input type="text" list="other_categories3" class="form-control" id="o_category3" name="field1" /><datalist id="other_categories3"class="other_categories"></datalist></td>
+                                        <td><input type="number" class="form-control o_quantity3 text-center" id="o_quantity3" name="field2" /></td>
+                                        <td><input type="number" class="form-control o_price3" id="o_price3" name="field3"dir="rtl" /></td>
+                                        <td><input type="number" class="form-control o_subtotal3" id="o_subtotal3" name="field4"dir="rtl" /></td>
                                     </tr>
                                     <tr>
                                         <td>5</td>
-                                        <td><input type="text" class="form-control" id="o_category4" name="field1" /></td>
-                                        <td><input type="text" class="form-control o_quantity4" id="o_quantity4" name="field2" /></td>
-                                        <td><input type="text" class="form-control o_price4" id="o_price4" name="field3"dir="rtl" /></td>
-                                        <td><input type="text" class="form-control o_subtotal4" id="o_subtotal4" name="field4"dir="rtl" /></td>
+                                        <td><input type="text" list="other_categories4" class="form-control" id="o_category4" name="field1" /><datalist id="other_categories4"class="other_categories"></datalist></td>
+                                        <td><input type="number" class="form-control o_quantity4 text-center" id="o_quantity4" name="field2" /></td>
+                                        <td><input type="number" class="form-control o_price4" id="o_price4" name="field3"dir="rtl" /></td>
+                                        <td><input type="number" class="form-control o_subtotal4" id="o_subtotal4" name="field4"dir="rtl" /></td>
                                     </tr>
 
                                 </tbody>
@@ -637,63 +637,6 @@ if (!empty($_SESSION['admin_I_D'])) {
                     $("#a-discount").val("0");
                 });
 
-                // $("#reserv_reset").click(function() {
-                //     $("#last-name").val("");
-                //     $("#first-name").val("");
-                //     $("#transaction-email").val("");
-
-                //     $("#from-reservation-date").val("");
-                //     $("#to-reservation-date").val("");
-                //     $("#in-radio-hall1").val("");
-                //     $("#in-radio-hall2").val("");
-                //     $("#in-radio-hall3").val("0");
-
-                //     $("#in-radio-court1").val("");
-                //     $("#in-radio-court2").val("");
-                //     $("#in-radio-court3").val("0");
-
-                //     $("#in-radio-miming1").val("");
-                //     $("#in-radio-miming2").val("");
-                //     $("#in-radio-miming3").val("0");
-
-                //     $("#radio-hall").prop("checked", false);
-                //     $("#radio-court").prop("checked", false);
-                //     $("#radio-miming").prop("checked", false);
-
-                //     $("#r-discount").val("0");
-                //     $("#authorize_id").prop("checked", false);
-                //     $("#authorize_letter").prop("checked", false);
-                //     $("#authorize_referral").prop("checked", false);
-
-                //     $("#reserv_total").val("0");
-                //     $("#reserv_payment").val("0");
-                //     $("#reserv_change").val("0");
-                //     $("#reserv_remaining_balance").val("0");
-                //     $("#reserv_remark").val("");
-
-                // });
-
-                $("#other_reset").click(function() {
-                 $("#last-name").val("");
-                 $("#first-name").val("");
-                 $("#transaction-email").val("");
-                    $("#o_subtotal").val("");
-                    $("#o_category").val("");
-                    $("#o_quantity").val("");
-                    $("#o_price").val("");
-
-                    $("#o_subtotal1").val("");
-                    $("#o_category1").val("");
-                    $("#o_quantity1").val("");
-                    $("#o_rice1").val("");
-
-                    for (var i = 1; i <= 10; i++) {
-                        $("#o_category" + i).val("");
-                        $("#o_quantity" + i).val("");
-                        $("#o_price" + i).val("");
-                        $("#o_subtotal" + i).val("");
-                    }
-                });
 
                 // checkbox reset
                 document.getElementById("radio-hall").addEventListener("change", function() {
@@ -807,6 +750,10 @@ if (!empty($_SESSION['admin_I_D'])) {
                     $("#total-balance").val("0");
                     $("#balance-total").val("0");
                     $("#a-discount").val("0");
+                    $("#assoc-reset").trigger("click");
+                    $(".close_alert_assoc").trigger("click");
+                    $(".close_alert_reserv").trigger("click");
+                    $(".close_alert_others").trigger("click");
 
                 }); // reset form ng association part
 
@@ -838,6 +785,11 @@ if (!empty($_SESSION['admin_I_D'])) {
                     $("#radio-hall").prop("checked", false);
                     $("#radio-court").prop("checked", false);
                     $("#radio-miming").prop("checked", false);
+                    $("#reserv_reset").trigger("click");
+                    $(".close_alert_assoc").trigger("click");
+                    $(".close_alert_reserv").trigger("click");
+                    $(".close_alert_others").trigger("click");
+
                 }); // reset form ng OTHER SERVICES part
 
                 // reset form ng OTHER SERVICES part
@@ -866,29 +818,14 @@ if (!empty($_SESSION['admin_I_D'])) {
                         $("#o_price" + i).val("");
                         $("#o_subtotal" + i).val("");
                     }
+                    $("#other-reset").trigger("click");
+
+                    $(".close_alert_assoc").trigger("click");
+                    $(".close_alert_reserv").trigger("click");
+                    $(".close_alert_others").trigger("click");
+
                 }); // reset form ng reservation part
 
-
-//                 $(document).ready(function() {
-//                     $("#assoc_reset").click(function() {
-//                     $("#property").val("");
-//                     $("#total-balance").val("0");
-//                     $("#selected-balance").val("0");
-//                     $("#a-interest").val("0");
-//                     $("#a-discount").val("0");
-//                     $("#balance-total").val("0");
-//                     $("#all-total").val("0");
-                    
-//                     $("#a-payment").val("0");
-//                     $("#a-change").val("0");
-//                     $("#ifadvanced").prop("checked", false);
-//                     $("#a-remaining-balance").val("");
-//                     $("#a-remarks").val("");
-//                     $("#selected-balance").val("0");
-//                     $("#a-interest").val("0");
-//                     $("#a-discount").val("0");
-//   });
-//                 });
 
                 $(document).ready(function() {
                     // Get total balance when property is selected
@@ -1086,6 +1023,19 @@ if (!empty($_SESSION['admin_I_D'])) {
                         $('.modal-backdrop').remove();
                         $('.show').remove();
                     })
+                    $.ajax({
+                        url: 'adminViews/includes/act_get_categories.php',
+                        type: 'post',
+                        dataType: 'json',
+                        success: function(response) {
+                            var options = '';
+                            for (var i = 0; i < response.length; i++) {
+                                options += '<option value="' + response[i].category + '">';
+                            }
+                            $('.other_categories').append(options);
+                        }
+                    });
+
                 });
               
 

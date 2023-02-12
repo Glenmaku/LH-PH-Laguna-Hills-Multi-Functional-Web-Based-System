@@ -41,14 +41,14 @@ $reserv_remaining_balancesend = $_POST['reserv_remaining_balancesend'];
     if (empty($t_fname) || empty($t_lname)||empty($t_email)) {
         echo'<div class="alert alert-danger alert-dismissible fade show  w-100 text-center" role="alert">
         Error: Please enter the first name, last name, and email of recipient.
-                    <button type="button" class="btn-close close_alert_info" data-bs-dismiss="alert" aria-label="Close"></button>
+                    <button type="button" class="btn-close close_alert_reserv" data-bs-dismiss="alert" aria-label="Close"></button>
                        </div>';
                        exit();
       }
     else if(empty($fromdate)||empty($todate)){
         echo'<div class="alert alert-danger alert-dismissible fade show  w-100 text-center" role="alert">
         Error: Please provide the date of reservation.
-                    <button type="button" class="btn-close close_alert_info" data-bs-dismiss="alert" aria-label="Close"></button>
+                    <button type="button" class="btn-close close_alert_reserv" data-bs-dismiss="alert" aria-label="Close"></button>
                        </div>';
                        exit();
     }
@@ -58,14 +58,14 @@ $reserv_remaining_balancesend = $_POST['reserv_remaining_balancesend'];
          if(mysqli_num_rows($result) > 0) {
         echo'<div class="alert alert-danger alert-dismissible fade show  w-100 text-center" role="alert">
         Error: A reservation already exists on this date.
-                    <button type="button" class="btn-close close_alert_info" data-bs-dismiss="alert" aria-label="Close"></button>
+                    <button type="button" class="btn-close  close_alert_reserv" data-bs-dismiss="alert" aria-label="Close"></button>
                        </div>';
                        exit();   
         }
         else if(empty($checkbox_court)&&empty($checkbox_hall)&&empty($checkbox_miming)){
             echo'<div class="alert alert-danger alert-dismissible fade show  w-100 text-center" role="alert">
             Error: Select amenities to reserve.
-                        <button type="button" class="btn-close close_alert_info" data-bs-dismiss="alert" aria-label="Close"></button>
+                        <button type="button" class="btn-close  close_alert_reserv" data-bs-dismiss="alert" aria-label="Close"></button>
                         </div>';
                         exit();
         }

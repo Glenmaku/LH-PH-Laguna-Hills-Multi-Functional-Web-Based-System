@@ -48,7 +48,7 @@ $reserv_remaining_balancesend = $_POST['reserv_remaining_balancesend'];
         if($result1 && $result2){
             echo'<div class="alert alert-success alert-dismissible fade show  w-100 text-center" role="alert">
             Successfully recorded transaction.
-                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                         <button type="button" class="btn-close  close_alert_reserv" data-bs-dismiss="alert" aria-label="Close"></button>
                             </div>';
             // if(!empty($hall_time_start)||!empty($hall_time_end)){
                 if (!empty($checkbox_hall)) {
@@ -75,7 +75,7 @@ $reserv_remaining_balancesend = $_POST['reserv_remaining_balancesend'];
         else {
             echo'<div class="alert alert-danger alert-dismissible fade show  w-100 text-center" role="alert">
             Error: Transaction unsuccessful. Please try again.
-                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        <button type="button" class="btn-close close_alert_reserv" data-bs-dismiss="alert" aria-label="Close"></button>
                            </div>';
                            exit();
         }

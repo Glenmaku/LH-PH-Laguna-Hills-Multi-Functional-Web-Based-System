@@ -1,5 +1,5 @@
 <?php
-require_once("connection.php");
+require("connection.php");
 
 if(isset($_POST['transaction_num'])){
 
@@ -34,14 +34,14 @@ $sql = "INSERT INTO transaction_assoc (transaction_num,Lot_ID,assoc_selectedBal,
 if(mysqli_multi_query($con, $sql)){
     echo'<div class="alert alert-success alert-dismissible fade show  w-100 text-center" role="alert">
 Successfully recorded transaction.
-             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+             <button type="button" class="btn-close close_alert_assoc" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>';
                 exit();  
 
 } else {
  echo'<div class="alert alert-danger alert-dismissible fade show  w-100 text-center" role="alert">
  Error: Transaction unsuccessful. Please try again.
-             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+             <button type="button" class="btn-close close_alert_assoc" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>';
                 exit();
 }
