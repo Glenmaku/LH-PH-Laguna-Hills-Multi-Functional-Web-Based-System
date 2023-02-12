@@ -89,6 +89,15 @@
           Please enter your message.
         </div>
         </div>
+        <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+      <label class="form-check-label dark-green" for="invalidCheck">
+      I agree to the collection and use of my personal information as described in the <a href="#" onclick="PrivacyModal()">Privacy Policy</a> for the purpose of processing my submission.
+      </label>
+      <div class="invalid-feedback">
+        You must agree before submitting.
+      </div>
+    </div>
         <div class="d-flex justify-content-center">
             <button class="btn-submit4 btn-submit-5" id="sends" onclick="send_contacts(); return false;">
                 <span class="btn-submit-6">
@@ -99,7 +108,62 @@
         </div>
     </form>
 </div>
+<div class="modal fade" id="PrivacyPolicy" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Privacy Policy</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body justify-content-start ms-2 me-2">
+      <br><h6 >Introduction:</h6>
 
+At <b>Laguna Hills Subdivision</b>, we are committed to protecting your privacy and the personal information that you share with us. This Privacy Policy sets out the ways in which we collect, use, store, and protect the personal information that you provide to us.<br>
 
+<br><h6 >Personal Information Collection:</h6>
+
+We may collect personal information from you when you interact with us, such as when you visit our website, use our products and services, or contact us with inquiries or support requests. The personal information that we may collect from you includes, but is not limited to, your name, email address, telephone number, and any other information that you choose to provide to us.<br>
+
+<br><h6 >Use of Personal Information:</h6>
+
+The personal information that we collect from you may be used for the following purposes:<br>
+
+To provide you with the products and services that you have requested
+To respond to your inquiries and support requests
+To improve our products and services
+To send you marketing and promotional materials, if you have agreed to receive such materials<br>
+<br><h6 >Protection of Personal Information:</h6>
+We take the protection of your personal information very seriously and have implemented appropriate technical and organizational measures to protect it from unauthorized access, disclosure, alteration, and destruction. We also take steps to ensure that the personal information that we collect from you is accurate and up-to-date.<br>
+
+<br><h6 >Disclosure of Personal Information:</h6>
+
+We may disclose your personal information to third parties in certain circumstances, such as to our service providers who assist us in providing our products and services, or as required by law. We will only share the minimum amount of personal information necessary to fulfill the purposes outlined in this Privacy Policy.<br>
+
+<br><h6 >Access to Personal Information:</h6>
+
+You have the right to access, update, and correct any personal information that we hold about you. If you would like to exercise these rights, please contact us at lagunahillshoa@gmail.com.<br>
+
+<br><h6 >Changes to this Privacy Policy:</h6>
+We may update this Privacy Policy from time to time to reflect changes in our privacy practices or applicable laws. If we make any changes to this Privacy Policy, we will notify you by posting the updated policy on our website.<br>
+
+<br><h6 >Contact Us:</h6>
+
+If you have any questions or concerns about this Privacy Policy or our privacy practices, please contact us at  lagunahillshoa@gmail.com.<br>
+
+This Privacy Policy was last updated on February 12, 2023.<br>
+      </div>
+      <div class="modal-footer">
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+ function PrivacyModal() {
+      $("#PrivacyPolicy").modal("show");
+    }
+
+  </script>
 <!-- END GREEN CONTACT FORM-->
 <?php require_once('footer.php'); ?>
