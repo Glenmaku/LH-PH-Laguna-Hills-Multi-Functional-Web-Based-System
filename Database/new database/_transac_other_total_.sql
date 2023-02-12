@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 08, 2023 at 12:49 PM
+-- Generation Time: Feb 12, 2023 at 07:31 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `transac_other_total` (
-  `transaction_no` int(11) NOT NULL,
+  `transaction_no` varchar(9) NOT NULL,
   `t_name` varchar(255) NOT NULL,
   `other_total` int(11) NOT NULL,
   `other_payment` int(11) NOT NULL,
@@ -42,6 +42,22 @@ CREATE TABLE `transac_other_total` (
 -- Dumping data for table `transac_other_total`
 --
 
+INSERT INTO `transac_other_total` (`transaction_no`, `t_name`, `other_total`, `other_payment`, `other_remarks`, `other_change`, `other_remaining_balance`, `time_created`) VALUES
+('13', 'mike zetchea', 369140, 400000, 'good', 30860, 0, '2023-02-05'),
+('2023-0041', 'Vennices Cosinos', 1400, 1400, 'this is for ', 0, 0, '2023-02-13'),
+('2023-0042', 'Vennices Cosinos', 699, 800, 'this is for trial', 101, 0, '2023-02-13'),
+('23', 'asda', 10736, 10736, '', 0, 0, '2023-02-07'),
+('24', '123', 492492, 492492, '', 0, 0, '2023-02-07'),
+('34', '', 444, 300, 'were', 0, 144, '2023-02-07'),
+('35', '35', 66, 70, '', 4, 0, '2023-02-07'),
+('39', '23424', 660, 660, '', 0, 0, '2023-02-08'),
+('40', 'wer', 20920, 20920, '', 0, 0, '2023-02-08'),
+('41', '234', 6, 6, '', 0, 0, '2023-02-08'),
+('42', 'wert', 18, 18, '', 0, 0, '2023-02-08'),
+('43', '234', 129, 129, '', 0, 0, '2023-02-08'),
+('44', '44', 528, 528, '', 0, 0, '2023-02-08'),
+('45', '45', 411075, 411075, '', 0, 0, '2023-02-08'),
+('521', 'ONE', 6500, 7000, 'NONE', 0, 500, '2023-02-05');
 
 --
 -- Indexes for dumped tables
@@ -52,16 +68,6 @@ CREATE TABLE `transac_other_total` (
 --
 ALTER TABLE `transac_other_total`
   ADD PRIMARY KEY (`transaction_no`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `transac_other_total`
---
-ALTER TABLE `transac_other_total`
-  MODIFY `transaction_no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=522;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
