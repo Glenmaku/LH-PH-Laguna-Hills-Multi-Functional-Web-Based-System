@@ -17,7 +17,7 @@ require_once 'class.phpmailer.php';
 //     return $conn;
 // }
 
-function UEmail($acquired_email, $gen_code ){
+function ad_email1($adacquired_email, $gen_code ){
 
 
 //Instantiation and passing `true` enables exceptions
@@ -37,11 +37,11 @@ try {
     //Recipients
     $mail->setFrom('emailAddress@gmail.com', 'OTP LHPH Emailer');
 
-    $mail->addAddress($acquired_email,);     //Add a recipient
+    $mail->addAddress($adacquired_email,); //Add a recipient
     // $mail->addAddress('ellen@example.com');  //Name is optional
     // $mail->addReplyTo('info@example.com', 'Information');
     // $mail->addCC('cc@example.com');
-    // $mail->addBCC('bcc@example.com');
+    // $mail->addBCC('bcc@example.com');bh
 
     //Attachments
     // $mail->addAttachment('/var/tmp/file.tar.gz');  //Add attachments

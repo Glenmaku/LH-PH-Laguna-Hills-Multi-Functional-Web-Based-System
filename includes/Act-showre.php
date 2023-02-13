@@ -1,6 +1,10 @@
 <?php
     $email = $_POST['email'];
     //connect to database
+    require('../adminViews/phpmailer/otp_functions1.php');
+    require('../adminViews/phpmailer/otp_functions2.php');
+    require('../adminViews/phpmailer/ad_otp_functions1.php');
+    require('../adminViews/phpmailer/ad_otp_functions2.php');
     include_once('connection.php');
 
 //OWNER EMAIL ENTRY
@@ -29,15 +33,17 @@
       $run_query =  mysqli_query($con, $insert_code);
 
       if($run_query){
-        $subject = "Password Reset Code"; 
-        $message = "Your password reset code is $gen_code";
-        $sender = "From: guyrx90@gmail.com";
-        if(mail($acquired_email['owner_email'], $subject, $message, $sender)){
-          echo "A new one time password was sent to your email";
-        }
-         else{
-             echo "An error occured while sending the email";
-             }
+        UEmail($acquired_email['owner_email'], $gen_code);
+
+      //   $subject = "Password Reset Code"; 
+      //   $message = "Your password reset code is $gen_code";
+      //   $sender = "From: guyrx90@gmail.com";
+      //   if(mail($acquired_email['owner_email'], $subject, $message, $sender)){
+      //     echo "A new one time password was sent to your email";
+      //   }
+      //    else{
+      //        echo "An error occured while sending the email";
+      //        }
       }
      else{
         echo "An error occured while generating the code";
@@ -50,15 +56,20 @@
         $insert_code = "UPDATE owner_accounts SET code = '$gen_code' WHERE owner_email = '$email'";
         $run_query =  mysqli_query($con, $insert_code);
         if($run_query){
-          $subject = "Password Reset Code";
-          $message = "Your password reset code is $gen_code";
-          $sender = "From: guyrx90@gmail.com";
-          if(mail($email, $subject, $message, $sender)){
-            echo "A new one time password was sent to your email";
-          }
-           else{
-               echo "An error occured while sending the email.";
-               }
+
+          EEmail($email, $gen_code);
+
+          // $subject = "Password Reset Code";
+          // $message = "Your password reset code is $gen_code";
+          // $sender = "From: guyrx90@gmail.com";
+          // if(mail($email, $subject, $message, $sender)){
+          //   echo "A new one time password was sent to your email";
+          // }
+          //  else{
+          //      echo "An error occured while sending the email.";
+          //      }
+
+
         }
        else{
           echo "An error occured while generating the code";
@@ -75,15 +86,17 @@
     
       $adrun_query =  mysqli_query($con, $adinsert_code);
       if($adrun_query){
-        $adsubject = "Password Reset Code";
-        $admessage = "Your password reset code is $adgen_code";
-        $adsender = "From: guyrx90@gmail.com";
-        if(mail($adacquired_email['admin_email'], $adsubject, $admessage, $adsender)){
-          echo "A new one time password was sent to your email";
-        }
-         else{
-             echo "An error occured while sending the email";
-             }
+        ad_email2($adacquired_email['admin_email'], $gen_code);
+
+        // $adsubject = "Password Reset Code";
+        // $admessage = "Your password reset code is $adgen_code";
+        // $adsender = "From: guyrx90@gmail.com";
+        // if(mail($adacquired_email['admin_email'], $adsubject, $admessage, $adsender)){
+        //   echo "A new one time password was sent to your email";
+        // }
+        //  else{
+        //      echo "An error occured while sending the email";
+        //      }
       }
      else{
         echo "An error occured while generating the code";
@@ -96,15 +109,17 @@
         $adinsert_code = "UPDATE admin_accounts SET code = '$adgen_code' WHERE admin_email = '$email'";
         $adrun_query =  mysqli_query($con, $adinsert_code);
         if($adrun_query){
-          $adsubject = "Password Reset Code";
-          $admessage = "Your password reset code is $adgen_code";
-          $adsender = "From: guyrx90@gmail.com";
-          if(mail($email, $adsubject, $admessage, $adsender)){
-            echo "A one time password was sent to your email";
-          }
-           else{
-               echo "An error occured while sending the email";
-               }
+          ad_email2($email, $gen_code);
+          // $adsubject = "Password Reset Code";
+          // $admessage = "Your password reset code is $adgen_code";
+          // $adsender = "From: guyrx90@gmail.com";
+          // if(mail($email, $adsubject, $admessage, $adsender)){
+          //   echo "A one time password was sent to your email";
+          // }
+          //  else{
+          //      echo "An error occured while sending the email";
+          //      }
+
         }
        else{
           echo "An error occured while generating the code";}

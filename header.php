@@ -302,7 +302,7 @@ function sending_function() {
                                 $("#sending_button").replaceWith(' <button class="btn-submit4 btn-submit-5" name="verify_button" id="verify_button" type="button" onclick="verify_function()"">' + '<span class="btn-submit-6">' + '<p class="bx-fw bx bxs-send"></p>' + '</span>' + '<a class="text-white">Verify</a>' + '</button>');
                         }
 
-                        else if(response === "An error occured while sending the email"||"An error occured while generating the code"||"The email or username you entered does not exists in our record") {
+                        else if(response === "An error occured while generating the code"||"An error occured while generating the code"||"The email or username you entered does not exists in our record") {
                                 forgotError.classList.remove("success");
                                 forgotError.classList.add("error");
                         }
@@ -353,23 +353,22 @@ function resend_function(){
                     url: "includes/Act-showre.php",
                     data: {
                         email: email
-                    },
-                    success: function(data) {
-                        $('#forgot_errors').html(data);
+                    }.done(function(response) {
+                        $('#forgot_errors').html(response);
                         var forgotError = document.getElementById("forgot_errors");
-                        if(data === "A new one time password was sent to your email"){
+                        if(response === "A one time password was sent to your email"){
                                   forgotError.classList.remove("error");
                                   forgotError.classList.add("success");
                         }
 
-                        else  if(data === "An error occured while sending the email"||"An error occured while generating the code"||"The email or userame you entered does not exists in our record") {
+                        else  if(response === "An error occured while generating the code"||"An error occured while generating the code"||"The email or userame you entered does not exists in our record") {
                                 forgotError.classList.remove("success");
                                 forgotError.classList.add("error");
                         }
                         else  {
                             $("#forgot_errors").html("We encountered a problem try again later").addClass("error");
                         }
-                    }
+                    })
                 });
             }          
 }
