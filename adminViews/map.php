@@ -12,7 +12,7 @@
 			<div class="col-md-4">
 				<select class="form-select" aria-label="Default select example">
 					<option selected disabled>Monitor by:</option>
-					<option value="lot-information" id="lot-select">Lot Information</option>
+					<option value="lot-informations" id="lot-selects">Lot Information</option>
 					<option value="association-dues" id="assoc-select">Association Dues</option>
 					<option value="block-select" id="block-select">Block</option>
 				</select>
@@ -5320,103 +5320,187 @@
 				});
 			}
 
-			const colorData = (id) => {
-				fetch(`adminViews/includes/mapsubmit.php?id=${id}`)
-					.then((response) => response.json())
-					.then((data) => {
-						const colorMap = {
-							available: '#1FCE6D',
-							occupied: '#E94B35',
-							'Property Undisclosed': '#F2C500',
-							'Open Space': '#33495F',
-							amenities: '#9C56B8',
-							foreclosed: '#E87E04',
-							'With House': '#2C97DE',
-							outdated: '#E12323',
-							updated: '#018E5A',
-							advanced: '#FDC50C',
-							'N/A': '',
-							1: 'black',
-							2: 'blue',
-							3: 'red',
-							4: 'brown',
-							5: 'purple',
-							6: 'green',
-							7: 'yellow',
-							8: 'magenta',
-							9: 'darkblue',
-							10: 'olive',
-							11: 'lime',
-							12: 'maroon',
-							13: '#033E3E',
-							14: '#F67280',
-							15: '#E799A3',
-							16: '#D891EF',
-							17: '#DC143C',
-							18: '#F8B88B',
-							19: '#DC381F',
-							20: '#FF7722',
-							21: '#43302E',
-							22: '#665D1E',
-							23: '#A97142',
-							24: '#C19A6B',
-							25: '#FFD700',
-							26: '#F5F5DC',
-							27: '#C2E5D3',
-							28: '#9DC209',
-							29: '#8C001A',
-							30: '#43C6DB',
-							31: '#50EBEC',
-							32: '#29465B',
-							33: '#D5D6EA',
-							34: '#4E5B31',
-							35: '#00FA9A',
-							36: '#B21807',
-							37: '#C5908E',
-							38: '#614051',
-							39: '#4B0082',
-
-						};
-
+			function colorData(id) {
+				fetch('adminViews/includes/mapsubmit.php?id=' + id)
+					.then(response => response.json())
+					.then(data => {
+						if (buttonSelected === "available") {
+							if (data.Status === 'available') {
+								document.getElementById(id).style.fill = '#1FCE6D';
+							}
+						} else if (buttonSelected === "occupied") {
+							if (data.Status === 'occupied') {
+								document.getElementById(id).style.fill = '#E94B35';
+							}
+						} else if (buttonSelected === "foreclosed") {
+							if (data.Status === 'foreclosed') {
+								document.getElementById(id).style.fill = '#E87E04';
+							}
+						} else if (buttonSelected === 'house') {
+							if (data.Status === 'With House') {
+								document.getElementById(id).style.fill = '#2C97DE';
+							}
+						} else if (buttonSelected === 'open') {
+							if (data.Status === 'Open Space') {
+								document.getElementById(id).style.fill = '#33495F';
+							}
+						} else if (buttonSelected === 'amenities') {
+							if (data.Status === 'amenities') {
+								document.getElementById(id).style.fill = '#9C56B8';
+							}
+						} else if (buttonSelected === 'Updated') {
+							if (data.Dues_Status === 'updated') {
+								document.getElementById(id).style.fill = '#018E5A';
+							}
+						} else if (buttonSelected === 'Outdated') {
+							if (data.Dues_Status === 'outdated') {
+								document.getElementById(id).style.fill = '#E12323';
+							}
+						} else if (buttonSelected === 'Advanced') {
+							if (data.Dues_Status === 'advanced') {
+								document.getElementById(id).style.fill = '#FDC50C';
+							}
+						}
 						let color = '';
-						if (buttonSelected === 'lot-select') {
-							color = colorMap[data.Status];
-						} else if (buttonSelected === 'assoc-select') {
-							color = colorMap[data.Dues_Status];
-						} else if (buttonSelected === 'block-select') {
-							color = colorMap[data.Block]
+						if (buttonSelected === 'available') {
+							color = colorMap.available;
+						} else if (buttonSelected === 'occupied') {
+							color = colorMap.occupied;
+						} else if (buttonSelected === 'open') {
+							color = colorMap['Open Space'];
+						} else if (buttonSelected === 'amenities') {
+							color = colorMap.amenities;
+						} else if (buttonSelected === 'foreclosed') {
+							color = colorMap.foreclosed;
+						} else if (buttonSelected === 'house') {
+							color = colorMap['With House'];
+						} else if (buttonSelected === 'Updated') {
+							color = colorMap.updated;
+						} else if (buttonSelected === 'Outdated') {
+							color = colorMap.outdated;
+						} else if (buttonSelected === 'Advanced') {
+							color = colorMap.advanced;
 						}
 
 						if (color) {
 							document.getElementById(id).style.fill = color;
 						}
-
 					});
 			};
-			const select = document.querySelector('.form-select');
+
+			const checkboxAvail = document.querySelector('#available');
+			const checkboxOccupied = document.querySelector('#occupied');
+			const checkboxOpenSpace = document.querySelector('#open');
+			const checkboxAmenities = document.querySelector('#amenities');
+			const checkboxForeclosed = document.querySelector('#foreclosed');
+			const checkboxWithHouse = document.querySelector('#house');
+			const checkboxUpdated = document.querySelector('#Updated');
+			const checkboxOutdated = document.querySelector('#Outdated');
+			const checkboxAdvanced = document.querySelector('#Advanced');
 			const paths = document.querySelectorAll('.mapping');
 
-			select.addEventListener("change", function() {
+			checkboxAvail.addEventListener("change", function() {
 				clearColor();
-				if (select.value === "lot-information") {
-					buttonSelected = "lot-select";
+				if (checkboxAvail.checked === true) {
+					buttonSelected = "available";
 					paths.forEach(path => {
 						getData(path.id);
 						colorData(path.id);
 					});
-				} else if (select.value === "association-dues") {
-					buttonSelected = "assoc-select";
-					paths.forEach(path => {
-						getData(path.id);
-						colorData(path.id);
-					});
-				} else if (select.value === "block-select")
-					buttonSelected = "block-select";
-				paths.forEach(path => {
-					getData(path.id);
-					colorData(path.id);
-				})
+				}
 			});
+
+			checkboxOccupied.addEventListener("change", function() {
+				clearColor();
+				if (checkboxOccupied.checked === true) {
+					buttonSelected = "occupied";
+					paths.forEach(path => {
+						getData(path.id);
+						colorData(path.id);
+					});
+				}
+			});
+
+			checkboxWithHouse.addEventListener("change", function() {
+				clearColor();
+				if (checkboxWithHouse.checked === true) {
+					buttonSelected = "house";
+					paths.forEach(path => {
+						getData(path.id);
+						colorData(path.id);
+					});
+				}
+			});
+
+			checkboxForeclosed.addEventListener("change", function() {
+				clearColor();
+				if (checkboxForeclosed.checked === true) {
+					buttonSelected = "foreclosed";
+					paths.forEach(path => {
+						getData(path.id);
+						colorData(path.id);
+					});
+				}
+			});
+
+			checkboxOpenSpace.addEventListener("change", function() {
+				clearColor();
+				if (checkboxOpenSpace.checked === true) {
+					buttonSelected = "open";
+					paths.forEach(path => {
+						getData(path.id);
+						colorData(path.id);
+					});
+				}
+			});
+
+			checkboxAmenities.addEventListener("change", function() {
+				clearColor();
+				if (checkboxAmenities.checked === true) {
+					buttonSelected = "amenities";
+					paths.forEach(path => {
+						getData(path.id);
+						colorData(path.id);
+					});
+				}
+			});
+
+			checkboxUpdated.addEventListener("change", function() {
+				clearColor();
+				if (checkboxUpdated.checked === true) {
+					buttonSelected = "Updated";
+					paths.forEach(path => {
+						getData(path.id);
+						colorData(path.id);
+					});
+				}
+			});
+
+			checkboxOutdated.addEventListener("change", function() {
+				clearColor();
+				if (checkboxUpdated.checked === true) {
+					buttonSelected = "Outdated";
+					paths.forEach(path => {
+						getData(path.id);
+						colorData(path.id);
+					});
+				}
+			});
+
+			checkboxAdvanced.addEventListener("change", function() {
+				clearColor();
+				if (checkboxUpdated.checked === true) {
+					buttonSelected = "Advanced";
+					paths.forEach(path => {
+						getData(path.id);
+						colorData(path.id);
+					});
+				}
+			});
+
+
+
+
 			paths.forEach(function(path) {
 				path.addEventListener('mouseover', function() {
 					this.style.stroke = "black";
