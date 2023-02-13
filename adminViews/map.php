@@ -8,16 +8,7 @@
 	</div>
 
 	<div class="map">
-		<div class="input-group">
-			<div class="col-md-4">
-				<select class="form-select" aria-label="Default select example">
-					<option selected disabled>Monitor by:</option>
-					<option value="lot-informations" id="lot-selects">Lot Information</option>
-					<option value="association-dues" id="assoc-select">Association Dues</option>
-					<option value="block-select" id="block-select">Block</option>
-				</select>
-			</div>
-			<h3>|</h3>
+		<div class="input-group" style="padding:5px;">
 			<input type="text" class="form-control" id="searchMap" placeholder="Search here : blk1lot1..." style="border-radius: 5p;">
 		</div>
 		<div class="map-admin" style="overflow:hidden;">
@@ -5044,7 +5035,7 @@
 				<button id="assoc-btn"><i class="fa-solid fa-scroll"></i></button>
 				<button id="owner-information-btn"><i class="fa-solid fa-user"></i></button>
 			</div>
-			<div class="panel-containers" style="min-height:80vh;">
+			<div class="panel-containers" style="height: 70vh;">
 				<div class="text-center titlessss">
 					<h3 class="" id="lot-information-map-t">LOT INFORMATION</h3>
 					<h3 class="" id="map-assoc-t" hidden>ASSOCIATION DUES</h3>
