@@ -3,6 +3,9 @@
     //connect to database
     include_once('connection.php');
 
+    require('../adminViews/phpmailer/otp_functions1.php');
+
+
 //OWNER EMAIL ENTRY
     $check_email = "SELECT * FROM owner_accounts WHERE owner_email='$email'";
     $emailresult = mysqli_query($con, $check_email);
@@ -16,7 +19,9 @@
     $adcheck_username = "SELECT * FROM admin_accounts WHERE admin_username='$email'";
     $adusernameresult = mysqli_query($con,$adcheck_username);
 
+    
 
+    
 //OWNER USERNAME ENTRY
     if(mysqli_num_rows($usernameresult)>0){
       $get_email = "SELECT owner_email FROM owner_accounts WHERE owner_username='$email'";
@@ -26,18 +31,24 @@
       $gen_code =  rand(999999, 111111);
 
       $insert_code = "UPDATE owner_accounts SET code = '$gen_code' WHERE owner_username = '$email'";
+
+      //SENDING OTP TO THE USERNAME.... 
       $run_query =  mysqli_query($con, $insert_code);
 
+      // LAJSDLAKSJDHLASD
+
       if($run_query){
-        $subject = "Password Reset Code"; 
-        $message = "Your password reset code is $gen_code";
-        $sender = "From: guyrx90@gmail.com";
-        if(mail($acquired_email['owner_email'], $subject, $message, $sender)){
-          echo "A one time password was sent to your email";
-        }
-         else{
-             echo "An error occured while sending the email";
-             }
+        UEmail($acquired_email['owner_email'], $gen_code);
+
+        // $subject = "Password Reset Code"; 
+        // $message = "Your password reset code is $gen_code";
+        // $sender = "From: guyrx90@gmail.com";
+        // echo "A one time password was sent to your email"; 
+
+        // } 
+        // if(mail($acquired_email['owner_email'], $subject, $message, $sender)){
+        //   echo "A one time password was sent to your email";
+        // }
       }
      else{
         echo "An error occured while generating the code";
@@ -48,6 +59,8 @@
     else if(mysqli_num_rows($emailresult)>0){
         $gen_code =  rand(999999, 111111);
         $insert_code = "UPDATE owner_accounts SET code = '$gen_code' WHERE owner_email = '$email'";
+
+      //SENDING OTP TO THE EMAIL....
         $run_query =  mysqli_query($con, $insert_code);
         if($run_query){
           $subject = "Password Reset Code";
@@ -73,6 +86,7 @@
       $adgen_code =  rand(999999, 111111);
       $adinsert_code = "UPDATE admin_accounts SET code = '$adgen_code' WHERE admin_username = '$email'";
     
+      //SENDING OTP TO THE EMAIL.... 
       $adrun_query =  mysqli_query($con, $adinsert_code);
       if($adrun_query){
         $adsubject = "Password Reset Code";

@@ -287,16 +287,14 @@ function sending_function() {
                     data: {
                         email: email
                     },
-                    success: function(data) {
-                      
-                        $('#forgot_errors').html(data);
-                        var forgotError = document.getElementById("forgot_errors");
-
-                        if(data === "A one time password was sent to your email"){
+                }).done(function(response) {
+                    $("#forgot_errors").html(response);
+                    var forgotError = document.getElementById("forgot_errors");
+                    
+                    if(response === "A one time password was sent to your email"){
                                   forgotError.classList.remove("error");
                                   forgotError.classList.add("success");
                                 
-
                                 $("#verify-input").html("<input class='form-control' type='text' id='verification_code' placeholder='Enter the otp code'/>"+
                                 "<br>"+
                                 "<a  class='resend_btn text-center d-flex justify-content-center' onclick='resend_function()'>Send another code</a>");
@@ -304,14 +302,43 @@ function sending_function() {
                                 $("#sending_button").replaceWith(' <button class="btn-submit4 btn-submit-5" name="verify_button" id="verify_button" type="button" onclick="verify_function()"">' + '<span class="btn-submit-6">' + '<p class="bx-fw bx bxs-send"></p>' + '</span>' + '<a class="text-white">Verify</a>' + '</button>');
                         }
 
-                        else if(data === "An error occured while sending the email"||"An error occured while generating the code"||"The email or username you entered does not exists in our record") {
+                        else if(response === "An error occured while sending the email"||"An error occured while generating the code"||"The email or username you entered does not exists in our record") {
                                 forgotError.classList.remove("success");
                                 forgotError.classList.add("error");
                         }
                         else  {
                             $("#forgot_errors").html("We encountered a problem try again later").addClass("error");
                         }
-                    }
+
+                    // setTimeout(function() {
+                    //     $("#forgot_errors").hide();
+                    // }, 5000);
+
+                    // success: function(data) {
+                      
+                    //     $('#forgot_errors').html(data);
+                    //     var forgotError = document.getElementById("forgot_errors");
+
+                    //     if(data === "A one time password was sent to your email"){
+                    //               forgotError.classList.remove("error");
+                    //               forgotError.classList.add("success");
+                                
+
+                    //             $("#verify-input").html("<input class='form-control' type='text' id='verification_code' placeholder='Enter the otp code'/>"+
+                    //             "<br>"+
+                    //             "<a  class='resend_btn text-center d-flex justify-content-center' onclick='resend_function()'>Send another code</a>");
+                                
+                    //             $("#sending_button").replaceWith(' <button class="btn-submit4 btn-submit-5" name="verify_button" id="verify_button" type="button" onclick="verify_function()"">' + '<span class="btn-submit-6">' + '<p class="bx-fw bx bxs-send"></p>' + '</span>' + '<a class="text-white">Verify</a>' + '</button>');
+                    //     }
+
+                    //     else if(data === "An error occured while sending the email"||"An error occured while generating the code"||"The email or username you entered does not exists in our record") {
+                    //             forgotError.classList.remove("success");
+                    //             forgotError.classList.add("error");
+                    //     }
+                    //     else  {
+                    //         $("#forgot_errors").html("We encountered a problem try again later").addClass("error");
+                    //     }
+                    // }
                 });
             }
         }

@@ -17,7 +17,7 @@ require_once 'class.phpmailer.php';
 //     return $conn;
 // }
 
-function sendEmail($email, $subject, $message){
+function UEmail($acquired_email, $gen_code ){
 
 
 //Instantiation and passing `true` enables exceptions
@@ -35,9 +35,9 @@ try {
     $mail->Port = 587;     
     $mail->isHTML(true);
     //Recipients
-    $mail->setFrom('emailAddress@gmail.com', 'LHPH Emailer');
+    $mail->setFrom('emailAddress@gmail.com', 'LHPH Emailer (otp)');
 
-    $mail->addAddress($email,);     //Add a recipient
+    $mail->addAddress($acquired_email,);     //Add a recipient
     // $mail->addAddress('ellen@example.com');  //Name is optional
     // $mail->addReplyTo('info@example.com', 'Information');
     // $mail->addCC('cc@example.com');
@@ -48,12 +48,12 @@ try {
     // $mail->addAttachment('/tmp/image.jpg', 'new.jpg'); //Optional name
 
     //Content   //Set email format to HTML
-    $mail->Subject = $subject;
-    $mail->Body = $message;
+    $mail->Subject = "Password Reset Code";
+    $mail->Body = "Your password reset code is $gen_code";
     // $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
     $mail->send();
-    echo 'Message has been sent';
+    echo 'A one time password was sent to your email';
 } catch (Exception $e) {
-    echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+    echo "An error occured while generating the code. Mailer Error: {$mail->ErrorInfo}";
 }
 }

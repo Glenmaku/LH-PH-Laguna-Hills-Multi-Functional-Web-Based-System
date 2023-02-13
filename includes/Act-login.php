@@ -51,9 +51,11 @@ else{
         if($HashPass==false)
         {
            // echo 'Invalid Password';
-           echo'<div class="alert alert-danger alert-dismissible fade show login-messages w-100" role="alert" id="login-messages">
-           Invalid Password
-                       <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+           echo'
+           
+           
+           
+           data-bs-dismiss="alert" aria-label="Close"></button>
                           </div>';
            
         }
