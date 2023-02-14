@@ -21,7 +21,7 @@ while ($row = mysqli_fetch_assoc($result)) {
     echo '<td>' . $row['Lot_ID'] . '</td>';
     echo '<td>' . $row['Balance'] . '</td>';
     echo '<td>' . $row['assoc_date_payment'] . '</td>';
-    echo '<td><button class="btn btn-success btn-sm id="sent-notice">Send</button></td></tr>';
+    echo '<td><button class="btn btn-success btn-sm" id="sent-notice">Send</button></td></tr>';
     $count++;
 }
 echo '</tbody></table>';
@@ -30,3 +30,32 @@ echo '</tbody></table>';
 mysqli_close($con);
 ?>
 
+<script>
+$(document).ready(function() {
+  $('#sent-notice').click(function() {
+    // Disable the button to prevent multiple clicks
+    $(this).prop('disabled', true);
+    $(this).text('Sending...');
+
+    // Send an AJAX request to the PHP script
+    $.ajax({
+      url: 'adminViews/includes/act-sendNotice.php',
+      type: 'POST',
+      data: { },
+      success: function(response) {
+        alert('Email sent successfully!');
+        // Disable the button and change its text
+        $('#sent-notice').prop('disabled', true);
+        $('#sent-notice').text('Sent');
+      },
+      error: function(xhr, status, error) {
+        alert('An error occurred while sending the email.');
+        // Enable the button and restore its text
+        $('#sent-notice').prop('disabled', false);
+        $('#sent-notice').text('Send');
+      }
+    });
+  });
+});
+;
+</script>
