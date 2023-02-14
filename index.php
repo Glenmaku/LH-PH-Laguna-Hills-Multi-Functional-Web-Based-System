@@ -20,7 +20,7 @@
     </div>
     <!--Carousel Content 3 -->
     <div class="carousel-item ">
-      <img src="Images/NATURE26.jpg" class="ImageCarouselMain">
+      <img src="Images/NATURE26.jpeg" class="ImageCarouselMain">
     </div>
 
   </div>
