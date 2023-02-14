@@ -29,6 +29,4 @@ echo '</tbody></table>';
 // Close the connection
 mysqli_close($con);
 ?>
-<script>
-    
-</script>
+
