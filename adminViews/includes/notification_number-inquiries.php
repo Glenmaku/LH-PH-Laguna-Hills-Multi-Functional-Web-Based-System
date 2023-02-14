@@ -11,19 +11,17 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT * FROM contact_us";
-$result = $conn->query($sql);
+$read_sql = "SELECT * FROM contact_us WHERE status = 'read'";
+$unread_sql = "SELECT * FROM contact_us WHERE status = 'unread'";
 
-echo $result->num_rows;
+$read_result = $conn->query($read_sql);
+$unread_result = $conn->query($unread_sql);
 
-/*
-if ($result->num_rows > 0) {
-    // output data of each row
-    while($row = $result->fetch_assoc()) {
-        echo "id: " . $row["id"]. " - Notification: " . $row["description"];
-    }
-} else {
-    echo "0 results";
-}
-*/
+$read_count = $read_result->num_rows;
+$unread_count = $unread_result->num_rows;
+
+echo "Read: " . $read_count . "<br>";
+echo "Unread: " . $unread_count;
+
 $conn->close();
+?>
