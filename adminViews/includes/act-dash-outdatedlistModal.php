@@ -21,7 +21,7 @@ while ($row = mysqli_fetch_assoc($result)) {
     echo '<td>' . $row['Lot_ID'] . '</td>';
     echo '<td>' . $row['Balance'] . '</td>';
     echo '<td>' . $row['assoc_date_payment'] . '</td>';
-    echo '<td><button class="btn btn-success">Send</button></td></tr>';
+    echo '<td><button class="btn btn-success btn-sm id="sent-notice">Send</button></td></tr>';
     $count++;
 }
 echo '</tbody></table>';
@@ -29,3 +29,6 @@ echo '</tbody></table>';
 // Close the connection
 mysqli_close($con);
 ?>
+<script>
+    
+</script>
