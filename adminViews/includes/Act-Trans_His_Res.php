@@ -32,7 +32,7 @@ if(isset($_POST['Reservations_Rec'])){
     while($row=mysqli_fetch_assoc($reservations_result)){
       $reservation_ID = $row['records_transaction_no'];
       $reservation_name =	$row['t_name'];
-      $ReserverType = $row[''];
+      $ReserverType = $row['reserver_type'];
       $fromdate = $row['reserv_date_start'];
       $todate = $row['reserv_date_end'];
       $reservation_total = $row['total'];
@@ -46,6 +46,7 @@ if(isset($_POST['Reservations_Rec'])){
       $Rtable .= '  <tr>
                               <td>'.$reservation_ID.'</td>
                               <td>'.$reservation_name.'</td>
+                              <td>'.$ReserverType.'</td>
                               <td>'.$fromdate.' <b>-</b> '.$todate.'</td>
                               <td>'.$reservation_total.'</td>
                               <td>'.$reservation_discount.'</td>

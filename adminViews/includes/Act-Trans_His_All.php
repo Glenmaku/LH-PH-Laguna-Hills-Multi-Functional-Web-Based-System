@@ -88,7 +88,7 @@ else {
           <h1 class="modal-title fs-5" id="exampleModalLabel">Transaction Details</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id=""></button>
         </div>
-        <div class="modal-body ms-5 me-5">
+        <div class="modal-body ps-5 pe-5">
         
         <span hidden>transaction number</span>
         <input id="modal_transno" hidden>

@@ -108,6 +108,9 @@ $reserv_remaining_balancesend = $_POST['reserv_remaining_balancesend'];
             <div class="row align-items-start align-items-center  border-top">
                 <h6 class="col-5 mb-0">Recipient&apos;s Name:</h6>
                 <i class=" col d-flex justify-content-end"><b>'.$transaction_name.'</b></i>  </div>
+                <div class="row align-items-start align-items-center border-top border-bottom">
+                <h6 class="col-5 mb-0">Reserver:</h6>
+                <i class=" col d-flex justify-content-end">'.$ReserverType.'</i>  </div>
                 <div class="row align-items-start align-items-center">
                 <h6 class="col-4 mb-0">Recipient&apos;s Email:</h6>
                 <i class=" col d-flex justify-content-end">'.$t_email.'</i>
@@ -166,6 +169,10 @@ $reserv_remaining_balancesend = $_POST['reserv_remaining_balancesend'];
             <h6 class="col-5 mb-0">Remaining Balance:</h6>
             <i class=" col d-flex justify-content-end"><b>&#8369; '.$reserv_remaining_balancesend.'</b></i>
             </div><br>
+            <div class="row align-items-start align-items-center border-top border-bottom">
+            <h6 class="col-4 mb-0">Authorization:</h6>
+            <i class=" col d-flex justify-content-end">'.$AuthorizeType.'</i>
+          </div>
             <div class=" align-items-center ">
             <h6 class="d-flex mb-0 text-center">Remarks:</h6>
             <i class="d-flex text-center col-12">'.$remarks_send.'</i></div>
