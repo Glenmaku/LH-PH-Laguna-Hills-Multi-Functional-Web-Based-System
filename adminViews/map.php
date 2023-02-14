@@ -5351,7 +5351,164 @@
 							if (data.Dues_Status === 'advanced') {
 								document.getElementById(id).style.fill = '#FDC50C';
 							}
-						}
+						} else if (buttonSelected === 'block-1') {
+							if (data.Block === '1') {
+								document.getElementById(id).style.fill = 'black';
+							}
+						} else if (buttonSelected === 'block-2') {
+							if (data.Block === '2') {
+								document.getElementById(id).style.fill = 'blue';
+							}
+						} else if (buttonSelected === 'block-3') {
+							if (data.Block === '3') {
+								document.getElementById(id).style.fill = 'red';
+							}
+						} else if (buttonSelected === 'block-4') {
+							if (data.Block === '4') {
+								document.getElementById(id).style.fill = 'brown';
+							}
+						} else if (buttonSelected === 'block-5') {
+							if (data.Block === '5') {
+								document.getElementById(id).style.fill = 'purple';
+							}
+						} else if (buttonSelected === 'block-6') {
+							if (data.Block === '6') {
+								document.getElementById(id).style.fill = 'green';
+							}
+						} else if (buttonSelected === 'block-7') {
+							if (data.Block === '7') {
+								document.getElementById(id).style.fill = 'yellow';
+							}
+						} else if (buttonSelected === 'block-8') {
+							if (data.Block === '8') {
+								document.getElementById(id).style.fill = 'magenta';
+							}
+						} else if (buttonSelected === 'block-9') {
+							if (data.Block === '9') {
+								document.getElementById(id).style.fill = 'darkblue';
+							}
+						} else if (buttonSelected === 'block-10') {
+							if (data.Block === '10') {
+								document.getElementById(id).style.fill = 'olive';
+							}
+						} else if (buttonSelected === 'block-11') {
+							if (data.Block === '11') {
+								document.getElementById(id).style.fill = 'lime';
+							}
+						} else if (buttonSelected === 'block-12') {
+							if (data.Block === '12') {
+								document.getElementById(id).style.fill = 'maroon';
+							}
+						} else if (buttonSelected === 'block-13') {
+							if (data.Block === '13') {
+								document.getElementById(id).style.fill = '#033E3E';
+							}
+						} else if (buttonSelected === 'block-14') {
+							if (data.Block === '14') {
+								document.getElementById(id).style.fill = '#F67280';
+							}
+						} else if (buttonSelected === 'block-15') {
+							if (data.Block === '15') {
+								document.getElementById(id).style.fill = '#E799A3';
+							}
+						} else if (buttonSelected === 'block-16') {
+							if (data.Block === '16') {
+								document.getElementById(id).style.fill = '#D891EF';
+							}
+						} else if (buttonSelected === 'block-17') {
+							if (data.Block === '17') {
+								document.getElementById(id).style.fill = '#DC143C';
+							}
+						} else if (buttonSelected === 'block-18') {
+							if (data.Block === '18') {
+								document.getElementById(id).style.fill = '#F8B88B';
+							}
+						} else if (buttonSelected === 'block-19') {
+							if (data.Block === '19') {
+								document.getElementById(id).style.fill = '#DC381F';
+							}
+						} else if (buttonSelected === 'block-20') {
+							if (data.Block === '20') {
+								document.getElementById(id).style.fill = '#FF7722';
+							}
+						} else if (buttonSelected === 'block-21') {
+							if (data.Block === '21') {
+								document.getElementById(id).style.fill = '#43302E';
+							}
+						} else if (buttonSelected === 'block-22') {
+							if (data.Block === '22') {
+								document.getElementById(id).style.fill = '#665D1E';
+							}
+						} else if (buttonSelected === 'block-23') {
+							if (data.Block === '23') {
+								document.getElementById(id).style.fill = '#A97142';
+							}
+						} else if (buttonSelected === 'block-24') {
+							if (data.Block === '24') {
+								document.getElementById(id).style.fill = '#C19A6B';
+							}
+						} else if (buttonSelected === 'block-25') {
+							if (data.Block === '25') {
+								document.getElementById(id).style.fill = '#FFD700';
+							}
+						} else if (buttonSelected === 'block-26') {
+							if (data.Block === '26') {
+								document.getElementById(id).style.fill = '#F5F5DC';
+							}
+						} else if (buttonSelected === 'block-27') {
+							if (data.Block === '27') {
+								document.getElementById(id).style.fill = '#C2E5D3';
+							}
+						} else if (buttonSelected === 'block-28') {
+							if (data.Block === '28') {
+								document.getElementById(id).style.fill = '#9DC209';
+							}
+						} else if (buttonSelected === 'block-29') {
+							if (data.Block === '29') {
+								document.getElementById(id).style.fill = '#8C001A';
+							}
+						} else if (buttonSelected === 'block-30') {
+							if (data.Block === '30') {
+								document.getElementById(id).style.fill = '#43C6DB';
+							}
+						} else if (buttonSelected === 'block-31') {
+							if (data.Block === '31') {
+								document.getElementById(id).style.fill = '#50EBEC';
+							}
+						} else if (buttonSelected === 'block-32') {
+							if (data.Block === '32') {
+								document.getElementById(id).style.fill = '#29465B';
+							}
+						} else if (buttonSelected === 'block-33') {
+							if (data.Block === '33') {
+								document.getElementById(id).style.fill = '#D5D6EA';
+							}
+						} else if (buttonSelected === 'block-34') {
+							if (data.Block === '34') {
+								document.getElementById(id).style.fill = '#4E5B31';
+							}
+						} else if (buttonSelected === 'block-35') {
+							if (data.Block === '35') {
+								document.getElementById(id).style.fill = '#00FA9A';
+							}
+						} else if (buttonSelected === 'block-36') {
+							if (data.Block === '36') {
+								document.getElementById(id).style.fill = '#B21807';
+							}
+						} else if (buttonSelected === 'block-37') {
+							if (data.Block === '37') {
+								document.getElementById(id).style.fill = '#C5908E';
+							}
+						} else if (buttonSelected === 'block-38') {
+							if (data.Block === '38') {
+								document.getElementById(id).style.fill = '#614051';
+							}
+						} else if (buttonSelected === 'block-39') {
+							if (data.Block === '39') {
+								document.getElementById(id).style.fill = '#4B0082';
+							}
+						} 
+
 						let color = '';
 						if (buttonSelected === 'available') {
 							color = colorMap.available;
@@ -5371,6 +5528,84 @@
 							color = colorMap.outdated;
 						} else if (buttonSelected === 'Advanced') {
 							color = colorMap.advanced;
+						} else if (buttonSelected === 'block-1') {
+							color = colorMap['1'];
+						} else if (buttonSelected === 'block-2') {
+							color = colorMap['2'];
+						} else if (buttonSelected === 'block-3') {
+							color = colorMap['3'];
+						} else if (buttonSelected === 'block-4') {
+							color = colorMap['4'];
+						} else if (buttonSelected === 'block-5') {
+							color = colorMap['5'];
+						} else if (buttonSelected === 'block-6') {
+							color = colorMap['6'];
+						} else if (buttonSelected === 'block-7') {
+							color = colorMap['7'];
+						} else if (buttonSelected === 'block-8') {
+							color = colorMap['8'];
+						} else if (buttonSelected === 'block-9') {
+							color = colorMap['9'];
+						} else if (buttonSelected === 'block-10') {
+							color = colorMap['10'];
+						} else if (buttonSelected === 'block-11') {
+							color = colorMap['11'];
+						} else if (buttonSelected === 'block-12') {
+							color = colorMap['12'];
+						} else if (buttonSelected === 'block-13') {
+							color = colorMap['13'];
+						} else if (buttonSelected === 'block-14') {
+							color = colorMap['14'];
+						} else if (buttonSelected === 'block-15') {
+							color = colorMap['15'];
+						} else if (buttonSelected === 'block-16') {
+							color = colorMap['16'];
+						} else if (buttonSelected === 'block-17') {
+							color = colorMap['17'];
+						} else if (buttonSelected === 'block-18') {
+							color = colorMap['18'];
+						} else if (buttonSelected === 'block-19') {
+							color = colorMap['19'];
+						} else if (buttonSelected === 'block-20') {
+							color = colorMap['20'];
+						} else if (buttonSelected === 'block-21') {
+							color = colorMap['21'];
+						} else if (buttonSelected === 'block-22') {
+							color = colorMap['22'];
+						} else if (buttonSelected === 'block-23') {
+							color = colorMap['23'];
+						} else if (buttonSelected === 'block-24') {
+							color = colorMap['24'];
+						} else if (buttonSelected === 'block-25') {
+							color = colorMap['25'];
+						} else if (buttonSelected === 'block-26') {
+							color = colorMap['26'];
+						} else if (buttonSelected === 'block-27') {
+							color = colorMap['27'];
+						} else if (buttonSelected === 'block-28') {
+							color = colorMap['28'];
+						} else if (buttonSelected === 'block-29') {
+							color = colorMap['29'];
+						} else if (buttonSelected === 'block-30') {
+							color = colorMap['30'];
+						} else if (buttonSelected === 'block-31') {
+							color = colorMap['31'];
+						} else if (buttonSelected === 'block-32') {
+							color = colorMap['32'];
+						} else if (buttonSelected === 'block-33') {
+							color = colorMap['33'];
+						} else if (buttonSelected === 'block-34') {
+							color = colorMap['34'];
+						} else if (buttonSelected === 'block-35') {
+							color = colorMap['35'];
+						} else if (buttonSelected === 'block-36') {
+							color = colorMap['36'];
+						} else if (buttonSelected === 'block-37') {
+							color = colorMap['37'];
+						} else if (buttonSelected === 'block-38') {
+							color = colorMap['38'];
+						} else if (buttonSelected === 'block-39') {
+							color = colorMap['39'];
 						}
 
 						if (color) {
@@ -5388,6 +5623,45 @@
 			const checkboxUpdated = document.querySelector('#Updated');
 			const checkboxOutdated = document.querySelector('#Outdated');
 			const checkboxAdvanced = document.querySelector('#Advanced');
+			const checkboxBlock1 = document.querySelector('#block-1');
+			const checkboxBlock2 = document.querySelector('#block-2');
+			const checkboxBlock3 = document.querySelector('#block-3');
+			const checkboxBlock4 = document.querySelector('#block-4');
+			const checkboxBlock5 = document.querySelector('#block-5');
+			const checkboxBlock6 = document.querySelector('#block-6');
+			const checkboxBlock7 = document.querySelector('#block-7');
+			const checkboxBlock8 = document.querySelector('#block-8');
+			const checkboxBlock9 = document.querySelector('#block-9');
+			const checkboxBlock10 = document.querySelector('#block-10');
+			const checkboxBlock11 = document.querySelector('#block-11');
+			const checkboxBlock12 = document.querySelector('#block-12');
+			const checkboxBlock13 = document.querySelector('#block-13');
+			const checkboxBlock14 = document.querySelector('#block-14');
+			const checkboxBlock15 = document.querySelector('#block-15');
+			const checkboxBlock16 = document.querySelector('#block-16');
+			const checkboxBlock17 = document.querySelector('#block-17');
+			const checkboxBlock18 = document.querySelector('#block-18');
+			const checkboxBlock19 = document.querySelector('#block-19');
+			const checkboxBlock20 = document.querySelector('#block-20');
+			const checkboxBlock21 = document.querySelector('#block-21');
+			const checkboxBlock22 = document.querySelector('#block-22');
+			const checkboxBlock23 = document.querySelector('#block-23');
+			const checkboxBlock24 = document.querySelector('#block-24');
+			const checkboxBlock25 = document.querySelector('#block-25');
+			const checkboxBlock26 = document.querySelector('#block-26');
+			const checkboxBlock27 = document.querySelector('#block-27');
+			const checkboxBlock28 = document.querySelector('#block-28');
+			const checkboxBlock29 = document.querySelector('#block-29');
+			const checkboxBlock30 = document.querySelector('#block-30');
+			const checkboxBlock31 = document.querySelector('#block-31');
+			const checkboxBlock32 = document.querySelector('#block-32');
+			const checkboxBlock33 = document.querySelector('#block-33');
+			const checkboxBlock34 = document.querySelector('#block-34');
+			const checkboxBlock35 = document.querySelector('#block-35');
+			const checkboxBlock36 = document.querySelector('#block-36');
+			const checkboxBlock37 = document.querySelector('#block-37');
+			const checkboxBlock38 = document.querySelector('#block-38');
+			const checkboxBlock39 = document.querySelector('#block-39');
 			const paths = document.querySelectorAll('.mapping');
 
 			checkboxAvail.addEventListener("change", function() {
@@ -5469,7 +5743,7 @@
 
 			checkboxOutdated.addEventListener("change", function() {
 				clearColor();
-				if (checkboxUpdated.checked === true) {
+				if (checkboxOutdated.checked === true) {
 					buttonSelected = "Outdated";
 					paths.forEach(path => {
 						getData(path.id);
@@ -5480,8 +5754,437 @@
 
 			checkboxAdvanced.addEventListener("change", function() {
 				clearColor();
-				if (checkboxUpdated.checked === true) {
+				if (checkboxAdvanced.checked === true) {
 					buttonSelected = "Advanced";
+					paths.forEach(path => {
+						getData(path.id);
+						colorData(path.id);
+					});
+				}
+			});
+
+			checkboxBlock1.addEventListener("change", function() {
+				clearColor();
+				if (checkboxBlock1.checked === true) {
+					buttonSelected = "block-1";
+					paths.forEach(path => {
+						getData(path.id);
+						colorData(path.id);
+					});
+				}
+			});
+
+			checkboxBlock2.addEventListener("change", function() {
+				clearColor();
+				if (checkboxBlock2.checked === true) {
+					buttonSelected = "block-2";
+					paths.forEach(path => {
+						getData(path.id);
+						colorData(path.id);
+					});
+				}
+			});
+
+			checkboxBlock3.addEventListener("change", function() {
+				clearColor();
+				if (checkboxBlock3.checked === true) {
+					buttonSelected = "block-3";
+					paths.forEach(path => {
+						getData(path.id);
+						colorData(path.id);
+					});
+				}
+			});
+
+			checkboxBlock4.addEventListener("change", function() {
+				clearColor();
+				if (checkboxBlock4.checked === true) {
+					buttonSelected = "block-4";
+					paths.forEach(path => {
+						getData(path.id);
+						colorData(path.id);
+					});
+				}
+			});
+
+			checkboxBlock5.addEventListener("change", function() {
+				clearColor();
+				if (checkboxBlock5.checked === true) {
+					buttonSelected = "block-5";
+					paths.forEach(path => {
+						getData(path.id);
+						colorData(path.id);
+					});
+				}
+			});
+
+			checkboxBlock6.addEventListener("change", function() {
+				clearColor();
+				if (checkboxBlock6.checked === true) {
+					buttonSelected = "block-6";
+					paths.forEach(path => {
+						getData(path.id);
+						colorData(path.id);
+					});
+				}
+			});
+
+			checkboxBlock7.addEventListener("change", function() {
+				clearColor();
+				if (checkboxBlock7.checked === true) {
+					buttonSelected = "block-7";
+					paths.forEach(path => {
+						getData(path.id);
+						colorData(path.id);
+					});
+				}
+			});
+
+			checkboxBlock8.addEventListener("change", function() {
+				clearColor();
+				if (checkboxBlock8.checked === true) {
+					buttonSelected = "block-8";
+					paths.forEach(path => {
+						getData(path.id);
+						colorData(path.id);
+					});
+				}
+			});
+
+			checkboxBlock9.addEventListener("change", function() {
+				clearColor();
+				if (checkboxBlock9.checked === true) {
+					buttonSelected = "block-9";
+					paths.forEach(path => {
+						getData(path.id);
+						colorData(path.id);
+					});
+				}
+			});
+
+			checkboxBlock10.addEventListener("change", function() {
+				clearColor();
+				if (checkboxBlock10.checked === true) {
+					buttonSelected = "block-10";
+					paths.forEach(path => {
+						getData(path.id);
+						colorData(path.id);
+					});
+				}
+			});
+
+			checkboxBlock11.addEventListener("change", function() {
+				clearColor();
+				if (checkboxBlock11.checked === true) {
+					buttonSelected = "block-11";
+					paths.forEach(path => {
+						getData(path.id);
+						colorData(path.id);
+					});
+				}
+			});
+
+			checkboxBlock12.addEventListener("change", function() {
+				clearColor();
+				if (checkboxBlock12.checked === true) {
+					buttonSelected = "block-12";
+					paths.forEach(path => {
+						getData(path.id);
+						colorData(path.id);
+					});
+				}
+			});
+
+			checkboxBlock13.addEventListener("change", function() {
+				clearColor();
+				if (checkboxBlock13.checked === true) {
+					buttonSelected = "block-13";
+					paths.forEach(path => {
+						getData(path.id);
+						colorData(path.id);
+					});
+				}
+			});
+
+			checkboxBlock14.addEventListener("change", function() {
+				clearColor();
+				if (checkboxBlock14.checked === true) {
+					buttonSelected = "block-14";
+					paths.forEach(path => {
+						getData(path.id);
+						colorData(path.id);
+					});
+				}
+			});
+
+			checkboxBlock15.addEventListener("change", function() {
+				clearColor();
+				if (checkboxBlock15.checked === true) {
+					buttonSelected = "block-15";
+					paths.forEach(path => {
+						getData(path.id);
+						colorData(path.id);
+					});
+				}
+			});
+
+			checkboxBlock16.addEventListener("change", function() {
+				clearColor();
+				if (checkboxBlock16.checked === true) {
+					buttonSelected = "block-16";
+					paths.forEach(path => {
+						getData(path.id);
+						colorData(path.id);
+					});
+				}
+			});
+
+			checkboxBlock17.addEventListener("change", function() {
+				clearColor();
+				if (checkboxBlock17.checked === true) {
+					buttonSelected = "block-17";
+					paths.forEach(path => {
+						getData(path.id);
+						colorData(path.id);
+					});
+				}
+			});
+
+			checkboxBlock18.addEventListener("change", function() {
+				clearColor();
+				if (checkboxBlock18.checked === true) {
+					buttonSelected = "block-18";
+					paths.forEach(path => {
+						getData(path.id);
+						colorData(path.id);
+					});
+				}
+			});
+
+			checkboxBlock19.addEventListener("change", function() {
+				clearColor();
+				if (checkboxBlock19.checked === true) {
+					buttonSelected = "block-19";
+					paths.forEach(path => {
+						getData(path.id);
+						colorData(path.id);
+					});
+				}
+			});
+
+			checkboxBlock20.addEventListener("change", function() {
+				clearColor();
+				if (checkboxBlock20.checked === true) {
+					buttonSelected = "block-20";
+					paths.forEach(path => {
+						getData(path.id);
+						colorData(path.id);
+					});
+				}
+			});
+
+			checkboxBlock21.addEventListener("change", function() {
+				clearColor();
+				if (checkboxBlock21.checked === true) {
+					buttonSelected = "block-21";
+					paths.forEach(path => {
+						getData(path.id);
+						colorData(path.id);
+					});
+				}
+			});
+
+			checkboxBlock22.addEventListener("change", function() {
+				clearColor();
+				if (checkboxBlock22.checked === true) {
+					buttonSelected = "block-22";
+					paths.forEach(path => {
+						getData(path.id);
+						colorData(path.id);
+					});
+				}
+			});
+
+			checkboxBlock23.addEventListener("change", function() {
+				clearColor();
+				if (checkboxBlock23.checked === true) {
+					buttonSelected = "block-23";
+					paths.forEach(path => {
+						getData(path.id);
+						colorData(path.id);
+					});
+				}
+			});
+
+			checkboxBlock24.addEventListener("change", function() {
+				clearColor();
+				if (checkboxBlock24.checked === true) {
+					buttonSelected = "block-24";
+					paths.forEach(path => {
+						getData(path.id);
+						colorData(path.id);
+					});
+				}
+			});
+
+			checkboxBlock25.addEventListener("change", function() {
+				clearColor();
+				if (checkboxBlock25.checked === true) {
+					buttonSelected = "block-25";
+					paths.forEach(path => {
+						getData(path.id);
+						colorData(path.id);
+					});
+				}
+			});
+
+			checkboxBlock26.addEventListener("change", function() {
+				clearColor();
+				if (checkboxBlock26.checked === true) {
+					buttonSelected = "block-26";
+					paths.forEach(path => {
+						getData(path.id);
+						colorData(path.id);
+					});
+				}
+			});
+
+			checkboxBlock27.addEventListener("change", function() {
+				clearColor();
+				if (checkboxBlock27.checked === true) {
+					buttonSelected = "block-27";
+					paths.forEach(path => {
+						getData(path.id);
+						colorData(path.id);
+					});
+				}
+			});
+
+			checkboxBlock28.addEventListener("change", function() {
+				clearColor();
+				if (checkboxBlock28.checked === true) {
+					buttonSelected = "block-28";
+					paths.forEach(path => {
+						getData(path.id);
+						colorData(path.id);
+					});
+				}
+			});
+
+			checkboxBlock29.addEventListener("change", function() {
+				clearColor();
+				if (checkboxBlock29.checked === true) {
+					buttonSelected = "block-29";
+					paths.forEach(path => {
+						getData(path.id);
+						colorData(path.id);
+					});
+				}
+			});
+
+			checkboxBlock30.addEventListener("change", function() {
+				clearColor();
+				if (checkboxBlock30.checked === true) {
+					buttonSelected = "block-30";
+					paths.forEach(path => {
+						getData(path.id);
+						colorData(path.id);
+					});
+				}
+			});
+
+			checkboxBlock31.addEventListener("change", function() {
+				clearColor();
+				if (checkboxBlock31.checked === true) {
+					buttonSelected = "block-31";
+					paths.forEach(path => {
+						getData(path.id);
+						colorData(path.id);
+					});
+				}
+			});
+
+			checkboxBlock32.addEventListener("change", function() {
+				clearColor();
+				if (checkboxBlock32.checked === true) {
+					buttonSelected = "block-32";
+					paths.forEach(path => {
+						getData(path.id);
+						colorData(path.id);
+					});
+				}
+			});
+
+			checkboxBlock33.addEventListener("change", function() {
+				clearColor();
+				if (checkboxBlock33.checked === true) {
+					buttonSelected = "block-33";
+					paths.forEach(path => {
+						getData(path.id);
+						colorData(path.id);
+					});
+				}
+			});
+
+			checkboxBlock34.addEventListener("change", function() {
+				clearColor();
+				if (checkboxBlock34.checked === true) {
+					buttonSelected = "block-34";
+					paths.forEach(path => {
+						getData(path.id);
+						colorData(path.id);
+					});
+				}
+			});
+
+			checkboxBlock35.addEventListener("change", function() {
+				clearColor();
+				if (checkboxBlock35.checked === true) {
+					buttonSelected = "block-35";
+					paths.forEach(path => {
+						getData(path.id);
+						colorData(path.id);
+					});
+				}
+			});
+
+			checkboxBlock36.addEventListener("change", function() {
+				clearColor();
+				if (checkboxBlock36.checked === true) {
+					buttonSelected = "block-36";
+					paths.forEach(path => {
+						getData(path.id);
+						colorData(path.id);
+					});
+				}
+			});
+
+			checkboxBlock37.addEventListener("change", function() {
+				clearColor();
+				if (checkboxBlock37.checked === true) {
+					buttonSelected = "block-37";
+					paths.forEach(path => {
+						getData(path.id);
+						colorData(path.id);
+					});
+				}
+			});
+
+			checkboxBlock38.addEventListener("change", function() {
+				clearColor();
+				if (checkboxBlock38.checked === true) {
+					buttonSelected = "block-38";
+					paths.forEach(path => {
+						getData(path.id);
+						colorData(path.id);
+					});
+				}
+			});
+
+			checkboxBlock39.addEventListener("change", function() {
+				clearColor();
+				if (checkboxBlock39.checked === true) {
+					buttonSelected = "block-39";
 					paths.forEach(path => {
 						getData(path.id);
 						colorData(path.id);
