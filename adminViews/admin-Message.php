@@ -352,52 +352,42 @@
         });
     }
 
-    function loadAllTransactionTab() {
-        var xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-                document.getElementById("notif-inq").innerHTML = this.responseText;
-                if (this.responseText !== "0") {
-                    document.getElementById("notif-inq").addEventListener("click", function() {
-                        var xhttp = new XMLHttpRequest();
-                        xhttp.onreadystatechange = function() {
-                            if (this.readyState == 4 && this.status == 200) {
-                                document.getElementById("notif-inq").innerHTML = this.responseText;
-                            }
-                        };
-                        xhttp.open("POST", "adminViews/includes/notification_number-inquiries.php", true);
-                        xhttp.send();
-                    });
-                }
-            }
-        };
-        xhttp.open("GET", "adminViews/includes/notification_number-inquiries.php", true);
-        xhttp.send();
-    }
+    setInterval(function() {
+    // Fetch unread messages
+    $.ajax({
+        url: 'adminViews/includes/notification_number_homeowners.php',
+        success: function(messages) {
+            // Loop through each message
+            $.each(messages, function(index, message) {
+                // Highlight the table row
+                $('#message_' + message.id).addClass('highlight');
 
-    function loadAssociationDuesTab() {
-        var xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-                document.getElementById("notif-home").innerHTML = this.responseText;
-                if (this.responseText !== "0") {
-                    document.getElementById("notif-home").addEventListener("click", function() {
-                        var xhttp = new XMLHttpRequest();
-                        xhttp.onreadystatechange = function() {
-                            if (this.readyState == 4 && this.status == 200) {
-                                document.getElementById("notif-home").innerHTML = this.responseText;
-                            }
-                        };
-                        xhttp.open("POST", "adminViews/includes/notification_number_homeowners.php", true);
-                        xhttp.send();
-                    });
-                }
-            }
-        };
-        xhttp.open("GET", "adminViews/includes/notification_number_homeowners.php", true);
-        xhttp.send();
-    }
+                // Add a click handler to remove the highlight
+                $('#message_' + message.id).click(function() {
+                    $(this).removeClass('highlight');
+                });
+            });
+        }
+    });
+}, 5000); // Refresh every 5 seconds
 
-    loadAllTransactionTab();
-    loadAssociationDuesTab();
+setInterval(function() {
+    // Fetch unread messages
+    $.ajax({
+        url: 'adminViews/includes/notification_number-inquiries.php',
+        success: function(messages) {
+            // Loop through each message
+            $.each(messages, function(index, message) {
+                // Highlight the table row
+                $('#message_' + message.id).addClass('highlight');
+
+                // Add a click handler to remove the highlight
+                $('#message_' + message.id).click(function() {
+                    $(this).removeClass('highlight');
+                });
+            });
+        }
+    });
+}, 5000); // Refresh every 5 seconds
+
 </script>
