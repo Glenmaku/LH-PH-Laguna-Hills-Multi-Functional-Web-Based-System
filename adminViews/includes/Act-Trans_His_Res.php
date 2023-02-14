@@ -9,16 +9,20 @@ if(isset($_POST['Reservations_Rec'])){
     $Rtable ='<table class="table">
     <thead>
       <tr>
-            <th>Transaction No.</th>
-          <th>Date</th>
+          <th>Transaction No.</th>
           <th>Full Name</th>
+          <th>Reserver</th>
+          <th>Duration</th>
           <th>Total</th>
-
           <th>Discount</th>
-          <th>Remarks</th>
           <th>Payment</th>
           <th>Change</th>
-
+          <th>Balance</th>
+          <th>Remarks</th>
+          <th>Date</th>
+          <th>Authorization</th>
+          <th>Details</th>
+          <th>Delete</th>
       </tr>
     </thead>
     <tbody>';
@@ -28,28 +32,31 @@ if(isset($_POST['Reservations_Rec'])){
     while($row=mysqli_fetch_assoc($reservations_result)){
       $reservation_ID = $row['records_transaction_no'];
       $reservation_name =	$row['t_name'];
+      $ReserverType = $row[''];
+      $fromdate = $row['reserv_date_start'];
+      $todate = $row['reserv_date_end'];
       $reservation_total = $row['total'];
-
       $reservation_discount = $row['discount'];
       $reservation_remarks = $row['remarks'];
       $reservation_reserv_payment = $row['reserv_payment'];
       $reservation_reserv_change = $row['reserv_change'];
       $reservation_remaining_balance = $row['remaining_balance'];
-
-     // $Category = $row['category'];
+      $authorization = $row['authorization_type'];
       $reservations_date = $row['date_created'];
       $Rtable .= '  <tr>
                               <td>'.$reservation_ID.'</td>
-                              <td>'.$reservations_date.'</td>
                               <td>'.$reservation_name.'</td>
+                              <td>'.$fromdate.' <b>-</b> '.$todate.'</td>
                               <td>'.$reservation_total.'</td>
-
                               <td>'.$reservation_discount.'</td>
-                              <td>'.$reservation_remarks.'</td>
                               <td>'.$reservation_reserv_payment.'</td>
                               <td>'.$reservation_reserv_change.'</td>
-                              
-
+                              <td>'.$reservation_remaining_balance.'</td>
+                              <td>'.$reservation_remarks.'</td>
+                              <td>'.$reservations_date.'</td>
+                              <td>'.$authorization.'</td>
+                              <td><button id="btn_view_owner_acc" class="btn_view_owner_acc btn btn-primary" name="view_button" onclick="get_owner_info(' . $reservation_ID . ')"><i class="fa-solid fa-eye"></i></button></td>
+                                        <td><button class="btn btn-danger" id="btn_deleteAdminAcc" data-bs-toggle="modal" data-bs-target="#deleteAdminModal" data-id2=' . $reservation_ID. '> <i class="fa-solid fa-trash"></i></button></td>
                       <tr>';
   }
 $Rtable .= '</tbody></table>';

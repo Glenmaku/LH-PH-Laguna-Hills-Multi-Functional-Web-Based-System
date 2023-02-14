@@ -106,7 +106,7 @@ if (!empty($_SESSION['admin_I_D'])) {
                 <div class="reservation">
                     <div class="reservation-title">
                         <div class="div-title">
-                            <h2 id="panelsStayOpen-headingTwo">RESERVATION</h2>
+                            <h2 id="panelsStayOpen-headingTwo" >RESERVATION</h2>
                         </div>
                         
                         <div class="hide-option" id="hide_reserv">
@@ -118,13 +118,51 @@ if (!empty($_SESSION['admin_I_D'])) {
                         <div class="accordion-body">
 
                             <!-- label -->
+                            <div  class="d-flex flex-row">
+
+                                <div class="selection_reserver d-flex flex-column flex-fill ms-4 justify-content-center" style="margin-top:15px;">
+                                    <div class="reserver-class justify-content-center align-items-start" style="width:100%;">
+                                        <span class=" justify-content-start text-start d-flex">Reserver:</span>
+                                        <div class="d-flex flex-row justify-content-end pe-1">
+                                        <div class="form-check">
+                                            <input class="form-check-input reserver_type" type="checkbox" value="Homeowner" id="homeowner-reserver">
+                                            <label class="form-check-label me-3" for="flexCheckDefault">
+                                                Homeowner
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input reserver_type" type="checkbox" value="Guest" id="guest-reserver">
+                                            <label class="form-check-label me-3" for="flexCheckDefault">
+                                                Guest
+                                            </label>
+                                        </div>     
+                                    </div>
+                                </div>
+                            </div>
+                            <script>const homeownerReserver = document.getElementById("homeowner-reserver");
+                                    const guestReserver = document.getElementById("guest-reserver");
+
+                                    homeownerReserver.addEventListener("click", function() {
+                                    if (homeownerReserver.checked) {
+                                        guestReserver.checked = false;
+                                    }
+                                    });
+
+                                    guestReserver.addEventListener("click", function() {
+                                    if (guestReserver.checked) {
+                                        homeownerReserver.checked = false;
+                                    }
+                                    });</script>
                             <div class="reservation-date">
-                                <span>Reservation Date:</span>
+                                <span class=" justify-content-start text-start d-flex">Reservation Date:</span>
+                            <div class="d-flex flex-row justify-content-end">
                                 <input type="date" name="from-reservation-date" id="from-reservation-date" class="text-center">
                                 <span>-</span>
                                 <input type="date" name="to-reservation-date" id="to-reservation-date"class="text-center">
-                            </div>
+                            </div></div>
 
+
+                            </div>
                             <div class="amenities-reservation">
                                 <form class="reservation-sheet">
                                     <div class="reservation-label">

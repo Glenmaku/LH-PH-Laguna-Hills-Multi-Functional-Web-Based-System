@@ -12,7 +12,11 @@ if(isset($_POST['AllTransaction_Rec'])){
             <th scope="col">Transaction No.</th>
             <th scope="col">Full Name</th>
             <th scope="col">Category</th>
+            <th scope="col">Recipient Email</th>
             <th scope="col">Date</th>
+            <th scope="col">Confirmed by</th>
+            <th scope="col">Details</th>
+            <th scope="col">Delete</th>
       </tr>
     </thead>
     <tbody>';
@@ -23,12 +27,20 @@ if(isset($_POST['AllTransaction_Rec'])){
         $Transaction_ID = $row['transaction_num'];
         $transaction_name =	$row['transaction_name'];
         $Category = $row['Category'];
+        $R_email = $row['transaction_email'];
         $transaction_date = $row['transaction_date'];
+        $confirm = $row['confirmed_by'];
         $AllTransaction_table .= '  <tr>
                                         <td>'.$Transaction_ID.'</td>
                                         <td>'.$transaction_name.'</td>
                                         <td>'.$Category.'</td>
+                                        <td>'.$R_email.'</td>
                                         <td>'.$transaction_date.'</td>
+                                        <td>'.$confirm.'</td>
+
+                                        <td><button id="btn-view-trans" class="btn-view-trans btn btn-primary" name="view_button" onclick="view_details_trans(\''.$Transaction_ID.'\',\''.$Category.'\' )"><i class="fa-solid fa-eye"></i></button></td>
+
+                                        <td><button class="btn btn-danger" id="btn-delete-trans" data-bs-toggle="modal" data-bs-target="#deleteTransModal" data-id2='.$Transaction_ID.'> <i class="fa-solid fa-trash"></i></button></td>
                                     <tr>';
                                     
 }
@@ -57,16 +69,62 @@ $AllTransaction_table .= '</tbody></table>';
   $AllTransaction_table=  $AllTransaction_table . $pagination;
 
   echo $AllTransaction_table;
-  
 }
 
 else {
     echo 'Data Not Found ';
   }
-
 ?>
 <div class="download">
             <form action="../PDF/pdf_gen_all_transaction.php" method="POST" target="_blank">
                 <button type="submit" name="btn_pdf" class="btn btn-success" target="_blank"><i class="fa-solid fa-download"></i> Download PDF</button>
             </form> 
+</div>
+<!--FOR SHOW MODAL-->
+<div class="modal fade" id="other_receipt_Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Transaction Details</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id=""></button>
         </div>
+        <div class="modal-body ms-5 me-5">
+        
+        <span hidden>transaction number</span>
+        <input id="modal_transno" hidden>
+        <span hidden>category</span>
+        <input id="modal_category" hidden>
+
+          <div id="Receipt-division"></div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" id="others-submit-confirmed"hidden>Resend Receipt</button>
+        </div>
+      </div>
+    </div>
+  </div>
+<!--FOR SHOW End-->
+<script>
+  function view_details_trans(transno, category){
+    $("#modal_transno").val(transno);
+    $("#modal_category").val(category);
+
+    var transaction_id = $("#modal_transno").val();
+    var category = $("#modal_category").val();
+
+     // var transaction_id = $(this).data("transno");
+     //  var category = $(this).data("category");
+        $.ajax({
+            type: "POST",
+            url: "adminViews/includes/Act-view_all_transaction_assoc.php",
+            data: { transaction_id: transaction_id, category: category },
+            success: function(data) {
+                $("#Receipt-division").html(data);
+            }
+        });
+        $("#other_receipt_Modal").modal("show");
+    }
+
+</script>

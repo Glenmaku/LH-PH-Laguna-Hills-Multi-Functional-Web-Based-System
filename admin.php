@@ -774,7 +774,7 @@ $(document).ready(function() {
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 
 <script src="assets/js/ajax.js"></script>
-<script src="assets/js/script.js"></script>
+<script src="assets/js/script.js"></script>-->
 <script src="script.js"></script>
 <script src="adminViews/includes/edit-info.js"></script>
 <script src="../adminViews/phpmailer/link.js"></script>

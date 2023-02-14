@@ -7,6 +7,10 @@ $t_lname = $_POST['t_lname'];
 $t_email = $_POST['t_email'];
 $admin_confirmed = $_POST['admin_confirmed'];
 $AuthorizeType = $_POST['AuthorizeType'];
+$ReserverType = $_POST['ReserverType'];
+
+$r_homeowner = $_POST['r_homeowner'];
+$r_guest = $_POST['r_guest'];
 
 $fromdate = $_POST['from_reservation_date'];
 $todate = $_POST['to_reservation_date'];
@@ -45,6 +49,13 @@ $reserv_remaining_balancesend = $_POST['reserv_remaining_balancesend'];
                        </div>';
                        exit();
       }
+          else if(empty($r_homeowner)&& empty($r_guest)){
+      echo'<div class="alert alert-danger alert-dismissible fade show  w-100 text-center" role="alert">
+      Error: Please select the type of reserver.
+                  <button type="button" class="btn-close close_alert_reserv" data-bs-dismiss="alert" aria-label="Close"></button>
+                     </div>';
+                     exit();
+    }
     else if(empty($fromdate)||empty($todate)){
         echo'<div class="alert alert-danger alert-dismissible fade show  w-100 text-center" role="alert">
         Error: Please provide the date of reservation.
@@ -52,6 +63,7 @@ $reserv_remaining_balancesend = $_POST['reserv_remaining_balancesend'];
                        </div>';
                        exit();
     }
+
     else{
         $query = "SELECT * FROM transac_reserv_records WHERE reserv_date_start <= '$fromdate' AND reserv_date_end >= '$todate'";
          $result = mysqli_query($con, $query);

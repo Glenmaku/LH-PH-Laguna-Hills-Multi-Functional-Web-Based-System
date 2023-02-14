@@ -52,7 +52,7 @@ else if(empty($selected_balance) || $selected_balance == 0) {
               <button type="button" class="btn-close close_alert_assoc" data-bs-dismiss="alert" aria-label="Close"></button>
                  </div>';
                  exit();
-}else if (!$payment|| $payment == 0||$balance_total>$payment) {
+}else if (!$payment|| $payment == 0) {
  // echo "Please input a payment amount.";
   echo'<div class="alert alert-danger alert-dismissible fade show text-center" role="alert">
   Error: Please enter a valid payment.

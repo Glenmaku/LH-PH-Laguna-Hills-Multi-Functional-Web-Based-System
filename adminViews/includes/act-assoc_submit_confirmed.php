@@ -26,8 +26,8 @@ $conv_balance_val = $payment - $change;
 
 $transaction_name = $t_fname." ".$t_lname;
 //insert data into database
-$sql = "INSERT INTO transaction_assoc (transaction_num,Lot_ID,assoc_selectedBal,assoc_payment,assoc_change,assoc_penalty,assoc_discount,assoc_remarks, balance_val) 
-        VALUES ('$trans_num','$property','$selected_balance', '$payment','$change','$interest','$conv_discount', '$remarks','$conv_balance_val');
+$sql = "INSERT INTO transaction_assoc (transaction_num,Lot_ID,assoc_totalbal,assoc_selectedBal,assoc_payment,assoc_change,assoc_remaining_bal,assoc_penalty,assoc_discount,assoc_remarks, balance_val) 
+        VALUES ('$trans_num','$property','$total_balance','$selected_balance', '$payment','$change','$remaining_balance','$interest','$conv_discount', '$remarks','$conv_balance_val');
         INSERT INTO all_transaction (transaction_num,transaction_name,Category,transaction_email,confirmed_by) 
         VALUES ('$trans_num','$transaction_name','Association Dues','$t_email','$admin_confirmed')";
 

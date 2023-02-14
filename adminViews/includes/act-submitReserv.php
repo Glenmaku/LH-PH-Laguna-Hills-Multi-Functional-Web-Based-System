@@ -30,6 +30,9 @@
       var t_email = $("#transaction-email").val();
       var admin_confirmed = $("#admin-name-trans").val();
 
+      var r_homeowner = $("#homeowner-reserver").is(":checked") ? $("#homeowner-reserver").val() : "";
+      var r_guest = $("#guest-reserver").is(":checked") ? $("#guest-reserver").val() : "";
+
       var reserv_discount = $("#r-discount").val();
       var remarks = $("#reserv_remark").val();
       var reserv_payment = $("#reserv_payment").val();
@@ -67,6 +70,14 @@
                 }
             });
             AuthorizeType = AuthorizeType.toString();
+      var ReserverType = [];
+            $('.reserver_type').each(function() {
+                if ($(this).is(":checked")) {
+                    ReserverType.push($(this).val());
+                }
+            });
+            ReserverType = ReserverType.toString();
+
       $.ajax({
         url: 'adminViews/insert-data-transaction-records.php',
         type: 'post',
@@ -78,6 +89,10 @@
           t_email:t_email,
           admin_confirmed:admin_confirmed,
           AuthorizeType:AuthorizeType,
+          ReserverType:ReserverType,
+          
+          r_homeowner:r_homeowner,
+          r_guest:r_guest,
 
           from_reservation_date:from_reservation_date,
           to_reservation_date:to_reservation_date,
@@ -122,6 +137,9 @@
       var initial_price = $("#in-radio-miming3").val(); + $("#in-radio-hall3").val(); + $("#in-radio-court3").val();
       var total_price = $("#reserv_total").val();
 
+      var r_homeowner = $("#homeowner-reserver").is(":checked") ? $("#homeowner-reserver").val() : "";
+      var r_guest = $("#guest-reserver").is(":checked") ? $("#guest-reserver").val() : "";
+
       var t_fname = $("#first-name").val();
       var t_lname = $("#last-name").val();
       var t_email = $("#transaction-email").val();
@@ -164,6 +182,14 @@
                 }
             });
             AuthorizeType = AuthorizeType.toString();
+
+            var ReserverType = [];
+            $('.reserver_type').each(function() {
+                if ($(this).is(":checked")) {
+                    ReserverType.push($(this).val());
+                }
+            });
+            ReserverType = ReserverType.toString();
       $.ajax({
         url: 'adminViews/insert-data-reservation-confirmed.php',
         type: 'post',
@@ -173,9 +199,13 @@
           t_fname:t_fname,
           t_lname:t_lname,
           t_email:t_email,
+
+          r_homeowner:r_homeowner,
+          r_guest:r_guest,
+
           admin_confirmed:admin_confirmed,
           AuthorizeType:AuthorizeType,
-
+          ReserverType:ReserverType,
           from_reservation_date:from_reservation_date,
           to_reservation_date:to_reservation_date,
 

@@ -37,34 +37,32 @@ if (mysqli_num_rows($result) > 0) {
   <thead>
     <tr>
       <th>Transaction No.</th>
-      <th>Date</th>
       <th>Full Name</th>
       <th>Category</th>
       <th>Quantity</th>
       <th>Price</th>
       <th>Total</th>
-    
+      <th>Date</th>
     </tr>
   </thead>
   <tbody>';
 while($row=mysqli_fetch_assoc($result)){
       $others_ID = $row['transaction_no'];
       $others_name =	$row['t_name'];
-      $Category = $row['category'];
-      $Quantity = $row ['quantity'];
-      $Price = $row['price'];
-      $Subtotal = $row['subtotal'];
+      $category = $row['category'];
+      $quantity = $row['quantity'];
+      $price = $row['price'];
+      $subtotal = $row['subtotal'];
       $otherss_date = $row['created_at'];
+
       $Otable .= '  <tr>
-                              <td>'.$others_ID.'</td>
-                              <td>'.$otherss_date.'</td>
-                              <td>'.$others_name.'</td>
-                               <td>'.$Category.'</td>
-                               <td>'.$Quantity.'</td>
-                               <td>'.$Price.'</td>
-                               <td>'.$Subtotal.'</td>
-                             
-                              
+                        <td>'.$others_ID.'</td>
+                        <td>'.$others_name.'</td>
+                        <td>'.$category.'</td>
+                        <td>'.$quantity.'</td>
+                        <td>'.$price.'</td>
+                        <td>'.$subtotal.'</td>
+                        <td>'.$otherss_date.'</td>    
                       <tr>';
   }
 $Otable .= '</tbody></table>';

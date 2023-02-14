@@ -8,9 +8,11 @@ if (isset($_POST["alltransquery"])) {
         $search = mysqli_real_escape_string($con, $_POST["alltransquery"]);
         $query = "SELECT * FROM `all_transaction` 
         WHERE transaction_num LIKE '%" . $search . "%'
-        OR transaction_name LIKE '%" . $search . "%' 
-        OR Category LIKE '%" . $search . "%' 
-        OR  transaction_date LIKE '%" . $search . "%' ";
+        OR transaction_name   LIKE '%" . $search . "%' 
+        OR Category           LIKE '%" . $search . "%' 
+        OR transaction_email  LIKE '%" . $search . "%' 
+        OR confirmed_by       LIKE '%" . $search . "%' 
+        OR transaction_date   LIKE '%" . $search . "%' ";
 } 
 else {
     $query = "SELECT COUNT(*) as total_records FROM `all_transaction` ORDER BY transaction_num";
@@ -33,23 +35,34 @@ if (mysqli_num_rows($result) > 0) {
     $AllTransaction_table ='<table class="table">
     <thead>
       <tr>
-            <th scope="col">Transaction No.</th>
-            <th scope="col">Full Name</th>
-            <th scope="col">Category</th>
-            <th scope="col">Date</th>
+        <th scope="col">Transaction No.</th>
+        <th scope="col">Full Name</th>
+        <th scope="col">Category</th>
+        <th scope="col">Recipient Email</th>
+        <th scope="col">Date</th>
+        <th scope="col">Confirmed by</th>
+        <th scope="col">Details</th>
+        <th scope="col">Delete</th>
       </tr>
     </thead>
     <tbody>';
     while($row=mysqli_fetch_assoc($result)){
-        $Transaction_ID = $row['transaction_num'];
-        $transaction_name =	$row['transaction_name'];
-        $Category = $row['Category'];
-        $transaction_date = $row['transaction_date'];
+          $Transaction_ID = $row['transaction_num'];
+          $transaction_name =	$row['transaction_name'];
+          $Category = $row['Category'];
+          $R_email = $row['transaction_email'];
+          $transaction_date = $row['transaction_date'];
+          $confirm = $row['confirmed_by'];
         $AllTransaction_table .= '  <tr>
                                         <td>'.$Transaction_ID.'</td>
                                         <td>'.$transaction_name.'</td>
                                         <td>'.$Category.'</td>
+                                        <td>'.$R_email.'</td>
                                         <td>'.$transaction_date.'</td>
+                                        <td>'.$confirm.'</td>
+                                        <td><button id="btn-view-trans" class="btn-view-trans btn btn-primary" name="view_button" onclick="view_details_trans(' . $Transaction_ID . ')"><i class="fa-solid fa-eye"></i></button></td>
+
+                                        <td><button class="btn btn-danger" id="btn-delete-trans" data-bs-toggle="modal" data-bs-target="#deleteTransModal" data-id2=' . $Transaction_ID. '> <i class="fa-solid fa-trash"></i></button></td>
                                     <tr>';
                                     
 }

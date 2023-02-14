@@ -16,8 +16,6 @@ if(isset($_POST['Others_Rec'])){
       <th>Price</th>
       <th>Total</th>
       <th>Date</th>
-      
-    
     </tr>
   </thead>
   <tbody>';
@@ -32,12 +30,8 @@ if(isset($_POST['Others_Rec'])){
     $quantity = $row['quantity'];
     $price = $row['price'];
     $subtotal = $row['subtotal'];
-  //  $payments = $row['payment'];
     $otherss_date = $row['created_at'];
-   // $change = $row['other_change'];
-   // $rem_bal = $row['other_remaining_balance'];
-   // $remarks = $row['other_remarks'];
-   // $otherss_date = $row['time_created'];
+
     $Otable .= '  <tr>
                             <td>'.$others_ID.'</td>
                             <td>'.$others_name.'</td>
@@ -46,8 +40,6 @@ if(isset($_POST['Others_Rec'])){
                              <td>'.$price.'</td>
                              <td>'.$subtotal.'</td>
                              <td>'.$otherss_date.'</td>
-                           
-                            
                     <tr>';
 }
 $Otable .= '</tbody></table>';

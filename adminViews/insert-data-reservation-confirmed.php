@@ -7,6 +7,10 @@ $t_lname = $_POST['t_lname'];
 $t_email = $_POST['t_email'];
 $admin_confirmed = $_POST['admin_confirmed'];
 $AuthorizeType = $_POST['AuthorizeType'];
+$ReserverType = $_POST['ReserverType'];
+
+$r_homeowner = $_POST['r_homeowner'];
+$r_guest = $_POST['r_guest'];
 
 $fromdate = $_POST['from_reservation_date'];
 $todate = $_POST['to_reservation_date'];
@@ -38,7 +42,7 @@ $reserv_remaining_balancesend = $_POST['reserv_remaining_balancesend'];
         // insert into transac_reserv_records table
         $namesend = $t_fname." ".$t_lname;
         
-        $sql1 = "INSERT into transac_reserv_records (records_transaction_no,t_name, total, discount, remarks, reserv_payment, reserv_change, remaining_balance,authorization_type,reserv_date_start,reserv_date_end) values ('$trans_nosend','$namesend','$totalprice_send', '$reserv_discountsend','$remarks_send', '$reserv_paymentsend', '$reserv_changesend', '$reserv_remaining_balancesend','$AuthorizeType','$fromdate','$todate')";
+        $sql1 = "INSERT into transac_reserv_records (records_transaction_no,t_name, reserver_type, total, discount, remarks, reserv_payment, reserv_change, remaining_balance,authorization_type,reserv_date_start,reserv_date_end) values ('$trans_nosend','$namesend','$ReserverType','$totalprice_send', '$reserv_discountsend','$remarks_send', '$reserv_paymentsend', '$reserv_changesend', '$reserv_remaining_balancesend','$AuthorizeType','$fromdate','$todate')";
             $result1 = mysqli_query($con,$sql1);
 
         // insert into all_transaction table
