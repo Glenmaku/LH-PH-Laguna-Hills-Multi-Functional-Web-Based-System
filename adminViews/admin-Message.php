@@ -359,7 +359,14 @@
                 document.getElementById("notif-inq").innerHTML = this.responseText;
                 if (this.responseText !== "0") {
                     document.getElementById("notif-inq").addEventListener("click", function() {
-                        document.getElementById("notif-inq").innerHTML = "0";
+                        var xhttp = new XMLHttpRequest();
+                        xhttp.onreadystatechange = function() {
+                            if (this.readyState == 4 && this.status == 200) {
+                                document.getElementById("notif-inq").innerHTML = this.responseText;
+                            }
+                        };
+                        xhttp.open("POST", "adminViews/includes/notification_number-inquiries.php", true);
+                        xhttp.send();
                     });
                 }
             }
@@ -375,7 +382,14 @@
                 document.getElementById("notif-home").innerHTML = this.responseText;
                 if (this.responseText !== "0") {
                     document.getElementById("notif-home").addEventListener("click", function() {
-                        document.getElementById("notif-home").innerHTML = "0";
+                        var xhttp = new XMLHttpRequest();
+                        xhttp.onreadystatechange = function() {
+                            if (this.readyState == 4 && this.status == 200) {
+                                document.getElementById("notif-home").innerHTML = this.responseText;
+                            }
+                        };
+                        xhttp.open("POST", "adminViews/includes/notification_number_homeowners.php", true);
+                        xhttp.send();
                     });
                 }
             }
