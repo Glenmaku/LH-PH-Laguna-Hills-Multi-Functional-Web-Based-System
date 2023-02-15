@@ -400,9 +400,13 @@ if (!empty($_SESSION['admin_I_D'])) {
                                     <!---->
                                 </div>
                                 <div class="tab-pane fade p-3" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab" tabindex="0">
-                                    <div class=" input-group  mb-3 owner-search-add-area" style="justify-content: space-between;">
+                                    <div class=" input-group  mb-3 owner-search-add-area align-items-center" style="justify-content: space-between;">
                                         <input type="text" class="form-control" id="search-reservations" placeholder="Search Here...." style="width: 40px;">
-                                        <button class="btn btn-primary" id="sort-balance">Sort by Balance</button>
+                                   <!--<button class="btn btn-primary" id="sort-balance" >Sort by Balance</button>-->
+                                        <div class="form-check form-switch d-flex align-items-center ms-3">
+                                        <input class="form-check-input align" type="checkbox" role="switch" id="sort-balance">
+                                        <label class="form-check-label ms-2" for="sort-balance">Sort by Balance</label>
+                                        </div>
                                     </div>
                                     <div id="delete-message-trans"></div>
                                     <div class=" " id="table-reservations_record"></div>
@@ -439,9 +443,19 @@ if (!empty($_SESSION['admin_I_D'])) {
                     Display_All_Transactions_Rec();
                     Display_Association_Dues_Rec();
                     Display_Reservations_Rec();
-                    Display_Reservations_Balance_Rec();
                     Display_Other_Services_Rec();
                 });
+                $(document).ready(function() {
+  var isSortingByBalance = false;
+  $("#sort-balance").click(function() {
+    isSortingByBalance = !isSortingByBalance; // toggle the sorting flag
+    if (isSortingByBalance) {
+      Display_Reservations_Balance_Rec();
+    } else {
+      Display_Reservations_Rec();
+    }
+  });
+}); 
                 /////////////////////////////////////////////////////////////////////
                 $(document).ready(function() {
                     var currentPage = localStorage.getItem("currentPage");
@@ -453,7 +467,7 @@ if (!empty($_SESSION['admin_I_D'])) {
                     Display_Reservations_Rec(currentPage);
                     Display_Reservations_Balance_Rec(currentPage);
                     Display_Other_Services_Rec(currentPage);
-
+                    Display_Reservations_Balance_Rec(currentPage);
                 });
                 /////////////////////
                 function Display_All_Transactions_Rec(page) {
@@ -516,13 +530,8 @@ if (!empty($_SESSION['admin_I_D'])) {
                 function Get_Reservations_Table(page) {
                     Display_Reservations_Rec(page);
                 }
-
+  //////////////////////////////////////////////////////////////////////
                 // Add event listener to the "Sort by Balance" button
-                $("#sort-balance").click(function() {
-                    // Call the Display_Reservations_Balance_Rec function with the current page
-                    Display_Reservations_Balance_Rec(localStorage.getItem("currentPage"));
-                });
-
 
             function Display_Reservations_Balance_Rec(page) {
                 localStorage.setItem("currentPage", page);

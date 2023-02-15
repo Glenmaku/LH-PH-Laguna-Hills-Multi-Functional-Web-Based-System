@@ -1,11 +1,11 @@
 <?php
-require_once("connection.php");
+require("connection.php");
 /////////////////////////////////////////////////////////////
 
 if(isset($_POST['Reservations_Rec'])){
     $records_per_page = 10; // number of records per page
     $page = isset($_POST["page"]) ? (int)$_POST["page"] : 1; // current page number
-    $start_from = ($page - 1) * $records_per_page; // start from record
+    $start_from = max(($page - 1) * $records_per_page, 0); // start from record
     $Rtable ='<table class="table">
     <thead>
       <tr>
@@ -25,7 +25,7 @@ if(isset($_POST['Reservations_Rec'])){
       </tr>
     </thead>
     <tbody>';
-$reservations_sql = "SELECT * FROM transac_reserv_records WHERE remaining_balance <> 0 ORDER BY records_transaction_no DESC LIMIT $start_from, $records_per_page";
+$reservations_sql = "SELECT * FROM transac_reserv_records WHERE remaining_balance <> 0 ORDER BY remaining_balance DESC LIMIT $start_from, $records_per_page";
     $reservations_result = mysqli_query($con,$reservations_sql);
 
     while($row=mysqli_fetch_assoc($reservations_result)){
