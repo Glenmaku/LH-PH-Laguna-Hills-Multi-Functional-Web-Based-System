@@ -353,10 +353,13 @@
     }
 
     setInterval(function() {
-    // Fetch unread messages
+    // Fetch unread messages for homeowners
     $.ajax({
         url: 'adminViews/includes/notification_number_homeowners.php',
         success: function(messages) {
+            // Display the number of unread messages for homeowners
+            $('#nav-link').text(messages.length);
+            
             // Loop through each message
             $.each(messages, function(index, message) {
                 // Highlight the table row
@@ -369,14 +372,14 @@
             });
         }
     });
-}, 5000);
-
-
-setInterval(function() {
-    // Fetch unread messages
+    
+    // Fetch unread messages for inquiries
     $.ajax({
         url: 'adminViews/includes/notification_number-inquiries.php',
         success: function(messages) {
+            // Display the number of unread messages for inquiries
+            $('#nav-link active').text(messages.length);
+            
             // Loop through each message
             $.each(messages, function(index, message) {
                 // Highlight the table row
@@ -390,5 +393,6 @@ setInterval(function() {
         }
     });
 }, 5000);
+
 
 </script>
