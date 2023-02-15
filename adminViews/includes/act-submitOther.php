@@ -198,7 +198,49 @@ $(document).on('click','#others-submit-confirmed',function(){
         $("#close_others_confirmed").trigger("click");
         $("#transaction_errors_others").html(data);
         $("#other_reset").trigger("click");
-                                
+        $.ajax({
+      url: 'adminViews/includes/insert-data-transaction-other-confirmed_mail.php',
+      type: 'post',
+      data: {
+        trans_no_all_send: transaction_number_all,
+        admin_confirmed:admin_confirmed ,
+        trans_date: trans_date,
+          t_fname:t_fname,
+          t_lname:t_lname,
+          t_email:t_email,
+
+        o_category:o_category,
+        o_quantity:o_quantity,
+        o_price:o_price,
+        o_subtotal:o_subtotal,
+
+        o_category1:o_category1,
+        o_quantity1:o_quantity1,
+        o_price1:o_price1,
+        o_subtotal1:o_subtotal1,
+
+        o_category2:o_category2,
+        o_quantity2:o_quantity2,
+        o_price2:o_price2,
+        o_subtotal2:o_subtotal2,
+
+        o_category3:o_category3,
+        o_quantity3:o_quantity3,
+        o_price3:o_price3,
+        o_subtotal3:o_subtotal3,
+
+        o_category4:o_category4,
+        o_quantity4:o_quantity4,
+        o_price4:o_price4,
+        o_subtotal4:o_subtotal4,
+
+        total_all_send: total_all,
+        other_payment_all_send: other_payment_all,
+        other_change_all_send: other_change_all,
+        other_remaining_balance_all_send: other_remaining_balance_all,
+        other_remarks_all_send: other_remarks_all
+      },
+      success: function(data) {}});                     
         $.ajax({
           url: 'adminViews/includes/act-transact.php',
           type: 'post', //path to PHP script

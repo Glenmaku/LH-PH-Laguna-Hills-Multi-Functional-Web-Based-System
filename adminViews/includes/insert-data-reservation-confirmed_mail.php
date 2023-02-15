@@ -1,6 +1,7 @@
 <?php
 require("connection.php");
 require("../phpmailer/transac_functions_reserv.php");
+
 $trans_nosend = $_POST['trans_nosend'];
 
 $t_fname = $_POST['t_fname'];
@@ -65,10 +66,15 @@ $message = "<p>Dear <strong>$namesend</strong>,</p>
     </tr>
     <tr>
         <td style='padding: 2px; border: 1px solid transparent;'>Reserved Amenities: </td>
+    </tr>
+    <tr>
+        <td style='padding: 2px; border: 1px solid transparent;'>Amenities</td>
+        <td style='padding: 2px; border: 1px solid transparent;'><strong>Time</strong></td>
+        <td style='padding: 2px; border: 1px solid transparent;'><strong>Price</strong></td>
     </tr>";
     if (!empty($checkbox_hall)) {
         $newhall = $price_hall-($price_hall*($reserv_discountsend/100));
-    $message ="<tr>
+    $message .="<tr>
         <td style='padding: 2px; border: 1px solid transparent;'>Function Hall</td>
         <td style='padding: 2px; border: 1px solid transparent;'><strong>$hall_time_start - $hall_time_end</strong></td>
         <td style='padding: 2px; border: 1px solid transparent;'><strong>Php $price_hall</strong></td>
@@ -82,12 +88,12 @@ $message = "<p>Dear <strong>$namesend</strong>,</p>
     </tr>"; }else{}
     if (!empty($checkbox_court)) {
         $newcourt = $price_court-($price_court*($reserv_discountsend/100));
-    $message ="<tr>
+    $message .="<tr>
         <td style='padding: 2px; border: 1px solid transparent;'>Covered Court</td>
         <td style='padding: 2px; border: 1px solid transparent;'><strong>$court_time_start - $court_time_end</strong></td>
         <td style='padding: 2px; border: 1px solid transparent;'><strong> Php $price_court</strong></td>
     </tr>"; }else{}
-    $message="<tr>
+    $message.="<tr>
         <td style='padding: 2px; border: 1px solid transparent;'>Total Amount:</td>
         <td style='padding: 2px; border: 1px solid transparent;'><strong>Php $totalprice_send</strong></td>
     </tr>

@@ -237,7 +237,7 @@
                                 $("#transaction_errors_reserv").html(data);
                                 $("#reserv_reset").trigger("click");
                                 $.ajax({
-                                  url: 'adminViews/insert-data-reservation-confirmed_mail.php',
+                                  url: 'adminViews/includes/insert-data-reservation-confirmed_mail.php',
                                   type: 'post',
                                   data: {
                                     trans_nosend: trans_no,
