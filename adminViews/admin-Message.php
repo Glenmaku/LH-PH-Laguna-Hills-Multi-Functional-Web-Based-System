@@ -370,7 +370,7 @@
 
                 // Update the notification count
                 notifHome = messages.length;
-                $('notif-home').text(notifHome);
+                $('#notif-home').text(notifHome);
 
                 // Remove the highlight when a message is displayed
                 $('.highlight').click(function() {
