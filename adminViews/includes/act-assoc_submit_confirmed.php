@@ -1,9 +1,12 @@
 <?php
 require("connection.php");
-require("one_functions.php");
-require_once 'PHPMailerAutoload.php';
-require_once 'class.smtp.php';
-require_once 'class.phpmailer.php';
+
+// require("one_functions.php");
+require("../phpmailer/transac_functions_assoc.php");
+
+// require_once 'PHPMailerAutoload.php';
+// require_once 'class.smtp.php';
+// require_once 'class.phpmailer.php';
 
 if(isset($_POST['transaction_num'])){
 
