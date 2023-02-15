@@ -32,7 +32,7 @@ while($row = mysqli_fetch_assoc($reserv_result)){
 
    
 $message = "<p>Dear <strong>$reserv_name</strong>,</p>
-<p>We are pleased to inform you that your reservation for Laguna Hills has been approved. Your reservation details are as follows:</p>
+<p>Your payment for your reservation has been successfully updated. Your reservation details are as follows:</p>
 
 <strong>Please find below the details of your payment:</strong><br><br>
 <table style='border-collapse: collapse; margin-left:50px;'>
@@ -133,5 +133,9 @@ $email      =  $reserv_email;
 $subject    = " Reservation Confirmation in Laguna Hills";
 
 sendEmail($email, $subject, $message );}
+echo'<div class="alert alert-success alert-dismissible fade show w-100" role="alert" >
+Successfully sent receipt.
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+               </div>';
 }
 ?>
