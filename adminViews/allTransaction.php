@@ -375,9 +375,9 @@ if (!empty($_SESSION['admin_I_D'])) {
                                 <div class="nav nav-tabs" id="nav-tab" role="tablist">
                                     <button class="nav-link active" id="all-transaction-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true" onclick="Display_All_Transactions_Rec()">All Transactions</button>
 
-                                    <button class="nav-link" id="association-dues-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false" onclick="Display_Association_Dues_Rec()">Association Dues</button>
+                                <button class="nav-link" id="reservation-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false" onclick="Display_Reservations_Rec()">Reservations</button>
+                                <button class="nav-link" id="association-dues-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false" onclick="Display_Association_Dues_Rec()">Association Dues</button>
 
-                                    <button class="nav-link" id="reservation-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false" onclick="Display_Reservations_Rec()">Reservations</button>
 
                                     <button class="nav-link" id="other-services-tab" data-bs-toggle="tab" data-bs-target="#nav-disabled" type="button" role="tab" aria-controls="nav-disabled" aria-selected="false" onclick="Display_Other_Services_Rec()">Other Services</button>
                                 </div>
