@@ -1,21 +1,9 @@
 <?php
 require("connection.php");
-$sql = "SELECT a.Lot_ID, COALESCE(b.assoc_date_payment, '') as assoc_date_payment, a.Balance 
-        FROM association_dues a 
-        LEFT JOIN (SELECT Lot_ID, MAX(assoc_date_payment) as assoc_date_payment 
-              FROM transaction_assoc 
-              GROUP BY Lot_ID) b 
-        ON a.Lot_ID = b.Lot_ID 
-        WHERE a.Dues_Status IN ('outdated') ORDER BY a.Balance DESC";
-
-$query ="SELECT *
-FROM assigned_lot
-JOIN owner_accounts ON assigned_lot.owner_username = owner_accounts.owner_username
-JOIN association_dues ON assigned_lot.lot_id = association_dues.Lot_ID";
-
-$result = mysqli_query($con, $query);
-$email = mysqli_fetch_assoc($result)['owner_email'];
-
+$sql = "SELECT a.Lot_ID, COALESCE(b.assoc_date_payment, '') as assoc_date_payment, a.Balance, al.owner_username 
+FROM association_dues a LEFT JOIN (SELECT Lot_ID, MAX(assoc_date_payment) as assoc_date_payment 
+FROM transaction_assoc GROUP BY Lot_ID) b ON a.Lot_ID = b.Lot_ID 
+LEFT JOIN assigned_lot al ON a.Lot_ID = al.Lot_ID WHERE a.Dues_Status IN ('outdated') ORDER BY a.Balance DESC;";
 
 $result = mysqli_query($con, $sql);
 $count = 1;
@@ -28,7 +16,7 @@ while ($row = mysqli_fetch_assoc($result)) {
   echo '<td>' . $row['Lot_ID'] . '</td>';
   echo '<td>' . $row['Balance'] . '</td>';
   echo '<td>' . $row['assoc_date_payment'] . '</td>';
-  echo '<td><button class="btn btn-success btn-sm send-notice" data-lot-id="' . $row['Lot_ID'] . '">Send</button></td></tr>';
+  echo '<td><button class="btn btn-success btn-sm send-notice" data-lot-id="' . $row['owner_username'] . '">Send</button></td></tr>';
   $count++;
 }
 echo '</tbody></table>';
@@ -40,26 +28,29 @@ mysqli_close($con);
 <script>
 $(document).ready(function() {
   $('.send-notice').click(function() {
-    var lotId = $(this).data('lot-id');
+    var username = $(this).data('lot-id');
     var button = $(this);
     button.prop('disabled', true);
     button.text('Sending...');
 
     $.ajax({
-      url: 'adminViews/phpmailer/act-sendNotice.php',
+      url: 'adminViews/includes/act-sendNotice_email.php',
       type: 'POST',
-      data: { },
+      data: { username: username },
       success: function(response) {
-        alert('Email sent successfully for Lot ID ' + lotId + '!');
+        alert('Email sent successfully for Username ' + username + '!');
         button.prop('disabled', true);
         button.text('Sent');
       },
       error: function(xhr, status, error) {
-        alert('An error occurred while sending the email for Lot ID ' + lotId + '.');
-        button.prop('disabled', false);
-        button.text('Send');
+        // Show an error message on the page
+        $('#message').text('An error occurred while sending the email.');
+        // Enable the button and restore its text
+        $('#sent-notice').prop('disabled', false);
+        $('#sent-notice').text('Send');
       }
     });
   });
 });
+
 </script>
