@@ -439,6 +439,7 @@ if (!empty($_SESSION['admin_I_D'])) {
                     Display_All_Transactions_Rec();
                     Display_Association_Dues_Rec();
                     Display_Reservations_Rec();
+                    Display_Reservations_Balance_Rec();
                     Display_Other_Services_Rec();
                 });
                 /////////////////////////////////////////////////////////////////////
@@ -450,7 +451,9 @@ if (!empty($_SESSION['admin_I_D'])) {
                     Display_All_Transactions_Rec(currentPage);
                     Display_Association_Dues_Rec(currentPage);
                     Display_Reservations_Rec(currentPage);
+                    Display_Reservations_Balance_Rec(currentPage);
                     Display_Other_Services_Rec(currentPage);
+
                 });
                 /////////////////////
                 function Display_All_Transactions_Rec(page) {
@@ -514,6 +517,32 @@ if (!empty($_SESSION['admin_I_D'])) {
                     Display_Reservations_Rec(page);
                 }
 
+                // Add event listener to the "Sort by Balance" button
+                $("#sort-balance").click(function() {
+                    // Call the Display_Reservations_Balance_Rec function with the current page
+                    Display_Reservations_Balance_Rec(localStorage.getItem("currentPage"));
+                });
+
+
+            function Display_Reservations_Balance_Rec(page) {
+                localStorage.setItem("currentPage", page);
+                var Display_Reservations_Balance_Rec = "true";
+                $.ajax({
+                    url: 'adminViews/includes/Act-Trans_His_Ress.php',
+                    type: 'post',
+                    data: {
+                        Reservations_Rec: Display_Reservations_Balance_Rec,
+                        page: page
+                    },
+                    success: function(data, status) {
+                        $("#table-reservations_record").html(data);
+                    }
+                });
+            }
+
+            function Get_Reservations_Balance_Table(page) {
+                Display_Reservations_Balance_Rec(page);
+            }
                 //////////////////////////////////////////////////////////////////////
                 function Display_Other_Services_Rec(page) {
                     localStorage.setItem("currentPage", page);
