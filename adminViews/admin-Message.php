@@ -14,7 +14,7 @@
                         <button class="nav-link active" id="all-transaction-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true" onclick="get_ContactData()">Inquiries <span id="notif-inq" style="color:red;"></span></button>
 
 
-                        <button class="nav-link" id="association-dues-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false" onclick="get_HomeMessage()">Homeowners Messages <i id="notif-home" style="color:red;"></i></button>
+                        <button class="nav-link" id="association-dues-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false" onclick="get_HomeMessage()">Homeowners Messages <span id="notif-home" style="color:red;"></span></button>
 
                     </div>
                 </nav>
@@ -352,42 +352,55 @@
         });
     }
 
+    // Define variables to keep track of the notification count
+    var notifHome = 0;
+    var notifInq = 0;
+
+    // Set up the setInterval for the homeowners notifications
     setInterval(function() {
-    // Fetch unread messages
-    $.ajax({
-        url: 'adminViews/includes/notification_number_homeowners.php',
-        success: function(messages) {
-            // Loop through each message
-            $.each(messages, function(index, message) {
-                // Highlight the table row
-                $('#message_' + message.id).addClass('highlight');
+        // Fetch unread messages
+        $.ajax({
+            url: 'adminViews/includes/notification_number_homeowners.php',
+            success: function(messages) {
+                // Loop through each message
+                $.each(messages, function(index, message) {
+                    // Highlight the table row
+                    $('#message_' + message.id).addClass('highlight');
+                });
 
-                // Add a click handler to remove the highlight
-                $('#message_' + message.id).click(function() {
+                // Update the notification count
+                notifHome = messages.length;
+                $('#notif-home').text(notifHome);
+
+                // Remove the highlight when a message is displayed
+                $('.highlight').click(function() {
                     $(this).removeClass('highlight');
                 });
-            });
-        }
-    });
-}, 5000); // Refresh every 5 seconds
+            }
+        });
+    }, 5000);
 
-setInterval(function() {
-    // Fetch unread messages
-    $.ajax({
-        url: 'adminViews/includes/notification_number-inquiries.php',
-        success: function(messages) {
-            // Loop through each message
-            $.each(messages, function(index, message) {
-                // Highlight the table row
-                $('#message_' + message.id).addClass('highlight');
+    // Set up the setInterval for the inquiries notifications
+    setInterval(function() {
+        // Fetch unread messages
+        $.ajax({
+            url: 'adminViews/includes/notification_number-inquiries.php',
+            success: function(messages) {
+                // Loop through each message
+                $.each(messages, function(index, message) {
+                    // Highlight the table row
+                    $('#message_' + message.id).addClass('highlight');
+                });
 
-                // Add a click handler to remove the highlight
-                $('#message_' + message.id).click(function() {
+                // Update the notification count
+                notifInq = messages.length;
+                $('#notif-inq').text(notifInq);
+
+                // Remove the highlight when a message is displayed
+                $('.highlight').click(function() {
                     $(this).removeClass('highlight');
                 });
-            });
-        }
-    });
-}, 5000); // Refresh every 5 seconds
-
+            }
+        });
+    }, 5000);
 </script>

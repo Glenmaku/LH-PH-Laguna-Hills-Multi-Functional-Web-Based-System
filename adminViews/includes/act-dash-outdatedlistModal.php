@@ -8,6 +8,15 @@ $sql = "SELECT a.Lot_ID, COALESCE(b.assoc_date_payment, '') as assoc_date_paymen
         ON a.Lot_ID = b.Lot_ID 
         WHERE a.Dues_Status IN ('outdated') ORDER BY a.Balance DESC";
 
+$query ="SELECT *
+FROM assigned_lot
+JOIN owner_accounts ON assigned_lot.owner_username = owner_accounts.owner_username
+JOIN association_dues ON assigned_lot.lot_id = association_dues.Lot_ID";
+
+$result = mysqli_query($con, $query);
+$email = mysqli_fetch_assoc($result)['owner_email'];
+
+
 $result = mysqli_query($con, $sql);
 $count = 1;
 // Display the results in a table
@@ -39,7 +48,7 @@ $(document).ready(function() {
     $.ajax({
       url: 'adminViews/phpmailer/act-sendNotice.php',
       type: 'POST',
-      data: {lot_id: lotId},
+      data: { },
       success: function(response) {
         alert('Email sent successfully for Lot ID ' + lotId + '!');
         button.prop('disabled', true);
