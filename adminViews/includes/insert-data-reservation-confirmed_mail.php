@@ -63,7 +63,7 @@ $message = "<p>Dear <strong>$namesend</strong>,</p>
     <tr>
         <td style='padding: 2px; border: 1px solid transparent;'>Reservation Date:</td>
         <td style='padding: 2px; border: 1px solid transparent;'><strong>$fromdate - $todate</strong></td>
-    </tr>
+    </tr><br>
     <tr>
         <td style='padding: 2px; border: 1px solid transparent;'>Reserved Amenities: </td>
     </tr>
@@ -93,7 +93,7 @@ $message = "<p>Dear <strong>$namesend</strong>,</p>
         <td style='padding: 2px; border: 1px solid transparent;'><strong>$court_time_start - $court_time_end</strong></td>
         <td style='padding: 2px; border: 1px solid transparent;'><strong> Php $price_court</strong></td>
     </tr>"; }else{}
-    $message.="<tr>
+    $message.="<br><tr>
         <td style='padding: 2px; border: 1px solid transparent;'>Total Amount:</td>
         <td style='padding: 2px; border: 1px solid transparent;'><strong>Php $totalprice_send</strong></td>
     </tr>

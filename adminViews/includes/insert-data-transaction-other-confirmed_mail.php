@@ -56,7 +56,7 @@ $message = "<p>Dear <strong>$name_all_send</strong>,</p>
 <tr>
 <td style='padding: 2px; border: 1px solid transparent;'>Name:</td>
 <td style='padding: 2px; border: 1px solid transparent;'><strong>$name_all_send</strong></td>
-</tr>
+</tr><br>
 <tr>
         <td style='padding: 2px; border: 1px solid transparent;'><strong>Category</strong></td>
         <td style='padding: 2px; border: 1px solid transparent;'><strong>Quantity</strong></td>
@@ -104,7 +104,7 @@ if (!empty($o_category4)&&!empty($o_subtotal4)) {
 </tr>";
 }
 
-$message.="<tr>
+$message.="<br><tr>
         <td style='padding: 2px; border: 1px solid transparent;'>Total Amount:</td>
         <td style='padding: 2px; border: 1px solid transparent;'><strong>Php $total_all_send</strong></td>
 </tr>
