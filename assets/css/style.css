@@ -1881,6 +1881,9 @@ svg{
  span #notif-inq {
     color: red;
 }
+ span #notif-home {
+    color: red;
+}
 
 
 .viewOutdatedList button i{
