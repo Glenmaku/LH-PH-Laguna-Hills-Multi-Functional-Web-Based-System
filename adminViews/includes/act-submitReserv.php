@@ -236,7 +236,49 @@
                                 $("#close_reserv_confirmed").trigger("click");
                                 $("#transaction_errors_reserv").html(data);
                                 $("#reserv_reset").trigger("click");
-                                
+                                $.ajax({
+                                  url: 'adminViews/insert-data-reservation-confirmed_mail.php',
+                                  type: 'post',
+                                  data: {
+                                    trans_nosend: trans_no,
+                                    trans_date: trans_date,
+                                    t_fname:t_fname,
+                                    t_lname:t_lname,
+                                    t_email:t_email,
+
+                                    r_homeowner:r_homeowner,
+                                    r_guest:r_guest,
+
+                                    admin_confirmed:admin_confirmed,
+                                    AuthorizeType:AuthorizeType,
+                                    ReserverType:ReserverType,
+                                    from_reservation_date:from_reservation_date,
+                                    to_reservation_date:to_reservation_date,
+
+                                    checkbox_hall:checkbox_hall,
+                                    checkbox_court:checkbox_court,
+                                    checkbox_miming:checkbox_miming,
+
+                                    hall_time_start:hall_time_start,
+                                    hall_time_end:hall_time_end,
+                                    price_hall:price_hall,
+
+                                    court_time_start:court_time_start,
+                                    court_time_end:court_time_end,
+                                    price_court:price_court,
+
+                                    miming_time_start:miming_time_start,
+                                    miming_time_end:miming_time_end,
+                                    price_miming:price_miming,
+
+                                    totalprice_send: total_price,
+                                    reserv_discountsend: reserv_discount,
+                                    remarks_send: remarks,
+                                    reserv_paymentsend: reserv_payment,
+                                    reserv_changesend: reserv_change,
+                                    reserv_remaining_balancesend: reserv_remaining_balance
+                                  },
+                                  success: function(data) {}});
                                 $.ajax({
                                     url: 'adminViews/includes/act-transact.php',
                                     type: 'post', //path to PHP script
