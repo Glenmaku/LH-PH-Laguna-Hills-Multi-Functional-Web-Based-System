@@ -361,15 +361,16 @@
             $.each(messages, function(index, message) {
                 // Highlight the table row
                 $('#message_' + message.id).addClass('highlight');
+            });
 
-                // Add a click handler to remove the highlight
-                $('#message_' + message.id).click(function() {
-                    $(this).removeClass('highlight');
-                });
+            // Remove the highlight when a message is displayed
+            $('.highlight').click(function() {
+                $(this).removeClass('highlight');
             });
         }
     });
-}, 5000); // Refresh every 5 seconds
+}, 5000);
+
 
 setInterval(function() {
     // Fetch unread messages
@@ -380,14 +381,14 @@ setInterval(function() {
             $.each(messages, function(index, message) {
                 // Highlight the table row
                 $('#message_' + message.id).addClass('highlight');
+            });
 
-                // Add a click handler to remove the highlight
-                $('#message_' + message.id).click(function() {
-                    $(this).removeClass('highlight');
-                });
+            // Remove the highlight when a message is displayed
+            $('.highlight').click(function() {
+                $(this).removeClass('highlight');
             });
         }
     });
-}, 5000); // Refresh every 5 seconds
+}, 5000);
 
 </script>

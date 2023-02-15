@@ -27,7 +27,8 @@ while($row=mysqli_fetch_assoc($contact_result)){
     $contact_subject = $row['Subject'];
     $contact_message = $row['Message'];
     $Contacttable.='
-                        <tr>
+                        <tr class="highlight">
+                        <td style="width:20px"><div class="form-check"><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" name="check_button"></div></td>
                         <td>'.$contact_date.'</td>
                         <td>'.$contact_Fullname.'</td>
                         <td>'.$contact_Email.'</td>
