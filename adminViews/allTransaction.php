@@ -1011,6 +1011,7 @@ if (!empty($_SESSION['admin_I_D'])) {
                         var remaining_balance = $("#a-remaining-balance").val();
                         var remarks = $("#a-remarks").val();
                         var admin_confirmed = $("#admin-name-trans").val();
+                        var trans_date = $("#date").val();
 
                         $.ajax({
                             type: "POST",
@@ -1031,13 +1032,39 @@ if (!empty($_SESSION['admin_I_D'])) {
                                 ifadvanced: ifadvanced,
                                 remaining_balance: remaining_balance,
                                 remarks: remarks,
-                                admin_confirmed:admin_confirmed
+                                admin_confirmed:admin_confirmed,trans_date:trans_date
                             },
                             success: function(data) {
+                                
                                 $("#close_assoc_confirmed").trigger("click");
                                 $("#transaction_errors_assoc").html(data);
                                 $("#assoc-reset").trigger("click");
-                                
+
+                                $.ajax({
+                                    type: "POST",
+                                    url: "adminViews/includes/act-assoc_submit_confirmed_mail.php",
+                                    data: {
+                                        transaction_num: transaction_num,
+                                        t_fname:t_fname,
+                                        t_lname:t_lname,
+                                        t_email:t_email,
+                                        property: property,
+                                        total_balance: total_balance,
+                                        selected_balance: selected_balance,
+                                        discount: discount,
+                                        interest: interest,
+                                        balance_total: balance_total,
+                                        payment: payment,
+                                        change: change,
+                                        ifadvanced: ifadvanced,
+                                        remaining_balance: remaining_balance,
+                                        remarks: remarks,
+                                        admin_confirmed:admin_confirmed,trans_date:trans_date
+                                    },
+                                    success: function(data) {
+
+                                    }
+                                });
                                 $.ajax({
                                     url: 'adminViews/includes/act-transact.php',
                                     type: 'post', //path to PHP script
@@ -1055,6 +1082,8 @@ if (!empty($_SESSION['admin_I_D'])) {
                                         console.log(textStatus, errorThrown);
                                     }
                                 });
+                            
+                            
                             }
                         });
                   })
