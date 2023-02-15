@@ -30,9 +30,9 @@
             $discount = ($assoc_discount/$assoc_selectedbal)*100;
             $content='';
             $content.='
-                <h6 class="text-center"><i>Association Dues</i></h6><br>
+                <h6 class="text-center"><i>Association Dues</i></h6>
           
-                  <div class="d-flex flex-row align-items-center row align-items-start border-bottom border-top">
+                  <div class="d-flex flex-row align-items-center row align-items-start border-bottom ">
                   <div class="col-8">
                     <h6 class="d-flex mb-0">Transaction No:</h6>
                     <i class="d-flex" >'.$transno.'</i>
@@ -111,14 +111,14 @@
 
         $reservcontent='';
         $reservcontent.='
-        <h6 class="text-center"><i>Reservations</i></h6><br>
+        <h6 class="text-center"><i>Reservations</i></h6>
   
-              <div class="d-flex flex-row align-items-center row align-items-start border-bottom  border-top">
-              <div class="col-8">
+              <div class="d-flex flex-row align-items-center row align-items-start border-bottom ">
+              <div class="col-5">
                 <h6 class="d-flex mb-0">Transaction No:</h6>
                 <i class="d-flex" >'.$transno.'</i>
               </div>
-              <div class="col-4">
+              <div class="col-7">
                 <h6 class="d-flex mb-0 justify-content-end">Date:</h6>
                 <i class="d-flex justify-content-end" >'.$reserv_date.'</i>
               </div>
@@ -238,14 +238,14 @@
         $other_payments=$other_payment- $other_change;
 
         $othercontent='';
-        $othercontent.='<h6 class="text-center"><i>Please verify the information below</i></h6><br>
+        $othercontent.='<h6 class="text-center"><i>Please verify the information below</i></h6>
   
-          <div class="d-flex flex-row align-items-center row align-items-start border-bottom border-top">
-          <div class="col-8">
+          <div class="d-flex flex-row align-items-center row align-items-start border-bottom">
+          <div class="col-5">
             <h6 class="d-flex mb-0">Transaction No:</h6>
             <i class="d-flex" >'.$transno.'</i>
           </div>
-          <div class="col-4">
+          <div class="col-7">
             <h6 class="d-flex mb-0 justify-content-end">Date:</h6>
             <i class="d-flex justify-content-end" >'. $other_date.'</i>
           </div>

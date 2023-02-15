@@ -12,6 +12,7 @@ if (!empty($_SESSION['admin_I_D'])) {
         <div class="transaction-title">
             <h1>TRANSACTION</h1>
         </div>
+       
         <input id="admin-name-trans" value="<?php echo $Fname." ".$Lname?>" hidden>
         <div class="transaction-content">
             <div class="transaction-sheet">
@@ -402,6 +403,7 @@ if (!empty($_SESSION['admin_I_D'])) {
                                     <div class=" input-group  mb-3 owner-search-add-area" style="justify-content: space-between;">
                                         <input type="text" class="form-control" id="search-reservations" placeholder="Search Here...." style="width: 40px;">
                                     </div>
+                                    <div id="delete-message-trans"></div>
                                     <div class=" " id="table-reservations_record"></div>
                                     <!---->
                                 </div>

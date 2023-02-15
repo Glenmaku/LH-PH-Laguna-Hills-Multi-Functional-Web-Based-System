@@ -16,7 +16,6 @@ if(isset($_POST['AllTransaction_Rec'])){
             <th scope="col">Date</th>
             <th scope="col">Confirmed by</th>
             <th scope="col">Details</th>
-            <th scope="col">Delete</th>
       </tr>
     </thead>
     <tbody>';
@@ -40,10 +39,10 @@ if(isset($_POST['AllTransaction_Rec'])){
 
                                         <td><button id="btn-view-trans" class="btn-view-trans btn btn-primary" name="view_button" onclick="view_details_trans(\''.$Transaction_ID.'\',\''.$Category.'\' )"><i class="fa-solid fa-eye"></i></button></td>
 
-                                        <td><button class="btn btn-danger" id="btn-delete-trans" data-bs-toggle="modal" data-bs-target="#deleteTransModal" data-id2='.$Transaction_ID.'> <i class="fa-solid fa-trash"></i></button></td>
                                     <tr>';
                                     
 }
+// <td><button class="btn btn-danger" id="btn-delete-trans" data-bs-toggle="modal" data-bs-target="#deleteTransModal" data-id2='.$Transaction_ID.'> <i class="fa-solid fa-trash"></i></button></td>
 $AllTransaction_table .= '</tbody></table>';
   // Add the pagination links
   $alltransquery = "SELECT COUNT(*) as total_records FROM `all_transaction`";
@@ -99,13 +98,13 @@ else {
 
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
           <button type="button" class="btn btn-primary" id="others-submit-confirmed"hidden>Resend Receipt</button>
         </div>
       </div>
     </div>
   </div>
 <!--FOR SHOW End-->
+
 <script>
   function view_details_trans(transno, category){
     $("#modal_transno").val(transno);

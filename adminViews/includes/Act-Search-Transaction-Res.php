@@ -45,9 +45,9 @@ if (mysqli_num_rows($result) > 0) {
         <th>Full Name</th>
         <th>Duration</th>
         <th>Total</th>
-        <th>Discount</th>
+       
         <th>Payment</th>
-        <th>Change</th>
+      
         <th>Balance</th>
         <th>Remarks</th>
         <th>Date</th>
@@ -74,9 +74,9 @@ if (mysqli_num_rows($result) > 0) {
                           <td>'.$reservation_name.'</td>
                           <td>'.$fromdate.' <b>-</b> '.$todate.'</td>
                           <td>'.$reservation_total.'</td>
-                          <td>'.$reservation_discount.'</td>
+                   
                           <td>'.$reservation_reserv_payment.'</td>
-                          <td>'.$reservation_reserv_change.'</td>
+                  
                           <td>'.$reservation_remaining_balance.'</td>
                           <td>'.$reservation_remarks.'</td>
                           <td>'.$reservations_date.'</td>
