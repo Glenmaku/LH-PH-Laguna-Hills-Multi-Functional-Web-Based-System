@@ -238,7 +238,7 @@
         $other_payments=$other_payment- $other_change;
 
         $othercontent='';
-        $othercontent.='<h6 class="text-center"><i>Please verify the information below</i></h6>
+        $othercontent.='<h6 class="text-center"><i>Other Transactions</i></h6>
   
           <div class="d-flex flex-row align-items-center row align-items-start border-bottom">
           <div class="col-5">
