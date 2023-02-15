@@ -106,8 +106,8 @@ else {
           <div id="reserv_receipt-division"></div>
 
         </div>
-        <div class="modal-footer d-flex justify-content-between ">
-          <button type="button" class="btn btn-primary" id="resend_reservation">Resend Receipt</button>
+        <div class="modal-footer ">
+        
           <!--<button type="button" class="btn btn-primary" id="edit_reservation" onclick="">Update Payment</button>-->
         </div>
       </div>
@@ -145,7 +145,8 @@ else {
           <input type="text" id="r_balance" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
         </div>
         </div>
-        <div class="modal-footer ">
+        <div class="modal-footer  d-flex justify-content-between">
+        <button type="button" class="btn btn-primary" id="resend_reservation" onclick="resend_reservation()">Resend Receipt</button>
           <button type="button" class="btn btn-primary"  onclick="update_reservation()" id="update_reservation">Update</button>
           <!--<button type="button" class="btn btn-primary" id="edit_reservation" onclick="">Update Payment</button>-->
         </div>
@@ -166,7 +167,7 @@ else {
 
             <form>
                 <div class="modal-body">
-                    <input type="" name="reservationdelete_id" id="reservationdelete_id">
+                    <input type="" name="reservationdelete_id" id="reservationdelete_id"hidden>
                     <p>Are you sure you want to cancel this reservation?</p>
                 </div>
                 <div class="modal-footer">
@@ -277,5 +278,18 @@ else {
                 })
             })
         }
-    
+   
+   function resend_reservation(){
+    var trans_reserv = $("#r_modal_transno_e").val();
+    $.ajax({
+      url: 'adminViews/includes/Act-resend-receipt-mail.php',
+                    method: 'post',
+                    data: {
+                        transno: trans_reserv},
+                        success: function(data) {
+                          $('#message-reservation_update').html(data);
+                        }
+    });
+   }
+
 </script>

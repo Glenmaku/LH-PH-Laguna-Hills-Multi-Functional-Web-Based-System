@@ -402,6 +402,7 @@ if (!empty($_SESSION['admin_I_D'])) {
                                 <div class="tab-pane fade p-3" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab" tabindex="0">
                                     <div class=" input-group  mb-3 owner-search-add-area" style="justify-content: space-between;">
                                         <input type="text" class="form-control" id="search-reservations" placeholder="Search Here...." style="width: 40px;">
+                                        <button class="btn btn-primary" id="sort-balance">Sort by Balance</button>
                                     </div>
                                     <div id="delete-message-trans"></div>
                                     <div class=" " id="table-reservations_record"></div>
@@ -1009,7 +1010,7 @@ if (!empty($_SESSION['admin_I_D'])) {
                         var change = $("#a-change").val();
                         var ifadvanced = $("#ifadvanced").val();
                         var remaining_balance = $("#a-remaining-balance").val();
-                        var remarks = $("#a-remarks").val();
+                        var remarks = $("#a-remarks").val(); x
                         var admin_confirmed = $("#admin-name-trans").val();
                         var trans_date = $("#date").val();
 

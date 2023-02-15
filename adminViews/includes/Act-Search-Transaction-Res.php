@@ -196,7 +196,7 @@ echo 'Data Not Found ';
 
             <form>
                 <div class="modal-body">
-                    <input type="" name="reservationdelete_id" id="reservationdelete_id">
+                    <input type="" name="reservationdelete_id" id="reservationdelete_id"hidden>
                     <p>Are you sure you want to cancel this reservation?</p>
                 </div>
                 <div class="modal-footer">
