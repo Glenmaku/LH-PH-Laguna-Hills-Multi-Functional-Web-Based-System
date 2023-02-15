@@ -78,7 +78,7 @@ else if (!$other_payment_all_send || $other_payment_all_send == 0) {
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="close_others_confirmed"></button>
         </div>
         <div class="modal-body ms-5 me-5">
-        <h6 class="text-center"><i>Please verify the information below</i></h6><br>
+        <h6 class="text-center"><i>Other Transactions</i></h6><br>
   
           <div class="d-flex flex-row align-items-center row align-items-start border-bottom border-top">
           <div class="col-8">
