@@ -67,9 +67,8 @@ if(isset($_POST['username'])){
       Sincerely,<br>
       Laguna Hills Homeowner Association";
       $email = $uemail;
-      echo "Sending email to $name at $email<br>"; // added echo statement
       sendEmail($email, $subject, $message ); 
-      echo "Email sent successfully to $name at $email<br>"; // added echo statement
+     
   }
 }
 
