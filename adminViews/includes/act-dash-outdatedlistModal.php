@@ -16,7 +16,7 @@ while ($row = mysqli_fetch_assoc($result)) {
   echo '<td>' . $row['Lot_ID'] . '</td>';
   echo '<td>' . $row['Balance'] . '</td>';
   echo '<td>' . $row['assoc_date_payment'] . '</td>';
-  echo '<td><button class="btn btn-success btn-sm send-notice" data-lot-id="' . $row['owner_username'] . '">Send</button></td></tr>';
+  echo '<td><button class="btn btn-success btn-sm send-notice" data-lot-id="' . $row['Lot_ID'] . '"data-username="' . $row['owner_username'] . '">Send</button></td></tr>';
   $count++;
 }
 echo '</tbody></table>';
@@ -28,7 +28,8 @@ mysqli_close($con);
 <script>
 $(document).ready(function() {
   $('.send-notice').click(function() {
-    var username = $(this).data('lot-id');
+    var username = $(this).data('username');
+    var lotid = $(this).data('lot-id');
     var button = $(this);
     button.prop('disabled', true);
     button.text('Sending...');
@@ -36,18 +37,20 @@ $(document).ready(function() {
     $.ajax({
       url: 'adminViews/includes/act-sendNotice_email.php',
       type: 'POST',
-      data: { username: username },
+      data: { username: username, lotid:lotid },
       success: function(response) {
-        alert('Email sent successfully for Username ' + username + '!');
+        //alert('Email sent successfully for Username ' + username + '!');
+        alert(response);
         button.prop('disabled', true);
         button.text('Sent');
       },
       error: function(xhr, status, error) {
         // Show an error message on the page
         $('#message').text('An error occurred while sending the email.');
+        alert('An error occurred while sending the email.');
         // Enable the button and restore its text
-        $('#sent-notice').prop('disabled', false);
-        $('#sent-notice').text('Send');
+        $('.sent-notice').prop('disabled', false);
+        $('.sent-notice').text('Send');
       }
     });
   });
