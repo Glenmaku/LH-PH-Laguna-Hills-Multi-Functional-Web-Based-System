@@ -40,14 +40,14 @@ $(document).ready(function() {
       data: { username: username, lotid:lotid },
       success: function(response) {
         //alert('Email sent successfully for Username ' + username + '!');
-        alert(response);
+        //alert(response);
         button.prop('disabled', true);
         button.text('Sent');
       },
       error: function(xhr, status, error) {
         // Show an error message on the page
         $('#message').text('An error occurred while sending the email.');
-        alert('An error occurred while sending the email.');
+        //alert('An error occurred while sending the email.');
         // Enable the button and restore its text
         $('.sent-notice').prop('disabled', false);
         $('.sent-notice').text('Send');
