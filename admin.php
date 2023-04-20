@@ -845,7 +845,6 @@ if (!empty($_SESSION['admin_I_D'])) {
     <script src="assets/js/script.js"></script>-->
     <script src="script.js"></script>
     <script src="adminViews/includes/edit-info.js"></script>
-    <script src="../adminViews/phpmailer/link.js"></script>
 </body>
 
 </html>
