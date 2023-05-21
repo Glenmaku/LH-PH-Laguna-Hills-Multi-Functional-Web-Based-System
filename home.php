@@ -113,56 +113,48 @@
     </div>
 
     <div class="d-flex flex-wrap topdivhighlights">
-<style>
-  .iconbig {
-  transition: all 0.1s ease-in-out;
-}
 
-.iconbig:hover {
-  transform: translateY(-10px);
-}
-</style>
       <div class="divhighlights d-block reveal">
         <div class="iconbig align-self-center"><i class=' bx bxs-tree'></i></div>
         <div class="texticon flex-grow-1 align-self-center">
-          <h6>Abundant in Nature</h6>
+          <p class="lead">Abundant in Nature</p>
         </div>
       </div>
 
       <div class="d-block divhighlights reveal">
         <div class="iconbig"><i class=' bx bxs-building-house'></i></div>
         <div class="texticon flex-grow-1 align-self-center">
-          <h6>Residential and Commercial Area</h6>
+        <p class="lead">Residential and Commercial Area</p>
         </div>
       </div>
       <div class="d-block divhighlights reveal">
         <div class="iconbig"><i class=' bx bxs-landscape'></i></div>
         <div class="texticon flex-grow-1 align-self-center">
-          <h6>Landscaped entrance gate and guarhouse</h6>
+        <p class="lead">Landscaped entrance gate and guarhouse</p>
         </div>
       </div>
       <div class="d-block divhighlights reveal">
         <div class="iconbig"><i class=' bx bxs-cctv'></i></div>
         <div class="texticon flex-grow-1 align-self-center">
-          <h6>24-hour security service</h6>
+        <p class="lead">24-hour security service</p>
         </div>
       </div>
       <div class="d-block divhighlights reveal">
         <div class="iconbig forfa"><i class="fa-solid fa-road"></i></div>
         <div class="texticon flex-grow-1 align-self-center">
-          <h6>Wide Subdivision Roads</h6>
+        <p class="lead">Wide Subdivision Roads</p>
         </div>
       </div>
       <div class="d-block divhighlights reveal">
         <div class="iconbig"><i class="bx bx-water"></i></div>
         <div class="texticon flex-grow-1 align-self-center">
-          <h6>Underground drainage system</h5>
+        <p class="lead">Underground drainage system</p>
         </div>
       </div>
       <div class="d-block divhighlights reveal">
         <div class="iconbig"><i class="bx bxs-bulb"></i></div>
         <div class="texticon flex-grow-1 align-self-center">
-          <h6>MERALCO Facilities</h6>
+        <p class="lead">MERALCO Facilities</p>
         </div>
       </div>
 
@@ -194,7 +186,7 @@
             </div>
           </div>
 
-          <p class="text-white revealing ">The beauty of the nearby lake sparkles like a million gems
+          <p class="text-white revealing lead">The beauty of the nearby lake sparkles like a million gems
             with the glimmer of the
             early
             sunshine.<br> Indulge with the family in some outdoor fun.<br> Picnic in a hidden valley.<br> Boar ride
@@ -225,7 +217,7 @@
 <section class="section1 minheight  text-center minheight bg-light">
   <div class="justify-content-center fortops">
     <h1 class="align-self-center reveal">Property Finder</h1>
-    <p class="revealing">Find your Dream Home.</p>
+    <p class="revealing lead">Find your Dream Home.</p>
     <?php
   include 'map-pfinder.php';
 ?>
@@ -233,7 +225,7 @@
   </div>
  
 
-  <a href="PropertyFinder.php"><button class="custom-btn btn-4 revealing">View Properties</button></a>
+  <a href="#PropertyFinder" class="nav-link nas" id="property-finder-page" onclick="setActiveLink(this);PropertyFindernav()"><button class="custom-btn btn-4 revealing lead">View Properties</button></a>
 </section>
 <!--END--PROPERTY FINDER-->
 <!--FEEDBACKS-->
@@ -433,9 +425,9 @@
   <div class="d-flex justify-content-center">
   <button class="btn-submit btn-submit-2" id="sends" onclick="send_contacts(); return false;">
 <span class="btn-submit-3">
-<p class='bx-fw bx bxs-send'></p>
+<p class='bx-fw bx bxs-send lead'></p>
 </span>
-<a class="text-white">Submit</a>
+<a class="text-white lead">Submit</a>
 </button>
 
   </div>

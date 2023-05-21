@@ -851,7 +851,17 @@ section .loc {
 	justify-content: center;
 
 }
-
+.divhighlights:hover {
+	margin: 5px;
+	padding: 10px;
+	/*border: 1px solid #27ae60;*/
+	border-radius: 4px;
+	width: 275px;
+	justify-content: center;
+	box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+	transition: 0.3s ease;
+	transform: translateY(-10px);
+}
 .divhighlightss {
 	margin: 5px;
 	padding: 2px;
@@ -3215,7 +3225,7 @@ img.img-homeowners {
 img.img-homeowners:hover {
 	transform: scale(1.1);
 }
-
+/*
 .iconbig {
 	transition: all 0.1s ease-in-out;
 }
@@ -3226,8 +3236,8 @@ img.img-homeowners:hover {
 
 .iconbigs {
 	transition: all 0.1s ease-in-out;
-}
-
+}*/
+/*
 .iconbigs:hover {
 	transform: translateY(-10px);
 }
@@ -3239,7 +3249,7 @@ img.img-homeowners:hover {
 .EEM_Icons i:hover {
 	transform: translateY(-10px);
 }
-
+*/
 
 /*********** Scrollbar  **************/
 ::-webkit-scrollbar {
