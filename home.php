@@ -5,7 +5,7 @@
     <button type="button" data-bs-target="#carouselMain" data-bs-slide-to="0" class="" aria-label="Slide 1"></button>
     <button type="button" data-bs-target="#carouselMain" data-bs-slide-to="1" aria-label="Slide 2" class=""></button>
     <button type="button" data-bs-target="#carouselMain" data-bs-slide-to="2" aria-label="Slide 3" class="active" aria-current="true"></button>
-    <button type="button" data-bs-target="#carouselMain" data-bs-slide-to="2" aria-label="Slide 4" class="active" aria-current="true"></button>
+
   </div>
   <!--Carousel Content-->
   <div class="carousel-inner">
@@ -28,8 +28,8 @@
     <h1 class="TextFont">Laguna Hills Subdivision</h1>
     <h5>#AboveEverythingElse</h5>
     <div>
-      <button type="button" class="custom-btn1 btn-1 "><a href="AboutUs.php" class="nav-link">Read More</a></button>
-      <button class="custom-btn1 btn-1 "><a href="ContactUs.php" class="nav-link ">Contact Us</a></button>
+      <button type="button" class="custom-btn1 btn-1 "><a href="#AboutUs" class="nav-link  nas" onclick="setActiveLink(this);AboutUsnav()">Read More</a></button>
+      <button class="custom-btn1 btn-1 "><a href="#ContactUs" class="nav-link nas" onclick="setActiveLink(this);ContactUsnav()">Contact Us</a></button>
     </div>
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselMain" data-bs-slide="prev">
@@ -41,7 +41,7 @@
     <span class="visually-hidden">Next</span>
   </button>
   
-  </button>
+
 </div>
 <!--End of Carousel First-->
 
@@ -61,7 +61,7 @@
       Laguna,
       Philippines</p>
     <br>
-    <a href="AboutUs.php"><button class="custom-btn btn-4 revealing">Read More</button></a>
+    <a href="#AboutUs" class="nav-link  nas" onclick="setActiveLink(this);AboutUsnav()"><button class="custom-btn btn-4 revealing">Read More</button></a>
     <br><br>
   </section>
   <!--END- WHITE WELCOME TO LAGUNA HILLS-->

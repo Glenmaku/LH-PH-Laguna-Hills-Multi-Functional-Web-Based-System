@@ -16,19 +16,19 @@
               <h6>Links</h6>
             </li>
             <li class="fortext">
-              <a href="index.php">Home</a>
+            <a href="#home" onclick="setActiveLink(this); Homenav()">Home</a>
             </li>
             <li class="fortext">
-              <a href="AboutUs.php">About Us</a>
+            <a href="#AboutUs"  onclick="setActiveLink(this);AboutUsnav()">About Us</a>
             </li>
             <li class="fortext">
-              <a href="Amenities.php">Amenities</a>
+            <a href="#Amenities"  onclick="setActiveLink(this);Amenitiesnav()">Amenities</a>
             </li>
             <li class="fortext">
-              <a href="PropertyFinder.php">Property Finder</a>
+            <a href="#PropertyFinder" id="property-finder-page" onclick="setActiveLink(this);PropertyFindernav()">Property Finder</a>
             </li>
             <li class="fortext">
-              <a href="ContactUs.php">Contact Us</a>
+              <a href="#ContactUs"  onclick="setActiveLink(this);ContactUsnav()">Contact Us</a>
             </li>
           </ul>
 

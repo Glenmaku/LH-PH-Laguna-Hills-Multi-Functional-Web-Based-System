@@ -1467,7 +1467,8 @@ footer div ul li a {
 }
 
 footer div ul li a:hover {
-	color: var(--darkgreen);
+	color: white;
+	font-weight: bold;
 }
 
 footer iframe {
