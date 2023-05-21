@@ -68,7 +68,7 @@
                         </li>
                         <li class="nav-item">
                             <!--<a href="PropertyFinder.php" class="nav-link nas" id="property-finder-page" onclick="availData('property-finder-page')">Property Finder</a>-->
-                            <a href="#PropertyFinder" class="nav-link nas" id="property-finder-page" onclick="PropertyFindernav(); availData('property-finder-page');">Property Finder</a>
+                            <a href="#PropertyFinder" class="nav-link nas" id="property-finder-page" onclick="PropertyFindernav('property-finder-page')">Property Finder</a>
                         </li>
 
                         <li class="nav-item">
