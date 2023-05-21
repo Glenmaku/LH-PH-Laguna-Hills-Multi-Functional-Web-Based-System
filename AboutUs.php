@@ -1,5 +1,6 @@
-<?php require_once('header.php'); ?>
-<?php require_once('includes/connection.php');?>
+<?php 
+
+require_once('includes/connection.php');?>
 <style>
 img.img-homeowners {
 	max-width: 100%;
@@ -200,5 +201,11 @@ img.img-homeowners {
 
 
 </section>
-
-<?php require_once('footer.php');?>
+<!-- SCRIPTS -->
+<script type="text/javascript" src="Bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script type="text/javascript" src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+  <script type="text/javascript" src="script.js"></script>
+  <script  src="script.js"></script>
+  <script src='https://npmcdn.com/flickity@2/dist/flickity.pkgd.js'></script>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
