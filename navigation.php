@@ -1,42 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--CSS-->
-    <link rel="stylesheet" href="style.css">
-    <link rel='stylesheet' href='https://npmcdn.com/flickity@2/dist/flickity.css'>
-    <link rel="stylesheet" href="Bootstrap/css/bootstrap.css">
-    <link rel="stylesheet" href="Bootstrap/css/bootstrap.min.css">
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-
-    <!-- Boxicons -->
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
-
-
-    <title>Laguna Hills Subdivision</title>
-    <link rel="icon" type="image/x-icon" href="images/Untitled.png">
-</head>
-
-<body onload="Homenav()">
-<div class="pre-loading-home">
-<div class="spinner-border text-success" role="status">
-  <span class="visually-hidden">Loading...</span>
-</div>
-</div>
-<script>
-    const spinnerWrapperEl=document.querySelector('.pre-loading-home');
-    window.addEventListener('load',()=>{
-          spinnerWrapperEl.style.opacity = '0';
-          setTimeout(()=>{
-            spinnerWrapperEl.style.display = 'none'; 
-          },100);
-    });
-
-</script>
 <div class="homepagenavigation">
     <!--Navigation Bar-->
     <nav class="navbar navbar-expand-lg fixed-top p-md-1">
@@ -54,48 +16,41 @@
                     <ul class="navbar-nav me-auto mt-mb-2 mb-lg-0">
                         <li class="nav-item">
                         <!--   <a href="index.php" class="nav-link nas">Home</a>-->
-                        <a href="#home" class="nav-link nas" onclick="setActiveLink(this); Homenav()">Home</a>
+                            <a href="#home" class="nav-link nas" onclick="Homenav()">Home</a>
                         </li>
 
                         <li class="nav-item">
                         <!--   <a href="AboutUs.php" class="nav-link  nas">About Us</a>-->
-                            <a href="#AboutUs" class="nav-link  nas" onclick="setActiveLink(this);AboutUsnav()">About Us</a>
+                            <a href="#AboutUs" class="nav-link  nas" onclick="AboutUsnav()">About Us</a>
                         </li>
 
                         <li class="nav-item">
                         <!--   <a href="Amenities.php" class="nav-link nas">Amenities</a>-->
-                            <a href="#Amenities" class="nav-link nas" onclick="setActiveLink(this);Amenitiesnav()">Amenities</a>
+                            <a href="#Amenities" class="nav-link nas" onclick="Amenitiesnav()">Amenities</a>
                         </li>
-
                         <li class="nav-item">
                             <!--<a href="PropertyFinder.php" class="nav-link nas" id="property-finder-page" onclick="availData('property-finder-page')">Property Finder</a>-->
-                            <a href="#PropertyFinder" class="nav-link nas" id="property-finder-page" onclick="setActiveLink(this);PropertyFindernav()">Property Finder</a>
+                            <a href="#PropertyFinder" class="nav-link nas" id="property-finder-page" onclick="availData('property-finder-page')">Property Finder</a>
                         </li>
 
                         <li class="nav-item">
-                        <a class="btn loginbutton nas no-border"data-bs-toggle="modal" data-bs-target="#Login" >Login</a>
-                            <!--<a class="btn loginbutton nas no-border" onclick="login_function()">Login</a>-->
+                            <!--<a href="ContactUs.php" class="nav-link nas">Contact Us</a>-->
+                            <a href="#ContactUs" class="nav-link nas" onclick="ContactUsnav()">Contact Us</a>
                         </li>
 
+                        <li class="nav-item">
+                            <!--MODAL LOGIN-->
+                            <a  class="nav-link loginbutton nas"onclick="login_function()">Login</a>
+                        </li>
+                        <li class="nav-item" hidden>
+                            <a class="btn loginbutton nas no-border" onclick="login_function()">Login</a>
+                        </li>
                     </ul>
                 </div>
             </div>
         </div>
-    </nav><!--END--Navigation Bar--></div>
-    <script>
-function setActiveLink(element) {
-  // Remove the active class from all navigation links and their parent <li> elements
-  var navLinks = document.querySelectorAll('.nav-link');
-  navLinks.forEach(function(link) {
-    link.classList.remove('active');
-    link.parentNode.classList.remove('active');
-  });
 
-  // Add the active class to the clicked navigation link and its parent <li> element
-  element.classList.add('active');
-  element.parentNode.classList.add('active');
-}
-</script>
+    </nav><!--END--Navigation Bar--></div>
     <!-- LOGIN MODAL --><!--SHOW ON CLICK-->
     <div class="modal fade" id="Login" tabindex="-1" aria-labelledby="LoginLabel" aria-hidden="true">
         <div class="login modal-dialog modal-lg modal-dialog-centered">
@@ -105,6 +60,7 @@ function setActiveLink(element) {
                         <div class="justify-content-center align-self-center login_banner_2  d-flex flex-column ">
                             <img src="Images/LHPHlogo.png " class="d-flex align-self-center">
                             <h1 class="text-center">Welcome!</h1>
+
                         </div>
                     </div>
                     <div class="right_side forms  justify-content-center d-flex flex-column">
@@ -148,6 +104,7 @@ function setActiveLink(element) {
                                 </div>
                                 <p class="text-center"hidden> Don't have an account?<a href="Account-Request.php" class="text-center resend_btn">Click here</a></p>
                                 <p class="text-center mb-auto"> Homeowners can request an account via <a href="ContactUs.php" class="text-center dark-green resend_btn">Contact Us</a></p>
+
                             </form>
                         </div>
                     </div>
@@ -232,7 +189,6 @@ function setActiveLink(element) {
     </div>
     <!--/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
 <script>
-
 function Homenav(){  //
   $.ajax({
       url:"home.php",
@@ -254,37 +210,6 @@ function AboutUsnav(){  //
       }
   });
 }
-function Amenitiesnav(){  //
-  $.ajax({
-      url:"Amenities.php",
-      method:"post",
-      data:{record:1},
-      success:function(data){
-          $('.HomeContents').html(data);
-      }
-  });
-}
-function PropertyFindernav(){  //
-  $.ajax({
-      url:"PropertyFinder.php",
-      method:"post",
-      data:{record:1},
-      success:function(data){
-          $('.HomeContents').html(data);
-      }
-  });
-}
-function ContactUsnav(){  //
-  $.ajax({
-      url:"ContactUs.php",
-      method:"post",
-      data:{record:1},
-      success:function(data){
-          $('.HomeContents').html(data);
-      }
-  });
-}
-
 //LOGIN FUNCTION
 
 function login_function() {
@@ -449,6 +374,8 @@ function verify_function(){
                     });}
         }
 
+
+
     function send_contacts(){
     event.preventDefault();
     var form = document.querySelector("#cont");
@@ -471,4 +398,23 @@ function verify_function(){
         });
     }
 }
+</script>
+<script>
+    let sidebarLinkss = document.querySelectorAll('.admin-sidebar li');
+
+    sidebarLinkss.forEach(link => {
+        link.addEventListener('mouseenter', event => {
+            let submenus = event.currentTarget.querySelector('ul');
+            if (submenus) {
+                submenus.style.display = 'block';
+            }
+        });
+        link.addEventListener('mouseleave', event => {
+            let submenus = event.currentTarget.querySelector('ul');
+            if (submenus) {
+                submenus.style.display = 'none';
+            }
+        });
+    });
+
 </script>

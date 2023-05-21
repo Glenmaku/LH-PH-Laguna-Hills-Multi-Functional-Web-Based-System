@@ -16,8 +16,6 @@
   <?php
   include 'map-propertyfinder.php';
   ?>
-
-
 </section>
 
 <style>
@@ -229,7 +227,6 @@
     svg.setAttribute("transform", currentScale + "translate(" + translateX + "," + translateY + ")");
   }
 
-
   (function() {
   let buttonSelected = "trigger-prop";
 
@@ -255,10 +252,8 @@
         document.getElementById(id).style.pointerEvents = 'none'; // make sure the element is not clickable if it's disabled
       }
     }
-  }
-
-  const select = document.querySelector('.trigger');
-  const path = document.querySelectorAll('path');
+    const select = document.querySelector('.trigger');
+    const path = document.querySelectorAll('path');
 
   select.addEventListener("click", function() {
     if (select.value === "trigger-prop") {
@@ -294,7 +289,14 @@
   PropertyFindernav('property-finder-page');
 })();
 
+
 </script>
 
-
-<?php require_once('footer.php'); ?>
+<!-- SCRIPTS -->
+<script type="text/javascript" src="Bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script type="text/javascript" src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+  <script type="text/javascript" src="script.js"></script>
+  <script  src="script.js"></script>
+  <script src='https://npmcdn.com/flickity@2/dist/flickity.pkgd.js'></script>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
