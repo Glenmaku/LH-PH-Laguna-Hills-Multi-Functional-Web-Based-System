@@ -228,54 +228,71 @@
   }
 
   (function() {
-    let buttonSelected = "trigger-prop";
+  let buttonSelected = "trigger-prop";
 
-    function getData(id, callback) {
-      fetch('adminViews/includes/property-finder-panel.php?id=' + id)
-        .then(response => response.json())
-        .then(data => {
-          callback(data);
-        })
-        .catch(error => {
-          console.log('Error:' + error);
-        });
-    }
+  function getData(id, callback) {
+    fetch('adminViews/includes/property-finder-panel.php?id=' + id)
+      .then(response => response.json())
+      .then(data => {
+        callback(data);
+      })
+      .catch(error => {
+        console.log('Error:' + error);
+      });
+  }
 
-    function colorData(data, id) {
-      if (buttonSelected === "trigger-prop") {
-        if (data.Status === 'available') {
-          document.getElementById(id).style.fill = '#1FCE6D';
-          document.getElementById(id).disabled = false; // make sure the element is not disabled if it's available
-        } else {
-          document.getElementById(id).style.fill = 'grey';
-          document.getElementById(id).disabled = true; // disable the element if it's not available
-          document.getElementById(id).style.pointerEvents = 'none'; // make sure the element is not clickable if it's disabled
-        }
+  function colorData(data, id) {
+    if (buttonSelected === "trigger-prop") {
+      if (data.Status === 'available') {
+        document.getElementById(id).style.fill = '#1FCE6D';
+        document.getElementById(id).disabled = false; // make sure the element is not disabled if it's available
+      } else {
+        document.getElementById(id).style.fill = 'grey';
+        document.getElementById(id).disabled = true; // disable the element if it's not available
+        document.getElementById(id).style.pointerEvents = 'none'; // make sure the element is not clickable if it's disabled
       }
     }
-    const select = document.querySelector('.trigger');
-    const path = document.querySelectorAll('path');
+  }
 
-    select.addEventListener("click", function() {
-      if (select.value === "trigger-prop") {
-        buttonSelected = "trigger-prop";
-        path.forEach(path => {
-          getData(path.id, data => {
-            colorData(data, path.id);
-          });
-        });
-      }
-    });
+  const select = document.querySelector('.trigger');
+  const path = document.querySelectorAll('path');
 
-    // Show color onload
-    document.addEventListener("DOMContentLoaded", function() {
+  select.addEventListener("click", function() {
+    if (select.value === "trigger-prop") {
+      buttonSelected = "trigger-prop";
       path.forEach(path => {
         getData(path.id, data => {
           colorData(data, path.id);
         });
       });
+    }
+  });
+
+  // Function to handle PropertyFindernav click event
+  function PropertyFindernav(page) {
+    buttonSelected = "trigger-prop";
+    path.forEach(path => {
+      getData(path.id, data => {
+        colorData(data, path.id);
+      });
     });
-  })();
+  }
+
+  // Show color onload
+  document.addEventListener("DOMContentLoaded", function() {
+    path.forEach(path => {
+      getData(path.id, data => {
+        colorData(data, path.id);
+      });
+    });
+  });
+
+  // Trigger PropertyFindernav onload
+  PropertyFindernav('property-finder-page');
+})();
+
+
+
 </script>
 
 <!-- SCRIPTS -->
