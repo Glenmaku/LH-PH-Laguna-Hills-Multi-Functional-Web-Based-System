@@ -252,8 +252,10 @@
         document.getElementById(id).style.pointerEvents = 'none'; // make sure the element is not clickable if it's disabled
       }
     }
-    const select = document.querySelector('.trigger');
-    const path = document.querySelectorAll('path');
+  }
+
+  const select = document.querySelector('.trigger');
+  const path = document.querySelectorAll('path');
 
   select.addEventListener("click", function() {
     if (select.value === "trigger-prop") {
@@ -288,6 +290,7 @@
   // Trigger PropertyFindernav onload
   PropertyFindernav('property-finder-page');
 })();
+
 
 
 </script>
