@@ -616,7 +616,12 @@ section .loc {
 .section7 {
 	background-color: #085D40;
 }
+.centered-section{
+	display: flex;
 
+	align-items: center; /* Vertically center the content */
+	min-height: 100vh; 
+}
 .fortops {
 	padding-top: 20px;
 }
@@ -664,6 +669,7 @@ section .loc {
 	flex-wrap: wrap;
 	justify-content: space-between;
 	align-content: space-between;
+
 }
 
 .Ame1,
@@ -675,6 +681,7 @@ section .loc {
 	border: white 3px solid;
 	width: 200px;
 	height: 200px;
+	color: white;
 }
 
 .Ame1:hover,
@@ -687,6 +694,7 @@ section .loc {
 	width: 200px;
 	height: 200px;
 	border: white 3px solid;
+	
 }
 
 .Ame a {
@@ -717,6 +725,7 @@ section .loc {
 	border: white 3px solid;
 	width: 200px;
 	height: 200px;
+	color: white;
 }
 
 .Ame2:hover,
@@ -750,6 +759,7 @@ section .loc {
 	border: white 3px solid;
 	width: 200px;
 	height: 200px;
+	color: white;
 }
 
 .Ame3:hover,
@@ -783,6 +793,7 @@ section .loc {
 	border: white 3px solid;
 	width: 200px;
 	height: 200px;
+	color: white;
 }
 
 .Ame4:hover,

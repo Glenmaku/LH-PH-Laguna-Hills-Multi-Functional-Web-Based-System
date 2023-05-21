@@ -23,13 +23,13 @@
     </div>
 
   </div>
-  <div class="carousel-caption d-block">
+  <div class="carousel-caption  ">
     <h3 class="display-3">The</h3>
     <h1 class="TextFont display-1">Laguna Hills Subdivision</h1>
     <h5 class="display-4">#AboveEverythingElse</h5>
     <div>
-      <button type="button" class="custom-btn1 btn-1 "><a href="#AboutUs" class="nav-link  nas" onclick="setActiveLink(this);AboutUsnav()">Read More</a></button>
-      <button class="custom-btn1 btn-1 "><a href="#ContactUs" class="nav-link nas" onclick="setActiveLink(this);ContactUsnav()">Contact Us</a></button>
+      <button type="button" class="custom-btn1 btn-1"><a href="#AboutUs" class="lead nav-link  nas " onclick="setActiveLink(this);AboutUsnav()">Read More</a></button>
+      <button class="custom-btn1 btn-1 "><a href="#ContactUs" class=" lead nav-link nas" onclick="setActiveLink(this);ContactUsnav()">Contact Us</a></button>
     </div>
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselMain" data-bs-slide="prev">
@@ -47,22 +47,25 @@
 
 <!--START OF CONTENT-->
 <div class="content">
+
   <!--WHITE WELCOME TO LAGUNA HILLS-->
-  <section class="justify-content-around text-center section1 minheight bg-light">
+  <section class="justify-content-around text-center section1 minheight bg-light centered-section ">
+    <div class="">
     <div class="fortops reveal">
-      <h2 class="">Welcome to</h2>
-      <h1>Laguna Hills</h1>
+      <h2 class="mb-2">Welcome to</h2>
+      <h1 class="display-1 mb-2">Laguna Hills</h1>
     </div> <br>
-    <p class="revealing">There's a dreamland away from the hustle and bustle of city life.A home resting on a hilltop
+    <p class="revealing lead">There's a dreamland away from the hustle and bustle of city life.A home resting on a hilltop
       amid the chirping of
       birds.<br>A place where a welcome breeze caresses the gentle slope of hills.<br> There is such a place.<br>A
       place conceived and made real by dreams.<br>The Laguna Hills Subdivision.</p>
-    <p class="fw-bold loc revealing"><i class=' bx-fw bx bxs-map'></i>159 Mutya St. Barangay Pansol 4027 Calamba,
+    <p class="fw-bold loc revealing lead"><i class=' bx-fw bx bxs-map'></i>159 Mutya St. Barangay Pansol 4027 Calamba,
       Laguna,
       Philippines</p>
     <br>
-    <a href="#AboutUs" class="nav-link  nas" onclick="setActiveLink(this);AboutUsnav()"><button class="custom-btn btn-4 revealing">Read More</button></a>
+    <a href="#AboutUs" class="  nas" onclick="setActiveLink(this);AboutUsnav()"><button class="custom-btn btn-4 revealing lead">Read More</button></a>
     <br><br>
+  </div>
   </section>
   <!--END- WHITE WELCOME TO LAGUNA HILLS-->
 
@@ -76,28 +79,29 @@
       <div class="Amenities_BG d-block reveal p-2 flex-grow-1"></div>
       <div class="ame_panel reveal">
         <div class="Ame">
-          <button onmouseover='imgChange("Images/CLUBHOUSE4.jpeg")' class="Ame1 d-inline">
-            <a href="Amenities.php#clubhouse">Clubhouse</a>
+          <button onmouseover='imgChange("Images/CLUBHOUSE4.jpeg")' onclick='imgChange("Images/CLUBHOUSE4.jpeg")' class="Ame1 d-inline">
+            <a>Clubhouse</a>
           </button>
         </div>
         <div class="Ame">
-          <button onmouseover='imgChange("Images/bgame.png")' class=" Ame2 d-inline">
-            <a href="Amenities.php#swimmingpool">Swimming Pool</a>
+          <button onmouseover='imgChange("Images/bgame.png")' onclick='imgChange("Images/bgame.png")' class=" Ame2 d-inline">
+            <a>Swimming Pool</a>
           </button>
         </div>
         <div class="Ame">
-          <button onmouseover='imgChange("images/COVEREDCOURT6b.jpg")' class="Ame3 d-inline">
-            <a href="Amenities.php#basketballcourt">Covered Court</a>
+          <button onmouseover='imgChange("images/COVEREDCOURT6b.jpg")'onclick='imgChange("images/COVEREDCOURT6b.jpg")' class="Ame3 d-inline">
+            <a >Covered Court</a>
           </button>
         </div>
         <div class="Ame">
-          <button onmouseover='imgChange("Images/TENNISCOURT1.jpeg")' class="Ame4 d-inline">
-            <a href="Amenities.php#tenniscourt">Tennis Court</a>
+          <button onmouseover='imgChange("Images/TENNISCOURT1.jpeg")'onclick='imgChange("Images/TENNISCOURT1.jpeg")' class="Ame4 d-inline">
+            <a>Tennis Court</a>
+
           </button>
         </div>
       </div>
     </div>
-   <a href="Amenities.php"><button class="custom-btn btn-5 revealing" >Visit Amenities</button> </a>
+    <a href="#Amenities" class=" nas" onclick="setActiveLink(this);Amenitiesnav()"><button class="custom-btn btn-5 revealing lead" >Visit Amenities</button> </a>
   </section>
   <!--END- ENJOY GREAT AMENITIES-->
   <!--HIGHLIGHTS-->
