@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--CSS-->
     <link rel="stylesheet" href="style.css">
-
     <link rel='stylesheet' href='https://npmcdn.com/flickity@2/dist/flickity.css'>
     <link rel="stylesheet" href="Bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="Bootstrap/css/bootstrap.min.css">
@@ -36,7 +35,9 @@
             spinnerWrapperEl.style.display = 'none'; 
           },100);
     });
+
 </script>
+<div class="homepagenavigation">
     <!--Navigation Bar-->
     <nav class="navbar navbar-expand-lg fixed-top p-md-1">
         <div class="container-fluid">
@@ -52,33 +53,38 @@
                 <div class="mx-auto">
                     <ul class="navbar-nav me-auto mt-mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a href="index.php" class="nav-link nas">Home</a>
+                        <!--   <a href="index.php" class="nav-link nas">Home</a>-->
+                            <a href="#home" class="nav-link nas" onclick="Homenav()">Home</a>
+                        </li>
+
+                        <li class="nav-item">
+                        <!--   <a href="AboutUs.php" class="nav-link  nas">About Us</a>-->
+                            <a href="#AboutUs" class="nav-link  nas" onclick="AboutUsnav()">About Us</a>
+                        </li>
+
+                        <li class="nav-item">
+                        <!--   <a href="Amenities.php" class="nav-link nas">Amenities</a>-->
+                            <a href="#Amenities" class="nav-link nas" onclick="Amenitiesnav()">Amenities</a>
                         </li>
                         <li class="nav-item">
-                            <a href="AboutUs.php" class="nav-link  nas">About Us</a>
+                            <!--<a href="PropertyFinder.php" class="nav-link nas" id="property-finder-page" onclick="availData('property-finder-page')">Property Finder</a>-->
+                            <a href="#PropertyFinder" class="nav-link nas" id="property-finder-page" onclick="PropertyFindernav(); availData('property-finder-page');">Property Finder</a>
                         </li>
+
                         <li class="nav-item">
-                            <a href="Amenities.php" class="nav-link nas">Amenities</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="PropertyFinder.php" class="nav-link nas" id="property-finder-page" onclick="availData('property-finder-page')">Property Finder</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="ContactUs.php" class="nav-link nas">Contact Us</a>
+                            <!--MODAL LOGIN-->
+                            <a  class="nav-link loginbutton nas"onclick="login_function()">Login</a>
                         </li>
                         <li class="nav-item" hidden>
-                            <!--MODAL LOGIN-->
-                            <a href="Login.php" class="nav-link loginbutton nas">Login</a>
-                        </li>
-                        <li class="nav-item">
                             <a class="btn loginbutton nas no-border" onclick="login_function()">Login</a>
                         </li>
+
                     </ul>
                 </div>
             </div>
         </div>
 
-    </nav><!--END--Navigation Bar-->
+    </nav><!--END--Navigation Bar--></div>
     <!-- LOGIN MODAL --><!--SHOW ON CLICK-->
     <div class="modal fade" id="Login" tabindex="-1" aria-labelledby="LoginLabel" aria-hidden="true">
         <div class="login modal-dialog modal-lg modal-dialog-centered">
@@ -88,7 +94,6 @@
                         <div class="justify-content-center align-self-center login_banner_2  d-flex flex-column ">
                             <img src="Images/LHPHlogo.png " class="d-flex align-self-center">
                             <h1 class="text-center">Welcome!</h1>
-
                         </div>
                     </div>
                     <div class="right_side forms  justify-content-center d-flex flex-column">
@@ -132,7 +137,6 @@
                                 </div>
                                 <p class="text-center"hidden> Don't have an account?<a href="Account-Request.php" class="text-center resend_btn">Click here</a></p>
                                 <p class="text-center mb-auto"> Homeowners can request an account via <a href="ContactUs.php" class="text-center dark-green resend_btn">Contact Us</a></p>
-
                             </form>
                         </div>
                     </div>
@@ -217,8 +221,65 @@
     </div>
     <!--/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
 <script>
-      
+
+function Homenav(){  //
+  $.ajax({
+      url:"home.php",
+      method:"post",
+      data:{record:1},
+      success:function(data){
+          $('.HomeContents').html(data);
+      }
+  });
+}
+
+function AboutUsnav(){  //
+  $.ajax({
+      url:"AboutUs.php",
+      method:"post",
+      data:{record:1},
+      success:function(data){
+          $('.HomeContents').html(data);
+      }
+  });
+}
+function Amenitiesnav(){  //
+  $.ajax({
+      url:"Amenities.php",
+      method:"post",
+      data:{record:1},
+      success:function(data){
+          $('.HomeContents').html(data);
+      }
+  });
+}
+function PropertyFindernav(){  //
+  $.ajax({
+      url:"PropertyFinder.php",
+      method:"post",
+      data:{record:1},
+      success:function(data){
+          $('.HomeContents').html(data);
+      }
+  });
+}
+function ContactUsnav(){  //
+  $.ajax({
+      url:"ContactUs.php",
+      method:"post",
+      data:{record:1},
+      success:function(data){
+          $('.HomeContents').html(data);
+      }
+  });
+}
+function login_func() {
+    $('.loginbutton').click(function(){
+        $('#Login').modal('show');    
+    });
+}
 //LOGIN FUNCTION
+
 function login_function() {
             $(document).on('click', '#Login_button', function() {
                 var emailusername = $('#login_emailusername').val();
@@ -310,35 +371,6 @@ function sending_function() {
                             $("#forgot_errors").html("We encountered a problem try again later").addClass("error");
                         }
 
-                    // setTimeout(function() {
-                    //     $("#forgot_errors").hide();
-                    // }, 5000);
-
-                    // success: function(data) {
-                      
-                    //     $('#forgot_errors').html(data);
-                    //     var forgotError = document.getElementById("forgot_errors");
-
-                    //     if(data === "A one time password was sent to your email"){
-                    //               forgotError.classList.remove("error");
-                    //               forgotError.classList.add("success");
-                                
-
-                    //             $("#verify-input").html("<input class='form-control' type='text' id='verification_code' placeholder='Enter the otp code'/>"+
-                    //             "<br>"+
-                    //             "<a  class='resend_btn text-center d-flex justify-content-center' onclick='resend_function()'>Send another code</a>");
-                                
-                    //             $("#sending_button").replaceWith(' <button class="btn-submit4 btn-submit-5" name="verify_button" id="verify_button" type="button" onclick="verify_function()"">' + '<span class="btn-submit-6">' + '<p class="bx-fw bx bxs-send"></p>' + '</span>' + '<a class="text-white">Verify</a>' + '</button>');
-                    //     }
-
-                    //     else if(data === "An error occured while sending the email"||"An error occured while generating the code"||"The email or username you entered does not exists in our record") {
-                    //             forgotError.classList.remove("success");
-                    //             forgotError.classList.add("error");
-                    //     }
-                    //     else  {
-                    //         $("#forgot_errors").html("We encountered a problem try again later").addClass("error");
-                    //     }
-                    // }
                 });
             }
         }
@@ -410,8 +442,6 @@ function verify_function(){
                     });}
         }
 
-
-
     function send_contacts(){
     event.preventDefault();
     var form = document.querySelector("#cont");
@@ -434,5 +464,4 @@ function verify_function(){
         });
     }
 }
-
-    </script>
+</script>
