@@ -142,7 +142,16 @@ body {
 	bottom: 5px;
 	transition: 1s ease;
 }
-
+.navbar ul li:active {
+	content: '';
+	height: 3px;
+	width: 100%;
+	background: #ffc107;
+	position: absolute;
+	left: 0;
+	bottom: 5px;
+	transition: 1s ease;
+}
 .navbar ul li:hover::after {
 	width: 100%;
 }

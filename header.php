@@ -21,7 +21,7 @@
     <link rel="icon" type="image/x-icon" href="images/Untitled.png">
 </head>
 
-<body>
+<body onload="Homenav()">
 <div class="pre-loading-home">
 <div class="spinner-border text-success" role="status">
   <span class="visually-hidden">Loading...</span>
@@ -66,17 +66,15 @@
                         <!--   <a href="Amenities.php" class="nav-link nas">Amenities</a>-->
                             <a href="#Amenities" class="nav-link nas" onclick="Amenitiesnav()">Amenities</a>
                         </li>
+
                         <li class="nav-item">
                             <!--<a href="PropertyFinder.php" class="nav-link nas" id="property-finder-page" onclick="availData('property-finder-page')">Property Finder</a>-->
                             <a href="#PropertyFinder" class="nav-link nas" id="property-finder-page" onclick="PropertyFindernav(); availData('property-finder-page');">Property Finder</a>
                         </li>
 
                         <li class="nav-item">
-                            <!--MODAL LOGIN-->
-                            <a  class="nav-link loginbutton nas"onclick="login_function()">Login</a>
-                        </li>
-                        <li class="nav-item" hidden>
-                            <a class="btn loginbutton nas no-border" onclick="login_function()">Login</a>
+                        <a class="btn loginbutton nas no-border"data-bs-toggle="modal" data-bs-target="#Login" >Login</a>
+                            <!--<a class="btn loginbutton nas no-border" onclick="login_function()">Login</a>-->
                         </li>
 
                     </ul>
