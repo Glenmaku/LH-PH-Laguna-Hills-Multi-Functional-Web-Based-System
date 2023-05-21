@@ -140,18 +140,9 @@ body {
 	position: absolute;
 	left: 0;
 	bottom: 5px;
-	transition: 1s ease;
+	transition: 0.02s ease;
 }
-.navbar ul li:active {
-	content: '';
-	height: 3px;
-	width: 100%;
-	background: #ffc107;
-	position: absolute;
-	left: 0;
-	bottom: 5px;
-	transition: 1s ease;
-}
+
 .navbar ul li:hover::after {
 	width: 100%;
 }
@@ -159,7 +150,9 @@ body {
 .nav-item .btn:first-child:active {
 	border-color: transparent;
 }
-
+.nav-link.active {
+    border-radius: 5px;
+	background: #ffc107;}
 /*
 .logo1{
 	width: 100px;
