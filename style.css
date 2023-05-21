@@ -96,7 +96,7 @@ body {
 		content: '';
 		height: 3px;
 		width: 0%;
-		background: #F5621B;
+		background: #ffc107;
 		position: absolute;
 		left: 0;
 		bottom: 5px;
@@ -136,7 +136,7 @@ body {
 	content: '';
 	height: 3px;
 	width: 0%;
-	background: #F5621B;
+	background: #ffc107;
 	position: absolute;
 	left: 0;
 	bottom: 5px;
@@ -152,7 +152,7 @@ body {
 }
 .nav-link.active {
     border-radius: 5px;
-	background: #F5621B;}
+	background: #ffc107;}
 /*
 .logo1{
 	width: 100px;
@@ -273,8 +273,6 @@ body {
 	height: 100%;
 	width: 100%;
 }
-
-
 
 
 .btn-4 {

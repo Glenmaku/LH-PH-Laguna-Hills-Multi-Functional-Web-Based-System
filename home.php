@@ -24,8 +24,8 @@
 
   </div>
   <div class="carousel-caption d-block">
-    <h3>The</h3>
-    <h1 class="TextFont">Laguna Hills Subdivision</h1>
+    <h3 class="display-3">The</h3>
+    <h1 class="TextFont display-1">Laguna Hills Subdivision</h1>
     <h5>#AboveEverythingElse</h5>
     <div>
       <button type="button" class="custom-btn1 btn-1 "><a href="#AboutUs" class="nav-link  nas" onclick="setActiveLink(this);AboutUsnav()">Read More</a></button>

@@ -90,7 +90,6 @@
             </div>
         </nav><!--END--Navigation Bar-->
     </div>
-    
     <script>
         function setActiveLink(element) {
             var navLinks = document.querySelectorAll('.nav-link');
