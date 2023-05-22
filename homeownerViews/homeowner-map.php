@@ -46,7 +46,7 @@
 						<option selected disabled>Monitor by:</option>
 						<option value="available-home" id="avail-select">Available</option>
 						<option value="house-home" id="house-select">With House</option>
-						<option value="occu-home" id="occu-select">Occupied</option>
+						<option value="occupied-home" id="occupied-select">Occupied</option>
 					</select>
 				</div>
 			</div>
@@ -106,9 +106,9 @@
 					}
 					document.getElementById(id).disabled = false;
 
-				} else if (buttonSelected === 'occu-select') {
+				} else if (buttonSelected === 'occupied-select') {
 					if (data.Status === 'occupied') {
-						document.getElementById(id).style.fill = 'black';
+						document.getElementById(id).style.fill = '#E94B35';
 					} else {
 						document.getElementById(id).style.fill = '';
 						document.getElementById(id).style.pointerEvents = 'none';
@@ -152,9 +152,9 @@
 				getData(path.id);
 				colorData(path.id);
 			});
-		} else if (select.value === "occu-home") {
-			buttonSelected = "occu-select";
-			paths.forEarh(path => {
+		} else if (select.value === "occupied-home") {
+			buttonSelected = "occupied-select";
+			paths.forEach(path => {
 				getData(path.id);
 				colorData(path.id);
 			});
