@@ -49,7 +49,7 @@
 <div class="content">
 
   <!--WHITE WELCOME TO LAGUNA HILLS-->
-  <section class="justify-content-around text-center section1 minheight  centered-section ">
+  <section class="justify-content-around text-center section1 centered-section ">
     <div class="">
     <div class="fortops reveal">
       <h2 class="mb-2">Welcome to</h2>

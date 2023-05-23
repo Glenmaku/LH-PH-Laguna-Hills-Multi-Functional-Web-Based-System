@@ -37,7 +37,7 @@ body {
 	margin: 0;
 	padding: 0;
 	-webkit-font-smoothing: antialiased;
-	background-image: url('Images/WHITEBRICKS.jpg');
+	background-image: url('Images/whitebr.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -622,9 +622,8 @@ section .loc {
 }
 .centered-section{
 	display: flex;
-
 	align-items: center; /* Vertically center the content */
-	min-height: 100vh; 
+
 }
 .fortops {
 	padding-top: 20px;
@@ -650,7 +649,7 @@ section .loc {
 	width: 500px;
 	min-height: 400px;
 	background: url(Images/upperame.png);
-	background-position: center center;
+	background-position: bottom center;
 	background-repeat: no-repeat;
 	-webkit-background-size: cover;
 	background-size: cover;
@@ -858,13 +857,25 @@ section .loc {
 .divhighlights:hover {
 	margin: 5px;
 	padding: 10px;
-	/*border: 1px solid #27ae60;*/
 	border-radius: 4px;
 	width: 275px;
 	justify-content: center;
 	box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
 	transition: 0.3s ease;
 	transform: translateY(-10px);
+}
+@media (max-width: 949px) {
+	.divhighlights {
+
+		margin: 5px;
+		padding: 10px;
+		border-radius: 4px;
+		width: 275px;
+		justify-content: center;
+		box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+		flex-grow: 1;
+		background-color: white;
+	}
 }
 .divhighlightss {
 	margin: 5px;
@@ -2051,8 +2062,8 @@ footer iframe {
 
 	/*SECTIONING*/
 	section {
-		padding-left: 100px;
-		padding-right: 100px;
+		padding-left: 2%;
+		padding-right: 2%;
 	}
 
 	section h1 {
@@ -2094,14 +2105,25 @@ footer iframe {
 		}
 	}
 }
-
-@media only screen and (min-width: 1500px) {
-	.ame_combine {
-		margin-left: 7%;
-		margin-right: 7%;
-		display: flex;
+@media only screen and (max-width:1499px){
+	.Highlights {
+		padding-top: 30px;
+		margin: 0;	
 	}
 
+}
+@media only screen and (min-width: 1500px) {
+	.ame_combine {
+		margin-left: 10%;
+		margin-right: 10%;
+		display: flex;
+
+	}
+	.Highlights {
+		padding-top: 30px;
+		margin-left: 7%;
+		margin-right: 7%;	
+	}
 }
 /*LOGIN MODAL*/
 /*
