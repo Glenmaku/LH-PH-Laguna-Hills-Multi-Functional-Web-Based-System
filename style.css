@@ -37,6 +37,10 @@ body {
 	margin: 0;
 	padding: 0;
 	-webkit-font-smoothing: antialiased;
+	background-image: url('Images/WHITEBRICKS.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 
 }
 
@@ -1593,6 +1597,7 @@ footer iframe {
 		width: 100%;
 		padding-top: 30px;
 	}
+	
 
 	.ame_panel {
 		width: 100%;
@@ -2090,7 +2095,14 @@ footer iframe {
 	}
 }
 
+@media only screen and (min-width: 1500px) {
+	.ame_combine {
+		margin-left: 7%;
+		margin-right: 7%;
+		display: flex;
+	}
 
+}
 /*LOGIN MODAL*/
 /*
 .login_container{

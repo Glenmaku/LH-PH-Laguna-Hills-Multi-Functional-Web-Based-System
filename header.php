@@ -18,7 +18,7 @@
 
 
     <title>Laguna Hills Subdivision</title>
-    <link rel="icon" type="image/x-icon" href="images/Untitled.png">
+    <link rel="icon" type="image/x-icon" href="Images/logo-icon.png">
 </head>
 
 

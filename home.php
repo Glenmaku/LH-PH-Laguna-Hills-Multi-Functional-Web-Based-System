@@ -49,7 +49,7 @@
 <div class="content">
 
   <!--WHITE WELCOME TO LAGUNA HILLS-->
-  <section class="justify-content-around text-center section1 minheight bg-light centered-section ">
+  <section class="justify-content-around text-center section1 minheight  centered-section ">
     <div class="">
     <div class="fortops reveal">
       <h2 class="mb-2">Welcome to</h2>
@@ -105,7 +105,7 @@
   </section>
   <!--END- ENJOY GREAT AMENITIES-->
   <!--HIGHLIGHTS-->
-  <section class="Highlights section1 bg-light">
+  <section class="Highlights section1 ">
     <div class="d-flex justify-content-center flex-wrap reveal">
       <h1 class="align-self-center">Highlights&nbsp;</h1>
       <h2 class="align-self-center">&&nbsp;</h2>
@@ -214,7 +214,7 @@
 
 <!--END- GREEN COMMUNE WITH NATURE-->
 <!--FIND YOUR DREAM HOME PROPERTY FINDER-->
-<section class="section1 minheight  text-center minheight bg-light">
+<section class="section1 minheight  text-center minheight ">
   <div class="justify-content-center fortops">
     <h1 class="align-self-center reveal">Property Finder</h1>
     <p class="revealing lead">Find your Dream Home.</p>
@@ -343,7 +343,7 @@
 </section>
 <!--END--FEEDBACKS-->
 <!-- GREEN CONTACT FORM-->
-<div class="d-flex flex-wrap align-content-center section1 bg-light">
+<div class="d-flex flex-wrap align-content-center section1 ">
   <section class="col-md-6 align-content-center flex-wrap d-flex fortops">
     <div class="container-fluid text-white p-3">
       <div class="row justify-content-around text-md-start">
@@ -351,23 +351,23 @@
           <h2>Got a question?</h2>
           <h1>Reaching us</h1>
           <h2>has never been easier</h2>
-          <p>Send us a message and we'll get right back to you.<br> You can also reach us through:</p>
+          <p class="lead">Send us a message and we'll get right back to you.<br> You can also reach us through:</p>
           <ul class="list-unstyled section1">
             <li class="">
               <i class='bx-fw bx bxl-facebook-square'></i>
-              <a class="contacta">facebook.com/LagunaHillsSubdivision</a>
+              <a class="contacta  lead">facebook.com/LagunaHillsSubdivision</a>
             </li>
             <li class="">
               <i class='bx-fw bx bxl-gmail'></i>
-              <a class="contacta">lagunahillshoa@gmail.com</a>
+              <a class="contacta lead">lagunahillshoa@gmail.com</a>
             </li>
             <li class="">
               <i class=' bx-fw bx bxs-phone'></i>
-              <a class="contacta">(049)539-2062</a>
+              <a class="contacta lead">(049)539-2062</a>
             </li>
             <li class="">
               <i class=' bx-fw bx bxs-map'></i>
-              <a class="contacta">159 Mutya St. Barangay Pansol 4027 Calamba, Laguna, Philippines</a>
+              <a class="contacta lead">159 Mutya St. Barangay Pansol 4027 Calamba, Laguna, Philippines</a>
             </li>
           </ul>
         </div>

@@ -46,4 +46,4 @@ if(mysqli_multi_query($con, $sql)){
                 </div>';
                 exit();
 }
-}
+}?>

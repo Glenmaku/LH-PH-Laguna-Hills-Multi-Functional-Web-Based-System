@@ -1049,7 +1049,7 @@ if (!empty($_SESSION['admin_I_D'])) {
                         var change = $("#a-change").val();
                         var ifadvanced = $("#ifadvanced").val();
                         var remaining_balance = $("#a-remaining-balance").val();
-                        var remarks = $("#a-remarks").val(); x
+                        var remarks = $("#a-remarks").val(); 
                         var admin_confirmed = $("#admin-name-trans").val();
                         var trans_date = $("#date").val();
 
