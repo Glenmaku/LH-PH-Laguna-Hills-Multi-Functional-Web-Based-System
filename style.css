@@ -581,9 +581,24 @@ section .loc {
 	color: #085D40;
 	background-color: #085D40;
 	margin: 0;
-
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
 }
-
+@media (max-width:1030px){
+	.commune {
+		color: #085D40;
+		background-color: #085D40;
+		margin: 0;
+		display: block!important;
+	}
+	.sizing1{
+		width: 100%!important;
+	}
+}
+.sizing1{
+	width: 50%;
+}
 .section1 {
 	color: #085D40;
 }
@@ -852,7 +867,7 @@ section .loc {
 	border-radius: 4px;
 	width: 275px;
 	justify-content: center;
-
+	background-color: white;
 }
 .divhighlights:hover {
 	margin: 5px;
@@ -863,6 +878,7 @@ section .loc {
 	box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
 	transition: 0.3s ease;
 	transform: translateY(-10px);
+	background-color: white;
 }
 @media (max-width: 949px) {
 	.divhighlights {
@@ -1010,11 +1026,11 @@ section .loc {
 	}
 
 	5% {
-		margin-top: 00px;
+		margin-top: 0%;
 	}
 
 	30% {
-		margin-top: 00px;
+		margin-top: 0%;
 	}
 
 	35% {
@@ -1026,11 +1042,11 @@ section .loc {
 	}
 
 	70% {
-		margin-top: -380px;
+		margin-top: -450px;
 	}
 
 	100% {
-		margin-top: -380px;
+		margin-top: -450px;
 	}
 }
 
@@ -1767,7 +1783,11 @@ footer iframe {
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media (min-width: 600px) and (max-width: 1048px) {
-
+	#my-svg {
+		margin-left: 35%!important;
+		margin-right: -35%!important;
+	}
+	
 	/*CAROUSEL*/
 	.carousel-caption h1 {
 		font-size: 450%;
@@ -1892,7 +1912,7 @@ footer iframe {
 	}
 }
 
-@media (min-width:1048px) and (max-width:1168px) {
+@media (min-width:1048px) and (max-width:1048px) {
 	.ame_combine {
 		margin: 20px;
 		display: flex;
@@ -3006,6 +3026,11 @@ p {
 
 /*END CONTACT PAGE*/
 @media (max-width:600px) {
+	#my-svg {
+		margin-left: 0%!important;
+		margin-right: -100%!important;
+	}
+
 	.panelss {
 		flex-direction: column !important;
 		display: flex;

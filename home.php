@@ -164,8 +164,8 @@
   <!--GREEN COMMUNE WITH NATURE-->
 
 </div>
-<div class=" commune d-flex flex-wrap align-content-center">
-  <div class=" col-md-5 align-content-center flex-wrap d-flex p-4 pfonts">
+<div class=" commune  align-content-center">
+  <div class=" sizing1 align-content-center flex-wrap d-flex p-4 pfonts">
     <div class="container-fluid text-white">
       <div class="row justify-content-center text-center fortops">
         <div class="section1 h-100 fortops">
@@ -198,7 +198,7 @@
       </div>
     </div>
   </div>
-  <div class="col-md-7 section4">
+  <div class="section4 sizing1">
     <div class="carousels" data-flickity='{ "autoPlay": true }'>
       <div class="carousel-cell"><img src="Images/NATURE11.jpg"></div>
       <div class="carousel-cell"><img src="Images/PIC/SCENERIES111.jpg"></div>
@@ -214,7 +214,7 @@
 
 <!--END- GREEN COMMUNE WITH NATURE-->
 <!--FIND YOUR DREAM HOME PROPERTY FINDER-->
-<section class="section1 minheight  text-center minheight ">
+<section class="section1   text-center ">
   <div class="justify-content-center fortops">
     <h1 class="align-self-center reveal">Property Finder</h1>
     <p class="revealing lead">Find your Dream Home.</p>
@@ -225,7 +225,7 @@
   </div>
  
 
-  <a href="#PropertyFinder" class="nav-link nas" id="property-finder-page" onclick="setActiveLink(this);PropertyFindernav()"><button class="custom-btn btn-4 revealing lead">View Properties</button></a>
+  <a href="#PropertyFinder" class="nas" id="property-finder-page" onclick="setActiveLink(this);PropertyFindernav()"><button class="custom-btn btn-4 revealing lead">View Properties</button></a>
 </section>
 <!--END--PROPERTY FINDER-->
 <!--FEEDBACKS-->
@@ -235,7 +235,7 @@
     <h1 class="align-self-center">Feedbacks</h1>
   </div>
   <div class="expanding">
-    <div class="feedback_carousels reveal  align-content-center justify-content-center" data-flickity='{ "autoPlay": true}'>
+    <div class="feedback_carousels reveal align-content-center justify-content-center" data-flickity='{ "autoPlay": true}'>
       <div class="feedback_container active feedback_carousel-cell d-flex justify-content-center">
         <div class="feedback_slide">
           <i class="bx bxs-user-circle"></i>
