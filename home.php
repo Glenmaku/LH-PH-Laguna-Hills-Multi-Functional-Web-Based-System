@@ -229,7 +229,7 @@
 </section>
 <!--END--PROPERTY FINDER-->
 <!--FEEDBACKS-->
-<section class="section1 minheight  text-center minheight section3 align-content-center justify-content-center ">
+<section class="section1  text-center section3 feeds align-content-center justify-content-center ">
   <div class="justify-content-center text-white reveal fortops">
     <h2 class="align-self-center">Checkout Amazing&nbsp;</h2>
     <h1 class="align-self-center">Feedbacks</h1>
@@ -238,6 +238,9 @@
     <div class="feedback_carousels reveal align-content-center justify-content-center" data-flickity='{ "autoPlay": true}'>
       <div class="feedback_container active feedback_carousel-cell d-flex justify-content-center">
         <div class="feedback_slide">
+          
+          <div class="feeds-flex">
+            <div class="all-prof">
           <i class="bx bxs-user-circle"></i>
           <i class='bx bxs-quote-alt-right icon'></i>
 
@@ -252,12 +255,16 @@
                 <i class='bx bxr-star'></i>
               </div>
             </div>
-          </div>
+          </div></div></div>
+          <div class="feeds-flex">
           <p class="reviews">Quiet, safe, relaxing, and cool weather. A private residential space and if you are looking for a retirement option, highly recommended.</p>
         </div>
       </div>
+      </div>
       <div class="feedback_container active feedback_carousel-cell d-flex justify-content-center">
         <div class="feedback_slide">
+        <div class="feeds-flex">
+        <div class="all-prof">
         <i class="bx bxs-user-circle"></i>
           <i class='bx bxs-quote-alt-right icon'></i>
 
@@ -272,12 +279,15 @@
                 <i class='bx bxr-star'></i>
               </div>
             </div>
-          </div>
+          </div></div></div>
+          <div class="feeds-flex">
           <p class="reviews">This is a super gorgeous place..quite and serene..</p>
-        </div>
+        </div></div>
       </div>
       <div class="feedback_container active feedback_carousel-cell d-flex justify-content-center">
         <div class="feedback_slide">
+        <div class="feeds-flex">
+        <div class="all-prof">
         <i class="bx bxs-user-circle"></i>
           <i class='bx bxs-quote-alt-right icon'></i>
 
@@ -292,12 +302,15 @@
                 <i class='bx bxr-star'></i>
               </div>
             </div>
-          </div>
+          </div></div></div>
+          <div class="feeds-flex">
           <p class="reviews">Nice place, clean, secured, nature ambience, spacious, warm&hot water, shower areas, 3 separate pools, good for relaxation and unwind moods.. natures na natures,  there's spaces for any functions occasions,</p>
-        </div>
+        </div></div>
       </div>
       <div class="feedback_container active feedback_carousel-cell d-flex justify-content-center">
         <div class="feedback_slide">
+        <div class="feeds-flex">
+        <div class="all-prof">
         <i class="bx bxs-user-circle"></i>
           <i class='bx bxs-quote-alt-right icon'></i>
 
@@ -312,12 +325,15 @@
                 <i class='bx bxr-star'></i>
               </div>
             </div>
-          </div>
+          </div></div></div>
+          <div class="feeds-flex">
           <p class="reviews">Secured and private. Nice nature ambience, 3 hot spring pools Multiple rooms, showers, toilets, karaoke, full size indoor basketball court.</p>
-        </div>
+        </div></div>
       </div>
       <div class="feedback_container active feedback_carousel-cell d-flex justify-content-center">
         <div class="feedback_slide">
+        <div class="feeds-flex">
+        <div class="all-prof">
         <i class="bx bxs-user-circle"></i>
           <i class='bx bxs-quote-alt-right icon'></i>
 
@@ -332,9 +348,10 @@
                 <i class='bx bxr-star'></i>
               </div>
             </div>
-          </div>
+          </div></div></div>
+          <div class="feeds-flex">
           <p class="reviews">Perfect place for our Church Community Family Day acticity.. Terrific view and mountainous surroundings..</p>
-        </div>
+        </div></div>
       </div>
     </div>
   </div>
@@ -355,19 +372,19 @@
           <ul class="list-unstyled section1">
             <li class="">
               <i class='bx-fw bx bxl-facebook-square'></i>
-              <a class="contacta  lead">facebook.com/LagunaHillsSubdivision</a>
+              <a class="contacta ">facebook.com/LagunaHillsSubdivision</a>
             </li>
             <li class="">
               <i class='bx-fw bx bxl-gmail'></i>
-              <a class="contacta lead">lagunahillshoa@gmail.com</a>
+              <a class="contacta">lagunahillshoa@gmail.com</a>
             </li>
             <li class="">
               <i class=' bx-fw bx bxs-phone'></i>
-              <a class="contacta lead">(049)539-2062</a>
+              <a class="contacta ">(049)539-2062</a>
             </li>
             <li class="">
               <i class=' bx-fw bx bxs-map'></i>
-              <a class="contacta lead">159 Mutya St. Barangay Pansol 4027 Calamba, Laguna, Philippines</a>
+              <a class="contacta ">159 Mutya St. Barangay Pansol 4027 Calamba, Laguna, Philippines</a>
             </li>
           </ul>
         </div>
