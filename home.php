@@ -360,7 +360,7 @@
 </section>
 <!--END--FEEDBACKS-->
 <!-- GREEN CONTACT FORM-->
-<div class="d-flex flex-wrap align-content-center section1 ">
+<div class="d-flex flex-wrap align-content-center section1 max-sizing">
   <section class="col-md-6 align-content-center flex-wrap d-flex fortops">
     <div class="container-fluid text-white p-3">
       <div class="row justify-content-around text-md-start">
@@ -507,10 +507,13 @@ This Privacy Policy was last updated on February 12, 2023.<br>
  function PrivacyModal() {
       $("#PrivacyPolicy").modal("show");
     }
+    
 </script>
 <!-- END GREEN CONTACT FORM-->
   <!-- SCRIPTS -->
   <script type="text/javascript" src="Bootstrap/js/bootstrap.bundle.min.js"></script>
   <script type="text/javascript" src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
   <script src='https://npmcdn.com/flickity@2/dist/flickity.pkgd.js'></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
+      
+    </script>

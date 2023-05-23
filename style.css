@@ -1405,7 +1405,6 @@ align-items: center;
 	border-radius: 5px;
 	overflow: hidden;
 	display: flex;
-
 }
 
 /* cell number */
@@ -1416,6 +1415,22 @@ align-items: center;
 	font-size: 80px;
 	color: #085D40;
 }
+}
+@media (min-width:1600px){
+	.feedback_carousel-cell {
+		width: 40%;
+		background: #085D40;
+		border-radius: 5px;
+		overflow: hidden;
+		display: flex;
+	}
+	
+}
+@media (min-width:1400px){
+	.max-sizing{
+		margin-left: 10%;
+		margin-right: 10%;
+	}
 }
 /*END-Feebacks*/
 /*CONTACT FORM*/
@@ -3169,6 +3184,7 @@ p {
 @media (max-width:600px) {
 	#my-svg {
 		margin-left: 0%!important;
+		margin-right: -100%;
 	}
 
 	.panelss {
