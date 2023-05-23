@@ -5153,7 +5153,7 @@
 			function displayMapData() {
 				var mapData = "true";
 				$.ajax({
-					url: 'adminViews/includes/mapData.php',
+					url: 'adminViews/includes/mapdata.php',
 					type: 'post',
 					data: {
 						mapDataSend: mapData
@@ -5275,34 +5275,42 @@
 			});
 			//////////////////////////////////////////////////////////////////////////////
 			function getData(id) {
-				fetch(`adminViews/includes/mapsubmit.php?id=${id}`)
-					.then(response => response.json())
-					.then(data => {
-						displayOwner(id);
-						document.getElementById('Lot_ID').value = data.Lot_ID;
-						document.getElementById("block").value = data.Block;
-						document.getElementById("lot").value = data.Lot;
-						document.getElementById("street").value = data.Street;
-						document.getElementById("status").value = data.Status;
-						document.getElementById("area-per-sqm").value = data.Area;
-						document.getElementById("price").value = data.Price;
-						document.getElementById("remarkss").value = data.Remarks;
-						document.getElementById("remarks").value = data.DueRemarks;
-						document.getElementById("Monthly_Dues").value = data.Monthly_Dues;
-						document.getElementById("Yearly_Dues").value = data.Yearly_Dues;
-						document.getElementById("Dues_Status").value = data.Dues_Status;
-						document.getElementById("date_assigned").value = data.date_assigned;
-						document.getElementById("lotedit-id").value = data.Lot_ID;
-						document.getElementById("ownergets").value = data.Lot_ID;
-						document.getElementById("ownershipfname").value = data.owner_fname;
-						document.getElementById("ownershiplname").value = data.owner_lname;
-						document.getElementById("ownerships").value = data.ownership;
-						document.getElementById("ownusername").value = data.owner_username;
-					})
-					.catch(error => {
-						console.log(`Error: ${error}`);
-					});
-			}
+    // Check if the data already exists in the DOM
+    const existingData = document.getElementById('Lot_ID').value;
+    if (existingData === id) {
+        return; // Data already loaded, no need to fetch again
+    }
+
+    fetch(`adminViews/includes/mapsubmit.php?id=${id}`)
+        .then(response => response.json())
+        .then(data => {
+            displayOwner(id);
+            document.getElementById('Lot_ID').value = data.Lot_ID;
+            document.getElementById("block").value = data.Block;
+            document.getElementById("lot").value = data.Lot;
+            document.getElementById("street").value = data.Street;
+            document.getElementById("status").value = data.Status;
+            document.getElementById("area-per-sqm").value = data.Area;
+            document.getElementById("price").value = data.Price;
+            document.getElementById("remarkss").value = data.Remarks;
+            document.getElementById("remarks").value = data.DueRemarks;
+            document.getElementById("Monthly_Dues").value = data.Monthly_Dues;
+            document.getElementById("Yearly_Dues").value = data.Yearly_Dues;
+            document.getElementById("Dues_Status").value = data.Dues_Status;
+            document.getElementById("date_assigned").value = data.date_assigned;
+            document.getElementById("lotedit-id").value = data.Lot_ID;
+            document.getElementById("ownergets").value = data.Lot_ID;
+            document.getElementById("ownershipfname").value = data.owner_fname;
+            document.getElementById("ownershiplname").value = data.owner_lname;
+            document.getElementById("ownerships").value = data.ownership;
+            document.getElementById("ownusername").value = data.owner_username;
+        })
+        .catch(error => {
+            console.log(`Error: ${error}`);
+        });
+}
+
+
 			//////////////////////////////////////////////////////////////////////////////
 			//////////////////////////////////////////////////////////////////////////////
 			function clearColor() {
