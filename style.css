@@ -1750,6 +1750,9 @@ footer iframe {
 		width: 200px;
 
 	}
+	.Topbanner{
+		padding-top: 20vh!important;
+	}
 	.amenities_section {
 		margin: 2px 0!important;
 		padding: 5px!important;
@@ -2647,7 +2650,7 @@ div.swall-button-container {
 	background-size: cover;
 	background-position: bottom;
 	width: 100%;
-	height: 50vh;
+	height: 55vh;
 }
 
 .TopAbout {
@@ -2696,6 +2699,7 @@ div.swall-button-container {
 .Topbanner h2 {
 	color: white;
 	font-family: 'Great Vibes';
+	line-height: 1;
 	font-size: 80px;
 	z-index: 1;
 	text-shadow: 10px 6px 10px var(--dark);
