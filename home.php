@@ -1,3 +1,4 @@
+<?php require_once('includes/connection.php'); ?>
 
 <!--Carousel-->
 <div id="carouselMain" class="carousel slide" data-bs-ride="carousel">
@@ -28,19 +29,10 @@
     <h1 class="TextFont display-1">Laguna Hills Subdivision</h1>
     <h5 class="display-4">#AboveEverythingElse</h5>
     <div>
-<<<<<<< HEAD
-<<<<<<< HEAD
       <button type="button" class="custom-btn1 btn-1"><a href="#AboutUs" class="lead nas " onclick="activateNav('navaboutus');AboutUsnav();">Read More</a></button>
       <button class="custom-btn1 btn-1 "><a href="#ContactUs" class=" lead nas" onclick="activateNav('navcontactus');ContactUsnav();">Contact Us</a></button>
-=======
-      <button type="button" class="custom-btn1 btn-1"><a href="#AboutUs" class="lead nav-link  nas " onclick="setActiveLink(this);AboutUsnav()">Read More</a></button>
-      <button class="custom-btn1 btn-1 "><a href="#ContactUs" class=" lead nav-link nas" onclick="setActiveLink(this);ContactUsnav()">Contact Us</a></button>
->>>>>>> parent of 35c7802 (34234234)
-=======
-      <button type="button" class="custom-btn1 btn-1"><a href="#AboutUs" class="lead nav-link  nas " onclick="setActiveLink(this);AboutUsnav()">Read More</a></button>
-      <button class="custom-btn1 btn-1 "><a href="#ContactUs" class=" lead nav-link nas" onclick="setActiveLink(this);ContactUsnav()">Contact Us</a></button>
->>>>>>> parent of 35c7802 (34234234)
     </div>
+ 
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselMain" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -239,7 +231,7 @@
 </section>
 <!--END--PROPERTY FINDER-->
 <!--FEEDBACKS-->
-<section class="section1  text-center section3 feeds align-content-center justify-content-center ">
+<section class="section1 text-center section3 feeds align-content-center justify-content-center">
   <div class="justify-content-center text-white reveal fortops">
     <h2 class="align-self-center">Checkout Amazing&nbsp;</h2>
     <h1 class="align-self-center">Feedbacks</h1>
@@ -404,35 +396,35 @@
   <div class="col-md-6 section4 fortops">
 
   <form class="contactform align-content-center fortops needs-validation" id="cont">
-  <div class="form-floating mb-5">
+  <div class="form-floating mb-3">
     <input type="text" class="form-control" id="Fullnameinput" placeholder="Firstname Surname" name="Full_Name" required>
     <label for="Firstnameinput">Full Name</label>
     <div class="invalid-tooltip text-white">
       Please enter your name.
     </div>
   </div>
-  <div class="form-floating mb-5">
+  <div class="form-floating mb-3">
     <input type="email" class="form-control" id="Emailinput" placeholder="name@example.com" name="Email_Address" required>
     <label for="Emailinput">Email address</label>
     <div class="invalid-tooltip text-white">
       Please enter a valid email address.
     </div>
   </div>
-  <div class="form-floating mb-5">
+  <div class="form-floating mb-3">
     <input type="number" class="form-control" id="Numberinput" placeholder="XXXXXXXXXXX" name="Cellphone_Number" required>
     <label for="Numberinput">Cellphone Number</label>
     <div class="invalid-tooltip text-white">
       Please enter a valid number.
     </div>
   </div>
-  <div class="form-floating mb-5">
+  <div class="form-floating mb-3">
     <input type="text" class="form-control" id="Subjectinput" placeholder="Laguna Hills Inquiries" name="Subject" required>
     <label for="Subjectinput">Subject</label>
     <div class="invalid-tooltip text-white">
       Please add a subject.
     </div>
   </div>
-  <div class="form-floating mb-5">
+  <div class="form-floating mb-3">
     <textarea class="form-control" id="Messages" placeholder="Your Message" style="height: 100px" name="Message" required></textarea>
     <label for="Messages">Message</label>
     <div class="invalid-tooltip text-white">
@@ -524,6 +516,4 @@ This Privacy Policy was last updated on February 12, 2023.<br>
   <script type="text/javascript" src="Bootstrap/js/bootstrap.bundle.min.js"></script>
   <script type="text/javascript" src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
   <script src='https://npmcdn.com/flickity@2/dist/flickity.pkgd.js'></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
-      
-    </script>
+  <script  src="script.js"></script>

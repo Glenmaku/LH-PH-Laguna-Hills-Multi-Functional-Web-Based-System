@@ -4,10 +4,8 @@
 <!--UPPER BANNER-->
 <div class=" Top TopFinder Topbanner container-fluid">
   <div class="text-center container-fluid">
-    <h5>Laguna Hills</h5>
-    <h1>Property Finder</h1>
-
-
+    <h4 class="display-4">Laguna Hills</h4>
+    <h2 class="display-2">Property Finder</h2>
   </div>
 </div>
 <!--END-UPPER BANNER-->

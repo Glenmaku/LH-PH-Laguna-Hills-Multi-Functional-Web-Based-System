@@ -48,7 +48,7 @@ body {
 .pre-loading-home {
 	height: 100vh;
 	width: 100vw;
-	z-index: 999999999999 !important;
+	z-index: 9999 !important;
 	background-color: white;
 	position: fixed;
 	display: flex;
@@ -62,7 +62,7 @@ body {
 	--bs-spinner-width: 7rem !important;
 	--bs-spinner-height: 7rem !important;
 	--bs-spinner-border-width: 0.7rem !important;
-	--bs-spinner-animation-speed: 0.8s !important;
+	--bs-spinner-animation-speed: 1s !important;
 }
 
 /*-----------------------------END-LOADING*/
@@ -75,6 +75,7 @@ body {
 	align-items: center;
 	justify-content: space-between;
 	box-shadow: inset 0px 70px 60px -50px black;
+	z-index: 10000 !important;
 }
 
 @media (max-width:991px) {
@@ -156,17 +157,10 @@ body {
 }
 .nav-link.active {
     border-radius: 5px;
-	background: #ffc107;}
-/*
-.logo1{
-	width: 100px;
-	height: 50px;
-	margin-left: 10px;
+	background: #ffc107;
+	transition: 1s ease;
 }
-.nav-item a{
-	margin-left:50px ;
 
-}*/
 .responsivenavi {
 	/*background: linear-gradient(29deg, rgba(229, 247, 1, 1) 0%, rgba(36, 208, 6, 1) 33%, rgba(8, 93, 64, 1) 100%);
 	backdrop-filter: blur(10px);*/
@@ -179,6 +173,7 @@ body {
 
 .nas {
 	color: white !important;
+	text-decoration: none;
 }
 
 .mas {
@@ -857,7 +852,10 @@ section .loc {
 .topdivhighlightsss {
 	align-items: center;
 	justify-content: space-around;
-
+	padding-right: 10%;
+	padding-left: 10%;
+	padding-top: 5%;
+	padding-bottom: 5%;
 }
 
 .divhighlights {
@@ -881,8 +879,15 @@ section .loc {
 	background-color: white;
 }
 @media (max-width: 949px) {
+	.topdivhighlightsss {
+		align-items: center;
+		justify-content: space-around;
+		padding-left: 0;
+		padding-right: 0;
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
 	.divhighlights {
-
 		margin: 5px;
 		padding: 10px;
 		border-radius: 4px;
@@ -891,6 +896,19 @@ section .loc {
 		box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
 		flex-grow: 1;
 		background-color: white;
+	}
+	.divhighlightsss {
+		margin: 5px;
+		/*border: 1px solid #27ae60;*/
+		border-radius: 4px;
+		width: 230px;
+		justify-content: center;
+		align-content: center;
+		box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+		transition: 0.3s ease;
+		transform: translateY(-10px);
+		background-color: white;
+		height: 180px;
 	}
 }
 .divhighlightss {
@@ -910,9 +928,22 @@ section .loc {
 	width: 230px;
 	justify-content: center;
 	align-content: center;
+	height: 180px;
 	background-color: white;
 }
-
+.divhighlightsss:hover {
+	margin: 5px;
+	/*border: 1px solid #27ae60;*/
+	border-radius: 4px;
+	width: 230px;
+	height: 180px;
+	justify-content: center;
+	align-content: center;
+	box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+	transition: 0.3s ease;
+	transform: translateY(-10px);
+	background-color: white;
+}
 .iconbig {
 	margin: auto;
 	font-size: 55px;
@@ -1285,6 +1316,16 @@ align-items: center;
 }
 
 @media (min-width:800px){
+	.AboutLagunaHills{
+		padding-left: 10%;
+		padding-right: 10%;
+	}
+	.AboutHomeowners{
+		flex-direction: column;
+		display: flex;
+		flex-wrap: wrap;
+
+	}
 	.flickity-viewport {
 		height: auto;
 	}
@@ -1709,7 +1750,10 @@ footer iframe {
 		width: 200px;
 
 	}
-
+	.amenities_section {
+		margin: 2px 0!important;
+		padding: 5px!important;
+	}
 	.custom-btn1 {
 		width: 200px;
 
@@ -2300,142 +2344,12 @@ footer iframe {
 		margin-left: 7%;
 		margin-right: 7%;	
 	}
+	.textsss p{
+	padding-left: 10%;
+	padding-right: 0px;
 }
-<<<<<<< HEAD
-<<<<<<< HEAD
-}
-
-=======
-=======
->>>>>>> parent of 35c7802 (34234234)
-/*LOGIN MODAL*/
-/*
-.login_container{
-	background: linear-gradient(29deg, rgba(8,93,64,1) 0%, rgba(0,76,77,1) 47%, rgba(8,93,64,1) 100%);
-	height: 100vh;
-	width: 100vw;
-	justify-content: center;
-	align-self: center;
-	display: flex;
-	align-items: center;
-
 }
 
-.modals-content {
-	background-color: transparent;
-	margin: 0;
-	justify-content: center;
-	width: auto;
-	display: flex;
-
-}
-
-.login-content {
-	flex-direction: row;
-
-	width: 100%;
-	justify-content: center;
-	display: flex;
-
-}
-.login_banner {
-	background: linear-gradient(29deg, rgba(229, 247, 1, 1) 0%, rgba(36, 208, 6, 1) 33%, rgba(8, 93, 64, 1) 100%);
-	width: 50%;
-	display: flex;
-	justify-content: center;
-
-}
-
-.login_banner h1 {
-	font-size: calc(50px + 1vw);
-	
-	font-family: 'Great Vibes';
-	color: white;
-}
-
-.modal-body h2 {
-	font-family: 'Vollkorn';
-	color: #085D40;
-	padding-top: 40px;
-}
-
-.right_side{
-	justify-content: center;
-	display: flex;
-	flex-direction: column;
-	width: 50%;
-	background-color: white;
-}
-.modal-body p a {
-	font-family: 'Vollkorn';
-	color: #085D40;
-}
-
-.login_input_field {
-	padding-left: 35px;
-	padding-right: 35px;
-}
-
-.login_input_field a {
-	font-family: 'Vollkorn';
-	align-items: flex-end;
-	color: #085D40;
-}
-
-.login_banner_2 img {
-	width: 50%;
-}
-
-.login_form .form_input {
-	display: inline-block;
-	width: 100%;
-}
-
-.login_input_field label {
-	font-family: 'Vollkorn';
-}
-
-.login_input_field input {
-	width: 100%;
-}
-.alert-red{
-	width: 100%;
-	height: 40px;
-	font-family: 'Vollkorn';
-	color: white;
-	background-color: var(--red);
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	z-index: -1;
-
-}
-.login_title{
-	height: 150px;
-}
-
-
-
-.login_button {
-	font-family: 'Vollkorn SC';
-	background: linear-gradient(29deg, rgba(229, 247, 1, 1) 0%, rgba(36, 208, 6, 1) 33%, rgba(8, 93, 64, 1) 100%);
-	border: none;
-	width: 100%;
-	border-radius: 5px;
-	padding: 7px;
-}
-.loginsuccess{
-	width: 100vw;
-	height: 100vh;
-	background: #27ae60;
-	color: white;
-	font-family: 'Vollkorn';
-	display: flex;
-	position: absolute;
-	font-size: 20px;
-
-}*/
->>>>>>> parent of 35c7802 (34234234)
 .resend_btn:hover {
 	color: #22BF4F;
 }
@@ -2702,17 +2616,9 @@ div.swall-button-container {
 
 }
 
-
-
-
-
-
-
-
-
 .Top {
 	width: 100%;
-	height: 65vh;
+	height: 50vh;
 }
 
 .TopAmenity {
@@ -2721,7 +2627,7 @@ div.swall-button-container {
 	-webkit-background-size: cover;
 	background-size: cover;
 	width: 100%;
-	height: 65vh;
+	height: 50vh;
 }
 
 .TopContact {
@@ -2731,7 +2637,7 @@ div.swall-button-container {
 	background-size: cover;
 	background-position: bottom;
 	width: 100%;
-	height: 65vh;
+	height: 50vh;
 }
 
 .TopFinder {
@@ -2741,7 +2647,7 @@ div.swall-button-container {
 	background-size: cover;
 	background-position: bottom;
 	width: 100%;
-	height: 65vh;
+	height: 50vh;
 }
 
 .TopAbout {
@@ -2749,16 +2655,34 @@ div.swall-button-container {
 	background: no-repeat scroll center scroll;
 	-webkit-background-size: cover;
 	background-size: cover;
-	background-position: center;
+	background-position: bottom;
 	width: 100%;
-	height: 65vh;
+	height: 50vh;
 }
 
 .Topbanner {
-	padding-top: 25vh;
+	padding-top: 20vh;
 }
-
-.Topbanner h5 {
+.AboutLagunaHills p{
+	text-align: justify;
+}
+.AboutHomeowners{
+	flex-direction: row;
+	display: flex;
+	flex-wrap: wrap;}
+@media (min-width:1200px) {
+	.AboutHomeowners{
+		padding-left: 5%;
+		padding-right: 5%;
+	}
+}
+@media (min-width:1500px) {
+	.AboutHomeowners{
+		padding-left: 10%;
+		padding-right: 10%;
+	}
+}
+.Topbanner h4 {
 	color: white;
 	font-family: 'Vollkorn SC';
 	font-size: 30px;
@@ -2769,7 +2693,7 @@ div.swall-button-container {
 
 }
 
-.Topbanner h1 {
+.Topbanner h2 {
 	color: white;
 	font-family: 'Great Vibes';
 	font-size: 80px;
@@ -2799,7 +2723,15 @@ div.swall-button-container {
 	display: flex;
 	flex-shrink: 1;
 }
+.textsss{
+	text-align: justify;
+	padding-left: 30px;
+	padding-right: 30px;
+	align-items: center;
+}.textsss p{
 
+	align-items: center;
+}
 .pan1 {
 	width: 100%;
 	display: flex;
@@ -2813,7 +2745,6 @@ div.swall-button-container {
 	flex-wrap: wrap;
 	flex-grow: 1;
 	min-width: 45vw;
-	min-height: 65vh;
 	justify-content: space-between;
 	align-content: center;
 }
@@ -3006,7 +2937,6 @@ div.swall-button-container {
 		display: flex;
 		flex-wrap: wrap;
 	}
-
 	.amenityparts {
 		flex: 0 0 calc(50%-20px);
 		margin: 10px;
@@ -3190,6 +3120,12 @@ p {
 
 /*END CONTACT PAGE*/
 @media (max-width:600px) {
+	.textsss{
+		padding-top: 30px;
+		text-align: justify;
+		padding-left: 5px;
+		padding-right: 5px;
+	}
 	#my-svg {
 		margin-left: 0%!important;
 		margin-right: -100%;
@@ -3443,36 +3379,8 @@ img.img-homeowners {
 	max-width: 100%;
 	height: auto;
 	transition: transform .3s;
-}
 
-img.img-homeowners:hover {
-	transform: scale(1.1);
 }
-/*
-.iconbig {
-	transition: all 0.1s ease-in-out;
-}
-
-.iconbig:hover {
-	transform: translateY(-10px);
-}
-
-.iconbigs {
-	transition: all 0.1s ease-in-out;
-}*/
-/*
-.iconbigs:hover {
-	transform: translateY(-10px);
-}
-
-.EEM_Icons i {
-	transition: all 0.1s ease-in-out;
-}
-
-.EEM_Icons i:hover {
-	transform: translateY(-10px);
-}
-*/
 
 /*********** Scrollbar  **************/
 ::-webkit-scrollbar {
@@ -3495,3 +3403,116 @@ img.img-homeowners:hover {
 	border-radius: 5px;
 	/* rounded corners of the track */
 }
+.vid-container{
+width: 100%;
+}
+.laguna-hills-video{
+	margin-left: 10%;
+	margin-right: 10%;
+	display: flex;
+	justify-content: center;
+}
+video{
+	width: 100%;
+}
+@media(max-width:800px){
+	.laguna-hills-video{
+		margin-left: 0%!important;
+		margin-right: 0%!important;
+		display: flex;
+		justify-content: center;
+	}
+	.vid-container{
+		width: 100%;
+		padding: 0%!important;
+		}
+}
+.EEM_Icons i {
+	transition: all 0.1s ease-in-out;
+  }
+  
+  .EEM_Icons i:hover {
+	transform: translateY(-10px);
+  }
+  .iconbig {
+	transition: all 0.1s ease-in-out;
+  }
+  
+  
+  @media (min-width: 1200px) {
+	.EnjoyEveryMoment{
+		padding-left: 10%!important;
+		padding-right: 10%!important;
+  }
+ 
+  }
+  @media (min-width: 1400px) {
+	.amenities_section{
+		padding-left: 10%;
+		padding-right: 10%;
+	}
+	.EnjoyEveryMoment{
+		padding-left: 15%!important;
+		padding-right: 15%!important;
+  }
+  .panelss{
+	display: block;
+
+  }
+  .ame_information{
+	min-width: 45%;
+  }
+  .pan1 {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+
+}
+.Ame1_2,
+.Ame1_2:hover,
+.Ame2_2,
+.Ame2_2:hover,
+.Ame3_2,
+.Ame3_2:hover,
+.Ame4_2,
+.Ame4_2:hover {
+	height: 250px;
+	width: 17.5vw;
+	margin: 0.3vw;
+}
+
+.Ame1_2:hover a,
+.Ame2_2:hover a,
+.Ame3_2:hover a,
+.Ame4_2:hover a {
+	font-size: 35px;
+}
+
+.ame_panel2 {
+	width: 100%;
+	margin-left: 0px;
+}
+
+.Ame1_2:hover a,
+.Ame2_2:hover a,
+.Ame3_2:hover a,
+.Ame4_2:hover a {
+	font-size: 38px;
+}
+
+/*AMENITIES*/
+/*AMENITIES*/
+.ame_panel2 {
+	max-width: 410px;
+	height: auto;
+	margin-left: 20px;
+	top: 0;
+	bottom: 0;
+	z-index: 1;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-content: space-between;
+}
+  }
+  

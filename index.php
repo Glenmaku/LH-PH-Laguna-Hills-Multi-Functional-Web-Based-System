@@ -1,6 +1,4 @@
 <?php include "header.php"; ?>
-<<<<<<< HEAD
-<<<<<<< HEAD
 
 <div id="contents" class="HomeContents">
 
@@ -49,15 +47,5 @@
   navElement.classList.add("active");
 }
  </script>
-=======
-<div id="contents" class="HomeContents">
-
-</div>
->>>>>>> parent of 35c7802 (34234234)
-=======
-<div id="contents" class="HomeContents">
-
-</div>
->>>>>>> parent of 35c7802 (34234234)
 <?php include "footer.php"; ?>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+

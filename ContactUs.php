@@ -13,20 +13,20 @@
 <!--UPPER BANNER-->
 <div class=" Top TopContact Topbanner container-fluid">
     <div class="text-center container-fluid">
-        <h5>#Reach&Connect</h5>
-        <h1>Contact Us</h1>
+        <h4 class="display-4">#Reach&Connect</h4>
+        <h2 class="display-2">Contact Us</h2>
     </div>
 </div>
 <!--END-UPPER BANNER-->
 
 
 <!-- GREEN CONTACT FORM-->
-<div class=" text-white justify-content-between contactarea">
+<div class=" text-white justify-content-between contactarea max-sizing">
     <div class="d-inline section7 forms">
         <h2>Got a question?</h2>
         <h1>Reaching us</h1>
         <h2>has never been easier</h2>
-        <p class="text-white">Send us a message and we'll get right back to you.<br> You can also reach us through:
+        <p class="text-white lead">Send us a message and we'll get right back to you.<br> You can also reach us through:
         </p>
         <ul class="list-unstyled section1">
             <li class="">
@@ -50,7 +50,7 @@
 
 
     <form class="contactform1 d-inline align-content-center fortops forms needs-validation" id="cont">
-        <div class="form-floating mb-5 formss align-self-center">
+        <div class="form-floating mb-3 formss align-self-center">
             <input type="text" class="form-control" id="Fullnameinput" placeholder="Firstname Surname" name="Full_Name" required>
             <label for="Firstnameinput">Full Name</label>
 
@@ -58,28 +58,28 @@
           Please enter your name.
         </div>
         </div>
-        <div class="form-floating mb-5">
+        <div class="form-floating mb-3">
             <input type="email" class="form-control" id="Emailinput" placeholder="name@example.com" name="Email_Address" required>
             <label for="Emailinput">Email address</label>
             <div class="invalid-tooltip text-white">
           Please enter a valid email address.
         </div>
         </div>
-        <div class="form-floating mb-5">
+        <div class="form-floating mb-3">
             <input type="number" class="form-control" id="Numberinput" placeholder="XXXXXXXXXXX" name="Cellphone_Number" required>
             <label for="Numberinput">Cellphone Number</label>
             <div class="invalid-tooltip text-white">
           Please enter a valid number.
         </div>
         </div>
-        <div class="form-floating mb-5">
+        <div class="form-floating mb-3">
             <input type="text" class="form-control" id="Subjectinput" placeholder="Laguna Hills Inquiries" name="Subject" required>
             <label for="Subjectinput">Subject</label>
             <div class="invalid-tooltip text-white">
           Please add a subject.
         </div>
         </div>
-        <div class="form-floating mb-5">
+        <div class="form-floating mb-3">
             <textarea class="form-control" id="floatingTextarea2" placeholder="Your Message" style="height: 100px" name="Message"required ></textarea>
             <label for="floatingTextarea2">Message</label>
                <div class="invalid-tooltip text-white">
@@ -162,6 +162,7 @@ This Privacy Policy was last updated on February 12, 2023.<br>
     }
 
   </script>
+  
 <!-- END GREEN CONTACT FORM-->
 <!-- SCRIPTS -->
 <script type="text/javascript" src="Bootstrap/js/bootstrap.bundle.min.js"></script>

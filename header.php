@@ -1,3 +1,4 @@
+<?php require_once('includes/connection.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,39 +22,13 @@
     <link rel="icon" type="image/x-icon" href="Images/logo-icon.png">
 </head>
 
-<<<<<<< HEAD
 <body onload="Homenav()" id="top">
-=======
-
-<body onload="Homenav()">
-
-
-<<<<<<< HEAD
->>>>>>> parent of 35c7802 (34234234)
-=======
->>>>>>> parent of 35c7802 (34234234)
     <div class="pre-loading-home">
         <div class="spinner-border text-success" role="status">
             <span class="visually-hidden">Loading...</span>
         </div>
     </div>
 
-<<<<<<< HEAD
-=======
-    <script>
-        const spinnerWrapperEl = document.querySelector('.pre-loading-home');
-        window.addEventListener('load', () => {
-            spinnerWrapperEl.style.opacity = '0';
-            setTimeout(() => {
-                spinnerWrapperEl.style.display = 'none';
-            }, 100);
-        });
-    </script>
-
-<<<<<<< HEAD
->>>>>>> parent of 35c7802 (34234234)
-=======
->>>>>>> parent of 35c7802 (34234234)
     <div class="homepagenavigation">
         <!--Navigation Bar-->
         <nav class="navbar navbar-expand-lg fixed-top p-md-1">
@@ -70,40 +45,25 @@
                     <div class="mx-auto">
                         <ul class="navbar-nav me-auto mt-mb-2 mb-lg-0">
                             <li class="nav-item">
-                                <!--   <a href="index.php" class="nav-link nas">Home</a>-->
-                                <a href="#home" class="nav-link nas" onclick="setActiveLink(this); Homenav()">Home</a>
+                                <a href="#home" id="navhome" class="nav-link nas active" onclick="setActiveLink(this); Homenav()">Home</a>
                             </li>
 
                             <li class="nav-item">
-                                <!--   <a href="AboutUs.php" class="nav-link  nas">About Us</a>-->
-                                <a href="#AboutUs" class="nav-link  nas" onclick="setActiveLink(this);AboutUsnav()">About Us</a>
+                                <a href="#AboutUs" id="navaboutus" class="nav-link  nas" onclick="setActiveLink(this);AboutUsnav()">About Us</a>
                             </li>
 
                             <li class="nav-item">
-                                <!--   <a href="Amenities.php" class="nav-link nas">Amenities</a>-->
-                                <a href="#Amenities" class="nav-link nas" onclick="setActiveLink(this);Amenitiesnav()">Amenities</a>
+                                <a href="#Amenities" id="navamenities" class="nav-link nas" onclick="setActiveLink(this);Amenitiesnav()">Amenities</a>
                             </li>
 
                             <li class="nav-item">
-                                <!--<a href="PropertyFinder.php" class="nav-link nas" id="property-finder-page" onclick="availData('property-finder-page')">Property Finder</a>-->
                                 <a href="#PropertyFinder" class="nav-link nas" id="property-finder-page" onclick="setActiveLink(this);PropertyFindernav()">Property Finder</a>
                             </li>
                             <li class="nav-item">
-<<<<<<< HEAD
-<<<<<<< HEAD
                                 <a href="#ContactUs" id="navcontactus" class="nav-link nas" onclick="setActiveLink(this);ContactUsnav()">Contact Us</a>
-=======
-                                <!--   <a href="Amenities.php" class="nav-link nas">Amenities</a>-->
-                                <a href="#ContactUs" class="nav-link nas" onclick="setActiveLink(this);ContactUsnav()">Contact Us</a>
->>>>>>> parent of 35c7802 (34234234)
-=======
-                                <!--   <a href="Amenities.php" class="nav-link nas">Amenities</a>-->
-                                <a href="#ContactUs" class="nav-link nas" onclick="setActiveLink(this);ContactUsnav()">Contact Us</a>
->>>>>>> parent of 35c7802 (34234234)
                             </li>
                             <li class="nav-item">
                                 <a class="btn loginbutton nas no-border" data-bs-toggle="modal" data-bs-target="#Login">Login</a>
-                                <!--<a class="btn loginbutton nas no-border" onclick="login_function()">Login</a>-->
                             </li>
 
                         </ul>
@@ -112,23 +72,6 @@
             </div>
         </nav><!--END--Navigation Bar-->
     </div>
-<<<<<<< HEAD
-=======
-    <script>
-        function setActiveLink(element) {
-            var navLinks = document.querySelectorAll('.nav-link');
-            navLinks.forEach(function(link) {
-                link.classList.remove('active');
-                link.parentNode.classList.remove('active');
-            });
-            element.classList.add('active');
-            element.parentNode.classList.add('active');
-        }
-    </script>
-<<<<<<< HEAD
->>>>>>> parent of 35c7802 (34234234)
-=======
->>>>>>> parent of 35c7802 (34234234)
 
     <!-- LOGIN MODAL --><!--SHOW ON CLICK-->
     <div class="modal fade" id="Login" tabindex="-1" aria-labelledby="LoginLabel" aria-hidden="true">
