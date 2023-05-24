@@ -86,7 +86,7 @@
                     </div>
                     <div class="right_side forms  justify-content-center d-flex flex-column">
                         <div class="modal-header">
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="loginend()"></button>
                         </div>
                         <div class="modal-body d-flex flex-column">
                             <h2 class="text-center mb-3" class="modal-title">Login</h2>
@@ -110,7 +110,7 @@
 
                                     <input class="form-control" type="password" placeholder="*********" name="login_password" id="login_password">
                                     <i class=" toggle-iconsh bx bxs-show fs-2" id="toggle-icon" onclick="togglePassword()"></i>
-                                    <a class="d-flex justify-content-end mb-2 resend_btn" data-bs-toggle="modal" data-bs-target="#FORGOTMODAL" onclick="forgot_function()">Forgot
+                                    <a class="d-flex justify-content-end mb-2 resend_btn" data-bs-toggle="modal" data-bs-target="#FORGOTMODAL" onclick="forgotend()">Forgot
                                         Password?</a>
                                 </div>
                                 <div class=" login_button_area d-flex justify-content-center">
@@ -142,7 +142,7 @@
 
                 <div class="right_side ">
                     <div class="modal-header justify-content-center login_input_field ">
-                        <i class='bx bx-caret-left dark-green resend_btn d-inline'><a class="d-inline dark-green resend_btn"data-bs-toggle="modal" data-bs-target="#Login">Back to Login</a></i>
+                        <i class='bx bx-caret-left dark-green resend_btn d-inline'><a class="d-inline dark-green resend_btn"onclick="loginend()">Back to Login</a></i>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body pb-0 d-flex flex-column justify-content-center" id="modal-body-change">
@@ -209,6 +209,14 @@
     </div>
 
     <script>
+        function loginend(){
+    $("#FORGOTMODAL").modal("hide");
+    $("#Login").modal("show");
+}
+function forgotend(){
+    $("#FORGOTMODAL").modal("show");
+    $("#Login").modal("hide");
+}
         function setActiveLink(element) {
             var navLinks = document.querySelectorAll('.nav-link');
             navLinks.forEach(function(link) {
@@ -348,10 +356,7 @@
         }
 
         //FORGOT PASSWORD FUNCTION
-        function forgot_function() {
-            $("").modal("reset");
-        }
-
+  
         function sending_function() {
             var email = $("#forgot_emailusername").val();
             if (email == "") {

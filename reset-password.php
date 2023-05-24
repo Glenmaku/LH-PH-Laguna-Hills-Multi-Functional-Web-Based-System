@@ -220,7 +220,7 @@ function update_pass(){
 
                                     <input class="form-control" type="password" placeholder="*********" name="login_password" id="login_password">
                                     <i class=" toggle-iconsh bx bxs-show fs-2" id="toggle-icon" onclick="togglePassword()"></i>
-                                    <a class="d-flex justify-content-end mb-2 resend_btn" data-bs-toggle="modal" data-bs-target="#FORGOTMODAL">Forgot
+                                    <a class="d-flex justify-content-end mb-2 resend_btn" onclick="forgotend()">Forgot
                                         Password?</a>
                                 </div>
                                 <div class=" login_button_area d-flex justify-content-center">
@@ -252,8 +252,8 @@ function update_pass(){
 
                 <div class="right_side ">
                     <div class="modal-header justify-content-center login_input_field ">
-                        <i class='bx bx-caret-left dark-green resend_btn d-inline'><a class="d-inline dark-green resend_btn"data-bs-toggle="modal" data-bs-target="#Login">Back to Login</a></i>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <i class='bx bx-caret-left dark-green resend_btn d-inline'><a class="d-inline dark-green resend_btn" onclick="loginend()">Back to Login</a></i>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="loginend()"></button>
                     </div>
                     <div class="modal-body pb-0 d-flex flex-column justify-content-center" id="modal-body-change">
 
@@ -320,7 +320,14 @@ function update_pass(){
 <script>
 
         //LOGIN FUNCTION
-
+function loginend(){
+    $("#FORGOTMODAL").modal("hide");
+    $("Login").modal("show");
+}
+function forgotend(){
+    $("#FORGOTMODAL").modal("show");
+    $("Login").modal("hide");
+}
         function login_function() {
             $(document).on('click', '#Login_button', function() {
                 var emailusername = $('#login_emailusername').val();
