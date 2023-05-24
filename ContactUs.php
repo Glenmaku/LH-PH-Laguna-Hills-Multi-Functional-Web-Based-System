@@ -80,12 +80,12 @@
         </div>
         </div>
         <div class="form-floating mb-3">
-            <textarea class="form-control" id="floatingTextarea2" placeholder="Your Message" style="height: 100px" name="Message"required ></textarea>
-            <label for="floatingTextarea2">Message</label>
-               <div class="invalid-tooltip text-white">
-          Please enter your message.
-        </div>
-        </div>
+    <textarea class="form-control" id="Messages" placeholder="Your Message" style="height: 100px" name="Message" required></textarea>
+    <label for="Messages">Message</label>
+    <div class="invalid-tooltip text-white">
+      Please enter your message.
+    </div>
+  </div>
         <div class="form-check">
       <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
       <label class="form-check-label dark-green" for="invalidCheck">
