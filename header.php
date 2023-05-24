@@ -97,7 +97,6 @@
                            </div>-->
 
                             <form class="login_form">
-
                                 <div class="form_input ">
                                     <div class="login_input_field mb-4">
                                         <label for="Email" class="mb-2"></i>Email/Username</label>
@@ -111,20 +110,21 @@
 
                                     <input class="form-control" type="password" placeholder="*********" name="login_password" id="login_password">
                                     <i class=" toggle-iconsh bx bxs-show fs-2" id="toggle-icon" onclick="togglePassword()"></i>
-                                    <a class="d-flex justify-content-end mb-2 resend_btn" onclick="forgot_function()">Forgot
+                                    <a class="d-flex justify-content-end mb-2 resend_btn" data-bs-toggle="modal" data-bs-target="#FORGOTMODAL" onclick="forgot_function()">Forgot
                                         Password?</a>
                                 </div>
                                 <div class=" login_button_area d-flex justify-content-center">
 
-                                    <button class="btn-submit4 btn-submit-5" name="Login_button" id="Login_button" type="button" onclick="login_function();">
-                                        <div class="btn-submit-6" onclick="login_function();">
+                                    <button class="btn-submit4 btn-submit-5" name="Login_button" id="Login_button" type="button" onclick="login_function()">
+                                        <div class="btn-submit-6" onclick="login_function()">
                                             <p class='bx-fw bx bx-log-in'></p>
                                         </div>
-                                        <a class="text-white" onclick="login_function();">Log in</a>
+                                        <a class="text-white" onclick="login_function()">Log in</a>
                                     </button>
                                 </div>
                                 <p class="text-center" hidden> Don't have an account?<a href="Account-Request.php" class="text-center resend_btn">Click here</a></p>
-                                <p class="text-center mb-auto"> Homeowners can request an account via <a href="ContactUs.php" class="text-center dark-green resend_btn">Contact Us</a></p>
+                                <p class="text-center mb-auto"> Homeowners can request an account via <a href="#ContactUs" class="text-center dark-green resend_btn" onclick="activateNav('navcontactus');ContactUsnav();">Contact Us</a>
+                                </p>
                             </form>
                         </div>
                     </div>
@@ -142,7 +142,7 @@
 
                 <div class="right_side ">
                     <div class="modal-header justify-content-center login_input_field ">
-                        <i class='bx bx-caret-left dark-green resend_btn d-inline' onclick="login_function()"><a class="d-inline dark-green resend_btn">Back to Login</a></i>
+                        <i class='bx bx-caret-left dark-green resend_btn d-inline'><a class="d-inline dark-green resend_btn"data-bs-toggle="modal" data-bs-target="#Login">Back to Login</a></i>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body pb-0 d-flex flex-column justify-content-center" id="modal-body-change">
@@ -177,8 +177,8 @@
                         </form>
                         <div class="justify-content-center lh-1 border-0 p-0 pb-3">
                             <p class="text-center mb-auto" hidden> Don't have an account?<a href="Account-Request.php" class="text-center dark-green resend_btn">Click here</a></p>
-                            <p class="text-center mb-auto"> Homeowners can request an account via <a href="ContactUs.php" class="text-center dark-green resend_btn">Contact Us</a></p>
-                            <p class="text-center mb-auto"> If you encountered a problem, please <a href="ContactUs.php" class="text-center  dark-green resend_btn">Contact Us</a></p>
+                            <p class="text-center mb-auto"> Homeowners can request an account via <a href="#ContactUs" class="text-center dark-green resend_btn" onclick="activateNav('navcontactus');ContactUsnav();">Contact Us</a></p>
+                            <p class="text-center mb-auto"> If you encountered a problem, please <a href="#ContactUs" class="text-center dark-green resend_btn" onclick="activateNav('navcontactus');ContactUsnav();">Contact Us</a></p>
                         </div>
                     </div>
                 </div>
@@ -323,13 +323,13 @@
                         $('form').trigger('reset');
                     }
                 })
+                $('form').trigger('reset');
             })
-            $('#Login').modal("show");
+
             $(document).on('click', '#btn_close', function() {
                 $('form').trigger('reset');
                 $('#message').html('');
             })
-            $('#FORGOTMODAL').modal("hide");
         }
 
         function togglePassword() {
@@ -349,8 +349,7 @@
 
         //FORGOT PASSWORD FUNCTION
         function forgot_function() {
-            $('#FORGOTMODAL').modal("show");
-            $('#Login').modal("hide");
+            $("").modal("reset");
         }
 
         function sending_function() {
@@ -422,8 +421,6 @@
             if (vercode == "" || veremail == "") {
                 $("#forgot_errors").html("Please enter the code").addClass("error");
             } else {
-
-
                 $.ajax({
                     type: "POST",
                     url: "includes/Act-verify.php",
