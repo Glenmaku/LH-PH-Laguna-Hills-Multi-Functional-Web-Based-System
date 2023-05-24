@@ -21,7 +21,7 @@
                   // require('../send_email/functions.php');
                   require('phpmailer/all_functions.php');
                   $conn = dbConnection();
-                  $fetch_users_sql = "SELECT * FROM dummyowner_accounts";
+                  $fetch_users_sql = "SELECT * FROM owner_accounts";
                   $fetch_result = mysqli_query($conn, $fetch_users_sql);
                   while ($user = mysqli_fetch_assoc($fetch_result)) { ?>
                      <div class="user-details-container">
