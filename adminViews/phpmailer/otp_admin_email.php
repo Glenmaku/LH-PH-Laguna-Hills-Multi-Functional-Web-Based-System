@@ -8,17 +8,21 @@ require_once 'class.smtp.php';
 require_once 'class.phpmailer.php';
 
 
-// function dbConnection() {
-//     $conn = mysqli_connect('localhost', 'root', '', 'lhph');
+//     $subject = "Password Reset Code";
+      //     $message = "Your password reset code is $gen_code";
+      //     $sender = "From: guyrx90@gmail.com";
+      //     if(mail($email, $subject, $message, $sender)){
+      //       echo "A one time password was sent to your email";
+      //     }
+      //      else{
+      //          echo "An error occured while sending the email.";
+      //          }
+      //   }
+      //  else{
+      //     echo "An error occured while generating the code";
+      //      }
 
-//     if (mysqli_errno($conn) > 0) {
-//         die('hey! you just killed the connection to the database');
-//     }
-//     return $conn;
-// }
-
-function UEmail($acquired_email, $gen_code ){
-
+function Ad_email($email, $adgen_code){
 
 //Instantiation and passing `true` enables exceptions
 $mail = new PHPMailer(true);
@@ -37,7 +41,7 @@ try {
     //Recipients
     $mail->setFrom('emailAddress@gmail.com', 'OTP LHPH Emailer');
 
-    $mail->addAddress($acquired_email,);     //Add a recipient
+    $mail->addAddress($email,);     //Add a recipient
     // $mail->addAddress('ellen@example.com');  //Name is optional
     // $mail->addReplyTo('info@example.com', 'Information');
     // $mail->addCC('cc@example.com');
@@ -49,7 +53,7 @@ try {
 
     //Content   //Set email format to HTML
     $mail->Subject = "Password Reset Code";
-    $mail->Body = "Your password reset code is $gen_code";
+    $mail->Body = "Your OTP code is $adgen_code";
     // $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
     $mail->send();
     echo 'A one time password was sent to your email';
