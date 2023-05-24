@@ -97,20 +97,22 @@
   }
 
   .property-panel #finder-panel h3 {
-    font-family: 'Raleway', sans-serif;
-    font-weight: 700;
-    color: var(--darkgreen);
-    text-align: center;
+
+	font-family: 'Vollkorn SC';
+	font-size: larger;
+	font-weight: bolder;
+  font-weight: 700;
+  color: var(--darkgreen);
+  text-align: center;
   }
 
   .property-panel #finder-panel span,
   .property-panel #finder-panel input {
     color: var(--darkgreen);
     font-weight: 700;
-    font-family: 'Raleway', sans-serif;
     margin-bottom: 10px;
     background-color: white;
-
+    font-family: 'Vollkorn';
   }
 
   .control-map button {
@@ -123,11 +125,43 @@
     color: white;
     text-decoration: none;
   }
-
+.inquirebtn{
+  font-family: 'Vollkorn';
+  font-size: larger;
+	font-weight: bolder;
+  font-weight: 700;
+}
+.status-prop h5{
+  font-family: 'Vollkorn';
+}
+.status-prop .form-check .form-check-label{
+  font-family: 'Vollkorn';
+}
   @media only screen and (max-width: 767px) {
     .property-panel {
       grid-template-columns: 1fr;
     }
+  }
+  @media (max-width:600px){
+    .property-map-map{
+      padding: 0!important;
+    }
+    .property-panel{
+      margin: 5px!important;
+      width: 100%;
+    }
+    .property-panel .finder{
+      width: auto!important;
+      margin-right: 0!important;
+
+    }
+    .map-pfinder {
+    width: 100vw!important;
+    height: auto!important;
+}
+.control-map{
+  margin-top: 5px;
+}
   }
 </style>
 

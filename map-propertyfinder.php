@@ -4881,7 +4881,7 @@
 
 		</div>
 		<div class="property-panel">
-			<div class="finder" id="finder-panel">
+			<div class="finder bg-light" id="finder-panel">
 				<h3>LOT INFORMATION</h3>
 				<div class="input-group">
 					<span class="input-group-text">Block</span>
@@ -4902,7 +4902,7 @@
 					<input type="text" id="finder-area-per-sqm" class="form-control" disabled>
 				</div>
 				<div class="d-grid gap-2">
-					<button class="btn btn-success text-white" id="inqure-btn" type="button"><i class="fa-solid fa-circle-question"></i><a href="ContactUs.php"> INQUIRE NOW!!</a></button>
+					<button class="btn btn-success text-white inquirebtn" id="inqure-btn" type="button"><i class="fa-solid fa-circle-question"></i><a href="ContactUs.php" class="lead"> INQUIRE NOW!!</a></button>
 					<button class="trigger" id="trigger-prop" value="trigger-prop" hidden></button>
 					<div class="status-prop">
 						<h5>STATUS</h5>

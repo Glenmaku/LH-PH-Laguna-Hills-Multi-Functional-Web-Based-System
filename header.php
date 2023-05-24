@@ -21,16 +21,25 @@
     <link rel="icon" type="image/x-icon" href="Images/logo-icon.png">
 </head>
 
+<<<<<<< HEAD
+<body onload="Homenav()" id="top">
+=======
 
 <body onload="Homenav()">
 
 
+<<<<<<< HEAD
+>>>>>>> parent of 35c7802 (34234234)
+=======
+>>>>>>> parent of 35c7802 (34234234)
     <div class="pre-loading-home">
         <div class="spinner-border text-success" role="status">
             <span class="visually-hidden">Loading...</span>
         </div>
     </div>
 
+<<<<<<< HEAD
+=======
     <script>
         const spinnerWrapperEl = document.querySelector('.pre-loading-home');
         window.addEventListener('load', () => {
@@ -41,6 +50,10 @@
         });
     </script>
 
+<<<<<<< HEAD
+>>>>>>> parent of 35c7802 (34234234)
+=======
+>>>>>>> parent of 35c7802 (34234234)
     <div class="homepagenavigation">
         <!--Navigation Bar-->
         <nav class="navbar navbar-expand-lg fixed-top p-md-1">
@@ -76,8 +89,17 @@
                                 <a href="#PropertyFinder" class="nav-link nas" id="property-finder-page" onclick="setActiveLink(this);PropertyFindernav()">Property Finder</a>
                             </li>
                             <li class="nav-item">
+<<<<<<< HEAD
+<<<<<<< HEAD
+                                <a href="#ContactUs" id="navcontactus" class="nav-link nas" onclick="setActiveLink(this);ContactUsnav()">Contact Us</a>
+=======
                                 <!--   <a href="Amenities.php" class="nav-link nas">Amenities</a>-->
                                 <a href="#ContactUs" class="nav-link nas" onclick="setActiveLink(this);ContactUsnav()">Contact Us</a>
+>>>>>>> parent of 35c7802 (34234234)
+=======
+                                <!--   <a href="Amenities.php" class="nav-link nas">Amenities</a>-->
+                                <a href="#ContactUs" class="nav-link nas" onclick="setActiveLink(this);ContactUsnav()">Contact Us</a>
+>>>>>>> parent of 35c7802 (34234234)
                             </li>
                             <li class="nav-item">
                                 <a class="btn loginbutton nas no-border" data-bs-toggle="modal" data-bs-target="#Login">Login</a>
@@ -90,6 +112,8 @@
             </div>
         </nav><!--END--Navigation Bar-->
     </div>
+<<<<<<< HEAD
+=======
     <script>
         function setActiveLink(element) {
             var navLinks = document.querySelectorAll('.nav-link');
@@ -101,6 +125,10 @@
             element.parentNode.classList.add('active');
         }
     </script>
+<<<<<<< HEAD
+>>>>>>> parent of 35c7802 (34234234)
+=======
+>>>>>>> parent of 35c7802 (34234234)
 
     <!-- LOGIN MODAL --><!--SHOW ON CLICK-->
     <div class="modal fade" id="Login" tabindex="-1" aria-labelledby="LoginLabel" aria-hidden="true">
@@ -236,7 +264,36 @@
             </div>
         </div>
     </div>
-    <!--/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+
+    <script>
+        function setActiveLink(element) {
+            var navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(function(link) {
+                link.classList.remove('active');
+                link.parentNode.classList.remove('active');
+            });
+
+            element.classList.add('active');
+            element.parentNode.classList.add('active');
+        }
+
+        function setButtonActiveLink(buttonId) {
+            var navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(function(link) {
+                link.classList.remove('active');
+                link.parentNode.classList.remove('active');
+            });
+
+            var buttonElement = document.getElementById(buttonId);
+            var correspondingNavLink = document.querySelector('a[href="#' + buttonId + '"]');
+
+            if (buttonElement && correspondingNavLink) {
+                buttonElement.classList.add('active');
+                correspondingNavLink.classList.add('active');
+                correspondingNavLink.parentNode.classList.add('active');
+            }
+        }
+    </script>
     <script>
         function Homenav() { //
             $.ajax({
@@ -321,15 +378,6 @@
                         $('#login-message').html(data);
                         $('#Login').modal("show");
                         $('form').trigger('reset');
-                        // var loginMessage = document.getElementById("login-message");
-                        // if (data === "Invalid Password"||"Please fill in the blanks"||"User not found") {
-                        // loginMessage.classList.add("error");
-                        //   document.getElementById("reset-error").classList.add("alert-danger");
-                        //    document.getElementById("reset-error").classList.remove("alert-success");
-                        //    }
-                        //       else{
-                        //loginMessage.classList.remove("error");
-                        //   }
                     }
                 })
             })

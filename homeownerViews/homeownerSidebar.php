@@ -19,12 +19,12 @@
                     <span>Map</span>
                 </a>
             </li>
-            <li>
+            <!-- <li>
                 <a href="#message" onclick="showMessage()" class="ps-4">
                     <i class="fa-solid fa-envelope"></i>
                     <span class="link-name">Messages</span>
                 </a>
-            </li>
+            </li> -->
             <li>
                 <a href="#transaction" onclick="showHomeTrans()" class="ps-4">
                     <i class="fa-solid fa-calculator"></i>

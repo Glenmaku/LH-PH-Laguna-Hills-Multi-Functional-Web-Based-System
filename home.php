@@ -28,8 +28,18 @@
     <h1 class="TextFont display-1">Laguna Hills Subdivision</h1>
     <h5 class="display-4">#AboveEverythingElse</h5>
     <div>
+<<<<<<< HEAD
+<<<<<<< HEAD
+      <button type="button" class="custom-btn1 btn-1"><a href="#AboutUs" class="lead nas " onclick="activateNav('navaboutus');AboutUsnav();">Read More</a></button>
+      <button class="custom-btn1 btn-1 "><a href="#ContactUs" class=" lead nas" onclick="activateNav('navcontactus');ContactUsnav();">Contact Us</a></button>
+=======
       <button type="button" class="custom-btn1 btn-1"><a href="#AboutUs" class="lead nav-link  nas " onclick="setActiveLink(this);AboutUsnav()">Read More</a></button>
       <button class="custom-btn1 btn-1 "><a href="#ContactUs" class=" lead nav-link nas" onclick="setActiveLink(this);ContactUsnav()">Contact Us</a></button>
+>>>>>>> parent of 35c7802 (34234234)
+=======
+      <button type="button" class="custom-btn1 btn-1"><a href="#AboutUs" class="lead nav-link  nas " onclick="setActiveLink(this);AboutUsnav()">Read More</a></button>
+      <button class="custom-btn1 btn-1 "><a href="#ContactUs" class=" lead nav-link nas" onclick="setActiveLink(this);ContactUsnav()">Contact Us</a></button>
+>>>>>>> parent of 35c7802 (34234234)
     </div>
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselMain" data-bs-slide="prev">
@@ -63,7 +73,7 @@
       Laguna,
       Philippines</p>
     <br>
-    <a href="#AboutUs" class="  nas" onclick="setActiveLink(this);AboutUsnav()"><button class="custom-btn btn-4 revealing lead">Read More</button></a>
+    <a href="#AboutUs" class="  nas" onclick="activateNav('navaboutus');AboutUsnav()"><button class="custom-btn btn-4 revealing lead">Read More</button></a>
     <br><br>
   </div>
   </section>
@@ -101,7 +111,7 @@
         </div>
       </div>
     </div>
-    <a href="#Amenities" class=" nas" onclick="setActiveLink(this);Amenitiesnav()"><button class="custom-btn btn-5 revealing lead" >Visit Amenities</button> </a>
+    <a href="#Amenities" class=" nas" onclick="activateNav('navamenities');Amenitiesnav()"><button class="custom-btn btn-5 revealing lead" >Visit Amenities</button> </a>
   </section>
   <!--END- ENJOY GREAT AMENITIES-->
   <!--HIGHLIGHTS-->
@@ -225,7 +235,7 @@
   </div>
  
 
-  <a href="#PropertyFinder" class="nas" id="property-finder-page" onclick="setActiveLink(this);PropertyFindernav()"><button class="custom-btn btn-4 revealing lead">View Properties</button></a>
+  <a href="#PropertyFinder" class="nas" id="property-finder-page" onclick="activateNav('property-finder-page');PropertyFindernav()"><button class="custom-btn btn-4 revealing lead">View Properties</button></a>
 </section>
 <!--END--PROPERTY FINDER-->
 <!--FEEDBACKS-->
