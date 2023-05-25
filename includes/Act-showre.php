@@ -8,7 +8,7 @@
     
     require('../adminViews/phpmailer/otp_resend_admin_usernamephp');
     require('../adminViews/phpmailer/otp_resend_admin_email.php');
-    
+    require('../adminViews/phpmailer/');
 
 //OWNER EMAIL ENTRY
     $check_email = "SELECT * FROM owner_accounts WHERE owner_email='$email'";

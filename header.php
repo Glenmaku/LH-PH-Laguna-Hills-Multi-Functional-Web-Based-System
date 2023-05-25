@@ -394,31 +394,32 @@ function forgotend(){
         }
 
         function resend_function() {
-            var email = $("#forgot_emailusername").val();
-            if (email == "") {
-                $("#forgot_errors").html("Email field is required").addClass("error");
-            } else {
-                $.ajax({
-                    type: "POST",
-                    url: "includes/Act-showre.php",
-                    data: {
-                        email: email
-                    }.done(function(response) {
-                        $('#forgot_errors').html(response);
-                        var forgotError = document.getElementById("forgot_errors");
-                        if (response === "A one time password was sent to your email") {
-                            forgotError.classList.remove("error");
-                            forgotError.classList.add("success");
-                        } else if (response === "An error occured while generating the code" || "An error occured while generating the code" || "The email or userame you entered does not exists in our record") {
-                            forgotError.classList.remove("success");
-                            forgotError.classList.add("error");
-                        } else {
-                            $("#forgot_errors").html("We encountered a problem try again later").addClass("error");
-                        }
-                    })
-                });
+    var email = $("#forgot_emailusername").val();
+    if (email == "") {
+        $("#forgot_errors").html("Email field is required").addClass("error");
+    } else {
+        $.ajax({
+            type: "POST",
+            url: "includes/Act-showre.php",
+            data: {
+                email: email
             }
-        }
+        }).done(function(response) {
+            $('#forgot_errors').html(response);
+            var forgotError = document.getElementById("forgot_errors");
+            if (response === "A one time password was sent to your email") {
+                forgotError.classList.remove("error");
+                forgotError.classList.add("success");
+            } else if (response === "An error occurred while generating the code" || response === "The email or username you entered does not exist in our records") {
+                forgotError.classList.remove("success");
+                forgotError.classList.add("error");
+            } else {
+                $("#forgot_errors").html("We encountered a problem. Please try again later").addClass("error");
+            }
+        });
+    }
+}
+
 
         function verify_function() {
             var veremail = $("#forgot_emailusername").val();
