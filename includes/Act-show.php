@@ -35,7 +35,7 @@
       //SENDING OTP TO THE USERNAME.... 
       $run_query =  mysqli_query($con, $insert_code);
       if($run_query){
-        Ow_user($acquired_email, $gen_code);
+        Ow_user($acquired_email['owner_email'], $gen_code);
 
         // $subject = "Password Reset Code";  ['owner_email']
         // $message = "Your password reset code is $gen_code";
@@ -125,13 +125,15 @@
 
       if($adrun_query){
 
-        Ad_username($adacquired_email, $adgen_code);
+        Ad_username($adacquired_email['admin_email'], $adgen_code);
                       }
       else{
           echo "An error occured while generating the code";
                     
                     
                     }
+                  
+    }
     //     $adsubject = "Password Reset Code";
     //     $admessage = "Your password reset code is $adgen_code";
     //     $adsender = "From: guyrx90@gmail.com";
@@ -144,7 +146,7 @@
       
     //  else{
     //     echo "An error occured while generating the code";
-      }   
+         
 
     // if(mysqli_num_rows($usernameresult)>0){
     //   $get_email = "SELECT owner_email FROM owner_accounts WHERE owner_username='$email'";
