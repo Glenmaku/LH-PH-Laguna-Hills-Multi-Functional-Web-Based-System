@@ -17,7 +17,7 @@ require_once 'class.phpmailer.php';
 //     return $conn;
 // }
 
-function EEmail($email, $gen_code ){
+function Resend_owner_email($email, $gen_code ){
 
 
 //Instantiation and passing `true` enables exceptions

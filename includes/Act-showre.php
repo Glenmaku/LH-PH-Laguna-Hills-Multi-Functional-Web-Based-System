@@ -1,11 +1,14 @@
 <?php
     $email = $_POST['email'];
     //connect to database
-    require('../adminViews/phpmailer/otp_functions1.php');
-    require('../adminViews/phpmailer/otp_functions2.php');
-    require('../adminViews/phpmailer/ad_otp_functions1.php');
-    require('../adminViews/phpmailer/ad_otp_functions2.php');
     include_once('connection.php');
+    
+    require('../adminViews/phpmailer/otp_resend_owner_username.php');
+    require('../adminViews/phpmailer/otp_resend_owner_email.php');
+    
+    require('../adminViews/phpmailer/otp_resend_admin_usernamephp');
+    require('../adminViews/phpmailer/otp_resend_admin_email.php');
+    
 
 //OWNER EMAIL ENTRY
     $check_email = "SELECT * FROM owner_accounts WHERE owner_email='$email'";
@@ -33,7 +36,7 @@
       $run_query =  mysqli_query($con, $insert_code);
 
       if($run_query){
-        UEmail($acquired_email['owner_email'], $gen_code);
+        Resend_owner_username($acquired_email['owner_email'], $gen_code);
 
       //   $subject = "Password Reset Code"; 
       //   $message = "Your password reset code is $gen_code";
@@ -57,7 +60,7 @@
         $run_query =  mysqli_query($con, $insert_code);
         if($run_query){
 
-          EEmail($email, $gen_code);
+        Resend_owner_email($email, $gen_code);
 
           // $subject = "Password Reset Code";
           // $message = "Your password reset code is $gen_code";
@@ -86,7 +89,7 @@
     
       $adrun_query =  mysqli_query($con, $adinsert_code);
       if($adrun_query){
-        ad_email2($adacquired_email['admin_email'], $gen_code);
+        Resend_admin_username($adacquired_email['admin_email'], $gen_code);
 
         // $adsubject = "Password Reset Code";
         // $admessage = "Your password reset code is $adgen_code";
@@ -109,7 +112,7 @@
         $adinsert_code = "UPDATE admin_accounts SET code = '$adgen_code' WHERE admin_email = '$email'";
         $adrun_query =  mysqli_query($con, $adinsert_code);
         if($adrun_query){
-          ad_email2($email, $gen_code);
+            Resend_admin_email($email, $gen_code);
           // $adsubject = "Password Reset Code";
           // $admessage = "Your password reset code is $adgen_code";
           // $adsender = "From: guyrx90@gmail.com";
