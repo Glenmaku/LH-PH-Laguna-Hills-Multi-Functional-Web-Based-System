@@ -1,5 +1,4 @@
 <?php include "header.php"; ?>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
 <div id="contents" class="HomeContents">
 
 </div>

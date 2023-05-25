@@ -110,7 +110,8 @@
 
                                     <input class="form-control" type="password" placeholder="*********" name="login_password" id="login_password">
                                     <i class=" toggle-iconsh bx bxs-show fs-2" id="toggle-icon" onclick="togglePassword()"></i>
-                                    <a class="d-flex justify-content-end mb-2 resend_btn" data-bs-toggle="modal" data-bs-target="#FORGOTMODAL" onclick="forgotend()">Forgot
+
+                                    <a class="d-flex justify-content-end mb-2 resend_btn" id="forgotpass" data-bs-toggle="modal" data-bs-target="#FORGOTMODAL" onclick="forgotend()">Forgot
                                         Password?</a>
                                 </div>
                                 <div class=" login_button_area d-flex justify-content-center">
@@ -393,31 +394,31 @@ function forgotend(){
             }
         }
 
-        function resend_function() {
+    function resend_function() {
     var email = $("#forgot_emailusername").val();
     if (email == "") {
-        $("#forgot_errors").html("Email field is required").addClass("error");
-    } else {
-        $.ajax({
-            type: "POST",
-            url: "includes/Act-showre.php",
-            data: {
-                email: email
-            }
-        }).done(function(response) {
-            $('#forgot_errors').html(response);
-            var forgotError = document.getElementById("forgot_errors");
-            if (response === "A one time password was sent to your email") {
-                forgotError.classList.remove("error");
-                forgotError.classList.add("success");
-            } else if (response === "An error occurred while generating the code" || response === "The email or username you entered does not exist in our records") {
-                forgotError.classList.remove("success");
-                forgotError.classList.add("error");
-            } else {
-                $("#forgot_errors").html("We encountered a problem. Please try again later").addClass("error");
-            }
-        });
-    }
+    $("#forgot_errors").html("Email field is required").addClass("error");
+} else {
+    $.ajax({
+        type: "POST",
+        url: "includes/Act-showre.php",
+        data: {
+            email: email
+        }
+    }).done(function(response) {
+        $('#forgot_errors').html(response);
+        var forgotError = document.getElementById("forgot_errors");
+        if (response === "A one time password was sent to your email") {
+            forgotError.classList.remove("error");
+            forgotError.classList.add("success");
+        } else if (response === "An error occurred while generating the code" || response === "The email or username you entered does not exist in our records") {
+            forgotError.classList.remove("success");
+            forgotError.classList.add("error");
+        } else {
+            $("#forgot_errors").html("We encountered a problem. Please try again later '" + response + "'").addClass("error");
+        }
+    });
+}
 }
 
 

@@ -6,9 +6,8 @@
     require('../adminViews/phpmailer/otp_resend_owner_username.php');
     require('../adminViews/phpmailer/otp_resend_owner_email.php');
     
-    require('../adminViews/phpmailer/otp_resend_admin_usernamephp');
+    require('../adminViews/phpmailer/otp_resend_admin_username.php');
     require('../adminViews/phpmailer/otp_resend_admin_email.php');
-    require('../adminViews/phpmailer/');
 
 //OWNER EMAIL ENTRY
     $check_email = "SELECT * FROM owner_accounts WHERE owner_email='$email'";
@@ -112,7 +111,7 @@
         $adinsert_code = "UPDATE admin_accounts SET code = '$adgen_code' WHERE admin_email = '$email'";
         $adrun_query =  mysqli_query($con, $adinsert_code);
         if($adrun_query){
-            Resend_admin_email($email, $gen_code);
+            Resend_admin_email($email, $adgen_code);
           // $adsubject = "Password Reset Code";
           // $admessage = "Your password reset code is $adgen_code";
           // $adsender = "From: guyrx90@gmail.com";
