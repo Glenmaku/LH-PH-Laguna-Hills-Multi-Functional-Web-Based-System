@@ -17,7 +17,7 @@ require_once 'class.phpmailer.php';
 //     return $conn;
 // }
 
-function Resend_owner_email($email, $gen_code ){
+function Resend_owner_email($acquired_email, $gen_code ){
 
 
 //Instantiation and passing `true` enables exceptions
@@ -37,7 +37,7 @@ try {
     //Recipients
     $mail->setFrom('emailAddress@gmail.com', 'OTP LHPH Emailer');
 
-    $mail->addAddress($email,);     //Add a recipient
+    $mail->addAddress($acquired_email,);     //Add a recipient
     // $mail->addAddress('ellen@example.com');  //Name is optional
     // $mail->addReplyTo('info@example.com', 'Information');
     // $mail->addCC('cc@example.com');
@@ -48,7 +48,7 @@ try {
     // $mail->addAttachment('/tmp/image.jpg', 'new.jpg'); //Optional name
 
     //Content   //Set email format to HTML
-    $mail->Subject = "Password Reset Code";
+    $mail->Subject = "Resend Password Reset Code";
     $mail->Body = "Your password reset code is $gen_code";
     // $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
     $mail->send();

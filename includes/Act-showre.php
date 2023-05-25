@@ -88,7 +88,7 @@
     
       $adrun_query =  mysqli_query($con, $adinsert_code);
       if($adrun_query){
-        Resend_admin_username($adacquired_email['admin_email'], $gen_code);
+        Resend_admin_username($adacquired_email['admin_email'], $adgen_code);
 
         // $adsubject = "Password Reset Code";
         // $admessage = "Your password reset code is $adgen_code";

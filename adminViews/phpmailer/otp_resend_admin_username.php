@@ -17,7 +17,7 @@ require_once 'class.phpmailer.php';
 //     return $conn;
 // }
 
-function Resend_admin_username($adacquired_email, $gen_code ){
+function Resend_admin_username($adacquired_email, $adgen_code ){
 
 
 //Instantiation and passing `true` enables exceptions
@@ -48,8 +48,8 @@ try {
     // $mail->addAttachment('/tmp/image.jpg', 'new.jpg'); //Optional name
 
     //Content   //Set email format to HTML
-    $mail->Subject = "Password Reset Code";
-    $mail->Body = "Your password reset code is $gen_code";
+    $mail->Subject = "Resend Password Reset Code";
+    $mail->Body = "Your password reset code is $adgen_code";
     // $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
     $mail->send();
     echo 'A one time password was sent to your email';
