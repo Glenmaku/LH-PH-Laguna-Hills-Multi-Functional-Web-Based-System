@@ -4902,8 +4902,9 @@
 					<input type="text" id="finder-area-per-sqm" class="form-control" disabled>
 				</div>
 				<div class="d-grid gap-2">
-					<button class="btn btn-success text-white inquirebtn" id="inqure-btn" type="button"><i class="fa-solid fa-circle-question"></i><a href="ContactUs.php" class="lead"> INQUIRE NOW!!</a></button>
+					<!-- <button class="btn btn-success text-white inquirebtn" id="inqure-btn" type="button"><i class="fa-solid fa-circle-question"></i><a href="ContactUs.php" class="lead"> INQUIRE NOW!!</a></button> -->
 					<button class="trigger" id="trigger-prop" value="trigger-prop" hidden></button>
+					
 					<div class="status-prop">
 						<h5>STATUS</h5>
 						<div class="form-check">
